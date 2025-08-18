@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dw1iwrueqi45l"]
+
+[ext_resource type="Script" uid="uid://bbpyx7a4jb76t" path="res://CameraSwitcher.cs" id="1_uifgr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vidrq"]
+size = Vector3(20, 0.562, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uifgr"]
+size = Vector3(20, 0.1, 1)
+
+[node name="CameraSwitcher" type="Area3D"]
+script = ExtResource("1_uifgr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00186157, -0.219177, 0)
+shape = SubResource("BoxShape3D_vidrq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_uifgr")
+
+[connection signal="body_entered" from="." to="." method="OnAreaEnter"]

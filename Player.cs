@@ -1,0 +1,59 @@
+using Godot;
+using System;
+
+public partial class Player : CharacterBody3D
+{
+    [Export]
+    public int Speed { get; set; } = 5;
+
+    [Export]
+    public float turnSpeed = 4f;
+
+    private Vector3 _targetVelocity = Vector3.Zero;
+    public override void _Ready()
+    {
+        
+    }
+
+    public override void _PhysicsProcess(double delta)
+    {
+        Move(delta);
+        MoveAndSlide();
+    }
+
+    private void Move(double delta) 
+    {
+        var direction = Vector3.Zero;
+        var transform = Transform;
+
+        if (Input.IsActionPressed("walk_forward")) 
+        {
+            Position += transform.Basis.X * Speed * (float) delta;
+        }
+
+        if (Input.IsActionPressed("walk_back")) 
+        {
+            Position -= transform.Basis.X * Speed / 2 * (float)delta;
+        }
+
+        if (Input.IsActionPressed("turn_left")) 
+        {
+            RotateY(turnSpeed * (float)delta);
+        }
+        if (Input.IsActionPressed("turn_right"))
+        {
+            RotateY(-turnSpeed * (float)delta);
+        }
+
+        if(direction != Vector3.Zero) 
+        {
+            direction = direction.Normalized();
+            GetNode<Node3D>("Pivot").Basis = Basis.LookingAt(direction);
+        }
+
+        _targetVelocity.X = direction.X * Speed;
+        _targetVelocity.Z = direction.Z * Speed;
+
+        Velocity = _targetVelocity;
+    }
+}

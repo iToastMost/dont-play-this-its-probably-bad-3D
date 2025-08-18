@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://60d70rbuc1vj"]
+
+[ext_resource type="PackedScene" uid="uid://cdh8y7cyfwaam" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dw1iwrueqi45l" path="res://camera_switcher.tscn" id="2_0xm2m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7dm0k"]
+albedo_color = Color(0.145098, 0.521569, 0.101961, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7dm0k"]
+material = SubResource("StandardMaterial3D_7dm0k")
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ig7tw"]
+
+[node name="Main" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(9.9151, 0, 0, 0, 1, 0, 0, 0, 9.8585, 0, 0, 0)
+mesh = SubResource("PlaneMesh_7dm0k")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("WorldBoundaryShape3D_ig7tw")
+
+[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0361022, 1.20122, 0.453164)
+
+[node name="Camera1" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.769756, 0.638338, 0, -0.638338, 0.769756, 0.295654, 8.44817, 12.6327)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.994891, 0.100952, 0, -0.0805061, 0.793394, 0.603361, 0.0609106, -0.600279, 0.797468, -0.325387, 12.1365, 7.06864)
+
+[node name="Camera2" type="Camera3D" parent="."]
+transform = Transform3D(-0.983991, -9.79303e-09, -0.178218, 0.0221268, 0.992263, -0.122168, 0.176839, -0.124156, -0.976378, 0.293654, 1.48854, -11.6098)
+
+[node name="CameraSwitcher" parent="." node_paths=PackedStringArray("_currentCamera") instance=ExtResource("2_0xm2m")]
+transform = Transform3D(0.997453, 0, 0.0713234, 0, 1, 0, -0.0713234, 0, 0.997453, 1.06567, 1.40419, -2.97313)
+_currentCamera = NodePath("../Camera2")
+
+[node name="CameraSwitcher2" parent="." node_paths=PackedStringArray("_currentCamera") instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.19486, 0.354624, 5.31845)
+_currentCamera = NodePath("../Camera1")
