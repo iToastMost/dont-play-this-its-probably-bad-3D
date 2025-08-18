@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://60d70rbuc1vj"]
+[gd_scene load_steps=7 format=3 uid="uid://60d70rbuc1vj"]
 
 [ext_resource type="PackedScene" uid="uid://cdh8y7cyfwaam" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dw1iwrueqi45l" path="res://camera_switcher.tscn" id="2_0xm2m"]
@@ -10,6 +10,8 @@ albedo_color = Color(0.145098, 0.521569, 0.101961, 1)
 material = SubResource("StandardMaterial3D_7dm0k")
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ig7tw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
 
 [node name="Main" type="Node3D"]
 
@@ -33,12 +35,28 @@ current = true
 transform = Transform3D(0.994891, 0.100952, 0, -0.0805061, 0.793394, 0.603361, 0.0609106, -0.600279, 0.797468, -0.325387, 12.1365, 7.06864)
 
 [node name="Camera2" type="Camera3D" parent="."]
-transform = Transform3D(-0.983991, -9.79303e-09, -0.178218, 0.0221268, 0.992263, -0.122168, 0.176839, -0.124156, -0.976378, 0.293654, 1.48854, -11.6098)
+transform = Transform3D(-0.991445, 0.0677377, -0.111571, -0.00850453, 0.819453, 0.573084, 0.130247, 0.56913, -0.811867, 2.06507, 8.26568, -10.2639)
 
 [node name="CameraSwitcher" parent="." node_paths=PackedStringArray("_currentCamera") instance=ExtResource("2_0xm2m")]
-transform = Transform3D(0.997453, 0, 0.0713234, 0, 1, 0, -0.0713234, 0, 0.997453, 1.06567, 1.40419, -2.97313)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06567, 1.40419, -6.19891)
 _currentCamera = NodePath("../Camera2")
 
 [node name="CameraSwitcher2" parent="." node_paths=PackedStringArray("_currentCamera") instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.19486, 0.354624, 5.31845)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.811936, 0.354624, 5.31845)
 _currentCamera = NodePath("../Camera1")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(19.8562, 0, 0, 0, 4.62794, 0, 0, 0, 0.580407, 0, 2.52024, 9.26769)
+mesh = SubResource("BoxMesh_0xm2m")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(19.8562, 0, 0, 0, 4.62794, 0, 0, 0, 0.580407, 0, 2.52024, -9.96657)
+mesh = SubResource("BoxMesh_0xm2m")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-8.67942e-07, 0, 0.580407, 0, 4.62794, 0, -19.8562, 0, -2.53704e-08, -8.91558, 2.99724, -0.497771)
+mesh = SubResource("BoxMesh_0xm2m")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-8.67942e-07, 0, 0.580407, 0, 4.62794, 0, -19.8562, 0, -2.53704e-08, 9.72889, 2.09917, -0.682107)
+mesh = SubResource("BoxMesh_0xm2m")
