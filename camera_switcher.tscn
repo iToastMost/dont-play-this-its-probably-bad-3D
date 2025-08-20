@@ -9,6 +9,8 @@ size = Vector3(20, 0.562, 1)
 size = Vector3(20, 0.1, 1)
 
 [node name="CameraSwitcher" type="Area3D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_uifgr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
