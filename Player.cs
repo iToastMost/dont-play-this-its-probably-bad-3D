@@ -4,15 +4,19 @@ using System;
 public partial class Player : CharacterBody3D
 {
     [Export]
+    public PackedScene GooseJumpScene;
+
+    [Export]
     public int Speed { get; set; } = 5;
 
     [Export]
     public float turnSpeed = 4f;
 
     private Vector3 _targetVelocity = Vector3.Zero;
+    private SubViewportContainer _subViewportContainer;
     public override void _Ready()
     {
-        
+        _subViewportContainer = GetNode<SubViewportContainer>("SubViewportContainer");
     }
 
     public override void _PhysicsProcess(double delta)
@@ -44,6 +48,23 @@ public partial class Player : CharacterBody3D
         {
             RotateY(-turnSpeed * (float)delta);
         }
+        if (Input.IsActionJustPressed("open_phone")) 
+        {
+            if (_subViewportContainer.Visible == true) 
+            {
+                _subViewportContainer.Visible = false;
+            }
+            else 
+            {
+                _subViewportContainer.Visible = true;
+            }
+        }
+
+        if (Input.IsActionJustPressed("exit_game")) 
+        {
+            GetTree().Quit();
+        }
+
 
         if(direction != Vector3.Zero) 
         {

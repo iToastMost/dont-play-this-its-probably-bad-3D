@@ -1,14 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Chevr\\Desktop\\Godot\\projects\\DON\u0027T PLAY THIS IT\u0027S PROBABLY BAD 3D\\dont-play-this-its-probably-bad-3D\\",
+  "WorkspaceRootPath": "C:\\Users\\Chevr\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|c:\\users\\chevr\\desktop\\godot\\projects\\don\u0027t play this it\u0027s probably bad 3d\\dont-play-this-its-probably-bad-3d\\cameraswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|solutionrelative:cameraswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|c:\\users\\chevr\\onedrive\\documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|c:\\users\\chevr\\desktop\\godot\\projects\\don\u0027t play this it\u0027s probably bad 3d\\dont-play-this-its-probably-bad-3d\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|c:\\users\\chevr\\onedrive\\documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\cameraswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|solutionrelative:cameraswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +18,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "CameraSwitcher.cs",
-              "DocumentMoniker": "C:\\Users\\Chevr\\Desktop\\Godot\\projects\\DON\u0027T PLAY THIS IT\u0027S PROBABLY BAD 3D\\dont-play-this-its-probably-bad-3D\\CameraSwitcher.cs",
+              "DocumentMoniker": "C:\\Users\\Chevr\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\CameraSwitcher.cs",
               "RelativeDocumentMoniker": "CameraSwitcher.cs",
-              "ToolTip": "C:\\Users\\Chevr\\Desktop\\Godot\\projects\\DON\u0027T PLAY THIS IT\u0027S PROBABLY BAD 3D\\dont-play-this-its-probably-bad-3D\\CameraSwitcher.cs",
+              "ToolTip": "C:\\Users\\Chevr\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\CameraSwitcher.cs",
               "RelativeToolTip": "CameraSwitcher.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-17T19:10:53.059Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Users\\Chevr\\Desktop\\Godot\\projects\\DON\u0027T PLAY THIS IT\u0027S PROBABLY BAD 3D\\dont-play-this-its-probably-bad-3D\\Player.cs",
+              "DocumentMoniker": "C:\\Users\\Chevr\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\Player.cs",
               "RelativeDocumentMoniker": "Player.cs",
-              "ToolTip": "C:\\Users\\Chevr\\Desktop\\Godot\\projects\\DON\u0027T PLAY THIS IT\u0027S PROBABLY BAD 3D\\dont-play-this-its-probably-bad-3D\\Player.cs",
+              "ToolTip": "C:\\Users\\Chevr\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\Player.cs",
               "RelativeToolTip": "Player.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAeAAAA",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAgwAYAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-17T18:29:32.613Z"
+              "WhenOpened": "2025-08-17T18:29:32.613Z",
+              "EditorCaption": ""
             }
           ]
         }

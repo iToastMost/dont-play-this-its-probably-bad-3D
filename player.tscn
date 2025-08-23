@@ -33,3 +33,18 @@ skeleton = NodePath("../..")
 transform = Transform3D(0.465043, 0, 0, 0, 0.173872, 0, 0, 0, 0.272094, 0.50545, 0.336355, 0)
 mesh = SubResource("BoxMesh_onrkg")
 skeleton = NodePath("../..")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+visible = false
+offset_left = 1433.0
+offset_top = 5.0
+offset_right = 1913.0
+offset_bottom = 1085.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(480, 1080)
+render_target_update_mode = 0
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.524698, 0.381809, -0.760864, 0, 0.893779, 0.448507, 0.851288, -0.235331, 0.468964, -13.2071, 9.93063, 7.56173)

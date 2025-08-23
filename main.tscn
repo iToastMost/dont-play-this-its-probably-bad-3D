@@ -1,11 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://60d70rbuc1vj"]
+[gd_scene load_steps=5 format=3 uid="uid://60d70rbuc1vj"]
 
 [ext_resource type="PackedScene" uid="uid://cdh8y7cyfwaam" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dw1iwrueqi45l" path="res://camera_switcher.tscn" id="2_0xm2m"]
 [ext_resource type="Material" uid="uid://cwe2nt3ymoi18" path="res://new_standard_material_3d.tres" id="3_h2yge"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bvp3"]
-albedo_color = Color(0.180392, 0.407843, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lquwl"]
 albedo_color = Color(0.545098, 0.729412, 0.843137, 1)
@@ -47,19 +44,19 @@ size = Vector3(8.16171, 10.8189, 14.8462)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Environment/Stall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.67807, 2.46054, -6.03853)
-material_override = SubResource("StandardMaterial3D_1bvp3")
+material_override = ExtResource("3_h2yge")
 use_collision = true
 size = Vector3(4, 4.58327, 0.301758)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Environment/Stall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.74034, 2.4434, -3.45292)
-material_override = SubResource("StandardMaterial3D_1bvp3")
+material_override = ExtResource("3_h2yge")
 use_collision = true
 size = Vector3(4, 4.58327, 0.301758)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Environment/Stall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.74034, 2.4434, -0.359785)
-material_override = SubResource("StandardMaterial3D_1bvp3")
+material_override = ExtResource("3_h2yge")
 use_collision = true
 size = Vector3(4, 4.58327, 0.301758)
 
