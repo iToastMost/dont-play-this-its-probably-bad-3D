@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cdh8y7cyfwaam"]
+[gd_scene load_steps=7 format=3 uid="uid://cmc37doc3qiso"]
 
-[ext_resource type="Script" uid="uid://lk3bdqq7lhld" path="res://Player.cs" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://d01hiirlyhuqf" path="res://Scripts/PlayerRE.cs" id="1_6f1mo"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 
@@ -16,9 +16,9 @@ albedo_color = Color(1, 0, 0, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_onrkg"]
 material = SubResource("StandardMaterial3D_sh265")
 
-[node name="Player" type="CharacterBody3D"]
+[node name="3DPlayer" type="CharacterBody3D"]
 collision_layer = 3
-script = ExtResource("1_4flbx")
+script = ExtResource("1_6f1mo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_sh265")

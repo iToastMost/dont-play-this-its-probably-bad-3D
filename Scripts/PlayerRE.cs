@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Player : CharacterBody3D
+public partial class PlayerRE : CharacterBody3D
 {
     [Export]
     public PackedScene GooseJumpScene;
