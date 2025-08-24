@@ -16,16 +16,6 @@ current = true
 [node name="Camera2" type="Camera3D" parent="."]
 transform = Transform3D(0.926173, -0.270794, 0.26244, 0, 0.695943, 0.718097, -0.3771, -0.665082, 0.644564, -0.631926, 9.669, 5.20204)
 
-[node name="CameraSwitcher" parent="." node_paths=PackedStringArray("_currentCamera") instance=ExtResource("1_tmlao")]
-transform = Transform3D(-0.0199652, 0, 0.999801, 0, 1, 0, -0.999801, 0, -0.0199652, -3.6645, 1.10688, -15.633)
-visible = false
-_currentCamera = NodePath("../Camera2")
-
-[node name="CameraSwitcher2" parent="." node_paths=PackedStringArray("_currentCamera") instance=ExtResource("1_tmlao")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.44525, 1.21639, -15.8934)
-visible = false
-_currentCamera = NodePath("../Camera1")
-
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.0574421, 0.998349, 0, -0.998349, -0.0574421, 0, 10.2101, 0)
 
@@ -143,3 +133,13 @@ material = ExtResource("2_b32mp")
 
 [node name="3DPlayer" parent="." instance=ExtResource("3_bu4nf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.65859, 1.35746, -7.49732)
+
+[node name="CameraSwitcher" parent="." node_paths=PackedStringArray("_currentCamera") instance=ExtResource("1_tmlao")]
+transform = Transform3D(-0.0686073, 0, -0.997644, 0, 1, 0, 0.997644, 0, -0.0686073, -4.9338, 1.39705, -7.32789)
+visible = false
+_currentCamera = NodePath("../Camera1")
+
+[node name="CameraSwitcher2" parent="." node_paths=PackedStringArray("_currentCamera") instance=ExtResource("1_tmlao")]
+transform = Transform3D(0.0536258, 0, 0.998561, 0, 1, 0, -0.998561, 0, 0.0536258, -3.95558, 0.755202, -7.33214)
+visible = false
+_currentCamera = NodePath("../Camera2")

@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Chevr\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|c:\\users\\chevr\\onedrive\\documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|c:\\users\\chevr\\onedrive\\documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\scripts\\playerre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|solutionrelative:scripts\\playerre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|c:\\users\\chevr\\onedrive\\documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\cameraswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|solutionrelative:cameraswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|c:\\users\\chevr\\onedrive\\documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\goosejump\\scripts\\scenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|solutionrelative:goosejump\\scripts\\scenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CameraSwitcher.cs",
-              "DocumentMoniker": "C:\\Users\\Chevr\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\CameraSwitcher.cs",
-              "RelativeDocumentMoniker": "CameraSwitcher.cs",
-              "ToolTip": "C:\\Users\\Chevr\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\CameraSwitcher.cs",
-              "RelativeToolTip": "CameraSwitcher.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Title": "SceneManager.cs",
+              "DocumentMoniker": "C:\\Users\\Chevr\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\GooseJump\\Scripts\\SceneManager.cs",
+              "RelativeDocumentMoniker": "GooseJump\\Scripts\\SceneManager.cs",
+              "ToolTip": "C:\\Users\\Chevr\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\GooseJump\\Scripts\\SceneManager.cs",
+              "RelativeToolTip": "GooseJump\\Scripts\\SceneManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADgAAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-17T19:10:53.059Z",
+              "WhenOpened": "2025-08-24T01:53:24.722Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Users\\Chevr\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\Player.cs",
-              "RelativeDocumentMoniker": "Player.cs",
-              "ToolTip": "C:\\Users\\Chevr\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\Player.cs",
-              "RelativeToolTip": "Player.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAgwAYAAAAmAAAA",
+              "Title": "PlayerRE.cs",
+              "DocumentMoniker": "C:\\Users\\Chevr\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\Scripts\\PlayerRE.cs",
+              "RelativeDocumentMoniker": "Scripts\\PlayerRE.cs",
+              "ToolTip": "C:\\Users\\Chevr\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\Scripts\\PlayerRE.cs",
+              "RelativeToolTip": "Scripts\\PlayerRE.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAUwCAAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-17T18:29:32.613Z",
+              "WhenOpened": "2025-08-24T01:27:02.705Z",
               "EditorCaption": ""
             }
           ]
