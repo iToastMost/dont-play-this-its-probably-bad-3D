@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://60d70rbuc1vj"]
+[gd_scene load_steps=7 format=3 uid="uid://60d70rbuc1vj"]
 
 [ext_resource type="PackedScene" uid="uid://dw1iwrueqi45l" path="res://Scenes/camera_switcher.tscn" id="1_tmlao"]
 [ext_resource type="Material" uid="uid://cwe2nt3ymoi18" path="res://new_standard_material_3d.tres" id="2_b32mp"]
 [ext_resource type="PackedScene" uid="uid://cmc37doc3qiso" path="res://Scenes/playerRE.tscn" id="3_bu4nf"]
+[ext_resource type="PackedScene" uid="uid://bx3tiy1h1b0rr" path="res://Scenes/ui.tscn" id="4_b32mp"]
+[ext_resource type="PackedScene" uid="uid://bj0fflqe1ib4u" path="res://Scenes/dialog_trigger.tscn" id="5_bu4nf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lquwl"]
 albedo_color = Color(0.545098, 0.729412, 0.843137, 1)
@@ -10,11 +12,13 @@ albedo_color = Color(0.545098, 0.729412, 0.843137, 1)
 [node name="Main" type="Node3D"]
 
 [node name="Camera1" type="Camera3D" parent="."]
-transform = Transform3D(0.197315, -0.734276, 0.649543, 0.198989, 0.678774, 0.706873, -0.959933, -0.0102248, 0.280045, -3.47325, 5.97475, -7.42137)
+transform = Transform3D(0.197315, -0.734276, 0.649543, 0.198989, 0.678774, 0.706873, -0.959932, -0.0102248, 0.280045, -3.47325, 5.97475, -7.42137)
 current = true
 
 [node name="Camera2" type="Camera3D" parent="."]
-transform = Transform3D(0.926173, -0.270794, 0.26244, 0, 0.695943, 0.718097, -0.3771, -0.665082, 0.644564, -0.631926, 9.669, 5.20204)
+transform = Transform3D(0.926173, -0.270794, 0.26244, 0, 0.695943, 0.718097, -0.3771, -0.665082, 0.644563, -0.631926, 9.669, 5.20204)
+
+[node name="UI" parent="." instance=ExtResource("4_b32mp")]
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.0574421, 0.998349, 0, -0.998349, -0.0574421, 0, 10.2101, 0)
@@ -178,3 +182,25 @@ _currentCamera = NodePath("../Camera1")
 transform = Transform3D(0.0536258, 0, 0.998561, 0, 1, 0, -0.998561, 0, 0.0536258, -3.95558, 0.755202, -7.33214)
 visible = false
 _currentCamera = NodePath("../Camera2")
+
+[node name="DialogTrigger" parent="." instance=ExtResource("5_bu4nf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.05578, 0.957123, -2.20578)
+visible = false
+dialogText = "And you're not even going to flush? Gross."
+
+[node name="DialogTrigger2" parent="." instance=ExtResource("5_bu4nf")]
+transform = Transform3D(0.0170685, 0, -0.999854, 0, 1, 0, 0.999854, 0, 0.0170685, -0.8604, 0.804202, 5.3379)
+visible = false
+dialogText = "Not even washing your hands either? What is wrong with you?"
+
+[node name="DialogTrigger3" parent="." instance=ExtResource("5_bu4nf")]
+transform = Transform3D(-0.0230363, 0, -0.999735, 0, 1, 0, 0.999735, 0, -0.0230363, -6.71534, 1.13557, -7.48592)
+visible = false
+dialogText = "Are you just playing BiPod games in there again?"
+
+[connection signal="MySignalWithArgument" from="DialogTrigger" to="UI" method="UpdateText"]
+[connection signal="PreventMovement" from="DialogTrigger" to="3DPlayer" method="DisableMovement"]
+[connection signal="MySignalWithArgument" from="DialogTrigger2" to="UI" method="UpdateText"]
+[connection signal="PreventMovement" from="DialogTrigger2" to="3DPlayer" method="DisableMovement"]
+[connection signal="MySignalWithArgument" from="DialogTrigger3" to="UI" method="UpdateText"]
+[connection signal="PreventMovement" from="DialogTrigger3" to="3DPlayer" method="DisableMovement"]

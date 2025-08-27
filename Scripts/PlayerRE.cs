@@ -18,18 +18,30 @@ public partial class PlayerRE : CharacterBody3D
 
     private AnimationPlayer _phoneAnimation;
     private bool _phoneVisible = false;
+    private bool _canMove = true;
     Node GooseScene;
     public override void _Ready()
     {
         _phoneAnimation = GetNode<AnimationPlayer>("SubViewportContainer/AnimationPlayer");
         _subViewport = GetNode<SubViewport>("SubViewportContainer/SubViewport");
-        _gooseJumpScene = ResourceLoader.Load<PackedScene>("res://GooseJump/Scenes/main.tscn");
+        //_gooseJumpScene = ResourceLoader.Load<PackedScene>("res://GooseJump/Scenes/main.tscn");
     }
 
     public override void _PhysicsProcess(double delta)
     {
-        Move(delta);
-        MoveAndSlide();
+        if (_canMove)
+        {
+            Move(delta);
+            MoveAndSlide();
+        }
+        else 
+        {
+            if (Input.IsActionJustPressed("accept_dialog")) 
+            {
+                _canMove = true;
+            }
+        }
+        
     }
 
     public override void _Input(InputEvent @event)
@@ -64,7 +76,12 @@ public partial class PlayerRE : CharacterBody3D
         {
             RotateY(-turnSpeed * (float)delta);
         }
-        
+
+        if (Input.IsActionJustPressed("spin_back"))
+        {
+            RotateY(180 * (float)delta);
+        }
+
         if (Input.IsActionJustPressed("open_phone")) 
         {
             if (_phoneVisible == true) 
@@ -109,5 +126,10 @@ public partial class PlayerRE : CharacterBody3D
         _targetVelocity.Z = direction.Z * Speed;
 
         Velocity = _targetVelocity;
+    }
+
+    public void DisableMovement() 
+    {
+        _canMove = false;
     }
 }
