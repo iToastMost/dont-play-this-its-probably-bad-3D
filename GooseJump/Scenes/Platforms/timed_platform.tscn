@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=3 uid="uid://jy5tfrdy5m72"]
+
+[ext_resource type="Script" uid="uid://bufdwwtgx6hrg" path="res://GooseJump/Scripts/Platform Scripts/TimedPlatform.cs" id="1_go4lr"]
+[ext_resource type="Texture2D" uid="uid://bd23cclb6uxe8" path="res://GooseJump/Art/Platforms/platform.png" id="2_yrvnk"]
+[ext_resource type="Texture2D" uid="uid://b6wqrh46gokkx" path="res://GooseJump/Art/Poof/poof.png" id="3_hf0w4"]
+[ext_resource type="Texture2D" uid="uid://db4xuhaaxiwjy" path="res://GooseJump/Art/Poof/poof_2.png" id="4_1ta36"]
+[ext_resource type="Texture2D" uid="uid://cd7xpwgybwt0" path="res://GooseJump/Art/Poof/poof_3.png" id="5_qjerv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dflga"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hf0w4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1ta36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qjerv")
+}],
+"loop": false,
+"name": &"poof",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ej85"]
+size = Vector2(101, 18)
+
+[sub_resource type="BoxMesh" id="BoxMesh_go4lr"]
+
+[node name="TimedPlatform" type="StaticBody2D"]
+collision_layer = 512
+collision_mask = 0
+script = ExtResource("1_go4lr")
+timeRangeStart = 5.0
+timeRangeEnd = 10.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(38, 9)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_dflga")
+animation = &"poof"
+speed_scale = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(37.5, 8)
+shape = SubResource("RectangleShape2D_7ej85")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+visible = false
+modulate = Color(0.184199, 0.489257, 0.548544, 1)
+position = Vector2(36, 6.5)
+scale = Vector2(72.5, 14)
+mesh = SubResource("BoxMesh_go4lr")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="StartTweenTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Platform" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(39, -4)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_yrvnk")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="AnimationFinished"]
+[connection signal="timeout" from="Timer" to="." method="Timeout"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="OnScreenEntered"]
+[connection signal="timeout" from="StartTweenTimer" to="." method="StartTween"]

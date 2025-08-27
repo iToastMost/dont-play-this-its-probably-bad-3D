@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://4bq6liff23vu"]
+
+[ext_resource type="Texture2D" uid="uid://bd23cclb6uxe8" path="res://GooseJump/Art/Platforms/platform.png" id="1_o11lu"]
+[ext_resource type="Script" uid="uid://de7wy6yqofhxp" path="res://GooseJump/Scripts/Platform Scripts/InvisiblePlatform.cs" id="1_q1xbw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_740qr"]
+size = Vector2(96, 17)
+
+[node name="InvisiblePlatform" type="StaticBody2D"]
+collision_layer = 512
+collision_mask = 0
+script = ExtResource("1_q1xbw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(37, 8.5)
+shape = SubResource("RectangleShape2D_740qr")
+
+[node name="Platform" type="Sprite2D" parent="."]
+position = Vector2(39, -4)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_o11lu")

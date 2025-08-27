@@ -1,0 +1,236 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkgt8udghp5i1"]
+
+[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/Art/background.png" id="1_qx5ph"]
+[ext_resource type="PackedScene" uid="uid://jy5tfrdy5m72" path="res://GooseJump/Scenes/Platforms/timed_platform.tscn" id="2_kdw4g"]
+
+[node name="TimedWallPreset" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(240, 640)
+texture = ExtResource("1_qx5ph")
+
+[node name="TimedPlatform" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(9, 1238)
+timeRangeStart = 12.0
+timeRangeEnd = 12.0
+
+[node name="TimedPlatform2" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(105, 1238)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform3" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(201, 1238)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform4" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(299, 1238)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform5" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(394, 1238)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform6" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(9, 1118)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform7" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(105, 1118)
+timeRangeStart = 12.0
+timeRangeEnd = 12.0
+
+[node name="TimedPlatform8" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(201, 1118)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform9" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(299, 1118)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform10" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(394, 1118)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform11" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(9, 998)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform12" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(105, 998)
+timeRangeStart = 12.0
+timeRangeEnd = 12.0
+
+[node name="TimedPlatform13" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(201, 998)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform14" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(299, 998)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform15" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(394, 998)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform16" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(9, 862)
+timeRangeStart = 12.0
+timeRangeEnd = 12.0
+
+[node name="TimedPlatform17" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(105, 862)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform18" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(201, 862)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform19" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(299, 862)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform20" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(394, 862)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform21" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(9, 726)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform22" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(105, 726)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform23" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(201, 726)
+timeRangeStart = 12.0
+timeRangeEnd = 12.0
+
+[node name="TimedPlatform24" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(299, 726)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform25" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(394, 726)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform26" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(9, 558)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform27" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(105, 558)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform28" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(201, 558)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform29" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(299, 558)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform30" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(394, 558)
+timeRangeStart = 12.0
+timeRangeEnd = 12.0
+
+[node name="TimedPlatform31" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(9, 366)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform32" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(105, 366)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform33" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(201, 366)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform34" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(299, 366)
+timeRangeStart = 12.0
+timeRangeEnd = 12.0
+
+[node name="TimedPlatform35" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(394, 366)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform36" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(9, 174)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform37" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(105, 174)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform38" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(201, 174)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform39" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(299, 174)
+timeRangeStart = 12.0
+timeRangeEnd = 12.0
+
+[node name="TimedPlatform40" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(394, 174)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform41" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(9, 14)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform42" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(105, 14)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform43" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(201, 14)
+timeRangeStart = 12.0
+timeRangeEnd = 12.0
+
+[node name="TimedPlatform44" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(299, 14)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0
+
+[node name="TimedPlatform45" parent="." instance=ExtResource("2_kdw4g")]
+position = Vector2(394, 14)
+timeRangeStart = 2.0
+timeRangeEnd = 2.0

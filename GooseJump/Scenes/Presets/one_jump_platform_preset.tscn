@@ -1,0 +1,83 @@
+[gd_scene load_steps=4 format=3 uid="uid://mfvxf4oe56dy"]
+
+[ext_resource type="PackedScene" uid="uid://b8sdit5l3qau4" path="res://GooseJump/Scenes/Platforms/one_jump_platform.tscn" id="1_318qx"]
+[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/Art/background.png" id="2_2ml0x"]
+[ext_resource type="PackedScene" uid="uid://dfrt83cgcej1y" path="res://GooseJump/Scenes/Enemies/FloatingEnemy.tscn" id="3_fp2he"]
+
+[node name="OneJumpPlatformPreset" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(240, 640)
+texture = ExtResource("2_2ml0x")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = -1
+custom_minimum_size = Vector2(0, 1280)
+offset_right = 480.0
+offset_bottom = 1080.0
+color = Color(0.815686, 0.760784, 0.509804, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="OneJumpPlatforms" type="Node" parent="."]
+
+[node name="OneJumpPlatform" parent="." instance=ExtResource("1_318qx")]
+position = Vector2(279, 600)
+
+[node name="OneJumpPlatform4" parent="." instance=ExtResource("1_318qx")]
+position = Vector2(374, 487)
+
+[node name="OneJumpPlatform5" parent="." instance=ExtResource("1_318qx")]
+position = Vector2(15, 502)
+
+[node name="OneJumpPlatform6" parent="." instance=ExtResource("1_318qx")]
+position = Vector2(199, 386)
+
+[node name="OneJumpPlatform7" parent="." instance=ExtResource("1_318qx")]
+position = Vector2(68, 238)
+
+[node name="OneJumpPlatform8" parent="." instance=ExtResource("1_318qx")]
+position = Vector2(337, 68)
+
+[node name="OneJumpPlatform9" parent="." instance=ExtResource("1_318qx")]
+position = Vector2(342, 225)
+
+[node name="OneJumpPlatform10" parent="." instance=ExtResource("1_318qx")]
+position = Vector2(69, 69)
+
+[node name="OneJumpPlatform2" parent="." instance=ExtResource("1_318qx")]
+position = Vector2(389, 730)
+
+[node name="OneJumpPlatform11" parent="." instance=ExtResource("1_318qx")]
+position = Vector2(208, 739)
+
+[node name="OneJumpPlatform12" parent="." instance=ExtResource("1_318qx")]
+position = Vector2(212, 851)
+
+[node name="OneJumpPlatform13" parent="." instance=ExtResource("1_318qx")]
+position = Vector2(27, 963)
+
+[node name="OneJumpPlatform14" parent="." instance=ExtResource("1_318qx")]
+position = Vector2(323, 1104)
+
+[node name="OneJumpPlatform18" parent="." instance=ExtResource("1_318qx")]
+position = Vector2(204, 1230)
+
+[node name="OneJumpPlatform20" parent="." instance=ExtResource("1_318qx")]
+position = Vector2(91, 1106)
+
+[node name="OneJumpPlatform15" parent="." instance=ExtResource("1_318qx")]
+position = Vector2(377, 949)
+
+[node name="OneJumpPlatform16" parent="." instance=ExtResource("1_318qx")]
+position = Vector2(32, 735)
+
+[node name="OneJumpPlatform3" parent="." instance=ExtResource("1_318qx")]
+position = Vector2(129, 601)
+
+[node name="FloatingEnemy" parent="." instance=ExtResource("3_fp2he")]
+position = Vector2(247, 821)
+
+[node name="FloatingEnemy2" parent="." instance=ExtResource("3_fp2he")]
+position = Vector2(223, 297)

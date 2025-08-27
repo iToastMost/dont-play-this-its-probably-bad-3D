@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkgius2gp7bhs"]
+
+[ext_resource type="Script" uid="uid://3v3yodu13c0u" path="res://GooseJump/Scripts/Platform Scripts/VerticalPlatform.cs" id="1_0p65s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ccef"]
+size = Vector2(87, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gu741"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0p65s"]
+
+[node name="VerticalPlatform" type="StaticBody2D"]
+collision_layer = 512
+collision_mask = 0
+script = ExtResource("1_0p65s")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(29.5, 0)
+shape = SubResource("RectangleShape2D_6ccef")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="AnimatableBody2D"]
+modulate = Color(0.868584, 0.53992, 0.347365, 1)
+position = Vector2(29.5, 0)
+scale = Vector2(79, 20)
+mesh = SubResource("BoxMesh_gu741")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0p65s")

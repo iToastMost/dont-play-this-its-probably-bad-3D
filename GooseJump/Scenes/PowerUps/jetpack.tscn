@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvqe56wuxmwvc"]
+
+[ext_resource type="Script" uid="uid://b1h3y10450bsp" path="res://GooseJump/Scripts/PowerUp Scripts/Jetpack.cs" id="1_wyab2"]
+[ext_resource type="Texture2D" uid="uid://r236572qsn6e" path="res://GooseJump/Art/Jetpack.png" id="2_068il"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gakjt"]
+size = Vector2(23, 41)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wyab2"]
+
+[node name="Jetpack" type="Area2D"]
+z_index = 1
+script = ExtResource("1_wyab2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -20.5)
+shape = SubResource("RectangleShape2D_gakjt")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+visible = false
+modulate = Color(0.431776, 0.424626, 0.393106, 1)
+position = Vector2(-2.98023e-07, -18.5)
+scale = Vector2(12, 37)
+mesh = SubResource("BoxMesh_wyab2")
+
+[node name="Jetpack" type="Sprite2D" parent="."]
+position = Vector2(1, -22)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_068il")
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]
