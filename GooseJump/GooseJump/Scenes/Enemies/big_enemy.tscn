@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddtappi8pn201"]
+
+[ext_resource type="Script" uid="uid://cbl047ud7xdgi" path="res://GooseJump/Scripts/Enemy Scripts/BigEnemy.cs" id="1_frldx"]
+[ext_resource type="AudioStream" uid="uid://jcut1u6ls1di" path="res://GooseJump/Sounds/EnemyDeath.wav" id="2_ug50p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iiawu"]
+size = Vector2(217, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_frldx"]
+size = Vector2(223, 40)
+
+[sub_resource type="BoxMesh" id="BoxMesh_iiawu"]
+
+[node name="BigEnemy" type="AnimatableBody2D"]
+collision_layer = 24
+collision_mask = 24
+script = ExtResource("1_frldx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -2.5)
+shape = SubResource("RectangleShape2D_iiawu")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 145
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.5, -3)
+shape = SubResource("RectangleShape2D_frldx")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.950373, 0.516993, 0.366631, 1)
+position = Vector2(-1, -2.5)
+scale = Vector2(218, 35)
+mesh = SubResource("BoxMesh_iiawu")
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_ug50p")
+
+[connection signal="area_entered" from="Area2D" to="." method="OnAreaEntered"]
+[connection signal="body_entered" from="Area2D" to="." method="OnBodyEntered"]

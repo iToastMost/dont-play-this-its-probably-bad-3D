@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcb65dfm70sq2"]
+
+[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/Art/background.png" id="1_0al7u"]
+[ext_resource type="PackedScene" uid="uid://djao56mnqg55l" path="res://GooseJump/Scenes/Platforms/jitter_platform.tscn" id="2_5hfc2"]
+
+[node name="JitterPlatformPreset" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(240, 640)
+texture = ExtResource("1_0al7u")
+
+[node name="JitterPlatform" parent="." instance=ExtResource("2_5hfc2")]
+position = Vector2(62, 1223)
+
+[node name="JitterPlatform2" parent="." instance=ExtResource("2_5hfc2")]
+position = Vector2(298, 1149)
+
+[node name="JitterPlatform3" parent="." instance=ExtResource("2_5hfc2")]
+position = Vector2(93, 1000)
+
+[node name="JitterPlatform4" parent="." instance=ExtResource("2_5hfc2")]
+position = Vector2(76, 878)
+
+[node name="JitterPlatform5" parent="." instance=ExtResource("2_5hfc2")]
+position = Vector2(250, 850)
+
+[node name="JitterPlatform6" parent="." instance=ExtResource("2_5hfc2")]
+position = Vector2(90, 705)
+
+[node name="JitterPlatform7" parent="." instance=ExtResource("2_5hfc2")]
+position = Vector2(277, 568)
+
+[node name="JitterPlatform8" parent="." instance=ExtResource("2_5hfc2")]
+position = Vector2(104, 482)
+
+[node name="JitterPlatform9" parent="." instance=ExtResource("2_5hfc2")]
+position = Vector2(81, 344)
+
+[node name="JitterPlatform10" parent="." instance=ExtResource("2_5hfc2")]
+position = Vector2(301, 244)
+
+[node name="JitterPlatform11" parent="." instance=ExtResource("2_5hfc2")]
+position = Vector2(102, 156)
+
+[node name="JitterPlatform12" parent="." instance=ExtResource("2_5hfc2")]
+position = Vector2(285, 58)
+
+[node name="JitterPlatform13" parent="." instance=ExtResource("2_5hfc2")]
+position = Vector2(147, 1090)
+
+[node name="JitterPlatform14" parent="." instance=ExtResource("2_5hfc2")]
+position = Vector2(376, 756)
+
+[node name="JitterPlatform15" parent="." instance=ExtResource("2_5hfc2")]
+position = Vector2(208, 643)
+
+[node name="JitterPlatform16" parent="." instance=ExtResource("2_5hfc2")]
+position = Vector2(318, 407)

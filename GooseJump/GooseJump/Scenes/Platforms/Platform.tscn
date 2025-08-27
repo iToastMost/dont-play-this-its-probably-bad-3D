@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://brhj2llbensot"]
+
+[ext_resource type="Script" uid="uid://uvaixd5h54mh" path="res://GooseJump/Scripts/Platform Scripts/Platform.cs" id="1_d7sl0"]
+[ext_resource type="Texture2D" uid="uid://bd23cclb6uxe8" path="res://GooseJump/Art/Platforms/platform.png" id="2_jib6w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxw4n"]
+size = Vector2(1.46479, 1.17241)
+
+[sub_resource type="Curve2D" id="Curve2D_d7sl0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -12, -5, 0, 0, 0, 0, 37, -5)
+}
+point_count = 2
+
+[node name="Platform" type="CharacterBody2D" groups=["platforms"]]
+z_index = 1
+collision_layer = 512
+collision_mask = 0
+script = ExtResource("1_d7sl0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(15, 7.50002)
+scale = Vector2(71, 14.5)
+shape = SubResource("RectangleShape2D_rxw4n")
+one_way_collision_margin = 6.0
+debug_color = Color(0.231303, 0.568843, 0.780141, 0.42)
+
+[node name="EnemySpawn" type="Marker2D" parent="."]
+position = Vector2(11, -31)
+
+[node name="SpringSpawn" type="Marker2D" parent="."]
+position = Vector2(32, -6)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_d7sl0")
+
+[node name="SpringSpawnPath" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-12, -5)
+
+[node name="Platform" type="Sprite2D" parent="."]
+position = Vector2(16.85, -3.75)
+scale = Vector2(0.6, 0.597)
+texture = ExtResource("2_jib6w")

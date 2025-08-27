@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5rrjewq6dlvy"]
+
+[ext_resource type="Script" uid="uid://blnq4nyrjybhk" path="res://GooseJump/Scripts/Blackhole.cs" id="1_dxehr"]
+[ext_resource type="Texture2D" uid="uid://d2qgcu6plawms" path="res://GooseJump/Art/blackhole back.png" id="2_xnsgi"]
+[ext_resource type="Texture2D" uid="uid://dp3jieqvcyl6i" path="res://GooseJump/Art/blackhole base.png" id="3_hko3c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gwk2u"]
+radius = 46.0109
+
+[sub_resource type="SphereMesh" id="SphereMesh_dxehr"]
+
+[node name="Blackhole" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_dxehr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_gwk2u")
+
+[node name="BlackholeBase" type="Sprite2D" parent="."]
+show_behind_parent = true
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_hko3c")
+offset = Vector2(7.58333, -22.1667)
+
+[node name="BlackholeBack" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-27, -0.999998)
+rotation = -1.5571
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_xnsgi")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-4.76837e-07, 0)
+scale = Vector2(40.5459, 38.5)
+mesh = SubResource("SphereMesh_dxehr")
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]

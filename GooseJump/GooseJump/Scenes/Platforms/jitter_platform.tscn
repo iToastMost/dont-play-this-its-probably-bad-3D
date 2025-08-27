@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://djao56mnqg55l"]
+
+[ext_resource type="Texture2D" uid="uid://bd23cclb6uxe8" path="res://GooseJump/Art/Platforms/platform.png" id="1_dpopa"]
+[ext_resource type="Script" uid="uid://blhq6ux7nwqel" path="res://GooseJump/Scripts/Platform Scripts/JitterPlatform.cs" id="1_eta1a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1urm"]
+size = Vector2(96, 15)
+
+[node name="JitterPlatform" type="AnimatableBody2D"]
+z_index = 1
+collision_layer = 512
+collision_mask = 512
+script = ExtResource("1_eta1a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(37, 7.5)
+shape = SubResource("RectangleShape2D_q1urm")
+
+[node name="Platform" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 0, 1)
+z_index = 1
+position = Vector2(39, -4)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_dpopa")

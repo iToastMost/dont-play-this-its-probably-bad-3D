@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://2diyssvdpqqv"]
+
+[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/Art/background.png" id="1_2kw3d"]
+[ext_resource type="PackedScene" uid="uid://c5rrjewq6dlvy" path="res://GooseJump/Scenes/blackhole.tscn" id="2_23lh8"]
+[ext_resource type="PackedScene" uid="uid://b8sdit5l3qau4" path="res://GooseJump/Scenes/Platforms/one_jump_platform.tscn" id="3_cy2nt"]
+[ext_resource type="PackedScene" uid="uid://4bq6liff23vu" path="res://GooseJump/Scenes/Platforms/invisible_platform.tscn" id="4_rvtmd"]
+[ext_resource type="PackedScene" uid="uid://lswteuyjdlt0" path="res://GooseJump/Scenes/Platforms/movingPlatform.tscn" id="5_rvtmd"]
+
+[node name="OffScreenJumpingPreset" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(240, 640)
+texture = ExtResource("1_2kw3d")
+
+[node name="OneJumpPlatform2" parent="." instance=ExtResource("3_cy2nt")]
+position = Vector2(361, 1038)
+
+[node name="OneJumpPlatform3" parent="." instance=ExtResource("3_cy2nt")]
+position = Vector2(60, 899)
+
+[node name="OneJumpPlatform4" parent="." instance=ExtResource("3_cy2nt")]
+position = Vector2(380, 753)
+
+[node name="OneJumpPlatform5" parent="." instance=ExtResource("3_cy2nt")]
+position = Vector2(67, 614)
+
+[node name="InvisiblePlatform" parent="." node_paths=PackedStringArray("NextInvisiblePlatform") instance=ExtResource("4_rvtmd")]
+position = Vector2(361, 484)
+NextInvisiblePlatform = NodePath("../InvisiblePlatform2")
+_isVisible = true
+
+[node name="InvisiblePlatform2" parent="." node_paths=PackedStringArray("NextInvisiblePlatform") instance=ExtResource("4_rvtmd")]
+position = Vector2(62, 368)
+NextInvisiblePlatform = NodePath("../InvisiblePlatform3")
+
+[node name="InvisiblePlatform3" parent="." node_paths=PackedStringArray("NextInvisiblePlatform") instance=ExtResource("4_rvtmd")]
+position = Vector2(366, 234)
+NextInvisiblePlatform = NodePath("../InvisiblePlatform4")
+
+[node name="InvisiblePlatform4" parent="." instance=ExtResource("4_rvtmd")]
+position = Vector2(64, 85)
+
+[node name="Blackhole2" parent="." instance=ExtResource("2_23lh8")]
+position = Vector2(239, 1047)
+
+[node name="Blackhole3" parent="." instance=ExtResource("2_23lh8")]
+position = Vector2(239, 903)
+
+[node name="Blackhole4" parent="." instance=ExtResource("2_23lh8")]
+position = Vector2(239, 759)
+
+[node name="Blackhole5" parent="." instance=ExtResource("2_23lh8")]
+position = Vector2(239, 615)
+
+[node name="Blackhole6" parent="." instance=ExtResource("2_23lh8")]
+position = Vector2(239, 487)
+
+[node name="Blackhole7" parent="." instance=ExtResource("2_23lh8")]
+position = Vector2(239, 367)
+
+[node name="Blackhole8" parent="." instance=ExtResource("2_23lh8")]
+position = Vector2(239, 239)
+
+[node name="Blackhole9" parent="." instance=ExtResource("2_23lh8")]
+position = Vector2(239, 95)
+
+[node name="MovingPlatform" parent="." instance=ExtResource("5_rvtmd")]
+position = Vector2(201, 1210)

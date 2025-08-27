@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://dggbudueceljn"]
+
+[ext_resource type="Script" uid="uid://c534t00lrkfjc" path="res://GooseJump/Scripts/Main.cs" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://bwoe8loj8ac78" path="res://GooseJump/Scenes/PlayerScenes/player.tscn" id="2_8gbba"]
+[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/Art/background.png" id="2_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://bfohhcfgqpxof" path="res://GooseJump/Scenes/hud.tscn" id="4_jjvhh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21xkr"]
+size = Vector2(491, 26)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6bp64"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_344ge"]
+size = Vector2(480, 15)
+
+[node name="Main" type="Node" groups=["Platforms", "levels"]]
+script = ExtResource("1_bo1nx")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(240, -640)
+texture = ExtResource("2_jjvhh")
+
+[node name="ColorRect" type="ColorRect" parent="." groups=["Bullets", "Enemies", "Platforms"]]
+visible = false
+z_index = -1
+custom_minimum_size = Vector2(0, 1080)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1080.0
+offset_bottom = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.815686, 0.760784, 0.509804, 1)
+
+[node name="Player" parent="." groups=["Enemies", "Platforms"] instance=ExtResource("2_8gbba")]
+position = Vector2(237, -35)
+collision_mask = 255
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(228, -30)
+
+[node name="HUD" parent="." instance=ExtResource("4_jjvhh")]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -360)
+collision_layer = 0
+collision_mask = 2147483648
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(236, 305)
+shape = SubResource("RectangleShape2D_21xkr")
+
+[node name="Node2D" type="CharacterBody2D" parent="."]
+collision_layer = 2
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Node2D"]
+modulate = Color(0.234839, 0.525178, 0.13436, 1)
+position = Vector2(240.501, -7.63769)
+rotation = -3.14159
+scale = Vector2(480.001, 14.2754)
+mesh = SubResource("BoxMesh_6bp64")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D"]
+position = Vector2(240, -7.5)
+shape = SubResource("RectangleShape2D_344ge")
+
+[node name="NextLevelSpawn" type="Marker2D" parent="."]
+position = Vector2(0, -1280)
+
+[connection signal="GameOver" from="Player" to="." method="GameOver"]
+[connection signal="StartGame" from="HUD" to="." method="NewGame"]
+[connection signal="body_entered" from="Area2D" to="." method="OnArea2DBodyEntered"]
