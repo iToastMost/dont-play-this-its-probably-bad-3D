@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://db4xuhaaxiwjy"
-path="res://.godot/imported/poof_2.png-987affda5ec184a638310b064f39eea5.ctex"
+path="res://.godot/imported/poof_2.png-861bd3e93b65e87d3f54e6d97ab6186b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GooseJump/Art/Poof/poof_2.png"
-dest_files=["res://.godot/imported/poof_2.png-987affda5ec184a638310b064f39eea5.ctex"]
+source_file="res://GooseJump/GooseJump/Art/Poof/poof_2.png"
+dest_files=["res://.godot/imported/poof_2.png-861bd3e93b65e87d3f54e6d97ab6186b.ctex"]
 
 [params]
 

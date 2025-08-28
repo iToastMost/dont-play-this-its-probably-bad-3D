@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dk401ene86uag"
-path="res://.godot/imported/doots.wav-86d1a5a9fc293ccb8db75952ad52ee36.sample"
+path="res://.godot/imported/doots.wav-599974c963afb8e057ef914c78bc2e1c.sample"
 
 [deps]
 
-source_file="res://GooseJump/Sounds/doots.wav"
-dest_files=["res://.godot/imported/doots.wav-86d1a5a9fc293ccb8db75952ad52ee36.sample"]
+source_file="res://GooseJump/GooseJump/Sounds/doots.wav"
+dest_files=["res://.godot/imported/doots.wav-599974c963afb8e057ef914c78bc2e1c.sample"]
 
 [params]
 

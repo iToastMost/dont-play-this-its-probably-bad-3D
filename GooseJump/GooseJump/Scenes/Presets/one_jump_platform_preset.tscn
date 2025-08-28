@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://mfvxf4oe56dy"]
 
-[ext_resource type="PackedScene" uid="uid://b8sdit5l3qau4" path="res://GooseJump/Scenes/Platforms/one_jump_platform.tscn" id="1_318qx"]
-[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/Art/background.png" id="2_2ml0x"]
-[ext_resource type="PackedScene" uid="uid://dfrt83cgcej1y" path="res://GooseJump/Scenes/Enemies/FloatingEnemy.tscn" id="3_fp2he"]
+[ext_resource type="PackedScene" uid="uid://b8sdit5l3qau4" path="res://GooseJump/GooseJump/Scenes/Platforms/one_jump_platform.tscn" id="1_318qx"]
+[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/GooseJump/Art/background.png" id="2_2ml0x"]
+[ext_resource type="PackedScene" uid="uid://dfrt83cgcej1y" path="res://GooseJump/GooseJump/Scenes/Enemies/FloatingEnemy.tscn" id="3_fp2he"]
 
 [node name="OneJumpPlatformPreset" type="Node2D"]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dfrt83cgcej1y"]
 
-[ext_resource type="Script" uid="uid://q7p33ednpf2j" path="res://GooseJump/Scripts/Enemy Scripts/FloatingEnemy.cs" id="1_g7had"]
-[ext_resource type="Texture2D" uid="uid://3jkk8yjmfn7a" path="res://GooseJump/Art/Enemy.png" id="1_y1r0v"]
-[ext_resource type="AudioStream" uid="uid://jcut1u6ls1di" path="res://GooseJump/Sounds/EnemyDeath.wav" id="3_4fs11"]
+[ext_resource type="Script" uid="uid://q7p33ednpf2j" path="res://GooseJump/GooseJump/Scripts/Enemy Scripts/FloatingEnemy.cs" id="1_g7had"]
+[ext_resource type="Texture2D" uid="uid://3jkk8yjmfn7a" path="res://GooseJump/GooseJump/Art/Enemy.png" id="1_y1r0v"]
+[ext_resource type="AudioStream" uid="uid://jcut1u6ls1di" path="res://GooseJump/GooseJump/Sounds/EnemyDeath.wav" id="3_4fs11"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g7had"]
 radius = 26.0

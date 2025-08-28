@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bfr5wsjrmamqg"]
 
-[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/Art/background.png" id="1_8c1nc"]
-[ext_resource type="PackedScene" uid="uid://b8sdit5l3qau4" path="res://GooseJump/Scenes/Platforms/one_jump_platform.tscn" id="2_kif35"]
-[ext_resource type="PackedScene" uid="uid://c5rrjewq6dlvy" path="res://GooseJump/Scenes/blackhole.tscn" id="3_3hyv0"]
-[ext_resource type="PackedScene" uid="uid://djao56mnqg55l" path="res://GooseJump/Scenes/Platforms/jitter_platform.tscn" id="4_ldtvk"]
+[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/GooseJump/Art/background.png" id="1_8c1nc"]
+[ext_resource type="PackedScene" uid="uid://b8sdit5l3qau4" path="res://GooseJump/GooseJump/Scenes/Platforms/one_jump_platform.tscn" id="2_kif35"]
+[ext_resource type="PackedScene" uid="uid://c5rrjewq6dlvy" path="res://GooseJump/GooseJump/Scenes/blackhole.tscn" id="3_3hyv0"]
+[ext_resource type="PackedScene" uid="uid://djao56mnqg55l" path="res://GooseJump/GooseJump/Scenes/Platforms/jitter_platform.tscn" id="4_ldtvk"]
 
 [node name="OneJumpAndJitterPreset" type="Node2D"]
 

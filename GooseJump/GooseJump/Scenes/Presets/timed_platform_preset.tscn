@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cg7g423gaj0vs"]
 
-[ext_resource type="PackedScene" uid="uid://jy5tfrdy5m72" path="res://GooseJump/Scenes/Platforms/timed_platform.tscn" id="1_26vll"]
-[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/Art/background.png" id="2_3hw0a"]
+[ext_resource type="PackedScene" uid="uid://jy5tfrdy5m72" path="res://GooseJump/GooseJump/Scenes/Platforms/timed_platform.tscn" id="1_26vll"]
+[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/GooseJump/Art/background.png" id="2_3hw0a"]
 
 [node name="TimedPlatformPreset" type="Node2D"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://brhj2llbensot"]
 
-[ext_resource type="Script" uid="uid://uvaixd5h54mh" path="res://GooseJump/Scripts/Platform Scripts/Platform.cs" id="1_d7sl0"]
-[ext_resource type="Texture2D" uid="uid://bd23cclb6uxe8" path="res://GooseJump/Art/Platforms/platform.png" id="2_jib6w"]
+[ext_resource type="Script" uid="uid://uvaixd5h54mh" path="res://GooseJump/GooseJump/Scripts/Platform Scripts/Platform.cs" id="1_d7sl0"]
+[ext_resource type="Texture2D" uid="uid://bd23cclb6uxe8" path="res://GooseJump/GooseJump/Art/Platforms/platform.png" id="2_jib6w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rxw4n"]
 size = Vector2(1.46479, 1.17241)

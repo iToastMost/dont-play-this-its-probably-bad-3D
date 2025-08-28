@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bklb7uloyr5g2"
-path="res://.godot/imported/spring.png-95ff7dd49378053799c0c056c168a463.ctex"
+path="res://.godot/imported/spring.png-6fbbfcb26814c983522573120a63a4bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GooseJump/Art/spring.png"
-dest_files=["res://.godot/imported/spring.png-95ff7dd49378053799c0c056c168a463.ctex"]
+source_file="res://GooseJump/GooseJump/Art/spring.png"
+dest_files=["res://.godot/imported/spring.png-6fbbfcb26814c983522573120a63a4bb.ctex"]
 
 [params]
 

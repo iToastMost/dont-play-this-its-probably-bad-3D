@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://df30hohevm1gg"
-path="res://.godot/imported/one jump platform.png-d7e0941062b69ed34527c7171cf7233a.ctex"
+path="res://.godot/imported/one jump platform.png-1b30eee1816017956cf5b3e4fb811ede.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GooseJump/Art/Platforms/one jump platform.png"
-dest_files=["res://.godot/imported/one jump platform.png-d7e0941062b69ed34527c7171cf7233a.ctex"]
+source_file="res://GooseJump/GooseJump/Art/Platforms/one jump platform.png"
+dest_files=["res://.godot/imported/one jump platform.png-1b30eee1816017956cf5b3e4fb811ede.ctex"]
 
 [params]
 

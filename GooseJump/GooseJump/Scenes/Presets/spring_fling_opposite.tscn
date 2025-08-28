@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://caq7airf6j5tp"]
 
-[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/Art/background.png" id="1_cjdd2"]
-[ext_resource type="PackedScene" uid="uid://brhj2llbensot" path="res://GooseJump/Scenes/Platforms/Platform.tscn" id="2_0t13i"]
-[ext_resource type="PackedScene" uid="uid://b2s8nhkxxa2ds" path="res://GooseJump/Scenes/PowerUps/spring.tscn" id="3_wc7mv"]
+[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/GooseJump/Art/background.png" id="1_cjdd2"]
+[ext_resource type="PackedScene" uid="uid://brhj2llbensot" path="res://GooseJump/GooseJump/Scenes/Platforms/Platform.tscn" id="2_0t13i"]
+[ext_resource type="PackedScene" uid="uid://b2s8nhkxxa2ds" path="res://GooseJump/GooseJump/Scenes/PowerUps/spring.tscn" id="3_wc7mv"]
 
 [node name="SpringFlingOpposite" type="Node2D"]
 

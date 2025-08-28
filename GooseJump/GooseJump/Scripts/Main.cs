@@ -7,6 +7,9 @@ using System.Xml.Serialization;
 
 public partial class Main : Node
 {
+    [Signal]
+    public delegate void GameStartEventHandler();
+
     [Export]
     private float _mediumScoreRequirment = 12500;
 
@@ -86,7 +89,9 @@ public partial class Main : Node
         player.Hide();
         //await Task.Delay(TimeSpan.FromSeconds(_timeUntilPause));
         GetTree().Paused = true;
-        
+
+        //starts 3D game
+        EmitSignal(SignalName.GameStart);
     }
 
     private void SpawnLevel()

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://w80afqggfx6s"]
 
-[ext_resource type="Script" uid="uid://sjc8agecrnda" path="res://GooseJump/Scripts/Enemy Scripts/Enemy.cs" id="1_1f0kj"]
-[ext_resource type="Texture2D" uid="uid://35ntlsmcn5n2" path="res://GooseJump/Art/Alien Man.png" id="2_1f0kj"]
-[ext_resource type="AudioStream" uid="uid://jcut1u6ls1di" path="res://GooseJump/Sounds/EnemyDeath.wav" id="3_x1rqp"]
+[ext_resource type="Script" uid="uid://sjc8agecrnda" path="res://GooseJump/GooseJump/Scripts/Enemy Scripts/Enemy.cs" id="1_1f0kj"]
+[ext_resource type="Texture2D" uid="uid://35ntlsmcn5n2" path="res://GooseJump/GooseJump/Art/Alien Man.png" id="2_1f0kj"]
+[ext_resource type="AudioStream" uid="uid://jcut1u6ls1di" path="res://GooseJump/GooseJump/Sounds/EnemyDeath.wav" id="3_x1rqp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hghv2"]
 radius = 31.0644

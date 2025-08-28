@@ -256,7 +256,9 @@ public partial class Player : CharacterBody2D
 			bulletScript.SetDirection(bulletDirection);
 		}
 
-		GetTree().CurrentScene.AddChild(bullet);
+		var parent = GetParent();
+		parent.AddChild(bullet);
+		//GetTree().CurrentScene.AddChild(bullet);
 	}
 
 	private void OnBodyEntered(Node2D body)

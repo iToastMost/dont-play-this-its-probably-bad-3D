@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://drhaim1g27ebn"
-path="res://.godot/imported/GooseGuy2.png-cfed152b2191f6fb01e864e378dffd26.ctex"
+path="res://.godot/imported/GooseGuy2.png-d4368d59b888f746377c43ceed9f519f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GooseJump/Art/GooseGuy2.png"
-dest_files=["res://.godot/imported/GooseGuy2.png-cfed152b2191f6fb01e864e378dffd26.ctex"]
+source_file="res://GooseJump/GooseJump/Art/GooseGuy2.png"
+dest_files=["res://.godot/imported/GooseGuy2.png-d4368d59b888f746377c43ceed9f519f.ctex"]
 
 [params]
 

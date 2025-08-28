@@ -24,7 +24,15 @@ public partial class PlayerRE : CharacterBody3D
     {
         _phoneAnimation = GetNode<AnimationPlayer>("SubViewportContainer/AnimationPlayer");
         _subViewport = GetNode<SubViewport>("SubViewportContainer/SubViewport");
-        //_gooseJumpScene = ResourceLoader.Load<PackedScene>("res://GooseJump/Scenes/main.tscn");
+        _gooseJumpScene = ResourceLoader.Load<PackedScene>("res://GooseJump/Scenes/main.tscn");
+
+        //_phoneVisible = true;
+        if (GooseScene == null)
+        {
+            GooseScene = _gooseJumpScene.Instantiate();
+            _subViewport.AddChild(GooseScene);
+            GooseScene.Connect("GameStart", new Callable(this, nameof(OnStart)));
+        }
     }
 
     public override void _PhysicsProcess(double delta)
@@ -93,16 +101,18 @@ public partial class PlayerRE : CharacterBody3D
                 
                 
                 //GooseScene.QueueFree();
+                //GooseScene = null;
             }
             else 
             {
                 //_subViewportContainer.Visible = true;
                 _phoneVisible = true;
                 //if(GooseScene == null) 
-                {
+                //{
                     //GooseScene = _gooseJumpScene.Instantiate();
                     //_subViewport.AddChild(GooseScene);
-                }
+                    //GooseScene.Connect("GameStart", new Callable(this, nameof(OnStart)));
+                //}
                 //GooseScene = _gooseJumpScene.Instantiate();
                 //_subViewport.AddChild(GooseScene);
                 _phoneAnimation.CurrentAnimation = "slide_in";
@@ -131,5 +141,10 @@ public partial class PlayerRE : CharacterBody3D
     public void DisableMovement() 
     {
         _canMove = false;
+    }
+
+    public void OnStart() 
+    {
+        GD.Print("Start 3D game");
     }
 }

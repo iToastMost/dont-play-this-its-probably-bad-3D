@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://2diyssvdpqqv"]
 
-[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/Art/background.png" id="1_2kw3d"]
-[ext_resource type="PackedScene" uid="uid://c5rrjewq6dlvy" path="res://GooseJump/Scenes/blackhole.tscn" id="2_23lh8"]
-[ext_resource type="PackedScene" uid="uid://b8sdit5l3qau4" path="res://GooseJump/Scenes/Platforms/one_jump_platform.tscn" id="3_cy2nt"]
-[ext_resource type="PackedScene" uid="uid://4bq6liff23vu" path="res://GooseJump/Scenes/Platforms/invisible_platform.tscn" id="4_rvtmd"]
-[ext_resource type="PackedScene" uid="uid://lswteuyjdlt0" path="res://GooseJump/Scenes/Platforms/movingPlatform.tscn" id="5_rvtmd"]
+[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/GooseJump/Art/background.png" id="1_2kw3d"]
+[ext_resource type="PackedScene" uid="uid://c5rrjewq6dlvy" path="res://GooseJump/GooseJump/Scenes/blackhole.tscn" id="2_23lh8"]
+[ext_resource type="PackedScene" uid="uid://b8sdit5l3qau4" path="res://GooseJump/GooseJump/Scenes/Platforms/one_jump_platform.tscn" id="3_cy2nt"]
+[ext_resource type="PackedScene" uid="uid://4bq6liff23vu" path="res://GooseJump/GooseJump/Scenes/Platforms/invisible_platform.tscn" id="4_rvtmd"]
+[ext_resource type="PackedScene" uid="uid://lswteuyjdlt0" path="res://GooseJump/GooseJump/Scenes/Platforms/movingPlatform.tscn" id="5_rvtmd"]
 
 [node name="OffScreenJumpingPreset" type="Node2D"]
 

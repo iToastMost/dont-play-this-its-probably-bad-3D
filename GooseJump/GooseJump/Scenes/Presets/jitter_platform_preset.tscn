@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bcb65dfm70sq2"]
 
-[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/Art/background.png" id="1_0al7u"]
-[ext_resource type="PackedScene" uid="uid://djao56mnqg55l" path="res://GooseJump/Scenes/Platforms/jitter_platform.tscn" id="2_5hfc2"]
+[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/GooseJump/Art/background.png" id="1_0al7u"]
+[ext_resource type="PackedScene" uid="uid://djao56mnqg55l" path="res://GooseJump/GooseJump/Scenes/Platforms/jitter_platform.tscn" id="2_5hfc2"]
 
 [node name="JitterPlatformPreset" type="Node2D"]
 

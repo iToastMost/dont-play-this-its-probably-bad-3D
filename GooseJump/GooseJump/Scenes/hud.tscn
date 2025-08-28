@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bfohhcfgqpxof"]
 
-[ext_resource type="Script" uid="uid://ds3ntnpoi5j8v" path="res://GooseJump/Scripts/Hud.cs" id="1_e0onf"]
+[ext_resource type="Script" uid="uid://ds3ntnpoi5j8v" path="res://GooseJump/GooseJump/Scripts/Hud.cs" id="1_e0onf"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_e0onf"]
 action = &"start_game"

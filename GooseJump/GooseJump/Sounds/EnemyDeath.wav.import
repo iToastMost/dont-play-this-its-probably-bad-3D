@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://jcut1u6ls1di"
-path="res://.godot/imported/EnemyDeath.wav-52862da20db33b297486b37eec17de47.sample"
+path="res://.godot/imported/EnemyDeath.wav-7b1752e2f8854a4de4d18e2c71397a85.sample"
 
 [deps]
 
-source_file="res://GooseJump/Sounds/EnemyDeath.wav"
-dest_files=["res://.godot/imported/EnemyDeath.wav-52862da20db33b297486b37eec17de47.sample"]
+source_file="res://GooseJump/GooseJump/Sounds/EnemyDeath.wav"
+dest_files=["res://.godot/imported/EnemyDeath.wav-7b1752e2f8854a4de4d18e2c71397a85.sample"]
 
 [params]
 

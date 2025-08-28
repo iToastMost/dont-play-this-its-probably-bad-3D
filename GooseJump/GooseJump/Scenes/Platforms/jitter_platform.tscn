@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://djao56mnqg55l"]
 
-[ext_resource type="Texture2D" uid="uid://bd23cclb6uxe8" path="res://GooseJump/Art/Platforms/platform.png" id="1_dpopa"]
-[ext_resource type="Script" uid="uid://blhq6ux7nwqel" path="res://GooseJump/Scripts/Platform Scripts/JitterPlatform.cs" id="1_eta1a"]
+[ext_resource type="Texture2D" uid="uid://bd23cclb6uxe8" path="res://GooseJump/GooseJump/Art/Platforms/platform.png" id="1_dpopa"]
+[ext_resource type="Script" uid="uid://blhq6ux7nwqel" path="res://GooseJump/GooseJump/Scripts/Platform Scripts/JitterPlatform.cs" id="1_eta1a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1urm"]
 size = Vector2(96, 15)

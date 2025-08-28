@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://bgvqijugr5u6y"]
 
-[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/Art/background.png" id="1_chd26"]
-[ext_resource type="PackedScene" uid="uid://c5rrjewq6dlvy" path="res://GooseJump/Scenes/blackhole.tscn" id="2_g8amo"]
-[ext_resource type="PackedScene" uid="uid://jy5tfrdy5m72" path="res://GooseJump/Scenes/Platforms/timed_platform.tscn" id="3_6jjdq"]
-[ext_resource type="PackedScene" uid="uid://b8sdit5l3qau4" path="res://GooseJump/Scenes/Platforms/one_jump_platform.tscn" id="4_t4m5k"]
-[ext_resource type="PackedScene" uid="uid://lswteuyjdlt0" path="res://GooseJump/Scenes/Platforms/movingPlatform.tscn" id="5_7kh67"]
+[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/GooseJump/Art/background.png" id="1_chd26"]
+[ext_resource type="PackedScene" uid="uid://c5rrjewq6dlvy" path="res://GooseJump/GooseJump/Scenes/blackhole.tscn" id="2_g8amo"]
+[ext_resource type="PackedScene" uid="uid://jy5tfrdy5m72" path="res://GooseJump/GooseJump/Scenes/Platforms/timed_platform.tscn" id="3_6jjdq"]
+[ext_resource type="PackedScene" uid="uid://b8sdit5l3qau4" path="res://GooseJump/GooseJump/Scenes/Platforms/one_jump_platform.tscn" id="4_t4m5k"]
+[ext_resource type="PackedScene" uid="uid://lswteuyjdlt0" path="res://GooseJump/GooseJump/Scenes/Platforms/movingPlatform.tscn" id="5_7kh67"]
 
 [node name="Node2D" type="Node2D"]
 

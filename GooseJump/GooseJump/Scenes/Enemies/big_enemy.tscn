@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ddtappi8pn201"]
 
-[ext_resource type="Script" uid="uid://cbl047ud7xdgi" path="res://GooseJump/Scripts/Enemy Scripts/BigEnemy.cs" id="1_frldx"]
-[ext_resource type="AudioStream" uid="uid://jcut1u6ls1di" path="res://GooseJump/Sounds/EnemyDeath.wav" id="2_ug50p"]
+[ext_resource type="Script" uid="uid://cbl047ud7xdgi" path="res://GooseJump/GooseJump/Scripts/Enemy Scripts/BigEnemy.cs" id="1_frldx"]
+[ext_resource type="AudioStream" uid="uid://jcut1u6ls1di" path="res://GooseJump/GooseJump/Sounds/EnemyDeath.wav" id="2_ug50p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iiawu"]
 size = Vector2(217, 33)

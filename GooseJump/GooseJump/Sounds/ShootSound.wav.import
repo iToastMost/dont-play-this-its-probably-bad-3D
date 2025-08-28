@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bqidkymkobjep"
-path="res://.godot/imported/ShootSound.wav-d45e7f3ed11ad9d20926f4f82aaac180.sample"
+path="res://.godot/imported/ShootSound.wav-23c69f90302cec01ae3ad8759efcbe6d.sample"
 
 [deps]
 
-source_file="res://GooseJump/Sounds/ShootSound.wav"
-dest_files=["res://.godot/imported/ShootSound.wav-d45e7f3ed11ad9d20926f4f82aaac180.sample"]
+source_file="res://GooseJump/GooseJump/Sounds/ShootSound.wav"
+dest_files=["res://.godot/imported/ShootSound.wav-23c69f90302cec01ae3ad8759efcbe6d.sample"]
 
 [params]
 

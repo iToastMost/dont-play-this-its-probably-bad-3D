@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bsgnomch7ljks"]
 
-[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/Art/background.png" id="1_8psr5"]
-[ext_resource type="PackedScene" uid="uid://lswteuyjdlt0" path="res://GooseJump/Scenes/Platforms/movingPlatform.tscn" id="2_lywl3"]
+[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/GooseJump/Art/background.png" id="1_8psr5"]
+[ext_resource type="PackedScene" uid="uid://lswteuyjdlt0" path="res://GooseJump/GooseJump/Scenes/Platforms/movingPlatform.tscn" id="2_lywl3"]
 
 [node name="Hard" type="Node2D"]
 

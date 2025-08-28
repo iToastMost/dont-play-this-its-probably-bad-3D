@@ -10,6 +10,7 @@
 albedo_color = Color(0.545098, 0.729412, 0.843137, 1)
 
 [node name="Main" type="Node3D"]
+process_mode = 3
 
 [node name="Camera1" type="Camera3D" parent="."]
 transform = Transform3D(0.197315, -0.734276, 0.649543, 0.198989, 0.678774, 0.706873, -0.959932, -0.0102248, 0.280045, -3.47325, 5.97475, -7.42137)

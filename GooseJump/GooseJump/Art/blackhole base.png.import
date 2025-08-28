@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dp3jieqvcyl6i"
-path="res://.godot/imported/blackhole base.png-c6e56e65c1879d63928138a180d386c3.ctex"
+path="res://.godot/imported/blackhole base.png-99ebcd67bb843f27531d6f32f2518273.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GooseJump/Art/blackhole base.png"
-dest_files=["res://.godot/imported/blackhole base.png-c6e56e65c1879d63928138a180d386c3.ctex"]
+source_file="res://GooseJump/GooseJump/Art/blackhole base.png"
+dest_files=["res://.godot/imported/blackhole base.png-99ebcd67bb843f27531d6f32f2518273.ctex"]
 
 [params]
 

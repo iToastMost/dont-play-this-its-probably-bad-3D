@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://crabsga4pkyd"]
 
-[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/Art/background.png" id="1_gbyig"]
-[ext_resource type="PackedScene" uid="uid://brhj2llbensot" path="res://GooseJump/Scenes/Platforms/Platform.tscn" id="2_8sqss"]
-[ext_resource type="PackedScene" uid="uid://ddtappi8pn201" path="res://GooseJump/Scenes/Enemies/big_enemy.tscn" id="3_53ll3"]
-[ext_resource type="PackedScene" uid="uid://lswteuyjdlt0" path="res://GooseJump/Scenes/Platforms/movingPlatform.tscn" id="4_8sqss"]
+[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/GooseJump/Art/background.png" id="1_gbyig"]
+[ext_resource type="PackedScene" uid="uid://brhj2llbensot" path="res://GooseJump/GooseJump/Scenes/Platforms/Platform.tscn" id="2_8sqss"]
+[ext_resource type="PackedScene" uid="uid://ddtappi8pn201" path="res://GooseJump/GooseJump/Scenes/Enemies/big_enemy.tscn" id="3_53ll3"]
+[ext_resource type="PackedScene" uid="uid://lswteuyjdlt0" path="res://GooseJump/GooseJump/Scenes/Platforms/movingPlatform.tscn" id="4_8sqss"]
 
 [node name="BigEnemyPreset" type="Node2D"]
 

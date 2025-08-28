@@ -5,6 +5,8 @@ using System.Linq;
 
 public static class SceneManager
 {
+    private static string _res = "res://GooseJump/";
+
     private static Dictionary<string, PackedScene> DifficultyPresets = new()
     {
         {"easy", ResourceLoader.Load<PackedScene>("res://GooseJump/Scenes/Presets/easy.tscn") },

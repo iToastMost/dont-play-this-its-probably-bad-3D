@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bkgius2gp7bhs"]
 
-[ext_resource type="Script" uid="uid://3v3yodu13c0u" path="res://GooseJump/Scripts/Platform Scripts/VerticalPlatform.cs" id="1_0p65s"]
+[ext_resource type="Script" uid="uid://3v3yodu13c0u" path="res://GooseJump/GooseJump/Scripts/Platform Scripts/VerticalPlatform.cs" id="1_0p65s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ccef"]
 size = Vector2(87, 20)

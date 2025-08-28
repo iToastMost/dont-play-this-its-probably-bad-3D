@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://jy5tfrdy5m72"]
 
-[ext_resource type="Script" uid="uid://bufdwwtgx6hrg" path="res://GooseJump/Scripts/Platform Scripts/TimedPlatform.cs" id="1_go4lr"]
-[ext_resource type="Texture2D" uid="uid://bd23cclb6uxe8" path="res://GooseJump/Art/Platforms/platform.png" id="2_yrvnk"]
-[ext_resource type="Texture2D" uid="uid://b6wqrh46gokkx" path="res://GooseJump/Art/Poof/poof.png" id="3_hf0w4"]
-[ext_resource type="Texture2D" uid="uid://db4xuhaaxiwjy" path="res://GooseJump/Art/Poof/poof_2.png" id="4_1ta36"]
-[ext_resource type="Texture2D" uid="uid://cd7xpwgybwt0" path="res://GooseJump/Art/Poof/poof_3.png" id="5_qjerv"]
+[ext_resource type="Script" uid="uid://bufdwwtgx6hrg" path="res://GooseJump/GooseJump/Scripts/Platform Scripts/TimedPlatform.cs" id="1_go4lr"]
+[ext_resource type="Texture2D" uid="uid://bd23cclb6uxe8" path="res://GooseJump/GooseJump/Art/Platforms/platform.png" id="2_yrvnk"]
+[ext_resource type="Texture2D" uid="uid://b6wqrh46gokkx" path="res://GooseJump/GooseJump/Art/Poof/poof.png" id="3_hf0w4"]
+[ext_resource type="Texture2D" uid="uid://db4xuhaaxiwjy" path="res://GooseJump/GooseJump/Art/Poof/poof_2.png" id="4_1ta36"]
+[ext_resource type="Texture2D" uid="uid://cd7xpwgybwt0" path="res://GooseJump/GooseJump/Art/Poof/poof_3.png" id="5_qjerv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dflga"]
 animations = [{

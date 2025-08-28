@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cl7yli1gpqry6"
-path="res://.godot/imported/gooseguy.png-52f9161c8b31ef5a62c79170ea6b5dd2.ctex"
+path="res://.godot/imported/gooseguy.png-7ac506942736fe5ff1f5254f62809073.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GooseJump/Art/gooseguy.png"
-dest_files=["res://.godot/imported/gooseguy.png-52f9161c8b31ef5a62c79170ea6b5dd2.ctex"]
+source_file="res://GooseJump/GooseJump/Art/gooseguy.png"
+dest_files=["res://.godot/imported/gooseguy.png-7ac506942736fe5ff1f5254f62809073.ctex"]
 
 [params]
 

@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://n0juct5m2aul"]
 
-[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/Art/background.png" id="1_qxwk5"]
-[ext_resource type="PackedScene" uid="uid://c5rrjewq6dlvy" path="res://GooseJump/Scenes/blackhole.tscn" id="2_43llp"]
-[ext_resource type="PackedScene" uid="uid://b8sdit5l3qau4" path="res://GooseJump/Scenes/Platforms/one_jump_platform.tscn" id="3_onwbe"]
-[ext_resource type="PackedScene" uid="uid://lswteuyjdlt0" path="res://GooseJump/Scenes/Platforms/movingPlatform.tscn" id="4_43llp"]
-[ext_resource type="PackedScene" uid="uid://w80afqggfx6s" path="res://GooseJump/Scenes/Enemies/enemy.tscn" id="5_onwbe"]
+[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/GooseJump/Art/background.png" id="1_qxwk5"]
+[ext_resource type="PackedScene" uid="uid://c5rrjewq6dlvy" path="res://GooseJump/GooseJump/Scenes/blackhole.tscn" id="2_43llp"]
+[ext_resource type="PackedScene" uid="uid://b8sdit5l3qau4" path="res://GooseJump/GooseJump/Scenes/Platforms/one_jump_platform.tscn" id="3_onwbe"]
+[ext_resource type="PackedScene" uid="uid://lswteuyjdlt0" path="res://GooseJump/GooseJump/Scenes/Platforms/movingPlatform.tscn" id="4_43llp"]
+[ext_resource type="PackedScene" uid="uid://w80afqggfx6s" path="res://GooseJump/GooseJump/Scenes/Enemies/enemy.tscn" id="5_onwbe"]
 
 [node name="BlackholeWeaving" type="Node2D"]
 

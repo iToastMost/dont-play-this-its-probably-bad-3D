@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://35ntlsmcn5n2"
-path="res://.godot/imported/Alien Man.png-2fc033e3da3a082136d28090f9009556.ctex"
+path="res://.godot/imported/Alien Man.png-4240909ee6711d0a92b6b20ac87a80cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GooseJump/Art/Alien Man.png"
-dest_files=["res://.godot/imported/Alien Man.png-2fc033e3da3a082136d28090f9009556.ctex"]
+source_file="res://GooseJump/GooseJump/Art/Alien Man.png"
+dest_files=["res://.godot/imported/Alien Man.png-4240909ee6711d0a92b6b20ac87a80cf.ctex"]
 
 [params]
 
