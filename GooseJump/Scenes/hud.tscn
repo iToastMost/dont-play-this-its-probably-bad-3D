@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfohhcfgqpxof"]
+
+[ext_resource type="Script" uid="uid://ds3ntnpoi5j8v" path="res://GooseJump/Scripts/Hud.cs" id="1_e0onf"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_e0onf"]
+action = &"start_game"
+
+[sub_resource type="Shortcut" id="Shortcut_bjfho"]
+events = [SubResource("InputEventAction_e0onf")]
+
+[node name="HUD" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_e0onf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(0, 1080)
+offset_right = 480.0
+offset_bottom = 720.0
+color = Color(0.494118, 0.564706, 0.584314, 0.890196)
+
+[node name="StartButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -199.0
+offset_right = 48.0
+offset_bottom = -168.0
+grow_horizontal = 2
+grow_vertical = 0
+shortcut = SubResource("Shortcut_bjfho")
+text = "Start Game"
+
+[node name="StartGameMessage" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -11.5
+offset_right = 40.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "Try Again?"
+
+[node name="Score" type="Label" parent="."]
+offset_right = 87.0
+offset_bottom = 31.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "0"
+horizontal_alignment = 1
+
+[node name="HighScore" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -79.5
+offset_right = 43.5
+offset_bottom = -48.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "0"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="StartButton" to="." method="OnStartButtonPressed"]

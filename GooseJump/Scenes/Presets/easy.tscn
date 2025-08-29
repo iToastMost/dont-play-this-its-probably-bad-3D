@@ -1,0 +1,236 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwtdum4tf20wl"]
+
+[ext_resource type="Script" uid="uid://c1ngseq5ufe2v" path="res://GooseJump/Scripts/Easy.cs" id="1_flpfm"]
+[ext_resource type="PackedScene" uid="uid://brhj2llbensot" path="res://GooseJump/Scenes/Platforms/Platform.tscn" id="2_1444l"]
+[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/Art/background.png" id="3_i7afh"]
+
+[sub_resource type="Curve2D" id="Curve2D_pnkhx"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 40, 35, 0, 0, 0, 0, 418, 35, 0, 0, 0, 0, 440, 34)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_1444l"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 43, 91, 0, 0, 0, 0, 432, 92)
+}
+point_count = 2
+
+[node name="Easy" type="Node2D"]
+script = ExtResource("1_flpfm")
+PlatformScene = ExtResource("2_1444l")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(240, 640)
+texture = ExtResource("3_i7afh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = -1
+offset_right = 480.0
+offset_bottom = 1280.0
+color = Color(0.815686, 0.760784, 0.509804, 1)
+
+[node name="PlatformPaths" type="Node" parent="."]
+
+[node name="PlatformPath" type="Path2D" parent="PlatformPaths"]
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath0" type="PathFollow2D" parent="PlatformPaths/PlatformPath"]
+position = Vector2(40, 35)
+
+[node name="PlatformPath1" type="Path2D" parent="PlatformPaths"]
+curve = SubResource("Curve2D_1444l")
+
+[node name="SpawnPath1" type="PathFollow2D" parent="PlatformPaths/PlatformPath1"]
+position = Vector2(43, 91)
+rotation = 0.00257069
+
+[node name="PlatformPath2" type="Path2D" parent="PlatformPaths"]
+position = Vector2(0, 106)
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath2" type="PathFollow2D" parent="PlatformPaths/PlatformPath2"]
+position = Vector2(40, 35)
+
+[node name="PlatformPath3" type="Path2D" parent="PlatformPaths"]
+position = Vector2(0, 150)
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath3" type="PathFollow2D" parent="PlatformPaths/PlatformPath3"]
+position = Vector2(40, 35)
+
+[node name="PlatformPath4" type="Path2D" parent="PlatformPaths"]
+position = Vector2(0, 204)
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath4" type="PathFollow2D" parent="PlatformPaths/PlatformPath4"]
+position = Vector2(40, 35)
+
+[node name="PlatformPath5" type="Path2D" parent="PlatformPaths"]
+position = Vector2(0, 256)
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath5" type="PathFollow2D" parent="PlatformPaths/PlatformPath5"]
+position = Vector2(40, 35)
+
+[node name="PlatformPath6" type="Path2D" parent="PlatformPaths"]
+position = Vector2(0, 305)
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath6" type="PathFollow2D" parent="PlatformPaths/PlatformPath6"]
+position = Vector2(40, 35)
+
+[node name="PlatformPath7" type="Path2D" parent="PlatformPaths"]
+position = Vector2(0, 359)
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath7" type="PathFollow2D" parent="PlatformPaths/PlatformPath7"]
+position = Vector2(40, 35)
+
+[node name="PlatformPath8" type="Path2D" parent="PlatformPaths"]
+position = Vector2(0, 411)
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath8" type="PathFollow2D" parent="PlatformPaths/PlatformPath8"]
+position = Vector2(40, 35)
+
+[node name="PlatformPath9" type="Path2D" parent="PlatformPaths"]
+position = Vector2(0, 457)
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath9" type="PathFollow2D" parent="PlatformPaths/PlatformPath9"]
+position = Vector2(40, 35)
+
+[node name="PlatformPath10" type="Path2D" parent="PlatformPaths"]
+position = Vector2(0, 511)
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath10" type="PathFollow2D" parent="PlatformPaths/PlatformPath10"]
+position = Vector2(40, 35)
+
+[node name="PlatformPath11" type="Path2D" parent="PlatformPaths"]
+position = Vector2(0, 563)
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath11" type="PathFollow2D" parent="PlatformPaths/PlatformPath11"]
+position = Vector2(40, 35)
+
+[node name="PlatformPath12" type="Path2D" parent="PlatformPaths"]
+position = Vector2(0, 608)
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath12" type="PathFollow2D" parent="PlatformPaths/PlatformPath12"]
+position = Vector2(40, 35)
+
+[node name="PlatformPath13" type="Path2D" parent="PlatformPaths"]
+position = Vector2(0, 660)
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath13" type="PathFollow2D" parent="PlatformPaths/PlatformPath13"]
+position = Vector2(40, 35)
+
+[node name="PlatformPath14" type="Path2D" parent="PlatformPaths"]
+position = Vector2(0, 700)
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath14" type="PathFollow2D" parent="PlatformPaths/PlatformPath14"]
+position = Vector2(40, 35)
+
+[node name="PlatformPath15" type="Path2D" parent="PlatformPaths"]
+position = Vector2(0, 740)
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath15" type="PathFollow2D" parent="PlatformPaths/PlatformPath15"]
+position = Vector2(40, 35)
+
+[node name="PlatformPath16" type="Path2D" parent="PlatformPaths"]
+position = Vector2(0, 780)
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath16" type="PathFollow2D" parent="PlatformPaths/PlatformPath16"]
+position = Vector2(40, 35)
+
+[node name="PlatformPath17" type="Path2D" parent="PlatformPaths"]
+position = Vector2(0, 820)
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath17" type="PathFollow2D" parent="PlatformPaths/PlatformPath17"]
+position = Vector2(40, 35)
+
+[node name="PlatformPath18" type="Path2D" parent="PlatformPaths"]
+position = Vector2(0, 860)
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath18" type="PathFollow2D" parent="PlatformPaths/PlatformPath18"]
+position = Vector2(40, 35)
+
+[node name="PlatformPath19" type="Path2D" parent="PlatformPaths"]
+position = Vector2(0, 900)
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath19" type="PathFollow2D" parent="PlatformPaths/PlatformPath19"]
+position = Vector2(40, 35)
+
+[node name="PlatformPath20" type="Path2D" parent="PlatformPaths"]
+position = Vector2(0, 940)
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath20" type="PathFollow2D" parent="PlatformPaths/PlatformPath20"]
+position = Vector2(40, 35)
+
+[node name="PlatformPath21" type="Path2D" parent="PlatformPaths"]
+position = Vector2(0, 980)
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath21" type="PathFollow2D" parent="PlatformPaths/PlatformPath21"]
+position = Vector2(40, 35)
+
+[node name="PlatformPath22" type="Path2D" parent="PlatformPaths"]
+position = Vector2(0, 1012)
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath22" type="PathFollow2D" parent="PlatformPaths/PlatformPath22"]
+position = Vector2(40, 35)
+
+[node name="PlatformPath23" type="Path2D" parent="PlatformPaths"]
+position = Vector2(0, 1044)
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath23" type="PathFollow2D" parent="PlatformPaths/PlatformPath23"]
+position = Vector2(40, 35)
+
+[node name="PlatformPath24" type="Path2D" parent="PlatformPaths"]
+position = Vector2(0, 1084)
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath24" type="PathFollow2D" parent="PlatformPaths/PlatformPath24"]
+position = Vector2(40, 35)
+
+[node name="PlatformPath25" type="Path2D" parent="PlatformPaths"]
+position = Vector2(0, 1124)
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath25" type="PathFollow2D" parent="PlatformPaths/PlatformPath25"]
+position = Vector2(40, 35)
+
+[node name="PlatformPath26" type="Path2D" parent="PlatformPaths"]
+position = Vector2(0, 1164)
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath26" type="PathFollow2D" parent="PlatformPaths/PlatformPath26"]
+position = Vector2(40, 35)
+
+[node name="PlatformPath27" type="Path2D" parent="PlatformPaths"]
+position = Vector2(0, 1204)
+curve = SubResource("Curve2D_pnkhx")
+
+[node name="SpawnPath27" type="PathFollow2D" parent="PlatformPaths/PlatformPath27"]
+position = Vector2(40, 35)
+
+[node name="BottomOfLevel" type="Marker2D" parent="."]
+position = Vector2(0, 1280)
+
+[node name="NextLevelSpawn" type="Marker2D" parent="."]
+position = Vector2(0, -1280)

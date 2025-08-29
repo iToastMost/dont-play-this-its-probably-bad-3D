@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://n0juct5m2aul"]
+
+[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/Art/background.png" id="1_qxwk5"]
+[ext_resource type="PackedScene" uid="uid://c5rrjewq6dlvy" path="res://GooseJump/Scenes/blackhole.tscn" id="2_43llp"]
+[ext_resource type="PackedScene" uid="uid://b8sdit5l3qau4" path="res://GooseJump/Scenes/Platforms/one_jump_platform.tscn" id="3_onwbe"]
+[ext_resource type="PackedScene" uid="uid://lswteuyjdlt0" path="res://GooseJump/Scenes/Platforms/movingPlatform.tscn" id="4_43llp"]
+[ext_resource type="PackedScene" uid="uid://w80afqggfx6s" path="res://GooseJump/Scenes/Enemies/enemy.tscn" id="5_onwbe"]
+
+[node name="BlackholeWeaving" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(240, 640)
+texture = ExtResource("1_qxwk5")
+
+[node name="Blackhole" parent="." instance=ExtResource("2_43llp")]
+position = Vector2(116, 937)
+
+[node name="Blackhole2" parent="." instance=ExtResource("2_43llp")]
+position = Vector2(354, 688)
+
+[node name="Blackhole3" parent="." instance=ExtResource("2_43llp")]
+position = Vector2(120, 409)
+
+[node name="Blackhole4" parent="." instance=ExtResource("2_43llp")]
+position = Vector2(354, 187)
+
+[node name="OneJumpPlatform" parent="." instance=ExtResource("3_onwbe")]
+position = Vector2(327, 923)
+
+[node name="OneJumpPlatform2" parent="." instance=ExtResource("3_onwbe")]
+position = Vector2(197, 797)
+
+[node name="OneJumpPlatform3" parent="." instance=ExtResource("3_onwbe")]
+position = Vector2(77, 688)
+
+[node name="OneJumpPlatform4" parent="." instance=ExtResource("3_onwbe")]
+position = Vector2(209, 520)
+
+[node name="OneJumpPlatform5" parent="." instance=ExtResource("3_onwbe")]
+position = Vector2(318, 373)
+
+[node name="OneJumpPlatform6" parent="." instance=ExtResource("3_onwbe")]
+position = Vector2(175, 238)
+
+[node name="OneJumpPlatform7" parent="." instance=ExtResource("3_onwbe")]
+position = Vector2(63, 117)
+
+[node name="Blackhole5" parent="." instance=ExtResource("2_43llp")]
+position = Vector2(354, 1190)
+
+[node name="OneJumpPlatform8" parent="." instance=ExtResource("3_onwbe")]
+position = Vector2(45, 1192)
+
+[node name="OneJumpPlatform9" parent="." instance=ExtResource("3_onwbe")]
+position = Vector2(196, 1057)
+
+[node name="MovingPlatform" parent="." instance=ExtResource("4_43llp")]
+position = Vector2(213, 1259)
+
+[node name="MovingPlatform2" parent="." instance=ExtResource("4_43llp")]
+position = Vector2(211, 3)
+
+[node name="Enemy" parent="." instance=ExtResource("5_onwbe")]
+position = Vector2(107, 653)
+
+[node name="Enemy2" parent="." instance=ExtResource("5_onwbe")]
+position = Vector2(353, 338)
+
+[node name="Enemy3" parent="." instance=ExtResource("5_onwbe")]
+position = Vector2(362, 894)
+
+[node name="Enemy4" parent="." instance=ExtResource("5_onwbe")]
+position = Vector2(96, 84)
+
+[node name="Enemy5" parent="." instance=ExtResource("5_onwbe")]
+position = Vector2(83, 1157)

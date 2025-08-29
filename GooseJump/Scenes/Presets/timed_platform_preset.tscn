@@ -1,0 +1,149 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg7g423gaj0vs"]
+
+[ext_resource type="PackedScene" uid="uid://jy5tfrdy5m72" path="res://GooseJump/Scenes/Platforms/timed_platform.tscn" id="1_26vll"]
+[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/Art/background.png" id="2_3hw0a"]
+
+[node name="TimedPlatformPreset" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(240, 640)
+texture = ExtResource("2_3hw0a")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = -1
+custom_minimum_size = Vector2(0, 1280)
+offset_right = 480.0
+offset_bottom = 720.0
+color = Color(0.815686, 0.760784, 0.509804, 1)
+
+[node name="TimedPlatforms" type="Node" parent="."]
+
+[node name="TimedPlatform" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(104, 1228)
+timeRangeStart = 10.0
+
+[node name="TimedPlatform2" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(252, 1146)
+timeRangeStart = 10.0
+
+[node name="TimedPlatform3" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(130, 1058)
+timeRangeStart = 10.0
+
+[node name="TimedPlatform4" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(132, 957)
+timeRangeStart = 10.0
+
+[node name="TimedPlatform5" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(71, 865)
+timeRangeStart = 10.0
+
+[node name="TimedPlatform6" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(157, 793)
+timeRangeStart = 10.0
+
+[node name="TimedPlatform7" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(258, 697)
+timeRangeStart = 10.0
+
+[node name="TimedPlatform8" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(361, 595)
+timeRangeStart = 10.0
+
+[node name="TimedPlatform9" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(215, 512)
+timeRangeStart = 10.0
+
+[node name="TimedPlatform10" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(74, 431)
+timeRangeStart = 10.0
+
+[node name="TimedPlatform11" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(130, 314)
+timeRangeStart = 10.0
+
+[node name="TimedPlatform12" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(199, 241)
+timeRangeStart = 10.0
+
+[node name="TimedPlatform13" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(84, 137)
+timeRangeStart = 10.0
+
+[node name="TimedPlatform14" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(204, 58)
+timeRangeStart = 10.0
+
+[node name="TimedPlatform15" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(31, 1140)
+timeRangeEnd = 5.0
+
+[node name="TimedPlatform16" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(328, 1245)
+timeRangeEnd = 5.0
+
+[node name="TimedPlatform17" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(374, 1153)
+timeRangeEnd = 5.0
+
+[node name="TimedPlatform18" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(266, 1077)
+timeRangeEnd = 5.0
+
+[node name="TimedPlatform19" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(149, 1009)
+timeRangeEnd = 5.0
+
+[node name="TimedPlatform20" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(10, 966)
+timeRangeEnd = 5.0
+
+[node name="TimedPlatform21" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(263, 919)
+timeRangeEnd = 5.0
+
+[node name="TimedPlatform22" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(343, 842)
+timeRangeEnd = 5.0
+
+[node name="TimedPlatform23" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(78, 741)
+timeRangeEnd = 5.0
+
+[node name="TimedPlatform24" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(113, 643)
+timeRangeEnd = 5.0
+
+[node name="TimedPlatform25" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(95, 524)
+timeRangeEnd = 5.0
+
+[node name="TimedPlatform26" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(391, 518)
+timeRangeEnd = 5.0
+
+[node name="TimedPlatform27" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(356, 404)
+timeRangeEnd = 5.0
+
+[node name="TimedPlatform28" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(243, 383)
+timeRangeEnd = 5.0
+
+[node name="TimedPlatform29" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(364, 246)
+timeRangeEnd = 5.0
+
+[node name="TimedPlatform30" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(66, 248)
+timeRangeEnd = 5.0
+
+[node name="TimedPlatform31" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(279, 130)
+timeRangeEnd = 5.0
+
+[node name="TimedPlatform32" parent="." instance=ExtResource("1_26vll")]
+position = Vector2(67, 44)
+timeRangeEnd = 5.0

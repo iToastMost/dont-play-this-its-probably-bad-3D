@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://60d70rbuc1vj"]
+[gd_scene load_steps=9 format=3 uid="uid://60d70rbuc1vj"]
 
 [ext_resource type="PackedScene" uid="uid://dw1iwrueqi45l" path="res://Scenes/camera_switcher.tscn" id="1_tmlao"]
 [ext_resource type="Material" uid="uid://cwe2nt3ymoi18" path="res://new_standard_material_3d.tres" id="2_b32mp"]
@@ -8,6 +8,10 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lquwl"]
 albedo_color = Color(0.545098, 0.729412, 0.843137, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bu4nf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tb272"]
 
 [node name="Main" type="Node3D"]
 process_mode = 3
@@ -171,6 +175,18 @@ height = 0.154785
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.226039, 0.713563, -0.0321636)
 size = Vector3(0.332031, 0.794922, 0.73291)
 
+[node name="Door" type="CSGBox3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.351703, 2.24094, 4.70688)
+material_override = ExtResource("2_b32mp")
+material_overlay = ExtResource("2_b32mp")
+size = Vector3(0.287598, 5.4682, 2.3623)
+material = SubResource("StandardMaterial3D_bu4nf")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Environment/Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.203615, 0.00313187, -1.09421)
+radius = 0.0567326
+material = SubResource("StandardMaterial3D_tb272")
+
 [node name="3DPlayer" parent="." instance=ExtResource("3_bu4nf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.08351, 1.35746, -7.49732)
 
@@ -195,9 +211,23 @@ visible = false
 dialogText = "Not even washing your hands either? What is wrong with you?"
 
 [node name="DialogTrigger3" parent="." instance=ExtResource("5_bu4nf")]
+process_mode = 3
 transform = Transform3D(-0.0230363, 0, -0.999735, 0, 1, 0, 0.999735, 0, -0.0230363, -6.71534, 1.13557, -7.48592)
 visible = false
-dialogText = "Are you just playing BiPod games in there again?"
+dialogText = "Are you just playing BiPod games in there again? I'm going to tell Terry this time."
+
+[node name="CameraSwitcher3" parent="." node_paths=PackedStringArray("_currentCamera") instance=ExtResource("1_tmlao")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.02565, 0.875864, -0.444331)
+visible = false
+_currentCamera = NodePath("../Camera3")
+
+[node name="Camera3" type="Camera3D" parent="."]
+transform = Transform3D(-0.542475, 0.397035, -0.740327, 0, 0.881267, 0.47262, 0.840072, 0.256384, -0.478065, -8.43878, 7.84705, 0.0301504)
+
+[node name="CameraSwitcher4" parent="." node_paths=PackedStringArray("_currentCamera") instance=ExtResource("1_tmlao")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.02783, 0.851748, -1.82588)
+visible = false
+_currentCamera = NodePath("../Camera2")
 
 [connection signal="MySignalWithArgument" from="DialogTrigger" to="UI" method="UpdateText"]
 [connection signal="PreventMovement" from="DialogTrigger" to="3DPlayer" method="DisableMovement"]

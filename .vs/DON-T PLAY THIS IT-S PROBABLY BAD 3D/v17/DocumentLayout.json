@@ -7,10 +7,6 @@
       "RelativeMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|solutionrelative:scripts\\playerre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Chevr\\Desktop\\Godot\\projects\\DON\u0027T PLAY THIS IT\u0027S PROBABLY BAD 3D\\dont-play-this-its-probably-bad-3D\\Scripts\\Ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\Ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|c:\\users\\chevr\\desktop\\godot\\projects\\don\u0027t play this it\u0027s probably bad 3d\\dont-play-this-its-probably-bad-3d\\scripts\\dialogtrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|solutionrelative:scripts\\dialogtrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -20,6 +16,10 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Chevr\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\GooseJump\\Scripts\\SceneManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|c:\\users\\chevr\\desktop\\godot\\projects\\don\u0027t play this it\u0027s probably bad 3d\\dont-play-this-its-probably-bad-3d\\scripts\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|solutionrelative:scripts\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -33,7 +33,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "CameraSwitcher.cs",
               "DocumentMoniker": "C:\\Users\\Chevr\\Desktop\\Godot\\projects\\DON\u0027T PLAY THIS IT\u0027S PROBABLY BAD 3D\\dont-play-this-its-probably-bad-3D\\Scripts\\CameraSwitcher.cs",
               "RelativeDocumentMoniker": "Scripts\\CameraSwitcher.cs",
@@ -41,12 +41,11 @@
               "RelativeToolTip": "Scripts\\CameraSwitcher.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-27T01:28:10.077Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-27T01:28:10.077Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "DialogTrigger.cs",
               "DocumentMoniker": "C:\\Users\\Chevr\\Desktop\\Godot\\projects\\DON\u0027T PLAY THIS IT\u0027S PROBABLY BAD 3D\\dont-play-this-its-probably-bad-3D\\Scripts\\DialogTrigger.cs",
               "RelativeDocumentMoniker": "Scripts\\DialogTrigger.cs",
@@ -54,12 +53,11 @@
               "RelativeToolTip": "Scripts\\DialogTrigger.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-27T01:18:35.073Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-27T01:18:35.073Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Ui.cs",
               "DocumentMoniker": "C:\\Users\\Chevr\\Desktop\\Godot\\projects\\DON\u0027T PLAY THIS IT\u0027S PROBABLY BAD 3D\\dont-play-this-its-probably-bad-3D\\Scripts\\Ui.cs",
               "RelativeDocumentMoniker": "Scripts\\Ui.cs",
@@ -67,12 +65,11 @@
               "RelativeToolTip": "Scripts\\Ui.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-27T01:12:47.125Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-27T01:12:47.125Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "SceneManager.cs",
               "DocumentMoniker": "C:\\Users\\Chevr\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\GooseJump\\Scripts\\SceneManager.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\GooseJump\\Scripts\\SceneManager.cs",
@@ -90,7 +87,7 @@
               "RelativeDocumentMoniker": "Scripts\\PlayerRE.cs",
               "ToolTip": "C:\\Users\\Chevr\\Desktop\\Godot\\projects\\DON\u0027T PLAY THIS IT\u0027S PROBABLY BAD 3D\\dont-play-this-its-probably-bad-3D\\Scripts\\PlayerRE.cs",
               "RelativeToolTip": "Scripts\\PlayerRE.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAgAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-24T01:27:02.705Z",
               "EditorCaption": ""

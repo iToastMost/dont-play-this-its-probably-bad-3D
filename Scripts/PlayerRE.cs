@@ -19,19 +19,27 @@ public partial class PlayerRE : CharacterBody3D
     private AnimationPlayer _phoneAnimation;
     private bool _phoneVisible = false;
     private bool _canMove = true;
+    private bool _3DStarted = false;
     Node GooseScene;
+    CharacterBody3D player;
+    CollisionShape3D playerCollider;
+    ColorRect colorRect;
     public override void _Ready()
     {
+        colorRect = GetNode<ColorRect>("SubViewportContainer/CanvasLayer/ColorRect");
+        playerCollider = GetNode<CollisionShape3D>("CollisionShape3D");
+        playerCollider.Disabled = true;
+        _canMove = false;
+
         _phoneAnimation = GetNode<AnimationPlayer>("SubViewportContainer/AnimationPlayer");
         _subViewport = GetNode<SubViewport>("SubViewportContainer/SubViewport");
         _gooseJumpScene = ResourceLoader.Load<PackedScene>("res://GooseJump/Scenes/main.tscn");
 
-        //_phoneVisible = true;
         if (GooseScene == null)
         {
             GooseScene = _gooseJumpScene.Instantiate();
-            _subViewport.AddChild(GooseScene);
             GooseScene.Connect("GameStart", new Callable(this, nameof(OnStart)));
+            _subViewport.AddChild(GooseScene);
         }
     }
 
@@ -44,7 +52,7 @@ public partial class PlayerRE : CharacterBody3D
         }
         else 
         {
-            if (Input.IsActionJustPressed("accept_dialog")) 
+            if (Input.IsActionJustPressed("accept_dialog") && _3DStarted == true) 
             {
                 _canMove = true;
             }
@@ -96,8 +104,8 @@ public partial class PlayerRE : CharacterBody3D
             {
                 //_subViewportContainer.Visible = false;
                 _phoneVisible = false;
-                _phoneAnimation.CurrentAnimation = "slide_in";
-                _phoneAnimation.PlayBackwards();
+                _phoneAnimation.CurrentAnimation = "slide_out";
+                _phoneAnimation.Play();
                 
                 
                 //GooseScene.QueueFree();
@@ -107,12 +115,12 @@ public partial class PlayerRE : CharacterBody3D
             {
                 //_subViewportContainer.Visible = true;
                 _phoneVisible = true;
-                //if(GooseScene == null) 
-                //{
-                    //GooseScene = _gooseJumpScene.Instantiate();
-                    //_subViewport.AddChild(GooseScene);
+                if(GooseScene == null) 
+                {
+                    GooseScene = _gooseJumpScene.Instantiate();
+                    _subViewport.AddChild(GooseScene);
                     //GooseScene.Connect("GameStart", new Callable(this, nameof(OnStart)));
-                //}
+                }
                 //GooseScene = _gooseJumpScene.Instantiate();
                 //_subViewport.AddChild(GooseScene);
                 _phoneAnimation.CurrentAnimation = "slide_in";
@@ -146,5 +154,23 @@ public partial class PlayerRE : CharacterBody3D
     public void OnStart() 
     {
         GD.Print("Start 3D game");
+        _3DStarted = true;
+        _phoneVisible = false;
+        _phoneAnimation.CurrentAnimation = "slide_out";
+        _phoneAnimation.Play();
+        playerCollider.Disabled = false;
+    }
+
+    public void AnimationFinished(StringName animName) 
+    {
+        if (animName.Equals("slide_out")) 
+        {
+            GD.Print("anim finished");
+            GooseScene.QueueFree();
+            GooseScene = null;
+            GetTree().Paused = false;
+            colorRect.Visible = false;
+        }
+        
     }
 }

@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6d1qvicurfg7"]
+
+[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/Art/background.png" id="1_2cgjo"]
+[ext_resource type="PackedScene" uid="uid://4bq6liff23vu" path="res://GooseJump/Scenes/Platforms/invisible_platform.tscn" id="2_epgqw"]
+[ext_resource type="PackedScene" uid="uid://brhj2llbensot" path="res://GooseJump/Scenes/Platforms/Platform.tscn" id="3_r576p"]
+
+[node name="InvisiblePlatformPreset" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(240, 640)
+texture = ExtResource("1_2cgjo")
+
+[node name="InvisiblePlatform" parent="." node_paths=PackedStringArray("NextInvisiblePlatform") instance=ExtResource("2_epgqw")]
+position = Vector2(50, 845)
+NextInvisiblePlatform = NodePath("../InvisiblePlatform2")
+_isVisible = true
+
+[node name="InvisiblePlatform2" parent="." node_paths=PackedStringArray("NextInvisiblePlatform") instance=ExtResource("2_epgqw")]
+position = Vector2(198, 736)
+NextInvisiblePlatform = NodePath("../InvisiblePlatform3")
+
+[node name="InvisiblePlatform3" parent="." node_paths=PackedStringArray("NextInvisiblePlatform") instance=ExtResource("2_epgqw")]
+position = Vector2(40, 611)
+NextInvisiblePlatform = NodePath("../InvisiblePlatform4")
+
+[node name="InvisiblePlatform4" parent="." node_paths=PackedStringArray("NextInvisiblePlatform") instance=ExtResource("2_epgqw")]
+position = Vector2(177, 495)
+NextInvisiblePlatform = NodePath("../InvisiblePlatform5")
+
+[node name="InvisiblePlatform5" parent="." node_paths=PackedStringArray("NextInvisiblePlatform") instance=ExtResource("2_epgqw")]
+position = Vector2(342, 388)
+NextInvisiblePlatform = NodePath("../InvisiblePlatform6")
+
+[node name="InvisiblePlatform6" parent="." node_paths=PackedStringArray("NextInvisiblePlatform") instance=ExtResource("2_epgqw")]
+position = Vector2(152, 287)
+NextInvisiblePlatform = NodePath("../InvisiblePlatform7")
+
+[node name="InvisiblePlatform7" parent="." node_paths=PackedStringArray("NextInvisiblePlatform") instance=ExtResource("2_epgqw")]
+position = Vector2(20, 140)
+NextInvisiblePlatform = NodePath("../InvisiblePlatform8")
+
+[node name="InvisiblePlatform8" parent="." instance=ExtResource("2_epgqw")]
+position = Vector2(208, 25)
+
+[node name="Platform" parent="." instance=ExtResource("3_r576p")]
+position = Vector2(61, 1216)
+
+[node name="Platform2" parent="." instance=ExtResource("3_r576p")]
+position = Vector2(181, 1104)
+
+[node name="Platform3" parent="." instance=ExtResource("3_r576p")]
+position = Vector2(80, 992)

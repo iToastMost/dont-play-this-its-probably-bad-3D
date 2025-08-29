@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://caq7airf6j5tp"]
+
+[ext_resource type="Texture2D" uid="uid://cku1tisf72vct" path="res://GooseJump/Art/background.png" id="1_cjdd2"]
+[ext_resource type="PackedScene" uid="uid://brhj2llbensot" path="res://GooseJump/Scenes/Platforms/Platform.tscn" id="2_0t13i"]
+[ext_resource type="PackedScene" uid="uid://b2s8nhkxxa2ds" path="res://GooseJump/Scenes/PowerUps/spring.tscn" id="3_wc7mv"]
+
+[node name="SpringFlingOpposite" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(240, 640)
+texture = ExtResource("1_cjdd2")
+
+[node name="Platform" parent="." instance=ExtResource("2_0t13i")]
+position = Vector2(416, 1248)
+
+[node name="Platform2" parent="." instance=ExtResource("2_0t13i")]
+position = Vector2(416, 30)
+
+[node name="Platform3" parent="." instance=ExtResource("2_0t13i")]
+position = Vector2(30, 763)
+
+[node name="Spring" parent="." instance=ExtResource("3_wc7mv")]
+position = Vector2(414, 1239)
+
+[node name="Spring2" parent="." instance=ExtResource("3_wc7mv")]
+position = Vector2(411, 26)
+
+[node name="Spring3" parent="." instance=ExtResource("3_wc7mv")]
+position = Vector2(63, 756)

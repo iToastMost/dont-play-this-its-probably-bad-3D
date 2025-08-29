@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://b2s8nhkxxa2ds"]
+
+[ext_resource type="Script" uid="uid://cr25k46dddu1f" path="res://GooseJump/Scripts/PowerUp Scripts/Spring.cs" id="1_nv7ci"]
+[ext_resource type="Texture2D" uid="uid://bklb7uloyr5g2" path="res://GooseJump/Art/spring.png" id="2_uan2u"]
+[ext_resource type="Texture2D" uid="uid://bykxsksjola6c" path="res://GooseJump/Art/spring2.png" id="3_jl5iy"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ka4py"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ie264"]
+size = Vector2(46, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_osvhu"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("2_uan2u")
+}, {
+"duration": 2.5,
+"texture": ExtResource("3_jl5iy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_uan2u")
+}],
+"loop": false,
+"name": &"spring",
+"speed": 6.0
+}]
+
+[node name="Spring" type="Area2D"]
+collision_layer = 32
+script = ExtResource("1_nv7ci")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+visible = false
+modulate = Color(0.111197, 0.111197, 0.111197, 1)
+position = Vector2(-0.5, 0)
+scale = Vector2(19, 12)
+mesh = SubResource("BoxMesh_ka4py")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ie264")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -0.5)
+scale = Vector2(1, 0.45)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, -19)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_osvhu")
+animation = &"spring"
+frame = 2
+frame_progress = 1.0
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="OnVisibleOnScreenNotifier2DScreenExited"]
