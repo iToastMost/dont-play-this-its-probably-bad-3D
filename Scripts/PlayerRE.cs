@@ -28,19 +28,23 @@ public partial class PlayerRE : CharacterBody3D
     {
         colorRect = GetNode<ColorRect>("SubViewportContainer/CanvasLayer/ColorRect");
         playerCollider = GetNode<CollisionShape3D>("CollisionShape3D");
-        playerCollider.Disabled = true;
-        _canMove = false;
+        playerCollider.Disabled = false;
 
         _phoneAnimation = GetNode<AnimationPlayer>("SubViewportContainer/AnimationPlayer");
         _subViewport = GetNode<SubViewport>("SubViewportContainer/SubViewport");
         _gooseJumpScene = ResourceLoader.Load<PackedScene>("res://GooseJump/Scenes/main.tscn");
 
-        if (GooseScene == null)
-        {
-            GooseScene = _gooseJumpScene.Instantiate();
-            GooseScene.Connect("GameStart", new Callable(this, nameof(OnStart)));
-            _subViewport.AddChild(GooseScene);
-        }
+        
+        //Uncomment below code and switch _canMove and _3DStarted to false to start with GooseJump game
+
+        _canMove = true;
+        _3DStarted = true;
+        //if (GooseScene == null)
+        //{
+        //GooseScene = _gooseJumpScene.Instantiate();
+        //GooseScene.Connect("GameStart", new Callable(this, nameof(OnStart)));
+        //_subViewport.AddChild(GooseScene);
+        //}
     }
 
     public override void _PhysicsProcess(double delta)

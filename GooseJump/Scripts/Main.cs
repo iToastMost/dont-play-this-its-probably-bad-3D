@@ -96,7 +96,7 @@ public partial class Main : Node
         _deathCount++;
         //await Task.Delay(TimeSpan.FromSeconds(_timeUntilPause));
         GetTree().Paused = true;
-        if (_deathCount >= 1 || _score > 30000) 
+        if (_deathCount >= 3 || _score > 25000) 
         {
             _3Dstarted = true;
             //starts 3D game
