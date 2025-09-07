@@ -28,15 +28,15 @@ public partial class PlayerRE : CharacterBody3D
     {
         colorRect = GetNode<ColorRect>("SubViewportContainer/CanvasLayer/ColorRect");
         playerCollider = GetNode<CollisionShape3D>("CollisionShape3D");
-        playerCollider.Disabled = false;
 
         _phoneAnimation = GetNode<AnimationPlayer>("SubViewportContainer/AnimationPlayer");
         _subViewport = GetNode<SubViewport>("SubViewportContainer/SubViewport");
         _gooseJumpScene = ResourceLoader.Load<PackedScene>("res://GooseJump/Scenes/main.tscn");
 
-        
+
         //Uncomment below code and switch _canMove and _3DStarted to false to start with GooseJump game
 
+        playerCollider.Disabled = false;
         _canMove = true;
         _3DStarted = true;
         //if (GooseScene == null)

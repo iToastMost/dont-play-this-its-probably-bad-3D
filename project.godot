@@ -24,6 +24,10 @@ window/size/viewport_height=1080
 
 project/assembly_name="DON-T PLAY THIS IT-S PROBABLY BAD 3D"
 
+[global_group]
+
+Interactable="Objects interactable by the player. For example, doors, buttons, computers, items etc."
+
 [input]
 
 walk_forward={
