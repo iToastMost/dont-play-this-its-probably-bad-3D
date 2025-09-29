@@ -1,0 +1,230 @@
+[gd_scene load_steps=7 format=3 uid="uid://cl2l2owbnqg6y"]
+
+[ext_resource type="Material" uid="uid://cwe2nt3ymoi18" path="res://new_standard_material_3d.tres" id="1_7jvgh"]
+[ext_resource type="PackedScene" uid="uid://dw1iwrueqi45l" path="res://Scenes/camera_switcher.tscn" id="2_6mhwe"]
+[ext_resource type="PackedScene" uid="uid://bj0fflqe1ib4u" path="res://Scenes/dialog_trigger.tscn" id="3_6cnf1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p3bkm"]
+albedo_color = Color(0.545098, 0.729412, 0.843137, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6mhwe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6cnf1"]
+
+[node name="Bathroom Scene" type="Node3D"]
+
+[node name="Bathroom" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.42549, 5.54307, -1.20066)
+use_collision = true
+flip_faces = true
+size = Vector3(8.16171, 10.8189, 14.8462)
+
+[node name="Stall" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Stall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.67807, 2.46054, -6.03853)
+material_override = ExtResource("1_7jvgh")
+use_collision = true
+size = Vector3(4, 4.58327, 0.301758)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Stall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.74034, 2.4434, -3.45292)
+material_override = ExtResource("1_7jvgh")
+use_collision = true
+size = Vector3(4, 4.58327, 0.301758)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Stall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.74034, 2.4434, -0.359785)
+material_override = ExtResource("1_7jvgh")
+use_collision = true
+size = Vector3(4, 4.58327, 0.301758)
+
+[node name="Stall Door" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Stall Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.69869, 2.45811, -1.89943)
+material_override = ExtResource("1_7jvgh")
+use_collision = true
+size = Vector3(0.131836, 4.37643, 2.81635)
+
+[node name="Stall Door2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.15489, -0.0123534, 0.00512695)
+visible = false
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Stall Door2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.55542, 2.48493, -4.99657)
+size = Vector3(0.131836, 4.37643, 2.81635)
+material = ExtResource("1_7jvgh")
+
+[node name="Stall Door3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.15489, -0.0123534, 0.00512695)
+visible = false
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Stall Door3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.55542, 2.48493, -7.60314)
+size = Vector3(0.131836, 4.37643, 2.81635)
+material = ExtResource("1_7jvgh")
+
+[node name="Sink" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Sink"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.47642, 0.82109, 3.00983)
+material_override = SubResource("StandardMaterial3D_p3bkm")
+use_collision = true
+size = Vector3(2.35645, 1.39294, 6.39966)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Sink/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.103096, 0.650764, 1.65186)
+operation = 2
+radius = 0.986816
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="Sink/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.112657, 0.677529, -1.49202)
+operation = 2
+radius = 1.00696
+
+[node name="Mirror" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mirror"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.39291, 3.12015, 1.42766)
+use_collision = true
+size = Vector3(0.0771484, 3.13953, 3)
+
+[node name="Mirror2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.239981, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mirror2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.63263, 3.12756, 4.52995)
+size = Vector3(0.0771484, 3.13953, 3)
+
+[node name="Divider" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Divider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00516, 2.48986, -2.82774)
+use_collision = true
+size = Vector3(1.33838, 2.85791, 0.0639648)
+material = ExtResource("1_7jvgh")
+
+[node name="Divider2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.89934, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Divider2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.93528, 2.38918, -5.85542)
+use_collision = true
+size = Vector3(1.33838, 2.85791, 0.0639648)
+material = ExtResource("1_7jvgh")
+
+[node name="Divider3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.89934, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Divider3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.93528, 2.38918, 0.188704)
+use_collision = true
+size = Vector3(1.33838, 2.85791, 0.0639648)
+material = ExtResource("1_7jvgh")
+
+[node name="Toilet" type="Node3D" parent="."]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Toilet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.11207, 0.606743, -7.4228)
+use_collision = true
+radius = 0.274414
+height = 0.581299
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Toilet/CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0898576, 0.301875, -0.0142665)
+radius = 0.37207
+height = 0.154785
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Toilet/CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.226039, 0.713563, -0.0321636)
+size = Vector3(0.332031, 0.794922, 0.73291)
+
+[node name="Toilet2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.042212, 2.43264)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Toilet2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.11207, 0.606743, -7.4228)
+use_collision = true
+radius = 0.274414
+height = 0.581299
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Toilet2/CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0898576, 0.301875, -0.0142665)
+radius = 0.37207
+height = 0.154785
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Toilet2/CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.226039, 0.713563, -0.0321636)
+size = Vector3(0.332031, 0.794922, 0.73291)
+
+[node name="Door" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.351703, 2.24094, 4.70688)
+material_override = ExtResource("1_7jvgh")
+material_overlay = ExtResource("1_7jvgh")
+size = Vector3(0.287598, 5.4682, 2.3623)
+material = SubResource("StandardMaterial3D_6mhwe")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.203615, 0.00313187, -1.09421)
+radius = 0.0567326
+material = SubResource("StandardMaterial3D_6cnf1")
+
+[node name="Cameras" type="Node" parent="."]
+
+[node name="Camera1" type="Camera3D" parent="Cameras"]
+transform = Transform3D(0.197315, -0.734276, 0.649543, 0.198989, 0.678774, 0.706873, -0.959932, -0.0102249, 0.280045, -3.47325, 5.97475, -7.42137)
+
+[node name="Camera2" type="Camera3D" parent="Cameras"]
+transform = Transform3D(0.926173, -0.270794, 0.26244, 0, 0.695943, 0.718097, -0.3771, -0.665082, 0.644563, -0.631926, 9.669, 5.20204)
+
+[node name="Camera3" type="Camera3D" parent="Cameras"]
+transform = Transform3D(-0.0182075, -0.833633, -0.552018, -0.0166414, -0.55178, 0.833824, -0.999696, 0.0243682, -0.00382634, -8.43878, 7.84705, 0.0301504)
+
+[node name="CameraSwitchers" type="Node" parent="."]
+
+[node name="CameraSwitcher" parent="CameraSwitchers" node_paths=PackedStringArray("_currentCamera") instance=ExtResource("2_6mhwe")]
+transform = Transform3D(-0.0686073, 0, -0.997644, 0, 1, 0, 0.997644, 0, -0.0686073, -4.9338, 1.39705, -7.32789)
+visible = false
+_currentCamera = NodePath("../../Cameras/Camera1")
+
+[node name="CameraSwitcher2" parent="CameraSwitchers" node_paths=PackedStringArray("_currentCamera") instance=ExtResource("2_6mhwe")]
+transform = Transform3D(0.0536258, 0, 0.998561, 0, 1, 0, -0.998561, 0, 0.0536258, -3.95558, 0.755202, -7.33214)
+visible = false
+_currentCamera = NodePath("../../Cameras/Camera2")
+
+[node name="CameraSwitcher3" parent="CameraSwitchers" node_paths=PackedStringArray("_currentCamera") instance=ExtResource("2_6mhwe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.02565, 0.875864, -0.444331)
+visible = false
+_currentCamera = NodePath("../../Cameras/Camera3")
+
+[node name="CameraSwitcher4" parent="CameraSwitchers" node_paths=PackedStringArray("_currentCamera") instance=ExtResource("2_6mhwe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.02783, 0.851748, -1.82588)
+visible = false
+_currentCamera = NodePath("../../Cameras/Camera2")
+
+[node name="DialogTriggers" type="Node" parent="."]
+
+[node name="DialogTrigger" parent="DialogTriggers" instance=ExtResource("3_6cnf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.05578, 0.957123, -2.20578)
+visible = false
+dialogText = "And you're not even going to flush? Gross."
+
+[node name="DialogTrigger2" parent="DialogTriggers" instance=ExtResource("3_6cnf1")]
+transform = Transform3D(0.0170685, 0, -0.999854, 0, 1, 0, 0.999854, 0, 0.0170685, -0.8604, 0.804202, 5.3379)
+visible = false
+dialogText = "Not even washing your hands either? What is wrong with you?"
+
+[node name="DialogTrigger3" parent="DialogTriggers" instance=ExtResource("3_6cnf1")]
+transform = Transform3D(-0.0230363, 0, -0.999735, 0, 1, 0, 0.999735, 0, -0.0230363, -6.71534, 1.13557, -7.48592)
+visible = false
+dialogText = "Are you just playing BiPod games in there again? I'm going to tell Terry this time."
+
+[node name="InitialPlayerSpawn" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.77779, 1.15084, -7.52153)
+
+[node name="PlayerSpawnOnEnter" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13849, 1.61892, 4.98432)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0689033, 0.997623, 0, -0.997623, -0.0689033, -3.34178, 16.7793, -1.68052)

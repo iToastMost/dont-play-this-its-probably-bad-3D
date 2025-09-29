@@ -33,6 +33,7 @@ public partial class PlayerRE : CharacterBody3D
         _subViewport = GetNode<SubViewport>("SubViewportContainer/SubViewport");
         _gooseJumpScene = ResourceLoader.Load<PackedScene>("res://GooseJump/Scenes/main.tscn");
 
+<<<<<<< HEAD
 
         //Uncomment below code and switch _canMove and _3DStarted to false to start with GooseJump game
         playerCollider.Disabled = true;
@@ -44,6 +45,20 @@ public partial class PlayerRE : CharacterBody3D
         GooseScene.Connect("GameStart", new Callable(this, nameof(OnStart)));
         _subViewport.AddChild(GooseScene);
         }
+=======
+
+        //Uncomment below code and switch _canMove and _3DStarted to false to start with GooseJump game
+
+        playerCollider.Disabled = false;
+        _canMove = true;
+        _3DStarted = true;
+        //if (GooseScene == null)
+        //{
+        //GooseScene = _gooseJumpScene.Instantiate();
+        //GooseScene.Connect("GameStart", new Callable(this, nameof(OnStart)));
+        //_subViewport.AddChild(GooseScene);
+        //}
+>>>>>>> 146116966ba551693ad6e62732e7734b33fd8d07
     }
 
     public override void _PhysicsProcess(double delta)
