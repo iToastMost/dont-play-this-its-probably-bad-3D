@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Chevr\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|c:\\users\\chevr\\onedrive\\documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\scripts\\playerre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|solutionrelative:scripts\\playerre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|c:\\users\\chevr\\onedrive\\documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\scripts\\interactable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|solutionrelative:scripts\\interactable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|c:\\users\\chevr\\onedrive\\documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\scripts\\playerre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|solutionrelative:scripts\\playerre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|c:\\users\\chevr\\onedrive\\documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\goosejump\\scripts\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|solutionrelative:goosejump\\scripts\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|c:\\users\\chevr\\onedrive\\documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\scripts\\dialogtrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|solutionrelative:scripts\\dialogtrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|c:\\users\\chevr\\onedrive\\documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\scripts\\cameraswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|solutionrelative:scripts\\cameraswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|c:\\users\\chevr\\onedrive\\documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\scripts\\dialogtrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|solutionrelative:scripts\\dialogtrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{51F0F90C-E934-412C-9BA1-4AA2A68EA594}|DON-T PLAY THIS IT-S PROBABLY BAD 3D.csproj|c:\\users\\chevr\\onedrive\\documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\scripts\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,17 +38,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Interactable.cs",
               "DocumentMoniker": "C:\\Users\\Chevr\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\Scripts\\Interactable.cs",
               "RelativeDocumentMoniker": "Scripts\\Interactable.cs",
               "ToolTip": "C:\\Users\\Chevr\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\Scripts\\Interactable.cs",
               "RelativeToolTip": "Scripts\\Interactable.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAIAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-31T16:26:43.721Z",
               "EditorCaption": ""
@@ -61,13 +61,13 @@
               "RelativeDocumentMoniker": "GooseJump\\Scripts\\Main.cs",
               "ToolTip": "C:\\Users\\Chevr\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\GooseJump\\Scripts\\Main.cs",
               "RelativeToolTip": "GooseJump\\Scripts\\Main.cs",
-              "ViewState": "AQIAAFAAAAAAAAAAAAAwwGIAAAAcAAAA",
+              "ViewState": "AQIAAEoAAAAAAAAAAAA9wGIAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-29T22:10:23.852Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "CameraSwitcher.cs",
               "DocumentMoniker": "C:\\Users\\Chevr\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\Scripts\\CameraSwitcher.cs",
               "RelativeDocumentMoniker": "Scripts\\CameraSwitcher.cs",
@@ -79,13 +79,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "DialogTrigger.cs",
               "DocumentMoniker": "C:\\Users\\Chevr\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\Scripts\\DialogTrigger.cs",
               "RelativeDocumentMoniker": "Scripts\\DialogTrigger.cs",
               "ToolTip": "C:\\Users\\Chevr\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\Scripts\\DialogTrigger.cs",
               "RelativeToolTip": "Scripts\\DialogTrigger.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAApAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-27T01:18:35.073Z"
             },
@@ -109,19 +109,19 @@
               "RelativeDocumentMoniker": "GooseJump\\Scripts\\SceneManager.cs",
               "ToolTip": "C:\\Users\\Chevr\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\GooseJump\\Scripts\\SceneManager.cs",
               "RelativeToolTip": "GooseJump\\Scripts\\SceneManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADgAAABGAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADgAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-24T01:53:24.722Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PlayerRE.cs",
               "DocumentMoniker": "C:\\Users\\Chevr\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\Scripts\\PlayerRE.cs",
               "RelativeDocumentMoniker": "Scripts\\PlayerRE.cs",
               "ToolTip": "C:\\Users\\Chevr\\OneDrive\\Documents\\don\u0027t-play-this-it\u0027s-probably-bad-3d\\Scripts\\PlayerRE.cs",
               "RelativeToolTip": "Scripts\\PlayerRE.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAgwCYAAAAoAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-24T01:27:02.705Z",
               "EditorCaption": ""
