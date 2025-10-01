@@ -20,10 +20,13 @@ public partial class PlayerRE : CharacterBody3D
     private bool _phoneVisible = false;
     private bool _canMove = true;
     private bool _3DStarted = false;
+   
     Node GooseScene;
     CharacterBody3D player;
     CollisionShape3D playerCollider;
     ColorRect colorRect;
+    RayCast3D rayCast;
+
     public override void _Ready()
     {
         colorRect = GetNode<ColorRect>("SubViewportContainer/CanvasLayer/ColorRect");
@@ -32,6 +35,8 @@ public partial class PlayerRE : CharacterBody3D
         _phoneAnimation = GetNode<AnimationPlayer>("SubViewportContainer/AnimationPlayer");
         _subViewport = GetNode<SubViewport>("SubViewportContainer/SubViewport");
         _gooseJumpScene = ResourceLoader.Load<PackedScene>("res://GooseJump/Scenes/main.tscn");
+
+        rayCast = GetNode<RayCast3D>("RayCast3D");
 
 
         //Uncomment below code and switch _canMove and _3DStarted to false to start with GooseJump game
@@ -64,6 +69,12 @@ public partial class PlayerRE : CharacterBody3D
         if (_canMove)
         {
             Move(delta);
+
+            if (Input.IsActionJustPressed("interaction_check"))
+            {
+                InteractCheck();
+            }
+
             MoveAndSlide();
         }
         else 
@@ -160,6 +171,20 @@ public partial class PlayerRE : CharacterBody3D
         _targetVelocity.Z = direction.Z * Speed;
 
         Velocity = _targetVelocity;
+    }
+
+    private void InteractCheck() 
+    {
+        if (rayCast.IsColliding()) 
+        {
+            var collision = rayCast.GetCollider();
+
+            if (collision is iInteractable interactable) 
+            {
+                GD.Print("Interactable found");
+                interactable.Interact();
+            }
+        }
     }
 
     public void DisableMovement() 
