@@ -27,6 +27,7 @@ project/assembly_name="DON-T PLAY THIS IT-S PROBABLY BAD 3D"
 [global_group]
 
 Interactable="Objects interactable by the player. For example, doors, buttons, computers, items etc."
+DialogTriggers="Group to connect dialog triggers on scene load"
 
 [input]
 
