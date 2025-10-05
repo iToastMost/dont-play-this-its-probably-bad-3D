@@ -9,7 +9,7 @@ public partial class DialogTrigger : Area3D
 	[Export]
 	public bool eventTrigger;
 
-	[Signal]
+    [Signal]
 	public delegate void MySignalWithArgumentEventHandler(string text);
 
 	[Signal]
