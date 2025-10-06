@@ -11,7 +11,7 @@ public partial class CameraSwitcher : Area3D
 
     public override void _Ready()
     {
-        
+        BodyEntered += OnAreaEnter;
     }
 
     public void OnAreaEnter(Node3D body) 

@@ -8,6 +8,7 @@ public partial class Ui : Control
 	public override void _Ready()
 	{
 		_colorRect = GetNode<ColorRect>("CanvasLayer/ColorRect");
+		//this.Connect("ShowDialog", new Callable(this, nameof(UpdateText)));
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

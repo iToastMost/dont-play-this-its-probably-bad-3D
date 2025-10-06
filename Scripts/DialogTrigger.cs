@@ -19,6 +19,7 @@ public partial class DialogTrigger : Area3D
 	public override void _Ready()
     {
 		AddToGroup("DialogTriggers");
+		BodyEntered += OnAreaEnter;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

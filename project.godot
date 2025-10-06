@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="DON'T PLAY THIS IT'S PROBABLY BAD 3D"
-run/main_scene="uid://60d70rbuc1vj"
+run/main_scene="uid://hvxnd3tp3hyw"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -28,6 +28,7 @@ project/assembly_name="DON-T PLAY THIS IT-S PROBABLY BAD 3D"
 
 Interactable="Objects interactable by the player. For example, doors, buttons, computers, items etc."
 DialogTriggers="Group to connect dialog triggers on scene load"
+Doors="Group for doors to load new environments"
 
 [input]
 
