@@ -13,4 +13,4 @@ script = ExtResource("1_je8vj")
 [node name="Environment" type="Node3D" parent="."]
 
 [node name="3DPlayer" parent="." instance=ExtResource("3_je8vj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.08351, 1.35746, -7.49732)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.08351, 0.524685, -7.49732)

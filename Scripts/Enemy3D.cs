@@ -8,12 +8,33 @@ public partial class Enemy3D : CharacterBody3D
     public override void _Ready() 
     {
         player = GetNode<PlayerRE>("/root/GameManager/3DPlayer");
+
+        if(player != null) 
+        {
+            GD.Print("Player found!");
+        }
+        else 
+        {
+            GD.Print("Player not found.");
+        }
         
     }
 
     public override void _PhysicsProcess(double delta)
     {
-        this.GlobalPosition.MoveToward(player.GlobalPosition, (float)delta);
+        //MoveTowardsPlayer(delta);
+        this.LookAt(player.GlobalPosition, Vector3.Up);
         MoveAndSlide();
+    }
+
+    private void MoveTowardsPlayer(double delta) 
+    {
+        var direction = Vector3.Zero;
+        var transform = Transform;
+
+        var playerDirection = (this.GlobalPosition - player.GlobalPosition);
+        direction = playerDirection.Normalized();
+        //this.GlobalPosition.MoveToward(direction, (float)delta * 25f);
+
     }
 }

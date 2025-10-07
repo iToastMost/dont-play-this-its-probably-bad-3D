@@ -25,4 +25,4 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 0.730662, 0, 8.74228e-08, 0, -1,
 environmentToLoad = "res://Scenes/Environments/bathroom_scene.tscn"
 
 [node name="Enemy" parent="." instance=ExtResource("2_jna78")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.14021, 0.5, 6.28574)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.14021, 0.549801, 6.28574)

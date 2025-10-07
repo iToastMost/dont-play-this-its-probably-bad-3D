@@ -22,13 +22,13 @@ shape = SubResource("CapsuleShape3D_ne65n")
 mesh = SubResource("CapsuleMesh_1f0kj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
-transform = Transform3D(0.208803, 0, 0, 0, 0.220984, 0, 0, 0, 0.628114, -0.305361, 0.217592, 0.626548)
+transform = Transform3D(0.208803, 0, 0, 0, 0.220984, 0, 0, 0, 0.628114, -0.305361, 0.217592, -0.555759)
 mesh = SubResource("BoxMesh_ne65n")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
-transform = Transform3D(0.208803, 0, 0, 0, 0.220984, 0, 0, 0, 0.628114, 0.366108, 0.217592, 0.620768)
+transform = Transform3D(0.208803, 0, 0, 0, 0.220984, 0, 0, 0, 0.628114, 0.366108, 0.217592, -0.602043)
 mesh = SubResource("BoxMesh_ne65n")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D"]
-transform = Transform3D(0.208803, 0, 0, 0, 0.220984, 0, 0, 0, 0.628114, 0.0404599, 0.553397, 0.444335)
+transform = Transform3D(0.208803, 0, 0, 0, 0.220984, 0, 0, 0, 0.628114, 0.0404599, 0.553397, -0.391548)
 mesh = SubResource("BoxMesh_ne65n")
