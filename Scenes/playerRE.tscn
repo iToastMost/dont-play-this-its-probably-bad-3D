@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://cmc37doc3qiso"]
+[gd_scene load_steps=12 format=3 uid="uid://cmc37doc3qiso"]
 
 [ext_resource type="Script" uid="uid://d01hiirlyhuqf" path="res://Scripts/PlayerRE.cs" id="1_6f1mo"]
+[ext_resource type="PackedScene" uid="uid://gmfcw4lto8ll" path="res://Scenes/laser.tscn" id="2_x8lbm"]
 
 [sub_resource type="Animation" id="Animation_x8lbm"]
 length = 0.001
@@ -149,5 +150,8 @@ skeleton = NodePath("../..")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.358847, 0.416765, 0)
+
+[node name="Laser" parent="." instance=ExtResource("2_x8lbm")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.822456, 0.157866, 0)
 
 [connection signal="animation_finished" from="SubViewportContainer/AnimationPlayer" to="." method="AnimationFinished"]

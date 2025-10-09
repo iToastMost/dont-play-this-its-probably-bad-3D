@@ -22,7 +22,7 @@ public partial class Enemy3D : CharacterBody3D
 
     public override void _PhysicsProcess(double delta)
     {
-        //MoveTowardsPlayer(delta);
+        MoveTowardsPlayer(delta);
         this.LookAt(player.GlobalPosition, Vector3.Up);
         MoveAndSlide();
     }
@@ -33,7 +33,8 @@ public partial class Enemy3D : CharacterBody3D
         var transform = Transform;
 
         var playerDirection = (this.GlobalPosition - player.GlobalPosition);
-        direction = playerDirection.Normalized();
+        direction = playerDirection.Normalized() / 25f;
+        Position -= direction;
         //this.GlobalPosition.MoveToward(direction, (float)delta * 25f);
 
     }
