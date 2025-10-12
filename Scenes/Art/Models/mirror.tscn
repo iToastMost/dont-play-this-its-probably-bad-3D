@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpj1q745qsqo0"]
+
+[ext_resource type="PackedScene" uid="uid://dli6gojrx3a36" path="res://Art/Models/mirror.glb" id="1_lyk24"]
+
+[node name="mirror" instance=ExtResource("1_lyk24")]

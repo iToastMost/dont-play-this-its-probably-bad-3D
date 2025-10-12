@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bc2pyvg7alw2k"]
+
+[ext_resource type="PackedScene" uid="uid://5av70fgp7q7c" path="res://Art/Models/door.glb" id="1_06v7m"]
+[ext_resource type="Script" uid="uid://b0q6ef2jmk0td" path="res://Scripts/Door.cs" id="2_rd82a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_06v7m"]
+size = Vector3(1, 1.95456, 0.204102)
+
+[node name="door" instance=ExtResource("1_06v7m")]
+script = ExtResource("2_rd82a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.940628, 0.0170898)
+shape = SubResource("BoxShape3D_06v7m")

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://n0xjfrj4cdk7"]
+
+[ext_resource type="PackedScene" uid="uid://d2v12qqxh7i6a" path="res://Art/Models/stall.glb" id="1_pc5in"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pc5in"]
+size = Vector3(0.308884, 1.70248, 1.30609)
+
+[node name="stall" instance=ExtResource("1_pc5in")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.108604, 0.896194, -0.567657)
+shape = SubResource("BoxShape3D_pc5in")

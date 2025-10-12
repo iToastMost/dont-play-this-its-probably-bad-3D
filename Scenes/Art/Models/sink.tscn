@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://547u57bascbx"]
+
+[ext_resource type="PackedScene" uid="uid://dixcylh35l7iw" path="res://Art/Models/sink.glb" id="1_yxhpq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yxhpq"]
+size = Vector3(1, 0.96521, 0.604095)
+
+[node name="sink" instance=ExtResource("1_yxhpq")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47699, 0.0197601)
+shape = SubResource("BoxShape3D_yxhpq")

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds4udcpaocote"]
+
+[ext_resource type="PackedScene" uid="uid://lj102kqwg6nm" path="res://Art/Models/wetfloorsign.glb" id="1_qpnku"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qpnku"]
+size = Vector3(0.360107, 0.549805, 0.255005)
+
+[node name="wetfloorsign" instance=ExtResource("1_qpnku")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0753174, 0.225098, 0.00701904)
+shape = SubResource("BoxShape3D_qpnku")

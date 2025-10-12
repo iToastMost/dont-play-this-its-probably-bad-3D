@@ -1,0 +1,38 @@
+[gd_scene load_steps=12 format=3 uid="uid://ilfngtir27p7"]
+
+[ext_resource type="PackedScene" uid="uid://lj102kqwg6nm" path="res://Art/Models/wetfloorsign.glb" id="1_uookw"]
+[ext_resource type="PackedScene" uid="uid://c8oakar8d4c6i" path="res://Art/Models/urinal.glb" id="2_cpthr"]
+[ext_resource type="PackedScene" uid="uid://dpg12w7ee4fgd" path="res://Art/Models/toilet.glb" id="3_jofy7"]
+[ext_resource type="PackedScene" uid="uid://d2v12qqxh7i6a" path="res://Art/Models/stall.glb" id="4_5s2xc"]
+[ext_resource type="PackedScene" uid="uid://dixcylh35l7iw" path="res://Art/Models/sink.glb" id="5_7c5qv"]
+[ext_resource type="PackedScene" uid="uid://dli6gojrx3a36" path="res://Art/Models/mirror.glb" id="6_p5xxa"]
+[ext_resource type="PackedScene" uid="uid://dep5d8gng0ubv" path="res://Art/Models/handdryer.glb" id="7_vwd6i"]
+[ext_resource type="PackedScene" uid="uid://dsiiv3x7o73d0" path="res://Art/Models/garbage.glb" id="8_v5esv"]
+[ext_resource type="PackedScene" uid="uid://5av70fgp7q7c" path="res://Art/Models/door.glb" id="9_3cls1"]
+[ext_resource type="PackedScene" uid="uid://w7t5c844nua2" path="res://Art/Models/divider.glb" id="10_kcbqi"]
+[ext_resource type="PackedScene" uid="uid://dav2vbdovljdu" path="res://Art/Models/dude.glb" id="12_cpthr"]
+
+[node name="ModelsAndStuff" type="Node"]
+
+[node name="wetfloorsign" parent="." instance=ExtResource("1_uookw")]
+
+[node name="urinal" parent="." instance=ExtResource("2_cpthr")]
+
+[node name="toilet" parent="." instance=ExtResource("3_jofy7")]
+
+[node name="stall" parent="." instance=ExtResource("4_5s2xc")]
+
+[node name="sink" parent="." instance=ExtResource("5_7c5qv")]
+
+[node name="mirror" parent="." instance=ExtResource("6_p5xxa")]
+
+[node name="handdryer" parent="." instance=ExtResource("7_vwd6i")]
+
+[node name="garbage" parent="." instance=ExtResource("8_v5esv")]
+
+[node name="door" parent="." instance=ExtResource("9_3cls1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.19209e-07, 0)
+
+[node name="divider" parent="." instance=ExtResource("10_kcbqi")]
+
+[node name="dude" parent="." instance=ExtResource("12_cpthr")]

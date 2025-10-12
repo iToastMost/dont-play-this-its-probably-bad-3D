@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.IO;
 
-public partial class Door : CsgBox3D, iInteractable
+public partial class Door : StaticBody3D, iInteractable
 {
 	[Export]
 	private string environmentToLoad;

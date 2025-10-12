@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwiq40ibrpkvo"]
+
+[ext_resource type="PackedScene" uid="uid://r1fr5n2mnjmx" path="res://Art/Models/papertoweldisp.glb" id="1_ar5sg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ar5sg"]
+size = Vector3(0.29361, 0.334869, 0.245392)
+
+[node name="papertoweldisp" instance=ExtResource("1_ar5sg")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00157166, 0.194656, 0.115707)
+shape = SubResource("BoxShape3D_ar5sg")

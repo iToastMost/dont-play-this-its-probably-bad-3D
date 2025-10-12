@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://13fheahjts4m"]
+
+[ext_resource type="PackedScene" uid="uid://dep5d8gng0ubv" path="res://Art/Models/handdryer.glb" id="1_3bclu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3bclu"]
+size = Vector3(0.460968, 0.365112, 0.33844)
+
+[node name="handdryer" instance=ExtResource("1_3bclu")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.035202, 0.172791, 0.111176)
+shape = SubResource("BoxShape3D_3bclu")

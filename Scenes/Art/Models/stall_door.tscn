@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpfkkdwl0wxod"]
+
+[ext_resource type="PackedScene" uid="uid://yi4krg4sxrm5" path="res://Art/Models/stall_door.glb" id="1_lrean"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lrean"]
+size = Vector3(0.71814, 1.43256, 0.2453)
+
+[node name="stall_door" instance=ExtResource("1_lrean")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34845, 1.03433, 0.129425)
+shape = SubResource("BoxShape3D_lrean")

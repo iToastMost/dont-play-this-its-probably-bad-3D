@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c76chaatluspj" path="res://Scripts/DialogTrigger.cs" id="1_mt46t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gee2p"]
-size = Vector3(2.70435, 1, 1)
+size = Vector3(0.931825, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_nr6oa"]
 
@@ -15,11 +15,11 @@ dialogText = "text here"
 eventTrigger = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0743408, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0544134, 0, 0)
 shape = SubResource("BoxShape3D_gee2p")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.61384, 0, 0, 0, 0.105502, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.041, 0, 0, 0, 0.383, 0, 0, 0)
 mesh = SubResource("BoxMesh_nr6oa")
 
 [connection signal="body_entered" from="." to="." method="OnAreaEnter"]

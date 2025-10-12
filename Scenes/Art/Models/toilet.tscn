@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2ju4yvya24wv"]
+
+[ext_resource type="PackedScene" uid="uid://dpg12w7ee4fgd" path="res://Art/Models/toilet.glb" id="1_lq6pr"]
+[ext_resource type="Texture2D" uid="uid://blu4wkpbcxpao" path="res://Art/Textures/-Color.png" id="2_doa82"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vmvqr"]
+albedo_texture = ExtResource("2_doa82")
+roughness = 0.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lq6pr"]
+size = Vector3(0.542969, 0.88562, 0.804199)
+
+[node name="toilet" instance=ExtResource("1_lq6pr")]
+
+[node name="Cube_002" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_vmvqr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0136719, 0.390076, -0.0979004)
+visible = false
+shape = SubResource("BoxShape3D_lq6pr")
