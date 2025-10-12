@@ -1,11 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://b86pqbiujl4gy"]
+[gd_scene load_steps=5 format=3 uid="uid://b86pqbiujl4gy"]
 
 [ext_resource type="PackedScene" uid="uid://dsiiv3x7o73d0" path="res://Art/Models/garbage.glb" id="1_8hsni"]
+[ext_resource type="Texture2D" uid="uid://c3qs4ulw2m5k2" path="res://Art/Textures/Trashcan.png" id="2_u7u3k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aapho"]
+albedo_texture = ExtResource("2_u7u3k")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8hsni"]
 size = Vector3(0.538452, 0.68689, 0.434814)
 
 [node name="garbage" instance=ExtResource("1_8hsni")]
+
+[node name="Icosphere" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aapho")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0169067, 0.344299, 0.00012207)

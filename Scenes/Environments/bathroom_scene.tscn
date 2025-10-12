@@ -1,61 +1,62 @@
-[gd_scene load_steps=16 format=3 uid="uid://cl2l2owbnqg6y"]
+[gd_scene load_steps=17 format=3 uid="uid://cl2l2owbnqg6y"]
 
 [ext_resource type="PackedScene" uid="uid://dw1iwrueqi45l" path="res://Scenes/camera_switcher.tscn" id="2_6mhwe"]
 [ext_resource type="PackedScene" uid="uid://bj0fflqe1ib4u" path="res://Scenes/dialog_trigger.tscn" id="3_6cnf1"]
 [ext_resource type="PackedScene" uid="uid://dli6gojrx3a36" path="res://Art/Models/mirror.glb" id="10_3jqxa"]
 [ext_resource type="PackedScene" uid="uid://ds4udcpaocote" path="res://Scenes/Art/Models/wetfloorsign.tscn" id="11_2m0sy"]
 [ext_resource type="PackedScene" uid="uid://dav2vbdovljdu" path="res://Art/Models/dude.glb" id="11_kc8aj"]
-[ext_resource type="PackedScene" uid="uid://bc2pyvg7alw2k" path="res://Scenes/Art/Models/door.tscn" id="12_dnp50"]
+[ext_resource type="PackedScene" uid="uid://ci3qq2l5odwcq" path="res://Scenes/Art/Models/door.tscn" id="12_dnp50"]
 [ext_resource type="PackedScene" uid="uid://cwiq40ibrpkvo" path="res://Scenes/Art/Models/papertoweldisp.tscn" id="12_r27ve"]
 [ext_resource type="PackedScene" uid="uid://547u57bascbx" path="res://Scenes/Art/Models/sink.tscn" id="12_we5m5"]
 [ext_resource type="PackedScene" uid="uid://b86pqbiujl4gy" path="res://Scenes/Art/Models/garbage.tscn" id="15_2m0sy"]
 [ext_resource type="PackedScene" uid="uid://b5haglc00b0re" path="res://Scenes/Art/Models/divider.tscn" id="16_dnp50"]
-[ext_resource type="PackedScene" uid="uid://n0xjfrj4cdk7" path="res://Scenes/Art/Models/stall.tscn" id="16_r27ve"]
-[ext_resource type="PackedScene" uid="uid://cqi3y51argaih" path="res://Scenes/Art/Models/urinal.tscn" id="16_we5m5"]
+[ext_resource type="PackedScene" uid="uid://cg4i5opwmdjf7" path="res://Scenes/Art/Models/stall.tscn" id="16_r27ve"]
+[ext_resource type="PackedScene" uid="uid://13fheahjts4m" path="res://Scenes/Art/Models/hand_dryer.tscn" id="16_rpe6t"]
+[ext_resource type="PackedScene" uid="uid://c0umsq8a383gt" path="res://Scenes/Art/Models/urinal.tscn" id="16_we5m5"]
 [ext_resource type="PackedScene" uid="uid://d2ju4yvya24wv" path="res://Scenes/Art/Models/toilet.tscn" id="17_dnp50"]
 [ext_resource type="PackedScene" uid="uid://c50vfooxa3sk4" path="res://Art/Models/soap.glb" id="17_r27ve"]
-[ext_resource type="PackedScene" uid="uid://cpfkkdwl0wxod" path="res://Scenes/Art/Models/stall_door.tscn" id="17_rpe6t"]
+[ext_resource type="PackedScene" uid="uid://bnixk3hbr15en" path="res://Scenes/Art/Models/stall_door.tscn" id="17_rpe6t"]
 
 [node name="Bathroom Scene" type="Node3D"]
 
 [node name="Bathroom" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.11504, 1.74967, 3.46154)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.11504, 1.46199, 3.46154)
 use_collision = true
 flip_faces = true
-size = Vector3(2.78164, 3.50226, 5.52112)
+size = Vector3(2.78164, 2.9269, 5.52112)
 
 [node name="Cameras" type="Node" parent="."]
 
 [node name="Camera1" type="Camera3D" parent="Cameras"]
-transform = Transform3D(-0.176019, -0.641976, 0.746248, 0, 0.758083, 0.652157, -0.984387, 0.114792, -0.133437, -5.75462, 2.5116, 0.804704)
+transform = Transform3D(0.0281543, -0.736449, 0.675907, 0, 0.676175, 0.736741, -0.999604, -0.0207424, 0.0190372, -5.97466, 2.8434, 1.10299)
 
 [node name="Camera2" type="Camera3D" parent="Cameras"]
-transform = Transform3D(0.823011, 0.331502, -0.461258, 0, 0.812038, 0.583604, 0.568025, -0.480313, 0.668317, -8.06626, 2.76841, 6.19262)
+transform = Transform3D(0.999699, -0.00423672, 0.0241395, 0, 0.984945, 0.172868, -0.0245085, -0.172816, 0.98465, -6.82455, 1.7374, 6.34722)
 
 [node name="Camera3" type="Camera3D" parent="Cameras"]
-transform = Transform3D(0.999717, 0.00277668, -0.0236209, 0, 0.993162, 0.116748, 0.0237835, -0.116715, 0.992881, -6.85058, 1.09564, 6.85114)
+transform = Transform3D(0.823011, 0.331502, -0.461258, 0, 0.812038, 0.583604, 0.568025, -0.480313, 0.668316, -8.06626, 2.76841, 6.19262)
 
 [node name="CameraSwitchers" type="Node" parent="."]
 
 [node name="CameraSwitcher" parent="CameraSwitchers" node_paths=PackedStringArray("_currentCamera") instance=ExtResource("2_6mhwe")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.24493, 0.266711, 1.3107)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.24493, 0.266711, 1.00204)
 visible = false
 _currentCamera = NodePath("../../Cameras/Camera1")
 
 [node name="CameraSwitcher2" parent="CameraSwitchers" node_paths=PackedStringArray("_currentCamera") instance=ExtResource("2_6mhwe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.78013, -0.00528377, 2.28085)
-visible = false
-_currentCamera = NodePath("../../Cameras/Camera2")
-
-[node name="CameraSwitcher3" parent="CameraSwitchers" node_paths=PackedStringArray("_currentCamera") instance=ExtResource("2_6mhwe")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.85025, 0.266711, 1.11322)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.82803, -0.00528377, 4.07799)
 visible = false
 _currentCamera = NodePath("../../Cameras/Camera3")
 
-[node name="CameraSwitcher4" parent="CameraSwitchers" node_paths=PackedStringArray("_currentCamera") instance=ExtResource("2_6mhwe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.91397, 0.266711, 3.91667)
+[node name="CameraSwitcher3" parent="CameraSwitchers" node_paths=PackedStringArray("_currentCamera") instance=ExtResource("2_6mhwe")]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -6.81825, 0.266711, 1.57781)
 visible = false
 _currentCamera = NodePath("../../Cameras/Camera2")
+
+[node name="CameraSwitcher4" parent="CameraSwitchers" node_paths=PackedStringArray("_currentCamera") instance=ExtResource("2_6mhwe")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.10446, 0.266711, 5.59804)
+visible = false
+_currentCamera = NodePath("../../Cameras/Camera3")
 
 [node name="DialogTriggers" type="Node" parent="."]
 
@@ -120,10 +121,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.236
 [node name="papertoweldisp" parent="NewAssets" instance=ExtResource("12_r27ve")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.75004, 1.15539, 4.58948)
 
-[node name="door" parent="NewAssets" instance=ExtResource("12_dnp50")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.75813, -0.00145996, 5.67178)
-environmentToLoad = "res://Scenes/Environments/showroom_floor_scene.tscn"
-
 [node name="toilet" parent="NewAssets" instance=ExtResource("17_dnp50")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.05539, 0, 1.1432)
 
@@ -149,7 +146,7 @@ collision_layer = 0
 collision_mask = 0
 
 [node name="garbage" parent="NewAssets" instance=ExtResource("15_2m0sy")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.89536, 0, 4.60311)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.90889, 0, 4.60311)
 
 [node name="urinal1" parent="NewAssets" instance=ExtResource("16_we5m5")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.71845, 0.234797, 1.13232)
@@ -170,4 +167,16 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.020
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.0202, 0.306231, 3.55163)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7, 4.02261, 3.62634)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7, 4.21949, 3.62634)
+shadow_enabled = true
+shadow_blur = 1.6
+spot_range = 6.256
+spot_attenuation = 0.35
+spot_angle = 43.81
+
+[node name="door" parent="." instance=ExtResource("12_dnp50")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.75813, -0.00145996, 5.67178)
+environmentToLoad = "res://Scenes/Environments/showroom_floor_scene.tscn"
+
+[node name="handdryer" parent="." instance=ExtResource("16_rpe6t")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.80609, 1.00206, 6.22056)

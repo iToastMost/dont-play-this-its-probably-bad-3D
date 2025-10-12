@@ -14,12 +14,11 @@ script = ExtResource("1_jxero")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-visible = false
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -109.0
+offset_top = -83.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
@@ -36,6 +35,6 @@ offset_top = 28.0
 offset_bottom = -31.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
 text = "Here is some text for the game!"

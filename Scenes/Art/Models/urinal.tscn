@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqi3y51argaih"]
+[gd_scene load_steps=3 format=3 uid="uid://c0umsq8a383gt"]
 
-[ext_resource type="PackedScene" uid="uid://c8oakar8d4c6i" path="res://Art/Models/urinal.glb" id="1_ymtk8"]
+[ext_resource type="PackedScene" uid="uid://dy0uv1mwoyygc" path="res://Art/Models/urinal.glb" id="1_ymtk8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ymtk8"]
-size = Vector3(0.366455, 0.625854, 0.468262)
+size = Vector3(0.337646, 0.628998, 0.368622)
 
 [node name="urinal" instance=ExtResource("1_ymtk8")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0284424, 0.549866, 0.0969238)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0406494, 0.567856, 0.136398)
 shape = SubResource("BoxShape3D_ymtk8")

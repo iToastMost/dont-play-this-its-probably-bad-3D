@@ -7,10 +7,12 @@ public partial class PlayerRE : CharacterBody3D
     public PackedScene GooseJumpScene;
 
     [Export]
-    public int Speed { get; set; } = 5;
+    public float speed { get; set; } = 1.5f;
 
     [Export]
     public float turnSpeed = 4f;
+
+    private int _health = 100;
 
     private Vector3 _targetVelocity = Vector3.Zero;
     private SubViewport _subViewport;
@@ -20,15 +22,20 @@ public partial class PlayerRE : CharacterBody3D
     private bool _phoneVisible = false;
     private bool _canMove = true;
     private bool _3DStarted = false;
+    private bool _isAiming = false;
+    private bool _isDead = false;
    
     Node GooseScene;
     CharacterBody3D player;
     CollisionShape3D playerCollider;
     ColorRect colorRect;
     RayCast3D rayCast;
+    AnimationPlayer playerAnimation; 
 
     public override void _Ready()
     {
+        playerAnimation = GetNode<AnimationPlayer>("CharacterModelAnim/AnimationPlayer");
+
         colorRect = GetNode<ColorRect>("SubViewportContainer/CanvasLayer/ColorRect");
         playerCollider = GetNode<CollisionShape3D>("CollisionShape3D");
 
@@ -62,13 +69,34 @@ public partial class PlayerRE : CharacterBody3D
         //GooseScene.Connect("GameStart", new Callable(this, nameof(OnStart)));
         //_subViewport.AddChild(GooseScene);
         //}
+        playerAnimation.CurrentAnimation = "Idle";
+        playerAnimation.Play();
     }
 
     public override void _PhysicsProcess(double delta)
     {
-        if (_canMove)
+        if(_health <= 0) 
         {
-            Move(delta);
+            _isDead = true;
+        }
+
+        if (_canMove && !_isDead)
+        {
+
+            if (Input.IsActionPressed("aim"))
+            {
+                _isAiming = true;
+                Aim();
+            }
+            else 
+            {
+                _isAiming = false;
+            }
+
+            if (!_isAiming) 
+            {
+                Move(delta);
+            }
 
             if (Input.IsActionJustPressed("interaction_check"))
             {
@@ -79,6 +107,7 @@ public partial class PlayerRE : CharacterBody3D
         }
         else 
         {
+            playerAnimation.CurrentAnimation = "Idle";
             if (Input.IsActionJustPressed("accept_dialog") && _3DStarted == true) 
             {
                 _canMove = true;
@@ -103,12 +132,25 @@ public partial class PlayerRE : CharacterBody3D
 
         if (Input.IsActionPressed("walk_forward")) 
         {
-            Position += transform.Basis.X * Speed * (float) delta;
+            if (Input.IsActionPressed("sprint")) 
+            {
+                Position += transform.Basis.X * (speed * 2) * (float)delta;
+                playerAnimation.CurrentAnimation = "Jog_Fwd";
+            }
+            else 
+            {
+                Position += transform.Basis.X * speed * (float)delta;
+                playerAnimation.CurrentAnimation = "Walk";
+            }
+        }
+        else 
+        {
+            playerAnimation.CurrentAnimation = "Idle";
         }
 
         if (Input.IsActionPressed("walk_back")) 
         {
-            Position -= transform.Basis.X * Speed / 2 * (float)delta;
+            Position -= transform.Basis.X * speed / 2 * (float)delta;
         }
 
         if (Input.IsActionPressed("turn_left")) 
@@ -122,7 +164,8 @@ public partial class PlayerRE : CharacterBody3D
 
         if (Input.IsActionJustPressed("spin_back"))
         {
-            RotateY(180 * (float)delta);
+            //Rotates 180 degrees.
+            RotateY(Mathf.Pi);
         }
 
         if (Input.IsActionJustPressed("open_phone")) 
@@ -167,10 +210,15 @@ public partial class PlayerRE : CharacterBody3D
             GetNode<Node3D>("Pivot").Basis = Basis.LookingAt(direction);
         }
 
-        _targetVelocity.X = direction.X * Speed;
-        _targetVelocity.Z = direction.Z * Speed;
+        _targetVelocity.X = direction.X * speed;
+        _targetVelocity.Z = direction.Z * speed;
 
         Velocity = _targetVelocity;
+    }
+
+    private void Aim() 
+    {
+        playerAnimation.CurrentAnimation = "Pistol_Aim_Neutral";
     }
 
     private void InteractCheck() 

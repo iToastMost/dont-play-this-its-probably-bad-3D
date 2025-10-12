@@ -1,11 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5haglc00b0re"]
+[gd_scene load_steps=5 format=3 uid="uid://b5haglc00b0re"]
 
 [ext_resource type="PackedScene" uid="uid://w7t5c844nua2" path="res://Art/Models/divider.glb" id="1_u6ppb"]
+[ext_resource type="Texture2D" uid="uid://xqkweysmciyf" path="res://Art/Textures/divider.png" id="2_50uhx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wouvy"]
+albedo_texture = ExtResource("2_50uhx")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u6ppb"]
 size = Vector3(0.0580444, 1.41373, 0.535645)
 
 [node name="divider" instance=ExtResource("1_u6ppb")]
+
+[node name="Cube_011" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_wouvy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00180054, 0.704086, 0.00512695)

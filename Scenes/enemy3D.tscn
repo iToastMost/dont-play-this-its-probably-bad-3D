@@ -9,6 +9,8 @@ albedo_color = Color(1, 0.180392, 0.2, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_1f0kj"]
 material = SubResource("StandardMaterial3D_hghv2")
+radius = 0.4
+height = 1.4
 
 [sub_resource type="BoxMesh" id="BoxMesh_ne65n"]
 
@@ -22,13 +24,13 @@ shape = SubResource("CapsuleShape3D_ne65n")
 mesh = SubResource("CapsuleMesh_1f0kj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
-transform = Transform3D(0.208803, 0, 0, 0, 0.220984, 0, 0, 0, 0.628114, -0.305361, 0.217592, -0.555759)
+transform = Transform3D(0.129261, 0, 0, 0, 0.11842, 0, 0, 0, 0.352478, -0.305361, 0.135, -0.448549)
 mesh = SubResource("BoxMesh_ne65n")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
-transform = Transform3D(0.208803, 0, 0, 0, 0.220984, 0, 0, 0, 0.628114, 0.366108, 0.217592, -0.602043)
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.129261, 0, 0, 0, 0.11842, 0, 0, 0, 0.352478, 0.269568, 0.135, -0.448549)
 mesh = SubResource("BoxMesh_ne65n")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D"]
-transform = Transform3D(0.208803, 0, 0, 0, 0.220984, 0, 0, 0, 0.628114, 0.0404599, 0.553397, -0.391548)
+transform = Transform3D(0.115123, 0, 0, 0, 0.0891366, 0, 0, 0, 0.233857, -0.0162331, 0.358009, -0.391548)
 mesh = SubResource("BoxMesh_ne65n")

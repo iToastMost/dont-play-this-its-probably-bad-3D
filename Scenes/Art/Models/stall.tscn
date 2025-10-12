@@ -1,12 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://n0xjfrj4cdk7"]
+[gd_scene load_steps=8 format=3 uid="uid://cg4i5opwmdjf7"]
 
-[ext_resource type="PackedScene" uid="uid://d2v12qqxh7i6a" path="res://Art/Models/stall.glb" id="1_pc5in"]
+[ext_resource type="PackedScene" uid="uid://b1qtxc3dab5ym" path="res://Art/Models/stall.glb" id="1_pc5in"]
+[ext_resource type="Texture2D" uid="uid://bnv7w2pmd6jgw" path="res://Art/Textures/Stall.png" id="2_r6jpr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jsfwf"]
+albedo_texture = ExtResource("2_r6jpr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mxc3u"]
+albedo_texture = ExtResource("2_r6jpr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ismhm"]
+albedo_texture = ExtResource("2_r6jpr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j8s0p"]
+albedo_texture = ExtResource("2_r6jpr")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pc5in"]
-size = Vector3(0.308884, 1.70248, 1.30609)
+size = Vector3(0.382813, 1.74387, 1.36511)
 
 [node name="stall" instance=ExtResource("1_pc5in")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.108604, 0.896194, -0.567657)
+[node name="Cube_006" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_jsfwf")
+
+[node name="Cube_007" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_mxc3u")
+
+[node name="Plane_003" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ismhm")
+
+[node name="Plane_001" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_j8s0p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101563, 0.913803, -0.634216)
 shape = SubResource("BoxShape3D_pc5in")

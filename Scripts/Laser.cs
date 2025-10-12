@@ -7,7 +7,7 @@ public partial class Laser : RayCast3D
 	MeshInstance3D beamMesh;
 	CylinderMesh beamShape;
 
-	private static int MAX_LENGTH = 1000;
+	//private static int MAX_LENGTH = 1000;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -27,16 +27,16 @@ public partial class Laser : RayCast3D
 
 		if (IsColliding()) 
 		{
-			GD.Print("Beam is colliding");
+			//GD.Print("Beam is colliding");
 			var laserCollision = ToLocal(GetCollisionPoint());
 
 			beamShape.Height = laserCollision.Y;
-			beamMesh.Position = new Vector3(0, 0, laserCollision.Z / 2f);
+			beamMesh.Position = new Vector3(0, laserCollision.Y / 2f, 0);
 		}
 		else 
 		{
-			beamShape.Height = TargetPosition.Z;
-			beamMesh.Position = new Vector3(0, 0, TargetPosition.Z / 2f);
+			beamShape.Height = 0;
+			beamMesh.Position = new Vector3(0, 0, 0);
 		}
 	}
 }

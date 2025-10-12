@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://cmc37doc3qiso"]
 
 [ext_resource type="Script" uid="uid://d01hiirlyhuqf" path="res://Scripts/PlayerRE.cs" id="1_6f1mo"]
-[ext_resource type="PackedScene" uid="uid://dav2vbdovljdu" path="res://Art/Models/dude.glb" id="2_5lkqk"]
 [ext_resource type="PackedScene" uid="uid://gmfcw4lto8ll" path="res://Scenes/laser.tscn" id="2_x8lbm"]
+[ext_resource type="PackedScene" uid="uid://57k74domxfhb" path="res://Scenes/Art/Models/Characters/character_model_anim.tscn" id="3_5lkqk"]
 
 [sub_resource type="Animation" id="Animation_x8lbm"]
 length = 0.001
@@ -99,6 +99,7 @@ material = SubResource("StandardMaterial3D_sh265")
 [node name="3DPlayer" type="CharacterBody3D"]
 collision_layer = 3
 script = ExtResource("1_6f1mo")
+turnSpeed = 3.0
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 visible = false
@@ -153,13 +154,15 @@ visible = false
 mesh = SubResource("BoxMesh_onrkg")
 skeleton = NodePath("../..")
 
-[node name="dude" parent="Pivot" instance=ExtResource("2_5lkqk")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.76949, 0)
-
 [node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.358847, 0.416765, 0)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.122525, 0.416765, 0)
 
 [node name="Laser" parent="." instance=ExtResource("2_x8lbm")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.822456, 0.157866, 0)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.569856, 0.311394, 0)
+visible = false
+target_position = Vector3(0, -5, 0)
+
+[node name="CharacterModelAnim" parent="." instance=ExtResource("3_5lkqk")]
+transform = Transform3D(-3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 0, -0.82852, 0)
 
 [connection signal="animation_finished" from="SubViewportContainer/AnimationPlayer" to="." method="AnimationFinished"]

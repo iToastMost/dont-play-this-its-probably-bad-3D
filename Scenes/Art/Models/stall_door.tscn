@@ -1,12 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpfkkdwl0wxod"]
+[gd_scene load_steps=5 format=3 uid="uid://bnixk3hbr15en"]
 
-[ext_resource type="PackedScene" uid="uid://yi4krg4sxrm5" path="res://Art/Models/stall_door.glb" id="1_lrean"]
+[ext_resource type="PackedScene" uid="uid://ir3v3ltwy7pn" path="res://Art/Models/stall_door.glb" id="1_lrean"]
+[ext_resource type="Texture2D" uid="uid://y8efyj0080an" path="res://Art/Textures/Stalldoor.png" id="2_s7dqu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nw3aq"]
+albedo_texture = ExtResource("2_s7dqu")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lrean"]
-size = Vector3(0.71814, 1.43256, 0.2453)
+size = Vector3(0.706169, 1.43781, 0.101807)
 
 [node name="stall_door" instance=ExtResource("1_lrean")]
 
+[node name="Cube_008" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nw3aq")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34845, 1.03433, 0.129425)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.339832, 1.02554, -0.00939941)
 shape = SubResource("BoxShape3D_lrean")

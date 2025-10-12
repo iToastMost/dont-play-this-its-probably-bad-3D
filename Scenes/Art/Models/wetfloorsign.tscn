@@ -1,11 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://ds4udcpaocote"]
+[gd_scene load_steps=5 format=3 uid="uid://ds4udcpaocote"]
 
 [ext_resource type="PackedScene" uid="uid://lj102kqwg6nm" path="res://Art/Models/wetfloorsign.glb" id="1_qpnku"]
+[ext_resource type="Texture2D" uid="uid://bx1vk3e84f8nl" path="res://Art/Textures/WetFloorSign.png" id="2_f8g8h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n1c8i"]
+albedo_texture = ExtResource("2_f8g8h")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qpnku"]
 size = Vector3(0.360107, 0.549805, 0.255005)
 
 [node name="wetfloorsign" instance=ExtResource("1_qpnku")]
+
+[node name="Plane_005" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_n1c8i")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0753174, 0.225098, 0.00701904)
