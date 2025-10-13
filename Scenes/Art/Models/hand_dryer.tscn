@@ -1,11 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://13fheahjts4m"]
+[gd_scene load_steps=5 format=3 uid="uid://13fheahjts4m"]
 
 [ext_resource type="PackedScene" uid="uid://dep5d8gng0ubv" path="res://Art/Models/handdryer.glb" id="1_3bclu"]
+[ext_resource type="Texture2D" uid="uid://f22xbhsg8w73" path="res://Art/Textures/HandDryer.png" id="2_lcypr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7icmc"]
+albedo_texture = ExtResource("2_lcypr")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3bclu"]
 size = Vector3(0.460968, 0.365112, 0.33844)
 
 [node name="handdryer" instance=ExtResource("1_3bclu")]
+
+[node name="Cube_015" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_7icmc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.035202, 0.172791, 0.111176)

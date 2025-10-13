@@ -5,16 +5,16 @@
 [ext_resource type="PackedScene" uid="uid://dli6gojrx3a36" path="res://Art/Models/mirror.glb" id="10_3jqxa"]
 [ext_resource type="PackedScene" uid="uid://ds4udcpaocote" path="res://Scenes/Art/Models/wetfloorsign.tscn" id="11_2m0sy"]
 [ext_resource type="PackedScene" uid="uid://dav2vbdovljdu" path="res://Art/Models/dude.glb" id="11_kc8aj"]
-[ext_resource type="PackedScene" uid="uid://ci3qq2l5odwcq" path="res://Scenes/Art/Models/door.tscn" id="12_dnp50"]
+[ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="12_dnp50"]
 [ext_resource type="PackedScene" uid="uid://cwiq40ibrpkvo" path="res://Scenes/Art/Models/papertoweldisp.tscn" id="12_r27ve"]
 [ext_resource type="PackedScene" uid="uid://547u57bascbx" path="res://Scenes/Art/Models/sink.tscn" id="12_we5m5"]
 [ext_resource type="PackedScene" uid="uid://b86pqbiujl4gy" path="res://Scenes/Art/Models/garbage.tscn" id="15_2m0sy"]
 [ext_resource type="PackedScene" uid="uid://b5haglc00b0re" path="res://Scenes/Art/Models/divider.tscn" id="16_dnp50"]
 [ext_resource type="PackedScene" uid="uid://cg4i5opwmdjf7" path="res://Scenes/Art/Models/stall.tscn" id="16_r27ve"]
 [ext_resource type="PackedScene" uid="uid://13fheahjts4m" path="res://Scenes/Art/Models/hand_dryer.tscn" id="16_rpe6t"]
+[ext_resource type="PackedScene" uid="uid://cbk0n7ve4qfvf" path="res://Scenes/Art/Models/soap.tscn" id="16_t3iin"]
 [ext_resource type="PackedScene" uid="uid://c0umsq8a383gt" path="res://Scenes/Art/Models/urinal.tscn" id="16_we5m5"]
 [ext_resource type="PackedScene" uid="uid://d2ju4yvya24wv" path="res://Scenes/Art/Models/toilet.tscn" id="17_dnp50"]
-[ext_resource type="PackedScene" uid="uid://c50vfooxa3sk4" path="res://Art/Models/soap.glb" id="17_r27ve"]
 [ext_resource type="PackedScene" uid="uid://bnixk3hbr15en" path="res://Scenes/Art/Models/stall_door.tscn" id="17_rpe6t"]
 
 [node name="Bathroom Scene" type="Node3D"]
@@ -100,12 +100,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.427
 [node name="mirror3" parent="NewAssets" instance=ExtResource("10_3jqxa")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.42785, 1.17748, 4.09684)
 
-[node name="soap" parent="NewAssets" instance=ExtResource("17_r27ve")]
-transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, -8.37725, 0.842924, 5.41178)
-
-[node name="soap2" parent="NewAssets" instance=ExtResource("17_r27ve")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.37725, 0.842924, 4.50591)
-
 [node name="wetfloorsign" parent="NewAssets" instance=ExtResource("11_2m0sy")]
 transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -6.17138, 0, 3.99018)
 
@@ -166,6 +160,19 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.020
 [node name="divider3" parent="NewAssets" instance=ExtResource("16_dnp50")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.0202, 0.306231, 3.55163)
 
+[node name="door" parent="NewAssets" instance=ExtResource("12_dnp50")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.75813, -0.00145996, 5.67178)
+environmentToLoad = "res://Scenes/Environments/showroom_floor_scene.tscn"
+
+[node name="handdryer" parent="NewAssets" instance=ExtResource("16_rpe6t")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.80609, 1.00206, 6.22056)
+
+[node name="soap" parent="NewAssets" instance=ExtResource("16_t3iin")]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, -8.37725, 0.842924, 5.2802)
+
+[node name="soap2" parent="NewAssets" instance=ExtResource("16_t3iin")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.37725, 0.842924, 4.50591)
+
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7, 4.21949, 3.62634)
 shadow_enabled = true
@@ -173,10 +180,3 @@ shadow_blur = 1.6
 spot_range = 6.256
 spot_attenuation = 0.35
 spot_angle = 43.81
-
-[node name="door" parent="." instance=ExtResource("12_dnp50")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.75813, -0.00145996, 5.67178)
-environmentToLoad = "res://Scenes/Environments/showroom_floor_scene.tscn"
-
-[node name="handdryer" parent="." instance=ExtResource("16_rpe6t")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.80609, 1.00206, 6.22056)

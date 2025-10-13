@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bwhhunf3f6to0"]
 
-[ext_resource type="PackedScene" uid="uid://ci3qq2l5odwcq" path="res://Scenes/Art/Models/door.tscn" id="2_fqmik"]
+[ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="2_fqmik"]
 [ext_resource type="PackedScene" uid="uid://8w1w7i8arnob" path="res://Scenes/enemy3D.tscn" id="2_jna78"]
 
 [node name="ShowroomFloorScene" type="Node3D"]
