@@ -82,21 +82,15 @@ public partial class PlayerRE : CharacterBody3D
 
         if (_canMove && !_isDead)
         {
-
-            if (Input.IsActionPressed("aim"))
-            {
-                _isAiming = true;
-                Aim();
-            }
-            else 
-            {
-                _isAiming = false;
-            }
-
-            if (!_isAiming) 
+            if (Input.IsAnythingPressed()) 
             {
                 Move(delta);
             }
+            else 
+            {
+                playerAnimation.CurrentAnimation = "Idle";
+            }
+            
 
             if (Input.IsActionJustPressed("interaction_check"))
             {
@@ -130,7 +124,17 @@ public partial class PlayerRE : CharacterBody3D
         var direction = Vector3.Zero;
         var transform = Transform;
 
-        if (Input.IsActionPressed("walk_forward")) 
+        if (Input.IsActionPressed("aim"))
+        {
+            _isAiming = true;
+            Aim();
+        }
+        else
+        {
+            _isAiming = false;
+        }
+
+        if (Input.IsActionPressed("walk_forward") && !_isAiming) 
         {
             if (Input.IsActionPressed("sprint")) 
             {
@@ -143,12 +147,8 @@ public partial class PlayerRE : CharacterBody3D
                 playerAnimation.CurrentAnimation = "Walk";
             }
         }
-        else 
-        {
-            playerAnimation.CurrentAnimation = "Idle";
-        }
 
-        if (Input.IsActionPressed("walk_back")) 
+        if (Input.IsActionPressed("walk_back") && !_isAiming) 
         {
             Position -= transform.Basis.X * speed / 2 * (float)delta;
         }
@@ -162,7 +162,7 @@ public partial class PlayerRE : CharacterBody3D
             RotateY(-turnSpeed * (float)delta);
         }
 
-        if (Input.IsActionJustPressed("spin_back"))
+        if (Input.IsActionJustPressed("spin_back") && !_isAiming)
         {
             //Rotates 180 degrees.
             RotateY(Mathf.Pi);
@@ -218,7 +218,7 @@ public partial class PlayerRE : CharacterBody3D
 
     private void Aim() 
     {
-        playerAnimation.CurrentAnimation = "Pistol_Aim_Neutral";
+        playerAnimation.CurrentAnimation = "Pistol_Idle";
     }
 
     private void InteractCheck() 

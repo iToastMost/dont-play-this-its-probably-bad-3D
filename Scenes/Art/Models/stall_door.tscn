@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bnixk3hbr15en"]
 
 [ext_resource type="PackedScene" uid="uid://ir3v3ltwy7pn" path="res://Art/Models/stall_door.glb" id="1_lrean"]
-[ext_resource type="Texture2D" uid="uid://y8efyj0080an" path="res://Art/Textures/Stalldoor.png" id="2_s7dqu"]
+[ext_resource type="Texture2D" uid="uid://ey2ifujty8p" path="res://Art/Textures/StalldoorV2.png" id="2_s7dqu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nw3aq"]
 albedo_texture = ExtResource("2_s7dqu")

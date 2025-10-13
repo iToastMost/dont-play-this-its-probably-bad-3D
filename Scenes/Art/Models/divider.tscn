@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b5haglc00b0re"]
 
 [ext_resource type="PackedScene" uid="uid://w7t5c844nua2" path="res://Art/Models/divider.glb" id="1_u6ppb"]
-[ext_resource type="Texture2D" uid="uid://xqkweysmciyf" path="res://Art/Textures/divider.png" id="2_50uhx"]
+[ext_resource type="Texture2D" uid="uid://b1ij35posv3x4" path="res://Art/Textures/dividerV2.png" id="2_50uhx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wouvy"]
 albedo_texture = ExtResource("2_50uhx")
