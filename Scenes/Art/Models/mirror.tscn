@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpj1q745qsqo0"]
+[gd_scene load_steps=6 format=3 uid="uid://cpj1q745qsqo0"]
 
 [ext_resource type="PackedScene" uid="uid://dli6gojrx3a36" path="res://Art/Models/mirror.glb" id="1_lyk24"]
 [ext_resource type="Texture2D" uid="uid://duiac5i1tpr66" path="res://Art/Textures/Mirror.png" id="2_eyvkg"]
@@ -6,7 +6,18 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ud74l"]
 albedo_texture = ExtResource("2_eyvkg")
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_eyvkg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eyvkg"]
+metallic = 1.0
+roughness = 0.0
+
 [node name="mirror" instance=ExtResource("1_lyk24")]
 
 [node name="Plane_002" parent="." index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_ud74l")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(6.520164e-16, 4.3711385e-08, 0.28878438, 0.3412474, -4.3711385e-08, 0, 1.4916397e-08, 0.99999994, -1.26231665e-08, 0, 0.3841232, 0.011373028)
+mesh = SubResource("PlaneMesh_eyvkg")
+surface_material_override/0 = SubResource("StandardMaterial3D_eyvkg")

@@ -1,12 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0umsq8a383gt"]
+[gd_scene load_steps=4 format=3 uid="uid://c0umsq8a383gt"]
 
 [ext_resource type="PackedScene" uid="uid://dy0uv1mwoyygc" path="res://Art/Models/urinal.glb" id="1_ymtk8"]
+[ext_resource type="Material" uid="uid://bc5mj3lpecfcu" path="res://Art/Materials/Urinal.tres" id="2_qtgmk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ymtk8"]
 size = Vector3(0.337646, 0.628998, 0.368622)
 
 [node name="urinal" instance=ExtResource("1_ymtk8")]
 
+[node name="Cylinder_007" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_qtgmk")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0406494, 0.567856, 0.136398)
+visible = false
 shape = SubResource("BoxShape3D_ymtk8")
