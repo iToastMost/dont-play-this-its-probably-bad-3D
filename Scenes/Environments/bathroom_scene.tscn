@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cl2l2owbnqg6y"]
+[gd_scene load_steps=21 format=3 uid="uid://cl2l2owbnqg6y"]
 
 [ext_resource type="PackedScene" uid="uid://dw1iwrueqi45l" path="res://Scenes/camera_switcher.tscn" id="2_6mhwe"]
 [ext_resource type="PackedScene" uid="uid://bj0fflqe1ib4u" path="res://Scenes/dialog_trigger.tscn" id="3_6cnf1"]
@@ -16,6 +16,12 @@
 [ext_resource type="PackedScene" uid="uid://d2ju4yvya24wv" path="res://Scenes/Art/Models/toilet.tscn" id="17_dnp50"]
 [ext_resource type="PackedScene" uid="uid://cpj1q745qsqo0" path="res://Scenes/Art/Models/mirror.tscn" id="17_r27ve"]
 [ext_resource type="PackedScene" uid="uid://bnixk3hbr15en" path="res://Scenes/Art/Models/stall_door.tscn" id="17_rpe6t"]
+[ext_resource type="Material" uid="uid://b5ei3a3vf6lwy" path="res://Art/Materials/bathroom_floor_tile.tres" id="17_t3iin"]
+[ext_resource type="Material" uid="uid://cmx0vsufspqy7" path="res://Art/Materials/bathrom_walls.tres" id="18_dnp50"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_h2y5n"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rpe6t"]
 
 [node name="Bathroom Scene" type="Node3D"]
 
@@ -105,7 +111,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.236
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.236, 0, 4.12156)
 
 [node name="papertoweldisp" parent="NewAssets" instance=ExtResource("12_r27ve")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.75004, 1.15539, 4.58948)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.75004, 1.3059143, 4.58948)
 
 [node name="toilet" parent="NewAssets" instance=ExtResource("17_dnp50")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.05539, 0, 1.1432)
@@ -191,3 +197,38 @@ size = Vector3(4.845154, 4.848877, 7.5306396)
 origin_offset = Vector3(-1.39, -0.08, 1.46)
 box_projection = true
 interior = true
+
+[node name="BathroomFloor" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.2120357e-07, 0, 1.4010886, 0, 1, 0, -2.7728145, 0, -6.1243526e-08, -7.1002083, 0.009940386, 3.4689424)
+mesh = SubResource("PlaneMesh_h2y5n")
+surface_material_override/0 = ExtResource("17_t3iin")
+
+[node name="Wall" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.4170787, 0, 0, 0, -4.371139e-08, -1.4681144, 0, 1, -6.4173314e-08, -7.0957766, 1.4710621, 0.70600206)
+material_override = ExtResource("18_dnp50")
+mesh = SubResource("PlaneMesh_rpe6t")
+
+[node name="Wall2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-6.194248e-08, -1, 0, -6.194248e-08, 0, -1.4681144, 1.4170787, -4.371139e-08, -6.4173314e-08, -5.730249, 1.471062, 2.115072)
+material_override = ExtResource("18_dnp50")
+mesh = SubResource("PlaneMesh_rpe6t")
+
+[node name="Wall3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-6.194248e-08, -1, 0, -6.194248e-08, 0, -1.4681144, 1.4170787, -4.371139e-08, -6.4173314e-08, -5.730249, 1.4710618, 4.9291735)
+material_override = ExtResource("18_dnp50")
+mesh = SubResource("PlaneMesh_rpe6t")
+
+[node name="Wall5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-6.194248e-08, 1, 0, 6.1942465e-08, 0, -1.4681144, -1.4170787, -4.371139e-08, -6.4173314e-08, -8.446331, 1.4710618, 4.9291735)
+material_override = ExtResource("18_dnp50")
+mesh = SubResource("PlaneMesh_rpe6t")
+
+[node name="Wall6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-6.194248e-08, 1, 0, 6.1942465e-08, 0, -1.4681144, -1.4170787, -4.371139e-08, -6.4173314e-08, -8.446331, 1.471062, 2.098985)
+material_override = ExtResource("18_dnp50")
+mesh = SubResource("PlaneMesh_rpe6t")
+
+[node name="Wall4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.4170787, -8.742278e-08, 0, -5.4151833e-15, 4.371139e-08, -1.4681144, 1.2388496e-07, -1, -6.4173314e-08, -7.0957766, 1.4710618, 6.221699)
+material_override = ExtResource("18_dnp50")
+mesh = SubResource("PlaneMesh_rpe6t")

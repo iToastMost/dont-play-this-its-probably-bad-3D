@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cml6bor2v2rs"]
+
+[ext_resource type="Material" uid="uid://cwe2nt3ymoi18" path="res://new_standard_material_3d.tres" id="1_w6aom"]
+[ext_resource type="Script" uid="uid://b0q6ef2jmk0td" path="res://Scripts/Door.cs" id="2_p0e35"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p0e35"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fahql"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p0e35"]
+size = Vector3(0.69928, 5.4583, 2.38971)
+
+[node name="Door" type="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 0.730662, 0, 0, 0, 1, 0, 0, 0)
+material_override = ExtResource("1_w6aom")
+material_overlay = ExtResource("1_w6aom")
+use_collision = true
+size = Vector3(0.287598, 5.4682, 2.3623)
+material = SubResource("StandardMaterial3D_p0e35")
+script = ExtResource("2_p0e35")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.203615, 0.00313187, -1.09421)
+radius = 0.0567326
+material = SubResource("StandardMaterial3D_fahql")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0487366, 0.0238876, -0.0101013)
+shape = SubResource("BoxShape3D_p0e35")
