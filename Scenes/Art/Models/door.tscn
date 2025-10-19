@@ -20,6 +20,7 @@ script = ExtResource("2_rd82a")
 surface_material_override/0 = SubResource("StandardMaterial3D_ex83m")
 
 [node name="Cube_013" parent="." index="1"]
+transform = Transform3D(1.012, 0, 0, 0, 1.003, 0, 0, 0, 1, 0, 0, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_ree5g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]

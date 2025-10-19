@@ -7,6 +7,9 @@ public partial class Door : StaticBody3D, iInteractable
 	[Export]
 	private string environmentToLoad;
 
+	[Export]
+	private bool _isFlipped;
+
 	[Signal]
 	public delegate void LoadEnvironmentEventHandler(string path);
 
@@ -14,6 +17,11 @@ public partial class Door : StaticBody3D, iInteractable
 	public override void _Ready()
 	{
 		AddToGroup("Doors");
+		if (_isFlipped) 
+		{
+			var mesh = GetNode<MeshInstance3D>("Cube_013");
+			mesh.Scale = new Vector3(-1, 1, 1);
+		}
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

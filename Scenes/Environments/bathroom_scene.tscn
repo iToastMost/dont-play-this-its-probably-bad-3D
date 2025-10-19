@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://d2ju4yvya24wv" path="res://Scenes/Art/Models/toilet.tscn" id="17_dnp50"]
 [ext_resource type="PackedScene" uid="uid://cpj1q745qsqo0" path="res://Scenes/Art/Models/mirror.tscn" id="17_r27ve"]
 [ext_resource type="PackedScene" uid="uid://bnixk3hbr15en" path="res://Scenes/Art/Models/stall_door.tscn" id="17_rpe6t"]
-[ext_resource type="Material" uid="uid://b5ei3a3vf6lwy" path="res://Art/Materials/bathroom_floor_tile.tres" id="17_t3iin"]
+[ext_resource type="Material" uid="uid://da6g467h700ej" path="res://Art/Materials/bathroom_floor_tile.tres" id="17_t3iin"]
 [ext_resource type="Material" uid="uid://cmx0vsufspqy7" path="res://Art/Materials/bathrom_walls.tres" id="18_dnp50"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_h2y5n"]
@@ -92,92 +92,92 @@ transform = Transform3D(1, 0, 0, 0, -0.0689033, 0.997623, 0, -0.997623, -0.06890
 visible = false
 light_energy = 1.4
 
-[node name="NewAssets" type="Node3D" parent="."]
+[node name="Environment Models" type="Node3D" parent="."]
 
-[node name="dude" parent="NewAssets" instance=ExtResource("11_kc8aj")]
+[node name="dude" parent="Environment Models" instance=ExtResource("11_kc8aj")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.07609, 0.00930589, 1.13198)
 visible = false
 
-[node name="wetfloorsign" parent="NewAssets" instance=ExtResource("11_2m0sy")]
+[node name="wetfloorsign" parent="Environment Models" instance=ExtResource("11_2m0sy")]
 transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -6.17138, 0, 3.99018)
 
-[node name="sink" parent="NewAssets" instance=ExtResource("12_we5m5")]
+[node name="sink" parent="Environment Models" instance=ExtResource("12_we5m5")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.236, 0, 5.793)
 
-[node name="sink2" parent="NewAssets" instance=ExtResource("12_we5m5")]
+[node name="sink2" parent="Environment Models" instance=ExtResource("12_we5m5")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.236, 0, 4.9541)
 
-[node name="sink3" parent="NewAssets" instance=ExtResource("12_we5m5")]
+[node name="sink3" parent="Environment Models" instance=ExtResource("12_we5m5")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.236, 0, 4.12156)
 
-[node name="papertoweldisp" parent="NewAssets" instance=ExtResource("12_r27ve")]
+[node name="papertoweldisp" parent="Environment Models" instance=ExtResource("12_r27ve")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.75004, 1.3059143, 4.58948)
 
-[node name="toilet" parent="NewAssets" instance=ExtResource("17_dnp50")]
+[node name="toilet" parent="Environment Models" instance=ExtResource("17_dnp50")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.05539, 0, 1.1432)
 
-[node name="stall" parent="NewAssets" instance=ExtResource("16_r27ve")]
+[node name="stall" parent="Environment Models" instance=ExtResource("16_r27ve")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.22818, 0, 3.67801)
 
-[node name="stall_door" parent="NewAssets/stall" instance=ExtResource("17_rpe6t")]
+[node name="stall_door" parent="Environment Models/stall" instance=ExtResource("17_rpe6t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.948738, 0, -2.57492e-05)
 
-[node name="stall2" parent="NewAssets" instance=ExtResource("16_r27ve")]
+[node name="stall2" parent="Environment Models" instance=ExtResource("16_r27ve")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.22818, 0, 2.67099)
 
-[node name="stall_door2" parent="NewAssets/stall2" instance=ExtResource("17_rpe6t")]
+[node name="stall_door2" parent="Environment Models/stall2" instance=ExtResource("17_rpe6t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.948738, 0, -2.57492e-05)
 
-[node name="stall3" parent="NewAssets" instance=ExtResource("16_r27ve")]
+[node name="stall3" parent="Environment Models" instance=ExtResource("16_r27ve")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.22818, 0, 1.67004)
 
-[node name="stall_door3" parent="NewAssets/stall3" instance=ExtResource("17_rpe6t")]
+[node name="stall_door3" parent="Environment Models/stall3" instance=ExtResource("17_rpe6t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.948738, 0, -2.57492e-05)
 visible = false
 collision_layer = 0
 collision_mask = 0
 
-[node name="garbage" parent="NewAssets" instance=ExtResource("15_2m0sy")]
+[node name="garbage" parent="Environment Models" instance=ExtResource("15_2m0sy")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.90889, 0, 4.60311)
 
-[node name="urinal1" parent="NewAssets" instance=ExtResource("16_we5m5")]
+[node name="urinal1" parent="Environment Models" instance=ExtResource("16_we5m5")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.71845, 0.234797, 1.13232)
 
-[node name="urinal2" parent="NewAssets" instance=ExtResource("16_we5m5")]
+[node name="urinal2" parent="Environment Models" instance=ExtResource("16_we5m5")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.71845, 0.234797, 2.05111)
 
-[node name="urinal3" parent="NewAssets" instance=ExtResource("16_we5m5")]
+[node name="urinal3" parent="Environment Models" instance=ExtResource("16_we5m5")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.71845, 0.234797, 3.0529)
 
-[node name="divider" parent="NewAssets" instance=ExtResource("16_dnp50")]
+[node name="divider" parent="Environment Models" instance=ExtResource("16_dnp50")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.0202, 0.306231, 1.56439)
 
-[node name="divider2" parent="NewAssets" instance=ExtResource("16_dnp50")]
+[node name="divider2" parent="Environment Models" instance=ExtResource("16_dnp50")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.0202, 0.306231, 2.51969)
 
-[node name="divider3" parent="NewAssets" instance=ExtResource("16_dnp50")]
+[node name="divider3" parent="Environment Models" instance=ExtResource("16_dnp50")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.0202, 0.306231, 3.55163)
 
-[node name="door" parent="NewAssets" instance=ExtResource("12_dnp50")]
+[node name="door" parent="Environment Models" instance=ExtResource("12_dnp50")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.75813, -0.00145996, 5.67178)
 environmentToLoad = "res://Scenes/Environments/showroom_floor_scene.tscn"
 
-[node name="handdryer" parent="NewAssets" instance=ExtResource("16_rpe6t")]
+[node name="handdryer" parent="Environment Models" instance=ExtResource("16_rpe6t")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.80609, 1.00206, 6.22056)
 
-[node name="soap" parent="NewAssets" instance=ExtResource("16_t3iin")]
+[node name="soap" parent="Environment Models" instance=ExtResource("16_t3iin")]
 transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, -8.37725, 0.842924, 5.2802)
 
-[node name="soap2" parent="NewAssets" instance=ExtResource("16_t3iin")]
+[node name="soap2" parent="Environment Models" instance=ExtResource("16_t3iin")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.37725, 0.842924, 4.50591)
 
-[node name="mirror" parent="NewAssets" instance=ExtResource("17_r27ve")]
+[node name="mirror" parent="Environment Models" instance=ExtResource("17_r27ve")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.42785, 1.17748, 5.85501)
 
-[node name="mirror2" parent="NewAssets" instance=ExtResource("17_r27ve")]
+[node name="mirror2" parent="Environment Models" instance=ExtResource("17_r27ve")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.42785, 1.17748, 4.94657)
 
-[node name="mirror3" parent="NewAssets" instance=ExtResource("17_r27ve")]
+[node name="mirror3" parent="Environment Models" instance=ExtResource("17_r27ve")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.42785, 1.17748, 4.09684)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
@@ -199,7 +199,7 @@ box_projection = true
 interior = true
 
 [node name="BathroomFloor" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.2120357e-07, 0, 1.4010886, 0, 1, 0, -2.7728145, 0, -6.1243526e-08, -7.1002083, 0.009940386, 3.4689424)
+transform = Transform3D(-1.3850458, 0, 0, 0, 1, 0, 0, 0, -2.7661445, -7.1002083, 0.009940386, 3.4689424)
 mesh = SubResource("PlaneMesh_h2y5n")
 surface_material_override/0 = ExtResource("17_t3iin")
 
