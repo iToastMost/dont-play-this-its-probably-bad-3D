@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo0a0c6hyeknd"]
+
+[ext_resource type="Script" uid="uid://cbqae0q2qsfjd" path="res://Scenes/Bullet3D.cs" id="1_17n1i"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_nr8tw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17n1i"]
+albedo_color = Color(0.7321788, 0.70616776, 0.39108747, 1)
+
+[node name="Bullet3D" type="Node3D"]
+transform = Transform3D(0.13774891, 0, 6.714667e-16, 0, 0.19024841, 0, -3.754029e-16, 0, 0.08170439, 0, 0, 0)
+script = ExtResource("1_17n1i")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+target_position = Vector3(0, -5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1.2880302e-07, -0.9999999, 0, 2.9466693, -4.371138e-08, 0, 0, 0)
+mesh = SubResource("PrismMesh_nr8tw")
+surface_material_override/0 = SubResource("StandardMaterial3D_17n1i")

@@ -1,8 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://60d70rbuc1vj"]
+[gd_scene load_steps=6 format=3 uid="uid://60d70rbuc1vj"]
 
 [ext_resource type="Script" uid="uid://dkxrvu0xdlyaq" path="res://Scripts/GameManager.cs" id="1_je8vj"]
 [ext_resource type="PackedScene" uid="uid://bx3tiy1h1b0rr" path="res://Scenes/ui.tscn" id="1_mmuqr"]
 [ext_resource type="PackedScene" uid="uid://cmc37doc3qiso" path="res://Scenes/playerRE.tscn" id="3_je8vj"]
+[ext_resource type="Shader" uid="uid://b7qsakv04r3fh" path="res://Scenes/GameManager.gdshader" id="4_b7dir"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mmuqr"]
+shader = ExtResource("4_b7dir")
+shader_parameter/aberration_strength = 3.0
+shader_parameter/blur_strength = 2.0
+shader_parameter/noise_strength = 0.048
+shader_parameter/vignette_strength = 0.78
+shader_parameter/scanline_strength = 0.016
+shader_parameter/distortion_strength = 0.1
+shader_parameter/ghost_strength = 0.12
+shader_parameter/flicker_strength = 0.005
 
 [node name="GameManager" type="Node3D"]
 process_mode = 3
@@ -14,3 +26,10 @@ script = ExtResource("1_je8vj")
 
 [node name="3DPlayer" parent="." instance=ExtResource("3_je8vj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.56258, 0.771982, 1.13982)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TestShaderFearsToFathom" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_mmuqr")
+offset_right = 1079.0
+offset_bottom = 721.0

@@ -30,10 +30,12 @@ public partial class PlayerRE : CharacterBody3D
     CollisionShape3D playerCollider;
     ColorRect colorRect;
     RayCast3D rayCast;
-    AnimationPlayer playerAnimation; 
+    AnimationPlayer playerAnimation;
+    PackedScene bullet;
 
     public override void _Ready()
     {
+        //player = GetNode<CharacterBody3D>("3DPlayer");
         playerAnimation = GetNode<AnimationPlayer>("CharacterModelAnim/AnimationPlayer");
 
         colorRect = GetNode<ColorRect>("SubViewportContainer/CanvasLayer/ColorRect");
@@ -42,6 +44,7 @@ public partial class PlayerRE : CharacterBody3D
         _phoneAnimation = GetNode<AnimationPlayer>("SubViewportContainer/AnimationPlayer");
         _subViewport = GetNode<SubViewport>("SubViewportContainer/SubViewport");
         _gooseJumpScene = ResourceLoader.Load<PackedScene>("res://GooseJump/Scenes/main.tscn");
+        bullet = ResourceLoader.Load<PackedScene>("res://Scenes/Bullet3D.tscn");
 
         rayCast = GetNode<RayCast3D>("RayCast3D");
 
@@ -128,6 +131,10 @@ public partial class PlayerRE : CharacterBody3D
         {
             _isAiming = true;
             Aim();
+            if (_isAiming && Input.IsActionJustPressed("shoot_3d")) 
+            {
+                Shoot();
+            }
         }
         else
         {
@@ -219,6 +226,16 @@ public partial class PlayerRE : CharacterBody3D
     private void Aim() 
     {
         playerAnimation.CurrentAnimation = "Pistol_Idle";
+    }
+
+    private void Shoot() 
+    {
+        var bulletSpawn = bullet.Instantiate<Bullet3D>();
+        bulletSpawn.Position = GetNode<RayCast3D>("Laser").GlobalPosition;
+        bulletSpawn.SetDireciton(this.Transform.Basis.X);
+        GetParent().AddChild(bulletSpawn);
+        GD.Print("Pew pew");
+
     }
 
     private void InteractCheck() 
