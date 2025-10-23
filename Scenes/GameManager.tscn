@@ -30,6 +30,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.56258, 0.771982, 1.13982)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TestShaderFearsToFathom" type="ColorRect" parent="CanvasLayer"]
+visible = false
 material = SubResource("ShaderMaterial_mmuqr")
 offset_right = 1079.0
 offset_bottom = 721.0

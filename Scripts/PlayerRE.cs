@@ -24,14 +24,19 @@ public partial class PlayerRE : CharacterBody3D
     private bool _3DStarted = false;
     private bool _isAiming = false;
     private bool _isDead = false;
+
+    private Vector3 _aimPointDefaultPositon;
    
     Node GooseScene;
     CharacterBody3D player;
     CollisionShape3D playerCollider;
     ColorRect colorRect;
     RayCast3D rayCast;
+    RayCast3D laser;
     AnimationPlayer playerAnimation;
     PackedScene bullet;
+    Node3D aimPoint;
+
 
     public override void _Ready()
     {
@@ -47,7 +52,9 @@ public partial class PlayerRE : CharacterBody3D
         bullet = ResourceLoader.Load<PackedScene>("res://Scenes/Bullet3D.tscn");
 
         rayCast = GetNode<RayCast3D>("RayCast3D");
-
+        laser = GetNode<RayCast3D>("Laser");
+        aimPoint = GetNode<Node3D>("AimPoint");
+        _aimPointDefaultPositon = aimPoint.Position;
 
         //Uncomment below code and switch _canMove and _3DStarted to false to start with GooseJump game
         playerCollider.Disabled = true;
@@ -91,6 +98,7 @@ public partial class PlayerRE : CharacterBody3D
             }
             else 
             {
+                laser.Visible = false;
                 playerAnimation.CurrentAnimation = "Idle";
             }
             
@@ -120,13 +128,23 @@ public partial class PlayerRE : CharacterBody3D
             _subViewport?.PushInput(@event);
             GetViewport().SetInputAsHandled();
         }
+
+        if(_isAiming && @event is InputEventMouseMotion movement) 
+        {
+            Vector3 motion = new Vector3(movement.Relative.X, movement.Relative.Y, 0);
+            motion.X = Mathf.Clamp(motion.X, 5, 5);
+            motion.Z = Mathf.Clamp(motion.Z, 5, 5);
+            motion.Y = Mathf.Clamp(motion.Y, 0, 0);
+            aimPoint.Translate(motion);
+
+        }
     }
 
     private void Move(double delta) 
     {
         var direction = Vector3.Zero;
         var transform = Transform;
-
+       
         if (Input.IsActionPressed("aim"))
         {
             _isAiming = true;
@@ -139,6 +157,7 @@ public partial class PlayerRE : CharacterBody3D
         else
         {
             _isAiming = false;
+            aimPoint.Position = _aimPointDefaultPositon;
         }
 
         if (Input.IsActionPressed("walk_forward") && !_isAiming) 
@@ -226,13 +245,25 @@ public partial class PlayerRE : CharacterBody3D
     private void Aim() 
     {
         playerAnimation.CurrentAnimation = "Pistol_Idle";
+        laser.Visible = true;
     }
 
     private void Shoot() 
     {
         var bulletSpawn = bullet.Instantiate<Bullet3D>();
-        bulletSpawn.Position = GetNode<RayCast3D>("Laser").GlobalPosition;
+        //bulletSpawn.Position = laser.GlobalPosition;
         bulletSpawn.SetDireciton(this.Transform.Basis.X);
+
+        if (laser.IsColliding()) 
+        {
+            bulletSpawn.LookAtFromPosition(laser.GlobalPosition, laser.GetCollisionPoint());
+        }
+        else 
+        {
+            var globalTargetPosition = laser.ToGlobal(laser.TargetPosition);
+            bulletSpawn.LookAtFromPosition(laser.GlobalPosition, globalTargetPosition);
+        }
+
         GetParent().AddChild(bulletSpawn);
         GD.Print("Pew pew");
 
