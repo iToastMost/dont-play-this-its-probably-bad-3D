@@ -11,8 +11,8 @@ public partial class Enemy3D : CharacterBody3D
     private int _health = 5;
     private float _enemyMoveSpeed = 15f;
     private float _distanceToPlayer;
-    private const int ENEMY_ATTACK_CD = 5;
-    private int _lastAttack = 0;
+    private const double ENEMY_ATTACK_CD = 2.5;
+    private double _lastAttack = 0;
     private bool _canAttack = true;
 
     public override void _Ready() 
@@ -37,7 +37,7 @@ public partial class Enemy3D : CharacterBody3D
     {
         this.LookAt(player.GlobalPosition, Vector3.Up);   
         _distanceToPlayer = this.GlobalPosition.DistanceTo(player.GlobalPosition);
-        EnemyAttackCooldownCheck();
+        EnemyAttackCooldownCheck(delta);
 
         if (_distanceToPlayer <= 1)
         {   
@@ -68,7 +68,6 @@ public partial class Enemy3D : CharacterBody3D
 
     private void AttackPlayer() 
     {
-        //Change attack cooldown to start on animation finished and stop animation on animation finish
         _canAttack = false;
         _lastAttack = ENEMY_ATTACK_CD;
         enemyAnimation.CurrentAnimation = "attack";
@@ -84,9 +83,9 @@ public partial class Enemy3D : CharacterBody3D
         }
     }
 
-    private void EnemyAttackCooldownCheck()
+    private void EnemyAttackCooldownCheck(double delta)
     {
-        _lastAttack--;
+        _lastAttack -= delta;
         if (_lastAttack <= 0) 
         {
             _canAttack = true;
