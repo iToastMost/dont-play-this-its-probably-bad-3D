@@ -85,9 +85,10 @@ public partial class PlayerRE : CharacterBody3D
 
     public override void _PhysicsProcess(double delta)
     {
-        if(_health <= 0) 
+        if(_health <= 0 && !_isDead) 
         {
             _isDead = true;
+            playerDie();
         }
 
         if (_canMove && !_isDead)
@@ -112,7 +113,11 @@ public partial class PlayerRE : CharacterBody3D
         }
         else 
         {
-            playerAnimation.CurrentAnimation = "Idle";
+            if (!_isDead) 
+            {
+                playerAnimation.CurrentAnimation = "Idle";
+            }
+            
             if (Input.IsActionJustPressed("accept_dialog") && _3DStarted == true) 
             {
                 _canMove = true;
@@ -288,6 +293,13 @@ public partial class PlayerRE : CharacterBody3D
         _canMove = false;
     }
 
+    private void playerDie() 
+    {
+        playerAnimation.CurrentAnimation = "Death01";
+        _canMove = false;
+        _isDead = true;
+    }
+
     public void OnStart() 
     {
         GD.Print("Start 3D game");
@@ -296,6 +308,11 @@ public partial class PlayerRE : CharacterBody3D
         _phoneAnimation.CurrentAnimation = "slide_out";
         _phoneAnimation.Play();
         playerCollider.Disabled = false;
+    }
+
+    public void TakeDamage(int dmg) 
+    {
+        _health -= dmg;
     }
 
     public void AnimationFinished(StringName animName) 
@@ -307,6 +324,11 @@ public partial class PlayerRE : CharacterBody3D
             GooseScene = null;
             GetTree().Paused = false;
             colorRect.Visible = false;
+        }
+
+        if (animName.Equals("Death01")) 
+        {
+            playerAnimation.Stop();
         }
         
     }

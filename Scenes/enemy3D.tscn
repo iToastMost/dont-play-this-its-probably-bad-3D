@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://8w1w7i8arnob"]
+[gd_scene load_steps=10 format=3 uid="uid://8w1w7i8arnob"]
 
 [ext_resource type="Script" uid="uid://bnoyawdc1jmk0" path="res://Scripts/Enemy3D.cs" id="1_hghv2"]
 
@@ -14,6 +14,93 @@ height = 1.4
 
 [sub_resource type="BoxMesh" id="BoxMesh_ne65n"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_0bnlb"]
+size = Vector3(1, 0.10681152, 0.30786133)
+
+[sub_resource type="Animation" id="Animation_0bnlb"]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AttackBox:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.41206682), Vector3(0, 0, -0.6048546), Vector3(0, 0, 0.41206682)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D/LeftArm:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.21764529, 0.17121378, -0.5204247), Vector3(-0.21764529, 0.17121378, -1.2124951), Vector3(-0.21764529, 0.17121378, -0.5204247)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D/RightArm:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.2, 0.17121378, -0.5204247), Vector3(0.2, 0.17121378, -1.2124951), Vector3(0.2, 0.17121378, -0.5204247)]
+}
+
+[sub_resource type="Animation" id="Animation_0n4k6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AttackBox:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D/LeftArm:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.21764529, 0.17121378, -0.5204247)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D/RightArm:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.2, 0.17121378, -0.5204247)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0n4k6"]
+_data = {
+&"RESET": SubResource("Animation_0n4k6"),
+&"attack": SubResource("Animation_0bnlb")
+}
+
 [node name="Enemy3D" type="CharacterBody3D"]
 script = ExtResource("1_hghv2")
 
@@ -23,14 +110,27 @@ shape = SubResource("CapsuleShape3D_ne65n")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_1f0kj")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
-transform = Transform3D(0.129261, 0, 0, 0, 0.11842, 0, 0, 0, 0.352478, -0.305361, 0.135, -0.448549)
+[node name="LeftArm" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.21764529, 0.17121378, -0.5204247)
 mesh = SubResource("BoxMesh_ne65n")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="MeshInstance3D"]
-transform = Transform3D(0.129261, 0, 0, 0, 0.11842, 0, 0, 0, 0.352478, 0.269568, 0.135, -0.448549)
+[node name="RightArm" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.2, 0.17121378, -0.5204247)
 mesh = SubResource("BoxMesh_ne65n")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D"]
+[node name="Eyeball" type="MeshInstance3D" parent="MeshInstance3D"]
 transform = Transform3D(0.115123, 0, 0, 0, 0.0891366, 0, 0, 0, 0.233857, -0.0162331, 0.358009, -0.391548)
 mesh = SubResource("BoxMesh_ne65n")
+
+[node name="AttackBox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.251877, -0.54331326)
+shape = SubResource("BoxShape3D_0bnlb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0n4k6")
+}
+
+[connection signal="body_entered" from="AttackBox" to="." method="OnBodyEntered3D"]
