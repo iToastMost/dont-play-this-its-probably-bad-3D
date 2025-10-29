@@ -24,6 +24,8 @@ public partial class PlayerRE : CharacterBody3D
     private bool _3DStarted = false;
     private bool _isAiming = false;
     private bool _isDead = false;
+    private bool _isReloading = false;
+    private int _ammo = 12;
 
     private Vector3 _aimPointDefaultPositon;
    
@@ -109,11 +111,18 @@ public partial class PlayerRE : CharacterBody3D
                 InteractCheck();
             }
 
+            if (Input.IsActionJustPressed("reload") && _ammo < 12 && !_isReloading) 
+            {
+                playerAnimation.CurrentAnimation = "Pistol_Reload";
+                _canMove = false;
+                _isReloading = true;
+            }
+
             MoveAndSlide();
         }
         else 
         {
-            if (!_isDead) 
+            if (!_isDead && !_isReloading) 
             {
                 playerAnimation.CurrentAnimation = "Idle";
             }
@@ -255,22 +264,27 @@ public partial class PlayerRE : CharacterBody3D
 
     private void Shoot() 
     {
-        var bulletSpawn = bullet.Instantiate<Bullet3D>();
-        //bulletSpawn.Position = laser.GlobalPosition;
-        bulletSpawn.SetDireciton(this.Transform.Basis.X);
-
-        if (laser.IsColliding()) 
+        if(_ammo > 0) 
         {
-            bulletSpawn.LookAtFromPosition(laser.GlobalPosition, laser.GetCollisionPoint());
-        }
-        else 
-        {
-            var globalTargetPosition = laser.ToGlobal(laser.TargetPosition);
-            bulletSpawn.LookAtFromPosition(laser.GlobalPosition, globalTargetPosition);
-        }
+            _ammo--;
 
-        GetParent().AddChild(bulletSpawn);
-        GD.Print("Pew pew");
+            var bulletSpawn = bullet.Instantiate<Bullet3D>();
+            //bulletSpawn.Position = laser.GlobalPosition;
+            bulletSpawn.SetDireciton(this.Transform.Basis.X);
+
+            if (laser.IsColliding())
+            {
+                bulletSpawn.LookAtFromPosition(laser.GlobalPosition, laser.GetCollisionPoint());
+            }
+            else
+            {
+                var globalTargetPosition = laser.ToGlobal(laser.TargetPosition);
+                bulletSpawn.LookAtFromPosition(laser.GlobalPosition, globalTargetPosition);
+            }
+
+            GetParent().AddChild(bulletSpawn);
+            GD.Print("Pew pew");
+        }
 
     }
 
@@ -317,6 +331,7 @@ public partial class PlayerRE : CharacterBody3D
 
     public void AnimationFinished(StringName animName) 
     {
+        GD.Print("animation finished");
         if (animName.Equals("slide_out")) 
         {
             GD.Print("anim finished");
@@ -329,6 +344,14 @@ public partial class PlayerRE : CharacterBody3D
         if (animName.Equals("Death01")) 
         {
             playerAnimation.Stop();
+        }
+
+        if (animName.Equals("Pistol_Reload")) 
+        {
+            
+            _isReloading = false;
+            _canMove = true;
+            _ammo = 12;
         }
         
     }
