@@ -16,7 +16,11 @@ public partial class MainMenu : Control
 
     private void StartGame() 
     {
-        GetTree().ChangeSceneToFile("res://Scenes/GameManager.tscn");
+        if(GetTree() != null) 
+        {
+            GetTree().ChangeSceneToFile("res://Scenes/GameManager.tscn");
+        }
+        
     }
 
     private void QuitGame() 
