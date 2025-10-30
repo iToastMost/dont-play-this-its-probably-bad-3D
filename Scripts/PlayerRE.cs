@@ -56,6 +56,8 @@ public partial class PlayerRE : CharacterBody3D
         aimPoint = GetNode<Node3D>("AimPoint");
         _aimPointDefaultPositon = aimPoint.Position;
 
+        playerAnimation.AnimationFinished += OnAnimationFinish;       
+
         //Uncomment below code and switch _canMove and _3DStarted to false to start with GooseJump game
         playerCollider.Disabled = true;
         _canMove = false;
@@ -315,7 +317,7 @@ public partial class PlayerRE : CharacterBody3D
         _health -= dmg;
     }
 
-    public void AnimationFinished(StringName animName) 
+    public void OnAnimationFinish(StringName animName) 
     {
         if (animName.Equals("slide_out")) 
         {
