@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bwhhunf3f6to0"]
+[gd_scene load_steps=17 format=3 uid="uid://bwhhunf3f6to0"]
 
 [ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="2_fqmik"]
 [ext_resource type="PackedScene" uid="uid://dw1iwrueqi45l" path="res://Scenes/camera_switcher.tscn" id="3_fqmik"]
@@ -38,6 +38,10 @@ size = Vector3(36.543392, 0.562, 0.18025595)
 resource_local_to_scene = true
 size = Vector3(1.7589658, 0.562, 0.18025595)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_5w1iy"]
+resource_local_to_scene = true
+size = Vector3(3.9260802, 0.562, 0.18025595)
+
 [node name="ShowroomFloorScene" type="Node3D"]
 
 [node name="Cameras" type="Node" parent="."]
@@ -62,7 +66,7 @@ transform = Transform3D(-0.9989232, 0.0017844664, -0.04636125, 0, 0.99926007, 0.
 transform = Transform3D(-0.9995808, 0.0018704936, -0.028891653, 0, 0.99791086, 0.06460642, 0.028952137, 0.06457933, -0.99749255, 2.582325, 0.6279019, -2.4911594)
 
 [node name="Camera3D7" type="Camera3D" parent="Cameras"]
-transform = Transform3D(-0.99944496, 0.0015717772, -0.03327693, 0, 0.9988864, 0.047180634, 0.03331403, 0.04715445, -0.9983319, 5.647567, 0.6279019, -2.581147)
+transform = Transform3D(-0.7835475, 0.2888591, -0.55010337, 0, 0.8853616, 0.46490306, 0.6213319, 0.36427364, -0.6937229, -3.3199222, 4.3355064, 15.471395)
 
 [node name="Environment" type="Node" parent="."]
 
@@ -1411,39 +1415,153 @@ _currentCamera = NodePath("../../Cameras/Camera3D2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12734938, -0.21917701, 0.028952599)
 shape = SubResource("BoxShape3D_fqmik")
 
+[node name="CameraSwitcher13" parent="CameraSwitchers" node_paths=PackedStringArray("_currentCamera") instance=ExtResource("3_fqmik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8694465, -0.10842991, 10.524456)
+_currentCamera = NodePath("../../Cameras/Camera3D2")
+
+[node name="CollisionShape3D" parent="CameraSwitchers/CameraSwitcher13" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12734938, -0.21917701, 0.028952599)
+shape = SubResource("BoxShape3D_fqmik")
+
+[node name="CameraSwitcher14" parent="CameraSwitchers" node_paths=PackedStringArray("_currentCamera") instance=ExtResource("3_fqmik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1849105, -0.10842991, 10.947434)
+_currentCamera = NodePath("../../Cameras/Camera3D2")
+
+[node name="CollisionShape3D" parent="CameraSwitchers/CameraSwitcher14" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12734938, -0.21917701, 0.028952599)
+shape = SubResource("BoxShape3D_fqmik")
+
+[node name="CameraSwitcher15" parent="CameraSwitchers" node_paths=PackedStringArray("_currentCamera") instance=ExtResource("3_fqmik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2226257, -0.10842991, 11.039155)
+_currentCamera = NodePath("../../Cameras/Camera3D2")
+
+[node name="CollisionShape3D" parent="CameraSwitchers/CameraSwitcher15" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12734938, -0.21917701, 0.028952599)
+shape = SubResource("BoxShape3D_fqmik")
+
+[node name="CameraSwitcher4" parent="CameraSwitchers" node_paths=PackedStringArray("_currentCamera") instance=ExtResource("3_fqmik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.69919586, -0.28082323, 9.845248)
+_currentCamera = NodePath("../../Cameras/Camera3D5")
+
+[node name="CollisionShape3D" parent="CameraSwitchers/CameraSwitcher4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055683732, -0.21917701, 0.0023651123)
+shape = SubResource("BoxShape3D_jna78")
+
+[node name="MeshInstance3D" parent="CameraSwitchers/CameraSwitcher4" index="1"]
+skeleton = NodePath("../../CameraSwitcher4")
+
+[node name="CameraSwitcher5" parent="CameraSwitchers" node_paths=PackedStringArray("_currentCamera") instance=ExtResource("3_fqmik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.69919586, -0.28082323, -0.28122556)
+_currentCamera = NodePath("../../Cameras/Camera3D4")
+
+[node name="CollisionShape3D" parent="CameraSwitchers/CameraSwitcher5" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055683732, -0.21917701, 0.0023651123)
+shape = SubResource("BoxShape3D_jna78")
+
+[node name="MeshInstance3D" parent="CameraSwitchers/CameraSwitcher5" index="1"]
+skeleton = NodePath("../../CameraSwitcher4")
+
+[node name="CameraSwitcher6" parent="CameraSwitchers" node_paths=PackedStringArray("_currentCamera") instance=ExtResource("3_fqmik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4141998, -0.28082323, -0.28122556)
+_currentCamera = NodePath("../../Cameras/Camera3D4")
+
+[node name="CollisionShape3D" parent="CameraSwitchers/CameraSwitcher6" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055683732, -0.21917701, 0.0023651123)
+shape = SubResource("BoxShape3D_jna78")
+
+[node name="CameraSwitcher7" parent="CameraSwitchers" node_paths=PackedStringArray("_currentCamera") instance=ExtResource("3_fqmik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5116196, -0.28082323, -0.28122556)
+_currentCamera = NodePath("../../Cameras/Camera3D4")
+
+[node name="CollisionShape3D" parent="CameraSwitchers/CameraSwitcher7" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055683732, -0.21917701, 0.0023651123)
+shape = SubResource("BoxShape3D_jna78")
+
+[node name="CameraSwitcher8" parent="CameraSwitchers" node_paths=PackedStringArray("_currentCamera") instance=ExtResource("3_fqmik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.69919586, -0.28082323, 0.29588437)
+_currentCamera = NodePath("../../Cameras/Camera3D5")
+
+[node name="CollisionShape3D" parent="CameraSwitchers/CameraSwitcher8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055683732, -0.21917701, 0.0023651123)
+shape = SubResource("BoxShape3D_jna78")
+
+[node name="MeshInstance3D" parent="CameraSwitchers/CameraSwitcher8" index="1"]
+skeleton = NodePath("../../CameraSwitcher4")
+
+[node name="CameraSwitcher10" parent="CameraSwitchers" node_paths=PackedStringArray("_currentCamera") instance=ExtResource("3_fqmik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5956664, -0.28082323, 0.29588437)
+_currentCamera = NodePath("../../Cameras/Camera3D7")
+
+[node name="CollisionShape3D" parent="CameraSwitchers/CameraSwitcher10" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055683732, -0.21917701, 0.0023651123)
+shape = SubResource("BoxShape3D_jna78")
+
+[node name="MeshInstance3D" parent="CameraSwitchers/CameraSwitcher10" index="1"]
+skeleton = NodePath("../../CameraSwitcher4")
+
+[node name="CameraSwitcher12" parent="CameraSwitchers" node_paths=PackedStringArray("_currentCamera") instance=ExtResource("3_fqmik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5956664, -0.28082323, 10.39592)
+_currentCamera = NodePath("../../Cameras/Camera3D7")
+
+[node name="CollisionShape3D" parent="CameraSwitchers/CameraSwitcher12" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055683732, -0.21917701, 0.0023651123)
+shape = SubResource("BoxShape3D_jna78")
+
+[node name="MeshInstance3D" parent="CameraSwitchers/CameraSwitcher12" index="1"]
+skeleton = NodePath("../../CameraSwitcher4")
+
+[node name="CameraSwitcher9" parent="CameraSwitchers" node_paths=PackedStringArray("_currentCamera") instance=ExtResource("3_fqmik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3817556, -0.28082323, 0.29588437)
+_currentCamera = NodePath("../../Cameras/Camera3D6")
+
+[node name="CollisionShape3D" parent="CameraSwitchers/CameraSwitcher9" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055683732, -0.21917701, 0.0023651123)
+shape = SubResource("BoxShape3D_jna78")
+
+[node name="CameraSwitcher11" parent="CameraSwitchers" node_paths=PackedStringArray("_currentCamera") instance=ExtResource("3_fqmik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3817556, -0.28082323, 10.334955)
+_currentCamera = NodePath("../../Cameras/Camera3D6")
+
+[node name="CollisionShape3D" parent="CameraSwitchers/CameraSwitcher11" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055683732, -0.21917701, 0.0023651123)
+shape = SubResource("BoxShape3D_jna78")
+
+[node name="CameraSwitcher16" parent="CameraSwitchers" node_paths=PackedStringArray("_currentCamera") instance=ExtResource("3_fqmik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8336695, 0, 17.501236)
+_currentCamera = NodePath("../../Cameras/Camera3D7")
+
+[node name="CollisionShape3D" parent="CameraSwitchers/CameraSwitcher16" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.028050065, -0.219177, 0.0023651123)
+shape = SubResource("BoxShape3D_5w1iy")
+
+[node name="CameraSwitcher17" parent="CameraSwitchers" node_paths=PackedStringArray("_currentCamera") instance=ExtResource("3_fqmik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8336695, 0, 16.84571)
+_currentCamera = NodePath("../../Cameras/Camera3D2")
+
+[node name="CollisionShape3D" parent="CameraSwitchers/CameraSwitcher17" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.028050065, -0.219177, 0.0023651123)
+shape = SubResource("BoxShape3D_5w1iy")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.221685, 0.975118, 0, -0.975118, -0.221685, 0, 5.65469, 0)
 
 [node name="PlayerSpawnOnEnter" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.97674, 0.386854, 1.52118)
 
-[node name="CameraSwitcher" parent="." node_paths=PackedStringArray("_currentCamera") instance=ExtResource("3_fqmik")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.69919586, -0.28082323, 9.845248)
-_currentCamera = NodePath("../Cameras/Camera3D5")
-
-[node name="CollisionShape3D" parent="CameraSwitcher" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055683732, -0.21917701, 0.0023651123)
-shape = SubResource("BoxShape3D_jna78")
-
-[node name="CameraSwitcher3" parent="." node_paths=PackedStringArray("_currentCamera") instance=ExtResource("3_fqmik")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.69919586, -0.28082323, -0.28122556)
-_currentCamera = NodePath("../Cameras/Camera3D4")
-
-[node name="CollisionShape3D" parent="CameraSwitcher3" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055683732, -0.21917701, 0.0023651123)
-shape = SubResource("BoxShape3D_jna78")
-
-[node name="CameraSwitcher2" parent="." node_paths=PackedStringArray("_currentCamera") instance=ExtResource("3_fqmik")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.69919586, -0.28082323, 0.29588437)
-_currentCamera = NodePath("../Cameras/Camera3D5")
-
-[node name="CollisionShape3D" parent="CameraSwitcher2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055683732, -0.21917701, 0.0023651123)
-shape = SubResource("BoxShape3D_jna78")
-
 [editable path="CameraSwitchers/CameraSwitcher2"]
 [editable path="CameraSwitchers/CameraSwitcher3"]
 [editable path="CameraSwitchers/CameraSwitcher"]
-[editable path="CameraSwitcher"]
-[editable path="CameraSwitcher3"]
-[editable path="CameraSwitcher2"]
+[editable path="CameraSwitchers/CameraSwitcher13"]
+[editable path="CameraSwitchers/CameraSwitcher14"]
+[editable path="CameraSwitchers/CameraSwitcher15"]
+[editable path="CameraSwitchers/CameraSwitcher4"]
+[editable path="CameraSwitchers/CameraSwitcher5"]
+[editable path="CameraSwitchers/CameraSwitcher6"]
+[editable path="CameraSwitchers/CameraSwitcher7"]
+[editable path="CameraSwitchers/CameraSwitcher8"]
+[editable path="CameraSwitchers/CameraSwitcher10"]
+[editable path="CameraSwitchers/CameraSwitcher12"]
+[editable path="CameraSwitchers/CameraSwitcher9"]
+[editable path="CameraSwitchers/CameraSwitcher11"]
+[editable path="CameraSwitchers/CameraSwitcher16"]
+[editable path="CameraSwitchers/CameraSwitcher17"]
