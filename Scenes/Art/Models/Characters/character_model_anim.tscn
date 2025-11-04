@@ -1,9 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://57k74domxfhb"]
+[gd_scene load_steps=6 format=3 uid="uid://57k74domxfhb"]
 
 [ext_resource type="PackedScene" uid="uid://jvhos6xb7o5s" path="res://Scenes/Art/Animations/AnimationLibrary_Godot_Standard.glb" id="1_amo2j"]
 [ext_resource type="AnimationLibrary" uid="uid://qcle3w2pjibl" path="res://Scenes/Art/Animations/new_animation_library.tres" id="2_gd4t8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_amo2j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gd4t8"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4x8y"]
+albedo_color = Color(0, 0, 0, 1)
 
 [node name="CharacterModelAnim" instance=ExtResource("1_amo2j")]
 
@@ -70,11 +76,13 @@ bone_idx = 29
 transform = Transform3D(-1.3737008e-07, -5.7771103e-09, 0.023938928, 0.15131351, 8.381903e-09, 2.3457687e-08, -1.3038516e-08, 0.039150294, 2.4592737e-09, -0.039762467, 0.16511595, 0.0613786)
 mesh = SubResource("BoxMesh_amo2j")
 skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gd4t8")
 
 [node name="gun" type="MeshInstance3D" parent="Rig/Skeleton3D/BoneAttachment3D/Gun" index="0"]
 transform = Transform3D(-9.522217e-08, 0.18667716, 0, -2.17843, -8.15992e-09, 0, 0, 0, 0.8736665, -0.41404104, -0.94937325, 0)
 mesh = SubResource("BoxMesh_amo2j")
 skeleton = NodePath("../../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_s4x8y")
 
 [node name="AnimationPlayer" parent="." index="1"]
 libraries = {
