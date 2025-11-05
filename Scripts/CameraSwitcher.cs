@@ -9,10 +9,6 @@ public partial class CameraSwitcher : Area3D
 
     [Export]
     private Camera3D _nextCamera;
-
-    [Export] private double sizeX;
-    [Export] private double sizeY;
-    [Export] private double sizeZ;
     
     CollisionShape3D _collisionShape;
 

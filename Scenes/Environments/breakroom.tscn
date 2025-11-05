@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlu2tcpx6wqg4"]
+
+[ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="1_rmo1r"]
+[ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="2_t7imn"]
+
+[node name="Breakroom" type="Node3D"]
+
+[node name="Environment" type="Node" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.446167, 1.3241882, -2.477234)
+flip_faces = true
+size = Vector3(9.30542, 3.6483765, 10.545288)
+
+[node name="door" parent="Environment" instance=ExtResource("1_rmo1r")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.5262113, -0.5, 2.7686584)
+environmentToLoad = "res://Scenes/Environments/showroom_floor_scene.tscn"
+
+[node name="FixedCamera" parent="." instance=ExtResource("2_t7imn")]
+transform = Transform3D(-0.67690563, 0.20162734, -0.70791614, 0, 0.9617513, 0.27392423, 0.73606986, 0.18542084, -0.65101486, -2.931084, 2.288807, -1.8430698)
+
+[node name="PlayerSpawnOnEnter" type="Marker3D" parent="."]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.1583374, 0.20098054, 1.5359876)

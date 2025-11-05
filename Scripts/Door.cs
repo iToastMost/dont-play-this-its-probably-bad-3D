@@ -31,7 +31,7 @@ public partial class Door : StaticBody3D, iInteractable
 
     public void Interact()
     {
-		GD.Print("You talked with a door! It doesn't have much to say");
+		//GD.Print("You talked with a door! It doesn't have much to say");
 		//GD.Print("Transporting you to: " + environmentToLoad);
 		//GetTree().ChangeSceneToFile(environmentToLoad);
 		EmitSignal(SignalName.LoadEnvironment, environmentToLoad);

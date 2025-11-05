@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://6i5rrowv0td"]
+
+[ext_resource type="Script" uid="uid://cfdl43wrrdc1j" path="res://Scripts/FixedCamera.cs" id="1_3jdwi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2miw8"]
+resource_local_to_scene = true
+
+[node name="FixedCamera" type="Camera3D"]
+script = ExtResource("1_3jdwi")
+
+[node name="Area3D" type="Area3D" parent="."]
+top_level = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_2miw8")
+debug_color = Color(0.9909707, 0.60069776, 0.52271205, 0.41960785)
