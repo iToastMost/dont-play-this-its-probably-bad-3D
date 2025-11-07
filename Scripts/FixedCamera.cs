@@ -19,7 +19,11 @@ public partial class FixedCamera : Camera3D
 
 	private void OnAreaEnter(Node3D body)
 	{
-		this.Current = true;
+		if (body is PlayerRE)
+		{
+			this.Current = true;
+		}
+		
 	}
 
 

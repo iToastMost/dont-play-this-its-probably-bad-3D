@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://br83x8q7ckpkd"]
+
+[ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="1_bktvj"]
+[ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="2_sxua3"]
+[ext_resource type="PackedScene" uid="uid://b86pqbiujl4gy" path="res://Scenes/Art/Models/garbage.tscn" id="3_v5urd"]
+[ext_resource type="PackedScene" uid="uid://ds4udcpaocote" path="res://Scenes/Art/Models/wetfloorsign.tscn" id="4_odvv0"]
+
+[node name="ClosetScene" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7089386, 1.3772736, -0.15490723)
+use_collision = true
+flip_faces = true
+size = Vector3(1.9319153, 2.7915344, 4.9904785)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.7603452, 5.663299e-09)
+spot_range = 3.55
+spot_attenuation = 0.45
+spot_angle = 62.9
+
+[node name="door" parent="." instance=ExtResource("1_bktvj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.69820935, 0, 2.3334713)
+environmentToLoad = "res://Scenes/Environments/breakroom.tscn"
+
+[node name="Spawnpoints" type="Node" parent="."]
+
+[node name="FromBreakroomScene" type="Marker3D" parent="Spawnpoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.758463, 0.82724047, 1.55397)
+
+[node name="FixedCamera" parent="." instance=ExtResource("2_sxua3")]
+transform = Transform3D(-0.9923281, -0.056891423, 0.10976481, 0, 0.88783276, 0.46016634, -0.123632304, 0.45663595, -0.8810214, -0.0004993826, 2.5364404, -2.8623762)
+
+[node name="garbage" parent="." instance=ExtResource("3_v5urd")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.4999301, 0, -2.341551)
+
+[node name="wetfloorsign" parent="." instance=ExtResource("4_odvv0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.10315034, 0, -2.3381746)
+
+[node name="wetfloorsign2" parent="." instance=ExtResource("4_odvv0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.10315032, 0, -2.0750012)
+
+[node name="wetfloorsign3" parent="." instance=ExtResource("4_odvv0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.10315031, 0, -1.8031569)

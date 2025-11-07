@@ -35,7 +35,7 @@ size = Vector3(1.5345459, 0.45043945, 1.8093262)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rpe6t"]
 
-[node name="Bathroom Scene" type="Node3D"]
+[node name="BathroomScene" type="Node3D"]
 
 [node name="Bathroom" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.11504, 1.46199, 3.46154)
@@ -94,9 +94,6 @@ dialogText = "Are you just playing BiPod games in there again? I'm going to tell
 
 [node name="InitialPlayerSpawn" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6673, 0.0637085, 1.10166)
-
-[node name="PlayerSpawnOnEnter" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.059, 0.835575, 5.688)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.0689033, 0.997623, 0, -0.997623, -0.0689033, -3.34178, 19.4172, -1.68052)
@@ -243,6 +240,11 @@ mesh = SubResource("PlaneMesh_rpe6t")
 transform = Transform3D(-1.4170787, -8.742278e-08, 0, -5.4151833e-15, 4.371139e-08, -1.4681144, 1.2388496e-07, -1, -6.4173314e-08, -7.0957766, 1.4710618, 6.221699)
 material_override = ExtResource("18_dnp50")
 mesh = SubResource("PlaneMesh_rpe6t")
+
+[node name="Spawnpoints" type="Node" parent="."]
+
+[node name="FromShowroomFloorScene" type="Marker3D" parent="Spawnpoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.059, 0.835575, 5.688)
 
 [editable path="Cameras/FixedCamera"]
 [editable path="Cameras/FixedCamera2"]

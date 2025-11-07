@@ -5,25 +5,28 @@ using System.Text.RegularExpressions;
 public partial class GameManager : Node3D
 {
 
-	Ui ui;
-	PlayerRE player;
-	Node3D environment;
-	Node3D currentEnvironment;
-	Marker3D spawnPoint;
+	private Ui _ui;
+	private PlayerRE _playerRe;
+	private Node3D _environment;
+	private Node3D _currentEnvironment;
+	private Node3D _previousEnvironment;
+	private Marker3D _spawnPoint;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		//CallDeferred(nameof(ConnectDialogSignals));
 		
-		ui = GetNode<Ui>("UI");
-		player = GetNode<PlayerRE>("3DPlayer");
-		environment = GetNode<Node3D>("Environment");
+		_ui = GetNode<Ui>("UI");
+		_playerRe = GetNode<PlayerRE>("3DPlayer");
+		_environment = GetNode<Node3D>("Environment");
 
 		var loadBathroom = ResourceLoader.Load<PackedScene>("res://Scenes/Environments/bathroom_scene.tscn");
-		currentEnvironment = loadBathroom.Instantiate<Node3D>();
-		environment.AddChild(currentEnvironment);
+		_currentEnvironment = loadBathroom.Instantiate<Node3D>();
+		_environment.AddChild(_currentEnvironment);
         //LoadEnvironment("res://Scenes/Environments/bathroom_scene.tscn");
 
+        _previousEnvironment = _currentEnvironment;
+        
 		CallDeferred(nameof(ConnectSignals));
     }
 
@@ -61,20 +64,20 @@ public partial class GameManager : Node3D
 	//Updates dialog from dialog trigger signal
 	private void SendDialog(string dialog) 
 	{
-		ui.UpdateText(dialog);
+		_ui.UpdateText(dialog);
 	}
 
 	//Disables player movement from dialog trigger signal
 	private void PreventPlayerMovment() 
 	{
-		player.DisableMovement();
+		_playerRe.DisableMovement();
 	}
 
 	//Loads a new area
 	private void LoadEnvironment(string path) 
 	{
 		//Removes current environment from GameManagers Environment node
-		var environmentChildren = environment.GetChildren();
+		var environmentChildren = _environment.GetChildren();
 		var doorsInGroup = GetTree().GetNodesInGroup("Doors");
 
 		//Remove doors from current scene from the doors group
@@ -89,9 +92,9 @@ public partial class GameManager : Node3D
 			child.QueueFree();
 		}
 
-		if(currentEnvironment != null) 
+		if(_currentEnvironment != null) 
 		{
-			currentEnvironment = null;
+			_currentEnvironment = null;
 		}
 
 		//Prints the level being loaded to console for debugging
@@ -99,17 +102,21 @@ public partial class GameManager : Node3D
 
 		//Loads and instantiates new area
 		var environmentToLoad = ResourceLoader.Load<PackedScene>(path);
-		currentEnvironment = environmentToLoad.Instantiate<Node3D>();
+		_currentEnvironment = environmentToLoad.Instantiate<Node3D>();
 		
-		environment.AddChild(currentEnvironment);
-        var spawnPoint = currentEnvironment.GetNode<Marker3D>("PlayerSpawnOnEnter");
+		GD.Print(_currentEnvironment.Name);
+		
+		_environment.AddChild(_currentEnvironment);
+        var spawnPoint = _currentEnvironment.GetNode<Marker3D>("Spawnpoints/From" + _previousEnvironment.Name);
 
-        player.GlobalPosition = spawnPoint.GlobalPosition;
+        _previousEnvironment = _currentEnvironment;
+        
+        _playerRe.GlobalPosition = spawnPoint.GlobalPosition;
         ConnectDoorSignals();
 		
     }
 
-	private void MovePlayerToSpawn() 
+	private static void MovePlayerToSpawn() 
 	{
         
     }

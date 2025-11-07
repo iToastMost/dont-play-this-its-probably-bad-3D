@@ -3,21 +3,49 @@
 [ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="1_6q6ta"]
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="2_652wb"]
 
-[node name="Warehouse" type="Node3D"]
+[node name="WarehouseScene" type="Node3D"]
 
 [node name="Environment" type="Node" parent="."]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Environment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6898804, 1.9108887, 9.09552)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.69, 1.4359741, 9.096)
+use_collision = true
 flip_faces = true
-size = Vector3(8.930542, 4.8217773, 27.302368)
+size = Vector3(8.930542, 3.8953857, 27.302368)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Environment/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.349839, 0.009277344, 7.8459997)
+flip_faces = true
+size = Vector3(7.790039, 3.9263916, 11.547363)
+
+[node name="Baydoor" type="CSGBox3D" parent="Environment/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.278639, -0.5317451, 10.933763)
+operation = 2
+size = Vector3(0.10473633, 2.8564453, 3.8930664)
+
+[node name="Baydoor2" type="CSGBox3D" parent="Environment/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.278639, -0.5317451, 5.1664734)
+operation = 2
+size = Vector3(0.10473633, 2.8564453, 3.8930664)
 
 [node name="door" parent="Environment" instance=ExtResource("1_6q6ta")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.741199, -0.5002049, -3.0138326)
 environmentToLoad = "res://Scenes/Environments/showroom_floor_scene.tscn"
 
+[node name="CSGBox3D2" type="CSGBox3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.808049, 0.9020996, 13.695902)
+size = Vector3(0.07507324, 2.8041992, 5.0757446)
+
 [node name="FixedCamera" parent="." instance=ExtResource("2_652wb")]
 transform = Transform3D(0.7443278, -0.09753197, 0.66065407, 0, 0.9892777, 0.14604652, -0.66781455, -0.10870647, 0.7363469, 3.9151132, 2.4997015, 3.4071393)
 
-[node name="PlayerSpawnOnEnter" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1589978, -0.24105486, -3.0432937)
+[node name="Spawnpoints" type="Node" parent="."]
+
+[node name="FromShowroomFloorScene" type="Marker3D" parent="Spawnpoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1589978, 0.38722846, -3.0432937)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 9.769553, 9.233518)
+
+[node name="door" parent="." instance=ExtResource("1_6q6ta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.542144, -0.51794434, 11.200867)
