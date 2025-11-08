@@ -26,6 +26,7 @@ public partial class PlayerRE : CharacterBody3D
     private bool _isDead = false;
     private bool _isReloading = false;
     private int _ammo = 12;
+    private Node3D[] _playerInventory;
 
     private Vector3 _aimPointDefaultPositon;
    
@@ -58,6 +59,9 @@ public partial class PlayerRE : CharacterBody3D
         aimPoint = GetNode<Node3D>("AimPoint");
         _aimPointDefaultPositon = aimPoint.Position;
 
+        _playerInventory = InventoryManager.GetInstance();
+        
+        
         playerAnimation.AnimationFinished += OnAnimationFinish;       
 
         //Uncomment below code and switch _canMove and _3DStarted to false to start with GooseJump game
@@ -300,7 +304,17 @@ public partial class PlayerRE : CharacterBody3D
             {
                 GD.Print("Interactable found");
                 interactable.Interact();
+                return;
             }
+
+            if (collision is iLootable lootable)
+            {
+                lootable.Loot(_playerInventory);
+                for (int i = 0; i < _playerInventory.Length; i++)
+                {
+                    GD.Print(_playerInventory[i].GetName());
+                }
+        }
         }
     }
 

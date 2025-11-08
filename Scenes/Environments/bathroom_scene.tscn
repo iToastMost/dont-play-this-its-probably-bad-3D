@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cl2l2owbnqg6y"]
+[gd_scene load_steps=25 format=3 uid="uid://cl2l2owbnqg6y"]
 
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="1_dnp50"]
 [ext_resource type="PackedScene" uid="uid://bj0fflqe1ib4u" path="res://Scenes/dialog_trigger.tscn" id="3_6cnf1"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bnixk3hbr15en" path="res://Scenes/Art/Models/stall_door.tscn" id="17_rpe6t"]
 [ext_resource type="Material" uid="uid://da6g467h700ej" path="res://Art/Materials/bathroom_floor_tile.tres" id="17_t3iin"]
 [ext_resource type="Material" uid="uid://cmx0vsufspqy7" path="res://Art/Materials/bathrom_walls.tres" id="18_dnp50"]
+[ext_resource type="PackedScene" uid="uid://urqpvkpkkito" path="res://Scenes/Items/healing_herb.tscn" id="19_rpe6t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rpe6t"]
 resource_local_to_scene = true
@@ -245,6 +246,9 @@ mesh = SubResource("PlaneMesh_rpe6t")
 
 [node name="FromShowroomFloorScene" type="Marker3D" parent="Spawnpoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.059, 0.835575, 5.688)
+
+[node name="HealingHerb" parent="." instance=ExtResource("19_rpe6t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3150644, 1, 5)
 
 [editable path="Cameras/FixedCamera"]
 [editable path="Cameras/FixedCamera2"]

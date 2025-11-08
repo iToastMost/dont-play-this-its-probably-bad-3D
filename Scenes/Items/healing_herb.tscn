@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://urqpvkpkkito"]
+
+[ext_resource type="Script" uid="uid://fq5xgxiln5n5" path="res://Scripts/Items/HealingHerb.cs" id="1_f7bjj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_f7bjj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5d0d4"]
+size = Vector3(1, 2.6323242, 0.5820923)
+
+[node name="HealingHerb" type="StaticBody3D"]
+script = ExtResource("1_f7bjj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.40188855, 0, 0, 0, 0.4839995, 0, 0, 0, 0.49013215, 0, 0, 0)
+mesh = SubResource("BoxMesh_f7bjj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10180664, 0.043060303)
+shape = SubResource("BoxShape3D_5d0d4")
