@@ -20,6 +20,8 @@ public partial class GameManager : Node3D
 		_playerRe = GetNode<PlayerRE>("3DPlayer");
 		_environment = GetNode<Node3D>("Environment");
 
+		_playerRe.Connect("UpdateInventoryItems", new Callable(this, nameof(UpdateInventory)));
+		
 		var loadBathroom = ResourceLoader.Load<PackedScene>("res://Scenes/Environments/bathroom_scene.tscn");
 		_currentEnvironment = loadBathroom.Instantiate<Node3D>();
 		_environment.AddChild(_currentEnvironment);
@@ -71,6 +73,12 @@ public partial class GameManager : Node3D
 	private void PreventPlayerMovment() 
 	{
 		_playerRe.DisableMovement();
+	}
+
+	private void UpdateInventory(string itemName)
+	{
+		//Signals to ui to update inventory node with item looted from the signal emitted from player
+		_ui.GetNode<Inventory>("Inventory").UpdateInventory(itemName);
 	}
 
 	//Loads a new area

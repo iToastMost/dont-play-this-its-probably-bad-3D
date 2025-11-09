@@ -8,4 +8,9 @@ public partial class HealingHerb : StaticBody3D, iLootable
         inventory[0] = this;
         QueueFree();
     }
+
+    public string GetName()
+    {
+        return "healing herb";
+    }
 }

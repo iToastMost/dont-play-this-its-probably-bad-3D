@@ -3,6 +3,9 @@ using System;
 
 public partial class PlayerRE : CharacterBody3D
 {
+    [Signal]
+    public delegate void UpdateInventoryItemsEventHandler(string text);
+    
     [Export]
     public PackedScene GooseJumpScene;
 
@@ -309,18 +312,25 @@ public partial class PlayerRE : CharacterBody3D
 
             if (collision is iLootable lootable)
             {
+                //Signals to game manager that an item has been looted and inventory needs to be updated
                 lootable.Loot(_playerInventory);
+                UpdateInventory(lootable.GetName());
                 for (int i = 0; i < _playerInventory.Length; i++)
                 {
                     GD.Print(_playerInventory[i].GetName());
                 }
-        }
+            }
         }
     }
 
     public void DisableMovement() 
     {
         _canMove = false;
+    }
+
+    private void UpdateInventory(string itemName)
+    {
+        EmitSignal(SignalName.UpdateInventoryItems, itemName);
     }
 
     private void playerDie() 

@@ -1,19 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://urqpvkpkkito"]
+[gd_scene load_steps=5 format=3 uid="uid://urqpvkpkkito"]
 
 [ext_resource type="Script" uid="uid://fq5xgxiln5n5" path="res://Scripts/Items/HealingHerb.cs" id="1_f7bjj"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7bjj"]
+albedo_color = Color(0.05882353, 1, 0.15294118, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_f7bjj"]
+material = SubResource("StandardMaterial3D_f7bjj")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5d0d4"]
-size = Vector3(1, 2.6323242, 0.5820923)
+size = Vector3(0.38775635, 1.5803223, 0.5820923)
 
 [node name="HealingHerb" type="StaticBody3D"]
 script = ExtResource("1_f7bjj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.40188855, 0, 0, 0, 0.4839995, 0, 0, 0, 0.49013215, 0, 0, 0)
+transform = Transform3D(0.10286185, 0, 0, 0, 0.35974598, 0, 0, 0, 0.068909556, 0, 0, 0)
 mesh = SubResource("BoxMesh_f7bjj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10180664, 0.043060303)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016204834, 0.6278076, 0.043060303)
 shape = SubResource("BoxShape3D_5d0d4")

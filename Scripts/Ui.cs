@@ -4,9 +4,11 @@ using System;
 public partial class Ui : Control
 {
 	private ColorRect _colorRect;
+	private Inventory _inventory;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		_inventory = GetNode<Inventory>("Inventory");
 		_colorRect = GetNode<ColorRect>("CanvasLayer/ColorRect");
 		//this.Connect("ShowDialog", new Callable(this, nameof(UpdateText)));
 	}
@@ -17,6 +19,11 @@ public partial class Ui : Control
 		if (Input.IsActionJustPressed("accept_dialog")) 
 		{
 			_colorRect.Visible = false;
+		}
+
+		if (Input.IsActionJustPressed("open_inventory"))
+		{
+			_inventory.ToggleInventory();
 		}
 	}
 
