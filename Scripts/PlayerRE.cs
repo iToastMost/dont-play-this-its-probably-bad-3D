@@ -277,22 +277,22 @@ public partial class PlayerRE : CharacterBody3D
         {
             _ammo--;
 
-            var bulletSpawn = bullet.Instantiate<Bullet3D>();
-            //bulletSpawn.Position = laser.GlobalPosition;
-            //var raycastDirection = (laser.TargetPosition - laser.Position).Normalized();
+            Vector3 direction;
             
-            bulletSpawn.SetDireciton(this.Transform.Basis.X);
-            //bulletSpawn.SetDireciton(raycastDirection);
+            var bulletSpawn = bullet.Instantiate<Bullet3D>();
+            
             if (laser.IsColliding())
             {
+                direction = (laser.GlobalPosition - laser.GetCollisionPoint()).Normalized();
                 bulletSpawn.LookAtFromPosition(laser.GlobalPosition, laser.GetCollisionPoint());
             }
             else
             {
+                direction = (laser.GlobalPosition - laser.TargetPosition).Normalized();
                 var globalTargetPosition = laser.ToGlobal(laser.TargetPosition);
                 bulletSpawn.LookAtFromPosition(laser.GlobalPosition, globalTargetPosition);
             }
-
+            bulletSpawn.SetDireciton(-direction);
             GetParent().AddChild(bulletSpawn);
             GD.Print("Pew pew");
         }
