@@ -279,8 +279,10 @@ public partial class PlayerRE : CharacterBody3D
 
             var bulletSpawn = bullet.Instantiate<Bullet3D>();
             //bulletSpawn.Position = laser.GlobalPosition;
+            //var raycastDirection = (laser.TargetPosition - laser.Position).Normalized();
+            
             bulletSpawn.SetDireciton(this.Transform.Basis.X);
-
+            //bulletSpawn.SetDireciton(raycastDirection);
             if (laser.IsColliding())
             {
                 bulletSpawn.LookAtFromPosition(laser.GlobalPosition, laser.GetCollisionPoint());

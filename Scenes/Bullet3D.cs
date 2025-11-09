@@ -3,7 +3,7 @@ using System;
 
 public partial class Bullet3D : Node3D
 {
-	private float _bulletSpeed = 5f;
+	private float _bulletSpeed = 15f;
 	private Vector3 _velocity;
 	RayCast3D bulletHitPoint;
 	// Called when the node enters the scene tree for the first time.
@@ -16,7 +16,7 @@ public partial class Bullet3D : Node3D
 	public override void _PhysicsProcess(double delta)
 	{
 		Position += _velocity * (float)delta;
-
+		bulletHitPoint.ForceRaycastUpdate();
 		if (bulletHitPoint.IsColliding()) 
 		{
 			var hitInfo = bulletHitPoint.GetCollider();
