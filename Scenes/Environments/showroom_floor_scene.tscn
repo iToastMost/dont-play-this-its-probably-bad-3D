@@ -84,6 +84,7 @@ albedo_color = Color(0, 2.695322e-06, 0.9414567, 1)
 
 [node name="Hallway" parent="Cameras" instance=ExtResource("1_jna78")]
 transform = Transform3D(0.994718, -0.004395526, 0.10255128, 0, 0.9990827, 0.042822417, -0.10264544, -0.04259623, 0.9938055, -2.0943034, 1.0687982, 10.9264965)
+current = true
 
 [node name="Area3D" parent="Cameras/Hallway" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8989344, 0, 0)

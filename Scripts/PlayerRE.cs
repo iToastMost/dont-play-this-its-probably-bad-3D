@@ -64,7 +64,6 @@ public partial class PlayerRE : CharacterBody3D
 
         _playerInventory = InventoryManager.GetInstance();
         
-        
         playerAnimation.AnimationFinished += OnAnimationFinish;       
 
         //Uncomment below code and switch _canMove and _3DStarted to false to start with GooseJump game
@@ -211,6 +210,8 @@ public partial class PlayerRE : CharacterBody3D
             RotateY(-turnSpeed * (float)delta);
         }
 
+        AimLaser(delta);
+
         if (Input.IsActionJustPressed("spin_back") && !_isAiming)
         {
             //Rotates 180 degrees.
@@ -340,6 +341,41 @@ public partial class PlayerRE : CharacterBody3D
         playerAnimation.CurrentAnimation = "Death01";
         _canMove = false;
         _isDead = true;
+    }
+
+    private void AimLaser(double delta)
+    {
+        if (_isAiming)
+        {
+            if (Input.IsActionPressed("aim_right"))
+                    {
+                        laser.RotateY(-turnSpeed /2 * (float)delta);
+                    }
+                    
+                    if (Input.IsActionPressed("aim_left"))
+                    {
+                        laser.RotateY(turnSpeed/2 * (float)delta);
+                    }
+                    
+                    if (Input.IsActionPressed("aim_up"))
+                    {
+                        laser.RotateZ(turnSpeed/2 * (float)delta);
+                    }
+                    
+                    if (Input.IsActionPressed("aim_down"))
+                    {
+                        laser.RotateZ(-turnSpeed/2 * (float)delta);
+                    }
+                    
+                    float y = Mathf.Clamp(laser.Rotation.Y, Mathf.DegToRad(-45), Mathf.DegToRad(45));
+                    float z = Mathf.Clamp(laser.Rotation.Z, Mathf.DegToRad(80), Mathf.DegToRad(100));
+                    laser.Rotation = new Vector3(0,y,z);
+        }
+        else
+        {
+            laser.Rotation = new Vector3(0,0, Mathf.DegToRad(90));
+        }
+        
     }
 
     public void OnStart() 
