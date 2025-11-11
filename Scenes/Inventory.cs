@@ -3,22 +3,26 @@ using System;
 
 public partial class Inventory : Control
 {
-    [Signal] public delegate void ItemUsedEventHandler(Node3D node);
+    [Signal] public delegate void ItemUsedEventHandler(Button slot, int idx);
     
     private CanvasLayer _canvasLayer;
     private bool _inventoryIsOpen = false;
+    private int _slotIdx = 0;
     
     //TODO Change ItemList to GridContainer with ImageButtons or some other type of inventory that is more convenient
-    private ItemList _itemList;
+    private GridContainer _gridContainer;
     public override void _Ready()
     {
         _canvasLayer = GetNode<CanvasLayer>("CanvasLayer");
         _canvasLayer.Visible = _inventoryIsOpen;
         
-        
-        
-        _itemList = GetNode<ItemList>("CanvasLayer/ItemList");
-        _itemList.ItemActivated += UseItem;
+        _gridContainer = GetNode<GridContainer>("CanvasLayer/GridContainer");
+        foreach (Button button in _gridContainer.GetChildren())
+        {
+            var idx = _slotIdx;
+            button.Pressed += () => UseItem(button, idx);
+            _slotIdx++;
+        }
     }
     public void ToggleInventory()
     {
@@ -29,13 +33,13 @@ public partial class Inventory : Control
     public void UpdateInventory(string itemName)
     {
         //Call down from game manager to add the item looted from player to the inventory
-        _itemList.AddItem(itemName);
+       var slot = _gridContainer.GetNode<Button>("Slot0");
+       slot.Text = itemName;
     }
 
-    private void UseItem(long idx)
+    private void UseItem(Button slot, int idx)
     {
-        //Node3D node = _itemList.GetItem
-        //EmitSignal(nameof(ItemUsedEventHandler), node);
+        EmitSignal(SignalName.ItemUsed, slot, idx);
     }
     
 }

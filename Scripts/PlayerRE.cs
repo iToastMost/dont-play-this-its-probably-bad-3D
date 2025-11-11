@@ -29,7 +29,7 @@ public partial class PlayerRE : CharacterBody3D
     private bool _isDead = false;
     private bool _isReloading = false;
     private int _ammo = 12;
-    private Node3D[] _playerInventory;
+    //private Node3D[] _playerInventory;
 
     private Vector3 _aimPointDefaultPositon;
    
@@ -62,7 +62,7 @@ public partial class PlayerRE : CharacterBody3D
         aimPoint = GetNode<Node3D>("AimPoint");
         _aimPointDefaultPositon = aimPoint.Position;
 
-        _playerInventory = InventoryManager.GetInstance();
+        //_playerInventory = InventoryManager.GetInstance();
         
         playerAnimation.AnimationFinished += OnAnimationFinish;       
 

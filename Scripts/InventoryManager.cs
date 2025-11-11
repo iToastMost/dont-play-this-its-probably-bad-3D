@@ -3,13 +3,13 @@ using System;
 
 public partial class InventoryManager : Node
 {
-    private static Node3D[] _instance;
+    private static int[] _instance;
 
-    public static Node3D[] GetInstance()
+    public static int[] GetInstance()
     {
         if (_instance == null)
         {
-            _instance = new Node3D[8];
+            _instance = new int[8];
         }
         return _instance;
     }

@@ -11,7 +11,7 @@ public partial class GameManager : Node3D
 	private Node3D _currentEnvironment;
 	private Node3D _previousEnvironment;
 	private Marker3D _spawnPoint;
-	private Node3D[] _playerInventory;
+	private int[] _playerInventory;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -33,6 +33,11 @@ public partial class GameManager : Node3D
         _previousEnvironment = _currentEnvironment;
 
         _playerInventory = InventoryManager.GetInstance();
+
+        for (int i = 0; i < _playerInventory.Length; i++)
+        {
+	        GD.Print(_playerInventory[i]);
+        }
         
 		CallDeferred(nameof(ConnectSignals));
     }
@@ -85,14 +90,20 @@ public partial class GameManager : Node3D
 		//Signals to ui to update inventory node with item looted from the signal emitted from player
 		if (item is iLootable loot)
 		{
-			loot.Loot(_playerInventory);
+			loot.Loot(_playerInventory, loot.GetID());
 			_ui.GetNode<Inventory>("Inventory").UpdateInventory(loot.GetName());
 		}
 	}
 
-	private void UseItem()
+	private void UseItem(Button slot, int idx)
 	{
-		//code for item consumption here		
+		//code for item consumption here
+		if (_playerInventory[idx] != null)
+		{
+			var item =  ItemDatabase.GetItem(_playerInventory[idx]);
+			GD.Print(item.ToString());
+			GD.Print(slot.Text + " " + idx);
+		}
 	}
 
 	//Loads a new area
