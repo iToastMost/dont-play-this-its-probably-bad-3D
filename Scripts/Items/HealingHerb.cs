@@ -1,16 +1,7 @@
 using Godot;
 using System;
 
-public partial class HealingHerb : StaticBody3D, iLootable
+public partial class HealingHerb : ConsumableItemBase
 {
-    public void Loot(Node3D[] inventory)
-    {
-        inventory[0] = this;
-        QueueFree();
-    }
 
-    public string GetName()
-    {
-        return "healing herb";
-    }
 }

@@ -4,7 +4,7 @@ using System;
 public partial class PlayerRE : CharacterBody3D
 {
     [Signal]
-    public delegate void UpdateInventoryItemsEventHandler(string text);
+    public delegate void UpdateInventoryItemsEventHandler(Node3D item);
     
     [Export]
     public PackedScene GooseJumpScene;
@@ -153,12 +153,13 @@ public partial class PlayerRE : CharacterBody3D
 
         if(_isAiming && @event is InputEventMouseMotion movement) 
         {
-            Vector3 motion = new Vector3(movement.Relative.X, movement.Relative.Y, 0);
-            motion.X = Mathf.Clamp(motion.X, 5, 5);
-            motion.Z = Mathf.Clamp(motion.Z, 5, 5);
-            motion.Y = Mathf.Clamp(motion.Y, 0, 0);
-            aimPoint.Translate(motion);
-
+            //Vector3 motion = new Vector3(movement.Relative.X, movement.Relative.Y, 0);
+            //aimPoint.Translate(motion);
+            //laser.Rotate(Vector3.Up, -Mathf.DegToRad(motion.X) * turnSpeed);
+            //laser.Rotate(Vector3.Right, -Mathf.DegToRad(motion.Y) * turnSpeed);
+            //float y = Mathf.Clamp(laser.Rotation.Y, Mathf.DegToRad(-45), Mathf.DegToRad(45));
+            //float z = Mathf.Clamp(laser.Rotation.Z, Mathf.DegToRad(80), Mathf.DegToRad(100));
+            //laser.Rotation = new Vector3(0,y,z);
         }
     }
 
@@ -300,30 +301,32 @@ public partial class PlayerRE : CharacterBody3D
 
     }
 
-    private void InteractCheck() 
+    private void InteractCheck()
     {
-        if (rayCast.IsColliding()) 
+        if (!rayCast.IsColliding())
+            return;
+        
+        var collider = rayCast.GetCollider();
+        
+        if (collider is Node3D node) 
         {
-            var collision = rayCast.GetCollider();
-
-            if (collision is iInteractable interactable) 
+            if (node is iInteractable interactable) 
             {
                 GD.Print("Interactable found");
                 interactable.Interact();
                 return;
             }
 
-            if (collision is iLootable lootable)
+            if (node is iLootable)
             {
                 //Signals to game manager that an item has been looted and inventory needs to be updated
-                lootable.Loot(_playerInventory);
-                UpdateInventory(lootable.GetName());
-                for (int i = 0; i < _playerInventory.Length; i++)
-                {
-                    GD.Print(_playerInventory[i].GetName());
-                }
+                //lootable.Loot(_playerInventory);
+                UpdateInventory(node);
+                return;
             }
         }
+
+        
     }
 
     public void DisableMovement() 
@@ -331,9 +334,9 @@ public partial class PlayerRE : CharacterBody3D
         _canMove = false;
     }
 
-    private void UpdateInventory(string itemName)
+    private void UpdateInventory(Node3D item)
     {
-        EmitSignal(SignalName.UpdateInventoryItems, itemName);
+        EmitSignal(SignalName.UpdateInventoryItems, item);
     }
 
     private void playerDie() 
@@ -348,28 +351,28 @@ public partial class PlayerRE : CharacterBody3D
         if (_isAiming)
         {
             if (Input.IsActionPressed("aim_right"))
-                    {
-                        laser.RotateY(-turnSpeed /2 * (float)delta);
-                    }
+            {
+                laser.RotateY(-turnSpeed /2 * (float)delta);
+            }
                     
-                    if (Input.IsActionPressed("aim_left"))
-                    {
-                        laser.RotateY(turnSpeed/2 * (float)delta);
-                    }
+            if (Input.IsActionPressed("aim_left"))
+            {
+                laser.RotateY(turnSpeed/2 * (float)delta);
+            }
                     
-                    if (Input.IsActionPressed("aim_up"))
-                    {
-                        laser.RotateZ(turnSpeed/2 * (float)delta);
-                    }
+            if (Input.IsActionPressed("aim_up"))
+            {
+                laser.RotateZ(turnSpeed/2 * (float)delta);
+            }
                     
-                    if (Input.IsActionPressed("aim_down"))
-                    {
-                        laser.RotateZ(-turnSpeed/2 * (float)delta);
-                    }
+            if (Input.IsActionPressed("aim_down"))
+            {
+                laser.RotateZ(-turnSpeed/2 * (float)delta);
+            }
                     
-                    float y = Mathf.Clamp(laser.Rotation.Y, Mathf.DegToRad(-45), Mathf.DegToRad(45));
-                    float z = Mathf.Clamp(laser.Rotation.Z, Mathf.DegToRad(80), Mathf.DegToRad(100));
-                    laser.Rotation = new Vector3(0,y,z);
+            float y = Mathf.Clamp(laser.Rotation.Y, Mathf.DegToRad(-45), Mathf.DegToRad(45));
+            float z = Mathf.Clamp(laser.Rotation.Z, Mathf.DegToRad(80), Mathf.DegToRad(100));
+            laser.Rotation = new Vector3(0,y,z);
         }
         else
         {

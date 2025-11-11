@@ -1,6 +1,7 @@
 using Godot;
 using System;
 
-public partial class Consumable : Node
+public interface iConsumable : iLootable
 {
+    int Consume(int amount);
 }

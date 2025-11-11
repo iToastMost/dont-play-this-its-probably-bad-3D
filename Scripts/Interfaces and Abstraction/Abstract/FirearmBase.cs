@@ -1,6 +1,7 @@
 using Godot;
 using System;
 
-public partial class Firearm : Node
+public abstract partial class Firearm : EquippableItem
 {
+    
 }

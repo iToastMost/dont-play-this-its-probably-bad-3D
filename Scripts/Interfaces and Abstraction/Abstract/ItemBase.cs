@@ -1,11 +1,28 @@
 using Godot;
 using System;
 
-public abstract class Item : iLootable
+public abstract partial class ItemBase : StaticBody3D, iLootable
 {
-    public void Loot(Node3D[] inventory){}
-    public string GetName()
+    [Export] public string itemName { get; protected set; } = "Unnamed";
+    
+    [Export] public string itemDescription { get; protected set; } = "Blank Description";
+    public void Loot(Node3D[] inventory)
     {
-        return "";
+        for (int i = 0; i < inventory.Length; i++)
+        {
+            if (inventory[i] == null)
+            {
+                inventory[i] = this;
+                QueueFree();
+            }
+            else
+            {
+                i++;
+            }
+        }
+        
     }
+    public string GetName() => itemName;
+    public string GetDescription() => itemDescription;
+   
 }

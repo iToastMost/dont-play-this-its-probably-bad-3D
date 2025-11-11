@@ -13,6 +13,9 @@ size = Vector3(0.38775635, 1.5803223, 0.5820923)
 
 [node name="HealingHerb" type="StaticBody3D"]
 script = ExtResource("1_f7bjj")
+HealAmount = 25
+itemName = "Healing Herb"
+itemDescription = "Heals you... duh"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.10286185, 0, 0, 0, 0.35974598, 0, 0, 0, 0.068909556, 0, 0, 0)

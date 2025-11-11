@@ -11,6 +11,8 @@ public partial class GameManager : Node3D
 	private Node3D _currentEnvironment;
 	private Node3D _previousEnvironment;
 	private Marker3D _spawnPoint;
+	private Node3D[] _playerInventory;
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -21,6 +23,7 @@ public partial class GameManager : Node3D
 		_environment = GetNode<Node3D>("Environment");
 
 		_playerRe.Connect("UpdateInventoryItems", new Callable(this, nameof(UpdateInventory)));
+		_ui.GetNode<Inventory>("Inventory").Connect("ItemUsed", new Callable(this, nameof(UseItem)));
 		
 		var loadBathroom = ResourceLoader.Load<PackedScene>("res://Scenes/Environments/bathroom_scene.tscn");
 		_currentEnvironment = loadBathroom.Instantiate<Node3D>();
@@ -28,6 +31,8 @@ public partial class GameManager : Node3D
         //LoadEnvironment("res://Scenes/Environments/bathroom_scene.tscn");
 
         _previousEnvironment = _currentEnvironment;
+
+        _playerInventory = InventoryManager.GetInstance();
         
 		CallDeferred(nameof(ConnectSignals));
     }
@@ -75,10 +80,19 @@ public partial class GameManager : Node3D
 		_playerRe.DisableMovement();
 	}
 
-	private void UpdateInventory(string itemName)
+	private void UpdateInventory(Node3D item)
 	{
 		//Signals to ui to update inventory node with item looted from the signal emitted from player
-		_ui.GetNode<Inventory>("Inventory").UpdateInventory(itemName);
+		if (item is iLootable loot)
+		{
+			loot.Loot(_playerInventory);
+			_ui.GetNode<Inventory>("Inventory").UpdateInventory(loot.GetName());
+		}
+	}
+
+	private void UseItem()
+	{
+		//code for item consumption here		
 	}
 
 	//Loads a new area
