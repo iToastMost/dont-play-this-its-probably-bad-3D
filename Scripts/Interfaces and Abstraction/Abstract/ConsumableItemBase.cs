@@ -7,8 +7,9 @@ public abstract partial class ConsumableItemBase : ItemBase, iConsumable
     
     //public abstract void Loot(Node3D[] inventory);
     //public abstract string GetName();
-    public int Consume(int healAmount)
+    public void Consume(PlayerRE player)
     {
-        return healAmount;
+        GD.Print(HealAmount);
+        player._health += HealAmount;
     }
 }

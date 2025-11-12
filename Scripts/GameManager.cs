@@ -12,6 +12,8 @@ public partial class GameManager : Node3D
 	private Node3D _previousEnvironment;
 	private Marker3D _spawnPoint;
 	private int[] _playerInventory;
+	private Inventory _inventory;
+	private Label _healthLabel;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -19,11 +21,15 @@ public partial class GameManager : Node3D
 		//CallDeferred(nameof(ConnectDialogSignals));
 		
 		_ui = GetNode<Ui>("UI");
+		_inventory = _ui.GetNode<Inventory>("Inventory");
 		_playerRe = GetNode<PlayerRE>("3DPlayer");
 		_environment = GetNode<Node3D>("Environment");
 
+		//TODO update signals to look like this
 		_playerRe.Connect("UpdateInventoryItems", new Callable(this, nameof(UpdateInventory)));
-		_ui.GetNode<Inventory>("Inventory").Connect("ItemUsed", new Callable(this, nameof(UseItem)));
+		//_playerRe.Connect("UpdateHealth", new Callable(this, nameof(UpdatePlayerHealth)));
+		_playerRe.UpdateHealth += UpdatePlayerHealth;
+		_inventory.Connect("ItemUsed", new Callable(this, nameof(UseItem)));
 		
 		var loadBathroom = ResourceLoader.Load<PackedScene>("res://Scenes/Environments/bathroom_scene.tscn");
 		_currentEnvironment = loadBathroom.Instantiate<Node3D>();
@@ -39,6 +45,8 @@ public partial class GameManager : Node3D
 	        GD.Print(_playerInventory[i]);
         }
         
+        _healthLabel = _ui.GetNode<Label>("HealthLabel");
+        _healthLabel.Text = _playerRe._health.ToString();
 		CallDeferred(nameof(ConnectSignals));
     }
 
@@ -91,18 +99,27 @@ public partial class GameManager : Node3D
 		if (item is iLootable loot)
 		{
 			loot.Loot(_playerInventory, loot.GetID());
-			_ui.GetNode<Inventory>("Inventory").UpdateInventory(loot.GetName());
+			_inventory.UpdateInventory(loot.GetName());
 		}
 	}
 
 	private void UseItem(Button slot, int idx)
 	{
 		//code for item consumption here
-		if (_playerInventory[idx] != null)
+		if (_playerInventory[idx] != null && _playerInventory[idx] >= 0)
 		{
-			var item =  ItemDatabase.GetItem(_playerInventory[idx]);
-			GD.Print(item.ToString());
-			GD.Print(slot.Text + " " + idx);
+			var item = ItemDatabase.GetItem(_playerInventory[idx]).Instantiate<ConsumableItemBase>();
+			if (item is iConsumable consumable)
+			{
+				consumable.Consume(_playerRe);
+				_playerInventory[idx] = -1;
+				_inventory.UpdateInventory("");
+				if (_playerRe._health > 100)
+				{
+					_playerRe._health = 100;
+				}
+				_healthLabel.Text = _playerRe._health.ToString();
+			}
 		}
 	}
 
@@ -149,6 +166,11 @@ public partial class GameManager : Node3D
 		
     }
 
+	private void UpdatePlayerHealth()
+	{
+		_healthLabel.Text = _playerRe._health.ToString();
+	}
+	
 	private static void MovePlayerToSpawn() 
 	{
         

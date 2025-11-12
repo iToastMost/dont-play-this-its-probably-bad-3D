@@ -3,8 +3,11 @@ using System;
 
 public partial class PlayerRE : CharacterBody3D
 {
-    [Signal]
+    [Signal] 
     public delegate void UpdateInventoryItemsEventHandler(Node3D item);
+
+    [Signal]
+    public delegate void UpdateHealthEventHandler();
     
     [Export]
     public PackedScene GooseJumpScene;
@@ -15,7 +18,7 @@ public partial class PlayerRE : CharacterBody3D
     [Export]
     public float turnSpeed = 4f;
 
-    private int _health = 100;
+    public int _health = 100;
 
     private Vector3 _targetVelocity = Vector3.Zero;
     private SubViewport _subViewport;
@@ -394,6 +397,7 @@ public partial class PlayerRE : CharacterBody3D
     public void TakeDamage(int dmg) 
     {
         _health -= dmg;
+        EmitSignal(SignalName.UpdateHealth);
     }
 
     public void OnAnimationFinish(StringName animName) 
