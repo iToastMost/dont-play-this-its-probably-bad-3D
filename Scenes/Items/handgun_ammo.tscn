@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://xexhgx776cch"]
+
+[ext_resource type="Script" uid="uid://bhled4fnvjffw" path="res://Scripts/Items/HandgunAmmo.cs" id="1_8tqgf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ghm0s"]
+size = Vector3(2.4852905, 1.4708252, 1.730896)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ghm0s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qw1xf"]
+albedo_color = Color(1, 0, 0.23137255, 1)
+
+[node name="HandgunAmmo" type="StaticBody3D"]
+script = ExtResource("1_8tqgf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0101623535, 0.2354126, 0.115875244)
+shape = SubResource("BoxShape3D_ghm0s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.70824206, 0, 0, 0, 0.4437446, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_ghm0s")
+surface_material_override/0 = SubResource("StandardMaterial3D_qw1xf")

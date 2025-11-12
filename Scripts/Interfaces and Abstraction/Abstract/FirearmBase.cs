@@ -6,7 +6,7 @@ public abstract partial class Firearm : EquippableItem
     [Export]
     public int MagazineSize;
 
-    [export]
+    [Export]
     public double FireRate;
 
     [Export]
@@ -15,6 +15,6 @@ public abstract partial class Firearm : EquippableItem
     [Export]
     public Node3D MuzzlePosition;
 
-    void Shoot();
-    void Reload();
+    public abstract void Shoot();
+    public abstract void Reload();
 }

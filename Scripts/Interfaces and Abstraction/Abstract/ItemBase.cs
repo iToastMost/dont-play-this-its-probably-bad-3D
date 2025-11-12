@@ -8,7 +8,7 @@ public abstract partial class ItemBase : StaticBody3D, iLootable
     [Export] public int itemID { get; protected set; } = 0;
     public void Loot(int[] inventory, int itemID, int inventoryIdx)
     {
-        inventory[inventoryIdx] = itemID
+        inventory[inventoryIdx] = itemID;
         QueueFree();
     }
     public string GetName() => itemName;

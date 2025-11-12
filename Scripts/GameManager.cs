@@ -28,7 +28,7 @@ public partial class GameManager : Node3D
 		//TODO update signals to look like this
 		//_playerRe.Connect("UpdateInventoryItems", new Callable(this, nameof(UpdateInventory)));
 		//_playerRe.Connect("UpdateHealth", new Callable(this, nameof(UpdatePlayerHealth)));
-		_player.Re.UpdateInventoryItems += UpdateInventory;
+		_playerRe.UpdateInventoryItems += UpdateInventory;
 		_playerRe.UpdateHealth += UpdatePlayerHealth;
 
 		//_inventory.Connect("ItemUsed", new Callable(this, nameof(UseItem)));
@@ -102,21 +102,15 @@ public partial class GameManager : Node3D
 		if (item is iLootable loot)
 		{
 			for (int i = 0; i < _playerInventory.Length; i++)
-        {
-            if (_playerInventory[i] == -1)
-            {
-                //_playerInventory[i] = itemID;
-                //Queue free doesnt work here? fix this later
-                //QueueFree();
-				loot.Loot(_playerInventory, loot.GetID(), i);
-				_inventory.UpdateInventory(loot.GetName(), i);
-				return;
-            }
-            else
-            {
-                i++;
-            }
-        }
+				if (_playerInventory[i] == -1)
+				{
+					//_playerInventory[i] = itemID;
+					//Queue free doesnt work here? fix this later
+					//QueueFree();
+					loot.Loot(_playerInventory, loot.GetID(), i);
+					_inventory.UpdateInventory(loot.GetName(), i);
+					return;
+				}
 			
 		}
 	}
@@ -145,7 +139,7 @@ public partial class GameManager : Node3D
 			{
 				//Play around with this code to get it to work, this is kinda pseudo code
 				//Maybe send the ID then "equip" that item looping through weapons in the game that are just invisible on the player
-				EquipItem(equippable);
+				EquipItem(item);
 			}
 		}
 	}
@@ -200,7 +194,7 @@ public partial class GameManager : Node3D
 
 	private void EquipItem(Node3D toEquip)
 	{
-		player.EquipItem(toEquip);
+		_playerRe.EquipItem(toEquip);
 	}
 	
 	private static void MovePlayerToSpawn() 

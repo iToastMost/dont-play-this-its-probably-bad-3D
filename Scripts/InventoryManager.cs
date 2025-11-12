@@ -9,7 +9,7 @@ public partial class InventoryManager : Node
     {
         if (_instance == null)
         {
-            _instance = new int {-1, -1, -1, -1, -1, -1, -1, -1};
+            _instance = [-1, -1, -1, -1, -1, -1, -1, -1];
         }
         return _instance;
     }
