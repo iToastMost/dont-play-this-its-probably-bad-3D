@@ -32,6 +32,9 @@ public partial class PlayerRE : CharacterBody3D
     private bool _isDead = false;
     private bool _isReloading = false;
     private int _ammo = 12;
+
+    private Node3D _handEquipmentSlot;
+
     //private Node3D[] _playerInventory;
 
     private Vector3 _aimPointDefaultPositon;
@@ -398,6 +401,11 @@ public partial class PlayerRE : CharacterBody3D
     {
         _health -= dmg;
         EmitSignal(SignalName.UpdateHealth);
+    }
+
+    public void EquipItem(Node3D item)
+    {
+        _handEquipmentSlot = item;
     }
 
     public void OnAnimationFinish(StringName animName) 

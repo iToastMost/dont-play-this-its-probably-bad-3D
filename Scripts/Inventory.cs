@@ -30,10 +30,10 @@ public partial class Inventory : Control
         _canvasLayer.Visible = _inventoryIsOpen;
     }
 
-    public void UpdateInventory(string itemName)
+    public void UpdateInventory(string itemName, int slotIdx)
     {
         //Call down from game manager to add the item looted from player to the inventory
-       var slot = _gridContainer.GetNode<Button>("Slot0");
+       var slot = _gridContainer.GetNode<Button>("Slot" + slotIdx);
        slot.Text = itemName;
     }
 

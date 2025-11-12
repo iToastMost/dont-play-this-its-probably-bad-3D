@@ -26,10 +26,13 @@ public partial class GameManager : Node3D
 		_environment = GetNode<Node3D>("Environment");
 
 		//TODO update signals to look like this
-		_playerRe.Connect("UpdateInventoryItems", new Callable(this, nameof(UpdateInventory)));
+		//_playerRe.Connect("UpdateInventoryItems", new Callable(this, nameof(UpdateInventory)));
 		//_playerRe.Connect("UpdateHealth", new Callable(this, nameof(UpdatePlayerHealth)));
+		_player.Re.UpdateInventoryItems += UpdateInventory;
 		_playerRe.UpdateHealth += UpdatePlayerHealth;
-		_inventory.Connect("ItemUsed", new Callable(this, nameof(UseItem)));
+
+		//_inventory.Connect("ItemUsed", new Callable(this, nameof(UseItem)));
+		_inventory.ItemUsed += UseItem;
 		
 		var loadBathroom = ResourceLoader.Load<PackedScene>("res://Scenes/Environments/bathroom_scene.tscn");
 		_currentEnvironment = loadBathroom.Instantiate<Node3D>();
@@ -98,8 +101,23 @@ public partial class GameManager : Node3D
 		//Signals to ui to update inventory node with item looted from the signal emitted from player
 		if (item is iLootable loot)
 		{
-			loot.Loot(_playerInventory, loot.GetID());
-			_inventory.UpdateInventory(loot.GetName());
+			for (int i = 0; i < _playerInventory.Length; i++)
+        {
+            if (_playerInventory[i] == -1)
+            {
+                //_playerInventory[i] = itemID;
+                //Queue free doesnt work here? fix this later
+                //QueueFree();
+				loot.Loot(_playerInventory, loot.GetID(), i);
+				_inventory.UpdateInventory(loot.GetName(), i);
+				return;
+            }
+            else
+            {
+                i++;
+            }
+        }
+			
 		}
 	}
 
@@ -108,17 +126,18 @@ public partial class GameManager : Node3D
 		//code for item consumption here
 		if (_playerInventory[idx] != null && _playerInventory[idx] >= 0)
 		{
-			var item = ItemDatabase.GetItem(_playerInventory[idx]).Instantiate<ConsumableItemBase>();
+			var item = ItemDatabase.GetItem(_playerInventory[idx]).Instantiate<Node3D>();
 			if (item is iConsumable consumable)
 			{
-				consumable.Consume(_playerRe);
+				_playerRe._health += consumable.Consume();
 				_playerInventory[idx] = -1;
-				_inventory.UpdateInventory("");
+				_inventory.UpdateInventory("", idx);
 				if (_playerRe._health > 100)
 				{
 					_playerRe._health = 100;
 				}
 				_healthLabel.Text = _playerRe._health.ToString();
+				return;
 			}
 		}
 	}
