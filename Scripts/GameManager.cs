@@ -127,6 +127,7 @@ public partial class GameManager : Node3D
 		if (_playerInventory[idx] != null && _playerInventory[idx] >= 0)
 		{
 			var item = ItemDatabase.GetItem(_playerInventory[idx]).Instantiate<Node3D>();
+			
 			if (item is iConsumable consumable)
 			{
 				_playerRe._health += consumable.Consume();
@@ -138,6 +139,13 @@ public partial class GameManager : Node3D
 				}
 				_healthLabel.Text = _playerRe._health.ToString();
 				return;
+			}
+
+			if(item is iEquippable equippable)
+			{
+				//Play around with this code to get it to work, this is kinda pseudo code
+				//Maybe send the ID then "equip" that item looping through weapons in the game that are just invisible on the player
+				EquipItem(equippable);
 			}
 		}
 	}
@@ -188,6 +196,11 @@ public partial class GameManager : Node3D
 	private void UpdatePlayerHealth()
 	{
 		_healthLabel.Text = _playerRe._health.ToString();
+	}
+
+	private void EquipItem(Node3D toEquip)
+	{
+		player.EquipItem(toEquip);
 	}
 	
 	private static void MovePlayerToSpawn() 

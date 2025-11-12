@@ -406,6 +406,7 @@ public partial class PlayerRE : CharacterBody3D
     public void EquipItem(Node3D item)
     {
         _handEquipmentSlot = item;
+        //item.Visible = true;
     }
 
     public void OnAnimationFinish(StringName animName) 
