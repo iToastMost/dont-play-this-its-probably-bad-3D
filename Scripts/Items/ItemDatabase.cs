@@ -7,7 +7,7 @@ public static class ItemDatabase
 	private static Dictionary<int, PackedScene> items = new()
 	{
 		{0, ResourceLoader.Load<PackedScene>("res://Scenes/Items/healing_herb.tscn")},
-		//{1, }
+		{1, ResourceLoader.Load<PackedScene>("res://Scenes/Items/handgun_ammo.tscn") },
 	};
 
 	public static PackedScene GetItem(int key)

@@ -8,6 +8,15 @@ public partial class PlayerRE : CharacterBody3D
 
     [Signal]
     public delegate void UpdateHealthEventHandler();
+
+    [Signal]
+    public delegate void UseAmmoEventHandler(int ammo);
+    
+    [Signal]
+    public delegate void ReloadCheckEventHandler();
+
+    [Signal]
+    public delegate void ReloadFinishedEventHandler();
     
     [Export]
     public PackedScene GooseJumpScene;
@@ -31,7 +40,7 @@ public partial class PlayerRE : CharacterBody3D
     private bool _isAiming = false;
     private bool _isDead = false;
     private bool _isReloading = false;
-    private int _ammo = 12;
+    public int Ammo = 12;
 
     private Node3D _handEquipmentSlot;
 
@@ -125,11 +134,9 @@ public partial class PlayerRE : CharacterBody3D
                 InteractCheck();
             }
 
-            if (Input.IsActionJustPressed("reload") && _ammo < 12 && !_isReloading) 
+            if (Input.IsActionJustPressed("reload") && Ammo < 12 && !_isReloading) 
             {
-                playerAnimation.CurrentAnimation = "Pistol_Reload";
-                _canMove = false;
-                _isReloading = true;
+                EmitSignalReloadCheck();
             }
 
             MoveAndSlide();
@@ -279,11 +286,18 @@ public partial class PlayerRE : CharacterBody3D
         laser.Visible = true;
     }
 
+    public void Reload()
+    {
+        playerAnimation.CurrentAnimation = "Pistol_Reload";
+        _canMove = false;
+        _isReloading = true;
+    }
+
     private void Shoot() 
     {
-        if(_ammo > 0) 
+        if(Ammo > 0) 
         {
-            _ammo--;
+            Ammo--;
 
             Vector3 direction;
             
@@ -302,6 +316,7 @@ public partial class PlayerRE : CharacterBody3D
             }
             bulletSpawn.SetDireciton(-direction);
             GetParent().AddChild(bulletSpawn);
+            UpdateAmmo(Ammo);
             GD.Print("Pew pew");
         }
 
@@ -343,6 +358,11 @@ public partial class PlayerRE : CharacterBody3D
     private void UpdateInventory(Node3D item)
     {
         EmitSignal(SignalName.UpdateInventoryItems, item);
+    }
+
+    private void UpdateAmmo(int ammo)
+    {
+        EmitSignal(SignalName.UseAmmo, ammo);
     }
 
     private void playerDie() 
@@ -431,7 +451,7 @@ public partial class PlayerRE : CharacterBody3D
             
             _isReloading = false;
             _canMove = true;
-            _ammo = 12;
+            EmitSignalReloadFinished();
         }
         
     }

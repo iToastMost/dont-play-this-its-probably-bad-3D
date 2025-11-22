@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bhled4fnvjffw" path="res://Scripts/Items/HandgunAmmo.cs" id="1_8tqgf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ghm0s"]
-size = Vector3(2.4852905, 1.4708252, 1.730896)
+size = Vector3(2.4852905, 6.806122, 5.32341)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ghm0s"]
 
@@ -11,10 +11,15 @@ size = Vector3(2.4852905, 1.4708252, 1.730896)
 albedo_color = Color(1, 0, 0.23137255, 1)
 
 [node name="HandgunAmmo" type="StaticBody3D"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 script = ExtResource("1_8tqgf")
+AmmoAmount = 15
+itemName = "Handgun Ammo"
+itemDescription = "9mm ammo for handguns"
+itemID = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0101623535, 0.2354126, 0.115875244)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0101623535, -0.43144226, -0.57598114)
 shape = SubResource("BoxShape3D_ghm0s")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

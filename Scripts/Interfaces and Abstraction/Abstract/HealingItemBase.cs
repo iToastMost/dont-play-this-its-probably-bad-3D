@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public abstract partial class ConsumableItemBase : ItemBase, iConsumable
+public abstract partial class HealingItemBase : ItemBase, iConsumable
 {
     [Export] public int HealAmount;
     
