@@ -33,6 +33,7 @@ public partial class PlayerRE : CharacterBody3D
     private SubViewport _subViewport;
     private PackedScene _gooseJumpScene;
 
+    //bools without state machine
     private AnimationPlayer _phoneAnimation;
     private bool _phoneVisible = false;
     private bool _canMove = true;
@@ -40,6 +41,17 @@ public partial class PlayerRE : CharacterBody3D
     private bool _isAiming = false;
     private bool _isDead = false;
     private bool _isReloading = false;
+    
+    //bools for state machine
+    //private AnimationPlayer _phoneAnimation;
+    //private bool _phoneVisible = false;
+    public bool CanMove = true;
+    //private bool 3DStarted = false;
+    public bool IsAiming = false;
+    public bool IsDead = false;
+    public bool IsReloading = false;
+    
+    
     public int Ammo = 12;
 
     private Node3D _handEquipmentSlot;
@@ -370,6 +382,11 @@ public partial class PlayerRE : CharacterBody3D
         playerAnimation.CurrentAnimation = "Death01";
         _canMove = false;
         _isDead = true;
+    }
+
+    public void PlayAnimation(string  animationName)
+    {
+        playerAnimation.Play(animationName);
     }
 
     private void AimLaser(double delta)
