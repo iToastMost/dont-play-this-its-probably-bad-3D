@@ -76,7 +76,7 @@ public partial class GameManager : Node3D
 		var dialogSignals = GetTree().GetNodesInGroup("DialogTriggers");
 		foreach(DialogTrigger dTrigger in dialogSignals) 
 		{
-			dTrigger.Connect("PreventMovement", new Callable(this, nameof(PreventPlayerMovment)));
+			dTrigger.Connect("PreventMovement", new Callable(this, nameof(PreventPlayerMovement)));
 			dTrigger.Connect("MySignalWithArgument", new Callable(this, nameof(SendDialog)));
 		}
 	}
@@ -98,7 +98,7 @@ public partial class GameManager : Node3D
 	}
 
 	//Disables player movement from dialog trigger signal
-	private void PreventPlayerMovment() 
+	private void PreventPlayerMovement() 
 	{
 		_playerRe.DisableMovement();
 	}
@@ -108,25 +108,43 @@ public partial class GameManager : Node3D
 		//Signals to ui to update inventory node with item looted from the signal emitted from player
 		if (item is iLootable loot)
 		{
+			//Adds ammo items to inventory, first checking if that ammo is already in the inventory, and if not keeping track of the first open idx
+			//to place ammo and not loop over the inventory twice. I'm sure there's a more elegant way to do this
+			if (item is AmmoItemBase lootedAmmo)
+			{
+				int emptyIdx = -1;
+				for (int i = 0; i < _playerInventory.Length; i++)
+				{
+					if (_playerInventory[i] is AmmoItemBase ammo)
+					{
+						ammo.AmmoAmount += lootedAmmo.AmmoAmount;
+						_inventory.UpdateInventory(ammo.GetName() + " (" + ammo.AmmoAmount + ")", i);
+						lootedAmmo.QueueFree();
+
+						return;
+					} 
+					
+					if (_playerInventory[i] == null && emptyIdx == -1)
+					{
+						emptyIdx = i;
+					}
+					
+				}
+				
+				loot.Loot(_playerInventory, loot.GetID(), emptyIdx);
+				_inventory.UpdateInventory(lootedAmmo.GetName() + " (" + lootedAmmo.AmmoAmount + ")", emptyIdx);
+				return;
+			}
+			
+			//Adds non ammo items to inventory in first free available space
 			for (int i = 0; i < _playerInventory.Length; i++)
 				if (_playerInventory[i] == null)
 				{
-					//_playerInventory[i] = itemID;
-					//Queue free doesnt work here? fix this later
-					//QueueFree();
 					loot.Loot(_playerInventory, loot.GetID(), i);
-					if (item is AmmoItemBase ammo)
-					{
-						_inventory.UpdateInventory(ammo.GetName() + " (" + ammo.AmmoAmount + ")", i);
-					}
-					else
-					{
-						_inventory.UpdateInventory(loot.GetName(), i);
-					}
-					
+					_inventory.UpdateInventory(loot.GetName(), i);
+						
 					return;
 				}
-			
 		}
 	}
 
@@ -160,14 +178,14 @@ public partial class GameManager : Node3D
 
 			if(item is iEquippable equippable)
 			{
-				//Play around with this code to get it to work, this is kinda pseudo code
+				//Play around with this code to get it to work, this is kinda pseudocode
 				//Maybe send the ID then "equip" that item looping through weapons in the game that are just invisible on the player
 				EquipItem(item);
 			}
 		}
 	}
 
-	//checks inventroy for ammo if player hits reload button (not in inventory)
+	//checks inventory for ammo if player hits reload button (not in inventory)
 	private void ReloadCheck()
 	{
 		for (int i = 0; i < _playerInventory.Length; i++)
