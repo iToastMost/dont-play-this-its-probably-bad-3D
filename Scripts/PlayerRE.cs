@@ -75,6 +75,8 @@ public partial class PlayerRE : CharacterBody3D
     public override void _Ready()
     {
         sm = new StateMachine();
+        sm.Initialize(this);
+        
         //player = GetNode<CharacterBody3D>("3DPlayer");
         playerAnimation = GetNode<AnimationPlayer>("CharacterModelAnim/AnimationPlayer");
 
