@@ -69,10 +69,12 @@ public partial class PlayerRE : CharacterBody3D
     AnimationPlayer playerAnimation;
     PackedScene bullet;
     Node3D aimPoint;
+    private StateMachine sm;
 
 
     public override void _Ready()
     {
+        sm = new StateMachine();
         //player = GetNode<CharacterBody3D>("3DPlayer");
         playerAnimation = GetNode<AnimationPlayer>("CharacterModelAnim/AnimationPlayer");
 
@@ -122,6 +124,7 @@ public partial class PlayerRE : CharacterBody3D
 
     public override void _PhysicsProcess(double delta)
     {
+        sm.PhysicsUpdate(delta);
         if(_health <= 0 && !_isDead) 
         {
             _isDead = true;
