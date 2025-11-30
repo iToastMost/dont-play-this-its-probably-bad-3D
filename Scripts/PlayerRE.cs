@@ -65,18 +65,25 @@ public partial class PlayerRE : CharacterBody3D
     CollisionShape3D playerCollider;
     ColorRect colorRect;
     RayCast3D rayCast;
-    RayCast3D laser;
+    public RayCast3D laser;
     AnimationPlayer playerAnimation;
     PackedScene bullet;
     Node3D aimPoint;
     private StateMachine sm;
 
+    public bool MovementInput() => Input.IsActionPressed("walk_forward")
+                                   || Input.IsActionPressed("walk_back")
+                                   || Input.IsActionPressed("turn_left")
+                                   || Input.IsActionPressed("turn_right")
+                                   || Input.IsActionJustPressed("spin_back");
+
+    public bool AimInput() => Input.IsActionPressed("aim");
+
+    public bool ReloadInput() => Input.IsActionJustPressed("reload");
+
 
     public override void _Ready()
     {
-        sm = new StateMachine();
-        sm.Initialize(this);
-        
         //player = GetNode<CharacterBody3D>("3DPlayer");
         playerAnimation = GetNode<AnimationPlayer>("CharacterModelAnim/AnimationPlayer");
 
@@ -93,6 +100,8 @@ public partial class PlayerRE : CharacterBody3D
         aimPoint = GetNode<Node3D>("AimPoint");
         _aimPointDefaultPositon = aimPoint.Position;
 
+        laser.Visible = false;
+        
         //_playerInventory = InventoryManager.GetInstance();
         
         playerAnimation.AnimationFinished += OnAnimationFinish;       
@@ -120,56 +129,78 @@ public partial class PlayerRE : CharacterBody3D
         //GooseScene.Connect("GameStart", new Callable(this, nameof(OnStart)));
         //_subViewport.AddChild(GooseScene);
         //}
-        playerAnimation.CurrentAnimation = "Idle";
-        playerAnimation.Play();
+        //playerAnimation.CurrentAnimation = "Idle";
+        //playerAnimation.Play();
+        
+        sm = new StateMachine();
+        
+        sm.AddState(PlayerStateTypes.Idle, new IdleState());
+        sm.AddState(PlayerStateTypes.Move, new MoveState());
+        sm.AddState(PlayerStateTypes.Aim, new AimState());
+        
+        sm.Initialize(this);
+        sm.ChangeState(PlayerStateTypes.Idle);
     }
 
     public override void _PhysicsProcess(double delta)
     {
         sm.PhysicsUpdate(delta);
-        if(_health <= 0 && !_isDead) 
+        MoveAndSlide();
+        
+        if (Input.IsActionJustPressed("accept_dialog") && _3DStarted == true) 
         {
-            _isDead = true;
-            playerDie();
+            CanMove = true;
         }
-
-        if (_canMove && !_isDead)
+        
+        if (Input.IsActionJustPressed("interaction_check"))
         {
-            if (Input.IsAnythingPressed()) 
-            {
-                Move(delta);
-            }
-            else 
-            {
-                laser.Visible = false;
-                playerAnimation.CurrentAnimation = "Idle";
-            }
-            
-
-            if (Input.IsActionJustPressed("interaction_check"))
-            {
-                InteractCheck();
-            }
-
-            if (Input.IsActionJustPressed("reload") && Ammo < 12 && !_isReloading) 
-            {
-                EmitSignalReloadCheck();
-            }
-
-            MoveAndSlide();
+            InteractCheck();
         }
-        else 
-        {
-            if (!_isDead && !_isReloading) 
-            {
-                playerAnimation.CurrentAnimation = "Idle";
-            }
-            
-            if (Input.IsActionJustPressed("accept_dialog") && _3DStarted == true) 
-            {
-                _canMove = true;
-            }
-        }
+        
+        // if(_health <= 0 && !_isDead) 
+        // {
+        //     _isDead = true;
+        //     playerDie();
+        // }
+        //
+        // if (_canMove && !_isDead)
+        // {
+        //     if (Input.IsAnythingPressed()) 
+        //     {
+        //         //Move(delta);
+        //         HandleMovement(delta);
+        //     }
+        //     else 
+        //     {
+        //         laser.Visible = false;
+        //         playerAnimation.CurrentAnimation = "Idle";
+        //     }
+        //     
+        //
+        //     if (Input.IsActionJustPressed("interaction_check"))
+        //     {
+        //         InteractCheck();
+        //     }
+        //
+        //     if (Input.IsActionJustPressed("reload") && Ammo < 12 && !_isReloading) 
+        //     {
+        //         EmitSignalReloadCheck();
+        //     }
+        //
+        //     MoveAndSlide();
+        // }
+        // else 
+        // {
+        //     if (!_isDead && !_isReloading) 
+        //     {
+        //         playerAnimation.CurrentAnimation = "Idle";
+        //     }
+        //     
+        //     if (Input.IsActionJustPressed("accept_dialog") && _3DStarted == true) 
+        //     {
+        //         _canMove = true;
+        //     }
+        // }
         
     }
 
@@ -243,7 +274,7 @@ public partial class PlayerRE : CharacterBody3D
 
         AimLaser(delta);
 
-        if (Input.IsActionJustPressed("spin_back") && !_isAiming)
+        if (Input.IsActionJustPressed("spin_back"))
         {
             //Rotates 180 degrees.
             RotateY(Mathf.Pi);
@@ -297,6 +328,57 @@ public partial class PlayerRE : CharacterBody3D
         Velocity = _targetVelocity;
     }
 
+    public void HandleMovement(double delta)
+    {
+        var direction = Vector3.Zero;
+        var transform = Transform;
+        
+        if (Input.IsActionJustPressed("spin_back"))
+        {
+            //Rotates 180 degrees.
+            RotateY(Mathf.Pi);
+        }
+        
+        if (Input.IsActionPressed("walk_forward")) 
+        {
+            if (Input.IsActionPressed("sprint")) 
+            {
+                Position += transform.Basis.X * (speed * 2) * (float)delta;
+                playerAnimation.CurrentAnimation = "Jog_Fwd";
+            }
+            else 
+            {
+                Position += transform.Basis.X * speed * (float)delta;
+                playerAnimation.CurrentAnimation = "Walk";
+            }
+        }
+
+        if (Input.IsActionPressed("walk_back")) 
+        {
+            Position -= transform.Basis.X * speed / 2 * (float)delta;
+        }
+
+        if (Input.IsActionPressed("turn_left")) 
+        {
+            RotateY(turnSpeed * (float)delta);
+        }
+        if (Input.IsActionPressed("turn_right"))
+        {
+            RotateY(-turnSpeed * (float)delta);
+        }
+        
+        if(direction != Vector3.Zero) 
+        {
+            direction = direction.Normalized();
+            GetNode<Node3D>("Pivot").Basis = Basis.LookingAt(direction);
+        }
+
+        _targetVelocity.X = direction.X * speed;
+        _targetVelocity.Z = direction.Z * speed;
+
+        Velocity = _targetVelocity;
+    }
+
     private void Aim() 
     {
         playerAnimation.CurrentAnimation = "Pistol_Idle";
@@ -310,7 +392,7 @@ public partial class PlayerRE : CharacterBody3D
         _isReloading = true;
     }
 
-    private void Shoot() 
+    public void Shoot() 
     {
         if(Ammo > 0) 
         {
@@ -369,7 +451,7 @@ public partial class PlayerRE : CharacterBody3D
 
     public void DisableMovement() 
     {
-        _canMove = false;
+        CanMove = false;
     }
 
     private void UpdateInventory(Node3D item)
@@ -391,13 +473,12 @@ public partial class PlayerRE : CharacterBody3D
 
     public void PlayAnimation(string  animationName)
     {
-        playerAnimation.Play(animationName);
+        playerAnimation.CurrentAnimation = animationName;
+        playerAnimation.Play();
     }
 
-    private void AimLaser(double delta)
+    public void AimLaser(double delta)
     {
-        if (_isAiming)
-        {
             if (Input.IsActionPressed("aim_right"))
             {
                 laser.RotateY(-turnSpeed /2 * (float)delta);
@@ -421,12 +502,6 @@ public partial class PlayerRE : CharacterBody3D
             float y = Mathf.Clamp(laser.Rotation.Y, Mathf.DegToRad(-45), Mathf.DegToRad(45));
             float z = Mathf.Clamp(laser.Rotation.Z, Mathf.DegToRad(80), Mathf.DegToRad(100));
             laser.Rotation = new Vector3(0,y,z);
-        }
-        else
-        {
-            laser.Rotation = new Vector3(0,0, Mathf.DegToRad(90));
-        }
-        
     }
 
     public void OnStart() 

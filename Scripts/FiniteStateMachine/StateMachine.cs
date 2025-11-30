@@ -14,9 +14,9 @@ public partial class StateMachine : Node
 
     public void Initialize(PlayerRE player)
     {
-        foreach (var state in _playerStates.Values)
+        foreach (var state in _playerStates)
         {
-            state.Initialize(player, this);
+            state.Value.Initialize(player, this);
         }
     }
     

@@ -4,8 +4,7 @@ using System;
 public enum PlayerStateTypes
 {
     Idle,
-    Walk,
-    WalkBackward,
+    Move,
     Run,
     Aim,
     Reload,
