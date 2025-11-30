@@ -27,7 +27,7 @@ public class MoveState : PlayerState
             stateMachine.ChangeState(PlayerStateTypes.Aim);
             return;
         }
-
+        
         if (!player.MovementInput() || !player.CanMove)
         {
             stateMachine.ChangeState(PlayerStateTypes.Idle);

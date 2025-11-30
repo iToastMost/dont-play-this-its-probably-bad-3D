@@ -79,7 +79,7 @@ public partial class PlayerRE : CharacterBody3D
 
     public bool AimInput() => Input.IsActionPressed("aim");
 
-    public bool ReloadInput() => Input.IsActionJustPressed("reload");
+    public bool ReloadInput() => Input.IsActionPressed("reload");
 
 
     public override void _Ready()
@@ -129,14 +129,14 @@ public partial class PlayerRE : CharacterBody3D
         //GooseScene.Connect("GameStart", new Callable(this, nameof(OnStart)));
         //_subViewport.AddChild(GooseScene);
         //}
-        //playerAnimation.CurrentAnimation = "Idle";
-        //playerAnimation.Play();
         
         sm = new StateMachine();
         
         sm.AddState(PlayerStateTypes.Idle, new IdleState());
         sm.AddState(PlayerStateTypes.Move, new MoveState());
         sm.AddState(PlayerStateTypes.Aim, new AimState());
+        sm.AddState(PlayerStateTypes.Reload, new ReloadState());
+        sm.AddState(PlayerStateTypes.Dead, new DeathState());
         
         sm.Initialize(this);
         sm.ChangeState(PlayerStateTypes.Idle);
@@ -146,6 +146,11 @@ public partial class PlayerRE : CharacterBody3D
     {
         sm.PhysicsUpdate(delta);
         MoveAndSlide();
+
+        if (_health <= 0 && !IsDead)
+        {
+            PlayerDie();
+        }
         
         if (Input.IsActionJustPressed("accept_dialog") && _3DStarted == true) 
         {
@@ -157,51 +162,10 @@ public partial class PlayerRE : CharacterBody3D
             InteractCheck();
         }
         
-        // if(_health <= 0 && !_isDead) 
-        // {
-        //     _isDead = true;
-        //     playerDie();
-        // }
-        //
-        // if (_canMove && !_isDead)
-        // {
-        //     if (Input.IsAnythingPressed()) 
-        //     {
-        //         //Move(delta);
-        //         HandleMovement(delta);
-        //     }
-        //     else 
-        //     {
-        //         laser.Visible = false;
-        //         playerAnimation.CurrentAnimation = "Idle";
-        //     }
-        //     
-        //
-        //     if (Input.IsActionJustPressed("interaction_check"))
-        //     {
-        //         InteractCheck();
-        //     }
-        //
-        //     if (Input.IsActionJustPressed("reload") && Ammo < 12 && !_isReloading) 
-        //     {
-        //         EmitSignalReloadCheck();
-        //     }
-        //
-        //     MoveAndSlide();
-        // }
-        // else 
-        // {
-        //     if (!_isDead && !_isReloading) 
-        //     {
-        //         playerAnimation.CurrentAnimation = "Idle";
-        //     }
-        //     
-        //     if (Input.IsActionJustPressed("accept_dialog") && _3DStarted == true) 
-        //     {
-        //         _canMove = true;
-        //     }
-        // }
-        
+        if (Input.IsActionJustPressed("exit_game")) 
+        {
+            GetTree().Quit();
+        }
     }
 
     public override void _Input(InputEvent @event)
@@ -224,62 +188,8 @@ public partial class PlayerRE : CharacterBody3D
         }
     }
 
-    private void Move(double delta) 
+    private void PhoneInteract() 
     {
-        var direction = Vector3.Zero;
-        var transform = Transform;
-       
-        if (Input.IsActionPressed("aim"))
-        {
-            _isAiming = true;
-            Aim();
-            if (_isAiming && Input.IsActionJustPressed("shoot_3d")) 
-            {
-                Shoot();
-            }
-        }
-        else
-        {
-            _isAiming = false;
-            aimPoint.Position = _aimPointDefaultPositon;
-        }
-
-        if (Input.IsActionPressed("walk_forward") && !_isAiming) 
-        {
-            if (Input.IsActionPressed("sprint")) 
-            {
-                Position += transform.Basis.X * (speed * 2) * (float)delta;
-                playerAnimation.CurrentAnimation = "Jog_Fwd";
-            }
-            else 
-            {
-                Position += transform.Basis.X * speed * (float)delta;
-                playerAnimation.CurrentAnimation = "Walk";
-            }
-        }
-
-        if (Input.IsActionPressed("walk_back") && !_isAiming) 
-        {
-            Position -= transform.Basis.X * speed / 2 * (float)delta;
-        }
-
-        if (Input.IsActionPressed("turn_left")) 
-        {
-            RotateY(turnSpeed * (float)delta);
-        }
-        if (Input.IsActionPressed("turn_right"))
-        {
-            RotateY(-turnSpeed * (float)delta);
-        }
-
-        AimLaser(delta);
-
-        if (Input.IsActionJustPressed("spin_back"))
-        {
-            //Rotates 180 degrees.
-            RotateY(Mathf.Pi);
-        }
-
         if (Input.IsActionJustPressed("open_phone")) 
         {
             if (_phoneVisible == true) 
@@ -309,23 +219,6 @@ public partial class PlayerRE : CharacterBody3D
                 _phoneAnimation.Play();
             }
         }
-
-        if (Input.IsActionJustPressed("exit_game")) 
-        {
-            GetTree().Quit();
-        }
-
-
-        if(direction != Vector3.Zero) 
-        {
-            direction = direction.Normalized();
-            GetNode<Node3D>("Pivot").Basis = Basis.LookingAt(direction);
-        }
-
-        _targetVelocity.X = direction.X * speed;
-        _targetVelocity.Z = direction.Z * speed;
-
-        Velocity = _targetVelocity;
     }
 
     public void HandleMovement(double delta)
@@ -385,6 +278,11 @@ public partial class PlayerRE : CharacterBody3D
         laser.Visible = true;
     }
 
+    public void SendReloadCheck()
+    {
+        EmitSignalReloadCheck();
+    }
+    
     public void Reload()
     {
         playerAnimation.CurrentAnimation = "Pistol_Reload";
@@ -462,13 +360,13 @@ public partial class PlayerRE : CharacterBody3D
     private void UpdateAmmo(int ammo)
     {
         EmitSignal(SignalName.UseAmmo, ammo);
+        _isReloading = false;
     }
 
-    private void playerDie() 
+    private void PlayerDie() 
     {
-        playerAnimation.CurrentAnimation = "Death01";
-        _canMove = false;
-        _isDead = true;
+        CanMove = false;
+        IsDead = true;
     }
 
     public void PlayAnimation(string  animationName)

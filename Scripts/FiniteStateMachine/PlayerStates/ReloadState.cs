@@ -1,15 +1,26 @@
 using Godot;
 using System;
 
-public partial class ReloadState : PlayerState
+public class ReloadState : PlayerState
 {
     public override void Enter()
     {
-        player.PlayAnimation("Pistol_Reload");
+        //player.PlayAnimation("Pistol_Reload");
     }
 
     public override void PhysicsUpdate(double delta)
     {
-        player.OnAnimationFinish("Pistol_Reload");
+        if (player.IsDead)
+        {
+            stateMachine.ChangeState(PlayerStateTypes.Dead);
+            return;
+        }
+        
+        player.SendReloadCheck();
+        if (!player.IsReloading)
+        {
+            stateMachine.ChangeState(PlayerStateTypes.Idle);
+            return;
+        }
     }
 }

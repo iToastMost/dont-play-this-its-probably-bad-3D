@@ -5,7 +5,6 @@ public class AimState : PlayerState
 {
     public override void Enter()
     {
-        GD.Print("Entering Aim");
         player.laser.Visible = true;
         player.PlayAnimation("Pistol_Idle");
     }

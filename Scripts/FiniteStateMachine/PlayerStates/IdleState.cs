@@ -5,8 +5,6 @@ public class IdleState : PlayerState
 {
     public override void Enter()
     {
-        //animation code here
-        GD.Print("Entering idle state");
         player.PlayAnimation("Idle");
     }
 
@@ -23,6 +21,12 @@ public class IdleState : PlayerState
             stateMachine.ChangeState(PlayerStateTypes.Aim);
             return;
         }
+
+        // if (player.ReloadInput())
+        // {
+        //     stateMachine.ChangeState(PlayerStateTypes.Reload);
+        //     return;
+        // }
 
         if (player.MovementInput() && player.CanMove)
         {
