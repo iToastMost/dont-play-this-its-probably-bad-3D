@@ -5,6 +5,9 @@ public abstract partial class AmmoItemBase : ItemBase, iConsumable
 {
     [Export]
     public int AmmoAmount { get; set; }
+    
+    [Export]
+    public string AmmoType { get; set; }
 
     public int Consume() => Consume(1);
     

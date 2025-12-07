@@ -22,11 +22,11 @@ public class IdleState : PlayerState
             return;
         }
 
-        // if (player.ReloadInput())
-        // {
-        //     stateMachine.ChangeState(PlayerStateTypes.Reload);
-        //     return;
-        // }
+        if (player.ReloadInput() && (player.Ammo < 12 && !player.IsReloading))
+        {
+            stateMachine.ChangeState(PlayerStateTypes.Reload);
+            return;
+        }
 
         if (player.MovementInput() && player.CanMove)
         {

@@ -6,6 +6,7 @@ public class ReloadState : PlayerState
     public override void Enter()
     {
         //player.PlayAnimation("Pistol_Reload");
+        player.SendReloadCheck();
     }
 
     public override void PhysicsUpdate(double delta)
@@ -16,7 +17,6 @@ public class ReloadState : PlayerState
             return;
         }
         
-        player.SendReloadCheck();
         if (!player.IsReloading)
         {
             stateMachine.ChangeState(PlayerStateTypes.Idle);

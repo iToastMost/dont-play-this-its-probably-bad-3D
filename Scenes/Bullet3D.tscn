@@ -1,15 +1,46 @@
-[gd_scene load_steps=4 format=3 uid="uid://bo0a0c6hyeknd"]
+[gd_scene load_steps=9 format=3 uid="uid://bo0a0c6hyeknd"]
 
-[ext_resource type="Script" uid="uid://cbqae0q2qsfjd" path="res://Scenes/Bullet3D.cs" id="1_17n1i"]
+[ext_resource type="Script" uid="uid://cbqae0q2qsfjd" path="res://Scripts/Bullet3D.cs" id="1_17n1i"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_nr8tw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17n1i"]
 albedo_color = Color(0.7321788, 0.70616776, 0.39108747, 1)
 
+[sub_resource type="Gradient" id="Gradient_17n1i"]
+colors = PackedColorArray(1, 0.1764706, 0, 0.5019608, 1, 0.5254902, 0.24313726, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_finpp"]
+gradient = SubResource("Gradient_17n1i")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_17n1i"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 0.3
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+gravity = Vector3(0, 0, 0)
+color = Color(1, 1, 0, 1)
+color_ramp = SubResource("GradientTexture1D_finpp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1vqd3"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 0.24313726, 1)
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_pxckn"]
+material = SubResource("StandardMaterial3D_1vqd3")
+radius = 0.11
+radial_steps = 4
+sections = 3
+section_length = 0.05
+section_rings = 1
+
 [node name="Bullet3D" type="Node3D"]
 transform = Transform3D(0.13774891, 0, 6.714667e-16, 0, 0.19024841, 0, -3.754029e-16, 0, 0.08170439, 0, 0, 0)
 script = ExtResource("1_17n1i")
+_bulletSpeed = 45.0
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
@@ -19,3 +50,11 @@ target_position = Vector3(0, 8, 0)
 transform = Transform3D(-1, -2.57606e-07, 3.8213705e-15, 0, -1.2880301e-07, -0.9999997, 8.742277e-08, -2.9466693, 4.3711392e-08, 0, 0, 0)
 mesh = SubResource("PrismMesh_nr8tw")
 surface_material_override/0 = SubResource("StandardMaterial3D_17n1i")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.7511722, -2.8854194e-08, 0.66010654, -0.6601066, -3.2834773e-08, 0.75117195, 3.7312928e-15, -1, -4.371139e-08, 0.025224656, 0.08783268, 2.2810872)
+emitting = false
+amount = 10
+lifetime = 0.2
+process_material = SubResource("ParticleProcessMaterial_17n1i")
+draw_pass_1 = SubResource("TubeTrailMesh_pxckn")

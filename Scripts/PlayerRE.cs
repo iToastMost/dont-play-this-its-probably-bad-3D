@@ -29,7 +29,7 @@ public partial class PlayerRE : CharacterBody3D
 
     public int _health = 100;
 
-    private Vector3 _targetVelocity = Vector3.Zero;
+    public Vector3 _targetVelocity = Vector3.Zero;
     private SubViewport _subViewport;
     private PackedScene _gooseJumpScene;
 
@@ -66,7 +66,7 @@ public partial class PlayerRE : CharacterBody3D
     ColorRect colorRect;
     RayCast3D rayCast;
     public RayCast3D laser;
-    AnimationPlayer playerAnimation;
+    public AnimationPlayer playerAnimation;
     PackedScene bullet;
     Node3D aimPoint;
     private StateMachine sm;
@@ -80,6 +80,7 @@ public partial class PlayerRE : CharacterBody3D
     public bool AimInput() => Input.IsActionPressed("aim");
 
     public bool ReloadInput() => Input.IsActionPressed("reload");
+    
 
 
     public override void _Ready()
@@ -220,58 +221,7 @@ public partial class PlayerRE : CharacterBody3D
             }
         }
     }
-
-    public void HandleMovement(double delta)
-    {
-        var direction = Vector3.Zero;
-        var transform = Transform;
-        
-        if (Input.IsActionJustPressed("spin_back"))
-        {
-            //Rotates 180 degrees.
-            RotateY(Mathf.Pi);
-        }
-        
-        if (Input.IsActionPressed("walk_forward")) 
-        {
-            if (Input.IsActionPressed("sprint")) 
-            {
-                Position += transform.Basis.X * (speed * 2) * (float)delta;
-                playerAnimation.CurrentAnimation = "Jog_Fwd";
-            }
-            else 
-            {
-                Position += transform.Basis.X * speed * (float)delta;
-                playerAnimation.CurrentAnimation = "Walk";
-            }
-        }
-
-        if (Input.IsActionPressed("walk_back")) 
-        {
-            Position -= transform.Basis.X * speed / 2 * (float)delta;
-        }
-
-        if (Input.IsActionPressed("turn_left")) 
-        {
-            RotateY(turnSpeed * (float)delta);
-        }
-        if (Input.IsActionPressed("turn_right"))
-        {
-            RotateY(-turnSpeed * (float)delta);
-        }
-        
-        if(direction != Vector3.Zero) 
-        {
-            direction = direction.Normalized();
-            GetNode<Node3D>("Pivot").Basis = Basis.LookingAt(direction);
-        }
-
-        _targetVelocity.X = direction.X * speed;
-        _targetVelocity.Z = direction.Z * speed;
-
-        Velocity = _targetVelocity;
-    }
-
+    
     private void Aim() 
     {
         playerAnimation.CurrentAnimation = "Pistol_Idle";
@@ -286,8 +236,8 @@ public partial class PlayerRE : CharacterBody3D
     public void Reload()
     {
         playerAnimation.CurrentAnimation = "Pistol_Reload";
-        _canMove = false;
-        _isReloading = true;
+        CanMove = false;
+        IsReloading = true;
     }
 
     public void Shoot() 
@@ -360,7 +310,6 @@ public partial class PlayerRE : CharacterBody3D
     private void UpdateAmmo(int ammo)
     {
         EmitSignal(SignalName.UseAmmo, ammo);
-        _isReloading = false;
     }
 
     private void PlayerDie() 
@@ -444,8 +393,8 @@ public partial class PlayerRE : CharacterBody3D
         if (animName.Equals("Pistol_Reload")) 
         {
             
-            _isReloading = false;
-            _canMove = true;
+            IsReloading = false;
+            CanMove = true;
             EmitSignalReloadFinished();
         }
         

@@ -23,6 +23,12 @@ public class AimState : PlayerState
             return;
         }
 
+        if (player.ReloadInput() && (player.Ammo < 12 && !player.IsReloading))
+        {
+            stateMachine.ChangeState(PlayerStateTypes.Reload);
+            return;
+        }
+        
         player.AimLaser(delta);
 
         if (Input.IsActionJustPressed("shoot"))

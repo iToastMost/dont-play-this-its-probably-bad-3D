@@ -14,6 +14,7 @@ albedo_color = Color(1, 0, 0.23137255, 1)
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 script = ExtResource("1_8tqgf")
 AmmoAmount = 15
+AmmoType = "Handgun"
 itemName = "Handgun Ammo"
 itemDescription = "9mm ammo for handguns"
 itemID = 1

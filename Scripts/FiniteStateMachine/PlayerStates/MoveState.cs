@@ -10,12 +10,6 @@ public class MoveState : PlayerState
     
     public override void PhysicsUpdate(double delta)
     {
-        if (Input.IsActionJustPressed("spin_back") && player.CanMove)
-        {
-            player.RotateY(Mathf.Pi);
-            return;
-        }
-        
         if (player.IsDead)
         {
             stateMachine.ChangeState(PlayerStateTypes.Dead);
@@ -33,14 +27,72 @@ public class MoveState : PlayerState
             stateMachine.ChangeState(PlayerStateTypes.Idle);
             return;
         }
-
-        if (player.CanMove && Input.IsActionJustPressed("spin_back"))
+        
+        if (player.ReloadInput() && (player.Ammo < 12 && !player.IsReloading))
         {
-            player.RotateY(Mathf.Pi);    
+            stateMachine.ChangeState(PlayerStateTypes.Reload);
+            return;
+        }
+
+        if (player.CanMove && Input.IsKeyPressed((Key.S)) && Input.IsKeyPressed(Key.Shift))
+        {
+            player.RotateY(Mathf.Pi);
+            return;
         }
         
         if(player.CanMove)
-         player.HandleMovement(delta);
+         HandlePlayerMovement(delta);
+    }
+
+    private void HandlePlayerMovement(double delta)
+    {
+        var direction = Vector3.Zero;
+        var transform = player.Transform;
+        
+        if (Input.IsActionJustPressed("spin_back"))
+        {
+            //Rotates 180 degrees.
+            player.RotateY(Mathf.Pi);
+        }
+        
+        if (Input.IsActionPressed("walk_forward")) 
+        {
+            if (Input.IsActionPressed("sprint")) 
+            {
+                player.Position += transform.Basis.X * (player.speed * 2) * (float)delta;
+                player.playerAnimation.CurrentAnimation = "Jog_Fwd";
+            }
+            else 
+            {
+                player.Position += transform.Basis.X * player.speed * (float)delta;
+                player.playerAnimation.CurrentAnimation = "Walk";
+            }
+        }
+
+        if (Input.IsActionPressed("walk_back")) 
+        {
+            player.Position -= transform.Basis.X * player.speed / 2 * (float)delta;
+        }
+
+        if (Input.IsActionPressed("turn_left")) 
+        {
+            player.RotateY(player.turnSpeed * (float)delta);
+        }
+        if (Input.IsActionPressed("turn_right"))
+        {
+            player.RotateY(-player.turnSpeed * (float)delta);
+        }
+        
+        if(direction != Vector3.Zero) 
+        {
+            direction = direction.Normalized();
+            player.GetNode<Node3D>("Pivot").Basis = Basis.LookingAt(direction);
+        }
+
+        player._targetVelocity.X = direction.X * player.speed;
+        player._targetVelocity.Z = direction.Z * player.speed;
+
+        player.Velocity = player._targetVelocity;
     }
     
 }
