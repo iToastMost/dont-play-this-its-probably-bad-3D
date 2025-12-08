@@ -9,4 +9,5 @@ public enum PlayerStateTypes
     Aim,
     Reload,
     Dead,
+    PhoneState,
 }

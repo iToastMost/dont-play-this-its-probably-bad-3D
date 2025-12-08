@@ -67,7 +67,7 @@ public partial class PlayerRE : CharacterBody3D
     RayCast3D rayCast;
     public RayCast3D laser;
     public AnimationPlayer playerAnimation;
-    PackedScene bullet;
+    public PackedScene bullet;
     Node3D aimPoint;
     private StateMachine sm;
 
@@ -138,6 +138,7 @@ public partial class PlayerRE : CharacterBody3D
         sm.AddState(PlayerStateTypes.Aim, new AimState());
         sm.AddState(PlayerStateTypes.Reload, new ReloadState());
         sm.AddState(PlayerStateTypes.Dead, new DeathState());
+        sm.AddState(PlayerStateTypes.PhoneState, new PhoneState());
         
         sm.Initialize(this);
         sm.ChangeState(PlayerStateTypes.Idle);
@@ -221,12 +222,6 @@ public partial class PlayerRE : CharacterBody3D
             }
         }
     }
-    
-    private void Aim() 
-    {
-        playerAnimation.CurrentAnimation = "Pistol_Idle";
-        laser.Visible = true;
-    }
 
     public void SendReloadCheck()
     {
@@ -239,36 +234,7 @@ public partial class PlayerRE : CharacterBody3D
         CanMove = false;
         IsReloading = true;
     }
-
-    public void Shoot() 
-    {
-        if(Ammo > 0) 
-        {
-            Ammo--;
-
-            Vector3 direction;
-            
-            var bulletSpawn = bullet.Instantiate<Bullet3D>();
-            
-            if (laser.IsColliding())
-            {
-                direction = (laser.GlobalPosition - laser.GetCollisionPoint()).Normalized();
-                bulletSpawn.LookAtFromPosition(laser.GlobalPosition, laser.GetCollisionPoint());
-            }
-            else
-            {
-                direction = (laser.GlobalPosition - laser.TargetPosition).Normalized();
-                var globalTargetPosition = laser.ToGlobal(laser.TargetPosition);
-                bulletSpawn.LookAtFromPosition(laser.GlobalPosition, globalTargetPosition);
-            }
-            bulletSpawn.SetDireciton(-direction);
-            GetParent().AddChild(bulletSpawn);
-            UpdateAmmo(Ammo);
-            GD.Print("Pew pew");
-        }
-
-    }
-
+    
     private void InteractCheck()
     {
         if (!rayCast.IsColliding())
@@ -307,7 +273,7 @@ public partial class PlayerRE : CharacterBody3D
         EmitSignal(SignalName.UpdateInventoryItems, item);
     }
 
-    private void UpdateAmmo(int ammo)
+    public void UpdateAmmo(int ammo)
     {
         EmitSignal(SignalName.UseAmmo, ammo);
     }
@@ -323,34 +289,7 @@ public partial class PlayerRE : CharacterBody3D
         playerAnimation.CurrentAnimation = animationName;
         playerAnimation.Play();
     }
-
-    public void AimLaser(double delta)
-    {
-            if (Input.IsActionPressed("aim_right"))
-            {
-                laser.RotateY(-turnSpeed /2 * (float)delta);
-            }
-                    
-            if (Input.IsActionPressed("aim_left"))
-            {
-                laser.RotateY(turnSpeed/2 * (float)delta);
-            }
-                    
-            if (Input.IsActionPressed("aim_up"))
-            {
-                laser.RotateZ(turnSpeed/2 * (float)delta);
-            }
-                    
-            if (Input.IsActionPressed("aim_down"))
-            {
-                laser.RotateZ(-turnSpeed/2 * (float)delta);
-            }
-                    
-            float y = Mathf.Clamp(laser.Rotation.Y, Mathf.DegToRad(-45), Mathf.DegToRad(45));
-            float z = Mathf.Clamp(laser.Rotation.Z, Mathf.DegToRad(80), Mathf.DegToRad(100));
-            laser.Rotation = new Vector3(0,y,z);
-    }
-
+    
     public void OnStart() 
     {
         GD.Print("Start 3D game");

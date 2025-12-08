@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu1xmdj873i0m"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kv5wa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x4ohl"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbqtt"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="Handgun" type="Node3D"]
+
+[node name="Gun" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.3737008e-07, -5.7771103e-09, 0.023938928, 0.15131351, 8.381903e-09, 2.3457687e-08, -1.3038516e-08, 0.039150294, 2.4592737e-09, -0.039762467, 0.16511595, 0.0613786)
+mesh = SubResource("BoxMesh_kv5wa")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_x4ohl")
+
+[node name="gun" type="MeshInstance3D" parent="Gun"]
+transform = Transform3D(-9.522217e-08, 0.18667716, 0, -2.17843, -8.15992e-09, 0, 0, 0, 0.8736665, -0.41404104, -0.94937325, 0)
+mesh = SubResource("BoxMesh_kv5wa")
+skeleton = NodePath("../../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_vbqtt")
