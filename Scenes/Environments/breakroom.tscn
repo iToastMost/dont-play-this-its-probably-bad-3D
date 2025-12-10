@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dlu2tcpx6wqg4"]
+[gd_scene load_steps=14 format=3 uid="uid://dlu2tcpx6wqg4"]
 
 [ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="1_rmo1r"]
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="2_t7imn"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b86pqbiujl4gy" path="res://Scenes/Art/Models/garbage.tscn" id="6_6j0w0"]
 [ext_resource type="PackedScene" uid="uid://ds4udcpaocote" path="res://Scenes/Art/Models/wetfloorsign.tscn" id="7_crahg"]
 [ext_resource type="PackedScene" uid="uid://xexhgx776cch" path="res://Scenes/Items/handgun_ammo.tscn" id="8_fvmvs"]
+[ext_resource type="PackedScene" uid="uid://bu1xmdj873i0m" path="res://Scenes/Items/Handgun.tscn" id="9_57taf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t7imn"]
 albedo_color = Color(0, 0, 0, 1)
@@ -456,5 +457,8 @@ transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70
 
 [node name="HandgunAmmo" parent="." instance=ExtResource("8_fvmvs")]
 transform = Transform3D(0.15100373, 0, 0.13114066, 0, 0.2, 0, -0.13114066, 0, 0.15100373, 1.8260989, 0.58628845, -0.70884264)
+
+[node name="Handgun" parent="." instance=ExtResource("9_57taf")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 1.0161786, 0.47688317, -0.837814)
 
 [editable path="Cameras/FixedCamera"]

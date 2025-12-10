@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public abstract partial class Firearm : EquippableItem
+public abstract partial class FirearmBase : EquippableItem
 {
     [Export]
     public int MagazineSize;

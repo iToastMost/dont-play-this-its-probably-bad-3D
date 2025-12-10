@@ -14,7 +14,9 @@ public partial class Enemy3D : CharacterBody3D
     private const double ENEMY_ATTACK_CD = 2.5;
     private double _lastAttack = 0;
     private bool _canAttack = true;
-    private int _attackDamage = 25;
+    
+    [Export]
+    public int AttackDamage { get; set; }
 
     public override void _Ready() 
     {
@@ -80,7 +82,7 @@ public partial class Enemy3D : CharacterBody3D
         if(body is PlayerRE player) 
         {
             GD.Print("Dealing damage to player");
-            player.TakeDamage(_attackDamage);
+            player.TakeDamage(AttackDamage);
         }
     }
 

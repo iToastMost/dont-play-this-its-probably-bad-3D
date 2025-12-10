@@ -38,7 +38,8 @@ public partial class GameManager : Node3D
 		//_inventory.Connect("ItemUsed", new Callable(this, nameof(UseItem)));
 		_inventory.ItemUsed += UseItem;
 		
-		var loadBathroom = ResourceLoader.Load<PackedScene>("res://Scenes/Environments/bathroom_scene.tscn");
+		//var loadBathroom = ResourceLoader.Load<PackedScene>("res://Scenes/Environments/bathroom_scene.tscn");
+		var loadBathroom = ResourceLoader.Load<PackedScene>("res://Scenes/Environments/Sandbox.tscn");
 		_currentEnvironment = loadBathroom.Instantiate<Node3D>();
 		_environment.AddChild(_currentEnvironment);
         //LoadEnvironment("res://Scenes/Environments/bathroom_scene.tscn");
@@ -52,11 +53,11 @@ public partial class GameManager : Node3D
 	        GD.Print(_playerInventory[i]);
         }
         
-        _healthLabel = _ui.GetNode<Label>("HealthLabel");
-        _healthLabel.Text = _playerRe._health.ToString();
+        _healthLabel = _ui.GetNode<Label>("CanvasLayer/HealthLabel");
+        _healthLabel.Text = "Fine";
         
-        _ammoLabel = _ui.GetNode<Label>("AmmoLabel");
-        _ammoLabel.Text = _playerRe.Ammo.ToString();
+        _ammoLabel = _ui.GetNode<Label>("CanvasLayer/AmmoLabel");
+        _ammoLabel.Text = "Ammo: " + _playerRe.Ammo;
 		CallDeferred(nameof(ConnectSignals));
     }
 
@@ -148,7 +149,7 @@ public partial class GameManager : Node3D
 		}
 	}
 
-	private void UseItem(Button slot, int idx)
+	private void UseItem(int idx)
 	{
 		//code for item consumption here
 		if (_playerInventory[idx] != null)
@@ -166,7 +167,7 @@ public partial class GameManager : Node3D
 					{
 						_playerRe._health = 100;
 					}
-					_healthLabel.Text = _playerRe._health.ToString();
+					UpdatePlayerHealth();
 					return;
 				}
 
@@ -275,12 +276,25 @@ public partial class GameManager : Node3D
 
 	private void UpdatePlayerHealth()
 	{
-		_healthLabel.Text = _playerRe._health.ToString();
+		string condition = "";
+		if (_playerRe._health >= 70)
+		{
+			condition = "Fine";
+		}
+		else if (_playerRe._health is < 70 and >= 30)
+		{
+			condition = "Wounded";
+		}
+		else
+		{
+			condition = "Critical";
+		}
+		_healthLabel.Text = condition;
 	}
 
 	private void UpdateAmmo(int ammo)
 	{
-		_ammoLabel.Text = ammo.ToString();
+		_ammoLabel.Text = "Ammo: " + ammo;
 	}
 
 	private void EquipItem(Node3D toEquip)
