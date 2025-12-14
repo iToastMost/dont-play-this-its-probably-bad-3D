@@ -38,8 +38,8 @@ public partial class GameManager : Node3D
 		//_inventory.Connect("ItemUsed", new Callable(this, nameof(UseItem)));
 		_inventory.ItemUsed += UseItem;
 		
-		//var loadBathroom = ResourceLoader.Load<PackedScene>("res://Scenes/Environments/bathroom_scene.tscn");
-		var loadBathroom = ResourceLoader.Load<PackedScene>("res://Scenes/Environments/Sandbox.tscn");
+		var loadBathroom = ResourceLoader.Load<PackedScene>("res://Scenes/Environments/bathroom_scene.tscn");
+		//var loadBathroom = ResourceLoader.Load<PackedScene>("res://Scenes/Environments/Sandbox.tscn");
 		_currentEnvironment = loadBathroom.Instantiate<Node3D>();
 		_environment.AddChild(_currentEnvironment);
         //LoadEnvironment("res://Scenes/Environments/bathroom_scene.tscn");
@@ -77,7 +77,6 @@ public partial class GameManager : Node3D
 		var dialogSignals = GetTree().GetNodesInGroup("DialogTriggers");
 		foreach(DialogTrigger dTrigger in dialogSignals) 
 		{
-			dTrigger.Connect("PreventMovement", new Callable(this, nameof(PreventPlayerMovement)));
 			dTrigger.Connect("MySignalWithArgument", new Callable(this, nameof(SendDialog)));
 		}
 	}
@@ -88,6 +87,7 @@ public partial class GameManager : Node3D
 		foreach(Door door in doors) 
 		{
 			door.Connect("LoadEnvironment", new Callable(this, nameof(LoadEnvironment)));
+			//door.KeyIdCheck += 
 		}
 	}
 
@@ -96,14 +96,9 @@ public partial class GameManager : Node3D
 	private void SendDialog(string dialog) 
 	{
 		_ui.UpdateText(dialog);
+		_playerRe.UpdateState(PlayerStateTypes.Dialog);
 	}
-
-	//Disables player movement from dialog trigger signal
-	private void PreventPlayerMovement() 
-	{
-		_playerRe.DisableMovement();
-	}
-
+	
 	private void UpdateInventory(Node3D item)
 	{
 		//Signals to ui to update inventory node with item looted from the signal emitted from player
@@ -232,8 +227,10 @@ public partial class GameManager : Node3D
 	}
 
 	//Loads a new area
-	private void LoadEnvironment(string path) 
+	private void LoadEnvironment(string path, int keyId) 
 	{
+		CheckForKey(keyId);
+		
 		//Removes current environment from GameManagers Environment node
 		var environmentChildren = _environment.GetChildren();
 		var doorsInGroup = GetTree().GetNodesInGroup("Doors");
@@ -273,6 +270,35 @@ public partial class GameManager : Node3D
         ConnectDoorSignals();
 		
     }
+
+	private void CheckForKey(int keyId)
+	{
+		if (keyId != 0)
+		{
+			bool keyCheck = false;
+
+			for (int i = 0; i < _playerInventory.Length; i++)
+			{
+				if (_playerInventory[i] is KeyItem keyItem)
+				{
+					GD.Print("Checking Key Id: " + keyItem.KeyId);
+					if (keyItem.KeyId == keyId)
+					{
+						GD.Print("You have the key to this door, door unlocked");
+						keyCheck = true;
+					}
+				}	
+			}
+			
+			if (!keyCheck)
+			{
+				GD.Print("You do not have the key to this door");
+				SendDialog("The door is locked. I think I left the key in the break room supply closet.");
+				return;
+			}
+				
+		}
+	}
 
 	private void UpdatePlayerHealth()
 	{

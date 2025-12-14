@@ -139,6 +139,7 @@ public partial class PlayerRE : CharacterBody3D
         sm.AddState(PlayerStateTypes.Reload, new ReloadState());
         sm.AddState(PlayerStateTypes.Dead, new DeathState());
         sm.AddState(PlayerStateTypes.PhoneState, new PhoneState());
+        sm.AddState(PlayerStateTypes.Dialog, new DialogState());
         
         sm.Initialize(this);
         sm.ChangeState(PlayerStateTypes.Idle);
@@ -156,7 +157,7 @@ public partial class PlayerRE : CharacterBody3D
         
         if (Input.IsActionJustPressed("accept_dialog") && _3DStarted == true) 
         {
-            CanMove = true;
+            //CanMove = true;
         }
         
         if (Input.IsActionJustPressed("interaction_check"))
@@ -310,6 +311,11 @@ public partial class PlayerRE : CharacterBody3D
     {
         _handEquipmentSlot = item;
         //item.Visible = true;
+    }
+
+    public void UpdateState(PlayerStateTypes state)
+    {
+        sm.ChangeState(state);
     }
 
     public void OnAnimationFinish(StringName animName) 

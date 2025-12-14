@@ -233,17 +233,16 @@ material = SubResource("StandardMaterial3D_orp73")
 
 [node name="door" parent="Environment" instance=ExtResource("2_fqmik")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.79491, -0.5, 1.55698)
-environmentToLoad = "res://Scenes/Environments/bathroom_scene.tscn"
 _isFlipped = true
 
 [node name="door4" parent="Environment" instance=ExtResource("2_fqmik")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.79491, -0.5, 5.533195)
-environmentToLoad = "res://Scenes/Environments/bathroom_scene.tscn"
+_environmentToLoad = "res://Scenes/Environments/bathroom_scene.tscn"
 _isFlipped = true
 
 [node name="door3" parent="Environment" instance=ExtResource("2_fqmik")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7302265, -0.5, -2.8715947)
-environmentToLoad = "res://Scenes/Environments/breakroom.tscn"
+_environmentToLoad = "res://Scenes/Environments/breakroom.tscn"
 _isFlipped = true
 
 [node name="Appliances" type="Node" parent="Environment"]
@@ -1577,7 +1576,8 @@ size = Vector3(0.17578125, 1, 1.6770325)
 
 [node name="door" parent="Environment/Ace" instance=ExtResource("2_fqmik")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1985931, -0.49999952, 4.5198574)
-environmentToLoad = "res://Scenes/Environments/lockup_scene.tscn"
+_environmentToLoad = "res://Scenes/Environments/lockup_scene.tscn"
+KeyIdRequired = 1
 
 [node name="CenterStore" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.732666, 0, 15.79707)
@@ -1740,7 +1740,7 @@ light_energy = 2.326
 
 [node name="door" parent="." instance=ExtResource("2_fqmik")]
 transform = Transform3D(-0.99997914, 0, -0.0064576734, 0, 1, 0, 0.0064576734, 0, -0.99997914, 34.7513, -0.49999976, 31.163687)
-environmentToLoad = "res://Scenes/Environments/warehouse.tscn"
+_environmentToLoad = "res://Scenes/Environments/warehouse.tscn"
 _isFlipped = true
 
 [node name="Spawnpoints" type="Node" parent="."]

@@ -35,7 +35,7 @@ material = SubResource("StandardMaterial3D_t7imn")
 
 [node name="door" parent="Environment" instance=ExtResource("1_rmo1r")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.5262113, -0.5, 2.7686584)
-environmentToLoad = "res://Scenes/Environments/showroom_floor_scene.tscn"
+_environmentToLoad = "res://Scenes/Environments/showroom_floor_scene.tscn"
 
 [node name="Table" type="CSGBox3D" parent="Environment"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.27931118, 0.46743774, -1.3560108)
@@ -64,7 +64,7 @@ height = 0.967041
 
 [node name="door2" parent="Environment" instance=ExtResource("1_rmo1r")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.4491427, -0.5000001, 2.0556817)
-environmentToLoad = "res://Scenes/Environments/closet_scene.tscn"
+_environmentToLoad = "res://Scenes/Environments/closet_scene.tscn"
 
 [node name="chair" type="CSGBox3D" parent="Environment"]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.3962616, 0.05760753, -0.67165697)

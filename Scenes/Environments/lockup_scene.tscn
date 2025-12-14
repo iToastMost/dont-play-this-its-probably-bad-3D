@@ -12,8 +12,9 @@ flip_faces = true
 size = Vector3(2.3114014, 2.6552124, 7.25119)
 
 [node name="door" parent="." instance=ExtResource("1_h6k85")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.8146845, 0, 1.3800147)
-environmentToLoad = "res://Scenes/Environments/showroom_floor_scene.tscn"
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.8146845, 0.22308767, 1.3800147)
+_environmentToLoad = "res://Scenes/Environments/showroom_floor_scene.tscn"
+KeyIdRequired = 1
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.326, 1.036, 2.472)

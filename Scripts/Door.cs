@@ -1,17 +1,24 @@
 using Godot;
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 
 public partial class Door : StaticBody3D, iInteractable
 {
 	[Export]
-	private string environmentToLoad;
+	private string _environmentToLoad;
 
 	[Export]
 	private bool _isFlipped;
+	
+	//set the required key needed for this door. 0 = unlocked
+	[Export] public int KeyIdRequired { get; set; }
 
 	[Signal]
-	public delegate void LoadEnvironmentEventHandler(string path);
+	public delegate void LoadEnvironmentEventHandler(string path, int keyIdRequired);
+
+	[Signal]
+	public delegate void KeyIdCheckEventHandler(int id, string path);
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -34,6 +41,11 @@ public partial class Door : StaticBody3D, iInteractable
 		//GD.Print("You talked with a door! It doesn't have much to say");
 		//GD.Print("Transporting you to: " + environmentToLoad);
 		//GetTree().ChangeSceneToFile(environmentToLoad);
-		EmitSignal(SignalName.LoadEnvironment, environmentToLoad);
+	    
+		EmitSignal(SignalName.LoadEnvironment, _environmentToLoad, KeyIdRequired);
+		
+	    //EmitSignalKeyIdCheck(KeyIdRequired, _environmentToLoad);
+		
+		
     }
 }

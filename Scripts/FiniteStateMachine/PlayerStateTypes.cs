@@ -10,4 +10,5 @@ public enum PlayerStateTypes
     Reload,
     Dead,
     PhoneState,
+    Dialog,
 }
