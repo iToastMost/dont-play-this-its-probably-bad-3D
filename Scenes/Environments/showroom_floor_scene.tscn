@@ -1,8 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://bwhhunf3f6to0"]
+[gd_scene load_steps=30 format=3 uid="uid://bwhhunf3f6to0"]
 
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="1_jna78"]
 [ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="2_fqmik"]
 [ext_resource type="PackedScene" uid="uid://8w1w7i8arnob" path="res://Scenes/enemy3D.tscn" id="3_fqmik"]
+[ext_resource type="PackedScene" uid="uid://x7dhgnn6do23" path="res://Scenes/Art/Models/oven.tscn" id="4_555p5"]
+[ext_resource type="PackedScene" uid="uid://btof3km74w1o0" path="res://Scenes/Art/Models/dryer_1.tscn" id="5_5w1iy"]
+[ext_resource type="PackedScene" uid="uid://dsey0ayuixcca" path="res://Scenes/Art/Models/fridge_1.tscn" id="6_orp73"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jna78"]
 resource_local_to_scene = true
@@ -237,23 +240,15 @@ _isFlipped = true
 
 [node name="door4" parent="Environment" instance=ExtResource("2_fqmik")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.79491, -0.5, 5.533195)
-_environmentToLoad = "res://Scenes/Environments/bathroom_scene.tscn"
 _isFlipped = true
 
 [node name="door3" parent="Environment" instance=ExtResource("2_fqmik")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7302265, -0.5, -2.8715947)
-_environmentToLoad = "res://Scenes/Environments/breakroom.tscn"
 _isFlipped = true
 
 [node name="Appliances" type="Node" parent="Environment"]
 
 [node name="Refridgerators" type="Node" parent="Environment/Appliances"]
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Refridgerators"]
-transform = Transform3D(0.7283467, 0, 0, 0, 1.8828975, 0, 0, 0, 1.1312394, 1.3277326, 0.42576134, 0.20963764)
-use_collision = true
-mesh = SubResource("BoxMesh_5w1iy")
-material = SubResource("StandardMaterial3D_jna78")
 
 [node name="CSGMesh3D55" type="CSGMesh3D" parent="Environment/Appliances/Refridgerators"]
 transform = Transform3D(-3.1837047e-08, 0, -1.1312395, 0, 1.8828976, 0, 0.72834677, 0, -4.944805e-08, -0.8160527, 0.42576134, -2.528995)
@@ -299,54 +294,6 @@ material = SubResource("StandardMaterial3D_jna78")
 
 [node name="CSGMesh3D62" type="CSGMesh3D" parent="Environment/Appliances/Refridgerators"]
 transform = Transform3D(-3.1837047e-08, 0, -1.1312395, 0, 1.8828976, 0, 0.72834677, 0, -4.944805e-08, 7.8310394, 0.42576134, -2.528995)
-use_collision = true
-mesh = SubResource("BoxMesh_5w1iy")
-material = SubResource("StandardMaterial3D_jna78")
-
-[node name="CSGMesh3D2" type="CSGMesh3D" parent="Environment/Appliances/Refridgerators"]
-transform = Transform3D(0.7283467, 0, 0, 0, 1.8828975, 0, 0, 0, 1.1312394, 1.3277326, 0.42576134, 1.396152)
-use_collision = true
-mesh = SubResource("BoxMesh_5w1iy")
-material = SubResource("StandardMaterial3D_jna78")
-
-[node name="CSGMesh3D3" type="CSGMesh3D" parent="Environment/Appliances/Refridgerators"]
-transform = Transform3D(0.7283467, 0, 0, 0, 1.8828975, 0, 0, 0, 1.1312394, 1.3277326, 0.42576134, 2.5961518)
-use_collision = true
-mesh = SubResource("BoxMesh_5w1iy")
-material = SubResource("StandardMaterial3D_jna78")
-
-[node name="CSGMesh3D4" type="CSGMesh3D" parent="Environment/Appliances/Refridgerators"]
-transform = Transform3D(0.7283467, 0, 0, 0, 1.8828975, 0, 0, 0, 1.1312394, 1.3277326, 0.42576134, 3.8067157)
-use_collision = true
-mesh = SubResource("BoxMesh_5w1iy")
-material = SubResource("StandardMaterial3D_jna78")
-
-[node name="CSGMesh3D5" type="CSGMesh3D" parent="Environment/Appliances/Refridgerators"]
-transform = Transform3D(0.7283467, 0, 0, 0, 1.8828975, 0, 0, 0, 1.1312394, 1.3277326, 0.42576134, 5.0499716)
-use_collision = true
-mesh = SubResource("BoxMesh_5w1iy")
-material = SubResource("StandardMaterial3D_jna78")
-
-[node name="CSGMesh3D6" type="CSGMesh3D" parent="Environment/Appliances/Refridgerators"]
-transform = Transform3D(0.7283467, 0, 0, 0, 1.8828975, 0, 0, 0, 1.1312394, 1.3277326, 0.42576134, 6.317566)
-use_collision = true
-mesh = SubResource("BoxMesh_5w1iy")
-material = SubResource("StandardMaterial3D_jna78")
-
-[node name="CSGMesh3D7" type="CSGMesh3D" parent="Environment/Appliances/Refridgerators"]
-transform = Transform3D(0.7283467, 0, 0, 0, 1.8828975, 0, 0, 0, 1.1312394, 1.3277326, 0.42576134, 7.5638385)
-use_collision = true
-mesh = SubResource("BoxMesh_5w1iy")
-material = SubResource("StandardMaterial3D_jna78")
-
-[node name="CSGMesh3D8" type="CSGMesh3D" parent="Environment/Appliances/Refridgerators"]
-transform = Transform3D(0.7283467, 0, 0, 0, 1.8828975, 0, 0, 0, 1.1312394, 1.3277326, 0.42576134, 8.825302)
-use_collision = true
-mesh = SubResource("BoxMesh_5w1iy")
-material = SubResource("StandardMaterial3D_jna78")
-
-[node name="CSGMesh3D9" type="CSGMesh3D" parent="Environment/Appliances/Refridgerators"]
-transform = Transform3D(0.7283467, 0, 0, 0, 1.8828975, 0, 0, 0, 1.1312394, 1.3277326, 0.42576134, 10.056027)
 use_collision = true
 mesh = SubResource("BoxMesh_5w1iy")
 material = SubResource("StandardMaterial3D_jna78")
@@ -455,60 +402,6 @@ material = SubResource("StandardMaterial3D_jna78")
 
 [node name="CSGMesh3D27" type="CSGMesh3D" parent="Environment/Appliances/Refridgerators"]
 transform = Transform3D(0.7283467, 0, 0, 0, 1.8828975, 0, 0, 0, 1.1312394, 4.39931, 0.42576134, 10.056027)
-use_collision = true
-mesh = SubResource("BoxMesh_5w1iy")
-material = SubResource("StandardMaterial3D_jna78")
-
-[node name="CSGMesh3D28" type="CSGMesh3D" parent="Environment/Appliances/Refridgerators"]
-transform = Transform3D(0.7283467, 0, 0, 0, 1.8828975, 0, 0, 0, 1.1312394, 0.5515268, 0.42576134, 0.20963764)
-use_collision = true
-mesh = SubResource("BoxMesh_5w1iy")
-material = SubResource("StandardMaterial3D_jna78")
-
-[node name="CSGMesh3D29" type="CSGMesh3D" parent="Environment/Appliances/Refridgerators"]
-transform = Transform3D(0.7283467, 0, 0, 0, 1.8828975, 0, 0, 0, 1.1312394, 0.5515268, 0.42576134, 1.396152)
-use_collision = true
-mesh = SubResource("BoxMesh_5w1iy")
-material = SubResource("StandardMaterial3D_jna78")
-
-[node name="CSGMesh3D30" type="CSGMesh3D" parent="Environment/Appliances/Refridgerators"]
-transform = Transform3D(0.7283467, 0, 0, 0, 1.8828975, 0, 0, 0, 1.1312394, 0.5515268, 0.42576134, 2.5961518)
-use_collision = true
-mesh = SubResource("BoxMesh_5w1iy")
-material = SubResource("StandardMaterial3D_jna78")
-
-[node name="CSGMesh3D31" type="CSGMesh3D" parent="Environment/Appliances/Refridgerators"]
-transform = Transform3D(0.7283467, 0, 0, 0, 1.8828975, 0, 0, 0, 1.1312394, 0.5515268, 0.42576134, 3.8067157)
-use_collision = true
-mesh = SubResource("BoxMesh_5w1iy")
-material = SubResource("StandardMaterial3D_jna78")
-
-[node name="CSGMesh3D32" type="CSGMesh3D" parent="Environment/Appliances/Refridgerators"]
-transform = Transform3D(0.7283467, 0, 0, 0, 1.8828975, 0, 0, 0, 1.1312394, 0.5515268, 0.42576134, 5.0499716)
-use_collision = true
-mesh = SubResource("BoxMesh_5w1iy")
-material = SubResource("StandardMaterial3D_jna78")
-
-[node name="CSGMesh3D33" type="CSGMesh3D" parent="Environment/Appliances/Refridgerators"]
-transform = Transform3D(0.7283467, 0, 0, 0, 1.8828975, 0, 0, 0, 1.1312394, 0.5515268, 0.42576134, 6.317566)
-use_collision = true
-mesh = SubResource("BoxMesh_5w1iy")
-material = SubResource("StandardMaterial3D_jna78")
-
-[node name="CSGMesh3D34" type="CSGMesh3D" parent="Environment/Appliances/Refridgerators"]
-transform = Transform3D(0.7283467, 0, 0, 0, 1.8828975, 0, 0, 0, 1.1312394, 0.5515268, 0.42576134, 7.5638385)
-use_collision = true
-mesh = SubResource("BoxMesh_5w1iy")
-material = SubResource("StandardMaterial3D_jna78")
-
-[node name="CSGMesh3D35" type="CSGMesh3D" parent="Environment/Appliances/Refridgerators"]
-transform = Transform3D(0.7283467, 0, 0, 0, 1.8828975, 0, 0, 0, 1.1312394, 0.5515268, 0.42576134, 8.825302)
-use_collision = true
-mesh = SubResource("BoxMesh_5w1iy")
-material = SubResource("StandardMaterial3D_jna78")
-
-[node name="CSGMesh3D36" type="CSGMesh3D" parent="Environment/Appliances/Refridgerators"]
-transform = Transform3D(0.7283467, 0, 0, 0, 1.8828975, 0, 0, 0, 1.1312394, 0.5515268, 0.42576134, 10.056027)
 use_collision = true
 mesh = SubResource("BoxMesh_5w1iy")
 material = SubResource("StandardMaterial3D_jna78")
@@ -622,306 +515,6 @@ mesh = SubResource("BoxMesh_5w1iy")
 material = SubResource("StandardMaterial3D_jna78")
 
 [node name="Washers_Dryers" type="Node" parent="Environment/Appliances"]
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(0.9564697, 0, 0, 0, 1, 0, 0, 0, 0.729114, 0.63806766, 0, 15.406212)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-
-[node name="CSGMesh3D2" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(-0.95646966, 0, 6.374116e-08, 0, 1, 0, -8.361724e-08, 0, -0.729114, 0.63806766, 0, 14.380448)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D2"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-
-[node name="CSGMesh3D3" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(0.9564697, 0, 0, 0, 1, 0, 0, 0, 0.729114, 1.7403624, 0, 15.406212)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D3"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D4" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(-0.95646966, 0, 6.374116e-08, 0, 1, 0, -8.361724e-08, 0, -0.729114, 1.7403624, 0, 14.380448)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D4"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D5" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(0.9564697, 0, 0, 0, 1, 0, 0, 0, 0.729114, 2.7865946, 0, 15.406212)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D5"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D6" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(-0.95646966, 0, 6.374116e-08, 0, 1, 0, -8.361724e-08, 0, -0.729114, 2.7865946, 0, 14.380448)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D6"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D7" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(0.9564697, 0, 0, 0, 1, 0, 0, 0, 0.729114, 3.8334405, 0, 15.406212)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D7"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D8" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(-0.95646966, 0, 6.374116e-08, 0, 1, 0, -8.361724e-08, 0, -0.729114, 3.8334405, 0, 14.380448)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D8"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D9" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(0.9564697, 0, 0, 0, 1, 0, 0, 0, 0.729114, 4.898505, 0, 15.406212)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D9"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D10" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(-0.95646966, 0, 6.374116e-08, 0, 1, 0, -8.361724e-08, 0, -0.729114, 4.898505, 0, 14.380448)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D10"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D11" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(0.9564697, 0, 0, 0, 1, 0, 0, 0, 0.729114, 5.9693923, 0, 15.406212)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D11"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D12" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(-0.95646966, 0, 6.374116e-08, 0, 1, 0, -8.361724e-08, 0, -0.729114, 5.9693923, 0, 14.380448)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D12"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D13" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(0.9564697, 0, 0, 0, 1, 0, 0, 0, 0.729114, 7.0692034, 0, 15.406212)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D13"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-
-[node name="CSGMesh3D14" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(-0.95646966, 0, 6.374116e-08, 0, 1, 0, -8.361724e-08, 0, -0.729114, 7.0692034, 0, 14.380448)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D14"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-
-[node name="CSGMesh3D15" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(0.9564697, 0, 0, 0, 1, 0, 0, 0, 0.729114, 0.63806766, 0, 15.406212)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D15"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-
-[node name="CSGMesh3D16" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(-0.95646966, 0, 6.374116e-08, 0, 1, 0, -8.361724e-08, 0, -0.729114, 0.63806766, 0, 14.380448)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D16"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-
-[node name="CSGMesh3D17" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(0.9564697, 0, 0, 0, 1, 0, 0, 0, 0.729114, 1.7403624, 0, 15.406212)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D17"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D18" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(-0.95646966, 0, 6.374116e-08, 0, 1, 0, -8.361724e-08, 0, -0.729114, 1.7403624, 0, 14.380448)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D18"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D19" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(0.9564697, 0, 0, 0, 1, 0, 0, 0, 0.729114, 2.7865946, 0, 15.406212)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D19"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D20" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(-0.95646966, 0, 6.374116e-08, 0, 1, 0, -8.361724e-08, 0, -0.729114, 2.7865946, 0, 14.380448)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D20"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D21" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(0.9564697, 0, 0, 0, 1, 0, 0, 0, 0.729114, 3.8334405, 0, 15.406212)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D21"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D22" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(-0.95646966, 0, 6.374116e-08, 0, 1, 0, -8.361724e-08, 0, -0.729114, 3.8334405, 0, 14.380448)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D22"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D23" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(0.9564697, 0, 0, 0, 1, 0, 0, 0, 0.729114, 4.898505, 0, 15.406212)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D23"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D24" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(-0.95646966, 0, 6.374116e-08, 0, 1, 0, -8.361724e-08, 0, -0.729114, 4.898505, 0, 14.380448)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D24"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D25" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(0.9564697, 0, 0, 0, 1, 0, 0, 0, 0.729114, 5.9693923, 0, 15.406212)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D25"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D26" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(-0.95646966, 0, 6.374116e-08, 0, 1, 0, -8.361724e-08, 0, -0.729114, 5.9693923, 0, 14.380448)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D26"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D27" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(0.9564697, 0, 0, 0, 1, 0, 0, 0, 0.729114, 7.0692034, 0, 15.406212)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D27"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
-
-[node name="CSGMesh3D28" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
-transform = Transform3D(-0.95646966, 0, 6.374116e-08, 0, 1, 0, -8.361724e-08, 0, -0.729114, 7.0692034, 0, 14.380448)
-use_collision = true
-mesh = SubResource("BoxMesh_orp73")
-material = SubResource("StandardMaterial3D_555p5")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers/CSGMesh3D28"]
-transform = Transform3D(0.9999994, 0, 0, 0, 0.4829629, 0.10352763, 0, -0.12940952, 0.38637036, 0, 0.5926051, -0.38180107)
-mesh = SubResource("BoxMesh_cdl2j")
 
 [node name="CSGMesh3D29" type="CSGMesh3D" parent="Environment/Appliances/Washers_Dryers"]
 transform = Transform3D(0.9564697, 0, 0, 0, 1, 0, 0, 0, 0.729114, 0.63806766, 0, 18.907753)
@@ -1576,8 +1169,6 @@ size = Vector3(0.17578125, 1, 1.6770325)
 
 [node name="door" parent="Environment/Ace" instance=ExtResource("2_fqmik")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1985931, -0.49999952, 4.5198574)
-_environmentToLoad = "res://Scenes/Environments/lockup_scene.tscn"
-KeyIdRequired = 1
 
 [node name="CenterStore" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.732666, 0, 15.79707)
@@ -1740,7 +1331,6 @@ light_energy = 2.326
 
 [node name="door" parent="." instance=ExtResource("2_fqmik")]
 transform = Transform3D(-0.99997914, 0, -0.0064576734, 0, 1, 0, 0.0064576734, 0, -0.99997914, 34.7513, -0.49999976, 31.163687)
-_environmentToLoad = "res://Scenes/Environments/warehouse.tscn"
 _isFlipped = true
 
 [node name="Spawnpoints" type="Node" parent="."]
@@ -1765,6 +1355,78 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.766759, 0.19999999, 16.5099
 
 [node name="Enemy3D3" parent="." instance=ExtResource("3_fqmik")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3153152, 0.19999999, 26.936668)
+
+[node name="oven2" parent="." instance=ExtResource("4_555p5")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.6410322, -0.49999976, 14.443838)
+
+[node name="oven3" parent="." instance=ExtResource("4_555p5")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.7501807, -0.49999976, 14.443838)
+
+[node name="oven4" parent="." instance=ExtResource("4_555p5")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.8264968, -0.49999976, 14.443838)
+
+[node name="oven5" parent="." instance=ExtResource("4_555p5")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.881015, -0.49999976, 14.443838)
+
+[node name="oven6" parent="." instance=ExtResource("4_555p5")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.881015, -0.49999976, 14.443838)
+
+[node name="oven7" parent="." instance=ExtResource("4_555p5")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 5.881015, -0.49999976, 14.443838)
+
+[node name="oven8" parent="." instance=ExtResource("4_555p5")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 6.881015, -0.49999976, 14.443838)
+
+[node name="dryer1" parent="." instance=ExtResource("5_5w1iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.65410423, -0.49999976, 15.303925)
+
+[node name="dryer2" parent="." instance=ExtResource("5_5w1iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6541042, -0.49999976, 15.303925)
+
+[node name="dryer3" parent="." instance=ExtResource("5_5w1iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6541042, -0.49999976, 15.303925)
+
+[node name="dryer4" parent="." instance=ExtResource("5_5w1iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6541042, -0.49999976, 15.303925)
+
+[node name="dryer5" parent="." instance=ExtResource("5_5w1iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.654104, -0.49999976, 15.303925)
+
+[node name="dryer6" parent="." instance=ExtResource("5_5w1iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.654104, -0.49999976, 15.303925)
+
+[node name="dryer7" parent="." instance=ExtResource("5_5w1iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.654104, -0.49999976, 15.303925)
+
+[node name="fridge1" parent="." instance=ExtResource("6_orp73")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.8595511, -0.49695665, 9.888146)
+
+[node name="fridge2" parent="." instance=ExtResource("6_orp73")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.8595511, -0.49695665, 8.888146)
+
+[node name="fridge3" parent="." instance=ExtResource("6_orp73")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.8595511, -0.49695665, 7.8881464)
+
+[node name="fridge4" parent="." instance=ExtResource("6_orp73")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.8595511, -0.49695665, 6.8881464)
+
+[node name="fridge5" parent="." instance=ExtResource("6_orp73")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.8595511, -0.49695665, 5.8881464)
+
+[node name="fridge6" parent="." instance=ExtResource("6_orp73")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.8595511, -0.49695665, 4.8881464)
+
+[node name="fridge7" parent="." instance=ExtResource("6_orp73")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.8595511, -0.49695665, 3.8881464)
+
+[node name="fridge8" parent="." instance=ExtResource("6_orp73")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.8595511, -0.49695665, 2.8881464)
+
+[node name="fridge9" parent="." instance=ExtResource("6_orp73")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.8595511, -0.49695665, 1.8881464)
+
+[node name="fridge10" parent="." instance=ExtResource("6_orp73")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.8595511, -0.49695665, 0.8881464)
 
 [editable path="Cameras/Hallway"]
 [editable path="Cameras/Appliances"]

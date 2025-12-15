@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://x7dhgnn6do23"]
+
+[ext_resource type="PackedScene" uid="uid://txlfkdb6i8ba" path="res://Art/Models/oven2.glb" id="1_msotm"]
+
+[node name="oven2" instance=ExtResource("1_msotm")]
