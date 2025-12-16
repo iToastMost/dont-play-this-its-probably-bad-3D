@@ -244,6 +244,7 @@ _isFlipped = true
 
 [node name="door3" parent="Environment" instance=ExtResource("2_fqmik")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7302265, -0.5, -2.8715947)
+_environmentToLoad = "res://Scenes/Environments/breakroom.tscn"
 _isFlipped = true
 
 [node name="Appliances" type="Node" parent="Environment"]
@@ -1399,34 +1400,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.654104, -0.49999976, 15.303
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.654104, -0.49999976, 15.303925)
 
 [node name="fridge1" parent="." instance=ExtResource("6_orp73")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.8595511, -0.49695665, 9.888146)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.4161378, -0.49695665, 9.888146)
 
 [node name="fridge2" parent="." instance=ExtResource("6_orp73")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.8595511, -0.49695665, 8.888146)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.4161378, -0.49695665, 8.888146)
 
 [node name="fridge3" parent="." instance=ExtResource("6_orp73")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.8595511, -0.49695665, 7.8881464)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.4161378, -0.49695665, 7.8881464)
 
 [node name="fridge4" parent="." instance=ExtResource("6_orp73")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.8595511, -0.49695665, 6.8881464)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.4161378, -0.49695665, 6.8881464)
 
 [node name="fridge5" parent="." instance=ExtResource("6_orp73")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.8595511, -0.49695665, 5.8881464)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.4161378, -0.49695665, 5.8881464)
 
 [node name="fridge6" parent="." instance=ExtResource("6_orp73")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.8595511, -0.49695665, 4.8881464)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.4161378, -0.49695665, 4.8881464)
 
 [node name="fridge7" parent="." instance=ExtResource("6_orp73")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.8595511, -0.49695665, 3.8881464)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.4161378, -0.49695665, 3.8881464)
 
 [node name="fridge8" parent="." instance=ExtResource("6_orp73")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.8595511, -0.49695665, 2.8881464)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.4161378, -0.49695665, 2.8881464)
 
 [node name="fridge9" parent="." instance=ExtResource("6_orp73")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.8595511, -0.49695665, 1.8881464)
 
 [node name="fridge10" parent="." instance=ExtResource("6_orp73")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.8595511, -0.49695665, 0.8881464)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.4161378, -0.49695665, 0.8881464)
 
 [editable path="Cameras/Hallway"]
 [editable path="Cameras/Appliances"]

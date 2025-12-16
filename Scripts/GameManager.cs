@@ -37,6 +37,7 @@ public partial class GameManager : Node3D
 
 		//_inventory.Connect("ItemUsed", new Callable(this, nameof(UseItem)));
 		_inventory.ItemUsed += UseItem;
+		_inventory.CheckItemSlotClicked += CheckInventorySlot;
 		
 		var loadBathroom = ResourceLoader.Load<PackedScene>("res://Scenes/Environments/bathroom_scene.tscn");
 		//var loadBathroom = ResourceLoader.Load<PackedScene>("res://Scenes/Environments/Sandbox.tscn");
@@ -60,6 +61,12 @@ public partial class GameManager : Node3D
         _ammoLabel.Text = "Ammo: " + _playerRe.Ammo;
 		CallDeferred(nameof(ConnectSignals));
     }
+
+	private void CheckInventorySlot(int idx)
+	{
+		if (_playerInventory[idx] is ItemBase)
+			_inventory.ItemClicked(idx);
+	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)

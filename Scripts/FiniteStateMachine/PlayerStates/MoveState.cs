@@ -48,14 +48,21 @@ public class MoveState : PlayerState
     {
         var direction = Vector3.Zero;
         var transform = player.Transform;
-        
+
         if (Input.IsActionJustPressed("spin_back"))
         {
             //Rotates 180 degrees.
-            player.RotateY(Mathf.Pi);
+            player.SpinBack = true;
         }
-        
-        if (Input.IsActionPressed("walk_forward")) 
+
+        if (player.SpinBack)
+        {
+            player.RotateY(Mathf.Pi);
+            player.SpinBack = false;
+        }
+            
+
+    if (Input.IsActionPressed("walk_forward")) 
         {
             if (Input.IsActionPressed("sprint")) 
             {
@@ -69,7 +76,7 @@ public class MoveState : PlayerState
             }
         }
 
-        if (Input.IsActionPressed("walk_back")) 
+        if (Input.IsActionPressed("walk_back") || Input.IsActionPressed("sprint")) 
         {
             player.Position -= transform.Basis.X * player.speed / 2 * (float)delta;
         }

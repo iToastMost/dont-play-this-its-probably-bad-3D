@@ -3,7 +3,7 @@ using System;
 
 public partial class PlayerRE : CharacterBody3D
 {
-    [Signal] 
+    [Signal]
     public delegate void UpdateInventoryItemsEventHandler(Node3D item);
 
     [Signal]
@@ -11,21 +11,18 @@ public partial class PlayerRE : CharacterBody3D
 
     [Signal]
     public delegate void UseAmmoEventHandler(int ammo);
-    
+
     [Signal]
     public delegate void ReloadCheckEventHandler();
 
     [Signal]
     public delegate void ReloadFinishedEventHandler();
-    
-    [Export]
-    public PackedScene GooseJumpScene;
 
-    [Export]
-    public float speed { get; set; } = 1.5f;
+    [Export] public PackedScene GooseJumpScene;
 
-    [Export]
-    public float turnSpeed = 4f;
+    [Export] public float speed { get; set; } = 1.5f;
+
+    [Export] public float turnSpeed = 4f;
 
     public int _health = 100;
 
@@ -41,17 +38,19 @@ public partial class PlayerRE : CharacterBody3D
     private bool _isAiming = false;
     private bool _isDead = false;
     private bool _isReloading = false;
-    
+
     //bools for state machine
     //private AnimationPlayer _phoneAnimation;
     //private bool _phoneVisible = false;
     public bool CanMove = true;
+
     //private bool 3DStarted = false;
     public bool IsAiming = false;
     public bool IsDead = false;
     public bool IsReloading = false;
-    
-    
+    public bool SpinBack = false;
+
+
     public int Ammo = 12;
 
     private Node3D _handEquipmentSlot;
@@ -59,7 +58,7 @@ public partial class PlayerRE : CharacterBody3D
     //private Node3D[] _playerInventory;
 
     private Vector3 _aimPointDefaultPositon;
-   
+
     Node GooseScene;
     CharacterBody3D player;
     CollisionShape3D playerCollider;
@@ -82,8 +81,7 @@ public partial class PlayerRE : CharacterBody3D
     public bool ReloadInput() => Input.IsActionPressed("reload");
     
 
-
-    public override void _Ready()
+public override void _Ready()
     {
         //player = GetNode<CharacterBody3D>("3DPlayer");
         playerAnimation = GetNode<AnimationPlayer>("CharacterModelAnim/AnimationPlayer");

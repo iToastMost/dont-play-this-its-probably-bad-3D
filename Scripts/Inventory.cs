@@ -3,7 +3,11 @@ using System;
 
 public partial class Inventory : Control
 {
-    [Signal] public delegate void ItemUsedEventHandler(int idx);
+    [Signal] 
+    public delegate void ItemUsedEventHandler(int idx);
+
+    [Signal]
+    public delegate void CheckItemSlotClickedEventHandler(int idx);
     
     private CanvasLayer _canvasLayer;
     private bool _inventoryIsOpen = false;
@@ -40,7 +44,7 @@ public partial class Inventory : Control
         foreach (Button button in _gridContainer.GetChildren())
         {
             var idx = _slotIdx;
-            button.Pressed += () => ItemClicked(idx);
+            button.Pressed += () => CheckItemClicked(idx);
             _slotIdx++;
         }
     }
@@ -62,7 +66,12 @@ public partial class Inventory : Control
         //EmitSignal(SignalName.ItemUsed, slot, idx);
     }
 
-    private void ItemClicked(int idx)
+    private void CheckItemClicked(int idx)
+    {
+        EmitSignalCheckItemSlotClicked(idx);
+    }
+    
+    public void ItemClicked(int idx)
     {
         _slotSelectedIdx = idx;
         _itemSelected.Visible = true;

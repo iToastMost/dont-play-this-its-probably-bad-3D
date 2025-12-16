@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4njjube2xtm7"]
+
+[ext_resource type="PackedScene" uid="uid://bhpvrcxnvrhak" path="res://Art/Models/washer2.glb" id="1_5qwjp"]
+
+[node name="washer2" instance=ExtResource("1_5qwjp")]

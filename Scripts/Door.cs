@@ -13,6 +13,7 @@ public partial class Door : StaticBody3D, iInteractable
 	
 	//set the required key needed for this door. 0 = unlocked
 	[Export] public int KeyIdRequired { get; set; }
+	
 
 	[Signal]
 	public delegate void LoadEnvironmentEventHandler(string path, int keyIdRequired);
