@@ -33,12 +33,6 @@ public class MoveState : PlayerState
             stateMachine.ChangeState(PlayerStateTypes.Reload);
             return;
         }
-
-        if (player.CanMove && Input.IsKeyPressed((Key.S)) && Input.IsKeyPressed(Key.Shift))
-        {
-            player.RotateY(Mathf.Pi);
-            return;
-        }
         
         if(player.CanMove)
          HandlePlayerMovement(delta);

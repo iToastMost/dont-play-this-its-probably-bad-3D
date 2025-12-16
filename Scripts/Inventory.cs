@@ -96,6 +96,11 @@ public partial class Inventory : Control
         
     }
 
+    public void UpdateUseEquipItemButtonText(string text)
+    {
+        _useItemButton.Text = text;
+    }
+
     private void HideItemMenu(StringName anim)
     {
         if(anim == "slide_in")

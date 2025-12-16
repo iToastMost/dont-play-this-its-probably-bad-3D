@@ -301,6 +301,7 @@ public override void _Ready()
 
     public void TakeDamage(int dmg) 
     {
+        PlayAnimation("Hit_Chest");
         _health -= dmg;
         EmitSignal(SignalName.UpdateHealth);
     }

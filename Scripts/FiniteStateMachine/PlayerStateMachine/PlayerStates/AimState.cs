@@ -68,6 +68,7 @@ public class AimState : PlayerState
     {
         if(player.Ammo > 0) 
         {
+            player.PlayAnimation("Pistol_Shoot");
             player.Ammo--;
 
             Vector3 direction;
@@ -90,7 +91,6 @@ public class AimState : PlayerState
             player.UpdateAmmo(player.Ammo);
             GD.Print("Pew pew");
         }
-
     }
 
     public override void Exit()

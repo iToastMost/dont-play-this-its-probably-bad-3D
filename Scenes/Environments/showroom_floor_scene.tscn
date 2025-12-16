@@ -1154,17 +1154,17 @@ size = Vector3(0.14038086, 1.279419, 5.502945)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.91256, 0, 25.673632)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Environment/Ace"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41210938, 0, 2.5615845)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41210938, 0, 3.7657166)
 use_collision = true
-size = Vector3(0.17578125, 1, 6.123169)
+size = Vector3(0.17578125, 1, 3.7149048)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Environment/Ace"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41210938, 0, -2.4846668)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41210938, 0, 0.069698334)
 use_collision = true
 size = Vector3(0.17578125, 1, 1.7583618)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Environment/Ace"]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.38871765, 0, -3.2765045)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.38871765, 0, -0.72213936)
 use_collision = true
 size = Vector3(0.17578125, 1, 1.6770325)
 
@@ -1424,7 +1424,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.41
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.4161378, -0.49695665, 2.8881464)
 
 [node name="fridge9" parent="." instance=ExtResource("6_orp73")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.8595511, -0.49695665, 1.8881464)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.41730094, -0.49695665, 1.8881464)
 
 [node name="fridge10" parent="." instance=ExtResource("6_orp73")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.4161378, -0.49695665, 0.8881464)

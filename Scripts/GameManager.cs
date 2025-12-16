@@ -62,11 +62,7 @@ public partial class GameManager : Node3D
 		CallDeferred(nameof(ConnectSignals));
     }
 
-	private void CheckInventorySlot(int idx)
-	{
-		if (_playerInventory[idx] is ItemBase)
-			_inventory.ItemClicked(idx);
-	}
+	
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
@@ -151,6 +147,16 @@ public partial class GameManager : Node3D
 		}
 	}
 
+	private void CheckInventorySlot(int idx)
+	{
+		if (_playerInventory[idx] is ItemBase item)
+		{
+			_inventory.UpdateUseEquipItemButtonText(item is EquippableItem ? "Equip" : "Use");
+			_inventory.ItemClicked(idx);
+		}
+			
+	}
+	
 	private void UseItem(int idx)
 	{
 		//code for item consumption here
