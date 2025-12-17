@@ -16,7 +16,7 @@ public class MoveState : PlayerState
             return;
         }
 
-        if (player.AimInput())
+        if (player.AimInput() && player.HandEquipmentSlot != null)
         {
             stateMachine.ChangeState(PlayerStateTypes.Aim);
             return;

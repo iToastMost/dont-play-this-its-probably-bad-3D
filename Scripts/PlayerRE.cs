@@ -53,7 +53,8 @@ public partial class PlayerRE : CharacterBody3D
 
     public int Ammo = 12;
 
-    private Node3D _handEquipmentSlot;
+    public iEquippable HandEquipmentSlot;
+    private MeshInstance3D WeaponSkin;
 
     //private Node3D[] _playerInventory;
 
@@ -93,6 +94,9 @@ public override void _Ready()
         _subViewport = GetNode<SubViewport>("SubViewportContainer/SubViewport");
         _gooseJumpScene = ResourceLoader.Load<PackedScene>("res://GooseJump/Scenes/main.tscn");
         bullet = ResourceLoader.Load<PackedScene>("res://Scenes/Bullet3D.tscn");
+
+        WeaponSkin = GetNode<MeshInstance3D>("CharacterModelAnim/Rig/Skeleton3D/BoneAttachment3D/Gun");
+        WeaponSkin.Visible = false;
 
         rayCast = GetNode<RayCast3D>("RayCast3D");
         laser = GetNode<RayCast3D>("Laser");
@@ -306,10 +310,20 @@ public override void _Ready()
         EmitSignal(SignalName.UpdateHealth);
     }
 
-    public void EquipItem(Node3D item)
+    public void EquipItem(iEquippable weapon)
     {
-        _handEquipmentSlot = item;
-        //item.Visible = true;
+        HandEquipmentSlot = weapon;
+        WeaponSkin.Visible = true;
+    }
+
+    public void UnEquipItem(iEquippable item)
+    {
+        if (HandEquipmentSlot == item)
+        {
+            HandEquipmentSlot = null;
+            WeaponSkin.Visible = false;
+        }
+        
     }
 
     public void UpdateState(PlayerStateTypes state)

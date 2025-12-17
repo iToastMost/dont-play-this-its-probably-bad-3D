@@ -151,7 +151,15 @@ public partial class GameManager : Node3D
 	{
 		if (_playerInventory[idx] is ItemBase item)
 		{
-			_inventory.UpdateUseEquipItemButtonText(item is EquippableItem ? "Equip" : "Use");
+			if (item == _playerRe.HandEquipmentSlot)
+			{
+				_inventory.UpdateUseEquipItemButtonText("Unequip");
+			}
+			else
+			{
+				_inventory.UpdateUseEquipItemButtonText(item is EquippableItem ? "Equip" : "Use");
+			}
+			
 			_inventory.ItemClicked(idx);
 		}
 			
@@ -189,7 +197,15 @@ public partial class GameManager : Node3D
 			{
 				//Play around with this code to get it to work, this is kinda pseudocode
 				//Maybe send the ID then "equip" that item looping through weapons in the game that are just invisible on the player
-				EquipItem(item);
+				if (equippable == _playerRe.HandEquipmentSlot)
+				{
+					UnEquipItem(equippable);
+				}
+				else
+				{
+					EquipItem(equippable);
+				}
+				
 			}
 		}
 	}
@@ -336,9 +352,14 @@ public partial class GameManager : Node3D
 		_ammoLabel.Text = "Ammo: " + ammo;
 	}
 
-	private void EquipItem(Node3D toEquip)
+	private void EquipItem(iEquippable toEquip)
 	{
 		_playerRe.EquipItem(toEquip);
+	}
+
+	private void UnEquipItem(iEquippable toUnEquip)
+	{
+		_playerRe.UnEquipItem(toUnEquip);
 	}
 	
 	private static void MovePlayerToSpawn() 

@@ -20,6 +20,8 @@ public partial class Inventory : Control
     private GridContainer _gridContainer;
     private GridContainer _itemSelected;
     private AnimationPlayer _animationPlayer;
+    
+    private bool _isItemSelected = false;
     public override void _Ready()
     {
         _canvasLayer = GetNode<CanvasLayer>("CanvasLayer");
@@ -33,6 +35,8 @@ public partial class Inventory : Control
         _useItemButton =  GetNode<Button>("CanvasLayer/ItemSelectedSlide/ItemSelected/Use_Equip");
         
         _useItemButton.Pressed += UseItemClicked;
+        
+        _animationPlayer.AnimationFinished += HideItemMenu;
         
         // foreach (Button button in _gridContainer.GetChildren())
         // {
@@ -75,15 +79,21 @@ public partial class Inventory : Control
     {
         _slotSelectedIdx = idx;
         _itemSelected.Visible = true;
+        
+        if (_isItemSelected) 
+            return;
+        
+        _isItemSelected = true;
         _animationPlayer.CurrentAnimation = "slide_out";
         _animationPlayer.Play();
+
     }
     
     private void UseItemClicked()
     {
         EmitSignal(SignalName.ItemUsed, _slotSelectedIdx);
         _animationPlayer.CurrentAnimation = "slide_in";
-        _animationPlayer.AnimationFinished += HideItemMenu;
+        _isItemSelected = false;
     }
 
     private void InspectItemClicked()

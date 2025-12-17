@@ -11,7 +11,7 @@ albedo_color = Color(0, 0, 0, 1)
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x4ohl"]
-size = Vector3(2.217041, 0.340271, 0.22436523)
+size = Vector3(2.217041, 0.9007416, 0.97784424)
 
 [node name="Handgun" type="StaticBody3D"]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
@@ -36,5 +36,5 @@ skeleton = NodePath("../../../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_vbqtt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3206787, 0.03677368, -0.003540039)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3206787, 0.00618744, 0.09329224)
 shape = SubResource("BoxShape3D_x4ohl")
