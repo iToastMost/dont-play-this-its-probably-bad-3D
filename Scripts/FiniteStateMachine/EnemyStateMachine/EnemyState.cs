@@ -1,15 +1,19 @@
 using Godot;
 using System;
 
-public partial class EnemyState : Node
+public abstract class EnemyState
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+	protected Enemy3D _enemy;
+	protected EnemyStateMachine _enemyStateMachine;
+
+	public void Initialize(Enemy3D enemy, EnemyStateMachine esm)
 	{
+		this._enemy = enemy;
+		this._enemyStateMachine = esm;
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+	public virtual void Enter();
+	public virtual void Exit();
+	public virtual void Update(double delta);
+	public virtual void PhysicsUpdate(double delta);
 }

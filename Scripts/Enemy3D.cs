@@ -7,6 +7,7 @@ public partial class Enemy3D : CharacterBody3D
     Enemy3D enemy;
     AnimationPlayer enemyAnimation;
     Area3D enemyAttackBox;
+    EnemyStateMachine esm;
 
     private int _health = 5;
     private float _enemyMoveSpeed = 15f;
@@ -24,6 +25,15 @@ public partial class Enemy3D : CharacterBody3D
         enemyAnimation = GetNode<AnimationPlayer>("AnimationPlayer");
         enemyAttackBox = GetNode<Area3D>("AttackBox");
 
+        esm = new EnemyStateMachine();
+
+        esm.AddState(EnemyStateTypes.Wander, new WanderState());
+        esm.AddState(EnemyStateTypes.Chase, new ChaseState());
+        esm.AddState(EnemyStateTypes.Attack, new AttackState());
+
+        esm.Initialize(this);
+        //esm.ChangeState(EnemyStateTypes.Wander);
+        esm.ChangeState(EnemyStateTypes.Chase);
 
         if(player != null) 
         {
@@ -38,44 +48,45 @@ public partial class Enemy3D : CharacterBody3D
 
     public override void _Process(double delta)
     {
-        this.LookAt(player.GlobalPosition, Vector3.Up);   
-        _distanceToPlayer = this.GlobalPosition.DistanceTo(player.GlobalPosition);
-        EnemyAttackCooldownCheck(delta);
+        esm.PhysicsUpdate(delta);
+        // this.LookAt(player.GlobalPosition, Vector3.Up);   
+        // _distanceToPlayer = this.GlobalPosition.DistanceTo(player.GlobalPosition);
+        // EnemyAttackCooldownCheck(delta);
 
-        if (_distanceToPlayer <= 1)
-        {   
-            if (_canAttack) 
-            {
-                AttackPlayer();
-            }
+        // if (_distanceToPlayer <= 1)
+        // {   
+        //     if (_canAttack) 
+        //     {
+        //         AttackPlayer();
+        //     }
            
-        }
-        else 
-        {
-            MoveTowardsPlayer(delta);
-            enemyAnimation.Stop();
-        }
-        MoveAndSlide();
+        // }
+        // else 
+        // {
+        //     MoveTowardsPlayer(delta);
+        //     enemyAnimation.Stop();
+        // }
+        // MoveAndSlide();
     }
 
-    private void MoveTowardsPlayer(double delta) 
-    {
-        var direction = Vector3.Zero;
-        var transform = Transform;
-        var playerDirection = (this.GlobalPosition - player.GlobalPosition);
-        direction = playerDirection.Normalized() / 25f;
-        Position -= direction * (float)delta * _enemyMoveSpeed;
-        //this.GlobalPosition.MoveToward(direction, (float)delta * 25f);
+    // private void MoveTowardsPlayer(double delta) 
+    // {
+    //     var direction = Vector3.Zero;
+    //     var transform = Transform;
+    //     var playerDirection = (this.GlobalPosition - player.GlobalPosition);
+    //     direction = playerDirection.Normalized() / 25f;
+    //     Position -= direction * (float)delta * _enemyMoveSpeed;
+    //     //this.GlobalPosition.MoveToward(direction, (float)delta * 25f);
 
-    }
+    // }
 
-    private void AttackPlayer() 
-    {
-        _canAttack = false;
-        _lastAttack = ENEMY_ATTACK_CD;
-        enemyAnimation.CurrentAnimation = "attack";
-        enemyAnimation.Play();
-    }
+    // private void AttackPlayer() 
+    // {
+    //     _canAttack = false;
+    //     _lastAttack = ENEMY_ATTACK_CD;
+    //     enemyAnimation.CurrentAnimation = "attack";
+    //     enemyAnimation.Play();
+    // }
 
     public void OnBodyEntered3D(Node3D body) 
     {
@@ -86,14 +97,14 @@ public partial class Enemy3D : CharacterBody3D
         }
     }
 
-    private void EnemyAttackCooldownCheck(double delta)
-    {
-        _lastAttack -= delta;
-        if (_lastAttack <= 0) 
-        {
-            _canAttack = true;
-        }
-    }
+    // private void EnemyAttackCooldownCheck(double delta)
+    // {
+    //     _lastAttack -= delta;
+    //     if (_lastAttack <= 0) 
+    //     {
+    //         _canAttack = true;
+    //     }
+    // }
 
     public void TakeDamage()
     {
