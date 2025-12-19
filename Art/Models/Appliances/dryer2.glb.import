@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cg0g7qk2akkqg"
-path="res://.godot/imported/dryer1.glb-b6527aea1b71572e5ec4819da42129b1.scn"
+uid="uid://bq1diqgfevwm7"
+path="res://.godot/imported/dryer2.glb-46280bd393d8ac8cf5e517065f713df9.scn"
 
 [deps]
 
-source_file="res://Art/Models/dryer1.glb"
-dest_files=["res://.godot/imported/dryer1.glb-b6527aea1b71572e5ec4819da42129b1.scn"]
+source_file="res://Art/Models/Appliances/dryer2.glb"
+dest_files=["res://.godot/imported/dryer2.glb-46280bd393d8ac8cf5e517065f713df9.scn"]
 
 [params]
 

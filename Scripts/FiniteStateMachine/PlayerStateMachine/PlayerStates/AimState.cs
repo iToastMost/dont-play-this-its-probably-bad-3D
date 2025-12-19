@@ -3,6 +3,8 @@ using System;
 
 public class AimState : PlayerState
 {
+    private double fireRate = 0.5;
+    private double lastAttack = 0.0;
     public override void Enter()
     {
         player.laser.Visible = true;
@@ -11,6 +13,7 @@ public class AimState : PlayerState
 
     public override void PhysicsUpdate(double delta)
     {
+        lastAttack -= delta;
         if (player.IsDead)
         {
             stateMachine.ChangeState(PlayerStateTypes.Dead);
@@ -31,7 +34,7 @@ public class AimState : PlayerState
         
         HandlePlayerAim(delta);
 
-        if (Input.IsActionJustPressed("shoot"))
+        if (Input.IsActionJustPressed("shoot") && lastAttack <= 0)
         {
             Shoot();
         }
@@ -64,8 +67,10 @@ public class AimState : PlayerState
         player.laser.Rotation = new Vector3(0,y,z);
     }
     
-    public void Shoot() 
+    public void Shoot()
     {
+        player.PlayAnimation("Pistol_Idle");
+        lastAttack = fireRate;
         if(player.Ammo > 0) 
         {
             player.PlayAnimation("Pistol_Shoot");

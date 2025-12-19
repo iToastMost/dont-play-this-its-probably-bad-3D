@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bhpvrcxnvrhak"
-path="res://.godot/imported/washer2.glb-2868d936b126fde95b70245ae1be9eb0.scn"
+uid="uid://cg0g7qk2akkqg"
+path="res://.godot/imported/dryer1.glb-136a75b8131667f93019c4663c86c5b6.scn"
 
 [deps]
 
-source_file="res://Art/Models/washer2.glb"
-dest_files=["res://.godot/imported/washer2.glb-2868d936b126fde95b70245ae1be9eb0.scn"]
+source_file="res://Art/Models/Appliances/dryer1.glb"
+dest_files=["res://.godot/imported/dryer1.glb-136a75b8131667f93019c4663c86c5b6.scn"]
 
 [params]
 

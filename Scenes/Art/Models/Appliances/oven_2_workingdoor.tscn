@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b63n3ek2bd68d"]
+
+[ext_resource type="PackedScene" uid="uid://d3hn05p8hxfiq" path="res://Art/Models/Appliances/oven2_workingdoor.glb" id="1_47aik"]
+
+[node name="oven2_workingdoor" instance=ExtResource("1_47aik")]

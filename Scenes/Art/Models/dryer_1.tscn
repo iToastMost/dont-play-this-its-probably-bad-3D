@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://btof3km74w1o0"]
-
-[ext_resource type="PackedScene" uid="uid://cg0g7qk2akkqg" path="res://Art/Models/dryer1.glb" id="1_v2nfj"]
-
-[node name="dryer1" instance=ExtResource("1_v2nfj")]

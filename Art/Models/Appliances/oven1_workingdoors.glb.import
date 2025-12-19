@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://2lvnkqt3h4lk"
-path="res://.godot/imported/fridge1.glb-99d052785ffdcef354ef5dde286e3bc7.scn"
+uid="uid://bnvl25apu31ho"
+path="res://.godot/imported/oven1_workingdoors.glb-529696919aae3cac308635b5ecb50868.scn"
 
 [deps]
 
-source_file="res://Art/Models/fridge1.glb"
-dest_files=["res://.godot/imported/fridge1.glb-99d052785ffdcef354ef5dde286e3bc7.scn"]
+source_file="res://Art/Models/Appliances/oven1_workingdoors.glb"
+dest_files=["res://.godot/imported/oven1_workingdoors.glb-529696919aae3cac308635b5ecb50868.scn"]
 
 [params]
 

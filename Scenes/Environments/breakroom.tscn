@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dlu2tcpx6wqg4"]
+[gd_scene load_steps=13 format=3 uid="uid://dlu2tcpx6wqg4"]
 
 [ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="1_rmo1r"]
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="2_t7imn"]
@@ -9,14 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://ds4udcpaocote" path="res://Scenes/Art/Models/wetfloorsign.tscn" id="7_crahg"]
 [ext_resource type="PackedScene" uid="uid://xexhgx776cch" path="res://Scenes/Items/handgun_ammo.tscn" id="8_fvmvs"]
 [ext_resource type="PackedScene" uid="uid://bu1xmdj873i0m" path="res://Scenes/Items/Handgun.tscn" id="9_57taf"]
+[ext_resource type="PackedScene" uid="uid://cgew1goc3h4iw" path="res://Scenes/Art/Models/Appliances/fridge_3_workingdoors.tscn" id="10_pwvo2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t7imn"]
 albedo_color = Color(0, 0, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_t7imn"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q4v4q"]
-albedo_color = Color(0.20511743, 0.20511743, 0.20511743, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t7imn"]
 resource_local_to_scene = true
@@ -414,12 +410,6 @@ height = 0.5175781
 transform = Transform3D(1, 0, 0, 0, 0.20294106, -0.97919095, 0, 0.97919095, 0.20294106, 0.0014801025, 0.19073844, -0.2773831)
 size = Vector3(0.4281311, 0.051696777, 0.4494629)
 
-[node name="CSGMesh3D36" type="CSGMesh3D" parent="Environment"]
-transform = Transform3D(-3.1837047e-08, 0, 1.1312395, 0, 1.8828977, 0, -0.72834677, 0, -4.944805e-08, 0.48157197, 0.42576134, 2.4148462)
-use_collision = true
-mesh = SubResource("BoxMesh_t7imn")
-material = SubResource("StandardMaterial3D_q4v4q")
-
 [node name="Spawnpoints" type="Node" parent="."]
 
 [node name="FromShowroomFloorScene" type="Marker3D" parent="Spawnpoints"]
@@ -441,13 +431,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2090607, -0.2475586, 1.3512
 shape = SubResource("BoxShape3D_t7imn")
 
 [node name="sink" parent="." instance=ExtResource("3_16hdw")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.6377221, -0.50000024, 2.5030882)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.34422714, -0.50000024, 2.5030882)
 
 [node name="papertoweldisp" parent="." instance=ExtResource("4_f4y1d")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.6019502, 0.6773044, 2.7986913)
 
 [node name="soap" parent="." instance=ExtResource("5_f4y1d")]
-transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, -0.32311434, 0.3375489, 2.6288583)
+transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, -0.049749732, 0.3375489, 2.6288583)
 
 [node name="garbage" parent="." instance=ExtResource("6_6j0w0")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.550111, -0.4999999, 2.5644526)
@@ -460,5 +450,8 @@ transform = Transform3D(0.15100373, 0, 0.13114066, 0, 0.2, 0, -0.13114066, 0, 0.
 
 [node name="Handgun" parent="." instance=ExtResource("9_57taf")]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 1.0161786, 0.47688317, -0.837814)
+
+[node name="fridge3_workingdoors" parent="." instance=ExtResource("10_pwvo2")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.6669204, -0.49999976, 2.3446388)
 
 [editable path="Cameras/FixedCamera"]

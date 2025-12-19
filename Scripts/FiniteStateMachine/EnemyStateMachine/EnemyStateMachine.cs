@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class EnemyStateMachine : Node
 {
@@ -15,13 +16,13 @@ public partial class EnemyStateMachine : Node
 	{
 		foreach(var state in _enemyStates)
 		{
-			state.value.Initialize(enemy, this);
+			state.Value.Initialize(enemy, this);
 		}
 	}
 
 	public void ChangeState(EnemyStateTypes stateType)
 	{
-		if(_currentEnemyState == stateType)
+		if(_currentEnemyState == _enemyStates[stateType])
 			return;
 
 		_currentEnemyState?.Exit();

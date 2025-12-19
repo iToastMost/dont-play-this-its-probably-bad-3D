@@ -48,45 +48,45 @@ public partial class Enemy3D : CharacterBody3D
 
     public override void _Process(double delta)
     {
-        esm.PhysicsUpdate(delta);
-        // this.LookAt(player.GlobalPosition, Vector3.Up);   
-        // _distanceToPlayer = this.GlobalPosition.DistanceTo(player.GlobalPosition);
-        // EnemyAttackCooldownCheck(delta);
-
-        // if (_distanceToPlayer <= 1)
-        // {   
-        //     if (_canAttack) 
-        //     {
-        //         AttackPlayer();
-        //     }
+        //esm.PhysicsUpdate(delta);
+        this.LookAt(player.GlobalPosition, Vector3.Up);   
+        _distanceToPlayer = this.GlobalPosition.DistanceTo(player.GlobalPosition);
+        EnemyAttackCooldownCheck(delta);
+    
+        if (_distanceToPlayer <= 1)
+        {   
+            if (_canAttack) 
+            {
+                AttackPlayer();
+            }
            
-        // }
-        // else 
-        // {
-        //     MoveTowardsPlayer(delta);
-        //     enemyAnimation.Stop();
-        // }
-        // MoveAndSlide();
+        }
+        else 
+        {
+            MoveTowardsPlayer(delta);
+            enemyAnimation.Stop();
+        }
+        MoveAndSlide();
     }
-
-    // private void MoveTowardsPlayer(double delta) 
-    // {
-    //     var direction = Vector3.Zero;
-    //     var transform = Transform;
-    //     var playerDirection = (this.GlobalPosition - player.GlobalPosition);
-    //     direction = playerDirection.Normalized() / 25f;
-    //     Position -= direction * (float)delta * _enemyMoveSpeed;
-    //     //this.GlobalPosition.MoveToward(direction, (float)delta * 25f);
-
-    // }
-
-    // private void AttackPlayer() 
-    // {
-    //     _canAttack = false;
-    //     _lastAttack = ENEMY_ATTACK_CD;
-    //     enemyAnimation.CurrentAnimation = "attack";
-    //     enemyAnimation.Play();
-    // }
+    
+    private void MoveTowardsPlayer(double delta) 
+    {
+        var direction = Vector3.Zero;
+        var transform = Transform;
+        var playerDirection = (this.GlobalPosition - player.GlobalPosition);
+        direction = playerDirection.Normalized() / 25f;
+        Position -= direction * (float)delta * _enemyMoveSpeed;
+        //this.GlobalPosition.MoveToward(direction, (float)delta * 25f);
+    
+    }
+    
+    private void AttackPlayer() 
+    {
+        _canAttack = false;
+        _lastAttack = ENEMY_ATTACK_CD;
+        enemyAnimation.CurrentAnimation = "attack";
+        enemyAnimation.Play();
+    }
 
     public void OnBodyEntered3D(Node3D body) 
     {
@@ -97,14 +97,14 @@ public partial class Enemy3D : CharacterBody3D
         }
     }
 
-    // private void EnemyAttackCooldownCheck(double delta)
-    // {
-    //     _lastAttack -= delta;
-    //     if (_lastAttack <= 0) 
-    //     {
-    //         _canAttack = true;
-    //     }
-    // }
+    private void EnemyAttackCooldownCheck(double delta)
+    {
+        _lastAttack -= delta;
+        if (_lastAttack <= 0) 
+        {
+            _canAttack = true;
+        }
+    }
 
     public void TakeDamage()
     {
