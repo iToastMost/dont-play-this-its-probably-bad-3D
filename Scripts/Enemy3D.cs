@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class Enemy3D : CharacterBody3D
 {
@@ -8,6 +9,7 @@ public partial class Enemy3D : CharacterBody3D
     public AnimationPlayer EnemyAnimation;
     Area3D enemyAttackBox;
     EnemyStateMachine esm;
+    private List<RayCast3D> _rayCasts;
 
     private int _health = 5;
     public float _enemyMoveSpeed = 15f;
@@ -16,11 +18,20 @@ public partial class Enemy3D : CharacterBody3D
     [Export]
     public int AttackDamage { get; set; }
 
-    public override void _Ready() 
+    public override void _Ready()
     {
         player = GetNode<PlayerRE>("/root/GameManager/3DPlayer");
         EnemyAnimation = GetNode<AnimationPlayer>("AnimationPlayer");
         enemyAttackBox = GetNode<Area3D>("AttackBox");
+
+        _rayCasts = new();
+        
+
+        foreach(Node node in GetNode<Node3D>("LineOfSight").GetChildren())
+        {
+            if(node is RayCast3D raycast)
+                _rayCasts.Add(raycast);
+        }
 
         esm = new EnemyStateMachine();
 
@@ -29,8 +40,8 @@ public partial class Enemy3D : CharacterBody3D
         esm.AddState(EnemyStateTypes.Attack, new AttackState());
 
         esm.Initialize(this);
-        //esm.ChangeState(EnemyStateTypes.Wander);
-        esm.ChangeState(EnemyStateTypes.Chase);
+        esm.ChangeState(EnemyStateTypes.Wander);
+        //esm.ChangeState(EnemyStateTypes.Chase);
 
         if(player != null) 
         {
@@ -57,6 +68,11 @@ public partial class Enemy3D : CharacterBody3D
         }
     }
 
+    public List<RayCast3D> GetRayCasts()
+    {
+        return _rayCasts;
+    }
+    
     public void TakeDamage()
     {
         _health--;
