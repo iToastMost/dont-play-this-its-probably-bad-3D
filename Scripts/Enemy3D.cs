@@ -3,7 +3,7 @@ using System;
 
 public partial class Enemy3D : CharacterBody3D
 {
-    PlayerRE player;
+    public PlayerRE player;
     Enemy3D enemy;
     AnimationPlayer enemyAnimation;
     Area3D enemyAttackBox;

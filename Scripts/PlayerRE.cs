@@ -68,6 +68,10 @@ public partial class PlayerRE : CharacterBody3D
     public RayCast3D laser;
     public AnimationPlayer playerAnimation;
     public PackedScene bullet;
+    public GpuParticles3D MuzzleFlash;
+    public OmniLight3D MuzzleFlashOmniLight;
+    public SpotLight3D MuzzleFlashSpotLight;
+    public Timer MuzzleFlashTimer;
     Node3D aimPoint;
     private StateMachine sm;
 
@@ -95,6 +99,14 @@ public override void _Ready()
         _gooseJumpScene = ResourceLoader.Load<PackedScene>("res://GooseJump/Scenes/main.tscn");
         bullet = ResourceLoader.Load<PackedScene>("res://Scenes/Bullet3D.tscn");
 
+        MuzzleFlash = GetNode<GpuParticles3D>("MuzzleFlash");
+        MuzzleFlashOmniLight = GetNode<OmniLight3D>("MuzzleFlash/OmniLight3D");
+        MuzzleFlashSpotLight = GetNode<SpotLight3D>("MuzzleFlash/SpotLight3D");
+        MuzzleFlashTimer = GetNode<Timer>("MuzzleFlashTimer");
+
+        MuzzleFlashOmniLight.Visible = false;
+        MuzzleFlashSpotLight.Visible = false;
+
         WeaponSkin = GetNode<MeshInstance3D>("CharacterModelAnim/Rig/Skeleton3D/BoneAttachment3D/Gun");
         WeaponSkin.Visible = false;
 
@@ -107,7 +119,8 @@ public override void _Ready()
         
         //_playerInventory = InventoryManager.GetInstance();
         
-        playerAnimation.AnimationFinished += OnAnimationFinish;       
+        playerAnimation.AnimationFinished += OnAnimationFinish;
+        MuzzleFlashTimer.Timeout += OnTimerTimeout;
 
         //Uncomment below code and switch _canMove and _3DStarted to false to start with GooseJump game
         playerCollider.Disabled = true;
@@ -266,6 +279,12 @@ public override void _Ready()
         
     }
 
+    private void OnTimerTimeout()
+    {
+        MuzzleFlashOmniLight.Visible = false;
+        MuzzleFlashSpotLight.Visible = false;
+    }
+    
     public void DisableMovement() 
     {
         CanMove = false;

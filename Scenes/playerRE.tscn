@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://cmc37doc3qiso"]
+[gd_scene load_steps=15 format=3 uid="uid://cmc37doc3qiso"]
 
 [ext_resource type="Script" uid="uid://d01hiirlyhuqf" path="res://Scripts/PlayerRE.cs" id="1_6f1mo"]
 [ext_resource type="PackedScene" uid="uid://gmfcw4lto8ll" path="res://Scenes/laser.tscn" id="2_x8lbm"]
 [ext_resource type="PackedScene" uid="uid://57k74domxfhb" path="res://Scenes/Art/Models/Characters/character_model_anim.tscn" id="3_5lkqk"]
+[ext_resource type="PackedScene" uid="uid://cboa3wj2purcw" path="res://Art/Particles/muzzle_flash.tscn" id="4_cxqew"]
 
 [sub_resource type="Animation" id="Animation_x8lbm"]
 length = 0.001
@@ -172,5 +173,12 @@ visible = false
 [node name="MeshInstance3D" type="MeshInstance3D" parent="AimPoint"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.2842255, 0.38805863, 0.1269735)
 mesh = SubResource("SphereMesh_5lkqk")
+
+[node name="MuzzleFlash" parent="." instance=ExtResource("4_cxqew")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47797245, 0.3969257, 0.13499188)
+
+[node name="MuzzleFlashTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
 
 [connection signal="animation_finished" from="SubViewportContainer/AnimationPlayer" to="." method="AnimationFinished"]

@@ -56,6 +56,12 @@ public partial class Inventory : Control
     {
         _inventoryIsOpen = !_inventoryIsOpen;
         _canvasLayer.Visible = _inventoryIsOpen;
+        if (_itemSelected.Visible)
+        {
+            _itemSelected.Visible = false;
+            _isItemSelected = false;
+        }
+        
     }
 
     public void UpdateInventory(string itemName, int slotIdx)

@@ -248,7 +248,7 @@ mesh = SubResource("PlaneMesh_rpe6t")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.059, 0.835575, 5.688)
 
 [node name="HealingHerb" parent="." instance=ExtResource("19_rpe6t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3150644, 1, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.040017, 1.0151529, 6.046596)
 
 [editable path="Cameras/FixedCamera"]
 [editable path="Cameras/FixedCamera2"]

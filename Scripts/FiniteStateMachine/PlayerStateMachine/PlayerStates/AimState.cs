@@ -69,10 +69,16 @@ public class AimState : PlayerState
     
     public void Shoot()
     {
-        player.PlayAnimation("Pistol_Idle");
-        lastAttack = fireRate;
         if(player.Ammo > 0) 
         {
+            player.MuzzleFlashTimer.Start();
+            player.PlayAnimation("Pistol_Idle");
+            lastAttack = fireRate;
+            
+            player.MuzzleFlash.Emitting = true;
+            player.MuzzleFlashOmniLight.Visible = true;
+            player.MuzzleFlashSpotLight.Visible = true;
+            
             player.PlayAnimation("Pistol_Shoot");
             player.Ammo--;
 
