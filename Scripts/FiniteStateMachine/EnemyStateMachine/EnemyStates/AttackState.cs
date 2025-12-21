@@ -3,35 +3,47 @@ using System;
 
 public class AttackState : EnemyState
 {
-	// public override void Enter()
-	// {
- //
-	// }
- //
-	// public override void PhysicsUpdate(double delta)
-	// {
-	// 	
-	// }
- //
-	// public override void Exit()
-	// {
-	// 	
-	// }
- //
-	// private void AttackPlayer() 
- //    {
- //        _canAttack = false;
- //        _lastAttack = ENEMY_ATTACK_CD;
- //        enemyAnimation.CurrentAnimation = "attack";
- //        enemyAnimation.Play();
- //    }
- //
-	// private void EnemyAttackCooldownCheck(double delta)
- //    {
- //        _lastAttack -= delta;
- //        if (_lastAttack <= 0) 
- //        {
- //            _canAttack = true;
- //        }
- //    }
+	private const double ENEMY_ATTACK_CD = 2.5;
+	private double _lastAttack = 0;
+	private bool _canAttack;
+	public override void Enter()
+	{
+		_canAttack = true;
+	}
+ 
+	public override void PhysicsUpdate(double delta)
+	{
+		
+		EnemyAttackCooldownCheck(delta);
+		
+		_enemy._distanceToPlayer = _enemy.GlobalPosition.DistanceTo(_enemy.player.GlobalPosition);
+		
+		if(_enemy._distanceToPlayer > 1 && _canAttack)
+			_enemyStateMachine.ChangeState(EnemyStateTypes.Chase);
+		
+		if(_canAttack)
+			AttackPlayer();
+	}
+ 
+	public override void Exit()
+	{
+		
+	}
+ 
+	private void AttackPlayer() 
+    {
+        _canAttack = false;
+        _lastAttack = ENEMY_ATTACK_CD;
+        _enemy.EnemyAnimation.CurrentAnimation = "attack";
+        _enemy.EnemyAnimation.Play();
+    }
+ 
+	private void EnemyAttackCooldownCheck(double delta)
+    {
+        _lastAttack -= delta;
+        if (_lastAttack <= 0) 
+        {
+            _canAttack = true;
+        }
+    }
 }

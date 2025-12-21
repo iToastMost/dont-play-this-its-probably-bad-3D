@@ -1,0 +1,288 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0qm320owu3k1"]
+
+[ext_resource type="Script" uid="uid://4kg6vqn5x1mn" path="res://Scenes/Map.cs" id="1_ci6au"]
+
+[node name="Map" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ci6au")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MapBackground" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.34901962, 0.16078432, 1, 1)
+
+[node name="ShowroomFloorTile" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -270.0
+offset_top = -166.0
+offset_right = 297.0
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(1, 0.45882353, 0.4509804, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/ShowroomFloorTile"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.5
+offset_top = -23.0
+offset_right = 103.0
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "Showroom Floor"
+
+[node name="WarehouseTile1" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -449.0
+offset_top = -176.0
+offset_right = -276.0
+offset_bottom = 244.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(1, 0.45882353, 0.4509804, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/WarehouseTile1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.5
+offset_top = -38.0
+offset_right = 149.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "Warehouse"
+
+[node name="WarehouseTile2" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -448.0
+offset_top = -170.0
+offset_right = -330.90204
+offset_bottom = 179.76697
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5707964
+size_flags_horizontal = 4
+color = Color(1, 0.45882353, 0.4509804, 1)
+
+[node name="BathroomTile" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 105.0
+offset_top = -291.0
+offset_right = 298.0
+offset_bottom = -169.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(1, 0.45882353, 0.4509804, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/BathroomTile"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.5
+offset_top = -21.0
+offset_right = 145.0
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "Bathroom"
+
+[node name="BreakroomTile" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 299.0
+offset_top = -167.0
+offset_right = 454.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(1, 0.45882353, 0.4509804, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/BreakroomTile"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.5
+offset_top = -23.0
+offset_right = 145.0
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "Breakroom"
+
+[node name="SupplyClosetTile" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 300.0
+offset_top = -290.0
+offset_right = 395.0
+offset_bottom = -169.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(1, 0.45882353, 0.4509804, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/SupplyClosetTile"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -31.5
+offset_right = 174.0
+offset_bottom = 43.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "Supply
+Closet"
+
+[node name="BathroomTile2" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -291.0
+offset_right = 102.0
+offset_bottom = -169.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(1, 0.45882353, 0.4509804, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/BathroomTile2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -21.0
+offset_right = 146.0
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "Bathroom"
+
+[node name="LockupTile" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -270.0
+offset_top = 246.0
+offset_right = -70.0
+offset_bottom = 329.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(1, 0.45882353, 0.4509804, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/LockupTile"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.5
+offset_top = -21.0
+offset_right = 145.0
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "Lockup"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = 447.0
+offset_top = 266.0
+offset_right = 837.0
+offset_bottom = 274.0
+color = Color(0.34901962, 0.16078432, 1, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+offset_left = 269.0
+offset_top = 564.0
+offset_right = 331.0
+offset_bottom = 572.0
+color = Color(0.34901962, 0.16078432, 1, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer"]
+offset_left = 358.0
+offset_top = 564.0
+offset_right = 415.0
+offset_bottom = 572.0
+color = Color(0.34901962, 0.16078432, 1, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="CanvasLayer"]
+offset_left = 417.0
+offset_top = 564.0
+offset_right = 455.81818
+offset_bottom = 572.0
+rotation = 1.5707964
+color = Color(0.34901962, 0.16078432, 1, 1)

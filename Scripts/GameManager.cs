@@ -56,9 +56,11 @@ public partial class GameManager : Node3D
         
         _healthLabel = _ui.GetNode<Label>("CanvasLayer/HealthLabel");
         _healthLabel.Text = "Fine";
+        _healthLabel.Visible = false;
         
         _ammoLabel = _ui.GetNode<Label>("CanvasLayer/AmmoLabel");
         _ammoLabel.Text = "Ammo: " + _playerRe.Ammo;
+        _ammoLabel.Visible = false;
 		CallDeferred(nameof(ConnectSignals));
     }
 
@@ -256,9 +258,10 @@ public partial class GameManager : Node3D
 	}
 
 	//Loads a new area
-	private void LoadEnvironment(string path, int keyId) 
+	private void LoadEnvironment(string path, int keyId)
 	{
-		CheckForKey(keyId);
+		if (!CheckForKey(keyId))
+			return;
 		
 		//Removes current environment from GameManagers Environment node
 		var environmentChildren = _environment.GetChildren();
@@ -300,12 +303,12 @@ public partial class GameManager : Node3D
 		
     }
 
-	private void CheckForKey(int keyId)
+	private bool CheckForKey(int keyId)
 	{
+		bool keyCheck = false;
+		
 		if (keyId != 0)
 		{
-			bool keyCheck = false;
-
 			for (int i = 0; i < _playerInventory.Length; i++)
 			{
 				if (_playerInventory[i] is KeyItem keyItem)
@@ -315,18 +318,17 @@ public partial class GameManager : Node3D
 					{
 						GD.Print("You have the key to this door, door unlocked");
 						keyCheck = true;
+						return keyCheck;
 					}
 				}	
 			}
 			
-			if (!keyCheck)
-			{
-				GD.Print("You do not have the key to this door");
-				SendDialog("The door is locked. I think I left the key in the break room supply closet.");
-				return;
-			}
-				
+			GD.Print("You do not have the key to this door");
+			SendDialog("The door is locked. I think I left the key in the break room supply closet.");
+			return keyCheck;
 		}
+		
+		return true;
 	}
 
 	private void UpdatePlayerHealth()

@@ -56,7 +56,7 @@ public class MoveState : PlayerState
         }
             
 
-    if (Input.IsActionPressed("walk_forward")) 
+        if (Input.IsActionPressed("walk_forward")) 
         {
             if (Input.IsActionPressed("sprint")) 
             {

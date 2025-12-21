@@ -20,7 +20,7 @@ public partial class Inventory : Control
     private GridContainer _gridContainer;
     private GridContainer _itemSelected;
     private AnimationPlayer _animationPlayer;
-    
+   
     private bool _isItemSelected = false;
     public override void _Ready()
     {
@@ -52,10 +52,13 @@ public partial class Inventory : Control
             _slotIdx++;
         }
     }
-    public void ToggleInventory()
+    public void ToggleInventory(Label _healthLabel, Label _ammoLabel)
     {
         _inventoryIsOpen = !_inventoryIsOpen;
         _canvasLayer.Visible = _inventoryIsOpen;
+        _healthLabel.Visible = _inventoryIsOpen;
+        _ammoLabel.Visible = _inventoryIsOpen;
+        
         if (_itemSelected.Visible)
         {
             _itemSelected.Visible = false;

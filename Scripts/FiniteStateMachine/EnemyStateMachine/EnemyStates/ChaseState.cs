@@ -5,14 +5,13 @@ public class ChaseState : EnemyState
 {
 	public override void Enter()
 	{
- 
+			
 	}
  
 	public override void PhysicsUpdate(double delta)
 	{
 		_enemy.LookAt(_enemy.player.GlobalPosition, Vector3.Up);   
         _enemy._distanceToPlayer = _enemy.GlobalPosition.DistanceTo(_enemy.player.GlobalPosition);
-        //_enemy.EnemyAttackCooldownCheck(delta);
  
         if (_enemy._distanceToPlayer <= 1)
         {   
@@ -22,7 +21,7 @@ public class ChaseState : EnemyState
         else 
         {
             MoveTowardsPlayer(delta);
-            //enemyAnimation.Stop();
+            _enemy.EnemyAnimation.Stop();
         }
         _enemy.MoveAndSlide();
 	}
@@ -35,7 +34,6 @@ public class ChaseState : EnemyState
 	 private void MoveTowardsPlayer(double delta) 
     {
         var direction = Vector3.Zero;
-        var transform = _enemy.Transform;
         var playerDirection = (_enemy.GlobalPosition -_enemy.player.GlobalPosition);
         direction = playerDirection.Normalized() / 25f;
         _enemy.Position -= direction * (float)delta * _enemy._enemyMoveSpeed;

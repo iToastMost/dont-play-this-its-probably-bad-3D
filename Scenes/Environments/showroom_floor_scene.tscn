@@ -758,9 +758,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.762333, 0.19999999, 11.5129
 [node name="Enemy3D2" parent="." instance=ExtResource("3_fqmik")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.766759, 0.19999999, 16.509977)
 
-[node name="Enemy3D3" parent="." instance=ExtResource("3_fqmik")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3153152, 0.19999999, 26.936668)
-
 [editable path="Cameras/Hallway"]
 [editable path="Cameras/Appliances"]
 [editable path="Cameras/FrontDoor"]
