@@ -10,8 +10,8 @@ public partial class Enemy3D : CharacterBody3D
     EnemyStateMachine esm;
 
     private int _health = 5;
-    private float _enemyMoveSpeed = 15f;
-    private float _distanceToPlayer;
+    public float _enemyMoveSpeed = 15f;
+    public float _distanceToPlayer;
     private const double ENEMY_ATTACK_CD = 2.5;
     private double _lastAttack = 0;
     private bool _canAttack = true;
@@ -48,25 +48,7 @@ public partial class Enemy3D : CharacterBody3D
 
     public override void _Process(double delta)
     {
-        //esm.PhysicsUpdate(delta);
-        this.LookAt(player.GlobalPosition, Vector3.Up);   
-        _distanceToPlayer = this.GlobalPosition.DistanceTo(player.GlobalPosition);
-        EnemyAttackCooldownCheck(delta);
-    
-        if (_distanceToPlayer <= 1)
-        {   
-            if (_canAttack) 
-            {
-                AttackPlayer();
-            }
-           
-        }
-        else 
-        {
-            MoveTowardsPlayer(delta);
-            enemyAnimation.Stop();
-        }
-        MoveAndSlide();
+        esm.PhysicsUpdate(delta);
     }
     
     private void MoveTowardsPlayer(double delta) 
