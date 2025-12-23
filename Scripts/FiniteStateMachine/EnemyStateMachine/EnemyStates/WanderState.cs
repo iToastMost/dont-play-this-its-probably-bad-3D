@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class WanderState : EnemyState
 {
-	private Vector3 _targetLocation;
+	private Vector3 _targetLocation = Vector3.Zero;
 	private long _wanderDistance = 5;
 	private double _wanderWaitTime;
 	private float _wanderSpeed = 1f;
@@ -50,16 +50,16 @@ public class WanderState : EnemyState
 		var randZ = rng.NextInt64(-_wanderDistance, _wanderDistance);
 		
 		var currentLocation = _enemy.GlobalPosition;
-		var newLocation = currentLocation;
-		newLocation.X = currentLocation.X + randX;
-		newLocation.Z = currentLocation.Z + randZ;
+		Vector3 newLocation =  new Vector3(currentLocation.X + randX, currentLocation.Y, currentLocation.Z + randZ);
 		
 		return newLocation;
 	}
 
 	private void MoveToLocation(Vector3 location, double delta)
 	{
-		GD.Print(_enemy.GlobalPosition - location);
+		Vector3 direction = Vector3.Zero;
+		direction = location - _enemy.GlobalPosition;
+		//GD.Print(_enemy.GlobalPosition - location);
 		//GD.Print(location - _enemy.GlobalPosition);
 		if (_enemy.GlobalPosition.DistanceTo(location) < 1)
 		{
@@ -76,9 +76,11 @@ public class WanderState : EnemyState
 		//direction = direction.Normalized() / 25f;
 		//_enemy.Position -= direction * (float)delta * _enemy._enemyMoveSpeed;
 		
-		_enemy.Position -=  _enemy.Transform.Basis.Z * _wanderSpeed * (float)delta;
+		//_enemy.Position -=  _enemy.Transform.Basis.Z * _wanderSpeed * (float)delta;
+		_enemy.Velocity = direction * _wanderSpeed;
+		_enemy.LookAt(location);
 		
-		LookAtInterpolation(_enemy.EnemyTurnSpeed);
+		//LookAtInterpolation(_enemy.EnemyTurnSpeed);
 	}
 
 	private void LookAtInterpolation(float turnSpeed)
