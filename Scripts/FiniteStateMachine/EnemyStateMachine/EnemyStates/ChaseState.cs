@@ -33,11 +33,15 @@ public class ChaseState : EnemyState
  
 	 private void MoveTowardsPlayer(double delta) 
     {
-        var direction = Vector3.Zero;
-        var playerDirection = (_enemy.GlobalPosition -_enemy.player.GlobalPosition);
-        direction = playerDirection.Normalized() / 25f;
-        _enemy.Position -= direction * (float)delta * _enemy._enemyMoveSpeed;
-        //this.GlobalPosition.MoveToward(direction, (float)delta * 25f);
- 
+        _enemy.Position -=  _enemy.Transform.Basis.Z * _enemy._enemyMoveSpeed * (float)delta;
+		
+        LookAtInterpolation(_enemy.EnemyTurnSpeed);
+    }
+
+    private void LookAtInterpolation(float turnSpeed)
+    {
+	    Transform3D transform = _enemy.Transform;
+	    transform = transform.LookingAt(_enemy.player.GlobalPosition, Vector3.Up);
+	    _enemy.Transform = _enemy.Transform.InterpolateWith(transform, turnSpeed);
     }
 }

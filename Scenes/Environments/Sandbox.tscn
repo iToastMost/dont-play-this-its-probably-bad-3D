@@ -22,19 +22,19 @@ albedo_texture = ExtResource("2_vvl7v")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6809864, 0, -3.159355)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(0.9999994, 0.0010447899, -0.00032579296, -0.0010450176, 0.9999992, -0.0007179884, 0.00032506205, 0.0007183196, 0.9999997, -4.1685615, -0.46533203, 10.270126)
+transform = Transform3D(0.9999994, 0.0010447899, -0.00032579296, -0.0010450176, 0.9999992, -0.0007179884, 0.00032506205, 0.0007183196, 0.9999997, -4.1685615, -1.041667, 10.270126)
 use_collision = true
 size = Vector3(39.356262, 0.06933594, 55.111572)
 material = SubResource("StandardMaterial3D_vvl7v")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -7.112179, -0.1923523, 17.367577)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -7.112179, -0.1923523, 27.17226)
 use_collision = true
 size = Vector3(24.66195, 0.6152954, 0.057617188)
 material = SubResource("StandardMaterial3D_ff6jc")
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="."]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -7.112179, -0.14848328, 10.838231)
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -7.112179, -0.14848328, 16.173487)
 use_collision = true
 size = Vector3(24.66195, 0.70303345, 0.057617188)
 material = SubResource("StandardMaterial3D_ff6jc")
@@ -46,13 +46,13 @@ size = Vector3(24.66195, 0.6152954, 0.057617188)
 material = SubResource("StandardMaterial3D_ff6jc")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.90521115, 0.1805892, -0.38468212, 0, 0.90521514, 0.4249536, 0.4249621, 0.38467273, -0.8194107, -13.797933, 2.7948112, 3.1192856)
+transform = Transform3D(-0.9696646, 0.12734696, -0.20864663, 0, 0.8535716, 0.52097535, 0.24443945, 0.50517136, -0.8276781, -12.388306, 5.7128377, -2.2037685)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.5, 0.75, 0.43301272, 5.1619136e-08, -0.50000006, 0.8660254, 0.8660254, -0.43301266, -0.2500001, 4.0023184, 12.470478, 0)
 
 [node name="Enemy3D" parent="." instance=ExtResource("1_ejjuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.44964, 0.25453287, 12.6387825)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.841504, -0.21694702, 18.282124)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.9693904, -0.17382813, 6.0154943)

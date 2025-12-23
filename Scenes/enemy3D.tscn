@@ -138,22 +138,25 @@ libraries = {
 
 [node name="RayCast3D" type="RayCast3D" parent="LineOfSight"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28233337, 0)
-target_position = Vector3(0, 0, -15)
+target_position = Vector3(0, 0, -5)
 
 [node name="RayCast3D2" type="RayCast3D" parent="LineOfSight"]
 transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 0, 0.28233337, 0)
-target_position = Vector3(0, 0, -15)
+target_position = Vector3(0, 0, -5)
 
 [node name="RayCast3D3" type="RayCast3D" parent="LineOfSight"]
 transform = Transform3D(0.96592593, 0, -0.25881907, 0, 1, 0, 0.25881907, 0, 0.96592593, 0, 0.28233337, 0)
-target_position = Vector3(0, 0, -15)
+target_position = Vector3(0, 0, -5)
 
 [node name="RayCast3D4" type="RayCast3D" parent="LineOfSight"]
 transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, 0, 0.28233337, 0)
-target_position = Vector3(0, 0, -15)
+target_position = Vector3(0, 0, -5)
 
 [node name="RayCast3D5" type="RayCast3D" parent="LineOfSight"]
 transform = Transform3D(0.8660253, 0, 0.49999997, 0, 1, 0, -0.49999997, 0, 0.8660253, 0, 0.28233337, 0)
-target_position = Vector3(0, 0, -15)
+target_position = Vector3(0, 0, -5)
+
+[node name="WanderTimer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="body_entered" from="AttackBox" to="." method="OnBodyEntered3D"]

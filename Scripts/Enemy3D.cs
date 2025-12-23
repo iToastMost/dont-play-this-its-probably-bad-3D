@@ -10,10 +10,14 @@ public partial class Enemy3D : CharacterBody3D
     Area3D enemyAttackBox;
     EnemyStateMachine esm;
     private List<RayCast3D> _rayCasts;
+    public MeshInstance3D WanderMesh;
 
     private int _health = 5;
-    public float _enemyMoveSpeed = 15f;
+    public float _enemyMoveSpeed = 1.0f;
     public float _distanceToPlayer;
+    public float EnemyTurnSpeed = 0.1f;
+    public Timer WanderTimer;
+    public bool CanWander;
     
     [Export]
     public int AttackDamage { get; set; }
@@ -23,6 +27,9 @@ public partial class Enemy3D : CharacterBody3D
         player = GetNode<PlayerRE>("/root/GameManager/3DPlayer");
         EnemyAnimation = GetNode<AnimationPlayer>("AnimationPlayer");
         enemyAttackBox = GetNode<Area3D>("AttackBox");
+        WanderTimer = GetNode<Timer>("WanderTimer");
+        
+        WanderTimer.Timeout += WanderTimeout;
 
         _rayCasts = new();
         
@@ -71,6 +78,11 @@ public partial class Enemy3D : CharacterBody3D
     public List<RayCast3D> GetRayCasts()
     {
         return _rayCasts;
+    }
+
+    private void WanderTimeout()
+    {
+        CanWander = true;
     }
     
     public void TakeDamage()

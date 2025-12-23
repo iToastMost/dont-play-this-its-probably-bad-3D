@@ -5,12 +5,17 @@ using System.Collections.Generic;
 public class WanderState : EnemyState
 {
 	private Vector3 _targetLocation;
+	private long _wanderDistance = 5;
+	private double _wanderWaitTime;
+	private float _wanderSpeed = 1f;
 	
 	private List<RayCast3D> _rayCasts;
 	public override void Enter()
 	{
 		_rayCasts = _enemy.GetRayCasts();
 		_targetLocation = GenerateRandomLocation();
+		_wanderWaitTime = 0;
+		_enemy.CanWander = true;
 	}
 
 	public override void PhysicsUpdate(double delta)
@@ -25,8 +30,12 @@ public class WanderState : EnemyState
 				}
 			}
 		}
+
+		if (!_enemy.CanWander)
+			return;
 		
 		MoveToLocation(_targetLocation, delta);
+		_enemy.MoveAndSlide();
 	}
 
 	public override void Exit()
@@ -37,28 +46,56 @@ public class WanderState : EnemyState
 	private Vector3 GenerateRandomLocation()
 	{
 		var rng = new Random();
-		var randX = rng.NextInt64(-10, 10);
-		var randY = rng.NextInt64(-10, 10);
+		var randX = rng.NextInt64(-_wanderDistance, _wanderDistance);
+		var randZ = rng.NextInt64(-_wanderDistance, _wanderDistance);
 		
 		var currentLocation = _enemy.GlobalPosition;
 		var newLocation = currentLocation;
-		newLocation.X = newLocation.X + randX;
-		newLocation.Z = newLocation.Z + randY;
+		newLocation.X = currentLocation.X + randX;
+		newLocation.Z = currentLocation.Z + randZ;
 		
 		return newLocation;
 	}
 
 	private void MoveToLocation(Vector3 location, double delta)
 	{
-		if (_enemy.GlobalPosition.DistanceTo(location) < 0.5)
+		GD.Print(_enemy.GlobalPosition - location);
+		//GD.Print(location - _enemy.GlobalPosition);
+		if (_enemy.GlobalPosition.DistanceTo(location) < 1)
 		{
+			_enemy.CanWander = false;
 			_targetLocation = GenerateRandomLocation();
+			RandomWaitTime();
+			return;
 		}
+
+		//var direction = Vector3.Back;
+		//var playerDirection = (_enemy.GlobalPosition - location);
 		
-		var direction = Vector3.Zero;
-		var playerDirection = (_enemy.GlobalPosition - location);
+		//direction = playerDirection.Normalized() / 25f;
+		//direction = direction.Normalized() / 25f;
+		//_enemy.Position -= direction * (float)delta * _enemy._enemyMoveSpeed;
 		
-		direction = playerDirection.Normalized() / 25f;
-		_enemy.Position -= direction * (float)delta * _enemy._enemyMoveSpeed;
+		_enemy.Position -=  _enemy.Transform.Basis.Z * _wanderSpeed * (float)delta;
+		
+		LookAtInterpolation(_enemy.EnemyTurnSpeed);
+	}
+
+	private void LookAtInterpolation(float turnSpeed)
+	{
+		_targetLocation.Y = _enemy.GlobalPosition.Y;
+		Transform3D transform = _enemy.Transform;
+		transform = transform.LookingAt(_targetLocation, Vector3.Up);
+		_enemy.Transform = _enemy.Transform.InterpolateWith(transform, turnSpeed);
+	}
+
+	private void RandomWaitTime()
+	{
+		var rng = new Random();
+		_wanderWaitTime = rng.NextDouble() * 3;
+		
+		_enemy.WanderTimer.WaitTime = _wanderWaitTime;
+		
+		_enemy.WanderTimer.Start();
 	}
 }
