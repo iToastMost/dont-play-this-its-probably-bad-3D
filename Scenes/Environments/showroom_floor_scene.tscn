@@ -760,7 +760,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.762333, 0.19999999, 11.5129
 transform = Transform3D(-0.1832822, 0, -0.9830603, 0, 1, 0, 0.9830603, 0, -0.1832822, 9.766759, 0.19999999, 19.27609)
 
 [node name="dishwasher" parent="." instance=ExtResource("13_63rf1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7120495, -0.5, 11.598285)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.259777, -0.5, 11.598285)
 
 [editable path="Cameras/Hallway"]
 [editable path="Cameras/Appliances"]

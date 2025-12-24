@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0qm320owu3k1"]
+[gd_scene load_steps=3 format=3 uid="uid://b0qm320owu3k1"]
 
 [ext_resource type="Script" uid="uid://4kg6vqn5x1mn" path="res://Scenes/Map.cs" id="1_ci6au"]
+[ext_resource type="Texture2D" uid="uid://ceynwgutq5bi2" path="res://Art/Textures/GridTextures/texture_01.png" id="2_26yhd"]
 
 [node name="Map" type="Control"]
 layout_mode = 3
@@ -9,13 +10,17 @@ script = ExtResource("1_ci6au")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="MapBackground" type="ColorRect" parent="CanvasLayer"]
+[node name="MapBackground" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -94.0
+offset_top = -1140.0
+offset_right = 1163.0
+offset_bottom = 194.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.34901962, 0.16078432, 1, 1)
+texture = ExtResource("2_26yhd")
 
 [node name="ShowroomFloorTile" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 8
@@ -30,7 +35,7 @@ offset_bottom = 242.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-color = Color(1, 0.45882353, 0.4509804, 1)
+color = Color(1, 0.45882353, 0.4509804, 0.69803923)
 
 [node name="Label" type="Label" parent="CanvasLayer/ShowroomFloorTile"]
 layout_mode = 1
@@ -56,13 +61,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -449.0
-offset_top = -176.0
+offset_top = -171.0
 offset_right = -276.0
-offset_bottom = 244.0
+offset_bottom = 245.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-color = Color(1, 0.45882353, 0.4509804, 1)
+color = Color(1, 0.45882353, 0.4509804, 0.69803923)
 
 [node name="Label" type="Label" parent="CanvasLayer/WarehouseTile1"]
 layout_mode = 1
@@ -87,15 +92,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -448.0
-offset_top = -170.0
-offset_right = -330.90204
-offset_bottom = 179.76697
+offset_left = -449.0
+offset_top = -171.0
+offset_right = -331.90204
+offset_bottom = 178.76697
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -1.5707964
 size_flags_horizontal = 4
-color = Color(1, 0.45882353, 0.4509804, 1)
+color = Color(1, 0.45882353, 0.4509804, 0.69803923)
 
 [node name="BathroomTile" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 8
@@ -110,7 +115,7 @@ offset_bottom = -169.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-color = Color(1, 0.45882353, 0.4509804, 1)
+color = Color(1, 0.45882353, 0.4509804, 0.69803923)
 
 [node name="Label" type="Label" parent="CanvasLayer/BathroomTile"]
 layout_mode = 1
@@ -142,7 +147,7 @@ offset_bottom = -88.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-color = Color(1, 0.45882353, 0.4509804, 1)
+color = Color(1, 0.45882353, 0.4509804, 0.69803923)
 
 [node name="Label" type="Label" parent="CanvasLayer/BreakroomTile"]
 layout_mode = 1
@@ -174,7 +179,7 @@ offset_bottom = -169.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-color = Color(1, 0.45882353, 0.4509804, 1)
+color = Color(1, 0.45882353, 0.4509804, 0.69803923)
 
 [node name="Label" type="Label" parent="CanvasLayer/SupplyClosetTile"]
 layout_mode = 1
@@ -207,7 +212,7 @@ offset_bottom = -169.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-color = Color(1, 0.45882353, 0.4509804, 1)
+color = Color(1, 0.45882353, 0.4509804, 0.69803923)
 
 [node name="Label" type="Label" parent="CanvasLayer/BathroomTile2"]
 layout_mode = 1
@@ -239,7 +244,7 @@ offset_bottom = 329.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-color = Color(1, 0.45882353, 0.4509804, 1)
+color = Color(1, 0.45882353, 0.4509804, 0.69803923)
 
 [node name="Label" type="Label" parent="CanvasLayer/LockupTile"]
 layout_mode = 1
@@ -263,21 +268,21 @@ offset_left = 447.0
 offset_top = 266.0
 offset_right = 837.0
 offset_bottom = 274.0
-color = Color(0.34901962, 0.16078432, 1, 1)
+color = Color(1, 0.45882353, 0.4509804, 0.69803923)
 
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
 offset_left = 269.0
 offset_top = 564.0
 offset_right = 331.0
 offset_bottom = 572.0
-color = Color(0.34901962, 0.16078432, 1, 1)
+color = Color(1, 0.45882353, 0.4509804, 0.69803923)
 
 [node name="ColorRect3" type="ColorRect" parent="CanvasLayer"]
 offset_left = 358.0
 offset_top = 564.0
 offset_right = 415.0
 offset_bottom = 572.0
-color = Color(0.34901962, 0.16078432, 1, 1)
+color = Color(1, 0.45882353, 0.4509804, 0.69803923)
 
 [node name="ColorRect4" type="ColorRect" parent="CanvasLayer"]
 offset_left = 417.0
@@ -285,4 +290,4 @@ offset_top = 564.0
 offset_right = 455.81818
 offset_bottom = 572.0
 rotation = 1.5707964
-color = Color(0.34901962, 0.16078432, 1, 1)
+color = Color(1, 0.45882353, 0.4509804, 0.69803923)
