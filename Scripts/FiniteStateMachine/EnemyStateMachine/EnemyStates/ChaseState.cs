@@ -5,7 +5,9 @@ public class ChaseState : EnemyState
 {
 	public override void Enter()
 	{
-			
+		_enemy.Velocity = Vector3.Zero;
+		_enemy.EnemyAnimationPlayer.CurrentAnimation = "Walk_Formal";
+		_enemy.EnemyAnimationPlayer.Play();
 	}
  
 	public override void PhysicsUpdate(double delta)
@@ -31,11 +33,14 @@ public class ChaseState : EnemyState
 		
 	}
  
-	 private void MoveTowardsPlayer(double delta) 
-    {
-        _enemy.Position -=  _enemy.Transform.Basis.Z * _enemy._enemyMoveSpeed * (float)delta;
-		
-        LookAtInterpolation(_enemy.EnemyTurnSpeed);
+	 private void MoveTowardsPlayer(double delta)
+	 {
+		 var direction = Vector3.Zero;
+		 var playerDirection = (_enemy.GlobalPosition - _enemy.player.GlobalPosition);
+		 direction = playerDirection.Normalized();
+        //_enemy.Position -=  _enemy.Transform.Basis.Z * _enemy._enemyMoveSpeed * (float)delta;
+        _enemy.Position -=  direction * _enemy._enemyMoveSpeed * (float)delta;
+        //LookAtInterpolation(_enemy.EnemyTurnSpeed);
     }
 
     private void LookAtInterpolation(float turnSpeed)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://8w1w7i8arnob"]
+[gd_scene load_steps=11 format=3 uid="uid://8w1w7i8arnob"]
 
 [ext_resource type="Script" uid="uid://bnoyawdc1jmk0" path="res://Scripts/Enemy3D.cs" id="1_hghv2"]
+[ext_resource type="PackedScene" uid="uid://c0b4032sbuy8g" path="res://Scenes/Art/Models/Characters/enemy_model.tscn" id="2_0n4k6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ne65n"]
 
@@ -109,6 +110,7 @@ AttackDamage = 20
 shape = SubResource("CapsuleShape3D_ne65n")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_1f0kj")
 
 [node name="LeftArm" type="MeshInstance3D" parent="MeshInstance3D"]
@@ -158,5 +160,8 @@ target_position = Vector3(0, 0, -5)
 
 [node name="WanderTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="EnemyModel" parent="." instance=ExtResource("2_0n4k6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.022018015, -0.9634758, -0.09173393)
 
 [connection signal="body_entered" from="AttackBox" to="." method="OnBodyEntered3D"]

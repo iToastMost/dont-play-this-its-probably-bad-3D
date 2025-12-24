@@ -16,6 +16,8 @@ public class WanderState : EnemyState
 		_targetLocation = GenerateRandomLocation();
 		_wanderWaitTime = 0;
 		_enemy.CanWander = true;
+		_enemy.EnemyAnimationPlayer.CurrentAnimation = "Walk_Formal";
+		_enemy.EnemyAnimationPlayer.Play();
 	}
 
 	public override void PhysicsUpdate(double delta)
@@ -64,6 +66,7 @@ public class WanderState : EnemyState
 		if (_enemy.GlobalPosition.DistanceTo(location) < 1)
 		{
 			_enemy.CanWander = false;
+			_enemy.EnemyAnimationPlayer.CurrentAnimation = "Idle";
 			_targetLocation = GenerateRandomLocation();
 			RandomWaitTime();
 			return;

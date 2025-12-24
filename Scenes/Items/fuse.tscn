@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://syj6k24hr5nw"]
+
+[ext_resource type="Script" uid="uid://bmktyu254uq07" path="res://Scripts/Items/KeyItem.cs" id="1_5i3ds"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kdp4w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dvfy"]
+albedo_color = Color(0.0885599, 0.0885599, 0.0885599, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5i3ds"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kdp4w"]
+albedo_color = Color(0.21230483, 0.21230483, 0.21230483, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5i3ds"]
+size = Vector3(1, 1.3423996, 1.5208588)
+
+[node name="fuse" type="StaticBody3D"]
+script = ExtResource("1_5i3ds")
+KeyId = 2
+itemName = "Fuse"
+itemDescription = "Fuse for getting the lights back on"
+itemID = 4
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.19673419, 0, 0, 0, 0.34203213, 0, 0, 0, 0.27368236, 0, 0, 0)
+mesh = SubResource("BoxMesh_kdp4w")
+material = SubResource("StandardMaterial3D_2dvfy")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="CSGMesh3D2"]
+transform = Transform3D(0.46417275, 0, 0, 0, 0.32875422, 0, 0, 0, 0.69226116, 0, -0.63506806, 0)
+mesh = SubResource("BoxMesh_5i3ds")
+material = SubResource("StandardMaterial3D_kdp4w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09278488, -0.004310608)
+shape = SubResource("BoxShape3D_5i3ds")

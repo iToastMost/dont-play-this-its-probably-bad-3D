@@ -35,6 +35,7 @@ public class AttackState : EnemyState
         _canAttack = false;
         _lastAttack = ENEMY_ATTACK_CD;
         _enemy.EnemyAnimation.CurrentAnimation = "attack";
+        _enemy.EnemyAnimationPlayer.CurrentAnimation = "Sword_Attack";
         _enemy.EnemyAnimation.Play();
     }
  
@@ -44,6 +45,10 @@ public class AttackState : EnemyState
         if (_lastAttack <= 0) 
         {
             _canAttack = true;
+        }
+        else if (_lastAttack <= 1.5)
+        {
+	        _enemy.EnemyAnimationPlayer.CurrentAnimation = "Idle";
         }
     }
 }
