@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bwhhunf3f6to0"]
+[gd_scene load_steps=32 format=3 uid="uid://bwhhunf3f6to0"]
 
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="1_jna78"]
 [ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="2_fqmik"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b64uxsm0skopv" path="res://Scenes/Art/Models/Appliances/washer_1.tscn" id="10_pr7sf"]
 [ext_resource type="PackedScene" uid="uid://dvx78w7ofmyiq" path="res://Scenes/Art/Models/Appliances/fridge_2_workingdoors.tscn" id="11_pr7sf"]
 [ext_resource type="PackedScene" uid="uid://cgew1goc3h4iw" path="res://Scenes/Art/Models/Appliances/fridge_3_workingdoors.tscn" id="12_ivlfl"]
+[ext_resource type="PackedScene" uid="uid://c7y25n7jghxoc" path="res://Scenes/Art/Models/Appliances/dishwasher.tscn" id="13_63rf1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jna78"]
 resource_local_to_scene = true
@@ -757,6 +758,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.762333, 0.19999999, 11.5129
 
 [node name="Enemy3D2" parent="." instance=ExtResource("3_fqmik")]
 transform = Transform3D(-0.1832822, 0, -0.9830603, 0, 1, 0, 0.9830603, 0, -0.1832822, 9.766759, 0.19999999, 19.27609)
+
+[node name="dishwasher" parent="." instance=ExtResource("13_63rf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7120495, -0.5, 11.598285)
 
 [editable path="Cameras/Hallway"]
 [editable path="Cameras/Appliances"]
