@@ -1,15 +1,17 @@
-[gd_scene format=3 uid="uid://rivq7l5vhuy4"]
+[gd_scene load_steps=2 format=3 uid="uid://rivq7l5vhuy4"]
+
+[ext_resource type="Script" uid="uid://cbuoo8d18v3hl" path="res://Scripts/MapTile.cs" id="1_cnw7y"]
 
 [node name="map_tile" type="ColorRect"]
 offset_right = 191.0
 offset_bottom = 154.0
 color = Color(1, 0.45882353, 0.4509804, 0.69803923)
+script = ExtResource("1_cnw7y")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(0, 0, 1, 0.69803923)
 invert_enabled = true
 invert_border = 5.0
-polygon = PackedVector2Array(0, 0, 191, 0, 191, 154, 0, 154)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

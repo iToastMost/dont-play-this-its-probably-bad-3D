@@ -15,7 +15,12 @@ public partial class GameManager : Node3D
 	private Inventory _inventory;
 	private Label _healthLabel;
 	private Label _ammoLabel;
-	
+	private AnimationPlayer _animationPlayer;
+	private Timer _sceneTransitionTimer;
+
+	private string _sceneToLoad = "";
+	private bool _isLoadingEnvironment = false;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -25,6 +30,8 @@ public partial class GameManager : Node3D
 		_inventory = _ui.GetNode<Inventory>("Inventory");
 		_playerRe = GetNode<PlayerRE>("3DPlayer");
 		_environment = GetNode<Node3D>("Environment");
+		_animationPlayer = GetNode<AnimationPlayer>("ScreenTransitions");
+		_sceneTransitionTimer = GetNode<Timer>("SceneTransitionTimer");
 
 		//TODO update signals to look like this
 		//_playerRe.Connect("UpdateInventoryItems", new Callable(this, nameof(UpdateInventory)));
@@ -34,6 +41,7 @@ public partial class GameManager : Node3D
 		_playerRe.UseAmmo += UpdateAmmo;
 		_playerRe.ReloadCheck += ReloadCheck;
 		_playerRe.ReloadFinished += ReloadFinished;
+		_animationPlayer.AnimationFinished += FadeOutFinished;
 
 		//_inventory.Connect("ItemUsed", new Callable(this, nameof(UseItem)));
 		_inventory.ItemUsed += UseItem;
@@ -91,7 +99,9 @@ public partial class GameManager : Node3D
 		var doors = GetTree().GetNodesInGroup("Doors");
 		foreach(Door door in doors) 
 		{
-			door.Connect("LoadEnvironment", new Callable(this, nameof(LoadEnvironment)));
+			//door.Connect("LoadEnvironment", new Callable(this, nameof(LoadEnvironment)));
+			door.LoadEnvironment += PrepareLoadingEnvironment;
+			//door.LoadEnvironment += LoadEnvironment;
 			//door.KeyIdCheck += 
 		}
 	}
@@ -257,11 +267,24 @@ public partial class GameManager : Node3D
 		UpdateAmmo(_playerRe.Ammo);
 	}
 
-	//Loads a new area
-	private void LoadEnvironment(string path, int keyId)
+	private void PrepareLoadingEnvironment(string path, int keyId)
 	{
 		if (!CheckForKey(keyId))
 			return;
+
+		_sceneToLoad = path;
+		
+		_animationPlayer.CurrentAnimation = "ScreenFadeOut";
+		_animationPlayer.Play();
+	}
+	
+	//Loads a new area
+	private void LoadEnvironment(string path)
+	{
+		if (_isLoadingEnvironment)
+			return;
+		
+		_isLoadingEnvironment = true;
 		
 		//Removes current environment from GameManagers Environment node
 		var environmentChildren = _environment.GetChildren();
@@ -283,7 +306,7 @@ public partial class GameManager : Node3D
 		{
 			_currentEnvironment = null;
 		}
-
+		
 		//Prints the level being loaded to console for debugging
 		GD.Print("Loading: " + path);
 
@@ -299,8 +322,11 @@ public partial class GameManager : Node3D
         _previousEnvironment = _currentEnvironment;
         
         _playerRe.GlobalPosition = spawnPoint.GlobalPosition;
+        _playerRe.Rotation = spawnPoint.Rotation;
+        
+        _animationPlayer.CurrentAnimation = "ScreenFadeIn";
+        _animationPlayer.Play();
         ConnectDoorSignals();
-		
     }
 
 	private bool CheckForKey(int keyId)
@@ -368,4 +394,17 @@ public partial class GameManager : Node3D
 	{
         
     }
+
+	private void FadeOutFinished(StringName animName)
+	{
+		if (animName.Equals("ScreenFadeOut"))
+		{
+			LoadEnvironment(_sceneToLoad);
+		}
+		else
+		{
+			_isLoadingEnvironment = false;
+		}
+		
+	}
 }

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0qm320owu3k1"]
+[gd_scene load_steps=4 format=3 uid="uid://b0qm320owu3k1"]
 
 [ext_resource type="Script" uid="uid://4kg6vqn5x1mn" path="res://Scenes/Map.cs" id="1_ci6au"]
 [ext_resource type="Texture2D" uid="uid://ceynwgutq5bi2" path="res://Art/Textures/GridTextures/texture_01.png" id="2_26yhd"]
+[ext_resource type="PackedScene" uid="uid://rivq7l5vhuy4" path="res://Scenes/Art/UI/Map UI/map_tile.tscn" id="3_p3ir5"]
 
 [node name="Map" type="Control"]
 layout_mode = 3
@@ -15,44 +16,12 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -94.0
-offset_top = -1140.0
-offset_right = 1163.0
+offset_top = -1476.0
+offset_right = 1716.0
 offset_bottom = 194.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_26yhd")
-
-[node name="ShowroomFloorTile" type="ColorRect" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -270.0
-offset_top = -166.0
-offset_right = 297.0
-offset_bottom = 242.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-color = Color(1, 0.45882353, 0.4509804, 0.69803923)
-
-[node name="Label" type="Label" parent="CanvasLayer/ShowroomFloorTile"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -114.5
-offset_top = -23.0
-offset_right = 103.0
-offset_bottom = 22.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 26
-text = "Showroom Floor"
 
 [node name="WarehouseTile1" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 8
@@ -102,167 +71,6 @@ rotation = -1.5707964
 size_flags_horizontal = 4
 color = Color(1, 0.45882353, 0.4509804, 0.69803923)
 
-[node name="BathroomTile" type="ColorRect" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 105.0
-offset_top = -291.0
-offset_right = 298.0
-offset_bottom = -169.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-color = Color(1, 0.45882353, 0.4509804, 0.69803923)
-
-[node name="Label" type="Label" parent="CanvasLayer/BathroomTile"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -72.5
-offset_top = -21.0
-offset_right = 145.0
-offset_bottom = 24.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 26
-text = "Bathroom"
-
-[node name="BreakroomTile" type="ColorRect" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 299.0
-offset_top = -167.0
-offset_right = 454.0
-offset_bottom = -88.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-color = Color(1, 0.45882353, 0.4509804, 0.69803923)
-
-[node name="Label" type="Label" parent="CanvasLayer/BreakroomTile"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -72.5
-offset_top = -23.0
-offset_right = 145.0
-offset_bottom = 22.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 26
-text = "Breakroom"
-
-[node name="SupplyClosetTile" type="ColorRect" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 300.0
-offset_top = -290.0
-offset_right = 395.0
-offset_bottom = -169.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-color = Color(1, 0.45882353, 0.4509804, 0.69803923)
-
-[node name="Label" type="Label" parent="CanvasLayer/SupplyClosetTile"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -43.5
-offset_top = -31.5
-offset_right = 174.0
-offset_bottom = 43.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 26
-text = "Supply
-Closet"
-
-[node name="BathroomTile2" type="ColorRect" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -91.0
-offset_top = -291.0
-offset_right = 102.0
-offset_bottom = -169.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-color = Color(1, 0.45882353, 0.4509804, 0.69803923)
-
-[node name="Label" type="Label" parent="CanvasLayer/BathroomTile2"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -71.5
-offset_top = -21.0
-offset_right = 146.0
-offset_bottom = 24.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 26
-text = "Bathroom"
-
-[node name="LockupTile" type="ColorRect" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -270.0
-offset_top = 246.0
-offset_right = -70.0
-offset_bottom = 329.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-color = Color(1, 0.45882353, 0.4509804, 0.69803923)
-
-[node name="Label" type="Label" parent="CanvasLayer/LockupTile"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -72.5
-offset_top = -21.0
-offset_right = 145.0
-offset_bottom = 24.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 26
-text = "Lockup"
-
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 offset_left = 447.0
 offset_top = 266.0
@@ -291,3 +99,45 @@ offset_right = 455.81818
 offset_bottom = 572.0
 rotation = 1.5707964
 color = Color(1, 0.45882353, 0.4509804, 0.69803923)
+
+[node name="BathroomTile1" parent="CanvasLayer" instance=ExtResource("3_p3ir5")]
+offset_left = 643.0
+offset_top = 69.0
+offset_right = 836.0
+offset_bottom = 191.0
+AreaName = "Bathroom"
+
+[node name="BathroomTile2" parent="CanvasLayer" instance=ExtResource("3_p3ir5")]
+offset_left = 449.0
+offset_top = 69.0
+offset_right = 642.0
+offset_bottom = 191.0
+AreaName = "Bathroom"
+
+[node name="ShowroomTile" parent="CanvasLayer" instance=ExtResource("3_p3ir5")]
+offset_left = 270.0
+offset_top = 194.0
+offset_right = 837.0
+offset_bottom = 602.0
+AreaName = "Showroom Floor"
+
+[node name="LockupTile" parent="CanvasLayer" instance=ExtResource("3_p3ir5")]
+offset_left = 270.0
+offset_top = 606.0
+offset_right = 470.0
+offset_bottom = 689.0
+AreaName = "Lockup"
+
+[node name="BreakroomTile" parent="CanvasLayer" instance=ExtResource("3_p3ir5")]
+offset_left = 842.0
+offset_top = 193.0
+offset_right = 997.0
+offset_bottom = 272.0
+AreaName = "Breakroom"
+
+[node name="SupplyClosetTile" parent="CanvasLayer" instance=ExtResource("3_p3ir5")]
+offset_left = 841.0
+offset_top = 68.0
+offset_right = 980.0
+offset_bottom = 189.0
+AreaName = "Supply Closet"

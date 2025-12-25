@@ -47,7 +47,7 @@ size = Vector3(0.3486328, 0.088012695, 3.7398777)
 [node name="Spawnpoints" type="Node" parent="."]
 
 [node name="FromShowroomFloorScene" type="Marker3D" parent="Spawnpoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.272561, 1.1332452, 1.4175001)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.272561, 1.1332452, 1.4175001)
 
 [node name="FixedCamera" parent="." instance=ExtResource("2_dfr2l")]
 transform = Transform3D(-0.9390994, -0.07962613, 0.33429343, 0, 0.97278494, 0.23170991, -0.34364575, 0.21759863, -0.91354173, 1.613966, 2.3172832, -1.2283411)
