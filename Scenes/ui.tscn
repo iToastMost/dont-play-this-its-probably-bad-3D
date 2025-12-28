@@ -14,6 +14,8 @@ grow_vertical = 2
 script = ExtResource("1_jxero")
 
 [node name="Inventory" parent="." instance=ExtResource("2_qdvrb")]
+visible = false
+z_index = 1
 layout_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -69,3 +71,4 @@ theme_override_font_sizes/font_size = 34
 text = "Health"
 
 [node name="Map" parent="CanvasLayer" instance=ExtResource("3_nf4gj")]
+visible = false

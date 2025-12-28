@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmwk0626q3h4f"]
-
-[ext_resource type="PackedScene" uid="uid://bcgorefapmmgj" path="res://Scenes/Art/Models/Characters/Enemy/Ch10_nonPBR.fbx" id="1_mauhj"]
-
-[node name="Ch10_nonPBR" instance=ExtResource("1_mauhj")]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3deyvp7egn12"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_b0acp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b0acp"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5higp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5higp"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="Flashlight" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.18872464, 0, 0, 0, 0.040180266, 0, 0, 0, 0.053459674, 0, 0, 0)
+mesh = SubResource("BoxMesh_b0acp")
+surface_material_override/0 = SubResource("StandardMaterial3D_b0acp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.28544056, 0, 0, 0, 1.4821514, 0, 0, 0, 1.5891007, 0.30047366, 0, 0)
+mesh = SubResource("BoxMesh_5higp")
+surface_material_override/0 = SubResource("StandardMaterial3D_5higp")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.13051955, 0, 0)
+light_color = Color(0.89411765, 0.7176471, 0.32941177, 1)
+light_energy = 4.0
+light_volumetric_fog_energy = 6.0
+spot_range = 7.792
+spot_attenuation = 0.5
+spot_angle = 12.5

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://57k74domxfhb"]
+[gd_scene load_steps=7 format=3 uid="uid://57k74domxfhb"]
 
 [ext_resource type="PackedScene" uid="uid://jvhos6xb7o5s" path="res://Scenes/Art/Animations/AnimationLibrary_Godot_Standard.glb" id="1_amo2j"]
 [ext_resource type="AnimationLibrary" uid="uid://qcle3w2pjibl" path="res://Scenes/Art/Animations/new_animation_library.tres" id="2_gd4t8"]
+[ext_resource type="PackedScene" uid="uid://b3deyvp7egn12" path="res://Scenes/flashlight.tscn" id="2_s4x8y"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_amo2j"]
 
@@ -88,3 +89,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_s4x8y")
 libraries = {
 &"": ExtResource("2_gd4t8")
 }
+
+[node name="FlashlightYaw" type="Node3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29897222, 1.6672305, 0.11331857)
+
+[node name="FlashlightPitch" type="Node3D" parent="FlashlightYaw" index="0"]
+
+[node name="Flashlight" parent="FlashlightYaw/FlashlightPitch" index="0" instance=ExtResource("2_s4x8y")]

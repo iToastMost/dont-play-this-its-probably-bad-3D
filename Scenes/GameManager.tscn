@@ -31,22 +31,6 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_b7dir"]
-resource_name = "ScreenFadeOut"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/ScreenFade:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_xqbpr"]
 resource_name = "ScreenFadeIn"
 length = 0.5
@@ -63,6 +47,22 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_b7dir"]
+resource_name = "ScreenFadeOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ScreenFade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mmuqr"]
 _data = {
 &"RESET": SubResource("Animation_mmuqr"),
@@ -76,12 +76,8 @@ script = ExtResource("1_je8vj")
 
 [node name="UI" parent="." instance=ExtResource("1_mmuqr")]
 
-[node name="Environment" type="Node3D" parent="."]
-
-[node name="3DPlayer" parent="." instance=ExtResource("3_je8vj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.56258, 0.771982, 1.13982)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
 
 [node name="TestShaderFearsToFathom" type="ColorRect" parent="CanvasLayer"]
 visible = false
@@ -90,12 +86,18 @@ offset_right = 1079.0
 offset_bottom = 721.0
 
 [node name="ScreenFade" type="ColorRect" parent="CanvasLayer"]
+z_index = -1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="3DPlayer" parent="." instance=ExtResource("3_je8vj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.56258, 0.771982, 1.13982)
 
 [node name="ScreenTransitions" type="AnimationPlayer" parent="."]
 libraries = {

@@ -72,6 +72,12 @@ public partial class PlayerRE : CharacterBody3D
     public OmniLight3D MuzzleFlashOmniLight;
     public SpotLight3D MuzzleFlashSpotLight;
     public Timer MuzzleFlashTimer;
+    
+    public Node3D Flashlight;
+    public Node3D FlashlightPitch;
+    public Node3D FlashlightYaw;
+    
+    
     Node3D aimPoint;
     private StateMachine sm;
 
@@ -110,6 +116,11 @@ public override void _Ready()
         WeaponSkin = GetNode<MeshInstance3D>("CharacterModelAnim/Rig/Skeleton3D/BoneAttachment3D/Gun");
         WeaponSkin.Visible = false;
 
+        Flashlight = GetNode<Node3D>("CharacterModelAnim/FlashlightYaw/FlashlightPitch/Flashlight");
+        FlashlightPitch = GetNode<Node3D>("CharacterModelAnim/FlashlightYaw/FlashlightPitch");
+        FlashlightYaw = GetNode<Node3D>("CharacterModelAnim/FlashlightYaw");
+        FlashlightYaw.Rotation = new Vector3(0, Mathf.DegToRad(-90), 0);
+        
         rayCast = GetNode<RayCast3D>("RayCast3D");
         laser = GetNode<RayCast3D>("Laser");
         aimPoint = GetNode<Node3D>("AimPoint");

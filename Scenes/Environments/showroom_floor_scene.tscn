@@ -736,7 +736,7 @@ transform = Transform3D(1, 0, 0, 0, -0.22168508, 0.97511834, 0, -0.97511834, -0.
 light_energy = 2.326
 
 [node name="door" parent="." instance=ExtResource("2_fqmik")]
-transform = Transform3D(-0.99997914, 0, -0.0064576734, 0, 1, 0, 0.0064576734, 0, -0.99997914, 34.7513, -0.49999976, 31.163687)
+transform = Transform3D(-0.99997914, 0, -0.0064576734, 0, 1, 0, 0.0064576734, 0, -0.99997914, 34.7513, -0.49999976, 31.310722)
 _environmentToLoad = "res://Scenes/Environments/warehouse.tscn"
 _isFlipped = true
 
