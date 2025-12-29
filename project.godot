@@ -41,6 +41,7 @@ folder_colors={
 Interactable="Objects interactable by the player. For example, doors, buttons, computers, items etc."
 DialogTriggers="Group to connect dialog triggers on scene load"
 Doors="Group for doors to load new environments"
+InteractableEnvironment=""
 
 [input]
 

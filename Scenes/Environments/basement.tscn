@@ -38,7 +38,7 @@ size = Vector3(6.387451, 3.0371094, 6.5464478)
 material = SubResource("StandardMaterial3D_skepo")
 
 [node name="FixedCamera" parent="." instance=ExtResource("1_skepo")]
-transform = Transform3D(-0.7677026, -0.22072239, 0.60159326, 0, 0.9388066, 0.34444475, -0.6408064, 0.26443112, -0.7207242, 1.5855709, 1.9509704, -2.7226346)
+transform = Transform3D(-0.9938617, -0.045257997, 0.10094898, 0, 0.91249245, 0.4090936, -0.11062994, 0.40658242, -0.9068913, 0.8685402, 2.1064005, -3.353152)
 
 [node name="Spawnpoints" type="Node" parent="."]
 
@@ -52,3 +52,4 @@ transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0639596, 2.2231052, -3.4245858)
 
 [node name="Fusebox" parent="." instance=ExtResource("3_0nuyt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2641362, -0.24039418)

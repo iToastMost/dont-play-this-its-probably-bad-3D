@@ -106,6 +106,15 @@ public partial class GameManager : Node3D
 		}
 	}
 
+	private void ConnectEnvironmentSignals()
+	{
+		var interactableEnvironment = GetTree().GetNodesInGroup("InteractableEnvironment");
+		foreach (EnvironmentItemRequired req in interactableEnvironment)
+		{
+			req.Interacted += IdCheck;
+		}
+	}
+
 
 	//Updates dialog from dialog trigger signal
 	private void SendDialog(string dialog) 
@@ -327,6 +336,7 @@ public partial class GameManager : Node3D
         _animationPlayer.CurrentAnimation = "ScreenFadeIn";
         _animationPlayer.Play();
         ConnectDoorSignals();
+        ConnectEnvironmentSignals();
     }
 
 	private bool CheckForKey(int keyId)
@@ -355,6 +365,33 @@ public partial class GameManager : Node3D
 		}
 		
 		return true;
+	}
+	
+	private void IdCheck(int reqId)
+	{
+		
+		if (reqId != 0)
+		{
+			for (int i = 0; i < _playerInventory.Length; i++)
+			{
+				if (_playerInventory[i] is KeyItem keyItem)
+				{
+					GD.Print("Checking Key Id: " + keyItem.KeyId);
+					if (keyItem.KeyId == reqId)
+					{
+						GD.Print("Fuse used, power restored.");
+						SendDialog("That should have restored power!");
+						_playerInventory[i] = null;
+						_inventory.UpdateInventory("", i);
+						return;
+					}
+				}	
+			}
+			
+			GD.Print("You do not have a fuse");
+			SendDialog("I don't have a fuse. I think there's one in lockup.");
+		}
+		
 	}
 
 	private void UpdatePlayerHealth()
