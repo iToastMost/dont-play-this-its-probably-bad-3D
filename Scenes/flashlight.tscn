@@ -30,3 +30,9 @@ light_volumetric_fog_energy = 6.0
 spot_range = 7.792
 spot_attenuation = 0.5
 spot_angle = 12.5
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14162868, 0, 0)
+light_color = Color(0.89411765, 0.7176471, 0.32941177, 1)
+light_energy = 0.8
+omni_range = 1.0

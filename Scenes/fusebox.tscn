@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://danmfsxogiql"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g5057"]
+size = Vector3(0.7583008, 2.4365234, 1)
+
+[node name="Fusebox" type="StaticBody3D"]
+
+[node name="Csg" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.366175, 1.4431581, 0.80044764)
+size = Vector3(0.4772644, 1, 1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Csg"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.016358614, 0.10507202, 0.8929747)
+size = Vector3(0.11218262, 0.07904053, 0.9047241)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Csg"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.016358614, 0.597065, 1.3656335)
+size = Vector3(0.11218262, 0.07904053, 1.0678406)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4870245, 0.72489643, 0.80044764)
+shape = SubResource("BoxShape3D_g5057")

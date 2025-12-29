@@ -121,6 +121,9 @@ public override void _Ready()
         FlashlightYaw = GetNode<Node3D>("CharacterModelAnim/FlashlightYaw");
         FlashlightYaw.Rotation = new Vector3(0, Mathf.DegToRad(-90), 0);
         
+        Flashlight.Visible = false;
+        
+        
         rayCast = GetNode<RayCast3D>("RayCast3D");
         laser = GetNode<RayCast3D>("Laser");
         aimPoint = GetNode<Node3D>("AimPoint");
@@ -195,6 +198,9 @@ public override void _Ready()
         {
             GetTree().Quit();
         }
+        
+        if(Input.IsActionJustPressed("flashlight_toggle"))
+            ToggleFlashlight();
     }
 
     public override void _Input(InputEvent @event)
@@ -385,6 +391,12 @@ public override void _Ready()
             CanMove = true;
             EmitSignalReloadFinished();
         }
-        
+    }
+
+    private void ToggleFlashlight()
+    {
+        Flashlight.Visible = !Flashlight.Visible;
+        FlashlightYaw.Rotation = new Vector3(0, Mathf.DegToRad(-90), 0);
+        FlashlightPitch.Rotation = new Vector3(0, 0, Mathf.DegToRad(0));
     }
 }
