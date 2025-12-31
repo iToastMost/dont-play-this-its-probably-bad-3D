@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://60d70rbuc1vj"]
+[gd_scene load_steps=11 format=3 uid="uid://60d70rbuc1vj"]
 
 [ext_resource type="Script" uid="uid://dkxrvu0xdlyaq" path="res://Scripts/GameManager.cs" id="1_je8vj"]
 [ext_resource type="PackedScene" uid="uid://bx3tiy1h1b0rr" path="res://Scenes/ui.tscn" id="1_mmuqr"]
 [ext_resource type="PackedScene" uid="uid://cmc37doc3qiso" path="res://Scenes/playerRE.tscn" id="3_je8vj"]
 [ext_resource type="Shader" uid="uid://b7qsakv04r3fh" path="res://Scenes/GameManager.gdshader" id="4_b7dir"]
+[ext_resource type="PackedScene" uid="uid://dndnxsjc3jrs8" path="res://Scenes/GameStateManager/GameStateManager.tscn" id="5_mmuqr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mmuqr"]
 shader = ExtResource("4_b7dir")
@@ -107,3 +108,5 @@ libraries = {
 [node name="SceneTransitionTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="GameStateManager" parent="." instance=ExtResource("5_mmuqr")]

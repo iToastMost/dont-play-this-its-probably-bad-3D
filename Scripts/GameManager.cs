@@ -51,6 +51,9 @@ public partial class GameManager : Node3D
 		//var loadBathroom = ResourceLoader.Load<PackedScene>("res://Scenes/Environments/Sandbox.tscn");
 		_currentEnvironment = loadBathroom.Instantiate<Node3D>();
 		_environment.AddChild(_currentEnvironment);
+		
+		var zone = _currentEnvironment.GetNode<Zone>(".");
+		GameStateManager.Instance.AddZoneState(zone.ZoneId);
         //LoadEnvironment("res://Scenes/Environments/bathroom_scene.tscn");
 
         _previousEnvironment = _currentEnvironment;
@@ -69,6 +72,7 @@ public partial class GameManager : Node3D
         _ammoLabel = _ui.GetNode<Label>("CanvasLayer/AmmoLabel");
         _ammoLabel.Text = "Ammo: " + _playerRe.Ammo;
         _ammoLabel.Visible = false;
+        CallDeferred(nameof(ConnectZoneSignals));
 		CallDeferred(nameof(ConnectSignals));
     }
 
@@ -103,6 +107,15 @@ public partial class GameManager : Node3D
 			door.LoadEnvironment += PrepareLoadingEnvironment;
 			//door.LoadEnvironment += LoadEnvironment;
 			//door.KeyIdCheck += 
+		}
+	}
+
+	private void ConnectZoneSignals()
+	{
+		var environments = GetTree().GetNodesInGroup("Environments");
+		foreach (Zone zone in environments)
+		{
+			zone.ZoneEntered += AddZoneState;
 		}
 	}
 
@@ -323,6 +336,9 @@ public partial class GameManager : Node3D
 		var environmentToLoad = ResourceLoader.Load<PackedScene>(path);
 		_currentEnvironment = environmentToLoad.Instantiate<Node3D>();
 		
+		var zone = _currentEnvironment.GetNode<Zone>(".");
+		GameStateManager.Instance.AddZoneState(zone.ZoneId);
+		
 		GD.Print(_currentEnvironment.Name);
 		
 		_environment.AddChild(_currentEnvironment);
@@ -394,6 +410,12 @@ public partial class GameManager : Node3D
 		
 	}
 
+	private void AddZoneState(string zoneId)
+	{
+		GameStateManager.Instance.AddZoneState(zoneId);
+		GD.Print(zoneId + " added");
+	}
+	
 	private void UpdatePlayerHealth()
 	{
 		string condition = "";

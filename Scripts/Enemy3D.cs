@@ -19,11 +19,23 @@ public partial class Enemy3D : CharacterBody3D
     public Timer WanderTimer;
     public bool CanWander;
     
+    
+    [Export]
+    public string ZoneId { get; set; }
+    
+    [Export]
+    public string EnemyId { get; set; }
+    
     [Export]
     public int AttackDamage { get; set; }
 
     public override void _Ready()
     {
+        if (GameStateManager.Instance.IsEnemyKilled(ZoneId, EnemyId))
+        {
+            QueueFree();
+            return;
+        }
         player = GetNode<PlayerRE>("/root/GameManager/3DPlayer");
         EnemyAnimation = GetNode<AnimationPlayer>("AnimationPlayer");
         enemyAttackBox = GetNode<Area3D>("AttackBox");
@@ -92,6 +104,7 @@ public partial class Enemy3D : CharacterBody3D
         _health--;
         if (_health <= 0) 
         {
+            GameStateManager.Instance.MarkEnemyKilled(ZoneId, EnemyId);
             QueueFree();
         }
     }

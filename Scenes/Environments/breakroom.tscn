@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://dlu2tcpx6wqg4"]
+[gd_scene load_steps=15 format=3 uid="uid://dlu2tcpx6wqg4"]
 
+[ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_hrkw2"]
 [ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="1_rmo1r"]
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="2_t7imn"]
 [ext_resource type="PackedScene" uid="uid://547u57bascbx" path="res://Scenes/Art/Models/sink.tscn" id="3_16hdw"]
@@ -10,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://xexhgx776cch" path="res://Scenes/Items/handgun_ammo.tscn" id="8_fvmvs"]
 [ext_resource type="PackedScene" uid="uid://bu1xmdj873i0m" path="res://Scenes/Items/Handgun.tscn" id="9_57taf"]
 [ext_resource type="PackedScene" uid="uid://cgew1goc3h4iw" path="res://Scenes/Art/Models/Appliances/fridge_3_workingdoors.tscn" id="10_pwvo2"]
+[ext_resource type="PackedScene" uid="uid://bhqfgu752vqjn" path="res://Scenes/computer_terminal.tscn" id="12_0vjpu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t7imn"]
 albedo_color = Color(0, 0, 0, 1)
@@ -18,7 +20,9 @@ albedo_color = Color(0, 0, 0, 1)
 resource_local_to_scene = true
 size = Vector3(1.4566345, 0.5048828, 2.4022827)
 
-[node name="BreakroomScene" type="Node3D"]
+[node name="BreakroomScene" type="Node3D" groups=["Environments"]]
+script = ExtResource("1_hrkw2")
+ZoneId = "STORE_BREAKROOM"
 
 [node name="Environment" type="Node" parent="."]
 
@@ -447,11 +451,18 @@ transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70
 
 [node name="HandgunAmmo" parent="." instance=ExtResource("8_fvmvs")]
 transform = Transform3D(0.15100373, 0, 0.13114066, 0, 0.2, 0, -0.13114066, 0, 0.15100373, 1.8260989, 0.58628845, -0.70884264)
+ZoneId = "STORE_BREAKROOM"
+ItemId = "HANDGUN_AMMO01"
 
 [node name="Handgun" parent="." instance=ExtResource("9_57taf")]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 1.0161786, 0.47688317, -0.837814)
+ZoneId = "STORE_BREAKROOM"
+ItemId = "HANDGUN"
 
 [node name="fridge3_workingdoors" parent="." instance=ExtResource("10_pwvo2")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.6669204, -0.49999976, 2.3446388)
+
+[node name="ComputerTerminal" parent="." instance=ExtResource("12_0vjpu")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.5700567, -0.09160206, 2.4868867)
 
 [editable path="Cameras/FixedCamera"]

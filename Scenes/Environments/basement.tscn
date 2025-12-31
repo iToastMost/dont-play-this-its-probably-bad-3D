@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcihdbyj526n5"]
+[gd_scene load_steps=9 format=3 uid="uid://dcihdbyj526n5"]
 
+[ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_s8nfc"]
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="1_skepo"]
 [ext_resource type="PackedScene" uid="uid://d2ju4yvya24wv" path="res://Scenes/Art/Models/toilet.tscn" id="2_g5057"]
 [ext_resource type="PackedScene" uid="uid://danmfsxogiql" path="res://Scenes/fusebox.tscn" id="3_0nuyt"]
@@ -26,11 +27,13 @@ volumetric_fog_emission_energy = 5.0
 albedo_color = Color(0, 0, 0, 1)
 
 [node name="Basement" type="Node3D"]
+script = ExtResource("1_s8nfc")
+ZoneId = "STORE_BASEMENT"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0nuyt")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="CSGBox3D" type="CSGBox3D" parent="." groups=["Environments"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5936279, 1.0185547, -0.76431274)
 use_collision = true
 flip_faces = true

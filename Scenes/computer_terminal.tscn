@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhqfgu752vqjn"]
+
+[ext_resource type="Script" uid="uid://011p80emmt7c" path="res://Scripts/GameState/ComputerTerminal.cs" id="1_simef"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_t66yw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_k7wdj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_simef"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t66yw"]
+size = Vector3(0.5996094, 1.4952583, 1)
+
+[node name="ComputerTerminal" type="StaticBody3D"]
+script = ExtResource("1_simef")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.52182704, 0, 0, 0, 0.8055086, 0, 0, 0, 0.50375146, 0, 0, 0)
+mesh = SubResource("BoxMesh_t66yw")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.72201324, 0, 0, 0, 0.3788001, 0, 0, 0, 0.4308164, 0.041547384, 0.7110028, 0.06963127)
+mesh = SubResource("BoxMesh_k7wdj")
+skeleton = NodePath("MeshInstance3D2")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D/MeshInstance3D3"]
+transform = Transform3D(1.0086256, 0, 0, 0, 0.09674632, 0, 0, 0, 0.49756128, 0, -0.43197727, 0.7291869)
+mesh = SubResource("BoxMesh_simef")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.016601563, 0.31877327, 0)
+shape = SubResource("BoxShape3D_t66yw")

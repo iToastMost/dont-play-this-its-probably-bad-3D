@@ -1,6 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://cl2l2owbnqg6y"]
+[gd_scene load_steps=26 format=3 uid="uid://cl2l2owbnqg6y"]
 
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="1_dnp50"]
+[ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_t3iin"]
 [ext_resource type="PackedScene" uid="uid://bj0fflqe1ib4u" path="res://Scenes/dialog_trigger.tscn" id="3_6cnf1"]
 [ext_resource type="PackedScene" uid="uid://ds4udcpaocote" path="res://Scenes/Art/Models/wetfloorsign.tscn" id="11_2m0sy"]
 [ext_resource type="PackedScene" uid="uid://dav2vbdovljdu" path="res://Art/Models/dude.glb" id="11_kc8aj"]
@@ -36,7 +37,9 @@ size = Vector3(1.5345459, 0.45043945, 1.8093262)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rpe6t"]
 
-[node name="BathroomScene" type="Node3D"]
+[node name="BathroomScene" type="Node3D" groups=["Environments"]]
+script = ExtResource("1_t3iin")
+ZoneId = "STORE_MENS_BATHROOM"
 
 [node name="Bathroom" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.11504, 1.46199, 3.46154)
@@ -249,6 +252,8 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -6.0
 
 [node name="HealingHerb" parent="." instance=ExtResource("19_rpe6t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.040017, 1.0151529, 4.5594387)
+ZoneId = "STORE_MENS_BATHROOM"
+ItemId = "HEALING_HERB01"
 
 [node name="door" parent="." instance=ExtResource("12_dnp50")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.545238, -0.0046498775, 0.7314651)

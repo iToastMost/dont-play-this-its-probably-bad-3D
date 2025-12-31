@@ -15,6 +15,10 @@ run/main_scene="uid://hvxnd3tp3hyw"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameStateManager="*res://Scripts/GameState/GameStateManager.cs"
+
 [display]
 
 window/size/viewport_width=1080
@@ -42,6 +46,7 @@ Interactable="Objects interactable by the player. For example, doors, buttons, c
 DialogTriggers="Group to connect dialog triggers on scene load"
 Doors="Group for doors to load new environments"
 InteractableEnvironment=""
+Environments=""
 
 [input]
 

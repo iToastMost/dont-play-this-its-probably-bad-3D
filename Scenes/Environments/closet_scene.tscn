@@ -1,12 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://br83x8q7ckpkd"]
+[gd_scene load_steps=7 format=3 uid="uid://br83x8q7ckpkd"]
 
+[ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_31ri8"]
 [ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="1_bktvj"]
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="2_sxua3"]
 [ext_resource type="PackedScene" uid="uid://b86pqbiujl4gy" path="res://Scenes/Art/Models/garbage.tscn" id="3_v5urd"]
 [ext_resource type="PackedScene" uid="uid://ds4udcpaocote" path="res://Scenes/Art/Models/wetfloorsign.tscn" id="4_odvv0"]
 [ext_resource type="PackedScene" uid="uid://bscstcsbakyd5" path="res://Scenes/Items/lockup_key.tscn" id="5_nxufh"]
 
-[node name="ClosetScene" type="Node3D"]
+[node name="ClosetScene" type="Node3D" groups=["Environments"]]
+script = ExtResource("1_31ri8")
+ZoneId = "STORE_BREAKROOM_CLOSET"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7089386, 1.3772736, -0.15490723)
@@ -46,3 +49,5 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.10
 
 [node name="LockUpKey" parent="." instance=ExtResource("5_nxufh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4588997, 0.7211375, -1.4677129)
+ZoneId = "STORE_BREAKROOM_CLOSET"
+ItemId = "LOCKUP_KEY"
