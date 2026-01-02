@@ -1,11 +1,25 @@
-[gd_scene load_steps=10 format=3 uid="uid://yp3c5sahwm77"]
+[gd_scene load_steps=14 format=3 uid="uid://yp3c5sahwm77"]
 
 [ext_resource type="PackedScene" uid="uid://8w1w7i8arnob" path="res://Scenes/enemy3D.tscn" id="1_ejjuj"]
 [ext_resource type="Texture2D" uid="uid://cs8hogbeybmmq" path="res://Scenes/Art/Sandbox/texture_08.png" id="1_ff6jc"]
+[ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_k4xno"]
 [ext_resource type="Texture2D" uid="uid://clliwy2u0qvie" path="res://Scenes/Art/Sandbox/texture_06.png" id="2_vvl7v"]
 [ext_resource type="PackedScene" uid="uid://bu1xmdj873i0m" path="res://Scenes/Items/Handgun.tscn" id="4_vvl7v"]
 [ext_resource type="PackedScene" uid="uid://xexhgx776cch" path="res://Scenes/Items/handgun_ammo.tscn" id="5_u41hi"]
 [ext_resource type="PackedScene" uid="uid://urqpvkpkkito" path="res://Scenes/Items/healing_herb.tscn" id="6_k4xno"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k4xno"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_10yd3"]
+sky_material = SubResource("ProceduralSkyMaterial_k4xno")
+
+[sub_resource type="Environment" id="Environment_6rju2"]
+background_mode = 2
+sky = SubResource("Sky_10yd3")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vvl7v"]
 albedo_color = Color(0.9647059, 0.79607844, 0.60784316, 1)
@@ -20,6 +34,11 @@ albedo_texture = ExtResource("2_vvl7v")
 
 [node name="Sandbox" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6809864, 0, -3.159355)
+script = ExtResource("1_k4xno")
+ZoneId = "SANDBOX"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6rju2")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(0.9999994, 0.0010447899, -0.00032579296, -0.0010450176, 0.9999992, -0.0007179884, 0.00032506205, 0.0007183196, 0.9999997, -4.1685615, -1.041667, 10.270126)
@@ -46,13 +65,15 @@ size = Vector3(24.66195, 0.6152954, 0.057617188)
 material = SubResource("StandardMaterial3D_ff6jc")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.9970539, 0.041941687, -0.06422145, 0, 0.8372635, 0.54679936, 0.076703966, 0.5451884, -0.8347969, -14.945254, 4.366186, 6.6048746)
+transform = Transform3D(-0.87965226, 0.091955416, -0.46664327, 0, 0.98113185, 0.1933391, 0.47561717, 0.1700712, -0.86305493, -16.341858, 1.7254125, 3.8553102)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.5, 0.75, 0.43301272, 5.1619136e-08, -0.50000006, 0.8660254, 0.8660254, -0.43301266, -0.2500001, 4.0023184, 12.470478, 0)
 
 [node name="Enemy3D" parent="." instance=ExtResource("1_ejjuj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.841504, -0.21694702, 18.282124)
+ZoneId = "SANDBOX"
+EnemyId = "ENEMY_SANDBOX"
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.9693904, -0.17382813, 6.0154943)
@@ -62,27 +83,50 @@ material = SubResource("StandardMaterial3D_k4xno")
 
 [node name="Handgun" parent="." instance=ExtResource("4_vvl7v")]
 transform = Transform3D(1.9106855e-15, -4.371139e-08, -1, -1, -4.371139e-08, 0, -4.371139e-08, 1, -4.371139e-08, -8.485035, 0.077040255, 7.385777)
+ZoneId = "SANDBOX"
+ItemId = "HANDGUN"
 
 [node name="HandgunAmmo" parent="." instance=ExtResource("5_u41hi")]
 transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09, -8.356796, 0.11134839, 7.0234857)
+ZoneId = "SANDBOX"
+ItemId = "HANDGUN_AMMO_01"
 
 [node name="HandgunAmmo2" parent="." instance=ExtResource("5_u41hi")]
 transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09, -8.356796, 0.11134839, 6.7212515)
+ZoneId = "SANDBOX"
+ItemId = "HANDGUN_AMMO_02"
 
 [node name="HandgunAmmo3" parent="." instance=ExtResource("5_u41hi")]
 transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09, -8.356796, 0.11134839, 6.3486547)
+ZoneId = "SANDBOX"
+ItemId = "HANDGUN_AMMO_03"
 
 [node name="HandgunAmmo4" parent="." instance=ExtResource("5_u41hi")]
 transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09, -8.356796, 0.11134839, 5.9827337)
+ZoneId = "SANDBOX"
+ItemId = "HANDGUN_AMMO_04"
 
 [node name="HealingHerb" parent="." instance=ExtResource("6_k4xno")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.390678, 0.24874434, 4.404708)
+ZoneId = "SANDBOX"
+ItemId = "HEALING_HERB_04"
 
 [node name="HealingHerb2" parent="." instance=ExtResource("6_k4xno")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.390678, 0.24874434, 4.7980585)
+ZoneId = "SANDBOX"
+ItemId = "HEALING_HERB_03"
 
 [node name="HealingHerb3" parent="." instance=ExtResource("6_k4xno")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.390678, 0.24874434, 5.6511974)
+ZoneId = "SANDBOX"
+ItemId = "HEALING_HERB_01"
 
 [node name="HealingHerb4" parent="." instance=ExtResource("6_k4xno")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.390678, 0.24874434, 5.2417736)
+ZoneId = "SANDBOX"
+ItemId = "HEALING_HERB_02"
+
+[node name="Spawnpoints" type="Node" parent="."]
+
+[node name="InitialPlayerSpawn" type="Marker3D" parent="Spawnpoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2253284, 0.22806275, 3.3510616)

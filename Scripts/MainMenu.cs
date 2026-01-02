@@ -3,7 +3,19 @@ using System;
 
 public partial class MainMenu : Control
 {
-    private Button _startButton;
+    [Signal]
+    public delegate void NewGameButtonEventHandler();
+    
+    [Signal]
+    public delegate void SandboxButtonEventHandler();
+    
+    [Signal]
+    public delegate void LoadGameButtonEventHandler();
+    
+    [Signal]
+    public delegate void QuitButtonEventHandler();
+    
+    private Button _newGameButton;
     private Button _quitButton;
     private Button _sandboxButton;
     private Button _loadButton;
@@ -12,45 +24,49 @@ public partial class MainMenu : Control
     private Node _gameScene;
     public override void _Ready() 
     {
-        _startButton = GetNode<Button>("StartButton");
+        _newGameButton = GetNode<Button>("NewGameButton");
         _quitButton = GetNode<Button>("QuitButton");
         _sandboxButton = GetNode<Button>("SandboxButton");
         _loadButton = GetNode<Button>("LoadGameButton");
         
-        _thisScene = GetNode<Node>("/root/MainMenu");
+        //_thisScene = GetNode<Node>("/root/MainMenu");
         
 
-        _startButton.Pressed += StartGame;
+        _newGameButton.Pressed += NewGame;
         _sandboxButton.Pressed += SandboxButtonPressed;
         _loadButton.Pressed += LoadGame;
         _quitButton.Pressed += QuitGame;
     }
 
-    private void StartGame() 
+    private void NewGame()
     {
-        if(GetTree() != null) 
-        {
-            //GameScene = ResourceLoader.Load<PackedScene>("res://Scenes/GameManager.tscn").Instantiate();
-            GetTree().ChangeSceneToFile("res://Scenes/GameManager.tscn");
-            // GetTree().Root.AddChild(_gameScene);
-            // ThisScene.QueueFree();
-        }
+        EmitSignal(SignalName.NewGameButton);
+        // if(GetTree() != null) 
+        // {
+        //     //GameScene = ResourceLoader.Load<PackedScene>("res://Scenes/GameManager.tscn").Instantiate();
+        //     GetTree().ChangeSceneToFile("res://Scenes/GameManager.tscn");
+        //     // GetTree().Root.AddChild(_gameScene);
+        //     // ThisScene.QueueFree();
+        // }
     }
 
     private void SandboxButtonPressed()
     {
-        GetTree().ChangeSceneToFile("res://Scenes/Environments/Sandbox.tscn");
+        EmitSignal(SignalName.SandboxButton);
+        // GetTree().ChangeSceneToFile("res://Scenes/Environments/Sandbox.tscn");
     }
 
     private void LoadGame()
     {
-        SaveFileManager.LoadGame();
+        EmitSignal(SignalName.LoadGameButton);
+        // SaveFileManager.LoadGame();
     }
     
     private void QuitGame() 
     {
-        if(GetTree() != null)
-         GetTree().Quit();
+        EmitSignal(SignalName.QuitButton);
+        // if(GetTree() != null)
+        //  GetTree().Quit();
     }
 
 }

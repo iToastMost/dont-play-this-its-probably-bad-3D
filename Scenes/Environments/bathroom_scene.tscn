@@ -96,9 +96,6 @@ transform = Transform3D(-0.0230363, 0, -0.999735, 0, 1, 0, 0.999735, 0, -0.02303
 visible = false
 dialogText = "Are you just playing BiPod games in there again? I'm going to tell Terry this time."
 
-[node name="InitialPlayerSpawn" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6673, 0.0637085, 1.10166)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.0689033, 0.997623, 0, -0.997623, -0.0689033, -3.34178, 19.4172, -1.68052)
 visible = false
@@ -249,6 +246,9 @@ mesh = SubResource("PlaneMesh_rpe6t")
 
 [node name="FromShowroomFloorScene" type="Marker3D" parent="Spawnpoints"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -6.059, 0.835575, 5.688)
+
+[node name="InitialPlayerSpawn" type="Marker3D" parent="Spawnpoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7143955, 0.9072315, 1.1508105)
 
 [node name="HealingHerb" parent="." instance=ExtResource("19_rpe6t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.040017, 1.0151529, 4.5594387)

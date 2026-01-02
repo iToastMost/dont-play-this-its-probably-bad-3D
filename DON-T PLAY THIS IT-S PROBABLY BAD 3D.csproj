@@ -4,4 +4,7 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>DONTPLAYTHISITSPROBABLYBAD3D</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Scripts\SaveData\" />
+  </ItemGroup>
 </Project>

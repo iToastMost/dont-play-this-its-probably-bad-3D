@@ -36,7 +36,7 @@ public partial class Enemy3D : CharacterBody3D
             QueueFree();
             return;
         }
-        player = GetNode<PlayerRE>("/root/GameManager/3DPlayer");
+        player = GetNode<PlayerRE>("/root/GameManager/PlayerSetup/3DPlayer");
         EnemyAnimation = GetNode<AnimationPlayer>("AnimationPlayer");
         enemyAttackBox = GetNode<Area3D>("AttackBox");
         WanderTimer = GetNode<Timer>("WanderTimer");

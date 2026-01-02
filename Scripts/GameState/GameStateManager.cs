@@ -6,9 +6,10 @@ public partial class GameStateManager : Node3D
 {
 	public static GameStateManager Instance { get; private set; } 
 	private string CurrentZoneId;
-	private Dictionary<string, ZoneState> _zoneStates = new();
+	private static Dictionary<string, ZoneState> _zoneStates { get; set; } = new();
+	
 
-	public override void _EnterTree()
+	public override void _Ready()
 	{
 		Instance = this;
 	}
@@ -65,5 +66,30 @@ public partial class GameStateManager : Node3D
 
 		return zone.DeadEnemyIds.Contains(enemyId);
 	}
+
+	public Dictionary<string, ZoneState> SaveData()
+	{
+		return _zoneStates;
+	}
+
+	public void LoadData(Dictionary<string, ZoneState> zoneStates)
+	{
+		_zoneStates = zoneStates;
+	}
+
+	public void PrintSaveData()
+	{
+		foreach (var (zoneId, zone) in _zoneStates)
+		{
+			GD.Print($"Zone {zoneId}: Looted={zone.LootedItemIds.Count} Item={zone.LootedItemIds.Count}");
+		}
+	}
 	
+	// public static Dictionary<string, Variant> SaveData()
+	// {
+	// 	return new Dictionary<string, Variant>()
+	// 	{
+	// 		{ "ZoneStates", _zoneStates },
+	// 	};
+	// }
 }

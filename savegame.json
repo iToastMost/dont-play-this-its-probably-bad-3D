@@ -1,0 +1,33 @@
+{
+  "STORE_MENS_BATHROOM": {
+	"DeadEnemyIds": [],
+	"LootedItemIds": [
+      "HEALING_HERB01"
+	],
+	"EventTriggeredIds": [],
+	"DoorUnlockedIds": []
+  },
+  "STORE_SHOWROOM_FLOOR": {
+	"DeadEnemyIds": [],
+	"LootedItemIds": [],
+	"EventTriggeredIds": [],
+	"DoorUnlockedIds": []
+  },
+  "STORE_BREAKROOM": {
+	"DeadEnemyIds": [],
+	"LootedItemIds": [
+	  "HANDGUN_AMMO01",
+      "HANDGUN"
+	],
+	"EventTriggeredIds": [],
+	"DoorUnlockedIds": []
+  },
+  "STORE_BREAKROOM_CLOSET": {
+	"DeadEnemyIds": [],
+	"LootedItemIds": [
+      "LOCKUP_KEY"
+	],
+	"EventTriggeredIds": [],
+	"DoorUnlockedIds": []
+  }
+}
