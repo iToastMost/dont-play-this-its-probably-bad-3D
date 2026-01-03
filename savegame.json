@@ -1,33 +1,47 @@
 {
-  "STORE_MENS_BATHROOM": {
-	"DeadEnemyIds": [],
-	"LootedItemIds": [
-      "HEALING_HERB01"
-	],
-	"EventTriggeredIds": [],
-	"DoorUnlockedIds": []
-  },
-  "STORE_SHOWROOM_FLOOR": {
-	"DeadEnemyIds": [],
-	"LootedItemIds": [],
-	"EventTriggeredIds": [],
-	"DoorUnlockedIds": []
-  },
-  "STORE_BREAKROOM": {
-	"DeadEnemyIds": [],
-	"LootedItemIds": [
-	  "HANDGUN_AMMO01",
-      "HANDGUN"
-	],
-	"EventTriggeredIds": [],
-	"DoorUnlockedIds": []
-  },
-  "STORE_BREAKROOM_CLOSET": {
-	"DeadEnemyIds": [],
-	"LootedItemIds": [
-      "LOCKUP_KEY"
-	],
-	"EventTriggeredIds": [],
-	"DoorUnlockedIds": []
+  "PlayerPosX": "-2.3776848",
+  "PlayerPosY": "0.40542006",
+  "PlayerPosZ": "2.5197268",
+  "PlayerRotationY": "0.6876112",
+  "Playerhealth": 100,
+  "CurrentEnvironment": "STORE_BREAKROOM",
+  "playerInventory": [
+    0,
+    2,
+    1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1
+  ],
+  "equippedItem": 2,
+  "ZoneStates": {
+    "STORE_MENS_BATHROOM": {
+      "DeadEnemyIds": [],
+      "LootedItemIds": [
+        "HEALING_HERB01"
+      ],
+      "EventTriggeredIds": [],
+      "DoorUnlockedIds": []
+    },
+    "STORE_SHOWROOM_FLOOR": {
+      "DeadEnemyIds": [
+        "ENEMY_02",
+        "ENEMY_01"
+      ],
+      "LootedItemIds": [],
+      "EventTriggeredIds": [],
+      "DoorUnlockedIds": []
+    },
+    "STORE_BREAKROOM": {
+      "DeadEnemyIds": [],
+      "LootedItemIds": [
+        "HANDGUN",
+        "HANGUN_AMMO_01"
+      ],
+      "EventTriggeredIds": [],
+      "DoorUnlockedIds": []
+    }
   }
 }

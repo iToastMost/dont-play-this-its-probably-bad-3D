@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Text.RegularExpressions;
+using Environment = Godot.Environment;
 
 public partial class GameManager : Node3D
 {
@@ -143,12 +144,112 @@ public partial class GameManager : Node3D
 		CallDeferred(nameof(ConnectZoneSignals));
 		CallDeferred(nameof(ConnectSignals));
 	}
+
+	private void SaveGame()
+	{
+		GD.Print("Save Game From GameManager");
+		SaveFileManager.SaveGame(_playerRe, _playerInventory);
+	}
 	
 	private void LoadGame()
 	{
-		SaveFileManager.LoadGame();
-		NewGame();
-		GD.Print("Loading save game...");
+		Vector3 playerSpawnPos;
+		
+		SaveData loadedData = null;
+		loadedData = SaveFileManager.LoadGame();
+		
+		GD.Print("Loading Save...");
+		var playerSetup = ResourceLoader.Load<PackedScene>("res://Scenes/player_setup.tscn");
+		_playerSetup = playerSetup.Instantiate<Node>();
+		AddChild(_playerSetup);
+		
+		_mainMenu.QueueFree();
+		
+		_ui = GetNode<Ui>("PlayerSetup/UI");
+		_inventory = _ui.GetNode<Inventory>("Inventory");
+		_playerRe = GetNode<PlayerRE>("PlayerSetup/3DPlayer");
+		_environment = GetNode<Node3D>("Environment");
+		_animationPlayer = GetNode<AnimationPlayer>("ScreenTransitions");
+		_sceneTransitionTimer = GetNode<Timer>("SceneTransitionTimer");
+		
+		_playerRe.UpdateInventoryItems += UpdateInventory;
+		_playerRe.UpdateHealth += UpdatePlayerHealth;
+		_playerRe.UseAmmo += UpdateAmmo;
+		_playerRe.ReloadCheck += ReloadCheck;
+		_playerRe.ReloadFinished += ReloadFinished;
+		_animationPlayer.AnimationFinished += FadeOutFinished;
+		_inventory.ItemUsed += UseItem;
+		_inventory.CheckItemSlotClicked += CheckInventorySlot;
+		
+		playerSpawnPos = new Vector3(loadedData.PlayerPosX.ToFloat(),  loadedData.PlayerPosY.ToFloat(), loadedData.PlayerPosZ.ToFloat());
+		var playerSpawnRotation = new Vector3(0, loadedData.PlayerRotationY.ToFloat(), 0);
+		_playerRe.GlobalRotation = playerSpawnRotation;
+		_playerRe.GlobalPosition = playerSpawnPos;
+		_playerRe._health = loadedData.Playerhealth;
+
+		_playerInventory = InventoryManager.GetInstance();
+		
+		for (int i = 0; i < _playerInventory.Length; i++)
+		{
+			if (loadedData.playerInventory[i] != -1)
+			{
+				ItemBase item = ItemDatabase.GetItem(loadedData.playerInventory[i]).Instantiate<ItemBase>();
+				_playerInventory[i] = item;
+				if (item is AmmoItemBase ammo)
+				{
+					_inventory.UpdateInventory(ammo.GetName() + " (" + ammo.AmmoAmount + ")", i);
+				}
+				else
+				{
+					_inventory.UpdateInventory(item.GetName(), i);
+				}
+				
+			}
+		}
+
+		if (loadedData.equippedItem != -1)
+		{
+			ItemBase item = ItemDatabase.GetItem(loadedData.equippedItem).Instantiate<ItemBase>();
+			if(item is iEquippable equipment)
+				EquipItem(equipment);
+		}
+		
+		GameStateManager.Instance.LoadData(loadedData.ZoneStates);
+		
+		var loadEnvironment = EnvironmentManager.GetEnvironment(loadedData.CurrentEnvironment);
+		_currentEnvironment = loadEnvironment.Instantiate<Node3D>();
+		_environment.AddChild(_currentEnvironment);
+		
+		//_playerInitialSpawnPoint = _currentEnvironment.GetNode<Marker3D>("Spawnpoints/InitialPlayerSpawn");
+		//_playerRe.GlobalPosition = _playerInitialSpawnPoint.GlobalPosition;
+		//_playerRe.Rotation = _playerInitialSpawnPoint.Rotation;
+		
+		var zone = _currentEnvironment.GetNode<Zone>(".");
+		GameStateManager.Instance.AddZoneState(zone.ZoneId);
+
+		_previousEnvironment = _currentEnvironment;
+
+		for (int i = 0; i < _playerInventory.Length; i++)
+		{
+			GD.Print(_playerInventory[i]);
+		}
+        
+		_healthLabel = _ui.GetNode<Label>("CanvasLayer/HealthLabel");
+		//_healthLabel.Text = "Fine";
+		UpdatePlayerHealth();
+		_healthLabel.Visible = false;
+		
+		_ui.GetNode<ColorRect>("CanvasLayer/ColorRect").Visible = false;
+        
+		_ammoLabel = _ui.GetNode<Label>("CanvasLayer/AmmoLabel");
+		_ammoLabel.Text = "Ammo: " + _playerRe.Ammo;
+		_ammoLabel.Visible = false;
+		CallDeferred(nameof(ConnectZoneSignals));
+		CallDeferred(nameof(ConnectSignals));
+		
+		
+		ConnectDoorSignals();
+		ConnectEnvironmentSignals();
 	}
 
 	private void QuitButtonPressed()
@@ -209,9 +310,17 @@ public partial class GameManager : Node3D
 	private void ConnectEnvironmentSignals()
 	{
 		var interactableEnvironment = GetTree().GetNodesInGroup("InteractableEnvironment");
-		foreach (EnvironmentItemRequired req in interactableEnvironment)
+		foreach (Node interactableEnvironmentNode in interactableEnvironment)
 		{
-			req.Interacted += IdCheck;
+			if (interactableEnvironmentNode is EnvironmentItemRequired req)
+			{
+				req.Interacted += IdCheck;
+			}
+
+			if (interactableEnvironmentNode is ComputerTerminal comp)
+			{
+				comp.GameSaved += SaveGame;
+			}
 		}
 	}
 

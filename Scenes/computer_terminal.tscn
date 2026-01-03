@@ -11,7 +11,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_t66yw"]
 size = Vector3(0.5996094, 1.4952583, 1)
 
-[node name="ComputerTerminal" type="StaticBody3D"]
+[node name="ComputerTerminal" type="StaticBody3D" groups=["InteractableEnvironment"]]
 script = ExtResource("1_simef")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

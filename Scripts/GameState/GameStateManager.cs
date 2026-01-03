@@ -84,7 +84,11 @@ public partial class GameStateManager : Node3D
 			GD.Print($"Zone {zoneId}: Looted={zone.LootedItemIds.Count} Item={zone.LootedItemIds.Count}");
 		}
 	}
-	
+
+	public string GetCurrentZoneId()
+	{
+		return CurrentZoneId;
+	}
 	// public static Dictionary<string, Variant> SaveData()
 	// {
 	// 	return new Dictionary<string, Variant>()

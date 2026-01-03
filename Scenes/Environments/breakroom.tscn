@@ -452,7 +452,7 @@ transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70
 [node name="HandgunAmmo" parent="." instance=ExtResource("8_fvmvs")]
 transform = Transform3D(0.15100373, 0, 0.13114066, 0, 0.2, 0, -0.13114066, 0, 0.15100373, 1.8260989, 0.58628845, -0.70884264)
 ZoneId = "STORE_BREAKROOM"
-ItemId = "HANDGUN_AMMO01"
+ItemId = "HANGUN_AMMO_01"
 
 [node name="Handgun" parent="." instance=ExtResource("9_57taf")]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 1.0161786, 0.47688317, -0.837814)
