@@ -47,6 +47,7 @@ DialogTriggers="Group to connect dialog triggers on scene load"
 Doors="Group for doors to load new environments"
 InteractableEnvironment=""
 Environments=""
+StoreLights="Controls the store's lights based on fusebox event"
 
 [input]
 

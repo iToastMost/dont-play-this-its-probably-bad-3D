@@ -47,7 +47,7 @@ transform = Transform3D(0.9310669, -0.12417454, 0.3430673, 0, 0.9403005, 0.34034
 [node name="FromShowroomFloorScene" type="Marker3D" parent="Spawnpoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1589978, 0.38722846, -3.0432937)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." groups=["StoreLights"]]
 transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 9.769553, 9.233518)
 
 [node name="door" parent="." instance=ExtResource("1_6q6ta")]

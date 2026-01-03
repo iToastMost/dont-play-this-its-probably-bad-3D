@@ -17,7 +17,7 @@ use_collision = true
 flip_faces = true
 size = Vector3(1.9319153, 2.7915344, 4.9904785)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="CSGBox3D"]
+[node name="SpotLight3D" type="SpotLight3D" parent="CSGBox3D" groups=["StoreLights"]]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.7603452, 5.663299e-09)
 spot_range = 3.55
 spot_attenuation = 0.45

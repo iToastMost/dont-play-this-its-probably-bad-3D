@@ -734,7 +734,7 @@ transform = Transform3D(-0.7071069, 0, 2.9395008, 0, 0.021979392, 0, -0.70710665
 mesh = SubResource("BoxMesh_555p5")
 material = SubResource("StandardMaterial3D_5w1iy")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." groups=["StoreLights"]]
 transform = Transform3D(1, 0, 0, 0, -0.22168508, 0.97511834, 0, -0.97511834, -0.22168508, 13.777838, 13.22871, 12.486595)
 light_energy = 2.326
 

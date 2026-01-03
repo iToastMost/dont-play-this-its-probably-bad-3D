@@ -86,6 +86,8 @@ public partial class GameManager : Node3D
 		_ammoLabel.Visible = false;
 		CallDeferred(nameof(ConnectZoneSignals));
 		CallDeferred(nameof(ConnectSignals));
+		
+		CheckStoreLights();
 	}
 
 	private void SandboxButtonPressed()
@@ -250,6 +252,8 @@ public partial class GameManager : Node3D
 		
 		ConnectDoorSignals();
 		ConnectEnvironmentSignals();
+		
+		CheckStoreLights();
 	}
 
 	private void QuitButtonPressed()
@@ -286,6 +290,47 @@ public partial class GameManager : Node3D
 		}
 	}
 
+	private void CheckStoreLights()
+	{
+		if(!GameStateManager.Instance.IsEventTriggered("STORE_BASEMENT", "FUSE_USED"))
+		{
+			var lights = GetTree().GetNodesInGroup("StoreLights");
+			foreach (Node light in lights)
+			{
+				if (light != null)
+				{
+					if (light is OmniLight3D omni)
+						omni.Visible = false;
+
+					if (light is DirectionalLight3D dir)
+						dir.Visible = false;
+					
+					if(light is SpotLight3D spot)
+						spot.Visible = false;
+				}
+			}
+		}
+		
+		if(GameStateManager.Instance.IsEventTriggered("STORE_BASEMENT", "FUSE_USED"))
+		{
+			var lights = GetTree().GetNodesInGroup("StoreLights");
+			foreach (Node light in lights)
+			{
+				if (light != null)
+				{
+					if (light is OmniLight3D omni)
+						omni.Visible = true;
+
+					if (light is DirectionalLight3D dir)
+						dir.Visible = true;
+					
+					if(light is SpotLight3D spot)
+						spot.Visible = true;
+				}
+			}
+		}
+	}
+	
 	private void ConnectDoorSignals() 
 	{
 		var doors = GetTree().GetNodesInGroup("Doors");
@@ -315,6 +360,7 @@ public partial class GameManager : Node3D
 			if (interactableEnvironmentNode is EnvironmentItemRequired req)
 			{
 				req.Interacted += IdCheck;
+				req.AlreadyCompletedText += SendDialog;
 			}
 
 			if (interactableEnvironmentNode is ComputerTerminal comp)
@@ -549,6 +595,8 @@ public partial class GameManager : Node3D
         _animationPlayer.Play();
         ConnectDoorSignals();
         ConnectEnvironmentSignals();
+        
+        CheckStoreLights();
     }
 
 	private bool CheckForKey(int keyId)
@@ -579,7 +627,7 @@ public partial class GameManager : Node3D
 		return true;
 	}
 	
-	private void IdCheck(int reqId)
+	private void IdCheck(int reqId, string zoneId, string eventName)
 	{
 		
 		if (reqId != 0)
@@ -595,6 +643,10 @@ public partial class GameManager : Node3D
 						SendDialog("That should have restored power!");
 						_playerInventory[i] = null;
 						_inventory.UpdateInventory("", i);
+						GameStateManager.Instance.MarkEventTriggered(zoneId, eventName);
+						
+						if(eventName.Equals("FUSE_USED"))
+							CheckStoreLights();
 						return;
 					}
 				}	

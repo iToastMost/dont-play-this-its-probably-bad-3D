@@ -422,7 +422,7 @@ transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 2.49
 [node name="FromClosetScene" type="Marker3D" parent="Spawnpoints"]
 transform = Transform3D(1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, 1, -2.9061704, 0.20098054, 2.0686808)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." groups=["StoreLights"]]
 transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, -1.6484947, 6.8211336, -0.19865602)
 
 [node name="Cameras" type="Node" parent="."]

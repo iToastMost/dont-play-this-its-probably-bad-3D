@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dcihdbyj526n5"]
+[gd_scene load_steps=10 format=3 uid="uid://dcihdbyj526n5"]
 
 [ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_s8nfc"]
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="1_skepo"]
 [ext_resource type="PackedScene" uid="uid://d2ju4yvya24wv" path="res://Scenes/Art/Models/toilet.tscn" id="2_g5057"]
 [ext_resource type="PackedScene" uid="uid://danmfsxogiql" path="res://Scenes/fusebox.tscn" id="3_0nuyt"]
+[ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="5_tawf3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_skepo"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -51,8 +52,14 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.5
 [node name="toilet" parent="." instance=ExtResource("2_g5057")]
 transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, 2.1248772, -0.49999976, 2.0841389)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0639596, 2.2231052, -3.4245858)
+[node name="OmniLight3D" type="OmniLight3D" parent="." groups=["StoreLights"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.77889305, 1.7924249, 0.22496343)
 
-[node name="Fusebox" parent="." instance=ExtResource("3_0nuyt")]
+[node name="Fusebox" parent="." groups=["StoreLights"] instance=ExtResource("3_0nuyt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2641362, -0.24039418)
+EventAlreadyCompletedText = "The fusebox seems to be working now."
+ZoneId = "STORE_BASEMENT"
+
+[node name="door" parent="." instance=ExtResource("5_tawf3")]
+transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, -2.6668334, -0.49999976, 2.5008957)
+_environmentToLoad = "res://Scenes/Environments/bathroom_scene.tscn"

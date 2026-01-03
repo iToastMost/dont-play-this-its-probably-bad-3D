@@ -67,6 +67,24 @@ public partial class GameStateManager : Node3D
 		return zone.DeadEnemyIds.Contains(enemyId);
 	}
 
+	public void MarkEventTriggered(string zoneId, string eventId)
+	{
+		if (_zoneStates[zoneId].EventTriggeredIds.Contains(eventId))
+			return;
+		
+		_zoneStates[zoneId].EventTriggeredIds.Add(eventId);
+	}
+
+	public bool IsEventTriggered(string zoneId, string eventId)
+	{
+		if (!_zoneStates.TryGetValue(zoneId, out var zone))
+		{
+			return false;
+		}
+		
+		return zone.EventTriggeredIds.Contains(eventId);
+	}
+
 	public Dictionary<string, ZoneState> SaveData()
 	{
 		return _zoneStates;

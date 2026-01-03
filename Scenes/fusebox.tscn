@@ -8,6 +8,7 @@ size = Vector3(0.7583008, 2.4365234, 1)
 [node name="Fusebox" type="StaticBody3D" groups=["InteractableEnvironment"]]
 script = ExtResource("1_ave85")
 ItemIdRequired = 2
+EventNameId = "FUSE_USED"
 
 [node name="Csg" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.366175, 1.4431581, 0.80044764)
