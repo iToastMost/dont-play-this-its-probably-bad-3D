@@ -26,6 +26,8 @@ spot_angle = 62.9
 [node name="door" parent="." instance=ExtResource("1_bktvj")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.69820935, 0, 2.3334713)
 _environmentToLoad = "res://Scenes/Environments/breakroom.tscn"
+DoorId = "STORE_BREAKROOM_CLOSET_TO_STORE_BREAKROOM"
+ZoneId = "STORE_BREAKROOM_CLOSET"
 
 [node name="Spawnpoints" type="Node" parent="."]
 

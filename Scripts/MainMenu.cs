@@ -30,6 +30,7 @@ public partial class MainMenu : Control
         _loadButton = GetNode<Button>("LoadGameButton");
         
         //_thisScene = GetNode<Node>("/root/MainMenu");
+        _newGameButton.GrabFocus();
         
 
         _newGameButton.Pressed += NewGame;

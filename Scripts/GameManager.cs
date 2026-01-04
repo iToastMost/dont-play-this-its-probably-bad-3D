@@ -531,11 +531,12 @@ public partial class GameManager : Node3D
 		UpdateAmmo(_playerRe.Ammo);
 	}
 
-	private void PrepareLoadingEnvironment(string path, int keyId)
+	private void PrepareLoadingEnvironment(string path, int keyId, string zoneId, string doorId, bool isLocked)
 	{
-		if (!CheckForKey(keyId))
-			return;
-
+		if(isLocked)
+			if (!CheckForKey(keyId, zoneId, doorId))
+				return;
+		
 		_sceneToLoad = path;
 		
 		_animationPlayer.CurrentAnimation = "ScreenFadeOut";
@@ -599,7 +600,7 @@ public partial class GameManager : Node3D
         CheckStoreLights();
     }
 
-	private bool CheckForKey(int keyId)
+	private bool CheckForKey(int keyId, string zoneId, string doorId)
 	{
 		bool keyCheck = false;
 		
@@ -614,6 +615,10 @@ public partial class GameManager : Node3D
 					{
 						GD.Print("You have the key to this door, door unlocked");
 						keyCheck = true;
+						SendDialog("I unlocked the door. Seems like I won't be needing this key anymore.");
+						_playerInventory[i] = null;
+						_inventory.UpdateInventory("", i);
+						GameStateManager.Instance.MarkDoorUnlocked(zoneId, doorId);
 						return keyCheck;
 					}
 				}	

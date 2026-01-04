@@ -5,18 +5,21 @@ using System.IO;
 
 public partial class Door : StaticBody3D, iInteractable
 {
-	[Export]
-	private string _environmentToLoad;
+	[Export] private string _environmentToLoad;
 
-	[Export]
-	private bool _isFlipped;
-	
+	[Export] private bool _isFlipped;
+
 	//set the required key needed for this door. 0 = unlocked
 	[Export] public int KeyIdRequired { get; set; }
+
+	[Export] public bool IsLocked { get; set; }
+
+	[Export] public string DoorId { get; set; }
 	
+	[Export] public string ZoneId { get; set; }
 
 	[Signal]
-	public delegate void LoadEnvironmentEventHandler(string path, int keyIdRequired);
+	public delegate void LoadEnvironmentEventHandler(string path, int keyIdRequired, string zoneId, string doorId, bool isLocked);
 
 	[Signal]
 	public delegate void KeyIdCheckEventHandler(int id, string path);
@@ -25,6 +28,9 @@ public partial class Door : StaticBody3D, iInteractable
 	public override void _Ready()
 	{
 		AddToGroup("Doors");
+		if (GameStateManager.Instance.IsDoorUnlocked(ZoneId, DoorId))
+			IsLocked = false;
+		
 		if (_isFlipped) 
 		{
 			var mesh = GetNode<MeshInstance3D>("Cube_013");
@@ -43,7 +49,7 @@ public partial class Door : StaticBody3D, iInteractable
 		//GD.Print("Transporting you to: " + environmentToLoad);
 		//GetTree().ChangeSceneToFile(environmentToLoad);
 	    
-		EmitSignal(SignalName.LoadEnvironment, _environmentToLoad, KeyIdRequired);
+		EmitSignal(SignalName.LoadEnvironment, _environmentToLoad, KeyIdRequired, ZoneId, DoorId, IsLocked);
 		
 	    //EmitSignalKeyIdCheck(KeyIdRequired, _environmentToLoad);
 		

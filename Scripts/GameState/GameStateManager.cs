@@ -85,6 +85,22 @@ public partial class GameStateManager : Node3D
 		return zone.EventTriggeredIds.Contains(eventId);
 	}
 
+	public void MarkDoorUnlocked(string zoneId, string doorId)
+	{
+		if (_zoneStates[zoneId].DoorUnlockedIds.Contains(doorId))
+			return;
+		
+		_zoneStates[zoneId].DoorUnlockedIds.Add(doorId);
+	}
+
+	public bool IsDoorUnlocked(string zoneId, string doorId)
+	{
+		if (!_zoneStates.TryGetValue(zoneId, out var zone))
+			return false;
+		
+		return zone.DoorUnlockedIds.Contains(doorId);
+	}
+
 	public Dictionary<string, ZoneState> SaveData()
 	{
 		return _zoneStates;

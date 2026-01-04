@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dlu2tcpx6wqg4"]
+[gd_scene load_steps=19 format=3 uid="uid://dlu2tcpx6wqg4"]
 
 [ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_hrkw2"]
 [ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="1_rmo1r"]
@@ -12,6 +12,21 @@
 [ext_resource type="PackedScene" uid="uid://bu1xmdj873i0m" path="res://Scenes/Items/Handgun.tscn" id="9_57taf"]
 [ext_resource type="PackedScene" uid="uid://cgew1goc3h4iw" path="res://Scenes/Art/Models/Appliances/fridge_3_workingdoors.tscn" id="10_pwvo2"]
 [ext_resource type="PackedScene" uid="uid://bhqfgu752vqjn" path="res://Scenes/computer_terminal.tscn" id="12_0vjpu"]
+[ext_resource type="PackedScene" uid="uid://c5xuoh3o5jojc" path="res://Scenes/Art/Models/Appliances/oven_1_workingdoors_texture_v_1.tscn" id="13_deae4"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_deae4"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_7pwjd"]
+sky_material = SubResource("ProceduralSkyMaterial_deae4")
+
+[sub_resource type="Environment" id="Environment_lm1a6"]
+background_mode = 2
+sky = SubResource("Sky_7pwjd")
+tonemap_mode = 2
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t7imn"]
 albedo_color = Color(0, 0, 0, 1)
@@ -23,6 +38,9 @@ size = Vector3(1.4566345, 0.5048828, 2.4022827)
 [node name="BreakroomScene" type="Node3D" groups=["Environments"]]
 script = ExtResource("1_hrkw2")
 ZoneId = "STORE_BREAKROOM"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lm1a6")
 
 [node name="Environment" type="Node" parent="."]
 
@@ -36,6 +54,8 @@ material = SubResource("StandardMaterial3D_t7imn")
 [node name="door" parent="Environment" instance=ExtResource("1_rmo1r")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.5262113, -0.5, 2.7686584)
 _environmentToLoad = "res://Scenes/Environments/showroom_floor_scene.tscn"
+DoorId = "STORE_BREAKROOM_TO_SHOWROOM"
+ZoneId = "STORE_BREAKROOM"
 
 [node name="Table" type="CSGBox3D" parent="Environment"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.27931118, 0.46743774, -1.3560108)
@@ -65,6 +85,8 @@ height = 0.967041
 [node name="door2" parent="Environment" instance=ExtResource("1_rmo1r")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.4491427, -0.5000001, 2.0556817)
 _environmentToLoad = "res://Scenes/Environments/closet_scene.tscn"
+DoorId = "STORE_BREAKROOM_TO_CLOSET"
+ZoneId = "STORE_BREAKROOM"
 
 [node name="chair" type="CSGBox3D" parent="Environment"]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.3962616, 0.05760753, -0.67165697)
@@ -422,13 +444,10 @@ transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 2.49
 [node name="FromClosetScene" type="Marker3D" parent="Spawnpoints"]
 transform = Transform3D(1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, 1, -2.9061704, 0.20098054, 2.0686808)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." groups=["StoreLights"]]
-transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, -1.6484947, 6.8211336, -0.19865602)
-
 [node name="Cameras" type="Node" parent="."]
 
 [node name="FixedCamera" parent="Cameras" instance=ExtResource("2_t7imn")]
-transform = Transform3D(-0.823704, -0.29540312, 0.48399246, 0, 0.8535721, 0.52097476, -0.56702006, 0.429129, -0.7030907, 2.704669, 3.0728192, -3.0117688)
+transform = Transform3D(-0.76776904, -0.08527187, 0.6350271, 0, 0.9911045, 0.13308619, -0.6407267, 0.10217945, -0.76093936, 2.5196288, 1.4138639, -2.1545115)
 
 [node name="CollisionShape3D" parent="Cameras/FixedCamera/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2090607, -0.2475586, 1.3512268)
@@ -463,6 +482,14 @@ ItemId = "HANDGUN"
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.6669204, -0.49999976, 2.3446388)
 
 [node name="ComputerTerminal" parent="." instance=ExtResource("12_0vjpu")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.5700567, -0.09160206, 2.4868867)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.2183301, -0.09160206, 2.4868867)
+
+[node name="oven1_workingdoors_texture_v1" parent="." instance=ExtResource("13_deae4")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.2935997, -0.5, 2.4147477)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.2668568, 3.2443929, 0)
+spot_range = 6.974
+spot_angle = 71.4
 
 [editable path="Cameras/FixedCamera"]

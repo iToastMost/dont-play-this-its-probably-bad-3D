@@ -23,6 +23,8 @@ public partial class PlayerRE : CharacterBody3D
     [Export] public float speed { get; set; } = 1.5f;
 
     [Export] public float turnSpeed = 4f;
+    
+    [Export] public float AimSpeed = 2f;
 
     public int _health = 100;
 

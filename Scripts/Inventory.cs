@@ -58,7 +58,7 @@ public partial class Inventory : Control
         _canvasLayer.Visible = _inventoryIsOpen;
         _healthLabel.Visible = _inventoryIsOpen;
         _ammoLabel.Visible = _inventoryIsOpen;
-        
+        _gridContainer.GetNode<Button>("Slot0").GrabFocus();
         if (_itemSelected.Visible)
         {
             _itemSelected.Visible = false;
@@ -92,6 +92,8 @@ public partial class Inventory : Control
         if (_isItemSelected) 
             return;
         
+        _itemSelected.GetNode<Button>("Use_Equip").GrabFocus();
+        
         _isItemSelected = true;
         _animationPlayer.CurrentAnimation = "slide_out";
         _animationPlayer.Play();
@@ -102,6 +104,7 @@ public partial class Inventory : Control
     {
         EmitSignal(SignalName.ItemUsed, _slotSelectedIdx);
         _animationPlayer.CurrentAnimation = "slide_in";
+        _gridContainer.GetNode<Button>("Slot0").GrabFocus();
         _isItemSelected = false;
     }
 

@@ -44,22 +44,22 @@ public class AimState : PlayerState
     {
         if (Input.IsActionPressed("aim_right"))
         {
-            player.laser.RotateY(-player.turnSpeed /2 * (float)delta);
+            player.laser.RotateY(-player.AimSpeed /2 * (float)delta);
         }
                     
         if (Input.IsActionPressed("aim_left"))
         {
-            player.laser.RotateY(player.turnSpeed/2 * (float)delta);
+            player.laser.RotateY(player.AimSpeed/2 * (float)delta);
         }
                     
         if (Input.IsActionPressed("aim_up"))
         {
-            player.laser.RotateZ(player.turnSpeed/2 * (float)delta);
+            player.laser.RotateZ(player.AimSpeed/2 * (float)delta);
         }
                     
         if (Input.IsActionPressed("aim_down"))
         {
-            player.laser.RotateZ(-player.turnSpeed/2 * (float)delta);
+            player.laser.RotateZ(-player.AimSpeed/2 * (float)delta);
         }
                     
         float y = Mathf.Clamp(player.laser.Rotation.Y, Mathf.DegToRad(-45), Mathf.DegToRad(45));

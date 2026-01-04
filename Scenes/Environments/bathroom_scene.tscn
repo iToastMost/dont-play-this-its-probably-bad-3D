@@ -170,6 +170,8 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.020
 [node name="door" parent="Environment Models" instance=ExtResource("12_dnp50")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.75813, -0.00145996, 5.67178)
 _environmentToLoad = "res://Scenes/Environments/showroom_floor_scene.tscn"
+DoorId = "STORE_MENS_BATHROOM_TO_SHOWROOM_FLOOR"
+ZoneId = "STORE_MENS_BATHROOM"
 
 [node name="handdryer" parent="Environment Models" instance=ExtResource("16_rpe6t")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.80609, 1.00206, 6.22056)
@@ -261,6 +263,8 @@ ItemId = "HEALING_HERB01"
 [node name="door" parent="." instance=ExtResource("12_dnp50")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.545238, -0.0046498775, 0.7314651)
 _environmentToLoad = "res://Scenes/Environments/basement.tscn"
+DoorId = "STORE_MENS_BATHROOM_TO_BASEMENT"
+ZoneId = "STORE_MENS_BATHROOM"
 
 [editable path="Cameras/FixedCamera"]
 [editable path="Cameras/FixedCamera2"]
