@@ -38,17 +38,11 @@ public partial class Inventory : Control
         
         _animationPlayer.AnimationFinished += HideItemMenu;
         
-        // foreach (Button button in _gridContainer.GetChildren())
-        // {
-        //     var idx = _slotIdx;
-        //     button.Pressed += () => UseItem(button, idx);
-        //     _slotIdx++;
-        // }
-        
         foreach (Button button in _gridContainer.GetChildren())
         {
             var idx = _slotIdx;
             button.Pressed += () => CheckItemClicked(idx);
+            button.FocusEntered += CloseItemMenuOnFocus;
             _slotIdx++;
         }
     }
@@ -93,6 +87,9 @@ public partial class Inventory : Control
             return;
         
         _itemSelected.GetNode<Button>("Use_Equip").GrabFocus();
+        _itemSelected.GetNode<Button>("Use_Equip").FocusPrevious = _gridContainer.GetNode<Button>("Slot" +  _slotSelectedIdx).GetPath();
+        _itemSelected.GetNode<Button>("Inspect").FocusPrevious = _gridContainer.GetNode<Button>("Slot" +  _slotSelectedIdx).GetPath();
+        _itemSelected.GetNode<Button>("Combine").FocusPrevious = _gridContainer.GetNode<Button>("Slot" +  _slotSelectedIdx).GetPath();
         
         _isItemSelected = true;
         _animationPlayer.CurrentAnimation = "slide_out";
@@ -129,4 +126,9 @@ public partial class Inventory : Control
             _itemSelected.Visible = false;
     }
     
+    private void CloseItemMenuOnFocus()
+    {
+        _animationPlayer.CurrentAnimation = "slide_in";
+        _isItemSelected = false;
+    }
 }

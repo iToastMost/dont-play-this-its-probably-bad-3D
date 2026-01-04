@@ -201,6 +201,12 @@ public override void _Ready()
             GetTree().Quit();
         }
         
+        if (sm.GetPlayerState() == PlayerStateTypes.Move && Input.IsActionJustPressed("spin_back"))
+        {
+            //Rotates 180 degrees.
+            SpinBack = true;
+        }
+        
         if(Input.IsActionJustPressed("flashlight_toggle"))
             ToggleFlashlight();
     }

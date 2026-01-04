@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public partial class StateMachine : Node
 {
+    private PlayerStateTypes _currentType;
     private PlayerState _currentPlayerState;
     private Dictionary<PlayerStateTypes, PlayerState> _playerStates = new();
 
@@ -27,9 +28,15 @@ public partial class StateMachine : Node
         
         _currentPlayerState?.Exit();
         _currentPlayerState = _playerStates[stateType];
+        _currentType = stateType;
         _currentPlayerState.Enter();
     }
 
     public void Update(double delta) => _currentPlayerState?.Update(delta);
     public void PhysicsUpdate(double delta) => _currentPlayerState?.PhysicsUpdate(delta);
+
+    public PlayerStateTypes GetPlayerState()
+    {
+        return _currentType;
+    }
 }

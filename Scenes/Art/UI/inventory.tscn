@@ -91,7 +91,6 @@ offset_bottom = 579.0
 [node name="Use_Equip" type="Button" parent="CanvasLayer/ItemSelectedSlide/ItemSelected"]
 custom_minimum_size = Vector2(200, 60)
 layout_mode = 2
-focus_neighbor_top = NodePath("../Combine")
 focus_neighbor_bottom = NodePath("../Inspect")
 text = "Use/Equip
 "
@@ -107,7 +106,6 @@ text = "Inspect"
 custom_minimum_size = Vector2(200, 60)
 layout_mode = 2
 focus_neighbor_top = NodePath("../Inspect")
-focus_neighbor_bottom = NodePath("../Use_Equip")
 text = "Combine"
 
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
@@ -137,8 +135,6 @@ custom_minimum_size = Vector2(140, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-focus_neighbor_left = NodePath("../Slot1")
-focus_neighbor_top = NodePath("../Slot6")
 focus_neighbor_right = NodePath("../Slot1")
 focus_neighbor_bottom = NodePath("../Slot2")
 theme_override_font_sizes/font_size = 14
@@ -149,8 +145,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_neighbor_left = NodePath("../Slot0")
-focus_neighbor_top = NodePath("../Slot7")
-focus_neighbor_right = NodePath("../Slot0")
 focus_neighbor_bottom = NodePath("../Slot3")
 theme_override_font_sizes/font_size = 14
 
@@ -159,7 +153,6 @@ custom_minimum_size = Vector2(140, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-focus_neighbor_left = NodePath("../Slot3")
 focus_neighbor_top = NodePath("../Slot0")
 focus_neighbor_right = NodePath("../Slot3")
 focus_neighbor_bottom = NodePath("../Slot4")
@@ -172,7 +165,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_neighbor_left = NodePath("../Slot2")
 focus_neighbor_top = NodePath("../Slot1")
-focus_neighbor_right = NodePath("../Slot2")
 focus_neighbor_bottom = NodePath("../Slot5")
 theme_override_font_sizes/font_size = 14
 
@@ -181,7 +173,6 @@ custom_minimum_size = Vector2(140, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-focus_neighbor_left = NodePath("../Slot5")
 focus_neighbor_top = NodePath("../Slot2")
 focus_neighbor_right = NodePath("../Slot5")
 focus_neighbor_bottom = NodePath("../Slot6")
@@ -194,7 +185,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_neighbor_left = NodePath("../Slot4")
 focus_neighbor_top = NodePath("../Slot3")
-focus_neighbor_right = NodePath("../Slot4")
 focus_neighbor_bottom = NodePath("../Slot7")
 theme_override_font_sizes/font_size = 14
 
@@ -203,10 +193,8 @@ custom_minimum_size = Vector2(140, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-focus_neighbor_left = NodePath("../Slot7")
 focus_neighbor_top = NodePath("../Slot4")
 focus_neighbor_right = NodePath("../Slot7")
-focus_neighbor_bottom = NodePath("../Slot0")
 theme_override_font_sizes/font_size = 14
 
 [node name="Slot7" type="Button" parent="CanvasLayer/GridContainer"]
@@ -216,6 +204,4 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_neighbor_left = NodePath("../Slot6")
 focus_neighbor_top = NodePath("../Slot5")
-focus_neighbor_right = NodePath("../Slot6")
-focus_neighbor_bottom = NodePath("../Slot1")
 theme_override_font_sizes/font_size = 14

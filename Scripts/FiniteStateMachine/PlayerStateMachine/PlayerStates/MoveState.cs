@@ -73,12 +73,6 @@ public class MoveState : PlayerState
         
         AimFlashlight(delta);
         
-        if (Input.IsActionJustPressed("spin_back"))
-        {
-            //Rotates 180 degrees.
-            player.SpinBack = true;
-        }
-
         if (player.SpinBack)
         {
             player.RotateY(Mathf.Pi);
