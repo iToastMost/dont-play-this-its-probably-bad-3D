@@ -36,120 +36,13 @@ public partial class GameManager : Node3D
 
 	private void NewGame()
 	{
-		var playerSetup = ResourceLoader.Load<PackedScene>("res://Scenes/player_setup.tscn");
-		_playerSetup = playerSetup.Instantiate<Node>();
-		AddChild(_playerSetup);
-		
-		_mainMenu.QueueFree();
-		
-		_ui = GetNode<Ui>("PlayerSetup/UI");
-		_inventory = _ui.GetNode<Inventory>("Inventory");
-		_playerRe = GetNode<PlayerRE>("PlayerSetup/3DPlayer");
-		_environment = GetNode<Node3D>("Environment");
-		_animationPlayer = GetNode<AnimationPlayer>("ScreenTransitions");
-		_sceneTransitionTimer = GetNode<Timer>("SceneTransitionTimer");
-		_doorPushSubViewportContainer = GetNode<SubViewportContainer>("CanvasLayer/ScreenFade/DoorPushAnimationViewport");
-		_subviewportCamera = GetNode<Camera3D>("CanvasLayer/ScreenFade/DoorPushAnimationViewport/SubViewport/Node3D/Camera3D");
-		_doorPushSubViewportContainer.Visible = false;
-		
-		
-		_playerRe.UpdateInventoryItems += UpdateInventory;
-		_playerRe.UpdateHealth += UpdatePlayerHealth;
-		_playerRe.UseAmmo += UpdateAmmo;
-		_playerRe.ReloadCheck += ReloadCheck;
-		_playerRe.ReloadFinished += ReloadFinished;
-		_animationPlayer.AnimationFinished += FadeOutFinished;
-		_inventory.ItemUsed += UseItem;
-		_inventory.CheckItemSlotClicked += CheckInventorySlot;
-		
-		var loadBathroom = ResourceLoader.Load<PackedScene>("res://Scenes/Environments/bathroom_scene.tscn");
-		_currentEnvironment = loadBathroom.Instantiate<Node3D>();
-		_environment.AddChild(_currentEnvironment);
-		
-		_playerInitialSpawnPoint = _currentEnvironment.GetNode<Marker3D>("Spawnpoints/InitialPlayerSpawn");
-		_playerRe.GlobalPosition = _playerInitialSpawnPoint.GlobalPosition;
-		_playerRe.Rotation = _playerInitialSpawnPoint.Rotation;
-		
-		var zone = _currentEnvironment.GetNode<Zone>(".");
-		GameStateManager.Instance.AddZoneState(zone.ZoneId);
-
-		_previousEnvironment = _currentEnvironment;
-
-		_playerInventory = InventoryManager.GetInstance();
-
-		for (int i = 0; i < _playerInventory.Length; i++)
-		{
-			GD.Print(_playerInventory[i]);
-		}
-        
-		_healthLabel = _ui.GetNode<Label>("CanvasLayer/HealthLabel");
-		_healthLabel.Text = "Fine";
-		_healthLabel.Visible = false;
-        
-		_ammoLabel = _ui.GetNode<Label>("CanvasLayer/AmmoLabel");
-		_ammoLabel.Text = "Ammo: " + _playerRe.Ammo;
-		_ammoLabel.Visible = false;
-		CallDeferred(nameof(ConnectZoneSignals));
-		CallDeferred(nameof(ConnectSignals));
-		
+		InitializeGame("res://Scenes/Environments/bathroom_scene.tscn");
 		CheckStoreLights();
 	}
 
 	private void SandboxButtonPressed()
 	{
-		GD.Print("Loading Sandbox...");
-		var playerSetup = ResourceLoader.Load<PackedScene>("res://Scenes/player_setup.tscn");
-		_playerSetup = playerSetup.Instantiate<Node>();
-		AddChild(_playerSetup);
-		
-		_mainMenu.QueueFree();
-		
-		_ui = GetNode<Ui>("PlayerSetup/UI");
-		_inventory = _ui.GetNode<Inventory>("Inventory");
-		_playerRe = GetNode<PlayerRE>("PlayerSetup/3DPlayer");
-		_environment = GetNode<Node3D>("Environment");
-		_animationPlayer = GetNode<AnimationPlayer>("ScreenTransitions");
-		_sceneTransitionTimer = GetNode<Timer>("SceneTransitionTimer");
-		
-		
-		_playerRe.UpdateInventoryItems += UpdateInventory;
-		_playerRe.UpdateHealth += UpdatePlayerHealth;
-		_playerRe.UseAmmo += UpdateAmmo;
-		_playerRe.ReloadCheck += ReloadCheck;
-		_playerRe.ReloadFinished += ReloadFinished;
-		_animationPlayer.AnimationFinished += FadeOutFinished;
-		_inventory.ItemUsed += UseItem;
-		_inventory.CheckItemSlotClicked += CheckInventorySlot;
-		
-		var loadSandbox= ResourceLoader.Load<PackedScene>("res://Scenes/Environments/Sandbox.tscn");
-		_currentEnvironment = loadSandbox.Instantiate<Node3D>();
-		_environment.AddChild(_currentEnvironment);
-		
-		_playerInitialSpawnPoint = _currentEnvironment.GetNode<Marker3D>("Spawnpoints/InitialPlayerSpawn");
-		_playerRe.GlobalPosition = _playerInitialSpawnPoint.GlobalPosition;
-		_playerRe.Rotation = _playerInitialSpawnPoint.Rotation;
-		
-		var zone = _currentEnvironment.GetNode<Zone>(".");
-		GameStateManager.Instance.AddZoneState(zone.ZoneId);
-
-		_previousEnvironment = _currentEnvironment;
-
-		_playerInventory = InventoryManager.GetInstance();
-
-		for (int i = 0; i < _playerInventory.Length; i++)
-		{
-			GD.Print(_playerInventory[i]);
-		}
-        
-		_healthLabel = _ui.GetNode<Label>("CanvasLayer/HealthLabel");
-		_healthLabel.Text = "Fine";
-		_healthLabel.Visible = false;
-        
-		_ammoLabel = _ui.GetNode<Label>("CanvasLayer/AmmoLabel");
-		_ammoLabel.Text = "Ammo: " + _playerRe.Ammo;
-		_ammoLabel.Visible = false;
-		CallDeferred(nameof(ConnectZoneSignals));
-		CallDeferred(nameof(ConnectSignals));
+		InitializeGame("res://Scenes/Environments/Sandbox.tscn");
 	}
 
 	private void SaveGame()
@@ -273,6 +166,65 @@ public partial class GameManager : Node3D
 		_mainMenu.LoadGameButton += LoadGame;
 		_mainMenu.SandboxButton += SandboxButtonPressed;
 		_mainMenu.QuitButton += QuitButtonPressed;
+	}
+
+	private void InitializeGame(string pathToLoad)
+	{
+		var playerSetup = ResourceLoader.Load<PackedScene>("res://Scenes/player_setup.tscn");
+		_playerSetup = playerSetup.Instantiate<Node>();
+		AddChild(_playerSetup);
+		
+		_mainMenu.QueueFree();
+		
+		_ui = GetNode<Ui>("PlayerSetup/UI");
+		_inventory = _ui.GetNode<Inventory>("Inventory");
+		_playerRe = GetNode<PlayerRE>("PlayerSetup/3DPlayer");
+		_environment = GetNode<Node3D>("Environment");
+		_animationPlayer = GetNode<AnimationPlayer>("ScreenTransitions");
+		_sceneTransitionTimer = GetNode<Timer>("SceneTransitionTimer");
+		_doorPushSubViewportContainer = GetNode<SubViewportContainer>("CanvasLayer/ScreenFade/DoorPushAnimationViewport");
+		_subviewportCamera = GetNode<Camera3D>("CanvasLayer/ScreenFade/DoorPushAnimationViewport/SubViewport/Node3D/Camera3D");
+		_doorPushSubViewportContainer.Visible = false;
+		
+		
+		_playerRe.UpdateInventoryItems += UpdateInventory;
+		_playerRe.UpdateHealth += UpdatePlayerHealth;
+		_playerRe.UseAmmo += UpdateAmmo;
+		_playerRe.ReloadCheck += ReloadCheck;
+		_playerRe.ReloadFinished += ReloadFinished;
+		_animationPlayer.AnimationFinished += FadeOutFinished;
+		_inventory.ItemUsed += UseItem;
+		_inventory.CheckItemSlotClicked += CheckInventorySlot;
+		
+		var loadGame = ResourceLoader.Load<PackedScene>(pathToLoad);
+		_currentEnvironment = loadGame.Instantiate<Node3D>();
+		_environment.AddChild(_currentEnvironment);
+		
+		_playerInitialSpawnPoint = _currentEnvironment.GetNode<Marker3D>("Spawnpoints/InitialPlayerSpawn");
+		_playerRe.GlobalPosition = _playerInitialSpawnPoint.GlobalPosition;
+		_playerRe.Rotation = _playerInitialSpawnPoint.Rotation;
+		
+		var zone = _currentEnvironment.GetNode<Zone>(".");
+		GameStateManager.Instance.AddZoneState(zone.ZoneId);
+
+		_previousEnvironment = _currentEnvironment;
+
+		_playerInventory = InventoryManager.GetInstance();
+
+		for (int i = 0; i < _playerInventory.Length; i++)
+		{
+			GD.Print(_playerInventory[i]);
+		}
+        
+		_healthLabel = _ui.GetNode<Label>("CanvasLayer/HealthLabel");
+		_healthLabel.Text = "Fine";
+		_healthLabel.Visible = false;
+        
+		_ammoLabel = _ui.GetNode<Label>("CanvasLayer/AmmoLabel");
+		_ammoLabel.Text = "Ammo: " + _playerRe.Ammo;
+		_ammoLabel.Visible = false;
+		CallDeferred(nameof(ConnectZoneSignals));
+		CallDeferred(nameof(ConnectSignals));
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
