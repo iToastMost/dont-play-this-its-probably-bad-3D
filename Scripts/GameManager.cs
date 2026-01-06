@@ -21,6 +21,8 @@ public partial class GameManager : Node3D
 	private Node _playerSetup;
 	private MainMenu _mainMenu;
 	private Marker3D _playerInitialSpawnPoint;
+	private SubViewportContainer _doorPushSubViewportContainer;
+	private Camera3D _subviewportCamera;
 	
 	private string _sceneToLoad = "";
 	private bool _isLoadingEnvironment = false;
@@ -46,6 +48,9 @@ public partial class GameManager : Node3D
 		_environment = GetNode<Node3D>("Environment");
 		_animationPlayer = GetNode<AnimationPlayer>("ScreenTransitions");
 		_sceneTransitionTimer = GetNode<Timer>("SceneTransitionTimer");
+		_doorPushSubViewportContainer = GetNode<SubViewportContainer>("CanvasLayer/ScreenFade/DoorPushAnimationViewport");
+		_subviewportCamera = GetNode<Camera3D>("CanvasLayer/ScreenFade/DoorPushAnimationViewport/SubViewport/Node3D/Camera3D");
+		_doorPushSubViewportContainer.Visible = false;
 		
 		
 		_playerRe.UpdateInventoryItems += UpdateInventory;
@@ -538,8 +543,10 @@ public partial class GameManager : Node3D
 				return;
 		
 		_sceneToLoad = path;
-		
-		_animationPlayer.CurrentAnimation = "ScreenFadeOut";
+
+		_subviewportCamera.Current = true;
+		_doorPushSubViewportContainer.Visible = true;
+		_animationPlayer.CurrentAnimation = "DoorPush";
 		_animationPlayer.Play();
 	}
 	
@@ -709,7 +716,7 @@ public partial class GameManager : Node3D
 
 	private void FadeOutFinished(StringName animName)
 	{
-		if (animName.Equals("ScreenFadeOut"))
+		if (animName.Equals("DoorPush"))
 		{
 			LoadEnvironment(_sceneToLoad);
 		}

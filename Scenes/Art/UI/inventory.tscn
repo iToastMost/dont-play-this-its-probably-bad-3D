@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgwyijd1evli8"]
+[gd_scene load_steps=7 format=3 uid="uid://bgwyijd1evli8"]
 
 [ext_resource type="Script" uid="uid://du7ayy6smqihw" path="res://Scripts/Inventory.cs" id="1_r2tt6"]
+[ext_resource type="AudioStream" uid="uid://di3a6ss1ec32b" path="res://Art/Audio/uiChange.wav" id="2_uodu0"]
 
 [sub_resource type="Animation" id="Animation_k5gp2"]
 length = 0.001
@@ -165,6 +166,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_neighbor_left = NodePath("../Slot2")
 focus_neighbor_top = NodePath("../Slot1")
+focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath("../Slot5")
 theme_override_font_sizes/font_size = 14
 
@@ -185,6 +187,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_neighbor_left = NodePath("../Slot4")
 focus_neighbor_top = NodePath("../Slot3")
+focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath("../Slot7")
 theme_override_font_sizes/font_size = 14
 
@@ -204,4 +207,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_neighbor_left = NodePath("../Slot6")
 focus_neighbor_top = NodePath("../Slot5")
+focus_neighbor_right = NodePath(".")
 theme_override_font_sizes/font_size = 14
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_uodu0")

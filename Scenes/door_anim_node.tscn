@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxb2qq6r72sp1"]
+
+[ext_resource type="PackedScene" uid="uid://dxhbk347e716b" path="res://TestDoorAnimation.tscn" id="1_qvh61"]
+
+[node name="DoorAnimNode" type="Node3D"]
+
+[node name="door" parent="." instance=ExtResource("1_qvh61")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.512752, 0, 0)

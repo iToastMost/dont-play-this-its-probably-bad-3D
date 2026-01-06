@@ -20,6 +20,7 @@ public partial class Inventory : Control
     private GridContainer _gridContainer;
     private GridContainer _itemSelected;
     private AnimationPlayer _animationPlayer;
+    private AudioStreamPlayer2D _audioStreamPlayer2D;
    
     private bool _isItemSelected = false;
     public override void _Ready()
@@ -30,6 +31,7 @@ public partial class Inventory : Control
         _gridContainer = GetNode<GridContainer>("CanvasLayer/GridContainer");
         _itemSelected = GetNode<GridContainer>("CanvasLayer/ItemSelectedSlide/ItemSelected");
         _animationPlayer = GetNode<AnimationPlayer>("CanvasLayer/ItemSelectedSlide");
+        _audioStreamPlayer2D = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
         _itemSelected.Visible = false;
         
         _useItemButton =  GetNode<Button>("CanvasLayer/ItemSelectedSlide/ItemSelected/Use_Equip");
@@ -43,8 +45,16 @@ public partial class Inventory : Control
             var idx = _slotIdx;
             button.Pressed += () => CheckItemClicked(idx);
             button.FocusEntered += CloseItemMenuOnFocus;
+            button.FocusEntered += PlayUiChangeSound;
             _slotIdx++;
         }
+
+        _itemSelected.GetNode<Button>("Use_Equip").FocusEntered += PlayUiChangeSound;
+        _itemSelected.GetNode<Button>("Inspect").FocusEntered += PlayUiChangeSound;
+        _itemSelected.GetNode<Button>("Combine").FocusEntered += PlayUiChangeSound;
+        
+        _audioStreamPlayer2D.Stream = ResourceLoader.Load<AudioStreamWav>("res://Art/Audio/uiChange.wav");
+        
     }
     public void ToggleInventory(Label _healthLabel, Label _ammoLabel)
     {
@@ -100,6 +110,10 @@ public partial class Inventory : Control
     private void UseItemClicked()
     {
         EmitSignal(SignalName.ItemUsed, _slotSelectedIdx);
+        
+        _audioStreamPlayer2D.Stream = ResourceLoader.Load<AudioStreamWav>("res://Art/Audio/uiSelect.wav");
+        _audioStreamPlayer2D.Play();
+        
         _animationPlayer.CurrentAnimation = "slide_in";
         _gridContainer.GetNode<Button>("Slot0").GrabFocus();
         _isItemSelected = false;
@@ -122,13 +136,22 @@ public partial class Inventory : Control
 
     private void HideItemMenu(StringName anim)
     {
-        if(anim == "slide_in")
+        if (anim == "slide_in")
+        {
+            _audioStreamPlayer2D.Stream = ResourceLoader.Load<AudioStreamWav>("res://Art/Audio/uiChange.wav");
             _itemSelected.Visible = false;
+        }
+            
     }
     
     private void CloseItemMenuOnFocus()
     {
         _animationPlayer.CurrentAnimation = "slide_in";
         _isItemSelected = false;
+    }
+
+    private void PlayUiChangeSound()
+    {
+        _audioStreamPlayer2D.Play();
     }
 }

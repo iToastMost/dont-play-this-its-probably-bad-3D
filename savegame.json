@@ -6,66 +6,66 @@
   "Playerhealth": 40,
   "CurrentEnvironment": "STORE_BREAKROOM",
   "playerInventory": [
-    2,
-    1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1
+	2,
+	1,
+	-1,
+	-1,
+	-1,
+	-1,
+	-1,
+	-1
   ],
   "equippedItem": 2,
   "ZoneStates": {
-    "STORE_MENS_BATHROOM": {
-      "DeadEnemyIds": [],
-      "LootedItemIds": [],
-      "EventTriggeredIds": [],
-      "DoorUnlockedIds": []
-    },
-    "STORE_SHOWROOM_FLOOR": {
-      "DeadEnemyIds": [
-        "ENEMY_02",
+	"STORE_MENS_BATHROOM": {
+	  "DeadEnemyIds": [],
+	  "LootedItemIds": [],
+	  "EventTriggeredIds": [],
+	  "DoorUnlockedIds": []
+	},
+	"STORE_SHOWROOM_FLOOR": {
+	  "DeadEnemyIds": [
+		"ENEMY_02",
         "ENEMY_01"
-      ],
-      "LootedItemIds": [],
-      "EventTriggeredIds": [],
-      "DoorUnlockedIds": [
+	  ],
+	  "LootedItemIds": [],
+	  "EventTriggeredIds": [],
+	  "DoorUnlockedIds": [
         "STORE_LOCKUP_DOOR"
-      ]
-    },
-    "STORE_BREAKROOM": {
-      "DeadEnemyIds": [],
-      "LootedItemIds": [
-        "HANDGUN",
+	  ]
+	},
+	"STORE_BREAKROOM": {
+	  "DeadEnemyIds": [],
+	  "LootedItemIds": [
+		"HANDGUN",
         "HANGUN_AMMO_01"
-      ],
-      "EventTriggeredIds": [],
-      "DoorUnlockedIds": []
-    },
-    "STORE_BREAKROOM_CLOSET": {
-      "DeadEnemyIds": [],
-      "LootedItemIds": [
+	  ],
+	  "EventTriggeredIds": [],
+	  "DoorUnlockedIds": []
+	},
+	"STORE_BREAKROOM_CLOSET": {
+	  "DeadEnemyIds": [],
+	  "LootedItemIds": [
         "LOCKUP_KEY"
-      ],
-      "EventTriggeredIds": [],
-      "DoorUnlockedIds": []
-    },
-    "STORE_LOCKUP": {
-      "DeadEnemyIds": [],
-      "LootedItemIds": [
+	  ],
+	  "EventTriggeredIds": [],
+	  "DoorUnlockedIds": []
+	},
+	"STORE_LOCKUP": {
+	  "DeadEnemyIds": [],
+	  "LootedItemIds": [
         "FUSE"
-      ],
-      "EventTriggeredIds": [],
-      "DoorUnlockedIds": []
-    },
-    "STORE_BASEMENT": {
-      "DeadEnemyIds": [],
-      "LootedItemIds": [],
-      "EventTriggeredIds": [
+	  ],
+	  "EventTriggeredIds": [],
+	  "DoorUnlockedIds": []
+	},
+	"STORE_BASEMENT": {
+	  "DeadEnemyIds": [],
+	  "LootedItemIds": [],
+	  "EventTriggeredIds": [
         "FUSE_USED"
-      ],
-      "DoorUnlockedIds": []
-    }
+	  ],
+	  "DoorUnlockedIds": []
+	}
   }
 }

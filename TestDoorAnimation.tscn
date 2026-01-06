@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxhbk347e716b"]
+
+[ext_resource type="PackedScene" uid="uid://b6hnq842c5cwb" path="res://Art/Models/door.glb" id="1_8tfsj"]
+[ext_resource type="Texture2D" uid="uid://05sn25aemowu" path="res://Art/Textures/BathroomDoor.png" id="2_ir5g6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0njej"]
+albedo_texture = ExtResource("2_ir5g6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gs56j"]
+albedo_texture = ExtResource("2_ir5g6")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ir5g6"]
+
+[node name="door" instance=ExtResource("1_8tfsj")]
+
+[node name="Cube_012" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_0njej")
+
+[node name="Cube_013" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_gs56j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+shape = SubResource("BoxShape3D_ir5g6")
