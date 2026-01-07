@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://ds4udcpaocote" path="res://Scenes/Art/Models/wetfloorsign.tscn" id="7_crahg"]
 [ext_resource type="PackedScene" uid="uid://xexhgx776cch" path="res://Scenes/Items/handgun_ammo.tscn" id="8_fvmvs"]
 [ext_resource type="PackedScene" uid="uid://bu1xmdj873i0m" path="res://Scenes/Items/Handgun.tscn" id="9_57taf"]
-[ext_resource type="PackedScene" uid="uid://cgew1goc3h4iw" path="res://Scenes/Art/Models/Appliances/fridge_3_workingdoors.tscn" id="10_pwvo2"]
 [ext_resource type="PackedScene" uid="uid://bhqfgu752vqjn" path="res://Scenes/computer_terminal.tscn" id="12_0vjpu"]
+[ext_resource type="PackedScene" uid="uid://b2n052rwmhdkg" path="res://Art/Models/Appliances/Fridge/MESH_Fridge_3_doors_v1.glb" id="13_7pwjd"]
 [ext_resource type="PackedScene" uid="uid://c5xuoh3o5jojc" path="res://Scenes/Art/Models/Appliances/oven_1_workingdoors_texture_v_1.tscn" id="13_deae4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_deae4"]
@@ -454,13 +454,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2090607, -0.2475586, 1.3512
 shape = SubResource("BoxShape3D_t7imn")
 
 [node name="sink" parent="." instance=ExtResource("3_16hdw")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.34422714, -0.50000024, 2.5030882)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.0669074, -0.50000024, 2.5030882)
 
 [node name="papertoweldisp" parent="." instance=ExtResource("4_f4y1d")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.6019502, 0.6773044, 2.7986913)
 
 [node name="soap" parent="." instance=ExtResource("5_f4y1d")]
-transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, -0.049749732, 0.3375489, 2.6288583)
+transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, -0.82318765, 0.3375489, 2.6288583)
 
 [node name="garbage" parent="." instance=ExtResource("6_6j0w0")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.550111, -0.4999999, 2.5644526)
@@ -478,18 +478,18 @@ transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 1.01
 ZoneId = "STORE_BREAKROOM"
 ItemId = "HANDGUN"
 
-[node name="fridge3_workingdoors" parent="." instance=ExtResource("10_pwvo2")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.6669204, -0.49999976, 2.3446388)
-
 [node name="ComputerTerminal" parent="." instance=ExtResource("12_0vjpu")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.2183301, -0.09160206, 2.4868867)
 
 [node name="oven1_workingdoors_texture_v1" parent="." instance=ExtResource("13_deae4")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.2935997, -0.5, 2.4147477)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.22757003, -0.5, 2.4147477)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.2668568, 3.2443929, 0)
 spot_range = 6.974
 spot_angle = 71.4
+
+[node name="MESH_Fridge_3_doors_v1" parent="." instance=ExtResource("13_7pwjd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.6559484, -0.4964562, 2.1954224)
 
 [editable path="Cameras/FixedCamera"]

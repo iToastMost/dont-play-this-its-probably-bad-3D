@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://dvx78w7ofmyiq"]
 
-[ext_resource type="PackedScene" uid="uid://bu2elsi5yvmjq" path="res://Art/Models/Appliances/fridge2_workingdoors.glb" id="1_gdqbj"]
+[ext_resource type="PackedScene" uid="uid://bu2elsi5yvmjq" path="res://Art/Models/Appliances/Fridge/fridge2_workingdoors.glb" id="1_gdqbj"]
 
 [node name="fridge2_workingdoors" instance=ExtResource("1_gdqbj")]

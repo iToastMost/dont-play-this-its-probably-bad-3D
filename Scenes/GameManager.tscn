@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://60d70rbuc1vj"]
+[gd_scene load_steps=13 format=3 uid="uid://60d70rbuc1vj"]
 
 [ext_resource type="Script" uid="uid://dkxrvu0xdlyaq" path="res://Scripts/GameManager.cs" id="1_je8vj"]
 [ext_resource type="PackedScene" uid="uid://hvxnd3tp3hyw" path="res://Scenes/Art/UI/main_menu.tscn" id="2_xqbpr"]
 [ext_resource type="Shader" uid="uid://b7qsakv04r3fh" path="res://Scenes/GameManager.gdshader" id="4_b7dir"]
 [ext_resource type="PackedScene" uid="uid://dndnxsjc3jrs8" path="res://Scenes/GameStateManager/GameStateManager.tscn" id="5_mmuqr"]
 [ext_resource type="PackedScene" uid="uid://bxb2qq6r72sp1" path="res://Scenes/door_anim_node.tscn" id="5_xqbpr"]
+[ext_resource type="PackedScene" uid="uid://uyv1asa72wm4" path="res://Scenes/Environments/world_environment.tscn" id="6_xqbpr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mmuqr"]
 shader = ExtResource("4_b7dir")
@@ -163,6 +164,8 @@ _data = {
 [node name="GameManager" type="Node3D"]
 process_mode = 3
 script = ExtResource("1_je8vj")
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("6_xqbpr")]
 
 [node name="MainMenu" parent="." instance=ExtResource("2_xqbpr")]
 

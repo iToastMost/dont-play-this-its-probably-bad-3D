@@ -71,6 +71,9 @@ public partial class GameManager : Node3D
 		_environment = GetNode<Node3D>("Environment");
 		_animationPlayer = GetNode<AnimationPlayer>("ScreenTransitions");
 		_sceneTransitionTimer = GetNode<Timer>("SceneTransitionTimer");
+		_doorPushSubViewportContainer = GetNode<SubViewportContainer>("CanvasLayer/ScreenFade/DoorPushAnimationViewport");
+		_subviewportCamera = GetNode<Camera3D>("CanvasLayer/ScreenFade/DoorPushAnimationViewport/SubViewport/Node3D/Camera3D");
+		_doorPushSubViewportContainer.Visible = false;
 		
 		_playerRe.UpdateInventoryItems += UpdateInventory;
 		_playerRe.UpdateHealth += UpdatePlayerHealth;
