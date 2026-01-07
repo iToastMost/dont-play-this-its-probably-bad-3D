@@ -27,7 +27,8 @@ public class WanderState : EnemyState
 			if (node is RayCast3D ray)
 			{
 				if (ray.GetCollider() is PlayerRE)
-				{ 
+				{
+					_enemy.CanWander = false;
 					_enemyStateMachine.ChangeState(EnemyStateTypes.Chase);
 				}
 			}

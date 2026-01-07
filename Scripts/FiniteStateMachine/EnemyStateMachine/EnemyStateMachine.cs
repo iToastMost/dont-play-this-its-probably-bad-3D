@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public partial class EnemyStateMachine : Node
 {
 	private EnemyState _currentEnemyState;
+	private EnemyStateTypes _currentStateType;
 	private Dictionary<EnemyStateTypes, EnemyState> _enemyStates = new (); 
 
 	public void AddState(EnemyStateTypes enemyStateType, EnemyState enemyState)
@@ -27,9 +28,15 @@ public partial class EnemyStateMachine : Node
 
 		_currentEnemyState?.Exit();
 		_currentEnemyState = _enemyStates[stateType];
+		_currentStateType =  stateType;
 		_currentEnemyState?.Enter();
 	}
 
 	public void Update(double delta) => _currentEnemyState?.Update(delta);
 	public void PhysicsUpdate(double delta) => _currentEnemyState?.PhysicsUpdate(delta);
+
+	public EnemyStateTypes GetEnemyState()
+	{
+		return _currentStateType;
+	}
 }

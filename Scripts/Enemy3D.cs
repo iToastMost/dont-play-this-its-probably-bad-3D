@@ -107,5 +107,10 @@ public partial class Enemy3D : CharacterBody3D
             GameStateManager.Instance.MarkEnemyKilled(ZoneId, EnemyId);
             QueueFree();
         }
+
+        if (esm.GetEnemyState() == EnemyStateTypes.Chase)
+            return;
+        
+        esm.ChangeState(EnemyStateTypes.Chase);
     }
 }
