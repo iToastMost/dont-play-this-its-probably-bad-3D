@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://br83x8q7ckpkd"]
+[gd_scene load_steps=10 format=3 uid="uid://br83x8q7ckpkd"]
 
 [ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_31ri8"]
 [ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="1_bktvj"]
@@ -6,6 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://b86pqbiujl4gy" path="res://Scenes/Art/Models/garbage.tscn" id="3_v5urd"]
 [ext_resource type="PackedScene" uid="uid://ds4udcpaocote" path="res://Scenes/Art/Models/wetfloorsign.tscn" id="4_odvv0"]
 [ext_resource type="PackedScene" uid="uid://bscstcsbakyd5" path="res://Scenes/Items/lockup_key.tscn" id="5_nxufh"]
+[ext_resource type="Texture2D" uid="uid://y4qcqyrjo1ng" path="res://Art/Textures/FloorAndWallTiles/TEXTURE_ShoeRoomFloor_tile_1_v1.png" id="7_cgpn2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0p4ea"]
+albedo_texture = ExtResource("7_cgpn2")
+uv1_scale = Vector3(7, 7, 7)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_27yxi"]
+material = SubResource("StandardMaterial3D_0p4ea")
+size = Vector2(5, 5)
 
 [node name="ClosetScene" type="Node3D" groups=["Environments"]]
 script = ExtResource("1_31ri8")
@@ -53,3 +62,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.10
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4588997, 0.7211375, -1.4677129)
 ZoneId = "STORE_BREAKROOM_CLOSET"
 ItemId = "LOCKUP_KEY"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.70113117, 0, -0.14969796)
+mesh = SubResource("PlaneMesh_27yxi")

@@ -42,10 +42,10 @@ script = ExtResource("1_t3iin")
 ZoneId = "STORE_MENS_BATHROOM"
 
 [node name="Bathroom" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.11504, 1.46199, 3.46154)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.11504, 1.0291975, 3.46154)
 use_collision = true
 flip_faces = true
-size = Vector3(2.78164, 2.9269, 5.52112)
+size = Vector3(2.78164, 2.0613148, 5.52112)
 
 [node name="Cameras" type="Node" parent="."]
 
@@ -70,7 +70,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2789917, 0.25787354, 0.5449
 shape = SubResource("BoxShape3D_dnp50")
 
 [node name="FixedCamera3" parent="Cameras" instance=ExtResource("1_dnp50")]
-transform = Transform3D(0.8230112, 0.331502, -0.46125802, 0, 0.81203806, 0.58360445, 0.5680251, -0.480313, 0.6683164, -8.06626, 2.76841, 6.19262)
+transform = Transform3D(0.5558557, 0.2836931, -0.7813723, 0, 0.93996423, 0.3412731, 0.8312788, -0.1896986, 0.5224844, -8.2414875, 1.8724977, 6.0822234)
 
 [node name="Area3D" parent="Cameras/FixedCamera3" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.834225, 0, 4.5061626)
@@ -95,11 +95,6 @@ dialogText = "Not even washing your hands either? What is wrong with you?"
 transform = Transform3D(-0.0230363, 0, -0.999735, 0, 1, 0, 0.999735, 0, -0.0230363, -7.7515, 0.192712, 1.10162)
 visible = false
 dialogText = "Are you just playing BiPod games in there again? I'm going to tell Terry this time."
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.0689033, 0.997623, 0, -0.997623, -0.0689033, -3.34178, 19.4172, -1.68052)
-visible = false
-light_energy = 1.4
 
 [node name="Environment Models" type="Node3D" parent="."]
 
@@ -192,12 +187,24 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.4
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.42785, 1.17748, 4.09684)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." groups=["StoreLights"]]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7, 4.21949, 3.62634)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7, 2.986666, 1.7780356)
+light_energy = 2.455
+light_bake_mode = 1
 shadow_enabled = true
 shadow_blur = 1.6
-spot_range = 6.256
+spot_range = 3.416
 spot_attenuation = 0.35
-spot_angle = 43.81
+spot_angle = 66.72
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="." groups=["StoreLights"]]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7, 2.9866662, 4.7887716)
+light_energy = 2.455
+light_bake_mode = 1
+shadow_enabled = true
+shadow_blur = 1.6
+spot_range = 3.416
+spot_attenuation = 0.35
+spot_angle = 66.72
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.164297, 1.4997756, 3.4622383)

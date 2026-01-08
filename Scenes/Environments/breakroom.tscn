@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://dlu2tcpx6wqg4"]
+[gd_scene load_steps=22 format=3 uid="uid://dlu2tcpx6wqg4"]
 
 [ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_hrkw2"]
 [ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="1_rmo1r"]
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="2_t7imn"]
+[ext_resource type="Texture2D" uid="uid://y4qcqyrjo1ng" path="res://Art/Textures/FloorAndWallTiles/TEXTURE_ShoeRoomFloor_tile_1_v1.png" id="3_7pwjd"]
 [ext_resource type="PackedScene" uid="uid://547u57bascbx" path="res://Scenes/Art/Models/sink.tscn" id="3_16hdw"]
 [ext_resource type="PackedScene" uid="uid://cwiq40ibrpkvo" path="res://Scenes/Art/Models/papertoweldisp.tscn" id="4_f4y1d"]
 [ext_resource type="PackedScene" uid="uid://cbk0n7ve4qfvf" path="res://Scenes/Art/Models/soap.tscn" id="5_f4y1d"]
@@ -31,6 +32,14 @@ volumetric_fog_density = 0.01
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t7imn"]
 albedo_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lm1a6"]
+albedo_texture = ExtResource("3_7pwjd")
+uv1_scale = Vector3(7, 7, 7)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_deae4"]
+material = SubResource("StandardMaterial3D_lm1a6")
+size = Vector2(6.5, 6.5)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_t7imn"]
 resource_local_to_scene = true
 size = Vector3(1.4566345, 0.5048828, 2.4022827)
@@ -45,10 +54,10 @@ environment = SubResource("Environment_lm1a6")
 [node name="Environment" type="Node" parent="."]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Environment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12860107, 1.3241882, -0.18644714)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12860107, 0.5268402, -0.18644714)
 use_collision = true
 flip_faces = true
-size = Vector3(6.670288, 3.6483765, 5.9637146)
+size = Vector3(6.670288, 2.0536804, 5.9637146)
 material = SubResource("StandardMaterial3D_t7imn")
 
 [node name="door" parent="Environment" instance=ExtResource("1_rmo1r")]
@@ -436,6 +445,12 @@ height = 0.5175781
 transform = Transform3D(1, 0, 0, 0, 0.20294106, -0.97919095, 0, 0.97919095, 0.20294106, 0.0014801025, 0.19073844, -0.2773831)
 size = Vector3(0.4281311, 0.051696777, 0.4494629)
 
+[node name="Tiles" type="Node" parent="Environment"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1326654, -0.49699253, -0.1505158)
+mesh = SubResource("PlaneMesh_deae4")
+
 [node name="Spawnpoints" type="Node" parent="."]
 
 [node name="FromShowroomFloorScene" type="Marker3D" parent="Spawnpoints"]
@@ -447,7 +462,7 @@ transform = Transform3D(1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, 1, -2.9
 [node name="Cameras" type="Node" parent="."]
 
 [node name="FixedCamera" parent="Cameras" instance=ExtResource("2_t7imn")]
-transform = Transform3D(-0.76776904, -0.08527187, 0.6350271, 0, 0.9911045, 0.13308619, -0.6407267, 0.10217945, -0.76093936, 2.5196288, 1.4138639, -2.1545115)
+transform = Transform3D(-0.8593429, -0.07247763, 0.5062379, 0, 0.98990625, 0.14172399, -0.51139987, 0.12178949, -0.8506689, 2.7592313, 1.5026104, -2.742971)
 
 [node name="CollisionShape3D" parent="Cameras/FixedCamera/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2090607, -0.2475586, 1.3512268)
@@ -485,7 +500,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.2
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.22757003, -0.5, 2.4147477)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.2668568, 3.2443929, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.2668568, 1.8990104, 0)
 spot_range = 6.974
 spot_angle = 71.4
 
