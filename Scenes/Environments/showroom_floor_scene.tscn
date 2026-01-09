@@ -119,6 +119,7 @@ albedo_texture = ExtResource("16_y0qs6")
 uv1_scale = Vector3(20, 20, 20)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_4eiet"]
+lightmap_size_hint = Vector2i(177, 177)
 material = SubResource("StandardMaterial3D_ubyhl")
 size = Vector2(35, 35)
 
@@ -864,8 +865,6 @@ EnemyId = "ENEMY_01"
 transform = Transform3D(-0.1832822, 0, -0.9830603, 0, 1, 0, 0.9830603, 0, -0.1832822, 9.766759, 0.0907554, 19.27609)
 ZoneId = "STORE_SHOWROOM_FLOOR"
 EnemyId = "ENEMY_02"
-
-[node name="Boundaries" type="Node" parent="."]
 
 [editable path="Cameras/Hallway"]
 [editable path="Cameras/Appliances"]

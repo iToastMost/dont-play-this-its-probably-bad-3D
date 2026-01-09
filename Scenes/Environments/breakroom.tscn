@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dlu2tcpx6wqg4"]
+[gd_scene load_steps=25 format=3 uid="uid://dlu2tcpx6wqg4"]
 
 [ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_hrkw2"]
 [ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="1_rmo1r"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://y4qcqyrjo1ng" path="res://Art/Textures/FloorAndWallTiles/TEXTURE_ShoeRoomFloor_tile_1_v1.png" id="3_7pwjd"]
 [ext_resource type="PackedScene" uid="uid://547u57bascbx" path="res://Scenes/Art/Models/sink.tscn" id="3_16hdw"]
 [ext_resource type="PackedScene" uid="uid://cwiq40ibrpkvo" path="res://Scenes/Art/Models/papertoweldisp.tscn" id="4_f4y1d"]
+[ext_resource type="Texture2D" uid="uid://bqjnkcpildmj3" path="res://Art/Textures/wall_tiled.png" id="4_lm1a6"]
 [ext_resource type="PackedScene" uid="uid://cbk0n7ve4qfvf" path="res://Scenes/Art/Models/soap.tscn" id="5_f4y1d"]
 [ext_resource type="PackedScene" uid="uid://b86pqbiujl4gy" path="res://Scenes/Art/Models/garbage.tscn" id="6_6j0w0"]
 [ext_resource type="PackedScene" uid="uid://ds4udcpaocote" path="res://Scenes/Art/Models/wetfloorsign.tscn" id="7_crahg"]
@@ -40,6 +41,15 @@ uv1_scale = Vector3(7, 7, 7)
 material = SubResource("StandardMaterial3D_lm1a6")
 size = Vector2(6.5, 6.5)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q36r4"]
+albedo_texture = ExtResource("4_lm1a6")
+uv1_scale = Vector3(4, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_75ppw"]
+lightmap_size_hint = Vector2i(12, 12)
+material = SubResource("StandardMaterial3D_q36r4")
+size = Vector2(7, 2)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_t7imn"]
 resource_local_to_scene = true
 size = Vector3(1.4566345, 0.5048828, 2.4022827)
@@ -54,14 +64,14 @@ environment = SubResource("Environment_lm1a6")
 [node name="Environment" type="Node" parent="."]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Environment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12860107, 0.5268402, -0.18644714)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1309967, 0.5268402, -0.18644714)
 use_collision = true
 flip_faces = true
-size = Vector3(6.670288, 2.0536804, 5.9637146)
+size = Vector3(6.5030823, 2.0536804, 5.9637146)
 material = SubResource("StandardMaterial3D_t7imn")
 
 [node name="door" parent="Environment" instance=ExtResource("1_rmo1r")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.5262113, -0.5, 2.7686584)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.475584, -0.5, 2.7686584)
 _environmentToLoad = "res://Scenes/Environments/showroom_floor_scene.tscn"
 DoorId = "STORE_BREAKROOM_TO_SHOWROOM"
 ZoneId = "STORE_BREAKROOM"
@@ -92,7 +102,7 @@ radius = 0.05078125
 height = 0.967041
 
 [node name="door2" parent="Environment" instance=ExtResource("1_rmo1r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.4491427, -0.5000001, 2.0556817)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.355082, -0.5000001, 2.0556817)
 _environmentToLoad = "res://Scenes/Environments/closet_scene.tscn"
 DoorId = "STORE_BREAKROOM_TO_CLOSET"
 ZoneId = "STORE_BREAKROOM"
@@ -451,10 +461,26 @@ size = Vector3(0.4281311, 0.051696777, 0.4494629)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1326654, -0.49699253, -0.1505158)
 mesh = SubResource("PlaneMesh_deae4")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, 3.0861635, 0.5221388, -0.3201722)
+mesh = SubResource("PlaneMesh_75ppw")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(1, 0, -4.371139e-08, -4.371139e-08, 1.9106855e-15, -1, 0, 1, 1.9106855e-15, -0.20139503, 0.5198303, -3.1034722)
+mesh = SubResource("PlaneMesh_75ppw")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(-1, 8.742278e-08, 4.371139e-08, -4.371139e-08, 1.9106855e-15, -1, -8.742278e-08, -1, 1.9106855e-15, -0.20139503, 0.5198303, 2.773541)
+mesh = SubResource("PlaneMesh_75ppw")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(1.3113416e-07, 1, -3.821371e-15, -4.371139e-08, 1.9106855e-15, -1, -1, 1.3113416e-07, 4.371139e-08, -3.3563807, 0.5198303, -0.19612885)
+mesh = SubResource("PlaneMesh_75ppw")
+
 [node name="Spawnpoints" type="Node" parent="."]
 
 [node name="FromShowroomFloorScene" type="Marker3D" parent="Spawnpoints"]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 2.4917648, 0.20098054, 1.966241)
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 2.4411376, 0.20098054, 1.966241)
 
 [node name="FromClosetScene" type="Marker3D" parent="Spawnpoints"]
 transform = Transform3D(1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, 1, -2.9061704, 0.20098054, 2.0686808)
@@ -462,7 +488,7 @@ transform = Transform3D(1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, 1, -2.9
 [node name="Cameras" type="Node" parent="."]
 
 [node name="FixedCamera" parent="Cameras" instance=ExtResource("2_t7imn")]
-transform = Transform3D(-0.8593429, -0.07247763, 0.5062379, 0, 0.98990625, 0.14172399, -0.51139987, 0.12178949, -0.8506689, 2.7592313, 1.5026104, -2.742971)
+transform = Transform3D(-0.8593429, -0.072477624, 0.5062379, 0, 0.98990625, 0.14172399, -0.51139987, 0.1217895, -0.8506689, 2.5324137, 1.1304176, -2.742971)
 
 [node name="CollisionShape3D" parent="Cameras/FixedCamera/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2090607, -0.2475586, 1.3512268)
@@ -481,7 +507,7 @@ transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.550111, -0.4999999, 2.5644526)
 
 [node name="wetfloorsign" parent="." instance=ExtResource("7_crahg")]
-transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -3.157421, -0.49734017, 2.6966965)
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -3.0582683, -0.49734017, 2.6966965)
 
 [node name="HandgunAmmo" parent="." instance=ExtResource("8_fvmvs")]
 transform = Transform3D(0.15100373, 0, 0.13114066, 0, 0.2, 0, -0.13114066, 0, 0.15100373, 1.8260989, 0.58628845, -0.70884264)
