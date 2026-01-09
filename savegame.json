@@ -1,13 +1,13 @@
 {
-  "PlayerPosX": "-1.3705842",
-  "PlayerPosY": "0.40542156",
-  "PlayerPosZ": "1.7116185",
-  "PlayerRotationY": "-1.6123888",
-  "Playerhealth": 40,
+  "PlayerPosX": "-1.5855399",
+  "PlayerPosY": "0.4054215",
+  "PlayerPosZ": "1.859457",
+  "PlayerRotationY": "-2.312389",
+  "Playerhealth": 60,
   "CurrentEnvironment": "STORE_BREAKROOM",
   "playerInventory": [
 	2,
-	1,
+	-1,
 	-1,
 	-1,
 	-1,
@@ -24,10 +24,7 @@
 	  "DoorUnlockedIds": []
 	},
 	"STORE_SHOWROOM_FLOOR": {
-	  "DeadEnemyIds": [
-		"ENEMY_02",
-        "ENEMY_01"
-	  ],
+	  "DeadEnemyIds": [],
 	  "LootedItemIds": [],
 	  "EventTriggeredIds": [],
 	  "DoorUnlockedIds": [

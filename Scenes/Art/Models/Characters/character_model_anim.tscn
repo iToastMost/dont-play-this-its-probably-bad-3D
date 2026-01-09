@@ -74,7 +74,7 @@ bone_name = "DEF-hand.R"
 bone_idx = 29
 
 [node name="Gun" type="MeshInstance3D" parent="Rig/Skeleton3D/BoneAttachment3D" index="0"]
-transform = Transform3D(-1.3737008e-07, -5.7771103e-09, 0.023938928, 0.15131351, 8.381903e-09, 2.3457687e-08, -1.3038516e-08, 0.039150294, 2.4592737e-09, -0.039762467, 0.16511595, 0.0613786)
+transform = Transform3D(-1.3082939e-07, -1.2761217e-08, 0.023938932, 0.14762315, 0.0085937185, 2.3353259e-08, -0.03321419, 0.03819546, 1.6437032e-09, -0.039762378, 0.16511583, 0.06137859)
 mesh = SubResource("BoxMesh_amo2j")
 skeleton = NodePath("../../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_gd4t8")

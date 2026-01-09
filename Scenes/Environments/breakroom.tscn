@@ -13,8 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://xexhgx776cch" path="res://Scenes/Items/handgun_ammo.tscn" id="8_fvmvs"]
 [ext_resource type="PackedScene" uid="uid://bu1xmdj873i0m" path="res://Scenes/Items/Handgun.tscn" id="9_57taf"]
 [ext_resource type="PackedScene" uid="uid://bhqfgu752vqjn" path="res://Scenes/computer_terminal.tscn" id="12_0vjpu"]
-[ext_resource type="PackedScene" uid="uid://b2n052rwmhdkg" path="res://Art/Models/Appliances/Fridge/MESH_Fridge_3_doors_v1.glb" id="13_7pwjd"]
 [ext_resource type="PackedScene" uid="uid://c5xuoh3o5jojc" path="res://Scenes/Art/Models/Appliances/oven_1_workingdoors_texture_v_1.tscn" id="13_deae4"]
+[ext_resource type="PackedScene" uid="uid://bl7iefgr47eo" path="res://Art/Models/Appliances/Fridge/MESH_Fridge_4_nodoors_v1.glb" id="15_lm1a6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_deae4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -77,7 +77,7 @@ DoorId = "STORE_BREAKROOM_TO_SHOWROOM"
 ZoneId = "STORE_BREAKROOM"
 
 [node name="Table" type="CSGBox3D" parent="Environment"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.27931118, 0.46743774, -1.3560108)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 0.79170614, 0, -1, 0, -4.371139e-08, -0.27931118, 0.27538466, -1.3560108)
 use_collision = true
 size = Vector3(1.3271484, 0.06512451, 4.6340523)
 
@@ -108,7 +108,7 @@ DoorId = "STORE_BREAKROOM_TO_CLOSET"
 ZoneId = "STORE_BREAKROOM"
 
 [node name="chair" type="CSGBox3D" parent="Environment"]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.3962616, 0.05760753, -0.67165697)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 0.8698922, 0, -8.742278e-08, 0, -1, 1.3962616, -0.06085822, -0.67165697)
 use_collision = true
 size = Vector3(0.43615723, 0.04220581, 0.50683594)
 
@@ -137,7 +137,7 @@ transform = Transform3D(1, 0, 0, 0, 0.20294106, -0.97919095, 0, 0.97919095, 0.20
 size = Vector3(0.4281311, 0.051696777, 0.4494629)
 
 [node name="chair2" type="CSGBox3D" parent="Environment"]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.44300902, 0.05760753, -0.67165697)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 0.8698922, 0, -8.742278e-08, 0, -1, 0.44300902, -0.06085822, -0.67165697)
 use_collision = true
 size = Vector3(0.43615723, 0.04220581, 0.50683594)
 
@@ -166,7 +166,7 @@ transform = Transform3D(1, 0, 0, 0, 0.20294106, -0.97919095, 0, 0.97919095, 0.20
 size = Vector3(0.4281311, 0.051696777, 0.4494629)
 
 [node name="chair3" type="CSGBox3D" parent="Environment"]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.6526681, 0.05760753, -0.67165697)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 0.8698922, 0, -8.742278e-08, 0, -1, -0.6526681, -0.06085822, -0.67165697)
 use_collision = true
 size = Vector3(0.43615723, 0.04220581, 0.50683594)
 
@@ -195,7 +195,7 @@ transform = Transform3D(1, 0, 0, 0, 0.20294106, -0.97919095, 0, 0.97919095, 0.20
 size = Vector3(0.4281311, 0.051696777, 0.4494629)
 
 [node name="chair4" type="CSGBox3D" parent="Environment"]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.6425067, 0.05760753, -0.67165697)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 0.8698922, 0, -8.742278e-08, 0, -1, -1.6425067, -0.06085822, -0.67165697)
 use_collision = true
 size = Vector3(0.43615723, 0.04220581, 0.50683594)
 
@@ -224,7 +224,7 @@ transform = Transform3D(1, 0, 0, 0, 0.20294106, -0.97919095, 0, 0.97919095, 0.20
 size = Vector3(0.4281311, 0.051696777, 0.4494629)
 
 [node name="chair5" type="CSGBox3D" parent="Environment"]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.6425067, 0.05760753, -0.67165697)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 0.8698922, 0, -8.742278e-08, 0, -1, -1.6425067, -0.06085822, -0.67165697)
 use_collision = true
 size = Vector3(0.43615723, 0.04220581, 0.50683594)
 
@@ -253,7 +253,7 @@ transform = Transform3D(1, 0, 0, 0, 0.20294106, -0.97919095, 0, 0.97919095, 0.20
 size = Vector3(0.4281311, 0.051696777, 0.4494629)
 
 [node name="chair11" type="CSGBox3D" parent="Environment"]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -2.5862532, 0.05760753, -1.3379258)
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 0.8698922, 0, -1, 0, 1.3113416e-07, -2.5862532, -0.06085822, -1.3379258)
 use_collision = true
 size = Vector3(0.43615723, 0.04220581, 0.50683594)
 
@@ -282,7 +282,7 @@ transform = Transform3D(1, 0, 0, 0, 0.20294106, -0.97919095, 0, 0.97919095, 0.20
 size = Vector3(0.4281311, 0.051696777, 0.4494629)
 
 [node name="chair12" type="CSGBox3D" parent="Environment"]
-transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, 2.1245365, 0.05760753, -1.3379258)
+transform = Transform3D(-4.371138e-08, 0, -1, 0, 0.8698922, 0, 1, 0, -4.371138e-08, 2.1245365, -0.06085822, -1.3379258)
 use_collision = true
 size = Vector3(0.43615723, 0.04220581, 0.50683594)
 
@@ -311,7 +311,7 @@ transform = Transform3D(1, 0, 0, 0, 0.20294106, -0.97919095, 0, 0.97919095, 0.20
 size = Vector3(0.4281311, 0.051696777, 0.4494629)
 
 [node name="chair6" type="CSGBox3D" parent="Environment"]
-transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -1.7406985, 0.05760753, -2.059886)
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 0.8698922, 0, 1.7484555e-07, 0, 1, -1.7406985, -0.06085822, -2.059886)
 use_collision = true
 size = Vector3(0.43615723, 0.04220581, 0.50683594)
 
@@ -340,7 +340,7 @@ transform = Transform3D(1, 0, 0, 0, 0.20294106, -0.97919095, 0, 0.97919095, 0.20
 size = Vector3(0.4281311, 0.051696777, 0.4494629)
 
 [node name="chair7" type="CSGBox3D" parent="Environment"]
-transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -0.7874459, 0.05760753, -2.059886)
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 0.8698922, 0, 1.7484555e-07, 0, 1, -0.7874459, -0.06085822, -2.059886)
 use_collision = true
 size = Vector3(0.43615723, 0.04220581, 0.50683594)
 
@@ -369,7 +369,7 @@ transform = Transform3D(1, 0, 0, 0, 0.20294106, -0.97919095, 0, 0.97919095, 0.20
 size = Vector3(0.4281311, 0.051696777, 0.4494629)
 
 [node name="chair8" type="CSGBox3D" parent="Environment"]
-transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 0.30823123, 0.05760753, -2.059886)
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 0.8698922, 0, 1.7484555e-07, 0, 1, 0.30823123, -0.06085822, -2.059886)
 use_collision = true
 size = Vector3(0.43615723, 0.04220581, 0.50683594)
 
@@ -398,7 +398,7 @@ transform = Transform3D(1, 0, 0, 0, 0.20294106, -0.97919095, 0, 0.97919095, 0.20
 size = Vector3(0.4281311, 0.051696777, 0.4494629)
 
 [node name="chair9" type="CSGBox3D" parent="Environment"]
-transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 1.2980698, 0.05760753, -2.059886)
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 0.8698922, 0, 1.7484555e-07, 0, 1, 1.2980698, -0.06085822, -2.059886)
 use_collision = true
 size = Vector3(0.43615723, 0.04220581, 0.50683594)
 
@@ -427,7 +427,7 @@ transform = Transform3D(1, 0, 0, 0, 0.20294106, -0.97919095, 0, 0.97919095, 0.20
 size = Vector3(0.4281311, 0.051696777, 0.4494629)
 
 [node name="chair10" type="CSGBox3D" parent="Environment"]
-transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 1.2980698, 0.05760753, -2.059886)
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 0.8698922, 0, 1.7484555e-07, 0, 1, 1.2980698, -0.06085822, -2.059886)
 use_collision = true
 size = Vector3(0.43615723, 0.04220581, 0.50683594)
 
@@ -510,12 +510,12 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.55
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -3.0582683, -0.49734017, 2.6966965)
 
 [node name="HandgunAmmo" parent="." instance=ExtResource("8_fvmvs")]
-transform = Transform3D(0.15100373, 0, 0.13114066, 0, 0.2, 0, -0.13114066, 0, 0.15100373, 1.8260989, 0.58628845, -0.70884264)
+transform = Transform3D(0.15100373, 0, 0.13114066, 0, 0.2, 0, -0.13114066, 0, 0.15100373, 1.8260989, 0.3888116, -0.70884264)
 ZoneId = "STORE_BREAKROOM"
 ItemId = "HANGUN_AMMO_01"
 
 [node name="Handgun" parent="." instance=ExtResource("9_57taf")]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 1.0161786, 0.47688317, -0.837814)
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 1.0161786, 0.2794063, -0.837814)
 ZoneId = "STORE_BREAKROOM"
 ItemId = "HANDGUN"
 
@@ -523,14 +523,14 @@ ItemId = "HANDGUN"
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.2183301, -0.09160206, 2.4868867)
 
 [node name="oven1_workingdoors_texture_v1" parent="." instance=ExtResource("13_deae4")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.22757003, -0.5, 2.4147477)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.20698464, -0.5, 2.4147477)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.2668568, 1.8990104, 0)
 spot_range = 6.974
 spot_angle = 71.4
 
-[node name="MESH_Fridge_3_doors_v1" parent="." instance=ExtResource("13_7pwjd")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.6559484, -0.4964562, 2.1954224)
+[node name="MESH_Fridge_4_nodoors_v1" parent="." instance=ExtResource("15_lm1a6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.6874475, -0.5, 2.3228414)
 
 [editable path="Cameras/FixedCamera"]

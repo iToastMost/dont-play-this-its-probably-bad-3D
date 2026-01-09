@@ -31,12 +31,12 @@ public partial class Laser : RayCast3D
 			var laserCollision = ToLocal(GetCollisionPoint());
 
 			beamShape.Height = laserCollision.Y;
-			beamMesh.Position = new Vector3(0, laserCollision.Y / 2f, 0);
+			beamMesh.Position = new Vector3(-0.075f, (laserCollision.Y / 2f) + 0.07f, 0);
 		}
 		else 
 		{
 			beamShape.Height = 0;
-			beamMesh.Position = new Vector3(0, 0, 0);
+			beamMesh.Position = new Vector3(-0.08f, 0, 0);
 		}
 	}
 }

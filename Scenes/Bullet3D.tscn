@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bo0a0c6hyeknd"]
+[gd_scene load_steps=13 format=3 uid="uid://bo0a0c6hyeknd"]
 
 [ext_resource type="Script" uid="uid://cbqae0q2qsfjd" path="res://Scripts/Bullet3D.cs" id="1_17n1i"]
 
@@ -37,6 +37,29 @@ sections = 3
 section_length = 0.05
 section_rings = 1
 
+[sub_resource type="Gradient" id="Gradient_finpp"]
+offsets = PackedFloat32Array(0, 0.16911764, 0.8161765, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.9019608, 0.5686275, 0.05882353, 1, 1, 1, 0.43137255, 1, 1, 1, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_61j2o"]
+gradient = SubResource("Gradient_finpp")
+height = 256
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_finpp"]
+transparency = 1
+cull_mode = 2
+albedo_texture = SubResource("GradientTexture2D_61j2o")
+emission_enabled = true
+emission_texture = SubResource("GradientTexture2D_61j2o")
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_17n1i"]
+material = SubResource("StandardMaterial3D_finpp")
+size = 0.1
+sections = 20
+section_segments = 1
+
 [node name="Bullet3D" type="Node3D"]
 transform = Transform3D(0.13774891, 0, 6.714667e-16, 0, 0.19024841, 0, -3.754029e-16, 0, 0.08170439, 0, 0, 0)
 script = ExtResource("1_17n1i")
@@ -48,6 +71,7 @@ target_position = Vector3(0, 8, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, -2.57606e-07, 3.8213705e-15, 0, -1.2880301e-07, -0.9999997, 8.742277e-08, -2.9466693, 4.3711392e-08, 0, 0, 0)
+visible = false
 mesh = SubResource("PrismMesh_nr8tw")
 surface_material_override/0 = SubResource("StandardMaterial3D_17n1i")
 
@@ -58,3 +82,7 @@ amount = 10
 lifetime = 0.2
 process_material = SubResource("ParticleProcessMaterial_17n1i")
 draw_pass_1 = SubResource("TubeTrailMesh_pxckn")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 4.874571e-15, 4.874571e-15, -4.8745696e-15, -4.3711395e-08, 1, 4.8745704e-15, -1, -4.3711392e-08, 9.7759605e-15, 0, -2.0055022)
+mesh = SubResource("RibbonTrailMesh_17n1i")
