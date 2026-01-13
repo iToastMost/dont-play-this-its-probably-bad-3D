@@ -525,8 +525,10 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.2
 [node name="oven1_workingdoors_texture_v1" parent="." instance=ExtResource("13_deae4")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.20698464, -0.5, 2.4147477)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.2668568, 1.8990104, 0)
+[node name="SpotLight3D" type="SpotLight3D" parent="." groups=["StoreLights"]]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.2668568, 2.9210174, 0)
+shadow_enabled = true
+shadow_blur = 2.364
 spot_range = 6.974
 spot_angle = 71.4
 

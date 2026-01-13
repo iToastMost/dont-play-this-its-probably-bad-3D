@@ -367,7 +367,6 @@ public override void _Ready()
             HandEquipmentSlot = null;
             WeaponSkin.Visible = false;
         }
-        
     }
 
     public void UpdateState(PlayerStateTypes state)

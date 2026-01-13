@@ -89,6 +89,7 @@ public partial class GameManager : Node3D
 		_playerRe.GlobalRotation = playerSpawnRotation;
 		_playerRe.GlobalPosition = playerSpawnPos;
 		_playerRe._health = loadedData.Playerhealth;
+		_playerRe.Ammo = loadedData.PlayerAmmo;
 
 		_playerInventory = InventoryManager.GetInstance();
 		

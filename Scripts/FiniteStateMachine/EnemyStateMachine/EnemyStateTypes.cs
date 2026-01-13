@@ -6,4 +6,5 @@ public enum EnemyStateTypes
 	Wander,
 	Attack,
 	Chase,
+	HitStun,
 }

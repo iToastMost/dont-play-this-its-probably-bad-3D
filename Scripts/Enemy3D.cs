@@ -17,7 +17,9 @@ public partial class Enemy3D : CharacterBody3D
     public float _distanceToPlayer;
     public float EnemyTurnSpeed = 0.1f;
     public Timer WanderTimer;
+    public Timer HitStunTimer;
     public bool CanWander;
+    
     
     
     [Export]
@@ -40,9 +42,11 @@ public partial class Enemy3D : CharacterBody3D
         EnemyAnimation = GetNode<AnimationPlayer>("AnimationPlayer");
         enemyAttackBox = GetNode<Area3D>("AttackBox");
         WanderTimer = GetNode<Timer>("WanderTimer");
+        HitStunTimer = GetNode<Timer>("HitStunTimer");
         EnemyAnimationPlayer = GetNode<AnimationPlayer>("EnemyModel/AnimationPlayer");
         
         WanderTimer.Timeout += WanderTimeout;
+        HitStunTimer.Timeout += HitStunTimeout;
 
         _rayCasts = new();
         
@@ -58,6 +62,7 @@ public partial class Enemy3D : CharacterBody3D
         esm.AddState(EnemyStateTypes.Wander, new WanderState());
         esm.AddState(EnemyStateTypes.Chase, new ChaseState());
         esm.AddState(EnemyStateTypes.Attack, new AttackState());
+        esm.AddState(EnemyStateTypes.HitStun, new HitStunState());
 
         esm.Initialize(this);
         esm.ChangeState(EnemyStateTypes.Wander);
@@ -98,9 +103,22 @@ public partial class Enemy3D : CharacterBody3D
         EnemyAnimationPlayer.CurrentAnimation = "Walk_Formal";
         CanWander = true;
     }
+
+    private void HitStunTimeout()
+    {
+        esm.ChangeState(EnemyStateTypes.Chase);
+    }
     
     public void TakeDamage()
     {
+        esm.ChangeState(EnemyStateTypes.HitStun);
+        
+        Velocity = Vector3.Zero;
+        EnemyAnimationPlayer.Stop();
+        EnemyAnimationPlayer.CurrentAnimation = "Hit_Chest";
+        EnemyAnimationPlayer.Play();
+        
+        HitStunTimer.Start();
         _health--;
         if (_health <= 0) 
         {
@@ -108,7 +126,7 @@ public partial class Enemy3D : CharacterBody3D
             QueueFree();
         }
 
-        if (esm.GetEnemyState() == EnemyStateTypes.Chase)
+        if (esm.GetEnemyState() == EnemyStateTypes.Chase || esm.GetEnemyState() == EnemyStateTypes.HitStun || esm.GetEnemyState() == EnemyStateTypes.Attack)
             return;
         
         esm.ChangeState(EnemyStateTypes.Chase);

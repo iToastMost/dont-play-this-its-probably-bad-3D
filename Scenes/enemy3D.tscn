@@ -164,4 +164,8 @@ one_shot = true
 [node name="EnemyModel" parent="." instance=ExtResource("2_0n4k6")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.022018015, -0.9634758, -0.09173393)
 
+[node name="HitStunTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
 [connection signal="body_entered" from="AttackBox" to="." method="OnBodyEntered3D"]

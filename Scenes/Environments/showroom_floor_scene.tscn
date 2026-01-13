@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://bwhhunf3f6to0"]
+[gd_scene load_steps=50 format=3 uid="uid://bwhhunf3f6to0"]
 
 [ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_2goeg"]
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="1_jna78"]
@@ -31,7 +31,7 @@ size = Vector3(11.517151, 0.6118164, 6.088379)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_555p5"]
 resource_local_to_scene = true
-size = Vector3(8.440704, 0.5029297, 18.218786)
+size = Vector3(3.9537506, 0.5029297, 11.981725)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5w1iy"]
 resource_local_to_scene = true
@@ -55,15 +55,23 @@ size = Vector3(19.137314, 0.569458, 9.073898)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pr7sf"]
 resource_local_to_scene = true
-size = Vector3(20.02948, 0.33544922, 8.075195)
+size = Vector3(10.366257, 0.33544922, 10.629883)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1hiy4"]
+resource_local_to_scene = true
+size = Vector3(8.532501, 0.35009766, 10.6519165)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ivlfl"]
 resource_local_to_scene = true
-size = Vector3(20.372437, 0.5126953, 15.543802)
+size = Vector3(20.372437, 0.5126953, 12.823316)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_63rf1"]
 resource_local_to_scene = true
 size = Vector3(8.516975, 0.39697266, 14.818375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5owe4"]
+resource_local_to_scene = true
+size = Vector3(3.5682983, 0.3154297, 6)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4eiet"]
 albedo_texture = ExtResource("3_ubyhl")
@@ -155,13 +163,13 @@ shape = SubResource("BoxShape3D_fqmik")
 debug_color = Color(0.9254902, 0.27058825, 0, 0.8039216)
 
 [node name="FrontDoor" parent="Cameras" instance=ExtResource("1_jna78")]
-transform = Transform3D(-0.8789126, -0.0066233277, -0.4769367, 0, 0.9999036, -0.013885887, 0.47698268, -0.012204481, -0.8788279, 25.95074, 0.7448532, 17.30052)
+transform = Transform3D(-0.022032559, -0.013882517, -0.99966085, 4.0927556e-10, 0.9999036, -0.013885887, 0.9997573, -0.00030594203, -0.022030434, 25.214943, 0.7448532, 14.978252)
 
 [node name="Area3D" parent="Cameras/FrontDoor" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.564625, 0, 14.222529)
 
 [node name="CollisionShape3D" parent="Cameras/FrontDoor/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.18602, -0.24853516, 7.603547)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.942543, -0.24853516, 4.485017)
 shape = SubResource("BoxShape3D_555p5")
 debug_color = Color(0.9254902, 0.27058825, 0, 0.8039216)
 
@@ -221,23 +229,33 @@ shape = SubResource("BoxShape3D_boeyx")
 debug_color = Color(0.9254902, 0.27058825, 0, 0.8039216)
 
 [node name="Appliances2ToFrontDoor" parent="Cameras" instance=ExtResource("1_jna78")]
-transform = Transform3D(0.70045996, 0.09567899, -0.7072492, 0, 0.990973, 0.13406208, 0.7136918, -0.093905106, 0.69413686, 9.221747, 1.2709788, 31.211466)
+transform = Transform3D(0.7708766, 0.0716037, -0.63294727, 0, 0.9936619, 0.112410426, 0.6369845, -0.086654566, 0.7659907, 8.461086, 1.3363043, 31.01479)
 
 [node name="Area3D" parent="Cameras/Appliances2ToFrontDoor" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.947823, 0, 25.753578)
 
 [node name="CollisionShape3D" parent="Cameras/Appliances2ToFrontDoor/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.024231, -0.3322754, 1.3041992)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8073807, -0.3322754, 0.026855469)
 shape = SubResource("BoxShape3D_pr7sf")
 
+[node name="FixedCamera" parent="Cameras" instance=ExtResource("1_jna78")]
+transform = Transform3D(0.7274308, 0.1625636, -0.66664654, 0, 0.97153145, 0.23691067, 0.6861811, -0.1723361, 0.7067219, 20.557243, 1.440977, 30.560799)
+
+[node name="Area3D" parent="Cameras/FixedCamera" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.950272, 0, 26.811152)
+
+[node name="CollisionShape3D" parent="Cameras/FixedCamera/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5249176, -0.32495117, -0.97488403)
+shape = SubResource("BoxShape3D_1hiy4")
+
 [node name="CenterOfStore" parent="Cameras" instance=ExtResource("1_jna78")]
-transform = Transform3D(-0.04811011, -0.00079525914, -0.99884176, 0, 0.9999997, -0.00079618115, 0.99884206, -3.830436e-05, -0.048110094, 8.2905245, 1.0128995, 14.534449)
+transform = Transform3D(-0.04811011, -0.00079525914, -0.99884176, 0, 0.9999997, -0.00079618115, 0.99884206, -3.830436e-05, -0.048110094, 7.975765, 1.0128995, 14.534449)
 
 [node name="Area3D" parent="Cameras/CenterOfStore" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.40518, 0, 16.014675)
 
 [node name="CollisionShape3D" parent="Cameras/CenterOfStore/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3581543, -0.24365234, -1.3519278)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3581543, -0.24365234, -2.7121716)
 shape = SubResource("BoxShape3D_ivlfl")
 
 [node name="TvArea" parent="Cameras" instance=ExtResource("1_jna78")]
@@ -249,6 +267,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.966904, 0, 0)
 [node name="CollisionShape3D" parent="Cameras/TvArea/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1348915, -0.30151367, 4.9595413)
 shape = SubResource("BoxShape3D_63rf1")
+
+[node name="FixedCamera2" parent="Cameras" instance=ExtResource("1_jna78")]
+transform = Transform3D(-0.85829693, 0.10190462, -0.5029332, 0, 0.98008364, 0.19858512, 0.5131534, 0.170445, -0.8412028, 28.877129, 1.7469814, 23.666096)
+
+[node name="Area3D" parent="Cameras/FixedCamera2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.023346, 0, 28.728277)
+
+[node name="CollisionShape3D" parent="Cameras/FixedCamera2/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.61727905, -0.34228516, -0.41882324)
+shape = SubResource("BoxShape3D_5owe4")
 
 [node name="Environment" type="Node" parent="."]
 
@@ -568,32 +596,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.926736, -0.49999976, 17.216
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.863609, 0, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Environment/MatressArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.808461, 0.13970947, -2.2182617)
+transform = Transform3D(1, 0, 0, 0, 0.74050564, 0, 0, 0, 1, -5.808461, -0.043100312, -2.218262)
 use_collision = true
 size = Vector3(0.14038086, 1.279419, 1.3994141)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Environment/MatressArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4725494, 0.13970947, -2.2182617)
+transform = Transform3D(1, 0, 0, 0, 0.74050564, 0, 0, 0, 1, 6.4725494, -0.043100312, -2.218262)
 use_collision = true
 size = Vector3(0.14038086, 1.279419, 1.3994141)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Environment/MatressArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.808461, 0.13970947, 2.783516)
+transform = Transform3D(1, 0, 0, 0, 0.74050564, 0, 0, 0, 1, -5.808461, -0.043100312, 2.783516)
 use_collision = true
 size = Vector3(0.14038086, 1.279419, 5.6808167)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Environment/MatressArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4226494, 0.12582397, 2.767891)
+transform = Transform3D(1, 0, 0, 0, 0.74050564, 0, 0, 0, 1, 6.4226494, -0.053382605, 2.767891)
 use_collision = true
 size = Vector3(0.14038086, 1.30719, 5.6495667)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Environment/MatressArea"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.1047754, 0.13970947, 5.580719)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 0.74050564, 0, -1, 0, -4.371139e-08, -3.1047754, -0.043100312, 5.580719)
 use_collision = true
 size = Vector3(0.14038086, 1.279419, 5.5208893)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Environment/MatressArea"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.7279987, 0.13970947, 5.580719)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 0.74050564, 0, -1, 0, -4.371139e-08, 3.7279987, -0.043100312, 5.580719)
 use_collision = true
 size = Vector3(0.14038086, 1.279419, 5.502945)
 
@@ -834,7 +862,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01943, -0.48951256, 32.1233
 mesh = SubResource("PlaneMesh_ubyhl")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Environment/FloorTiles"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.496754, -0.48, 14.485)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.50476, -0.48, 14.469829)
 mesh = SubResource("PlaneMesh_4eiet")
 
 [node name="door" parent="." instance=ExtResource("2_fqmik")]
@@ -871,7 +899,7 @@ EnemyId = "ENEMY_02"
 [node name="MESH_CombinedUnit_1_nodoors_v1" parent="." instance=ExtResource("19_1hiy4")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.4342158, -0.49999976, 20.228788)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." groups=["StoreLights"]]
 transform = Transform3D(1, 0, 0, 0, 0.5035478, 0.86396736, 0, -0.86396736, 0.5035478, 15.95501, 7.810197, 18.094334)
 
 [editable path="Cameras/Hallway"]
@@ -883,8 +911,10 @@ transform = Transform3D(1, 0, 0, 0, 0.5035478, 0.86396736, 0, -0.86396736, 0.503
 [editable path="Cameras/Appliances2"]
 [editable path="Cameras/RefridgeratorsToFrontDoor"]
 [editable path="Cameras/Appliances2ToFrontDoor"]
+[editable path="Cameras/FixedCamera"]
 [editable path="Cameras/CenterOfStore"]
 [editable path="Cameras/TvArea"]
+[editable path="Cameras/FixedCamera2"]
 [editable path="Environment/Appliances/Refridgerators/MESH_Fridge_3_doors_v6"]
 [editable path="Environment/Appliances/Refridgerators/MESH_Fridge_1_doors_v6"]
 [editable path="Environment/Appliances/Refridgerators/MESH_Fridge_1_doors_v9"]

@@ -1,6 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://uyv1asa72wm4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iv2gj"]
+sky_top_color = Color(0.16165093, 0.20137164, 0.25428414, 1)
 
 [sub_resource type="Sky" id="Sky_tawf3"]
 sky_material = SubResource("ProceduralSkyMaterial_iv2gj")
@@ -12,10 +13,12 @@ sky = SubResource("Sky_tawf3")
 ambient_light_color = Color(0.34781694, 0.34781697, 0.34781685, 1)
 ambient_light_energy = 0.1
 tonemap_mode = 4
+tonemap_exposure = 1.6
 ssao_enabled = true
 ssao_intensity = 3.0
 ssil_enabled = true
 glow_enabled = true
+glow_intensity = 2.84
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.02
 volumetric_fog_emission_energy = 5.0

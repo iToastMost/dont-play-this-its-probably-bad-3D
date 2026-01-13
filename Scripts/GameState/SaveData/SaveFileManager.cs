@@ -33,6 +33,7 @@ public abstract class SaveFileManager
 		dataToSave.Playerhealth = player._health;
 		dataToSave.CurrentEnvironment = GameStateManager.Instance.GetCurrentZoneId();
 		dataToSave.playerInventory = PlayerInventory;
+		dataToSave.PlayerAmmo = player.Ammo;
 		
 		if(player.HandEquipmentSlot != null)
 			dataToSave.equippedItem = player.HandEquipmentSlot.GetID();

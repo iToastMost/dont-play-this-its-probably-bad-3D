@@ -10,6 +10,7 @@ public partial class SaveData
 	
 	public string PlayerRotationY { get; set; }
 	public int Playerhealth { get; set; }
+	public int PlayerAmmo { get; set; }
 	public string CurrentEnvironment { get; set; }
 	public int[] playerInventory { get; set; }
 	public int equippedItem { get; set; }

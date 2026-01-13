@@ -1,8 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://c07i77wx40aiu"]
+[gd_scene load_steps=8 format=3 uid="uid://c07i77wx40aiu"]
 
 [ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_01rx1"]
 [ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="1_6q6ta"]
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="2_652wb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_01rx1"]
+resource_local_to_scene = true
+size = Vector3(4.491974, 0.45117188, 9.720032)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b5x1k"]
+resource_local_to_scene = true
+size = Vector3(7.1791077, 0.4038086, 10.632263)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mwk0h"]
+resource_local_to_scene = true
+size = Vector3(4.21463, 0.3388672, 5.8066406)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m5jya"]
+resource_local_to_scene = true
+size = Vector3(4.1325684, 0.46862793, 10.189148)
 
 [node name="WarehouseScene" type="Node3D" groups=["Environments"]]
 script = ExtResource("1_01rx1")
@@ -34,21 +50,71 @@ size = Vector3(0.10473633, 2.8564453, 3.8930664)
 [node name="door" parent="Environment" instance=ExtResource("1_6q6ta")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.741199, -0.5002049, -3.0138326)
 _environmentToLoad = "res://Scenes/Environments/showroom_floor_scene.tscn"
+DoorId = "STORE_WAREHOUSE_TO_SHOWROOM_FLOOR"
+ZoneId = "STORE_WAREHOUSE"
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.808049, 0.9020996, 13.695902)
 size = Vector3(0.07507324, 2.8041992, 5.0757446)
 
 [node name="FixedCamera" parent="." instance=ExtResource("2_652wb")]
-transform = Transform3D(0.9310669, -0.12417454, 0.3430673, 0, 0.9403005, 0.34034538, -0.36484858, -0.31688434, 0.8754826, 0.45514256, 1.9744316, 4.322137)
+transform = Transform3D(-0.8377053, -0.046627663, 0.5441284, 0, 0.9963485, 0.085379496, -0.54612255, 0.071522854, -0.83464646, 0.76422167, 0.7576697, -4.332203)
+
+[node name="Area3D" parent="FixedCamera" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6099858, 0.076595485, 0)
+
+[node name="CollisionShape3D" parent="FixedCamera/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35688782, -0.27441406, 0.45083618)
+shape = SubResource("BoxShape3D_01rx1")
 
 [node name="Spawnpoints" type="Node" parent="."]
 
 [node name="FromShowroomFloorScene" type="Marker3D" parent="Spawnpoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1589978, 0.38722846, -3.0432937)
 
+[node name="FromBasement" type="Marker3D" parent="Spawnpoints"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.5393434, 0.38722846, 12.504238)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." groups=["StoreLights"]]
 transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 9.769553, 9.233518)
 
 [node name="door" parent="." instance=ExtResource("1_6q6ta")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.542144, -0.51794434, 11.200867)
+_environmentToLoad = "res://Scenes/Environments/basement.tscn"
+DoorId = "STORE_WAREHOUSE_TO_BASEMENT"
+ZoneId = "STORE_WAREHOUSE"
+
+[node name="FixedCamera4" parent="." instance=ExtResource("2_652wb")]
+transform = Transform3D(0.72713554, 0.15031043, -0.66983634, 0, 0.97573525, 0.21895374, 0.686494, -0.15920904, 0.7094917, -10.565137, 1.8404665, 21.976038)
+
+[node name="Area3D" parent="FixedCamera4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3660555, 0, 17.18308)
+
+[node name="CollisionShape3D" parent="FixedCamera4/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15419006, -0.2980957, -0.2684021)
+shape = SubResource("BoxShape3D_b5x1k")
+
+[node name="FixedCamera3" parent="." instance=ExtResource("2_652wb")]
+transform = Transform3D(0.47872487, -0.1054399, 0.8716106, 0, 0.9927623, 0.1200958, -0.87796503, -0.05749284, 0.47526, 0.48422766, 1.4023874, 22.166096)
+
+[node name="Area3D" parent="FixedCamera3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5904655, 0, 19.329718)
+
+[node name="CollisionShape3D" parent="FixedCamera3/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29612732, -0.3305664, -0.004638672)
+shape = SubResource("BoxShape3D_mwk0h")
+
+[node name="FixedCamera2" parent="." instance=ExtResource("2_652wb")]
+transform = Transform3D(-0.9999758, -0.0001338269, -0.0069554327, 0, 0.999815, -0.019237071, 0.00695672, -0.019236604, -0.9997908, -1.1153619, 0.71489155, 6.7641134)
+
+[node name="Area3D" parent="FixedCamera2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.803107, 0, 10.9186)
+
+[node name="CollisionShape3D" parent="FixedCamera2/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4498291, -0.26568604, -0.15982056)
+shape = SubResource("BoxShape3D_m5jya")
+
+[editable path="FixedCamera"]
+[editable path="FixedCamera4"]
+[editable path="FixedCamera3"]
+[editable path="FixedCamera2"]
