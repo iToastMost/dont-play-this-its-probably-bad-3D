@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bjrjapa6th5cr"]
+
+[node name="DialogueManager" type="Node3D"]
+
+[node name="CharacterPrintTimer" type="Timer" parent="."]
