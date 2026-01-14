@@ -143,7 +143,6 @@ public partial class GameManager : Node3D
 		UpdatePlayerHealth();
 		_healthLabel.Visible = false;
 		
-		_ui.GetNode<ColorRect>("CanvasLayer/ColorRect").Visible = false;
         
 		_ammoLabel = _ui.GetNode<Label>("CanvasLayer/AmmoLabel");
 		_ammoLabel.Text = "Ammo: " + _playerRe.Ammo;
