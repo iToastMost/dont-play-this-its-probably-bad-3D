@@ -199,6 +199,7 @@ public partial class GameManager : Node3D
 		_animationPlayer.AnimationFinished += FadeOutFinished;
 		_inventory.ItemUsed += UseItem;
 		_inventory.CheckItemSlotClicked += CheckInventorySlot;
+		_playerRe.AcceptDialogue += AcceptDialogue;
 		
 		var loadGame = ResourceLoader.Load<PackedScene>(pathToLoad);
 		_currentEnvironment = loadGame.Instantiate<Node3D>();
@@ -335,8 +336,14 @@ public partial class GameManager : Node3D
 	//Updates dialog from dialog trigger signal
 	private void SendDialog(string dialog) 
 	{
-		_ui.UpdateText(dialog);
+		//_ui.UpdateText(dialog);
 		_playerRe.UpdateState(PlayerStateTypes.Dialog);
+		DialogueManager.Instance.ShowDialogue(dialog);
+	}
+
+	private void AcceptDialogue()
+	{
+		DialogueManager.Instance.HideDialogue();
 	}
 	
 	private void UpdateInventory(Node3D item)

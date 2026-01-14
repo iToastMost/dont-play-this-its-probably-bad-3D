@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bx3tiy1h1b0rr"]
+[gd_scene load_steps=5 format=3 uid="uid://bx3tiy1h1b0rr"]
 
 [ext_resource type="Script" uid="uid://ckiifa6823pb8" path="res://Scripts/Ui.cs" id="1_jxero"]
 [ext_resource type="PackedScene" uid="uid://bgwyijd1evli8" path="res://Scenes/Art/UI/inventory.tscn" id="2_qdvrb"]
 [ext_resource type="PackedScene" uid="uid://b0qm320owu3k1" path="res://Scenes/Art/UI/map.tscn" id="3_nf4gj"]
+[ext_resource type="PackedScene" uid="uid://bfxkrtojoipes" path="res://Scenes/dialogue.tscn" id="4_eoccf"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -72,3 +73,5 @@ text = "Health"
 
 [node name="Map" parent="CanvasLayer" instance=ExtResource("3_nf4gj")]
 visible = false
+
+[node name="Dialogue" parent="CanvasLayer" instance=ExtResource("4_eoccf")]

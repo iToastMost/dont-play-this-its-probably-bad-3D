@@ -1,5 +1,8 @@
-[gd_scene format=3 uid="uid://bjrjapa6th5cr"]
+[gd_scene load_steps=2 format=3 uid="uid://bjrjapa6th5cr"]
 
-[node name="DialogueManager" type="Node3D"]
+[ext_resource type="Script" uid="uid://bunj1bt5e06sk" path="res://Scripts/DialogueManager/DialogueManager.cs" id="1_atyk4"]
 
-[node name="CharacterPrintTimer" type="Timer" parent="."]
+[node name="DialogueManager" type="Node"]
+script = ExtResource("1_atyk4")
+
+[node name="NextCharacterTimer" type="Timer" parent="."]

@@ -18,6 +18,9 @@ public partial class PlayerRE : CharacterBody3D
     [Signal]
     public delegate void ReloadFinishedEventHandler();
 
+    [Signal]
+    public delegate void AcceptDialogueEventHandler();
+
     [Export] public PackedScene GooseJumpScene;
 
     [Export] public float speed { get; set; } = 1.5f;
@@ -189,6 +192,7 @@ public override void _Ready()
         if (Input.IsActionJustPressed("accept_dialog") && _3DStarted == true) 
         {
             //CanMove = true;
+            EmitSignal(SignalName.AcceptDialogue);
         }
         
         if (Input.IsActionJustPressed("interaction_check"))

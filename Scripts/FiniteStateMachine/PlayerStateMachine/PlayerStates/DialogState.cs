@@ -3,6 +3,9 @@ using System;
 
 public class DialogState : PlayerState
 {
+    [Signal]
+    public delegate void EndDialogEventHandler();
+    
     public override void Enter()
     {
         player.PlayAnimation("Idle");
