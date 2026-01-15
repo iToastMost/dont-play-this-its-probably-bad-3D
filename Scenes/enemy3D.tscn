@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://8w1w7i8arnob"]
+[gd_scene load_steps=12 format=3 uid="uid://8w1w7i8arnob"]
 
 [ext_resource type="Script" uid="uid://bnoyawdc1jmk0" path="res://Scripts/Enemy3D.cs" id="1_hghv2"]
 [ext_resource type="PackedScene" uid="uid://c0b4032sbuy8g" path="res://Scenes/Art/Models/Characters/enemy_model.tscn" id="2_0n4k6"]
@@ -102,6 +102,9 @@ _data = {
 &"attack": SubResource("Animation_0bnlb")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0n4k6"]
+albedo_color = Color(0.9254902, 0.21960784, 0.09019608, 1)
+
 [node name="Enemy3D" type="CharacterBody3D"]
 script = ExtResource("1_hghv2")
 AttackDamage = 20
@@ -164,8 +167,13 @@ one_shot = true
 [node name="EnemyModel" parent="." instance=ExtResource("2_0n4k6")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.022018015, -0.9634758, -0.09173393)
 
+[node name="Mannequin" parent="EnemyModel/Rig/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0n4k6")
+
 [node name="HitStunTimer" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
 
 [connection signal="body_entered" from="AttackBox" to="." method="OnBodyEntered3D"]
+
+[editable path="EnemyModel"]

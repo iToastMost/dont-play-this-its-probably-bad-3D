@@ -10,7 +10,7 @@ public partial class DialogTrigger : Area3D
 	public bool eventTrigger;
 
     [Signal]
-	public delegate void MySignalWithArgumentEventHandler(string text);
+	public delegate void MySignalWithArgumentEventHandler(string name, string text);
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -27,7 +27,7 @@ public partial class DialogTrigger : Area3D
 	public void OnAreaEnter(Node3D body)
 	{
 		GD.Print("Dialog area entered");
-        EmitSignal(SignalName.MySignalWithArgument, dialogText);
+        EmitSignal(SignalName.MySignalWithArgument, "Terry", dialogText);
 		QueueFree();
     }
 }

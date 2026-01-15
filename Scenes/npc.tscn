@@ -1,11 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0b4032sbuy8g"]
+[gd_scene load_steps=4 format=3 uid="uid://214q6f885sgs"]
 
-[ext_resource type="PackedScene" uid="uid://jvhos6xb7o5s" path="res://Scenes/Art/Animations/AnimationLibrary_Godot_Standard.glb" id="1_l4ais"]
-[ext_resource type="AnimationLibrary" uid="uid://qcle3w2pjibl" path="res://Scenes/Art/Animations/new_animation_library.tres" id="2_77rwm"]
+[ext_resource type="PackedScene" uid="uid://cq4mvl4muutw" path="res://Scenes/Art/Models/Characters/npc_model.tscn" id="1_acqhf"]
+[ext_resource type="Script" uid="uid://cm0f8x54hfyyw" path="res://Scripts/Npc.cs" id="1_xxsvc"]
 
-[node name="EnemyModel" instance=ExtResource("1_l4ais")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_b0k6i"]
+size = Vector3(0.5279541, 1.8613434, 0.4537201)
 
-[node name="Skeleton3D" parent="Rig" index="0"]
+[node name="NPC" type="CharacterBody3D"]
+script = ExtResource("1_xxsvc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0032348633, 0.9072647, -0.017967224)
+shape = SubResource("BoxShape3D_b0k6i")
+
+[node name="NPC_Model" parent="." instance=ExtResource("1_acqhf")]
+
+[node name="Skeleton3D" parent="NPC_Model/Rig" index="0"]
 bones/1/position = Vector3(0, 0.050100047, 0.9167)
 bones/1/rotation = Quaternion(0.7904686, 0, 0, 0.6125026)
 bones/3/rotation = Quaternion(-0.077279985, 0, 0, 0.99700946)
@@ -59,12 +69,4 @@ bones/50/rotation = Quaternion(0.036589734, -0.00013117323, -4.797519e-06, 0.999
 bones/51/rotation = Quaternion(-0.5290733, -0.00032809481, 0.00034345797, 0.848576)
 bones/52/rotation = Quaternion(-0.00013717555, 0.9643068, -0.26478708, -0.00049942714)
 
-[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Rig/Skeleton3D" index="1"]
-transform = Transform3D(8.922674e-07, -1, 2.104789e-07, 0.9999998, 8.2440204e-07, 1.05327544e-07, -5.41621e-08, 1.09896064e-07, 1.0000001, -0.73889995, 1.4408001, -0.065400004)
-bone_name = "DEF-hand.R"
-bone_idx = 29
-
-[node name="AnimationPlayer" parent="." index="1"]
-libraries = {
-&"": ExtResource("2_77rwm")
-}
+[editable path="NPC_Model"]

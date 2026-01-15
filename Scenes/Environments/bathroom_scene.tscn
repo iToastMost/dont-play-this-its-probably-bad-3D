@@ -188,6 +188,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.4
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." groups=["StoreLights"]]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7, 2.986666, 1.7780356)
+visible = false
 light_color = Color(0.9195729, 0.85874385, 0.99493057, 1)
 light_energy = 2.455
 light_bake_mode = 1
@@ -199,6 +200,7 @@ spot_angle = 66.72
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="." groups=["StoreLights"]]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7, 2.9866662, 4.7887716)
+visible = false
 light_color = Color(0.9195729, 0.85874385, 0.99493057, 1)
 light_energy = 2.455
 light_bake_mode = 1
@@ -210,6 +212,7 @@ spot_angle = 66.72
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.164297, 1.4997756, 3.4622383)
+visible = false
 update_mode = 1
 intensity = 0.55
 blend_distance = 0.0

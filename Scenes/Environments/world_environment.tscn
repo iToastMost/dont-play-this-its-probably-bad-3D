@@ -1,7 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://uyv1asa72wm4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iv2gj"]
-sky_top_color = Color(0.16165093, 0.20137164, 0.25428414, 1)
+sky_top_color = Color(0.06447014, 0.08637985, 0.11720849, 1)
+sky_horizon_color = Color(0.06758292, 0.074573554, 0.07457345, 1)
+sky_cover_modulate = Color(0.06469653, 0.064696535, 0.0646965, 1)
+ground_bottom_color = Color(0.11128589, 0.09290265, 0.07255534, 1)
+ground_horizon_color = Color(0.087036304, 0.0933804, 0.09951294, 1)
 
 [sub_resource type="Sky" id="Sky_tawf3"]
 sky_material = SubResource("ProceduralSkyMaterial_iv2gj")
@@ -10,7 +14,7 @@ sky_material = SubResource("ProceduralSkyMaterial_iv2gj")
 background_mode = 2
 background_energy_multiplier = 1.28
 sky = SubResource("Sky_tawf3")
-ambient_light_color = Color(0.34781694, 0.34781697, 0.34781685, 1)
+ambient_light_color = Color(0.08855983, 0.08855996, 0.08855987, 1)
 ambient_light_energy = 0.1
 tonemap_mode = 4
 tonemap_exposure = 1.6
@@ -20,8 +24,9 @@ ssil_enabled = true
 glow_enabled = true
 glow_intensity = 2.84
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.02
-volumetric_fog_emission_energy = 5.0
+volumetric_fog_density = 0.0557
+volumetric_fog_albedo = Color(0.2592937, 0.2592937, 0.2592937, 1)
+volumetric_fog_emission_energy = 12.0
 
 [node name="WorldEnvironment" type="Node3D"]
 

@@ -13,8 +13,10 @@ public partial class Dialogue : Node
 	
 	private Timer NextCharacterTimer;
 	private RichTextLabel RichTextLabel;
+	private RichTextLabel _charName;
 	private ColorRect ColorRect;
 	private Label _continueLabel;
+	private Tween _tween;
 	
 	
 
@@ -23,6 +25,7 @@ public partial class Dialogue : Node
 	{
 		NextCharacterTimer = GetNode<Timer>("NextCharacterTimer");
 		RichTextLabel = GetNode<RichTextLabel>("RichTextLabel");
+		_charName = GetNode<RichTextLabel>("ColorRect/CharName");
 		ColorRect = GetNode<ColorRect>("ColorRect");
 		_continueLabel = GetNode<Label>("ContinueLabel");
 		RichTextLabel.VisibleCharacters = 0;
@@ -34,6 +37,7 @@ public partial class Dialogue : Node
 
 		RichTextLabel.Visible = false;
 		ColorRect.Visible = false;
+		_continueLabel.Visible = false;
 		//NextCharacterTimer.Start();
 	}
 
@@ -48,14 +52,16 @@ public partial class Dialogue : Node
 		RichTextLabel.VisibleCharacters = _visibleText;
 	}
 
-	public void ShowMessage(string message)
+	public void ShowMessage(string name, string message)
 	{
 		_visibleText = 0;
-		
+
+		_charName.Text = name;
 		RichTextLabel.Text = message;
 		RichTextLabel.VisibleCharacters = _visibleText;
 		_displayTextLength = RichTextLabel.Text.Length;
 
+		_charName.Visible = true;
 		RichTextLabel.Visible = true;
 		ColorRect.Visible = true;
 		_continueLabel.Visible = true;
@@ -72,6 +78,10 @@ public partial class Dialogue : Node
 			return;
 		}
 
+		if(_tween != null && _tween.IsRunning())
+			_tween.Kill();
+		
+		_charName.Visible = true;
 		_continueLabel.Visible = false;
 		RichTextLabel.Text = "";
 		RichTextLabel.Visible = false;
@@ -80,10 +90,10 @@ public partial class Dialogue : Node
 
 	private void ContinueLabelTween()
 	{
-		Tween tween = GetTree().CreateTween();
-		tween.TweenProperty(_continueLabel, "modulate:a", 0.75, _tweenSpeed / 2);
-		tween.TweenProperty(_continueLabel, "modulate:a", 0.25, _tweenSpeed / 2);
-		tween.SetLoops();
+		_tween = GetTree().CreateTween();
+		_tween.TweenProperty(_continueLabel, "modulate:a", 0.75, _tweenSpeed / 2);
+		_tween.TweenProperty(_continueLabel, "modulate:a", 0.25, _tweenSpeed / 2);
+		_tween.SetLoops();
 	}
 
 }

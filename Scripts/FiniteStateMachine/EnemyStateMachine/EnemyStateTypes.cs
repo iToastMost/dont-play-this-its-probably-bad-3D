@@ -7,4 +7,5 @@ public enum EnemyStateTypes
 	Attack,
 	Chase,
 	HitStun,
+	Death,
 }

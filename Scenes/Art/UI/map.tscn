@@ -15,10 +15,10 @@ script = ExtResource("1_ci6au")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -94.0
-offset_top = -1476.0
-offset_right = 1716.0
-offset_bottom = 194.0
+offset_left = -590.0
+offset_top = -552.0
+offset_right = 3219.0
+offset_bottom = 2313.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_26yhd")
@@ -29,10 +29,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -449.0
-offset_top = -171.0
-offset_right = -276.0
-offset_bottom = 245.0
+offset_left = -485.0
+offset_top = -247.90204
+offset_right = -312.0
+offset_bottom = 168.09796
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -61,10 +61,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -449.0
-offset_top = -171.0
-offset_right = -331.90204
-offset_bottom = 178.76697
+offset_left = -485.0
+offset_top = -247.90204
+offset_right = -367.90204
+offset_bottom = 101.86493
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -1.5707964
@@ -72,72 +72,118 @@ size_flags_horizontal = 4
 color = Color(1, 0.45882353, 0.4509804, 0.69803923)
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_left = 447.0
-offset_top = 266.0
-offset_right = 837.0
-offset_bottom = 274.0
+offset_left = 828.0
+offset_top = 367.0
+offset_right = 1218.0
+offset_bottom = 375.0
 color = Color(1, 0.45882353, 0.4509804, 0.69803923)
 
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
-offset_left = 269.0
-offset_top = 564.0
-offset_right = 331.0
-offset_bottom = 572.0
+offset_left = 650.0
+offset_top = 665.0
+offset_right = 712.0
+offset_bottom = 673.0
 color = Color(1, 0.45882353, 0.4509804, 0.69803923)
 
 [node name="ColorRect3" type="ColorRect" parent="CanvasLayer"]
-offset_left = 358.0
-offset_top = 564.0
-offset_right = 415.0
-offset_bottom = 572.0
+offset_left = 739.0
+offset_top = 665.0
+offset_right = 796.0
+offset_bottom = 673.0
 color = Color(1, 0.45882353, 0.4509804, 0.69803923)
 
 [node name="ColorRect4" type="ColorRect" parent="CanvasLayer"]
-offset_left = 417.0
-offset_top = 564.0
-offset_right = 455.81818
-offset_bottom = 572.0
+offset_left = 798.0
+offset_top = 665.0
+offset_right = 836.8182
+offset_bottom = 673.0
 rotation = 1.5707964
 color = Color(1, 0.45882353, 0.4509804, 0.69803923)
 
 [node name="BathroomTile1" parent="CanvasLayer" instance=ExtResource("3_p3ir5")]
-offset_left = 643.0
-offset_top = 69.0
-offset_right = 836.0
-offset_bottom = 191.0
+offset_left = 1024.0
+offset_top = 170.0
+offset_right = 1217.0
+offset_bottom = 292.0
 AreaName = "Bathroom"
 
 [node name="BathroomTile2" parent="CanvasLayer" instance=ExtResource("3_p3ir5")]
-offset_left = 449.0
-offset_top = 69.0
-offset_right = 642.0
-offset_bottom = 191.0
+offset_left = 830.0
+offset_top = 170.0
+offset_right = 1023.0
+offset_bottom = 292.0
 AreaName = "Bathroom"
 
 [node name="ShowroomTile" parent="CanvasLayer" instance=ExtResource("3_p3ir5")]
-offset_left = 270.0
-offset_top = 194.0
-offset_right = 837.0
-offset_bottom = 602.0
+offset_left = 651.0
+offset_top = 295.0
+offset_right = 1218.0
+offset_bottom = 703.0
 AreaName = "Showroom Floor"
 
 [node name="LockupTile" parent="CanvasLayer" instance=ExtResource("3_p3ir5")]
-offset_left = 270.0
-offset_top = 606.0
-offset_right = 470.0
-offset_bottom = 689.0
+offset_left = 651.0
+offset_top = 707.0
+offset_right = 851.0
+offset_bottom = 790.0
 AreaName = "Lockup"
 
 [node name="BreakroomTile" parent="CanvasLayer" instance=ExtResource("3_p3ir5")]
-offset_left = 842.0
-offset_top = 193.0
-offset_right = 997.0
-offset_bottom = 272.0
+offset_left = 1223.0
+offset_top = 294.0
+offset_right = 1378.0
+offset_bottom = 373.0
 AreaName = "Breakroom"
 
 [node name="SupplyClosetTile" parent="CanvasLayer" instance=ExtResource("3_p3ir5")]
-offset_left = 841.0
-offset_top = 68.0
-offset_right = 980.0
-offset_bottom = 189.0
+offset_left = 1222.0
+offset_top = 169.0
+offset_right = 1361.0
+offset_bottom = 290.0
 AreaName = "Supply Closet"
+
+[node name="door" type="ColorRect" parent="CanvasLayer"]
+offset_left = 639.0
+offset_top = 603.0
+offset_right = 657.0
+offset_bottom = 657.0
+color = Color(1, 0.6392157, 0.28235295, 1)
+
+[node name="door2" type="ColorRect" parent="CanvasLayer"]
+offset_left = 661.0
+offset_top = 716.0
+offset_right = 679.0
+offset_bottom = 770.0
+rotation = -1.5707964
+color = Color(1, 0.6392157, 0.28235295, 1)
+
+[node name="door3" type="ColorRect" parent="CanvasLayer"]
+offset_left = 955.0
+offset_top = 298.0
+offset_right = 973.0
+offset_bottom = 352.0
+rotation = -1.5707964
+color = Color(1, 0.6392157, 0.28235295, 1)
+
+[node name="door4" type="ColorRect" parent="CanvasLayer"]
+offset_left = 1041.0
+offset_top = 299.0
+offset_right = 1059.0
+offset_bottom = 353.0
+rotation = -1.5707964
+color = Color(1, 0.6392157, 0.28235295, 1)
+
+[node name="door5" type="ColorRect" parent="CanvasLayer"]
+offset_left = 1226.0
+offset_top = 301.0
+offset_right = 1244.0
+offset_bottom = 355.0
+rotation = -1.5707964
+color = Color(1, 0.6392157, 0.28235295, 1)
+
+[node name="door6" type="ColorRect" parent="CanvasLayer"]
+offset_left = 1208.0
+offset_top = 304.0
+offset_right = 1226.0
+offset_bottom = 358.0
+color = Color(1, 0.6392157, 0.28235295, 1)

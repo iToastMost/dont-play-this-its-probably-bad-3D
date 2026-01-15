@@ -23,16 +23,26 @@ grow_horizontal = 2
 grow_vertical = 0
 color = Color(0, 0, 0, 1)
 
+[node name="CharName" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 1
+offset_right = 542.0
+offset_bottom = 57.0
+theme_override_colors/default_color = Color(0.8392157, 0.4862745, 0.99215686, 0.87058824)
+theme_override_font_sizes/normal_font_size = 41
+theme_override_font_sizes/bold_font_size = 16
+bbcode_enabled = true
+text = "Character Name"
+
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -193.0
+offset_top = -136.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 29
 bbcode_enabled = true
 text = "What we've got here is some text for the game. This is a test to see how the dialogue looks with characters being revealed one at a time instead of all at once. Test test test. This message is completed, goodbye."
 

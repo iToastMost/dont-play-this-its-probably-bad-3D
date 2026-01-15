@@ -31,7 +31,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(568, 212), Vector2(776, 212)]
+"values": [Vector2(858, 234), Vector2(1141, 235)]
 }
 
 [sub_resource type="Animation" id="Animation_wdn4f"]
@@ -47,7 +47,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(776, 212), Vector2(568, 212)]
+"values": [Vector2(1139, 237), Vector2(859, 235)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k5gp2"]
@@ -89,29 +89,29 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -304.0
-offset_top = -508.0
-offset_right = -104.0
-offset_bottom = -141.0
+offset_left = -1144.0
+offset_top = -868.0
+offset_right = -725.0
+offset_bottom = -342.0
 grow_horizontal = 0
 grow_vertical = 0
 
 [node name="Use_Equip" type="Button" parent="CanvasLayer/ItemSelectedSlide/ItemSelected"]
-custom_minimum_size = Vector2(200, 60)
+custom_minimum_size = Vector2(280, 80)
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../Inspect")
 text = "Use/Equip
 "
 
 [node name="Inspect" type="Button" parent="CanvasLayer/ItemSelectedSlide/ItemSelected"]
-custom_minimum_size = Vector2(200, 60)
+custom_minimum_size = Vector2(280, 80)
 layout_mode = 2
 focus_neighbor_top = NodePath("../Use_Equip")
 focus_neighbor_bottom = NodePath("../Combine")
 text = "Inspect"
 
 [node name="Combine" type="Button" parent="CanvasLayer/ItemSelectedSlide/ItemSelected"]
-custom_minimum_size = Vector2(200, 60)
+custom_minimum_size = Vector2(280, 80)
 layout_mode = 2
 focus_neighbor_top = NodePath("../Inspect")
 text = "Combine"
@@ -122,8 +122,8 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -295.0
-offset_top = -504.0
+offset_left = -780.0
+offset_top = -845.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 8
@@ -136,8 +136,8 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -292.0
-offset_top = -507.0
+offset_left = -769.0
+offset_top = -831.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 8
@@ -145,7 +145,7 @@ size_flags_vertical = 8
 columns = 2
 
 [node name="Slot0" type="Button" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(140, 120)
+custom_minimum_size = Vector2(380, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -154,7 +154,7 @@ focus_neighbor_bottom = NodePath("../Slot2")
 theme_override_font_sizes/font_size = 14
 
 [node name="Slot1" type="Button" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(140, 120)
+custom_minimum_size = Vector2(380, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -163,7 +163,7 @@ focus_neighbor_bottom = NodePath("../Slot3")
 theme_override_font_sizes/font_size = 14
 
 [node name="Slot2" type="Button" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(140, 120)
+custom_minimum_size = Vector2(380, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -173,7 +173,7 @@ focus_neighbor_bottom = NodePath("../Slot4")
 theme_override_font_sizes/font_size = 14
 
 [node name="Slot3" type="Button" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(140, 120)
+custom_minimum_size = Vector2(380, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -184,7 +184,7 @@ focus_neighbor_bottom = NodePath("../Slot5")
 theme_override_font_sizes/font_size = 14
 
 [node name="Slot4" type="Button" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(140, 120)
+custom_minimum_size = Vector2(380, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -194,7 +194,7 @@ focus_neighbor_bottom = NodePath("../Slot6")
 theme_override_font_sizes/font_size = 14
 
 [node name="Slot5" type="Button" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(140, 120)
+custom_minimum_size = Vector2(380, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -205,7 +205,7 @@ focus_neighbor_bottom = NodePath("../Slot7")
 theme_override_font_sizes/font_size = 14
 
 [node name="Slot6" type="Button" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(140, 120)
+custom_minimum_size = Vector2(380, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -214,7 +214,7 @@ focus_neighbor_right = NodePath("../Slot7")
 theme_override_font_sizes/font_size = 14
 
 [node name="Slot7" type="Button" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(140, 120)
+custom_minimum_size = Vector2(380, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4

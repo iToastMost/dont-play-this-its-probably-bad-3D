@@ -1,8 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://c07i77wx40aiu"]
+[gd_scene load_steps=19 format=3 uid="uid://c07i77wx40aiu"]
 
 [ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_01rx1"]
 [ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="1_6q6ta"]
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="2_652wb"]
+[ext_resource type="PackedScene" uid="uid://u35hakuavrv8" path="res://Art/Models/Appliances/MESH_CombinedUnit_1_nodoors_v1.glb" id="3_l20at"]
+[ext_resource type="Texture2D" uid="uid://xc4p08ehd8og" path="res://Art/Textures/floor_tiled.png" id="4_m5jya"]
+[ext_resource type="PackedScene" uid="uid://cf5vt4ne5a0tg" path="res://Art/Models/Appliances/Fridge/MESH_Fridge_1_doors_v1.glb" id="5_mwk0h"]
+[ext_resource type="PackedScene" uid="uid://c0j8jvlj8xpqx" path="res://Art/Models/Appliances/Fridge/MESH_Fridge_2_doors_v1.glb" id="6_b5x1k"]
+[ext_resource type="PackedScene" uid="uid://b2n052rwmhdkg" path="res://Art/Models/Appliances/Fridge/MESH_Fridge_3_doors_v1.glb" id="7_25jdw"]
+[ext_resource type="PackedScene" uid="uid://bl7iefgr47eo" path="res://Art/Models/Appliances/Fridge/MESH_Fridge_4_nodoors_v1.glb" id="8_tw3d2"]
+[ext_resource type="PackedScene" uid="uid://c6mhhjsm8qa3o" path="res://Art/Models/Appliances/MESH_DishWasher_1_nodoors_v1.glb" id="9_4157h"]
+[ext_resource type="PackedScene" uid="uid://ca6gagb4d1xdv" path="res://Art/Models/Appliances/MESH_Dryer_1_nodoors_v1.glb" id="10_yi8m6"]
+[ext_resource type="PackedScene" uid="uid://c5sh0il7h7eh0" path="res://Art/Models/Appliances/oven1_workingdoors_texture_v1.glb" id="11_l20at"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_01rx1"]
 resource_local_to_scene = true
@@ -19,6 +28,14 @@ size = Vector3(4.21463, 0.3388672, 5.8066406)
 [sub_resource type="BoxShape3D" id="BoxShape3D_m5jya"]
 resource_local_to_scene = true
 size = Vector3(4.1325684, 0.46862793, 10.189148)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mwk0h"]
+albedo_texture = ExtResource("4_m5jya")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_b5x1k"]
+material = SubResource("StandardMaterial3D_mwk0h")
+size = Vector2(40, 40)
 
 [node name="WarehouseScene" type="Node3D" groups=["Environments"]]
 script = ExtResource("1_01rx1")
@@ -56,6 +73,9 @@ ZoneId = "STORE_WAREHOUSE"
 [node name="CSGBox3D2" type="CSGBox3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.808049, 0.9020996, 13.695902)
 size = Vector3(0.07507324, 2.8041992, 5.0757446)
+
+[node name="MESH_CombinedUnit_1_nodoors_v1" parent="Environment" instance=ExtResource("3_l20at")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.7333417, -0.51171875, 11.858622)
 
 [node name="FixedCamera" parent="." instance=ExtResource("2_652wb")]
 transform = Transform3D(-0.8377053, -0.046627663, 0.5441284, 0, 0.9963485, 0.085379496, -0.54612255, 0.071522854, -0.83464646, 0.76422167, 0.7576697, -4.332203)
@@ -105,7 +125,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29612732, -0.3305664, -0.00
 shape = SubResource("BoxShape3D_mwk0h")
 
 [node name="FixedCamera2" parent="." instance=ExtResource("2_652wb")]
-transform = Transform3D(-0.9999758, -0.0001338269, -0.0069554327, 0, 0.999815, -0.019237071, 0.00695672, -0.019236604, -0.9997908, -1.1153619, 0.71489155, 6.7641134)
+transform = Transform3D(-0.9999758, -0.0001338269, -0.0069554322, 0, 0.999815, -0.01923707, 0.00695672, -0.019236604, -0.9997908, -1.1153619, 0.71489155, 4.5950675)
 
 [node name="Area3D" parent="FixedCamera2" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.803107, 0, 10.9186)
@@ -113,6 +133,81 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.803107, 0, 10.9186)
 [node name="CollisionShape3D" parent="FixedCamera2/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4498291, -0.26568604, -0.15982056)
 shape = SubResource("BoxShape3D_m5jya")
+
+[node name="Floors_Walls" type="Node" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floors_Walls"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.0080688, -0.5006504, 4.969018)
+mesh = SubResource("PlaneMesh_b5x1k")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." groups=["StoreLights"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0730653, 2.6922786, 1.9486341)
+light_color = Color(0.8392157, 0.8627451, 0.8627451, 1)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." groups=["StoreLights"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0730653, 2.6922786, 13.463217)
+light_color = Color(0.8392157, 0.8627451, 0.8627451, 1)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." groups=["StoreLights"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1431975, 2.034476, 16.611004)
+light_color = Color(0.8392157, 0.8627451, 0.8627451, 1)
+
+[node name="MESH_Fridge_1_doors_v1" parent="." instance=ExtResource("5_mwk0h")]
+transform = Transform3D(0.120431334, 0, 0.9927217, 0, 1, 0, -0.9927217, 0, 0.120431334, -3.291706, -0.50867623, 2.270636)
+
+[node name="MESH_Fridge_1_doors_v2" parent="." instance=ExtResource("5_mwk0h")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, -3.2917063, -0.50867623, 1.2706362)
+
+[node name="MESH_Fridge_1_doors_v3" parent="." instance=ExtResource("5_mwk0h")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, -3.2917063, -0.50867623, 5.439857)
+
+[node name="MESH_Fridge_1_doors_v4" parent="." instance=ExtResource("5_mwk0h")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, -3.2917066, -0.50867623, -0.7293639)
+
+[node name="MESH_Fridge_2_doors_v1" parent="." instance=ExtResource("6_b5x1k")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.1976507, -0.51171875, 0.23809719)
+
+[node name="MESH_Fridge_3_doors_v1" parent="." instance=ExtResource("7_25jdw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.3175278, -0.51171875, 3.5570545)
+
+[node name="MESH_Fridge_4_nodoors_v1" parent="." instance=ExtResource("8_tw3d2")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.2920105, -0.5117183, 6.4856315)
+
+[node name="MESH_DishWasher_1_nodoors_v1" parent="." instance=ExtResource("9_4157h")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.7965269, -0.51171875, 7.8407545)
+
+[node name="MESH_DishWasher_1_nodoors_v2" parent="." instance=ExtResource("9_4157h")]
+transform = Transform3D(0.059637353, 0, 0.9982201, 0, 1, 0, -0.9982201, 0, 0.059637353, -3.1577837, -0.51171875, 13.027615)
+
+[node name="MESH_Dryer_1_nodoors_v1" parent="." instance=ExtResource("10_yi8m6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.84021664, -0.51171875, 10.6116905)
+
+[node name="MESH_Dryer_1_nodoors_v2" parent="." instance=ExtResource("10_yi8m6")]
+transform = Transform3D(-0.017086012, 0, 0.99985397, 0, 1, 0, -0.99985397, 0, -0.017086012, -3.1597834, -0.51171875, 10.6116905)
+
+[node name="oven1_workingdoors_texture_v1" parent="." instance=ExtResource("11_l20at")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.81548345, -0.51171875, 9.355623)
+
+[node name="oven1_workingdoors_texture_v2" parent="." instance=ExtResource("11_l20at")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.81548345, -0.51171875, 5.3556232)
+
+[node name="MESH_Fridge_4_nodoors_v2" parent="." instance=ExtResource("8_tw3d2")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -8.080138, -0.51794434, 22.231089)
+
+[node name="MESH_CombinedUnit_1_nodoors_v1" parent="." instance=ExtResource("3_l20at")]
+transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, -7.0196557, -0.51794434, 22.213509)
+
+[node name="MESH_DishWasher_1_nodoors_v3" parent="." instance=ExtResource("9_4157h")]
+transform = Transform3D(-0.9250573, 0, -0.37982753, 0, 1, 0, 0.37982753, 0, -0.9250573, -5.150396, -0.5179441, 22.19754)
+
+[node name="MESH_Dryer_1_nodoors_v3" parent="." instance=ExtResource("10_yi8m6")]
+transform = Transform3D(0.6866816, 0, 0.7269583, 0, 1, 0, -0.7269583, 0, 0.6866816, -11.019491, -0.51794446, 11.666923)
+
+[node name="oven1_workingdoors_texture_v3" parent="." instance=ExtResource("11_l20at")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9496284, -0.51794446, 11.501725)
+
+[node name="MESH_Fridge_3_doors_v2" parent="." instance=ExtResource("7_25jdw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.418198, -0.51794446, 11.462523)
 
 [editable path="FixedCamera"]
 [editable path="FixedCamera4"]

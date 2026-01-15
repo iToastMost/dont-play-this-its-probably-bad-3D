@@ -5,6 +5,7 @@ public class ChaseState : EnemyState
 {
 	public override void Enter()
 	{
+		GD.Print("Entering ChaseState");
 		_enemy.Velocity = Vector3.Zero;
 		_enemy.EnemyAnimationPlayer.Stop();
 		_enemy.EnemyAnimationPlayer.CurrentAnimation = "Walk_Formal";

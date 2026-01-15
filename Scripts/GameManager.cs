@@ -83,6 +83,8 @@ public partial class GameManager : Node3D
 		_animationPlayer.AnimationFinished += FadeOutFinished;
 		_inventory.ItemUsed += UseItem;
 		_inventory.CheckItemSlotClicked += CheckInventorySlot;
+		_playerRe.AcceptDialogue += AcceptDialogue;
+		_playerRe.NPCDialogue += SendDialogue;
 		
 		playerSpawnPos = new Vector3(loadedData.PlayerPosX.ToFloat(),  loadedData.PlayerPosY.ToFloat(), loadedData.PlayerPosZ.ToFloat());
 		var playerSpawnRotation = new Vector3(0, loadedData.PlayerRotationY.ToFloat(), 0);
@@ -199,6 +201,7 @@ public partial class GameManager : Node3D
 		_inventory.ItemUsed += UseItem;
 		_inventory.CheckItemSlotClicked += CheckInventorySlot;
 		_playerRe.AcceptDialogue += AcceptDialogue;
+		_playerRe.NPCDialogue += SendDialogue;
 		
 		var loadGame = ResourceLoader.Load<PackedScene>(pathToLoad);
 		_currentEnvironment = loadGame.Instantiate<Node3D>();
@@ -247,7 +250,7 @@ public partial class GameManager : Node3D
 		var dialogSignals = GetTree().GetNodesInGroup("DialogTriggers");
 		foreach(DialogTrigger dTrigger in dialogSignals) 
 		{
-			dTrigger.Connect("MySignalWithArgument", new Callable(this, nameof(SendDialog)));
+			dTrigger.Connect("MySignalWithArgument", new Callable(this, nameof(SendDialogue)));
 		}
 	}
 
@@ -321,7 +324,7 @@ public partial class GameManager : Node3D
 			if (interactableEnvironmentNode is EnvironmentItemRequired req)
 			{
 				req.Interacted += IdCheck;
-				req.AlreadyCompletedText += SendDialog;
+				req.AlreadyCompletedText += SendDialogue;
 			}
 
 			if (interactableEnvironmentNode is ComputerTerminal comp)
@@ -333,11 +336,11 @@ public partial class GameManager : Node3D
 
 
 	//Updates dialog from dialog trigger signal
-	private void SendDialog(string dialog) 
+	private void SendDialogue(string name, string dialog) 
 	{
 		//_ui.UpdateText(dialog);
 		_playerRe.UpdateState(PlayerStateTypes.Dialog);
-		DialogueManager.Instance.ShowDialogue(dialog);
+		DialogueManager.Instance.ShowDialogue(name, dialog);
 	}
 
 	private void AcceptDialogue()
@@ -584,7 +587,7 @@ public partial class GameManager : Node3D
 					{
 						GD.Print("You have the key to this door, door unlocked");
 						keyCheck = true;
-						SendDialog("I unlocked the door. Seems like I won't be needing this key anymore.");
+						SendDialogue("You", "I unlocked the door. Seems like I won't be needing this key anymore.");
 						_playerInventory[i] = null;
 						_inventory.UpdateInventory("", i);
 						GameStateManager.Instance.MarkDoorUnlocked(zoneId, doorId);
@@ -594,7 +597,7 @@ public partial class GameManager : Node3D
 			}
 			
 			GD.Print("You do not have the key to this door");
-			SendDialog("The door is locked. I think I left the key in the break room supply closet.");
+			SendDialogue("You","The door is locked. I think I left the key in the break room supply closet.");
 			return keyCheck;
 		}
 		
@@ -614,7 +617,7 @@ public partial class GameManager : Node3D
 					if (keyItem.KeyId == reqId)
 					{
 						GD.Print("Fuse used, power restored.");
-						SendDialog("That should have restored power!");
+						SendDialogue("You","That should have restored power!");
 						_playerInventory[i] = null;
 						_inventory.UpdateInventory("", i);
 						GameStateManager.Instance.MarkEventTriggered(zoneId, eventName);
@@ -627,7 +630,7 @@ public partial class GameManager : Node3D
 			}
 			
 			GD.Print("You do not have a fuse");
-			SendDialog("I don't have a fuse. I think there's one in lockup.");
+			SendDialogue("You","I don't have a fuse. I think there's one in lockup.");
 		}
 		
 	}

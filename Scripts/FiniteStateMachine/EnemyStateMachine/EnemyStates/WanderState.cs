@@ -43,7 +43,7 @@ public class WanderState : EnemyState
 
 	public override void Exit()
 	{
-		
+		_enemy.WanderTimer.Stop();
 	}
 
 	private Vector3 GenerateRandomLocation()

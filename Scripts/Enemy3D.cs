@@ -11,7 +11,11 @@ public partial class Enemy3D : CharacterBody3D
     EnemyStateMachine esm;
     private List<RayCast3D> _rayCasts;
     public AnimationPlayer EnemyAnimationPlayer;
+    
+    public CollisionShape3D EnemyCollider;
+    public CollisionShape3D AttackCollider;
 
+    public bool IsDead = false;
     private int _health = 5;
     public float _enemyMoveSpeed = 1.0f;
     public float _distanceToPlayer;
@@ -19,8 +23,6 @@ public partial class Enemy3D : CharacterBody3D
     public Timer WanderTimer;
     public Timer HitStunTimer;
     public bool CanWander;
-    
-    
     
     [Export]
     public string ZoneId { get; set; }
@@ -45,6 +47,9 @@ public partial class Enemy3D : CharacterBody3D
         HitStunTimer = GetNode<Timer>("HitStunTimer");
         EnemyAnimationPlayer = GetNode<AnimationPlayer>("EnemyModel/AnimationPlayer");
         
+        EnemyCollider = GetNode<CollisionShape3D>("CollisionShape3D");
+        AttackCollider = GetNode<CollisionShape3D>("AttackBox/CollisionShape3D");
+        
         WanderTimer.Timeout += WanderTimeout;
         HitStunTimer.Timeout += HitStunTimeout;
 
@@ -63,6 +68,7 @@ public partial class Enemy3D : CharacterBody3D
         esm.AddState(EnemyStateTypes.Chase, new ChaseState());
         esm.AddState(EnemyStateTypes.Attack, new AttackState());
         esm.AddState(EnemyStateTypes.HitStun, new HitStunState());
+        esm.AddState(EnemyStateTypes.Death, new EnemyDeathState());
 
         esm.Initialize(this);
         esm.ChangeState(EnemyStateTypes.Wander);
@@ -81,6 +87,8 @@ public partial class Enemy3D : CharacterBody3D
 
     public override void _Process(double delta)
     {
+        if (IsDead)
+            return;
         esm.PhysicsUpdate(delta);
     }
     
@@ -106,7 +114,8 @@ public partial class Enemy3D : CharacterBody3D
 
     private void HitStunTimeout()
     {
-        esm.ChangeState(EnemyStateTypes.Chase);
+        if(!IsDead)
+            esm.ChangeState(EnemyStateTypes.Chase);
     }
     
     public void TakeDamage()
@@ -122,10 +131,14 @@ public partial class Enemy3D : CharacterBody3D
         _health--;
         if (_health <= 0) 
         {
+            IsDead = true;
             GameStateManager.Instance.MarkEnemyKilled(ZoneId, EnemyId);
-            QueueFree();
+            esm.ChangeState(EnemyStateTypes.Death);
         }
 
+        if (IsDead)
+            return;
+        
         if (esm.GetEnemyState() == EnemyStateTypes.Chase || esm.GetEnemyState() == EnemyStateTypes.HitStun || esm.GetEnemyState() == EnemyStateTypes.Attack)
             return;
         

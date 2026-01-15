@@ -21,6 +21,9 @@ public partial class PlayerRE : CharacterBody3D
     [Signal]
     public delegate void AcceptDialogueEventHandler();
 
+    [Signal]
+    public delegate void NPCDialogueEventHandler(string npcName, string npcDialogue);
+
     [Export] public PackedScene GooseJumpScene;
 
     [Export] public float speed { get; set; } = 1.5f;
@@ -292,6 +295,7 @@ public override void _Ready()
             if (node is iInteractable interactable) 
             {
                 GD.Print("Interactable found");
+                playerAnimation.CurrentAnimation = "Interact";
                 interactable.Interact();
                 return;
             }
@@ -300,8 +304,14 @@ public override void _Ready()
             {
                 //Signals to game manager that an item has been looted and inventory needs to be updated
                 //lootable.Loot(_playerInventory);
+                playerAnimation.CurrentAnimation = "PickUp_Table";
                 UpdateInventory(node);
                 return;
+            }
+
+            if (node is Npc npc)
+            {
+                EmitSignal(SignalName.NPCDialogue, npc.NPCName, npc.NPCDialogue);
             }
         }
 
