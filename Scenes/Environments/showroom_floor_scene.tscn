@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bwhhunf3f6to0"]
+[gd_scene load_steps=52 format=3 uid="uid://bwhhunf3f6to0"]
 
 [ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_2goeg"]
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="1_jna78"]
@@ -132,6 +132,13 @@ uv1_scale = Vector3(20, 20, 20)
 lightmap_size_hint = Vector2i(177, 177)
 material = SubResource("StandardMaterial3D_ubyhl")
 size = Vector2(35, 35)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_1hiy4"]
+vertices = PackedVector3Array(-20.646526, 0.0860405, -19.5, -20.646526, 0.0860405, 19.5, 18.353474, 0.0860405, 19.5, 18.353474, 0.0860405, -19.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1hiy4"]
+size = Vector2(40, 40)
 
 [node name="ShowroomFloorScene" type="Node3D" groups=["Environments"]]
 script = ExtResource("1_2goeg")
@@ -901,6 +908,14 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.4
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." groups=["StoreLights"]]
 transform = Transform3D(1, 0, 0, 0, 0.5035478, 0.86396736, 0, -0.86396736, 0.5035478, 15.95501, 7.810197, 18.094334)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.62563, -0.12534672, 15.030418)
+navigation_mesh = SubResource("NavigationMesh_1hiy4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1465263, -0.4139595, 0)
+mesh = SubResource("PlaneMesh_1hiy4")
 
 [editable path="Cameras/Hallway"]
 [editable path="Cameras/Appliances"]

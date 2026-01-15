@@ -539,6 +539,6 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.68
 [node name="NPC" parent="." instance=ExtResource("16_q36r4")]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -1.1740897, -0.50929904, 0.025765598)
 NPCName = "Van Helsing"
-NPCDialogue = "Looks like the breaker blew again. We have a spare fuse in lockup. The key is the the supply closet next to me. Remember to check your map with \"M\" if you feel lost! Also, grab a gun and some ammo off the table here; because America."
+NPCDialogue = "Looks like the breaker blew again. We have a spare fuse in lockup. The key is in the supply closet next to me. Remember to check your map with \"M\" if you feel lost! Also, grab a gun and some ammo off the table here; because America."
 
 [editable path="Cameras/FixedCamera"]

@@ -1,16 +1,16 @@
 {
-  "PlayerPosX": "-1.8333309",
-  "PlayerPosY": "0.40541345",
-  "PlayerPosZ": "1.7202997",
-  "PlayerRotationY": "-1.862389",
+  "PlayerPosX": "-2.2716677",
+  "PlayerPosY": "0.4054225",
+  "PlayerPosZ": "1.7116191",
+  "PlayerRotationY": "-1.2623885",
   "Playerhealth": 100,
-  "PlayerAmmo": 6,
+  "PlayerAmmo": 12,
   "CurrentEnvironment": "STORE_BREAKROOM",
   "playerInventory": [
+	0,
+	-1,
 	2,
 	1,
-	-1,
-	-1,
 	-1,
 	-1,
 	-1,
@@ -20,7 +20,9 @@
   "ZoneStates": {
 	"STORE_MENS_BATHROOM": {
 	  "DeadEnemyIds": [],
-	  "LootedItemIds": [],
+	  "LootedItemIds": [
+        "HEALING_HERB01"
+	  ],
 	  "EventTriggeredIds": [],
 	  "DoorUnlockedIds": []
 	},
@@ -56,6 +58,12 @@
 	  "LootedItemIds": [
         "FUSE"
 	  ],
+	  "EventTriggeredIds": [],
+	  "DoorUnlockedIds": []
+	},
+	"STORE_WAREHOUSE": {
+	  "DeadEnemyIds": [],
+	  "LootedItemIds": [],
 	  "EventTriggeredIds": [],
 	  "DoorUnlockedIds": []
 	},

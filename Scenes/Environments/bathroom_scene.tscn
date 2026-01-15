@@ -212,7 +212,6 @@ spot_angle = 66.72
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.164297, 1.4997756, 3.4622383)
-visible = false
 update_mode = 1
 intensity = 0.55
 blend_distance = 0.0

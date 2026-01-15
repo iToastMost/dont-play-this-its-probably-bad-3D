@@ -7,13 +7,14 @@ public class WanderState : EnemyState
 	private Vector3 _targetLocation = Vector3.Zero;
 	private long _wanderDistance = 5;
 	private double _wanderWaitTime;
-	private float _wanderSpeed = 1f;
+	private float _wanderSpeed = 3f;
 	
 	private List<RayCast3D> _rayCasts;
 	public override void Enter()
 	{
 		_rayCasts = _enemy.GetRayCasts();
 		_targetLocation = GenerateRandomLocation();
+		MovementTarget = _targetLocation;
 		_wanderWaitTime = 0;
 		_enemy.CanWander = true;
 		_enemy.EnemyAnimationPlayer.CurrentAnimation = "Walk_Formal";
@@ -58,6 +59,12 @@ public class WanderState : EnemyState
 		return newLocation;
 	}
 
+	public Vector3 MovementTarget
+	{
+		get { return _enemy.NavAgent.TargetPosition; }
+		set { _enemy.NavAgent.TargetPosition = value; }
+	}
+
 	private void MoveToLocation(Vector3 location, double delta)
 	{
 		Vector3 direction = Vector3.Zero;
@@ -69,10 +76,21 @@ public class WanderState : EnemyState
 			_enemy.CanWander = false;
 			_enemy.EnemyAnimationPlayer.CurrentAnimation = "Idle";
 			_targetLocation = GenerateRandomLocation();
+			MovementTarget = _targetLocation;
 			RandomWaitTime();
 			return;
 		}
 
+		
+		if (_enemy.NavAgent.IsNavigationFinished())
+		{
+			return;
+		}
+
+		Vector3 currentAgentPosition = _enemy.GlobalTransform.Origin;
+		Vector3 nextPathPosition = _enemy.NavAgent.GetNextPathPosition();
+
+		_enemy.Velocity = currentAgentPosition.DirectionTo(nextPathPosition) * _wanderSpeed;
 		//var direction = Vector3.Back;
 		//var playerDirection = (_enemy.GlobalPosition - location);
 		
@@ -81,7 +99,7 @@ public class WanderState : EnemyState
 		//_enemy.Position -= direction * (float)delta * _enemy._enemyMoveSpeed;
 		
 		//_enemy.Position -=  _enemy.Transform.Basis.Z * _wanderSpeed * (float)delta;
-		_enemy.Velocity = direction * _wanderSpeed;
+		//_enemy.Velocity = direction * _wanderSpeed;
 		_enemy.LookAt(location);
 		
 		//LookAtInterpolation(_enemy.EnemyTurnSpeed);
@@ -104,4 +122,5 @@ public class WanderState : EnemyState
 		
 		_enemy.WanderTimer.Start();
 	}
+	
 }

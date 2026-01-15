@@ -24,6 +24,8 @@ public partial class Enemy3D : CharacterBody3D
     public Timer HitStunTimer;
     public bool CanWander;
     
+    public NavigationAgent3D  NavAgent;
+    
     [Export]
     public string ZoneId { get; set; }
     
@@ -46,6 +48,7 @@ public partial class Enemy3D : CharacterBody3D
         WanderTimer = GetNode<Timer>("WanderTimer");
         HitStunTimer = GetNode<Timer>("HitStunTimer");
         EnemyAnimationPlayer = GetNode<AnimationPlayer>("EnemyModel/AnimationPlayer");
+        NavAgent = GetNode<NavigationAgent3D>("NavigationAgent3D");
         
         EnemyCollider = GetNode<CollisionShape3D>("CollisionShape3D");
         AttackCollider = GetNode<CollisionShape3D>("AttackBox/CollisionShape3D");
@@ -82,6 +85,12 @@ public partial class Enemy3D : CharacterBody3D
         {
             GD.Print("Player not found.");
         }
+        
+        NavAgent.PathDesiredDistance = 0.5f;
+        NavAgent.TargetDesiredDistance = 0.5f;
+
+        // Make sure to not await during _Ready.
+        Callable.From(ActorSetup).CallDeferred();
         
     }
 
@@ -143,5 +152,11 @@ public partial class Enemy3D : CharacterBody3D
             return;
         
         esm.ChangeState(EnemyStateTypes.Chase);
+    }
+    
+    private async void ActorSetup()
+    {
+        // Wait for the first physics frame so the NavigationServer can sync.
+        await ToSignal(GetTree(), SceneTree.SignalName.PhysicsFrame);
     }
 }
