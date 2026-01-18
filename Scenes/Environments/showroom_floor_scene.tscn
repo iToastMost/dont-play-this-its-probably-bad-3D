@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://bwhhunf3f6to0"]
+[gd_scene load_steps=53 format=3 uid="uid://bwhhunf3f6to0"]
 
 [ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_2goeg"]
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="1_jna78"]
@@ -23,11 +23,11 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jna78"]
 resource_local_to_scene = true
-size = Vector3(1.8320313, 0.6088867, 12.269287)
+size = Vector3(1.8320313, 0.6088867, 10.779541)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fqmik"]
 resource_local_to_scene = true
-size = Vector3(11.517151, 0.6118164, 6.088379)
+size = Vector3(11.517151, 0.6118164, 7.5625)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_555p5"]
 resource_local_to_scene = true
@@ -35,7 +35,10 @@ size = Vector3(3.9537506, 0.5029297, 11.981725)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5w1iy"]
 resource_local_to_scene = true
-size = Vector3(8.66497, 1, 1.2559814)
+size = Vector3(10.971645, 1, 1.2559814)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oautp"]
+size = Vector3(3.6306152, 1, 5.8528595)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_orp73"]
 resource_local_to_scene = true
@@ -51,7 +54,7 @@ size = Vector3(11.665039, 0.4362793, 12.039886)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_boeyx"]
 resource_local_to_scene = true
-size = Vector3(19.137314, 0.569458, 9.073898)
+size = Vector3(9.983381, 0.569458, 8.496788)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pr7sf"]
 resource_local_to_scene = true
@@ -63,15 +66,23 @@ size = Vector3(8.532501, 0.35009766, 10.6519165)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ivlfl"]
 resource_local_to_scene = true
-size = Vector3(20.372437, 0.5126953, 12.823316)
+size = Vector3(20.372437, 0.5126953, 13.5942745)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_63rf1"]
 resource_local_to_scene = true
-size = Vector3(8.516975, 0.39697266, 14.818375)
+size = Vector3(2.6398172, 1.4572754, 6.340578)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5owe4"]
 resource_local_to_scene = true
 size = Vector3(3.5682983, 0.3154297, 6)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_1hiy4"]
+vertices = PackedVector3Array(17.103474, -0.048303604, -18.5, 17.603474, -0.048303604, -19.5, -20.646526, -0.048303604, -19.5, -20.646526, -0.048303604, -18.5, 18.353474, -0.048303604, -19.5, 17.603474, -0.048303604, -2.25, 18.603474, -0.048303604, -17.75, 17.353474, -0.048303604, 16.5, 18.353474, -0.048303604, 16.75, 27.853474, -0.048303604, 16.5, 27.853474, -0.048303604, -17.75, -16.646526, -0.048303604, -6, -17.396526, -0.048303604, -6.5, -17.646526, -0.048303604, -6.5, -18.896526, -0.048303604, -6.5, -19.896526, -0.048303604, -2, -16.396526, -0.048303604, -2, -16.146526, -0.048303604, -2.5, -18.896526, -0.048303604, -17.25, -19.896526, -0.048303604, -17.25, -14.646526, -0.048303604, -2.5, -15.146526, -0.048303604, -6.25, -7.1465263, -0.048303604, -17.25, -9.396526, -0.048303604, -17.25, -9.896526, -0.048303604, -16.25, -10.146526, -0.048303604, -15.25, -10.146526, -0.048303604, -9.25, -7.1465263, -0.048303604, -9.25, -14.396526, -0.048303604, -6.25, -10.646526, -0.048303604, -2.5, -10.646526, -0.048303604, -6, -13.396526, -0.048303604, -6.25, -14.396526, -0.048303604, -15.75, -17.646526, -0.048303604, -16, -17.396526, -0.048303604, -15.5, -13.146526, -0.048303604, -15.5, -13.896526, -0.048303604, -7.5, -13.896526, -0.048303604, -15.25, -6.1465263, 3.7016964, -17.25, -6.1465263, 3.7016964, -9.75, 5.6034737, 3.7016964, -9.75, 5.6034737, 3.7016964, -17.25, -5.8965263, -0.048303604, -17.25, -5.8965263, -0.048303604, -10, 5.3534737, -0.048303604, -10, 5.3534737, -0.048303604, -17.25, 12.853474, -0.048303604, -11.5, 13.853474, -0.048303604, -9.5, 14.103474, -0.048303604, -10, 13.353474, -0.048303604, -11.75, 13.103474, -0.048303604, -13.5, 15.853474, -0.048303604, -17.25, 6.6034737, -0.048303604, -17.25, 8.853474, -0.048303604, -13.5, 6.6034737, -0.048303604, -12.5, 8.603474, -0.048303604, -12.5, 15.853474, -0.048303604, -10, -16.396526, 1.9516964, -7.25, -15.146526, 1.7016964, -7.25, -14.896526, 1.9516964, -8, -14.896526, 1.7016964, -14.75, -16.396526, 1.7016964, -14.75, -12.396526, 1.7016964, -14.5, -12.396526, 1.7016964, -7, -11.146526, 1.7016964, -7, -11.146526, 1.7016964, -14.5, 8.853474, -0.048303604, -11.5, 6.6034737, -0.048303604, -9, 6.1034737, -0.048303604, -4, 6.1034737, -0.048303604, 1, 7.1034737, -0.048303604, 1, 7.1034737, -0.048303604, -4, 9.103474, -0.048303604, -4.25, 9.353474, -0.048303604, -3, 13.603474, -0.048303604, -3.25, 5.6034737, -0.048303604, -8.75, 5.6034737, -0.048303604, -4.25, -6.8965263, -0.048303604, -8.75, -10.146526, -0.048303604, -6.25, -9.396526, -0.048303604, -2.25, -2.1465263, -0.048303604, -4, -9.396526, -0.048303604, 1.25, -2.1465263, -0.048303604, 1, -1.6465263, -0.048303604, -4.25, -1.6465263, -0.048303604, -8.75, 0.10347366, -0.048303604, -4, 0.10347366, -0.048303604, 1, 0.85347366, -0.048303604, 1, 1.1034737, -0.048303604, -4.25, 3.1034737, -0.048303604, -4, 3.8534737, -0.048303604, -4, 3.1034737, -0.048303604, 1, 3.8534737, -0.048303604, 1, 15.103474, 0.7016964, -7.25, 15.103474, 0.7016964, -3.25, 16.103474, 0.7016964, -3.25, 16.103474, 0.7016964, -7.25, 4.1034737, -0.048303604, 3, 2.8534737, -0.048303604, 3, 14.353474, -0.048303604, 9.5, 5.8534737, -0.048303604, 3, 1.1034737, -0.048303604, 3, -0.14652634, -0.048303604, 3, 7.3534737, -0.048303604, 3, -2.1465263, -0.048303604, 2.75, -2.3965263, -0.048303604, 15.75, 16.103474, -0.048303604, 1.5, 15.853474, -0.048303604, -2, 13.853474, -0.048303604, -2, 9.353474, -0.048303604, 2.75, 16.103474, -0.048303604, 9.25, 14.353474, -0.048303604, 15.75, -19.896526, -0.048303604, 5.5, -16.396526, -0.048303604, 5.5, -15.146526, 2.4516964, -1.5, -15.146526, 2.4516964, -0.5, -10.396526, 2.4516964, -0.5, -10.396526, 2.4516964, -1.5, -14.896526, 1.2016964, -1.25, -14.896526, 0.9516964, -0.75, -10.646526, 0.9516964, -0.75, -10.646526, 1.2016964, -1.25, -19.896526, -0.048303604, 8.75, -18.896526, -0.048303604, 9, -16.146526, -0.048303604, 6, -18.896526, -0.048303604, 14.75, -13.146526, -0.048303604, 14.75, -9.896526, -0.048303604, 6, -12.896526, -0.048303604, 15.75, -15.396526, 1.7016964, 1.25, -15.396526, 1.7016964, 2.25, -10.396526, 1.7016964, 2.25, -10.396526, 1.7016964, 1.25, -15.396526, 1.7016964, 4, -15.396526, 1.7016964, 5, -10.646526, 1.7016964, 5, -10.646526, 1.7016964, 4, 15.603474, -0.048303604, 12, 16.103474, -0.048303604, 15.75, 16.103474, -0.048303604, 10.75, 17.103474, -0.048303604, 17, 18.353474, -0.048303604, 19.5, -6.3965263, -0.048303604, 19.5, -6.3965263, -0.048303604, 17, -6.8965263, -0.048303604, 19.75, -20.646526, -0.048303604, 17, -20.146526, -0.048303604, 23.5, -6.8965263, -0.048303604, 23.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(1, 4, 0), PackedInt32Array(0, 4, 6), PackedInt32Array(0, 6, 5), PackedInt32Array(8, 7, 9), PackedInt32Array(9, 7, 5), PackedInt32Array(9, 5, 6), PackedInt32Array(9, 6, 10), PackedInt32Array(13, 12, 11), PackedInt32Array(13, 11, 14), PackedInt32Array(14, 11, 17), PackedInt32Array(14, 17, 16), PackedInt32Array(14, 16, 15), PackedInt32Array(18, 14, 19), PackedInt32Array(19, 14, 15), PackedInt32Array(11, 21, 17), PackedInt32Array(17, 21, 20), PackedInt32Array(24, 23, 25), PackedInt32Array(25, 23, 22), PackedInt32Array(25, 22, 26), PackedInt32Array(26, 22, 27), PackedInt32Array(20, 21, 28), PackedInt32Array(31, 30, 28), PackedInt32Array(28, 30, 29), PackedInt32Array(28, 29, 20), PackedInt32Array(34, 33, 32), PackedInt32Array(32, 33, 24), PackedInt32Array(25, 35, 24), PackedInt32Array(24, 35, 32), PackedInt32Array(31, 28, 36), PackedInt32Array(12, 13, 34), PackedInt32Array(34, 13, 33), PackedInt32Array(37, 35, 36), PackedInt32Array(36, 35, 31), PackedInt32Array(32, 35, 37), PackedInt32Array(41, 40, 38), PackedInt32Array(38, 40, 39), PackedInt32Array(45, 44, 42), PackedInt32Array(42, 44, 43), PackedInt32Array(49, 48, 46), PackedInt32Array(46, 48, 47), PackedInt32Array(53, 52, 50), PackedInt32Array(50, 52, 51), PackedInt32Array(55, 54, 53), PackedInt32Array(53, 54, 52), PackedInt32Array(48, 49, 56), PackedInt32Array(56, 49, 50), PackedInt32Array(56, 50, 51), PackedInt32Array(58, 57, 59), PackedInt32Array(59, 57, 60), PackedInt32Array(60, 57, 61), PackedInt32Array(65, 64, 62), PackedInt32Array(62, 64, 63), PackedInt32Array(55, 66, 54), PackedInt32Array(54, 66, 67), PackedInt32Array(71, 70, 68), PackedInt32Array(68, 70, 69), PackedInt32Array(74, 73, 72), PackedInt32Array(68, 76, 71), PackedInt32Array(71, 76, 72), PackedInt32Array(72, 76, 75), PackedInt32Array(72, 75, 67), PackedInt32Array(46, 47, 66), PackedInt32Array(66, 47, 67), PackedInt32Array(67, 47, 72), PackedInt32Array(72, 47, 74), PackedInt32Array(27, 77, 26), PackedInt32Array(26, 77, 78), PackedInt32Array(78, 77, 79), PackedInt32Array(30, 78, 29), PackedInt32Array(29, 78, 79), PackedInt32Array(81, 79, 82), PackedInt32Array(82, 79, 80), PackedInt32Array(80, 79, 77), PackedInt32Array(83, 80, 84), PackedInt32Array(84, 80, 77), PackedInt32Array(86, 85, 87), PackedInt32Array(87, 85, 88), PackedInt32Array(90, 89, 76), PackedInt32Array(76, 89, 88), PackedInt32Array(76, 88, 75), PackedInt32Array(75, 88, 84), PackedInt32Array(85, 83, 88), PackedInt32Array(88, 83, 84), PackedInt32Array(90, 92, 89), PackedInt32Array(89, 92, 91), PackedInt32Array(96, 95, 93), PackedInt32Array(93, 95, 94), PackedInt32Array(92, 97, 91), PackedInt32Array(91, 97, 98), PackedInt32Array(97, 100, 99), PackedInt32Array(87, 101, 86), PackedInt32Array(86, 101, 102), PackedInt32Array(100, 103, 99), PackedInt32Array(70, 103, 69), PackedInt32Array(69, 103, 100), PackedInt32Array(105, 104, 102), PackedInt32Array(108, 107, 106), PackedInt32Array(73, 74, 108), PackedInt32Array(108, 106, 73), PackedInt32Array(73, 106, 109), PackedInt32Array(109, 106, 99), PackedInt32Array(99, 106, 110), PackedInt32Array(98, 97, 99), PackedInt32Array(105, 102, 101), PackedInt32Array(101, 98, 105), PackedInt32Array(105, 98, 99), PackedInt32Array(105, 99, 111), PackedInt32Array(103, 109, 99), PackedInt32Array(15, 16, 112), PackedInt32Array(112, 16, 113), PackedInt32Array(117, 116, 114), PackedInt32Array(114, 116, 115), PackedInt32Array(121, 120, 118), PackedInt32Array(118, 120, 119), PackedInt32Array(113, 124, 112), PackedInt32Array(112, 124, 123), PackedInt32Array(112, 123, 122), PackedInt32Array(123, 124, 125), PackedInt32Array(125, 124, 126), PackedInt32Array(126, 124, 127), PackedInt32Array(126, 127, 128), PackedInt32Array(128, 127, 105), PackedInt32Array(105, 127, 104), PackedInt32Array(82, 104, 81), PackedInt32Array(81, 104, 127), PackedInt32Array(132, 131, 129), PackedInt32Array(129, 131, 130), PackedInt32Array(136, 135, 133), PackedInt32Array(133, 135, 134), PackedInt32Array(139, 138, 137), PackedInt32Array(7, 8, 140), PackedInt32Array(140, 8, 141), PackedInt32Array(143, 140, 142), PackedInt32Array(142, 140, 141), PackedInt32Array(142, 144, 143), PackedInt32Array(143, 144, 145), PackedInt32Array(145, 144, 146), PackedInt32Array(144, 147, 146)]
+agent_height = 0.25
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1hiy4"]
+size = Vector2(40, 40)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4eiet"]
 albedo_texture = ExtResource("3_ubyhl")
@@ -113,7 +124,7 @@ size = Vector3(2.1275024, 1.4842529, 8.184937)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4eiet"]
 resource_local_to_scene = true
-size = Vector3(5.781891, 1.2349243, 1.6872253)
+size = Vector3(5.6191225, 1.3951759, 1.5955658)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y0qs6"]
 albedo_texture = ExtResource("15_3oewo")
@@ -133,13 +144,6 @@ lightmap_size_hint = Vector2i(177, 177)
 material = SubResource("StandardMaterial3D_ubyhl")
 size = Vector2(35, 35)
 
-[sub_resource type="NavigationMesh" id="NavigationMesh_1hiy4"]
-vertices = PackedVector3Array(-20.646526, 0.0860405, -19.5, -20.646526, 0.0860405, 19.5, 18.353474, 0.0860405, 19.5, 18.353474, 0.0860405, -19.5)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_1hiy4"]
-size = Vector2(40, 40)
-
 [node name="ShowroomFloorScene" type="Node3D" groups=["Environments"]]
 script = ExtResource("1_2goeg")
 ZoneId = "STORE_SHOWROOM_FLOOR"
@@ -154,7 +158,7 @@ current = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8989344, 0, 0)
 
 [node name="CollisionShape3D" parent="Cameras/Hallway/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11425781, -0.10961914, 3.482788)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11425781, -0.10961914, 2.7296991)
 shape = SubResource("BoxShape3D_jna78")
 debug_color = Color(0.9254902, 0.27058825, 0, 0.8039216)
 
@@ -165,7 +169,7 @@ transform = Transform3D(0.7936458, 0.04725042, -0.6065422, 0, 0.9969795, 0.07766
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6576712, 0, 11.864867)
 
 [node name="CollisionShape3D" parent="Cameras/Appliances/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.782013, -0.1940918, 1.845459)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.782013, -0.1940918, 0.7864609)
 shape = SubResource("BoxShape3D_fqmik")
 debug_color = Color(0.9254902, 0.27058825, 0, 0.8039216)
 
@@ -181,14 +185,19 @@ shape = SubResource("BoxShape3D_555p5")
 debug_color = Color(0.9254902, 0.27058825, 0, 0.8039216)
 
 [node name="Refridgerators" parent="Cameras" instance=ExtResource("1_jna78")]
-transform = Transform3D(-0.8965258, -0.06704084, 0.43788937, 0, 0.9884823, 0.15133658, -0.44299164, 0.13567714, -0.88619983, 7.7837253, 1.6006614, -2.7466116)
+transform = Transform3D(-0.72539204, -0.1425762, 0.6734081, 0, 0.9783131, 0.20713171, -0.68833596, 0.1502517, -0.70966053, 9.5609865, 1.456296, -2.398264)
 
 [node name="Area3D" parent="Cameras/Refridgerators" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.4027348)
 
 [node name="CollisionShape3D" parent="Cameras/Refridgerators/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9828758, 0, 0.12799072)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1362133, 0, 0.12799072)
 shape = SubResource("BoxShape3D_5w1iy")
+debug_color = Color(0.9254902, 0.27058825, 0, 0.8039216)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Cameras/Refridgerators/Area3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8696404, 0, 4.3009768)
+shape = SubResource("BoxShape3D_oautp")
 debug_color = Color(0.9254902, 0.27058825, 0, 0.8039216)
 
 [node name="RefridgeratorIsle1" parent="Cameras" instance=ExtResource("1_jna78")]
@@ -224,14 +233,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6159205, -0.17004395, 2.351
 shape = SubResource("BoxShape3D_joigd")
 debug_color = Color(0.9254902, 0.27058825, 0, 0.8039216)
 
-[node name="RefridgeratorsToFrontDoor" parent="Cameras" instance=ExtResource("1_jna78")]
-transform = Transform3D(-0.59189886, 0.03803008, -0.80511457, 0, 0.9988863, 0.047183007, 0.80601233, 0.027927568, -0.59123963, 10.045953, 0.9846777, -1.4339328)
+[node name="TvArea2" parent="Cameras" instance=ExtResource("1_jna78")]
+transform = Transform3D(-0.7438558, 0.09537621, -0.66149986, 0, 0.98976517, 0.14270607, 0.66834027, 0.10615273, -0.7362425, 22.854206, 1.5029714, -2.4807746)
 
-[node name="Area3D" parent="Cameras/RefridgeratorsToFrontDoor" index="0"]
+[node name="Area3D" parent="Cameras/TvArea2" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.151394, 0, 0)
 
-[node name="CollisionShape3D" parent="Cameras/RefridgeratorsToFrontDoor/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.226494, -0.215271, 1.6775742)
+[node name="CollisionShape3D" parent="Cameras/TvArea2/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.65947, -0.215271, 1.389019)
 shape = SubResource("BoxShape3D_boeyx")
 debug_color = Color(0.9254902, 0.27058825, 0, 0.8039216)
 
@@ -262,17 +271,17 @@ transform = Transform3D(-0.04811011, -0.00079525914, -0.99884176, 0, 0.9999997, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.40518, 0, 16.014675)
 
 [node name="CollisionShape3D" parent="Cameras/CenterOfStore/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3581543, -0.24365234, -2.7121716)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3581543, -0.24365234, -3.0976505)
 shape = SubResource("BoxShape3D_ivlfl")
 
-[node name="TvArea" parent="Cameras" instance=ExtResource("1_jna78")]
-transform = Transform3D(0.07860452, -0.042691458, 0.99599135, 0, 0.9990827, 0.04282396, -0.99690586, -0.003366157, 0.07853241, 32.937244, 1.2002269, -1.2666715)
+[node name="Register" parent="Cameras" instance=ExtResource("1_jna78")]
+transform = Transform3D(-0.011488666, -0.15132776, 0.9884169, 0, 0.9884821, 0.15133776, -0.999934, 0.0017386688, -0.011356342, 35.586872, 2.5780206, 9.383967)
 
-[node name="Area3D" parent="Cameras/TvArea" index="0"]
+[node name="Area3D" parent="Cameras/Register" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.966904, 0, 0)
 
-[node name="CollisionShape3D" parent="Cameras/TvArea/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1348915, -0.30151367, 4.9595413)
+[node name="CollisionShape3D" parent="Cameras/Register/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.785347, 0.2286377, 9.205026)
 shape = SubResource("BoxShape3D_63rf1")
 
 [node name="FixedCamera2" parent="Cameras" instance=ExtResource("1_jna78")]
@@ -285,372 +294,350 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.023346, 0, 28.728277)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.61727905, -0.34228516, -0.41882324)
 shape = SubResource("BoxShape3D_5owe4")
 
-[node name="Environment" type="Node" parent="."]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.62563, -0.12534672, 15.030418)
+navigation_mesh = SubResource("NavigationMesh_1hiy4")
 
-[node name="HallwayWall" type="CSGMesh3D" parent="Environment"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1465263, -0.4139595, 0)
+mesh = SubResource("PlaneMesh_1hiy4")
+
+[node name="Environment" type="Node" parent="NavigationRegion3D"]
+
+[node name="HallwayWall" type="CSGMesh3D" parent="NavigationRegion3D/Environment"]
 transform = Transform3D(0.11026037, 0, 0, 0, 5.4670186, 0, 0, 0, 11.04662, -1.6380961, 2.1269886, 2.6434822)
 use_collision = true
 mesh = SubResource("BoxMesh_jna78")
 
-[node name="FrontDoor" type="CSGMesh3D" parent="Environment"]
+[node name="FrontDoor" type="CSGMesh3D" parent="NavigationRegion3D/Environment"]
 transform = Transform3D(0.34458905, 0, 0, 0, 2.32314, 0, 0, 0, 3.110206, 33.382416, 0.7652985, 14.623448)
 mesh = SubResource("BoxMesh_fqmik")
 material = SubResource("StandardMaterial3D_fqmik")
 
-[node name="Showroom" type="CSGBox3D" parent="Environment"]
+[node name="Showroom" type="CSGBox3D" parent="NavigationRegion3D/Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.780399, 2.09091, 14.234739)
 use_collision = true
 flip_faces = true
 size = Vector3(37.200397, 5.18182, 34.2074)
 material = SubResource("StandardMaterial3D_orp73")
 
-[node name="door" parent="Environment" instance=ExtResource("2_fqmik")]
+[node name="door" parent="NavigationRegion3D/Environment" instance=ExtResource("2_fqmik")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.79491, -0.5, 1.55698)
 _environmentToLoad = "res://Scenes/Environments/bathroom_scene.tscn"
 _isFlipped = true
 DoorId = "STORE_SHOWROOM_FLOOR_TO_MENS_BATHROOM"
 ZoneId = "STORE_SHOWROOM_FLOOR"
 
-[node name="door4" parent="Environment" instance=ExtResource("2_fqmik")]
+[node name="door4" parent="NavigationRegion3D/Environment" instance=ExtResource("2_fqmik")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.79491, -0.5, 5.533195)
 _environmentToLoad = "res://Scenes/Environments/bathroom_scene.tscn"
 _isFlipped = true
 DoorId = "STORE_SHOWROOM_FLOOR_TO_WOMENS_BATHROOM"
 ZoneId = "STORE_SHOWROOM_FLOOR"
 
-[node name="door3" parent="Environment" instance=ExtResource("2_fqmik")]
+[node name="door3" parent="NavigationRegion3D/Environment" instance=ExtResource("2_fqmik")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7302265, -0.5, -2.8715947)
 _environmentToLoad = "res://Scenes/Environments/breakroom.tscn"
 _isFlipped = true
 DoorId = "STORE_SHOWROOM_FLOOR_TO_BREAKROOM"
 ZoneId = "STORE_SHOWROOM_FLOOR"
 
-[node name="Appliances" type="Node" parent="Environment"]
+[node name="Appliances" type="Node" parent="NavigationRegion3D/Environment"]
 
-[node name="Refridgerators" type="Node" parent="Environment/Appliances"]
+[node name="Refridgerators" type="Node" parent="NavigationRegion3D/Environment/Appliances"]
 
-[node name="MESH_Fridge_2_doors_v1" parent="Environment/Appliances/Refridgerators" instance=ExtResource("6_72f2j")]
+[node name="MESH_Fridge_2_doors_v1" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("6_72f2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.390355, -0.49999976, 7.7425)
 
-[node name="MESH_Fridge_2_doors_v2" parent="Environment/Appliances/Refridgerators" instance=ExtResource("6_72f2j")]
+[node name="MESH_Fridge_2_doors_v2" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("6_72f2j")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.401063, -0.49999976, 6.7425)
 
-[node name="MESH_Fridge_2_doors_v3" parent="Environment/Appliances/Refridgerators" instance=ExtResource("6_72f2j")]
+[node name="MESH_Fridge_2_doors_v3" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("6_72f2j")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.401063, -0.49999976, 5.7425)
 
-[node name="MESH_Fridge_2_doors_v5" parent="Environment/Appliances/Refridgerators" instance=ExtResource("6_72f2j")]
+[node name="MESH_Fridge_2_doors_v5" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("6_72f2j")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.401063, -0.49999976, 3.7424998)
 
-[node name="MESH_Fridge_2_doors_v6" parent="Environment/Appliances/Refridgerators" instance=ExtResource("6_72f2j")]
+[node name="MESH_Fridge_2_doors_v6" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("6_72f2j")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.401063, -0.49999976, 1.7424998)
 
-[node name="MESH_Fridge_2_doors_v4" parent="Environment/Appliances/Refridgerators" instance=ExtResource("6_72f2j")]
+[node name="MESH_Fridge_2_doors_v4" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("6_72f2j")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.4135165, -0.49999976, 4.7425)
 
-[node name="MESH_Fridge_2_doors_v7" parent="Environment/Appliances/Refridgerators" instance=ExtResource("6_72f2j")]
+[node name="MESH_Fridge_2_doors_v7" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("6_72f2j")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.381058, -0.49999976, 1.7424998)
 
-[node name="MESH_Fridge_3_doors_v6" parent="Environment/Appliances/Refridgerators" instance=ExtResource("7_3oewo")]
+[node name="MESH_Fridge_3_doors_v6" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("7_3oewo")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 4.3958445, -0.5, 3.7417526)
 
-[node name="Cube_020" parent="Environment/Appliances/Refridgerators/MESH_Fridge_3_doors_v6" index="1"]
+[node name="Cube_020" parent="NavigationRegion3D/Environment/Appliances/Refridgerators/MESH_Fridge_3_doors_v6" index="1"]
 transform = Transform3D(0.94297314, 0, -0.33286893, 0, 1, 0, 0.33286893, 0, 0.94297314, -0.46000004, 0.8745, 0.34754634)
 
-[node name="MESH_Fridge_4_nodoors_v1" parent="Environment/Appliances/Refridgerators" instance=ExtResource("20_5owe4")]
+[node name="MESH_Fridge_4_nodoors_v1" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("20_5owe4")]
 transform = Transform3D(0.99984276, 0, -0.017731616, 0, 1, 0, 0.017731616, 0, 0.99984276, 0.49559563, -0.5, 7.7687445)
 
-[node name="MESH_Fridge_4_nodoors_v2" parent="Environment/Appliances/Refridgerators" instance=ExtResource("20_5owe4")]
+[node name="MESH_Fridge_4_nodoors_v2" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("20_5owe4")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.5463492, -0.5, 4.746832)
 
-[node name="MESH_Fridge_4_nodoors_v4" parent="Environment/Appliances/Refridgerators" instance=ExtResource("20_5owe4")]
+[node name="MESH_Fridge_4_nodoors_v4" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("20_5owe4")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5454905, -0.5, 6.746832)
 
-[node name="MESH_Fridge_4_nodoors_v5" parent="Environment/Appliances/Refridgerators" instance=ExtResource("20_5owe4")]
+[node name="MESH_Fridge_4_nodoors_v5" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("20_5owe4")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.4603233, -0.5, 5.746832)
 
-[node name="MESH_Fridge_4_nodoors_v6" parent="Environment/Appliances/Refridgerators" instance=ExtResource("20_5owe4")]
+[node name="MESH_Fridge_4_nodoors_v6" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("20_5owe4")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.4955957, -0.5, 4.746832)
 
-[node name="MESH_Fridge_4_nodoors_v7" parent="Environment/Appliances/Refridgerators" instance=ExtResource("20_5owe4")]
+[node name="MESH_Fridge_4_nodoors_v7" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("20_5owe4")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.4955957, -0.5, 1.7468319)
 
-[node name="MESH_Fridge_4_nodoors_v8" parent="Environment/Appliances/Refridgerators" instance=ExtResource("20_5owe4")]
+[node name="MESH_Fridge_4_nodoors_v8" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("20_5owe4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0738107, -0.5, -2.4605715)
 
-[node name="MESH_Fridge_4_nodoors_v9" parent="Environment/Appliances/Refridgerators" instance=ExtResource("20_5owe4")]
+[node name="MESH_Fridge_4_nodoors_v9" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("20_5owe4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0738106, -0.5, -2.4605715)
 
-[node name="MESH_Fridge_4_nodoors_v10" parent="Environment/Appliances/Refridgerators" instance=ExtResource("20_5owe4")]
+[node name="MESH_Fridge_4_nodoors_v10" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("20_5owe4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0738106, -0.5, -2.4605715)
 
-[node name="MESH_Fridge_4_nodoors_v11" parent="Environment/Appliances/Refridgerators" instance=ExtResource("20_5owe4")]
+[node name="MESH_Fridge_4_nodoors_v11" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("20_5owe4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0738106, -0.5, -2.4605715)
 
-[node name="MESH_Fridge_4_nodoors_v3" parent="Environment/Appliances/Refridgerators" instance=ExtResource("20_5owe4")]
+[node name="MESH_Fridge_4_nodoors_v3" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("20_5owe4")]
 transform = Transform3D(0.06430584, 0, -0.9979302, 0, 1, 0, 0.9979302, 0, 0.06430584, 0.4382028, -0.5, 2.746832)
 
-[node name="MESH_Fridge_1_doors_v1" parent="Environment/Appliances/Refridgerators" instance=ExtResource("14_2goeg")]
+[node name="MESH_Fridge_1_doors_v1" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("14_2goeg")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.47645247, -0.49695688, 6.73965)
 
-[node name="MESH_Fridge_1_doors_v3" parent="Environment/Appliances/Refridgerators" instance=ExtResource("14_2goeg")]
+[node name="MESH_Fridge_1_doors_v3" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("14_2goeg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5036288, -0.49695688, 7.7202644)
 
-[node name="MESH_Fridge_1_doors_v2" parent="Environment/Appliances/Refridgerators" instance=ExtResource("14_2goeg")]
+[node name="MESH_Fridge_1_doors_v2" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("14_2goeg")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.50362885, -0.49695688, 5.73965)
 
-[node name="MESH_Fridge_1_doors_v4" parent="Environment/Appliances/Refridgerators" instance=ExtResource("14_2goeg")]
+[node name="MESH_Fridge_1_doors_v4" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("14_2goeg")]
 transform = Transform3D(0.025915194, 0, -0.9996641, 0, 1, 0, 0.9996641, 0, 0.025915194, 0.46462882, -0.49695688, 3.7396498)
 
-[node name="MESH_Fridge_1_doors_v5" parent="Environment/Appliances/Refridgerators" instance=ExtResource("14_2goeg")]
+[node name="MESH_Fridge_1_doors_v5" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("14_2goeg")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5425094, -0.49695688, 3.7396498)
 
-[node name="MESH_Fridge_1_doors_v8" parent="Environment/Appliances/Refridgerators" instance=ExtResource("14_2goeg")]
+[node name="MESH_Fridge_1_doors_v8" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("14_2goeg")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5036288, -0.49695688, 2.7396498)
 
-[node name="MESH_Fridge_1_doors_v17" parent="Environment/Appliances/Refridgerators" instance=ExtResource("14_2goeg")]
+[node name="MESH_Fridge_1_doors_v17" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("14_2goeg")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5579263, -0.49695688, 0.7396498)
 
-[node name="MESH_Fridge_1_doors_v6" parent="Environment/Appliances/Refridgerators" instance=ExtResource("14_2goeg")]
+[node name="MESH_Fridge_1_doors_v6" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("14_2goeg")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.50362885, -0.49695688, 1.7396498)
 
-[node name="Cube_025" parent="Environment/Appliances/Refridgerators/MESH_Fridge_1_doors_v6" index="0"]
+[node name="Cube_025" parent="NavigationRegion3D/Environment/Appliances/Refridgerators/MESH_Fridge_1_doors_v6" index="0"]
 transform = Transform3D(0.99971956, 0, -0.023681903, 0, 1, 0, 0.023681903, 0, 0.99971956, 0.008194685, -0.0030429065, 0.039772958)
 
-[node name="Cube_027" parent="Environment/Appliances/Refridgerators/MESH_Fridge_1_doors_v6" index="1"]
+[node name="Cube_027" parent="NavigationRegion3D/Environment/Appliances/Refridgerators/MESH_Fridge_1_doors_v6" index="1"]
 transform = Transform3D(0.90616757, 0, 0.42291883, 0, 1, 0, -0.42291883, 0, 0.90616757, 0.45988178, 1.1647451, 0.3961381)
 
-[node name="Cube_028" parent="Environment/Appliances/Refridgerators/MESH_Fridge_1_doors_v6" index="2"]
+[node name="Cube_028" parent="NavigationRegion3D/Environment/Appliances/Refridgerators/MESH_Fridge_1_doors_v6" index="2"]
 transform = Transform3D(0.9907977, 0, -0.13535245, 0, 1, 0, 0.13535245, 0, 0.9907977, -0.4598601, 1.1647451, 0.37435067)
 
-[node name="MESH_Fridge_1_doors_v7" parent="Environment/Appliances/Refridgerators" instance=ExtResource("14_2goeg")]
+[node name="MESH_Fridge_1_doors_v7" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("14_2goeg")]
 transform = Transform3D(-0.06963464, 0, -0.99757254, 0, 1, 0, 0.99757254, 0, -0.06963464, 0.50362885, -0.49695688, 0.7396498)
 
-[node name="MESH_Fridge_1_doors_v9" parent="Environment/Appliances/Refridgerators" instance=ExtResource("14_2goeg")]
+[node name="MESH_Fridge_1_doors_v9" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("14_2goeg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.951208, -0.49695712, -2.419445)
 
-[node name="Cube_027" parent="Environment/Appliances/Refridgerators/MESH_Fridge_1_doors_v9" index="1"]
+[node name="Cube_027" parent="NavigationRegion3D/Environment/Appliances/Refridgerators/MESH_Fridge_1_doors_v9" index="1"]
 transform = Transform3D(0.25849867, 0, 0.96601164, 0, 1, 0, -0.96601164, 0, 0.25849867, 0.46273887, 1.1647451, 0.34556842)
 
-[node name="Cube_028" parent="Environment/Appliances/Refridgerators/MESH_Fridge_1_doors_v9" index="2"]
+[node name="Cube_028" parent="NavigationRegion3D/Environment/Appliances/Refridgerators/MESH_Fridge_1_doors_v9" index="2"]
 transform = Transform3D(0.84686214, 0, -0.5318125, 0, 1, 0, 0.5318125, 0, 0.84686214, -0.4572612, 1.1647451, 0.34556842)
 
-[node name="MESH_Fridge_1_doors_v11" parent="Environment/Appliances/Refridgerators" instance=ExtResource("14_2goeg")]
+[node name="MESH_Fridge_1_doors_v11" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("14_2goeg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.048792, -0.49695712, -2.361375)
 
-[node name="MESH_Fridge_1_doors_v12" parent="Environment/Appliances/Refridgerators" instance=ExtResource("14_2goeg")]
+[node name="MESH_Fridge_1_doors_v12" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("14_2goeg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.048792, -0.49695712, -2.4395278)
 
-[node name="MESH_Fridge_1_doors_v14" parent="Environment/Appliances/Refridgerators" instance=ExtResource("14_2goeg")]
+[node name="MESH_Fridge_1_doors_v14" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("14_2goeg")]
 transform = Transform3D(0.99980277, 0, 0.019860541, 0, 1, 0, -0.019860541, 0, 0.99980277, 4.048792, -0.49695712, -2.374735)
 
-[node name="MESH_Fridge_3_doors_v1" parent="Environment/Appliances/Refridgerators" instance=ExtResource("7_3oewo")]
+[node name="MESH_Fridge_3_doors_v1" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("7_3oewo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3929586, -0.5, 7.7953005)
 
-[node name="MESH_Fridge_3_doors_v9" parent="Environment/Appliances/Refridgerators" instance=ExtResource("7_3oewo")]
+[node name="MESH_Fridge_3_doors_v9" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("7_3oewo")]
 transform = Transform3D(-0.06531608, 0, -0.99786466, 0, 1, 0, 0.99786466, 0, -0.06531608, 4.3929586, -0.5, 6.7663674)
 
-[node name="MESH_Fridge_3_doors_v10" parent="Environment/Appliances/Refridgerators" instance=ExtResource("7_3oewo")]
+[node name="MESH_Fridge_3_doors_v10" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("7_3oewo")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.362247, -0.5, 5.7663674)
 
-[node name="MESH_Fridge_3_doors_v11" parent="Environment/Appliances/Refridgerators" instance=ExtResource("7_3oewo")]
+[node name="MESH_Fridge_3_doors_v11" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("7_3oewo")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.3222485, -0.5, 2.7663674)
 
-[node name="MESH_Fridge_3_doors_v12" parent="Environment/Appliances/Refridgerators" instance=ExtResource("7_3oewo")]
+[node name="MESH_Fridge_3_doors_v12" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("7_3oewo")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.3929586, -0.5, 0.76636744)
 
-[node name="MESH_Fridge_3_doors_v4" parent="Environment/Appliances/Refridgerators" instance=ExtResource("7_3oewo")]
+[node name="MESH_Fridge_3_doors_v4" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("7_3oewo")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.3929586, -0.5, 4.747699)
 
-[node name="MESH_Fridge_3_doors_v7" parent="Environment/Appliances/Refridgerators" instance=ExtResource("7_3oewo")]
+[node name="MESH_Fridge_3_doors_v7" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("7_3oewo")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.3929586, -0.5, 2.7476988)
 
-[node name="MESH_Fridge_3_doors_v8" parent="Environment/Appliances/Refridgerators" instance=ExtResource("7_3oewo")]
+[node name="MESH_Fridge_3_doors_v8" parent="NavigationRegion3D/Environment/Appliances/Refridgerators" instance=ExtResource("7_3oewo")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.3929586, -0.5, 0.7476988)
 
-[node name="Dryers" type="Node" parent="Environment/Appliances"]
+[node name="Dryers" type="Node" parent="NavigationRegion3D/Environment/Appliances"]
 
-[node name="dryer8" parent="Environment/Appliances/Dryers" instance=ExtResource("7_u3tue")]
+[node name="dryer8" parent="NavigationRegion3D/Environment/Appliances/Dryers" instance=ExtResource("7_u3tue")]
 transform = Transform3D(-0.9999006, 0, -0.014101699, 0, 1, 0, 0.014101699, 0, -0.9999006, 1.4595022, -0.5, 19.291018)
 
-[node name="dryer9" parent="Environment/Appliances/Dryers" instance=ExtResource("7_u3tue")]
+[node name="dryer9" parent="NavigationRegion3D/Environment/Appliances/Dryers" instance=ExtResource("7_u3tue")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.1827233, -0.5, 19.291018)
 
-[node name="dryer10" parent="Environment/Appliances/Dryers" instance=ExtResource("7_u3tue")]
+[node name="dryer10" parent="NavigationRegion3D/Environment/Appliances/Dryers" instance=ExtResource("7_u3tue")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.933304, -0.5, 19.291018)
 
-[node name="dryer11" parent="Environment/Appliances/Dryers" instance=ExtResource("7_u3tue")]
+[node name="dryer11" parent="NavigationRegion3D/Environment/Appliances/Dryers" instance=ExtResource("7_u3tue")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.6741536, -0.5, 19.291018)
 
-[node name="dryer12" parent="Environment/Appliances/Dryers" instance=ExtResource("7_u3tue")]
+[node name="dryer12" parent="NavigationRegion3D/Environment/Appliances/Dryers" instance=ExtResource("7_u3tue")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.4254494, -0.5, 19.291018)
 
-[node name="dryer13" parent="Environment/Appliances/Dryers" instance=ExtResource("7_u3tue")]
+[node name="dryer13" parent="NavigationRegion3D/Environment/Appliances/Dryers" instance=ExtResource("7_u3tue")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 5.2548428, -0.49148703, 19.279047)
 
-[node name="dryer14" parent="Environment/Appliances/Dryers" instance=ExtResource("7_u3tue")]
+[node name="dryer14" parent="NavigationRegion3D/Environment/Appliances/Dryers" instance=ExtResource("7_u3tue")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 6.0401497, -0.49148703, 19.279047)
 
-[node name="Ovens" type="Node" parent="Environment/Appliances"]
+[node name="Ovens" type="Node" parent="NavigationRegion3D/Environment/Appliances"]
 
-[node name="oven2" parent="Environment/Appliances/Ovens" instance=ExtResource("4_555p5")]
+[node name="oven2" parent="NavigationRegion3D/Environment/Appliances/Ovens" instance=ExtResource("4_555p5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2149677, -0.49999976, 14.333081)
 
-[node name="oven3" parent="Environment/Appliances/Ovens" instance=ExtResource("4_555p5")]
+[node name="oven3" parent="NavigationRegion3D/Environment/Appliances/Ovens" instance=ExtResource("4_555p5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3669186, -0.49999976, 14.333081)
 
-[node name="oven4" parent="Environment/Appliances/Ovens" instance=ExtResource("4_555p5")]
+[node name="oven4" parent="NavigationRegion3D/Environment/Appliances/Ovens" instance=ExtResource("4_555p5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.577519, -0.49999976, 14.333081)
 
-[node name="oven5" parent="Environment/Appliances/Ovens" instance=ExtResource("4_555p5")]
+[node name="oven5" parent="NavigationRegion3D/Environment/Appliances/Ovens" instance=ExtResource("4_555p5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7594903, -0.49999976, 14.333081)
 
-[node name="oven6" parent="Environment/Appliances/Ovens" instance=ExtResource("4_555p5")]
+[node name="oven6" parent="NavigationRegion3D/Environment/Appliances/Ovens" instance=ExtResource("4_555p5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.915694, -0.49999976, 14.333081)
 
-[node name="oven7" parent="Environment/Appliances/Ovens" instance=ExtResource("4_555p5")]
+[node name="oven7" parent="NavigationRegion3D/Environment/Appliances/Ovens" instance=ExtResource("4_555p5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1186004, -0.49999976, 14.333081)
 
-[node name="oven8" parent="Environment/Appliances/Ovens" instance=ExtResource("4_555p5")]
+[node name="oven8" parent="NavigationRegion3D/Environment/Appliances/Ovens" instance=ExtResource("4_555p5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3029764, -0.49999976, 14.333081)
 
-[node name="MESH_Dryer_1_nodoors_v1" parent="Environment/Appliances/Ovens" instance=ExtResource("10_2goeg")]
+[node name="MESH_Dryer_1_nodoors_v1" parent="NavigationRegion3D/Environment/Appliances/Ovens" instance=ExtResource("10_2goeg")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.6133872, -0.5, 16.428265)
 
-[node name="MESH_Dryer_1_nodoors_v2" parent="Environment/Appliances/Ovens" instance=ExtResource("10_2goeg")]
+[node name="MESH_Dryer_1_nodoors_v2" parent="NavigationRegion3D/Environment/Appliances/Ovens" instance=ExtResource("10_2goeg")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.3342428, -0.5, 16.428265)
 
-[node name="MESH_Dryer_1_nodoors_v3" parent="Environment/Appliances/Ovens" instance=ExtResource("10_2goeg")]
+[node name="MESH_Dryer_1_nodoors_v3" parent="NavigationRegion3D/Environment/Appliances/Ovens" instance=ExtResource("10_2goeg")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.0833983, -0.5, 16.428265)
 
-[node name="MESH_Dryer_1_nodoors_v4" parent="Environment/Appliances/Ovens" instance=ExtResource("10_2goeg")]
+[node name="MESH_Dryer_1_nodoors_v4" parent="NavigationRegion3D/Environment/Appliances/Ovens" instance=ExtResource("10_2goeg")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.8010116, -0.5, 16.428265)
 
-[node name="MESH_Dryer_1_nodoors_v5" parent="Environment/Appliances/Ovens" instance=ExtResource("10_2goeg")]
+[node name="MESH_Dryer_1_nodoors_v5" parent="NavigationRegion3D/Environment/Appliances/Ovens" instance=ExtResource("10_2goeg")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.5411587, -0.5, 16.428265)
 
-[node name="MESH_Dryer_1_nodoors_v6" parent="Environment/Appliances/Ovens" instance=ExtResource("10_2goeg")]
+[node name="MESH_Dryer_1_nodoors_v6" parent="NavigationRegion3D/Environment/Appliances/Ovens" instance=ExtResource("10_2goeg")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.273361, -0.5, 16.428265)
 
-[node name="MESH_Dryer_1_nodoors_v7" parent="Environment/Appliances/Ovens" instance=ExtResource("10_2goeg")]
+[node name="MESH_Dryer_1_nodoors_v7" parent="NavigationRegion3D/Environment/Appliances/Ovens" instance=ExtResource("10_2goeg")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.0071974, -0.5, 16.428265)
 
-[node name="oven1_workingdoors_texture_v1" parent="Environment/Appliances/Ovens" instance=ExtResource("13_63rf1")]
+[node name="oven1_workingdoors_texture_v1" parent="NavigationRegion3D/Environment/Appliances/Ovens" instance=ExtResource("13_63rf1")]
 transform = Transform3D(-0.99767476, 0, -0.0681545, 0, 1, 0, 0.0681545, 0, -0.99767476, 1.3514799, -0.5, 13.574578)
 
-[node name="oven1_workingdoors_texture_v2" parent="Environment/Appliances/Ovens" instance=ExtResource("13_63rf1")]
+[node name="oven1_workingdoors_texture_v2" parent="NavigationRegion3D/Environment/Appliances/Ovens" instance=ExtResource("13_63rf1")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.221884, -0.5, 13.574578)
 
-[node name="oven1_workingdoors_texture_v3" parent="Environment/Appliances/Ovens" instance=ExtResource("13_63rf1")]
+[node name="oven1_workingdoors_texture_v3" parent="NavigationRegion3D/Environment/Appliances/Ovens" instance=ExtResource("13_63rf1")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.0233107, -0.5, 13.574578)
 
-[node name="oven1_workingdoors_texture_v4" parent="Environment/Appliances/Ovens" instance=ExtResource("13_63rf1")]
+[node name="oven1_workingdoors_texture_v4" parent="NavigationRegion3D/Environment/Appliances/Ovens" instance=ExtResource("13_63rf1")]
 transform = Transform3D(-0.99987024, 0, -0.016108604, 0, 1, 0, 0.016108604, 0, -0.99987024, 3.8197474, -0.5, 13.574578)
 
-[node name="oven1_workingdoors_texture_v5" parent="Environment/Appliances/Ovens" instance=ExtResource("13_63rf1")]
+[node name="oven1_workingdoors_texture_v5" parent="NavigationRegion3D/Environment/Appliances/Ovens" instance=ExtResource("13_63rf1")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.6311903, -0.5, 13.574578)
 
-[node name="oven1_workingdoors_texture_v6" parent="Environment/Appliances/Ovens" instance=ExtResource("13_63rf1")]
+[node name="oven1_workingdoors_texture_v6" parent="NavigationRegion3D/Environment/Appliances/Ovens" instance=ExtResource("13_63rf1")]
 transform = Transform3D(-0.99993545, 0, -0.011361762, 0, 1, 0, 0.011361762, 0, -0.99993545, 5.4372997, -0.5, 13.574578)
 
-[node name="oven1_workingdoors_texture_v7" parent="Environment/Appliances/Ovens" instance=ExtResource("13_63rf1")]
+[node name="oven1_workingdoors_texture_v7" parent="NavigationRegion3D/Environment/Appliances/Ovens" instance=ExtResource("13_63rf1")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 6.2378626, -0.5, 13.574578)
 
-[node name="Washers" type="Node" parent="Environment/Appliances"]
+[node name="Washers" type="Node" parent="NavigationRegion3D/Environment/Appliances"]
 
-[node name="washer2" parent="Environment/Appliances/Washers" instance=ExtResource("9_boeyx")]
+[node name="washer2" parent="NavigationRegion3D/Environment/Appliances/Washers" instance=ExtResource("9_boeyx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4450805, -0.49999976, 20.093206)
 
-[node name="washer9" parent="Environment/Appliances/Washers" instance=ExtResource("9_boeyx")]
+[node name="washer9" parent="NavigationRegion3D/Environment/Appliances/Washers" instance=ExtResource("9_boeyx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.226031, -0.49999976, 20.093206)
 
-[node name="washer10" parent="Environment/Appliances/Washers" instance=ExtResource("9_boeyx")]
+[node name="washer10" parent="NavigationRegion3D/Environment/Appliances/Washers" instance=ExtResource("9_boeyx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9766119, -0.49999976, 20.093206)
 
-[node name="washer11" parent="Environment/Appliances/Washers" instance=ExtResource("9_boeyx")]
+[node name="washer11" parent="NavigationRegion3D/Environment/Appliances/Washers" instance=ExtResource("9_boeyx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7174613, -0.49999976, 20.093206)
 
-[node name="washer12" parent="Environment/Appliances/Washers" instance=ExtResource("9_boeyx")]
+[node name="washer12" parent="NavigationRegion3D/Environment/Appliances/Washers" instance=ExtResource("9_boeyx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4687576, -0.49999976, 20.093206)
 
-[node name="washer13" parent="Environment/Appliances/Washers" instance=ExtResource("9_boeyx")]
+[node name="washer13" parent="NavigationRegion3D/Environment/Appliances/Washers" instance=ExtResource("9_boeyx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2411966, -0.4914868, 20.081236)
 
-[node name="washer14" parent="Environment/Appliances/Washers" instance=ExtResource("9_boeyx")]
+[node name="washer14" parent="NavigationRegion3D/Environment/Appliances/Washers" instance=ExtResource("9_boeyx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.991556, -0.4914868, 20.081236)
 
-[node name="MESH_DishWasher_1_nodoors_v1" parent="Environment/Appliances/Washers" instance=ExtResource("13_72f2j")]
+[node name="MESH_DishWasher_1_nodoors_v1" parent="NavigationRegion3D/Environment/Appliances/Washers" instance=ExtResource("13_72f2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6287888, -0.49999976, 17.216873)
 
-[node name="MESH_DishWasher_1_nodoors_v2" parent="Environment/Appliances/Washers" instance=ExtResource("13_72f2j")]
+[node name="MESH_DishWasher_1_nodoors_v2" parent="NavigationRegion3D/Environment/Appliances/Washers" instance=ExtResource("13_72f2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3262799, -0.49999976, 17.216873)
 
-[node name="MESH_DishWasher_1_nodoors_v3" parent="Environment/Appliances/Washers" instance=ExtResource("13_72f2j")]
+[node name="MESH_DishWasher_1_nodoors_v3" parent="NavigationRegion3D/Environment/Appliances/Washers" instance=ExtResource("13_72f2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0500846, -0.49999976, 17.216873)
 
-[node name="MESH_DishWasher_1_nodoors_v4" parent="Environment/Appliances/Washers" instance=ExtResource("13_72f2j")]
+[node name="MESH_DishWasher_1_nodoors_v4" parent="NavigationRegion3D/Environment/Appliances/Washers" instance=ExtResource("13_72f2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7737458, -0.49999976, 17.216873)
 
-[node name="MESH_DishWasher_1_nodoors_v5" parent="Environment/Appliances/Washers" instance=ExtResource("13_72f2j")]
+[node name="MESH_DishWasher_1_nodoors_v5" parent="NavigationRegion3D/Environment/Appliances/Washers" instance=ExtResource("13_72f2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.469494, -0.49999976, 17.216873)
 
-[node name="MESH_DishWasher_1_nodoors_v6" parent="Environment/Appliances/Washers" instance=ExtResource("13_72f2j")]
+[node name="MESH_DishWasher_1_nodoors_v6" parent="NavigationRegion3D/Environment/Appliances/Washers" instance=ExtResource("13_72f2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.206587, -0.49999976, 17.216873)
 
-[node name="MESH_DishWasher_1_nodoors_v7" parent="Environment/Appliances/Washers" instance=ExtResource("13_72f2j")]
+[node name="MESH_DishWasher_1_nodoors_v7" parent="NavigationRegion3D/Environment/Appliances/Washers" instance=ExtResource("13_72f2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.926736, -0.49999976, 17.216873)
 
-[node name="MatressArea" type="Node3D" parent="Environment"]
+[node name="MatressArea" type="Node3D" parent="NavigationRegion3D/Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.863609, 0, 0)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Environment/MatressArea"]
-transform = Transform3D(1, 0, 0, 0, 0.74050564, 0, 0, 0, 1, -5.808461, -0.043100312, -2.218262)
-use_collision = true
-size = Vector3(0.14038086, 1.279419, 1.3994141)
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="Environment/MatressArea"]
-transform = Transform3D(1, 0, 0, 0, 0.74050564, 0, 0, 0, 1, 6.4725494, -0.043100312, -2.218262)
-use_collision = true
-size = Vector3(0.14038086, 1.279419, 1.3994141)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Environment/MatressArea"]
-transform = Transform3D(1, 0, 0, 0, 0.74050564, 0, 0, 0, 1, -5.808461, -0.043100312, 2.783516)
-use_collision = true
-size = Vector3(0.14038086, 1.279419, 5.6808167)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="Environment/MatressArea"]
-transform = Transform3D(1, 0, 0, 0, 0.74050564, 0, 0, 0, 1, 6.4226494, -0.053382605, 2.767891)
-use_collision = true
-size = Vector3(0.14038086, 1.30719, 5.6495667)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="Environment/MatressArea"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 0.74050564, 0, -1, 0, -4.371139e-08, -3.1047754, -0.043100312, 5.580719)
-use_collision = true
-size = Vector3(0.14038086, 1.279419, 5.5208893)
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="Environment/MatressArea"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 0.74050564, 0, -1, 0, -4.371139e-08, 3.7279987, -0.043100312, 5.580719)
-use_collision = true
-size = Vector3(0.14038086, 1.279419, 5.502945)
-
-[node name="Ace" type="Node3D" parent="Environment"]
+[node name="Ace" type="Node3D" parent="NavigationRegion3D/Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.91256, 0, 25.673632)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Environment/Ace"]
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/Environment/Ace"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1703224, 0, 3.7657166)
 use_collision = true
 size = Vector3(0.17578125, 1, 3.7149048)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Environment/Ace"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D/Environment/Ace"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1703224, 0, 0.069698334)
 use_collision = true
 size = Vector3(0.17578125, 1, 1.7583618)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Environment/Ace"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D/Environment/Ace"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.3694954, 0, -0.72213936)
 use_collision = true
 size = Vector3(0.17578125, 1, 1.6770325)
 
-[node name="door" parent="Environment/Ace" instance=ExtResource("2_fqmik")]
+[node name="door" parent="NavigationRegion3D/Environment/Ace" instance=ExtResource("2_fqmik")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.55962, -0.49999952, 4.5198574)
 _environmentToLoad = "res://Scenes/Environments/lockup_scene.tscn"
 _isFlipped = true
@@ -659,218 +646,254 @@ IsLocked = true
 DoorId = "STORE_LOCKUP_DOOR"
 ZoneId = "STORE_SHOWROOM_FLOOR"
 
-[node name="CenterStore" type="Node3D" parent="Environment"]
+[node name="CenterStore" type="Node3D" parent="NavigationRegion3D/Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.732666, 0, 15.79707)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Environment/CenterStore"]
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/Environment/CenterStore"]
 transform = Transform3D(0.7, 0, 0, 0, 0.6526127, 0, 0, 0, 1, -0.07470703, -0.14859676, -1.4177208)
 use_collision = true
 size = Vector3(1.3466797, 1.0334473, 5.9853516)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Environment/CenterStore"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D/Environment/CenterStore"]
 transform = Transform3D(0.7, 0, 0, 0, 0.6526127, 0, 0, 0, 1, 2.9016209, -0.14859676, -1.4177208)
 use_collision = true
 size = Vector3(1.3466797, 1.0334473, 5.9853516)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Environment/CenterStore"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D/Environment/CenterStore"]
 transform = Transform3D(0.7, 0, 0, 0, 0.6526127, 0, 0, 0, 1, -3.0367517, -0.14859676, -1.4177208)
 use_collision = true
 size = Vector3(1.3466797, 1.0334473, 5.9853516)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Environment/CenterStore"]
+[node name="CSGBox3D4" type="CSGBox3D" parent="NavigationRegion3D/Environment/CenterStore"]
 transform = Transform3D(0.7, 0, 0, 0, 0.6526127, 0, 0, 0, 1, 6.118162, -0.14859676, -1.4177208)
 use_collision = true
 size = Vector3(1.3466797, 1.0334473, 5.9853516)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Environment/CenterStore"]
+[node name="CSGBox3D5" type="CSGBox3D" parent="NavigationRegion3D/Environment/CenterStore"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8.807365, -0.18719482, -13.363271)
 use_collision = true
 size = Vector3(0.7664795, 0.62561035, 3.4917603)
 
-[node name="TvArea" type="Node" parent="Environment"]
+[node name="TvArea" type="Node" parent="NavigationRegion3D/Environment"]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Environment/TvArea"]
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/Environment/TvArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.07743, 0.61146986, 5.113643)
 size = Vector3(0.103515625, 0.725708, 1.0690918)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Environment/TvArea"]
+[node name="CSGBox3D5" type="CSGBox3D" parent="NavigationRegion3D/Environment/TvArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.07743, 0.67107165, 3.7011743)
 size = Vector3(0.103515625, 0.8864136, 1.270752)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="Environment/TvArea"]
+[node name="CSGBox3D6" type="CSGBox3D" parent="NavigationRegion3D/Environment/TvArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.07743, 1.749773, 3.7011743)
 size = Vector3(0.103515625, 0.8864136, 1.270752)
 
-[node name="CSGBox3D9" type="CSGBox3D" parent="Environment/TvArea"]
+[node name="CSGBox3D9" type="CSGBox3D" parent="NavigationRegion3D/Environment/TvArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.07743, 2.1486166, 2.1428244)
 size = Vector3(0.103515625, 1.1764832, 1.5318604)
 
-[node name="CSGBox3D10" type="CSGBox3D" parent="Environment/TvArea"]
+[node name="CSGBox3D10" type="CSGBox3D" parent="NavigationRegion3D/Environment/TvArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.07743, 0.8459387, 2.1428244)
 size = Vector3(0.103515625, 1.1764832, 1.5318604)
 
-[node name="CSGBox3D11" type="CSGBox3D" parent="Environment/TvArea"]
+[node name="CSGBox3D11" type="CSGBox3D" parent="NavigationRegion3D/Environment/TvArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.07743, 2.1486166, 0.40610862)
 size = Vector3(0.103515625, 1.1764832, 1.5318604)
 
-[node name="CSGBox3D12" type="CSGBox3D" parent="Environment/TvArea"]
+[node name="CSGBox3D12" type="CSGBox3D" parent="NavigationRegion3D/Environment/TvArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.07743, 0.8459387, 0.40610862)
 size = Vector3(0.103515625, 1.1764832, 1.5318604)
 
-[node name="CSGBox3D13" type="CSGBox3D" parent="Environment/TvArea"]
+[node name="CSGBox3D13" type="CSGBox3D" parent="NavigationRegion3D/Environment/TvArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.07743, 1.0216055, -1.5238078)
 size = Vector3(0.103515625, 1.5278168, 1.8978882)
 
-[node name="CSGBox3D17" type="CSGBox3D" parent="Environment/TvArea"]
+[node name="CSGBox3D17" type="CSGBox3D" parent="NavigationRegion3D/Environment/TvArea"]
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, 31.660606, 1.3605986, -2.815167)
 size = Vector3(0.103515625, 2.205803, 3.0192566)
 
-[node name="CSGBox3D18" type="CSGBox3D" parent="Environment/TvArea"]
+[node name="CSGBox3D18" type="CSGBox3D" parent="NavigationRegion3D/Environment/TvArea"]
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, 28.270786, 1.5259447, -2.815167)
 size = Vector3(0.103515625, 2.5364952, 3.3709564)
 
-[node name="CSGBox3D20" type="CSGBox3D" parent="Environment/TvArea"]
+[node name="CSGBox3D20" type="CSGBox3D" parent="NavigationRegion3D/Environment/TvArea"]
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, 27.534155, 0.8302274, 2.444296)
 size = Vector3(0.103515625, 1.4005718, 3.118618)
 
-[node name="CSGBox3D19" type="CSGBox3D" parent="Environment/TvArea"]
+[node name="CSGBox3D19" type="CSGBox3D" parent="NavigationRegion3D/Environment/TvArea"]
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, 24.624533, 1.6172533, -2.815167)
 size = Vector3(0.103515625, 2.7191124, 3.4700775)
 
-[node name="CSGBox3D14" type="CSGBox3D" parent="Environment/TvArea"]
+[node name="CSGBox3D14" type="CSGBox3D" parent="NavigationRegion3D/Environment/TvArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.07743, 2.752322, -1.5238078)
 size = Vector3(0.103515625, 1.5278168, 1.8978882)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Environment/TvArea"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D/Environment/TvArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.07743, 1.5741568, 5.113643)
 size = Vector3(0.103515625, 0.725708, 1.0690918)
 
-[node name="SmallAppliances" type="Node" parent="Environment"]
+[node name="SmallAppliances" type="Node" parent="NavigationRegion3D/Environment"]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Environment/SmallAppliances"]
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/Environment/SmallAppliances"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34770393, 0.5038732, 31.021461)
 use_collision = true
 size = Vector3(7, 0.14794922, 1)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Environment/SmallAppliances"]
+[node name="CSGBox3D4" type="CSGBox3D" parent="NavigationRegion3D/Environment/SmallAppliances"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.3426185, 0.5038732, 27.818052)
 use_collision = true
 size = Vector3(7, 0.14794922, 1)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Environment/SmallAppliances"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D/Environment/SmallAppliances"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.3426185, 1.5781647, 27.818052)
 use_collision = true
 size = Vector3(7, 0.14794922, 1)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Environment/SmallAppliances"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D/Environment/SmallAppliances"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34770393, 1.5781647, 31.021461)
 use_collision = true
 size = Vector3(7, 0.14794922, 1)
 
-[node name="StoreTrack" type="Node" parent="Environment"]
+[node name="StoreTrack" type="Node" parent="NavigationRegion3D/Environment"]
 
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/StoreTrack"]
+[node name="CSGMesh3D" type="CSGMesh3D" parent="NavigationRegion3D/Environment/StoreTrack"]
 transform = Transform3D(1, 0, 0, 0, 0.021979392, 0, 0, 0, 9.898909, 32.268013, -0.4942391, 14.321131)
 mesh = SubResource("BoxMesh_555p5")
 material = SubResource("StandardMaterial3D_5w1iy")
 
-[node name="CSGMesh3D6" type="CSGMesh3D" parent="Environment/StoreTrack"]
+[node name="CSGMesh3D6" type="CSGMesh3D" parent="NavigationRegion3D/Environment/StoreTrack"]
 transform = Transform3D(1, 0, 0, 0, 0.021979392, 0, 0, 0, 9.898909, 11.642075, -0.4942391, 14.321131)
 mesh = SubResource("BoxMesh_555p5")
 material = SubResource("StandardMaterial3D_5w1iy")
 
-[node name="CSGMesh3D4" type="CSGMesh3D" parent="Environment/StoreTrack"]
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="NavigationRegion3D/Environment/StoreTrack"]
 transform = Transform3D(-4.371139e-08, 0, 15.724939, 0, 0.021979392, 0, -1, 0, -6.873589e-07, 21.902449, -0.4942391, 21.706152)
 mesh = SubResource("BoxMesh_555p5")
 material = SubResource("StandardMaterial3D_5w1iy")
 
-[node name="CSGMesh3D8" type="CSGMesh3D" parent="Environment/StoreTrack"]
+[node name="CSGMesh3D8" type="CSGMesh3D" parent="NavigationRegion3D/Environment/StoreTrack"]
 transform = Transform3D(-4.371139e-08, 0, 15.724939, 0, 0.021979392, 0, -1, 0, -6.873589e-07, 21.932686, -0.4942391, 6.941655)
 mesh = SubResource("BoxMesh_555p5")
 material = SubResource("StandardMaterial3D_5w1iy")
 
-[node name="CSGMesh3D2" type="CSGMesh3D" parent="Environment/StoreTrack"]
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="NavigationRegion3D/Environment/StoreTrack"]
 transform = Transform3D(0.70710677, 0, -2.9395008, 0, 0.021979392, 0, 0.70710677, 0, 2.9395008, 30.938023, -0.4942391, 20.389894)
 mesh = SubResource("BoxMesh_555p5")
 material = SubResource("StandardMaterial3D_5w1iy")
 
-[node name="CSGMesh3D5" type="CSGMesh3D" parent="Environment/StoreTrack"]
+[node name="CSGMesh3D5" type="CSGMesh3D" parent="NavigationRegion3D/Environment/StoreTrack"]
 transform = Transform3D(0.7071067, 0, 2.9395008, 0, 0.02197939, 0, -0.70710677, 0, 2.9395008, 12.9504, -0.4942391, 20.389894)
 mesh = SubResource("BoxMesh_555p5")
 material = SubResource("StandardMaterial3D_5w1iy")
 
-[node name="CSGMesh3D3" type="CSGMesh3D" parent="Environment/StoreTrack"]
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="NavigationRegion3D/Environment/StoreTrack"]
 transform = Transform3D(0.70710677, 0, 2.9395006, 0, 0.021979392, 0, -0.7071068, 0, 2.939501, 30.938023, -0.4942391, 8.280313)
 mesh = SubResource("BoxMesh_555p5")
 material = SubResource("StandardMaterial3D_5w1iy")
 
-[node name="CSGMesh3D7" type="CSGMesh3D" parent="Environment/StoreTrack"]
+[node name="CSGMesh3D7" type="CSGMesh3D" parent="NavigationRegion3D/Environment/StoreTrack"]
 transform = Transform3D(-0.7071069, 0, 2.9395008, 0, 0.021979392, 0, -0.70710665, 0, -2.9395006, 12.964434, -0.4942391, 8.244498)
 mesh = SubResource("BoxMesh_555p5")
 material = SubResource("StandardMaterial3D_5w1iy")
 
-[node name="EnvironmentalBoundaries" type="Node" parent="Environment"]
+[node name="EnvironmentalBoundaries" type="Node" parent="NavigationRegion3D/Environment"]
 
-[node name="EnvironmentalCollision" parent="Environment/EnvironmentalBoundaries" instance=ExtResource("15_72f2j")]
+[node name="EnvironmentalCollision" parent="NavigationRegion3D/Environment/EnvironmentalBoundaries" instance=ExtResource("15_72f2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0436459, -0.9247172, -3.423802)
 
-[node name="CollisionShape3D" parent="Environment/EnvironmentalBoundaries/EnvironmentalCollision" index="0"]
+[node name="CollisionShape3D" parent="NavigationRegion3D/Environment/EnvironmentalBoundaries/EnvironmentalCollision" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9012451, 1.3502655, 1.0640855)
 shape = SubResource("BoxShape3D_72f2j")
 
-[node name="EnvironmentalCollision2" parent="Environment/EnvironmentalBoundaries" instance=ExtResource("15_72f2j")]
+[node name="EnvironmentalCollision2" parent="NavigationRegion3D/Environment/EnvironmentalBoundaries" instance=ExtResource("15_72f2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5628624, -0.5, -2.565281)
 
-[node name="CollisionShape3D" parent="Environment/EnvironmentalBoundaries/EnvironmentalCollision2" index="0"]
+[node name="CollisionShape3D" parent="NavigationRegion3D/Environment/EnvironmentalBoundaries/EnvironmentalCollision2" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.58627677, 0.8810421, 0.19450235)
 shape = SubResource("BoxShape3D_3oewo")
 
-[node name="EnvironmentalCollision3" parent="Environment/EnvironmentalBoundaries" instance=ExtResource("15_72f2j")]
+[node name="EnvironmentalCollision3" parent="NavigationRegion3D/Environment/EnvironmentalBoundaries" instance=ExtResource("15_72f2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.76081324, 0.19676661, 4.2631764)
 
-[node name="CollisionShape3D" parent="Environment/EnvironmentalBoundaries/EnvironmentalCollision3" index="0"]
+[node name="CollisionShape3D" parent="NavigationRegion3D/Environment/EnvironmentalBoundaries/EnvironmentalCollision3" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14585876, 0.26245117, -0.16711426)
 shape = SubResource("BoxShape3D_y0qs6")
 
-[node name="EnvironmentalCollision4" parent="Environment/EnvironmentalBoundaries" instance=ExtResource("15_72f2j")]
+[node name="EnvironmentalCollision4" parent="NavigationRegion3D/Environment/EnvironmentalBoundaries" instance=ExtResource("15_72f2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8429756, 0.29538822, 3.5273037)
 
-[node name="CollisionShape3D" parent="Environment/EnvironmentalBoundaries/EnvironmentalCollision4" index="0"]
+[node name="CollisionShape3D" parent="NavigationRegion3D/Environment/EnvironmentalBoundaries/EnvironmentalCollision4" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.043792725, 0.24212646, 0.7809448)
 shape = SubResource("BoxShape3D_ubyhl")
 
-[node name="EnvironmentalCollision5" parent="Environment/EnvironmentalBoundaries" instance=ExtResource("15_72f2j")]
+[node name="EnvironmentalCollision5" parent="NavigationRegion3D/Environment/EnvironmentalBoundaries" instance=ExtResource("15_72f2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.831431, -0.10329974, 13.77519)
 
-[node name="CollisionShape3D" parent="Environment/EnvironmentalBoundaries/EnvironmentalCollision5" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06071472, 0.11746216, 0.1978302)
+[node name="CollisionShape3D" parent="NavigationRegion3D/Environment/EnvironmentalBoundaries/EnvironmentalCollision5" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004606724, 0.2782917, 0.24365997)
 shape = SubResource("BoxShape3D_4eiet")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment/EnvironmentalBoundaries/EnvironmentalCollision5"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="NavigationRegion3D/Environment/EnvironmentalBoundaries/EnvironmentalCollision5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06071472, 0.11746216, 2.9637966)
 shape = SubResource("BoxShape3D_4eiet")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Environment/EnvironmentalBoundaries/EnvironmentalCollision5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06071472, 0.11746216, 5.7856197)
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="NavigationRegion3D/Environment/EnvironmentalBoundaries/EnvironmentalCollision5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20742035, 0.11746216, 5.7856197)
 shape = SubResource("BoxShape3D_4eiet")
 
-[node name="FloorTiles" type="Node" parent="Environment"]
+[node name="FloorTiles" type="Node" parent="NavigationRegion3D/Environment"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/FloorTiles"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Environment/FloorTiles"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01943, -0.48951256, 4.1233664)
 mesh = SubResource("PlaneMesh_ubyhl")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment/FloorTiles"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D/Environment/FloorTiles"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01943, -0.48951256, 18.123367)
 mesh = SubResource("PlaneMesh_ubyhl")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment/FloorTiles"]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="NavigationRegion3D/Environment/FloorTiles"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01943, -0.48951256, 32.123367)
 mesh = SubResource("PlaneMesh_ubyhl")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Environment/FloorTiles"]
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="NavigationRegion3D/Environment/FloorTiles"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.50476, -0.48, 14.469829)
 mesh = SubResource("PlaneMesh_4eiet")
+
+[node name="ManagerOffice" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25923157, 1.3608093, -13.735313)
+size = Vector3(12.712189, 3.7216187, 8.807251)
+
+[node name="RegisterArea" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.568253, -0.05206299, -5.290371)
+use_collision = true
+size = Vector3(2.4152832, 0.895874, 5.326355)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D/RegisterArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.66778564, -0.0012207031, -3.3006554)
+use_collision = true
+size = Vector3(1, 0.8934326, 1.3203125)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="NavigationRegion3D/RegisterArea"]
+transform = Transform3D(-1.7117495e-22, 1, -8.4443926e-08, 1, 1.4489132e-22, -2.2626677e-08, -2.2626677e-08, -8.444392e-08, -1, -1.9042606, -0.34377623, -3.981183)
+use_collision = true
+polygon = PackedVector2Array(-0.07380533, 0.54785347, -0.08782089, 2.0930614, 0.8024365, 2.0888233)
+depth = 1.54
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/RegisterArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04660034, 0.23156738, -3.961331)
+size = Vector3(2.3894653, 1.4631348, 0.06652832)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="NavigationRegion3D/RegisterArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4769745, 0.23156738, -2.6484933)
+size = Vector3(1.3423157, 1.4631348, 0.06652832)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D/RegisterArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014373779, 0.23156738, 2.6193008)
+size = Vector3(2.3894653, 1.4631348, 0.06652832)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="NavigationRegion3D/RegisterArea"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.2259235, 0.23156738, 0.006290436)
+size = Vector3(5.291214, 1.4631348, 0.06652832)
 
 [node name="door" parent="." instance=ExtResource("2_fqmik")]
 transform = Transform3D(-0.99997914, 0, -0.0064576734, 0, 1, 0, 0.0064576734, 0, -0.99997914, 30.458475, -0.49999976, 31.310722)
@@ -893,13 +916,18 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.6
 [node name="FromLockupScene" type="Marker3D" parent="Spawnpoints"]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 32.78034, 0.386854, 30.045742)
 
+[node name="FromStoreOffice" type="Marker3D" parent="Spawnpoints"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 17.029299, 0.386854, 6.51753)
+
 [node name="Enemy3D" parent="." instance=ExtResource("3_fqmik")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.762333, 0.10281867, 11.5129795)
+axis_lock_angular_x = true
 ZoneId = "STORE_SHOWROOM_FLOOR"
 EnemyId = "ENEMY_01"
 
 [node name="Enemy3D2" parent="." instance=ExtResource("3_fqmik")]
 transform = Transform3D(-0.1832822, 0, -0.9830603, 0, 1, 0, 0.9830603, 0, -0.1832822, 9.766759, 0.0907554, 19.27609)
+axis_lock_angular_x = true
 ZoneId = "STORE_SHOWROOM_FLOOR"
 EnemyId = "ENEMY_02"
 
@@ -909,13 +937,11 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.4
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." groups=["StoreLights"]]
 transform = Transform3D(1, 0, 0, 0, 0.5035478, 0.86396736, 0, -0.86396736, 0.5035478, 15.95501, 7.810197, 18.094334)
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.62563, -0.12534672, 15.030418)
-navigation_mesh = SubResource("NavigationMesh_1hiy4")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1465263, -0.4139595, 0)
-mesh = SubResource("PlaneMesh_1hiy4")
+[node name="ToOffice" parent="." instance=ExtResource("2_fqmik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.08404, -0.5, 5.7388124)
+_environmentToLoad = "res://Scenes/Environments/store_office.tscn"
+DoorId = "STORE_OFFICE_DOOR"
+ZoneId = "STORE_SHOWROOM_FLOOR"
 
 [editable path="Cameras/Hallway"]
 [editable path="Cameras/Appliances"]
@@ -924,17 +950,17 @@ mesh = SubResource("PlaneMesh_1hiy4")
 [editable path="Cameras/RefridgeratorIsle1"]
 [editable path="Cameras/RefridgeratorIsle2"]
 [editable path="Cameras/Appliances2"]
-[editable path="Cameras/RefridgeratorsToFrontDoor"]
+[editable path="Cameras/TvArea2"]
 [editable path="Cameras/Appliances2ToFrontDoor"]
 [editable path="Cameras/FixedCamera"]
 [editable path="Cameras/CenterOfStore"]
-[editable path="Cameras/TvArea"]
+[editable path="Cameras/Register"]
 [editable path="Cameras/FixedCamera2"]
-[editable path="Environment/Appliances/Refridgerators/MESH_Fridge_3_doors_v6"]
-[editable path="Environment/Appliances/Refridgerators/MESH_Fridge_1_doors_v6"]
-[editable path="Environment/Appliances/Refridgerators/MESH_Fridge_1_doors_v9"]
-[editable path="Environment/EnvironmentalBoundaries/EnvironmentalCollision"]
-[editable path="Environment/EnvironmentalBoundaries/EnvironmentalCollision2"]
-[editable path="Environment/EnvironmentalBoundaries/EnvironmentalCollision3"]
-[editable path="Environment/EnvironmentalBoundaries/EnvironmentalCollision4"]
-[editable path="Environment/EnvironmentalBoundaries/EnvironmentalCollision5"]
+[editable path="NavigationRegion3D/Environment/Appliances/Refridgerators/MESH_Fridge_3_doors_v6"]
+[editable path="NavigationRegion3D/Environment/Appliances/Refridgerators/MESH_Fridge_1_doors_v6"]
+[editable path="NavigationRegion3D/Environment/Appliances/Refridgerators/MESH_Fridge_1_doors_v9"]
+[editable path="NavigationRegion3D/Environment/EnvironmentalBoundaries/EnvironmentalCollision"]
+[editable path="NavigationRegion3D/Environment/EnvironmentalBoundaries/EnvironmentalCollision2"]
+[editable path="NavigationRegion3D/Environment/EnvironmentalBoundaries/EnvironmentalCollision3"]
+[editable path="NavigationRegion3D/Environment/EnvironmentalBoundaries/EnvironmentalCollision4"]
+[editable path="NavigationRegion3D/Environment/EnvironmentalBoundaries/EnvironmentalCollision5"]

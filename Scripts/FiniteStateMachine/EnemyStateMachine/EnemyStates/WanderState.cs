@@ -7,7 +7,7 @@ public class WanderState : EnemyState
 	private Vector3 _targetLocation = Vector3.Zero;
 	private long _wanderDistance = 5;
 	private double _wanderWaitTime;
-	private float _wanderSpeed = 3f;
+	private float _wanderSpeed = 1f;
 	
 	private List<RayCast3D> _rayCasts;
 	public override void Enter()
@@ -23,6 +23,7 @@ public class WanderState : EnemyState
 
 	public override void PhysicsUpdate(double delta)
 	{
+		_enemy.LookAt(MovementTarget);
 		foreach (Node node in _rayCasts)
 		{
 			if (node is RayCast3D ray)
@@ -89,6 +90,8 @@ public class WanderState : EnemyState
 
 		Vector3 currentAgentPosition = _enemy.GlobalTransform.Origin;
 		Vector3 nextPathPosition = _enemy.NavAgent.GetNextPathPosition();
+		// var pathDirection = currentAgentPosition - nextPathPosition;
+		//_enemy.LookAt(_enemy.GlobalPosition + pathDirection, Vector3.Up);
 
 		_enemy.Velocity = currentAgentPosition.DirectionTo(nextPathPosition) * _wanderSpeed;
 		//var direction = Vector3.Back;
@@ -116,7 +119,7 @@ public class WanderState : EnemyState
 	private void RandomWaitTime()
 	{
 		var rng = new Random();
-		_wanderWaitTime = rng.NextDouble() * 3;
+		_wanderWaitTime = (rng.NextDouble() + 1) * 3;
 		
 		_enemy.WanderTimer.WaitTime = _wanderWaitTime;
 		

@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://cobh7ewo5a57x"]
+
+[ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_767rj"]
+[ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="1_gqf4g"]
+[ext_resource type="Texture2D" uid="uid://dbw7r2u4jcnj8" path="res://Art/Textures/FloorAndWallTiles/TEXTURE_ShoeRoomFloor_carpetfunky_1_v1.png" id="2_x3j3r"]
+[ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="4_aneew"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_767rj"]
+albedo_texture = ExtResource("2_x3j3r")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gqf4g"]
+material = SubResource("StandardMaterial3D_767rj")
+size = Vector2(9, 9)
+
+[node name="StoreOffice" type="Node3D"]
+script = ExtResource("1_767rj")
+ZoneId = "STORE_OFFICE"
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2165527, 0)
+use_collision = true
+flip_faces = true
+size = Vector3(6.90625, 2.4331055, 8.798706)
+
+[node name="door" parent="." instance=ExtResource("1_gqf4g")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.4508188, 0, 0.3547151)
+_environmentToLoad = "res://Scenes/Environments/showroom_floor_scene.tscn"
+DoorId = "STORE_OFFICE_DOOR"
+ZoneId = "STORE_OFFICE"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.012738049, 0)
+mesh = SubResource("PlaneMesh_gqf4g")
+
+[node name="Spawnpoints" type="Node" parent="."]
+
+[node name="FromShowroomFloorScene" type="Marker3D" parent="Spawnpoints"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.501276, 0.70742005, 0.3865854)
+
+[node name="FixedCamera" parent="." instance=ExtResource("4_aneew")]
+transform = Transform3D(0.7506566, 0.0045875665, -0.66067666, 0, 0.9999759, 0.0069435723, 0.6606926, -0.0052122385, 0.75063854, -2.8549554, 1.3555899, 3.7528543)

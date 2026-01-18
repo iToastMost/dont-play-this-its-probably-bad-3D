@@ -110,6 +110,7 @@ script = ExtResource("1_hghv2")
 AttackDamage = 20
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026486337, 0, 0)
 shape = SubResource("CapsuleShape3D_ne65n")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

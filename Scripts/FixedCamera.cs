@@ -23,6 +23,10 @@ public partial class FixedCamera : Camera3D
 		{
 			this.Current = true;
 		}
+	}
+
+	private void OnExitArea(Node3D body)
+	{
 		
 	}
 

@@ -6,7 +6,8 @@ public static class EnvironmentManager
 {
     private static Dictionary<string, PackedScene> _environments = new()
     {
-        {"STORE_BREAKROOM", ResourceLoader.Load<PackedScene>("res://scenes/Environments/breakroom.tscn")}
+        {"STORE_BREAKROOM", ResourceLoader.Load<PackedScene>("res://scenes/Environments/breakroom.tscn")},
+        {"STORE_WAREHOUSE", ResourceLoader.Load<PackedScene>("res://scenes/Environments/warehouse.tscn")},
     };
 
     public static PackedScene GetEnvironment(string environmentId)
