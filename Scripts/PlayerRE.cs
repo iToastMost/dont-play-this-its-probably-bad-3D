@@ -58,6 +58,9 @@ public partial class PlayerRE : CharacterBody3D
     public bool IsReloading = false;
     public bool SpinBack = false;
 
+    public CollisionShape3D MeleeCollisionShape;
+    public Area3D MeleeCollisionArea;
+
 
     public int Ammo = 12;
 
@@ -113,6 +116,11 @@ public override void _Ready()
         _gooseJumpScene = ResourceLoader.Load<PackedScene>("res://GooseJump/Scenes/main.tscn");
         bullet = ResourceLoader.Load<PackedScene>("res://Scenes/Bullet3D.tscn");
 
+        MeleeCollisionShape = GetNode<CollisionShape3D>("CharacterModelAnim/Rig/Skeleton3D/BoneAttachment3D/Boxcutter/Area3D/CollisionShape3D");
+        MeleeCollisionArea = GetNode<Area3D>("CharacterModelAnim/Rig/Skeleton3D/BoneAttachment3D/Boxcutter/Area3D");
+        MeleeCollisionShape.Disabled = true;
+        MeleeCollisionArea.BodyEntered += MeleeCollisionEntered;
+        
         MuzzleFlash = GetNode<GpuParticles3D>("MuzzleFlash");
         MuzzleFlashOmniLight = GetNode<OmniLight3D>("MuzzleFlash/OmniLight3D");
         MuzzleFlashSpotLight = GetNode<SpotLight3D>("MuzzleFlash/SpotLight3D");
@@ -371,6 +379,15 @@ public override void _Ready()
     public void EquipItem(iEquippable weapon)
     {
         HandEquipmentSlot = weapon;
+        WeaponSkin.Visible = false;
+        if (HandEquipmentSlot != null && HandEquipmentSlot.GetName() == "Handgun")
+        {
+            WeaponSkin = GetNode<MeshInstance3D>("CharacterModelAnim/Rig/Skeleton3D/BoneAttachment3D/Gun");
+        }
+        else
+        {
+            WeaponSkin = GetNode<MeshInstance3D>("CharacterModelAnim/Rig/Skeleton3D/BoneAttachment3D/Boxcutter");
+        }
         WeaponSkin.Visible = true;
     }
 
@@ -412,6 +429,7 @@ public override void _Ready()
             CanMove = true;
             EmitSignalReloadFinished();
         }
+
     }
 
     private void ToggleFlashlight()
@@ -419,5 +437,14 @@ public override void _Ready()
         Flashlight.Visible = !Flashlight.Visible;
         FlashlightYaw.Rotation = new Vector3(0, Mathf.DegToRad(-90), 0);
         FlashlightPitch.Rotation = new Vector3(0, 0, Mathf.DegToRad(0));
+    }
+
+    private void MeleeCollisionEntered(Node3D body)
+    {
+        GD.Print("Hit!!");
+        if (body is Enemy3D enemy)
+        {
+            enemy.TakeDamage();
+        }
     }
 }

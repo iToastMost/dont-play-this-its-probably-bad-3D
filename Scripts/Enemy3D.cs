@@ -132,7 +132,7 @@ public partial class Enemy3D : CharacterBody3D
         esm.ChangeState(EnemyStateTypes.HitStun);
         
         Velocity = Vector3.Zero;
-        EnemyAnimationPlayer.Stop();
+        //EnemyAnimationPlayer.Stop();
         EnemyAnimationPlayer.CurrentAnimation = "Hit_Chest";
         EnemyAnimationPlayer.Play();
         

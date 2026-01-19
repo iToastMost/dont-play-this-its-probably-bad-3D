@@ -5,10 +5,19 @@ public class AimState : PlayerState
 {
     private double fireRate = 0.5;
     private double lastAttack = 0.0;
+    private CollisionObject3D _meleeCollision;
     public override void Enter()
     {
-        player.laser.Visible = true;
-        player.PlayAnimation("Pistol_Idle");
+        
+        if (player.HandEquipmentSlot is FirearmBase)
+        {
+            player.PlayAnimation("Pistol_Idle");
+            player.laser.Visible = true;
+        }
+        else
+        {
+            player.PlayAnimation("Sword_Idle");
+        }
     }
 
     public override void PhysicsUpdate(double delta)
@@ -36,7 +45,14 @@ public class AimState : PlayerState
 
         if (Input.IsActionJustPressed("shoot") && lastAttack <= 0)
         {
-            Shoot();
+            if (player.HandEquipmentSlot is FirearmBase)
+            {
+                Shoot();
+            }
+            else
+            {
+                MeleeAttack();
+            }
         }
     }
 
@@ -65,6 +81,12 @@ public class AimState : PlayerState
         float y = Mathf.Clamp(player.laser.Rotation.Y, Mathf.DegToRad(-45), Mathf.DegToRad(45));
         float z = Mathf.Clamp(player.laser.Rotation.Z, Mathf.DegToRad(80), Mathf.DegToRad(100));
         player.laser.Rotation = new Vector3(0,y,z);
+    }
+
+    private void MeleeAttack()
+    {
+        lastAttack = fireRate;
+        player.PlayAnimation("Sword_Attack");
     }
     
     public void Shoot()

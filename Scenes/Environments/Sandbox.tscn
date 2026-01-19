@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://yp3c5sahwm77"]
+[gd_scene load_steps=17 format=3 uid="uid://yp3c5sahwm77"]
 
 [ext_resource type="PackedScene" uid="uid://8w1w7i8arnob" path="res://Scenes/enemy3D.tscn" id="1_ejjuj"]
 [ext_resource type="Texture2D" uid="uid://cs8hogbeybmmq" path="res://Scenes/Art/Sandbox/texture_08.png" id="1_ff6jc"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bu1xmdj873i0m" path="res://Scenes/Items/Handgun.tscn" id="4_vvl7v"]
 [ext_resource type="PackedScene" uid="uid://xexhgx776cch" path="res://Scenes/Items/handgun_ammo.tscn" id="5_u41hi"]
 [ext_resource type="PackedScene" uid="uid://urqpvkpkkito" path="res://Scenes/Items/healing_herb.tscn" id="6_k4xno"]
+[ext_resource type="PackedScene" uid="uid://dmsnjwj8wtp7m" path="res://Scenes/Items/boxcutter.tscn" id="8_10yd3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k4xno"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -65,9 +66,9 @@ ZoneId = "SANDBOX"
 EnemyId = "ENEMY_SANDBOX"
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.9693904, -0.17382813, 6.0154943)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.9693904, -0.49316406, 6.0154943)
 use_collision = true
-size = Vector3(3.3417206, 0.4765625, 1.2139893)
+size = Vector3(3.3417206, 1.1152344, 1.2139893)
 material = SubResource("StandardMaterial3D_k4xno")
 
 [node name="Handgun" parent="." instance=ExtResource("4_vvl7v")]
@@ -85,13 +86,8 @@ transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09
 ZoneId = "SANDBOX"
 ItemId = "HANDGUN_AMMO_02"
 
-[node name="HandgunAmmo3" parent="." instance=ExtResource("5_u41hi")]
-transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09, -8.356796, 0.11134839, 6.3486547)
-ZoneId = "SANDBOX"
-ItemId = "HANDGUN_AMMO_03"
-
 [node name="HandgunAmmo4" parent="." instance=ExtResource("5_u41hi")]
-transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09, -8.356796, 0.11134839, 5.9827337)
+transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09, -8.356796, 0.11134839, 6.495863)
 ZoneId = "SANDBOX"
 ItemId = "HANDGUN_AMMO_04"
 
@@ -118,7 +114,7 @@ ItemId = "HEALING_HERB_02"
 [node name="Spawnpoints" type="Node" parent="."]
 
 [node name="InitialPlayerSpawn" type="Marker3D" parent="Spawnpoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2253284, 0.22806275, 3.3510616)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2253284, -0.06494743, 3.3510616)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_k4xno")
@@ -181,3 +177,8 @@ transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -20.
 use_collision = true
 size = Vector3(8.525249, 0.6152954, 0.057617188)
 material = SubResource("StandardMaterial3D_ff6jc")
+
+[node name="Boxcutter" parent="." instance=ExtResource("8_10yd3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.537399, 0.1363856, 6.102687)
+ZoneId = "SANDBOX"
+ItemId = "BOXCUTTER"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dlu2tcpx6wqg4"]
+[gd_scene load_steps=27 format=3 uid="uid://dlu2tcpx6wqg4"]
 
 [ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_hrkw2"]
 [ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="1_rmo1r"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://c5xuoh3o5jojc" path="res://Scenes/Art/Models/Appliances/oven_1_workingdoors_texture_v_1.tscn" id="13_deae4"]
 [ext_resource type="PackedScene" uid="uid://bl7iefgr47eo" path="res://Art/Models/Appliances/Fridge/MESH_Fridge_4_nodoors_v1.glb" id="15_lm1a6"]
 [ext_resource type="PackedScene" uid="uid://214q6f885sgs" path="res://Scenes/npc.tscn" id="16_q36r4"]
+[ext_resource type="PackedScene" uid="uid://dmsnjwj8wtp7m" path="res://Scenes/Items/boxcutter.tscn" id="17_75ppw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_deae4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -511,12 +512,12 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.55
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -3.0582683, -0.49734017, 2.6966965)
 
 [node name="HandgunAmmo" parent="." instance=ExtResource("8_fvmvs")]
-transform = Transform3D(0.15100373, 0, 0.13114066, 0, 0.2, 0, -0.13114066, 0, 0.15100373, 1.8260989, 0.3888116, -0.70884264)
+transform = Transform3D(0.15100373, 0, 0.13114066, 0, 0.2, 0, -0.13114066, 0, 0.15100373, 1.1277378, 0.3888116, -0.70884264)
 ZoneId = "STORE_BREAKROOM"
 ItemId = "HANGUN_AMMO_01"
 
 [node name="Handgun" parent="." instance=ExtResource("9_57taf")]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 1.0161786, 0.2794063, -0.837814)
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.8168802, 0.2794063, -0.837814)
 ZoneId = "STORE_BREAKROOM"
 ItemId = "HANDGUN"
 
@@ -540,5 +541,10 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.68
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -1.1740897, -0.50929904, 0.025765598)
 NPCName = "Van Helsing"
 NPCDialogue = "Looks like the breaker blew again. We have a spare fuse in lockup. The key is in the supply closet next to me. Remember to check your map with \"M\" if you feel lost! Also, grab a gun and some ammo off the table here; because America."
+
+[node name="Boxcutter" parent="." instance=ExtResource("17_75ppw")]
+transform = Transform3D(0.70710677, 0.70710677, -2.1073424e-08, 0, 2.9802322e-08, 1, 0.70710677, -0.70710677, 2.1073424e-08, 1.96673, 0.32772708, -0.769338)
+ZoneId = "STORE_BREAKROOM"
+ItemId = "BOXCUTTER"
 
 [editable path="Cameras/FixedCamera"]

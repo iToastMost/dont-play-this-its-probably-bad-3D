@@ -16,6 +16,7 @@ public abstract partial class ItemBase : StaticBody3D, iLootable
         
         if(GameStateManager.Instance.IsItemLooted(ZoneId, ItemId))
         {
+            GD.Print("Item freed: " +  ItemId);
             QueueFree();
         }
     }

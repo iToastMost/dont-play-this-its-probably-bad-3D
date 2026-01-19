@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmsnjwj8wtp7m"]
+
+[ext_resource type="Script" uid="uid://coruy040imdag" path="res://Scripts/Items/Boxcutter.cs" id="1_jbeop"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3tma3"]
+size = Vector3(0.05, 0.1, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbeop"]
+albedo_color = Color(0.88235295, 0.5137255, 0.09411765, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jbeop"]
+size = Vector3(0.02, 0.04, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3tma3"]
+size = Vector3(1, 1.4221268, 1)
+
+[node name="Boxcutter" type="StaticBody3D"]
+script = ExtResource("1_jbeop")
+Damage = 10
+itemName = "Boxcutter"
+itemDescription = "The blade is sticky with tape residue, but that doesn't make it any less lethal"
+itemID = 5
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_3tma3")
+surface_material_override/0 = SubResource("StandardMaterial3D_jbeop")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(-0.7071068, -0.70710677, 2.2626683e-08, -0.70710677, 0.7071068, 8.444392e-08, -7.5710346e-08, 4.371139e-08, -1, -0.004255142, 0.0436927, 0.0014538914)
+mesh = SubResource("BoxMesh_jbeop")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09029007, 0)
+shape = SubResource("BoxShape3D_3tma3")
