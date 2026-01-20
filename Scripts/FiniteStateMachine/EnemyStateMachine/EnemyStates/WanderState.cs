@@ -105,14 +105,14 @@ public class WanderState : EnemyState
 		//_enemy.Velocity = direction * _wanderSpeed;
 		_enemy.LookAt(location);
 		
-		//LookAtInterpolation(_enemy.EnemyTurnSpeed);
+		//LookAtInterpolation(nextPathPosition, _enemy.EnemyTurnSpeed);
 	}
 
-	private void LookAtInterpolation(float turnSpeed)
+	private void LookAtInterpolation(Vector3 lookPosition, float turnSpeed)
 	{
-		_targetLocation.Y = _enemy.GlobalPosition.Y;
+		lookPosition.Y = _enemy.GlobalPosition.Y;
 		Transform3D transform = _enemy.Transform;
-		transform = transform.LookingAt(_targetLocation, Vector3.Up);
+		transform = transform.LookingAt(lookPosition, Vector3.Up);
 		_enemy.Transform = _enemy.Transform.InterpolateWith(transform, turnSpeed);
 	}
 
