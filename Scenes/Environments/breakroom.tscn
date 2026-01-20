@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dlu2tcpx6wqg4"]
+[gd_scene load_steps=25 format=3 uid="uid://dlu2tcpx6wqg4"]
 
 [ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_hrkw2"]
 [ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="1_rmo1r"]
@@ -10,8 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://cbk0n7ve4qfvf" path="res://Scenes/Art/Models/soap.tscn" id="5_f4y1d"]
 [ext_resource type="PackedScene" uid="uid://b86pqbiujl4gy" path="res://Scenes/Art/Models/garbage.tscn" id="6_6j0w0"]
 [ext_resource type="PackedScene" uid="uid://ds4udcpaocote" path="res://Scenes/Art/Models/wetfloorsign.tscn" id="7_crahg"]
-[ext_resource type="PackedScene" uid="uid://xexhgx776cch" path="res://Scenes/Items/handgun_ammo.tscn" id="8_fvmvs"]
-[ext_resource type="PackedScene" uid="uid://bu1xmdj873i0m" path="res://Scenes/Items/Handgun.tscn" id="9_57taf"]
 [ext_resource type="PackedScene" uid="uid://bhqfgu752vqjn" path="res://Scenes/computer_terminal.tscn" id="12_0vjpu"]
 [ext_resource type="PackedScene" uid="uid://c5xuoh3o5jojc" path="res://Scenes/Art/Models/Appliances/oven_1_workingdoors_texture_v_1.tscn" id="13_deae4"]
 [ext_resource type="PackedScene" uid="uid://bl7iefgr47eo" path="res://Art/Models/Appliances/Fridge/MESH_Fridge_4_nodoors_v1.glb" id="15_lm1a6"]
@@ -511,16 +509,6 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.55
 [node name="wetfloorsign" parent="." instance=ExtResource("7_crahg")]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -3.0582683, -0.49734017, 2.6966965)
 
-[node name="HandgunAmmo" parent="." instance=ExtResource("8_fvmvs")]
-transform = Transform3D(0.15100373, 0, 0.13114066, 0, 0.2, 0, -0.13114066, 0, 0.15100373, 1.1277378, 0.3888116, -0.70884264)
-ZoneId = "STORE_BREAKROOM"
-ItemId = "HANGUN_AMMO_01"
-
-[node name="Handgun" parent="." instance=ExtResource("9_57taf")]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.8168802, 0.2794063, -0.837814)
-ZoneId = "STORE_BREAKROOM"
-ItemId = "HANDGUN"
-
 [node name="ComputerTerminal" parent="." instance=ExtResource("12_0vjpu")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.2183301, -0.09160206, 2.4868867)
 
@@ -539,8 +527,9 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.68
 
 [node name="NPC" parent="." instance=ExtResource("16_q36r4")]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -1.1740897, -0.50929904, 0.025765598)
-NPCName = "Van Helsing"
-NPCDialogue = "Looks like the breaker blew again. We have a spare fuse in lockup. The key is in the supply closet next to me. Remember to check your map with \"M\" if you feel lost! Also, grab a gun and some ammo off the table here; because America."
+NPCName = "Mindless Coworker"
+NPCDialogue = "Looks like the breaker blew again. We have a spare fuse in the closet over there and the breaker is in the basement. Remember to check your map with \"M\" if you feel lost!"
+StartingAnimation = "Idle"
 
 [node name="Boxcutter" parent="." instance=ExtResource("17_75ppw")]
 transform = Transform3D(0.70710677, 0.70710677, -2.1073424e-08, 0, 2.9802322e-08, 1, 0.70710677, -0.70710677, 2.1073424e-08, 1.96673, 0.32772708, -0.769338)

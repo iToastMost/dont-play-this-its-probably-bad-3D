@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dcihdbyj526n5"]
+[gd_scene load_steps=11 format=3 uid="uid://dcihdbyj526n5"]
 
 [ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_s8nfc"]
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="1_skepo"]
 [ext_resource type="PackedScene" uid="uid://d2ju4yvya24wv" path="res://Scenes/Art/Models/toilet.tscn" id="2_g5057"]
 [ext_resource type="PackedScene" uid="uid://danmfsxogiql" path="res://Scenes/fusebox.tscn" id="3_0nuyt"]
 [ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="5_tawf3"]
+[ext_resource type="PackedScene" uid="uid://214q6f885sgs" path="res://Scenes/npc.tscn" id="6_4be4p"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_skepo"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -69,3 +70,9 @@ transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, -2.6
 _environmentToLoad = "res://Scenes/Environments/warehouse.tscn"
 DoorId = "STORE_BASEMENT_TO_WAREHOUSE"
 ZoneId = "STORE_BASEMENT"
+
+[node name="NPC" parent="." instance=ExtResource("6_4be4p")]
+transform = Transform3D(-0.6799405, 0, -0.73326725, 0, 1, 0, 0.73326725, 0, -0.6799405, 1.9646723, -0.5000001, 1.9240108)
+NPCName = "Mindless Coworker"
+NPCDialogue = "Have you seen those things out there?!? That boxcutter won't get you very far. I head Terry has something a little more serious in his office."
+StartingAnimation = "Sitting_Idle"

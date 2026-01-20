@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://cobh7ewo5a57x"]
+[gd_scene load_steps=10 format=3 uid="uid://cobh7ewo5a57x"]
 
 [ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_767rj"]
 [ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="1_gqf4g"]
 [ext_resource type="Texture2D" uid="uid://dbw7r2u4jcnj8" path="res://Art/Textures/FloorAndWallTiles/TEXTURE_ShoeRoomFloor_carpetfunky_1_v1.png" id="2_x3j3r"]
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="4_aneew"]
+[ext_resource type="PackedScene" uid="uid://bu1xmdj873i0m" path="res://Scenes/Items/Handgun.tscn" id="5_rwllu"]
+[ext_resource type="PackedScene" uid="uid://xexhgx776cch" path="res://Scenes/Items/handgun_ammo.tscn" id="6_kyba0"]
+[ext_resource type="PackedScene" uid="uid://bscstcsbakyd5" path="res://Scenes/Items/lockup_key.tscn" id="7_5ygmx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_767rj"]
 albedo_texture = ExtResource("2_x3j3r")
@@ -38,4 +41,39 @@ mesh = SubResource("PlaneMesh_gqf4g")
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.501276, 0.70742005, 0.3865854)
 
 [node name="FixedCamera" parent="." instance=ExtResource("4_aneew")]
-transform = Transform3D(0.7506566, 0.0045875665, -0.66067666, 0, 0.9999759, 0.0069435723, 0.6606926, -0.0052122385, 0.75063854, -2.8549554, 1.3555899, 3.7528543)
+transform = Transform3D(0.6313236, 0.29550123, -0.7170144, 0, 0.92456, 0.38103646, 0.77551955, -0.2405573, 0.58369654, -2.3530242, 1.4212393, 3.0803514)
+
+[node name="Desk" type="CSGBox3D" parent="."]
+transform = Transform3D(0.80958086, 0, 0.5870084, 0, 1, 0, -0.5870084, 0, 0.80958086, -1.4545212, 0.6777841, 2.415264)
+size = Vector3(0.6279297, 0.1529541, 1.3751221)
+
+[node name="Desk2" type="CSGBox3D" parent="Desk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25463867, -0.29786682, 0.603302)
+size = Vector3(0.118652344, 0.74868774, 0.16851807)
+
+[node name="Desk3" type="CSGBox3D" parent="Desk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2513522, -0.29786682, 0.603302)
+size = Vector3(0.118652344, 0.74868774, 0.16851807)
+
+[node name="Desk4" type="CSGBox3D" parent="Desk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25463867, -0.29786682, -0.5949799)
+size = Vector3(0.118652344, 0.74868774, 0.16851807)
+
+[node name="Desk5" type="CSGBox3D" parent="Desk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2513522, -0.29786682, -0.5949799)
+size = Vector3(0.118652344, 0.74868774, 0.16851807)
+
+[node name="Handgun" parent="." instance=ExtResource("5_rwllu")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -1.6247963, 0.7287478, 1.8283495)
+ZoneId = "STORE_OFFICE"
+ItemId = "HANDGUN"
+
+[node name="HandgunAmmo" parent="." instance=ExtResource("6_kyba0")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.4625514, 0.79339427, 2.1048424)
+ZoneId = "STORE_OFFICE"
+ItemId = "HANDGUN_AMMO_01"
+
+[node name="LockUpKey" parent="." instance=ExtResource("7_5ygmx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1465262, 0.8679518, 2.7964952)
+ZoneId = "STORE_OFFICE"
+ItemId = "LOCKUP_KEY"

@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="2_sxua3"]
 [ext_resource type="PackedScene" uid="uid://b86pqbiujl4gy" path="res://Scenes/Art/Models/garbage.tscn" id="3_v5urd"]
 [ext_resource type="PackedScene" uid="uid://ds4udcpaocote" path="res://Scenes/Art/Models/wetfloorsign.tscn" id="4_odvv0"]
-[ext_resource type="PackedScene" uid="uid://bscstcsbakyd5" path="res://Scenes/Items/lockup_key.tscn" id="5_nxufh"]
 [ext_resource type="Texture2D" uid="uid://y4qcqyrjo1ng" path="res://Art/Textures/FloorAndWallTiles/TEXTURE_ShoeRoomFloor_tile_1_v1.png" id="7_cgpn2"]
+[ext_resource type="PackedScene" uid="uid://syj6k24hr5nw" path="res://Scenes/Items/fuse.tscn" id="8_0p4ea"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0p4ea"]
 albedo_texture = ExtResource("7_cgpn2")
@@ -58,11 +58,11 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.10
 [node name="wetfloorsign3" parent="." instance=ExtResource("4_odvv0")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.10315031, 0, -1.8031569)
 
-[node name="LockUpKey" parent="." instance=ExtResource("5_nxufh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4588997, 0.7211375, -1.4677129)
-ZoneId = "STORE_BREAKROOM_CLOSET"
-ItemId = "LOCKUP_KEY"
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.70113117, 0, -0.14969796)
 mesh = SubResource("PlaneMesh_27yxi")
+
+[node name="fuse" parent="." instance=ExtResource("8_0p4ea")]
+transform = Transform3D(-4.3711392e-08, 0.70710677, -0.70710677, 1, 3.0908623e-08, -3.090862e-08, 0, -0.70710677, -0.70710677, -1.4355837, 0.71961683, -1.5607201)
+ZoneId = "STORE_BREAKROOM_CLOSET"
+ItemId = "FUSE"

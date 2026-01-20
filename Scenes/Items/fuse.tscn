@@ -13,7 +13,7 @@ albedo_color = Color(0.0885599, 0.0885599, 0.0885599, 1)
 albedo_color = Color(0.21230483, 0.21230483, 0.21230483, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5i3ds"]
-size = Vector3(1, 1.3423996, 1.5208588)
+size = Vector3(3.3999634, 3.1695843, 1.5208588)
 
 [node name="fuse" type="StaticBody3D"]
 script = ExtResource("1_5i3ds")
@@ -33,5 +33,5 @@ mesh = SubResource("BoxMesh_5i3ds")
 material = SubResource("StandardMaterial3D_kdp4w")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09278488, -0.004310608)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.021148682, 0.23943806, -0.004310608)
 shape = SubResource("BoxShape3D_5i3ds")

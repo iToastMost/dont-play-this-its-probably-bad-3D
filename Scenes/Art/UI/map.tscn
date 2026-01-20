@@ -121,6 +121,13 @@ offset_right = 1218.0
 offset_bottom = 703.0
 AreaName = "Showroom Floor"
 
+[node name="ManagerOfficeTile" parent="CanvasLayer" instance=ExtResource("3_p3ir5")]
+offset_left = 1025.0
+offset_top = 437.0
+offset_right = 1216.0
+offset_bottom = 591.0
+AreaName = "Manager's Office"
+
 [node name="LockupTile" parent="CanvasLayer" instance=ExtResource("3_p3ir5")]
 offset_left = 651.0
 offset_top = 707.0
@@ -186,4 +193,11 @@ offset_left = 1208.0
 offset_top = 304.0
 offset_right = 1226.0
 offset_bottom = 358.0
+color = Color(1, 0.6392157, 0.28235295, 1)
+
+[node name="door7" type="ColorRect" parent="CanvasLayer"]
+offset_left = 1016.0
+offset_top = 490.0
+offset_right = 1034.0
+offset_bottom = 544.0
 color = Color(1, 0.6392157, 0.28235295, 1)

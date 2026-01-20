@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bscstcsbakyd5"]
+[gd_scene load_steps=6 format=3 uid="uid://bscstcsbakyd5"]
 
 [ext_resource type="Script" uid="uid://bmktyu254uq07" path="res://Scripts/Items/KeyItem.cs" id="1_og2wv"]
 
@@ -6,6 +6,9 @@
 size = Vector3(1, 2.26062, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_og2wv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1k2tr"]
+albedo_color = Color(0.90588236, 0.7294118, 0.43529412, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_i3td7"]
 
@@ -23,7 +26,9 @@ shape = SubResource("BoxShape3D_rt11x")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.118911974, 0, 0, 0, -0.02803345, 0, 0, 0, 0.17900418, 0, 0, 0)
 mesh = SubResource("SphereMesh_og2wv")
+surface_material_override/0 = SubResource("StandardMaterial3D_1k2tr")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 0.294805, 0.7547327, 0, 0)
 mesh = SubResource("BoxMesh_i3td7")
+surface_material_override/0 = SubResource("StandardMaterial3D_1k2tr")

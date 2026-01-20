@@ -25,13 +25,24 @@ surface_material_override/0 = SubResource("StandardMaterial3D_5higp")
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.13051955, 0, 0)
 light_color = Color(0.89411765, 0.7176471, 0.32941177, 1)
-light_energy = 4.0
+light_energy = 2.512
 light_volumetric_fog_energy = 6.0
 shadow_enabled = true
 shadow_blur = 1.865
-spot_range = 7.792
+spot_range = 14.908
 spot_attenuation = 0.5
-spot_angle = 12.5
+spot_angle = 44.9
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.13051955, 0, 0)
+light_color = Color(0.89411765, 0.7176471, 0.32941177, 1)
+light_energy = 7.775
+light_volumetric_fog_energy = 6.0
+shadow_enabled = true
+shadow_blur = 1.865
+spot_range = 10.314
+spot_attenuation = 0.5
+spot_angle = 2.39
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14162868, 0, 0)

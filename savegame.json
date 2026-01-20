@@ -1,15 +1,15 @@
 {
-  "PlayerPosX": "-1.6058117",
-  "PlayerPosY": "0.4054225",
-  "PlayerPosZ": "1.8599163",
-  "PlayerRotationY": "-2.2792037",
-  "Playerhealth": 100,
+  "PlayerPosX": "-1.9479645",
+  "PlayerPosY": "0.40530246",
+  "PlayerPosZ": "1.6906193",
+  "PlayerRotationY": "-1.5623888",
+  "Playerhealth": 60,
   "PlayerAmmo": 12,
   "CurrentEnvironment": "STORE_BREAKROOM",
   "playerInventory": [
 	5,
-	2,
-	1,
+	-1,
+	-1,
 	-1,
 	-1,
 	-1,
@@ -33,11 +33,31 @@
 	"STORE_BREAKROOM": {
 	  "DeadEnemyIds": [],
 	  "LootedItemIds": [
-		"BOXCUTTER",
-		"HANDGUN",
-        "HANGUN_AMMO_01"
+        "BOXCUTTER"
 	  ],
 	  "EventTriggeredIds": [],
+	  "DoorUnlockedIds": []
+	},
+	"STORE_BREAKROOM_CLOSET": {
+	  "DeadEnemyIds": [],
+	  "LootedItemIds": [
+        "FUSE"
+	  ],
+	  "EventTriggeredIds": [],
+	  "DoorUnlockedIds": []
+	},
+	"STORE_WAREHOUSE": {
+	  "DeadEnemyIds": [],
+	  "LootedItemIds": [],
+	  "EventTriggeredIds": [],
+	  "DoorUnlockedIds": []
+	},
+	"STORE_BASEMENT": {
+	  "DeadEnemyIds": [],
+	  "LootedItemIds": [],
+	  "EventTriggeredIds": [
+        "FUSE_USED"
+	  ],
 	  "DoorUnlockedIds": []
 	}
   }

@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ra5fclq0rvk"]
+[gd_scene load_steps=4 format=3 uid="uid://ra5fclq0rvk"]
 
 [ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_dfjre"]
 [ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="1_h6k85"]
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="2_dfr2l"]
-[ext_resource type="PackedScene" uid="uid://syj6k24hr5nw" path="res://Scenes/Items/fuse.tscn" id="3_4o804"]
 
 [node name="LockupScene" type="Node3D" groups=["Environments"]]
 script = ExtResource("1_dfjre")
@@ -59,8 +58,3 @@ transform = Transform3D(-0.9390994, -0.07962613, 0.33429343, 0, 0.97278494, 0.23
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." groups=["StoreLights"]]
 transform = Transform3D(1, 0, 0, 0, -0.50000006, 0.8660254, 0, -0.8660254, -0.50000006, 0, 6.6255627, -4.1688104)
-
-[node name="fuse" parent="." instance=ExtResource("3_4o804")]
-transform = Transform3D(-2.6692538e-08, -0.70710677, 0.70710677, -1, -2.1855692e-08, -5.9604645e-08, 5.7601156e-08, -0.70710677, -0.70710677, -0.34737828, 1.1826915, 2.63958)
-ZoneId = "STORE_LOCKUP"
-ItemId = "FUSE"
