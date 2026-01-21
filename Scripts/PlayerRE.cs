@@ -185,6 +185,7 @@ public override void _Ready()
         sm.AddState(PlayerStateTypes.Dead, new DeathState());
         sm.AddState(PlayerStateTypes.PhoneState, new PhoneState());
         sm.AddState(PlayerStateTypes.Dialog, new DialogState());
+        sm.AddState(PlayerStateTypes.HitStun, new PlayerHitStunState());
         
         sm.Initialize(this);
         sm.ChangeState(PlayerStateTypes.Idle);
@@ -372,6 +373,7 @@ public override void _Ready()
     public void TakeDamage(int dmg) 
     {
         PlayAnimation("Hit_Chest");
+        sm.ChangeState(PlayerStateTypes.HitStun);
         _health -= dmg;
         EmitSignal(SignalName.UpdateHealth);
     }
@@ -428,6 +430,11 @@ public override void _Ready()
             IsReloading = false;
             CanMove = true;
             EmitSignalReloadFinished();
+        }
+
+        if (animName.Equals("Hit_Chest"))
+        {
+            sm.ChangeState(PlayerStateTypes.Idle);
         }
 
     }

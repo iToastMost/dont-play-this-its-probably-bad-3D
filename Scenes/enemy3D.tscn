@@ -134,6 +134,7 @@ mesh = SubResource("BoxMesh_ne65n")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AttackBox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.251877, -0.54331326)
 shape = SubResource("BoxShape3D_0bnlb")
+disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -178,7 +179,5 @@ one_shot = true
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_height_offset = -0.25
 debug_enabled = true
-
-[connection signal="body_entered" from="AttackBox" to="." method="OnBodyEntered3D"]
 
 [editable path="EnemyModel"]

@@ -14,6 +14,7 @@ public partial class Enemy3D : CharacterBody3D
     
     public CollisionShape3D EnemyCollider;
     public CollisionShape3D AttackCollider;
+    public Area3D AttackArea;
 
     public bool IsDead = false;
     private int _health = 5;
@@ -51,7 +52,10 @@ public partial class Enemy3D : CharacterBody3D
         NavAgent = GetNode<NavigationAgent3D>("NavigationAgent3D");
         
         EnemyCollider = GetNode<CollisionShape3D>("CollisionShape3D");
-        AttackCollider = GetNode<CollisionShape3D>("AttackBox/CollisionShape3D");
+        AttackCollider = GetNode<CollisionShape3D>("EnemyModel/Rig/Skeleton3D/BoneAttachment3D/Boxcutter/Area3D/CollisionShape3D");
+        AttackArea = GetNode<Area3D>("EnemyModel/Rig/Skeleton3D/BoneAttachment3D/Boxcutter/Area3D");
+        AttackArea.BodyEntered += OnBodyEntered3D;
+        
         
         WanderTimer.Timeout += WanderTimeout;
         HitStunTimer.Timeout += HitStunTimeout;

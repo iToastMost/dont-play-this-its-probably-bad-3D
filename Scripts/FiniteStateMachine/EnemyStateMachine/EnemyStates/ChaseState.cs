@@ -30,6 +30,13 @@ public class ChaseState : EnemyState
         }
         else 
         {
+	        if (_enemy.EnemyAnimation.CurrentAnimation != "Walk_Formal")
+	        {
+		        //_enemy.EnemyAnimationPlayer.Stop();
+		        _enemy.EnemyAnimationPlayer.CurrentAnimation = "Walk_Formal";
+		        //_enemy.EnemyAnimationPlayer.Play();
+	        }
+		        
             MoveTowardsPlayer(delta);
             _enemy.EnemyAnimation.Stop();
         }

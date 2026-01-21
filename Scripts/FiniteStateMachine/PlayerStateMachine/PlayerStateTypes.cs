@@ -11,4 +11,5 @@ public enum PlayerStateTypes
     Dead,
     PhoneState,
     Dialog,
+    HitStun,
 }
