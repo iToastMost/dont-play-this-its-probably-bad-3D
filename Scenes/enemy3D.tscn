@@ -107,6 +107,7 @@ albedo_color = Color(0.9254902, 0.21960784, 0.09019608, 1)
 
 [node name="Enemy3D" type="CharacterBody3D"]
 script = ExtResource("1_hghv2")
+EnemyTurnSpeed = 1.0
 AttackDamage = 20
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

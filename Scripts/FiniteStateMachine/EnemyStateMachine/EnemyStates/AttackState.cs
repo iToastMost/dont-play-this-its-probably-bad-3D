@@ -6,8 +6,10 @@ public class AttackState : EnemyState
 	private const double ENEMY_ATTACK_CD = 2.5;
 	private double _lastAttack = 0;
 	private bool _canAttack;
+	private RayCast3D ray;
 	public override void Enter()
 	{
+		ray = _enemy.AttackRay;
 		_canAttack = true;
 	}
  
@@ -18,11 +20,11 @@ public class AttackState : EnemyState
 		
 		_enemy._distanceToPlayer = _enemy.GlobalPosition.DistanceTo(_enemy.player.GlobalPosition);
 		
-		if(_enemy._distanceToPlayer > 1 && _canAttack)
-			_enemyStateMachine.ChangeState(EnemyStateTypes.Chase);
+		if(_canAttack && ray.GetCollider() is PlayerRE)
+			AttackPlayer();
 		
 		if(_canAttack)
-			AttackPlayer();
+			_enemyStateMachine.ChangeState(EnemyStateTypes.Chase);
 	}
  
 	public override void Exit()

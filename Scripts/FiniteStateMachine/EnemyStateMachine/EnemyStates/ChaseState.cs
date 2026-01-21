@@ -1,8 +1,10 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public class ChaseState : EnemyState
 {
+	private List<RayCast3D> _rayCasts;
 	public override void Enter()
 	{
 		GD.Print("Entering ChaseState");
@@ -11,6 +13,7 @@ public class ChaseState : EnemyState
 		_enemy.EnemyAnimationPlayer.CurrentAnimation = "Walk_Formal";
 		_enemy.EnemyAnimationPlayer.Play();
 		MovementTarget = _enemy.player.GlobalPosition;
+		_rayCasts = _enemy.GetRayCasts();
 	}
  
 	public Vector3 MovementTarget
@@ -22,11 +25,25 @@ public class ChaseState : EnemyState
 	public override void PhysicsUpdate(double delta)
 	{
         _enemy._distanceToPlayer = _enemy.GlobalPosition.DistanceTo(_enemy.player.GlobalPosition);
-		_enemy.LookAt(_enemy.player.GlobalPosition);
+		//_enemy.LookAt(_enemy.player.GlobalPosition);
+		LookAtInterpolation(_enemy.EnemyTurnSpeed, delta);
         if (_enemy._distanceToPlayer <= 1)
         {   
-            _enemyStateMachine.ChangeState(EnemyStateTypes.Attack);
-           
+	        foreach (Node node in _rayCasts)
+	        {
+		        if (node is RayCast3D ray)
+		        {
+			        if (ray.GetCollider() is PlayerRE)
+			        {
+				        GD.Print(ray.GetName());
+				        //This is scuffed as hell please fix later
+				        //if(ray.GetName().Equals("RayCast3D3") || ray.GetName().Equals("RayCast3D4") || ray.GetName().Equals("RayCast3D"))
+						if(ray.GetName().Equals("RayCast3D"))
+							_enemyStateMachine.ChangeState(EnemyStateTypes.Attack);
+			        }
+		        }
+	        }
+            
         }
         else 
         {
@@ -71,10 +88,10 @@ public class ChaseState : EnemyState
         //LookAtInterpolation(_enemy.EnemyTurnSpeed);
     }
 
-    private void LookAtInterpolation(float turnSpeed)
+    private void LookAtInterpolation(float turnSpeed, double delta)
     {
-	    Transform3D transform = _enemy.Transform;
-	    transform = transform.LookingAt(_enemy.player.GlobalPosition, Vector3.Up);
-	    _enemy.Transform = _enemy.Transform.InterpolateWith(transform, turnSpeed);
+	    //Transform3D transform = _enemy.Transform;
+	    var transform = _enemy.GlobalTransform.LookingAt(_enemy.player.GlobalTransform.Origin, Vector3.Up);
+	    _enemy.GlobalTransform = _enemy.GlobalTransform.InterpolateWith(transform, turnSpeed * (float) delta);
     }
 }

@@ -20,12 +20,16 @@ public partial class Enemy3D : CharacterBody3D
     private int _health = 5;
     public float _enemyMoveSpeed = 1.0f;
     public float _distanceToPlayer;
-    public float EnemyTurnSpeed = 0.1f;
     public Timer WanderTimer;
     public Timer HitStunTimer;
     public bool CanWander;
+
+    public RayCast3D AttackRay;
     
     public NavigationAgent3D  NavAgent;
+    
+    [Export]
+    public float EnemyTurnSpeed { get; set; }
     
     [Export]
     public string ZoneId { get; set; }
@@ -55,6 +59,8 @@ public partial class Enemy3D : CharacterBody3D
         AttackCollider = GetNode<CollisionShape3D>("EnemyModel/Rig/Skeleton3D/BoneAttachment3D/Boxcutter/Area3D/CollisionShape3D");
         AttackArea = GetNode<Area3D>("EnemyModel/Rig/Skeleton3D/BoneAttachment3D/Boxcutter/Area3D");
         AttackArea.BodyEntered += OnBodyEntered3D;
+
+        AttackRay = GetNode<RayCast3D>("LineOfSight/RayCast3D");
         
         
         WanderTimer.Timeout += WanderTimeout;
