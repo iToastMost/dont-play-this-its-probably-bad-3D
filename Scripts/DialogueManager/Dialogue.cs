@@ -3,6 +3,9 @@ using System;
 
 public partial class Dialogue : Node
 {
+	[Signal]
+	public delegate void YesLootButtonPressedEventHandler(Node3D item);
+	
 	[Export] public double TimerDuration;
 
 	private string _displayText;
@@ -17,6 +20,12 @@ public partial class Dialogue : Node
 	private ColorRect ColorRect;
 	private Label _continueLabel;
 	private Tween _tween;
+
+	private Button YesLootButton;
+	private Button NoLootButton;
+	private HFlowContainer _hFlowContainer;
+
+	public Node3D ItemToLoot;
 	
 	
 
@@ -28,6 +37,11 @@ public partial class Dialogue : Node
 		_charName = GetNode<RichTextLabel>("ColorRect/CharName");
 		ColorRect = GetNode<ColorRect>("ColorRect");
 		_continueLabel = GetNode<Label>("ContinueLabel");
+		YesLootButton = GetNode<Button>("ChoiceHFlowContainer/YesLootButton");
+		NoLootButton = GetNode<Button>("ChoiceHFlowContainer/NoLootButton");
+		_hFlowContainer = GetNode<HFlowContainer>("ChoiceHFlowContainer");
+		YesLootButton.Pressed += YesLootPressed;
+		
 		RichTextLabel.VisibleCharacters = 0;
 
 		NextCharacterTimer.Timeout += NextCharacterTimeout;
@@ -38,6 +52,7 @@ public partial class Dialogue : Node
 		RichTextLabel.Visible = false;
 		ColorRect.Visible = false;
 		_continueLabel.Visible = false;
+		_hFlowContainer.Visible = false;
 		//NextCharacterTimer.Start();
 	}
 
@@ -65,9 +80,33 @@ public partial class Dialogue : Node
 		RichTextLabel.Visible = true;
 		ColorRect.Visible = true;
 		_continueLabel.Visible = true;
+		
+		
 		ContinueLabelTween();
 
 		NextCharacterTimer.Start();
+	}
+
+	public void AskToLoot(Node3D item)
+	{
+		if (item is ItemBase itemBase)
+		{
+			var message = "Will you take the " + itemBase.GetName() + "?";
+			_visibleText = message.Length;
+            
+			_charName.Text = "";
+			RichTextLabel.Text = message;
+			RichTextLabel.VisibleCharacters = _visibleText;
+			_displayTextLength = RichTextLabel.Text.Length;
+            
+			_charName.Visible = true;
+			RichTextLabel.Visible = true;
+			ColorRect.Visible = true;
+            
+			_hFlowContainer.Visible = true;
+			YesLootButton.GrabFocus();		
+		}
+		
 	}
 
 	public void HideMessage()
@@ -80,12 +119,14 @@ public partial class Dialogue : Node
 
 		if(_tween != null && _tween.IsRunning())
 			_tween.Kill();
-		
+
 		_charName.Visible = true;
 		_continueLabel.Visible = false;
 		RichTextLabel.Text = "";
 		RichTextLabel.Visible = false;
 		ColorRect.Visible = false;
+		_hFlowContainer.Visible = false;
+		YesLootButton.ReleaseFocus();
 	}
 
 	private void ContinueLabelTween()
@@ -94,6 +135,20 @@ public partial class Dialogue : Node
 		_tween.TweenProperty(_continueLabel, "modulate:a", 0.75, _tweenSpeed / 2);
 		_tween.TweenProperty(_continueLabel, "modulate:a", 0.25, _tweenSpeed / 2);
 		_tween.SetLoops();
+	}
+
+	private void YesLootPressed()
+	{
+		//Sends looted signal to game manager with item id to tell manager what to loot
+		if(ItemToLoot != null)
+			EmitSignal(SignalName.YesLootButtonPressed, ItemToLoot);
+		ItemToLoot = null;
+		HideMessage();
+	}
+
+	private void NoLootPressed()
+	{
+		HideMessage();
 	}
 
 }

@@ -25,5 +25,12 @@ public partial class DialogueManager : Node
         _dialogue = GetParent().GetNode<Dialogue>("GameManager/PlayerSetup/UI/CanvasLayer/Dialogue");
         _dialogue.HideMessage();
     }
+
+    public void AskToLootItem(Node3D item)
+    {
+        _dialogue = GetParent().GetNode<Dialogue>("GameManager/PlayerSetup/UI/CanvasLayer/Dialogue");
+        _dialogue.ItemToLoot = item;
+        _dialogue.AskToLoot(item);
+    }
     
 }

@@ -23,6 +23,7 @@ public partial class GameManager : Node3D
 	private Marker3D _playerInitialSpawnPoint;
 	private SubViewportContainer _doorPushSubViewportContainer;
 	private Camera3D _subviewportCamera;
+	private Dialogue _dialogue;
 	
 	private string _sceneToLoad = "";
 	private bool _isLoadingEnvironment = false;
@@ -73,6 +74,7 @@ public partial class GameManager : Node3D
 		_sceneTransitionTimer = GetNode<Timer>("SceneTransitionTimer");
 		_doorPushSubViewportContainer = GetNode<SubViewportContainer>("CanvasLayer/ScreenFade/DoorPushAnimationViewport");
 		_subviewportCamera = GetNode<Camera3D>("CanvasLayer/ScreenFade/DoorPushAnimationViewport/SubViewport/Node3D/Camera3D");
+		_dialogue = GetNode<Dialogue>("PlayerSetup/UI/CanvasLayer/Dialogue");
 		_doorPushSubViewportContainer.Visible = false;
 		
 		_playerRe.UpdateInventoryItems += UpdateInventory;
@@ -85,6 +87,8 @@ public partial class GameManager : Node3D
 		_inventory.CheckItemSlotClicked += CheckInventorySlot;
 		_playerRe.AcceptDialogue += AcceptDialogue;
 		_playerRe.NPCDialogue += SendDialogue;
+		_playerRe.AskToLootItem += AskToLoot;
+		_dialogue.YesLootButtonPressed += UpdateInventory;
 		
 		playerSpawnPos = new Vector3(loadedData.PlayerPosX.ToFloat(),  loadedData.PlayerPosY.ToFloat(), loadedData.PlayerPosZ.ToFloat());
 		var playerSpawnRotation = new Vector3(0, loadedData.PlayerRotationY.ToFloat(), 0);
@@ -189,6 +193,7 @@ public partial class GameManager : Node3D
 		_sceneTransitionTimer = GetNode<Timer>("SceneTransitionTimer");
 		_doorPushSubViewportContainer = GetNode<SubViewportContainer>("CanvasLayer/ScreenFade/DoorPushAnimationViewport");
 		_subviewportCamera = GetNode<Camera3D>("CanvasLayer/ScreenFade/DoorPushAnimationViewport/SubViewport/Node3D/Camera3D");
+		_dialogue = GetNode<Dialogue>("PlayerSetup/UI/CanvasLayer/Dialogue");
 		_doorPushSubViewportContainer.Visible = false;
 		
 		
@@ -202,6 +207,8 @@ public partial class GameManager : Node3D
 		_inventory.CheckItemSlotClicked += CheckInventorySlot;
 		_playerRe.AcceptDialogue += AcceptDialogue;
 		_playerRe.NPCDialogue += SendDialogue;
+		_playerRe.AskToLootItem += AskToLoot;
+		_dialogue.YesLootButtonPressed += UpdateInventory;
 		
 		var loadGame = ResourceLoader.Load<PackedScene>(pathToLoad);
 		_currentEnvironment = loadGame.Instantiate<Node3D>();
@@ -346,6 +353,12 @@ public partial class GameManager : Node3D
 	private void AcceptDialogue()
 	{
 		DialogueManager.Instance.HideDialogue();
+	}
+
+	private void AskToLoot(Node3D item)
+	{
+		_playerRe.UpdateState(PlayerStateTypes.Dialog);
+		DialogueManager.Instance.AskToLootItem(item);
 	}
 	
 	private void UpdateInventory(Node3D item)

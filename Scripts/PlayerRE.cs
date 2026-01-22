@@ -5,6 +5,9 @@ public partial class PlayerRE : CharacterBody3D
 {
     [Signal]
     public delegate void UpdateInventoryItemsEventHandler(Node3D item);
+    
+    [Signal]
+    public delegate void AskToLootItemEventHandler(Node3D item);
 
     [Signal]
     public delegate void UpdateHealthEventHandler();
@@ -313,8 +316,9 @@ public override void _Ready()
             {
                 //Signals to game manager that an item has been looted and inventory needs to be updated
                 //lootable.Loot(_playerInventory);
-                playerAnimation.CurrentAnimation = "PickUp_Table";
-                UpdateInventory(node);
+                //playerAnimation.CurrentAnimation = "PickUp_Table";
+                //UpdateInventory(node);
+                EmitSignalAskToLootItem(node);
                 return;
             }
 

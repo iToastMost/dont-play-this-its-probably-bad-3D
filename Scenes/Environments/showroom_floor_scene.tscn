@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bwhhunf3f6to0"]
+[gd_scene load_steps=55 format=3 uid="uid://bwhhunf3f6to0"]
 
 [ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_2goeg"]
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="1_jna78"]
@@ -27,7 +27,7 @@ size = Vector3(1.8320313, 0.6088867, 10.779541)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fqmik"]
 resource_local_to_scene = true
-size = Vector3(11.517151, 0.6118164, 7.5625)
+size = Vector3(11.5017395, 0.6118164, 7.5625)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_555p5"]
 resource_local_to_scene = true
@@ -50,7 +50,7 @@ size = Vector3(1, 1, 7.8210297)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_joigd"]
 resource_local_to_scene = true
-size = Vector3(11.665039, 0.4362793, 12.039886)
+size = Vector3(11.02478, 0.4362793, 4.175255)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_boeyx"]
 resource_local_to_scene = true
@@ -66,7 +66,7 @@ size = Vector3(8.532501, 0.35009766, 10.6519165)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ivlfl"]
 resource_local_to_scene = true
-size = Vector3(20.372437, 0.5126953, 13.5942745)
+size = Vector3(20.372437, 0.5126953, 8.139911)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_63rf1"]
 resource_local_to_scene = true
@@ -75,6 +75,14 @@ size = Vector3(2.6398172, 1.4572754, 6.340578)
 [sub_resource type="BoxShape3D" id="BoxShape3D_5owe4"]
 resource_local_to_scene = true
 size = Vector3(3.5682983, 0.3154297, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8ktv8"]
+resource_local_to_scene = true
+size = Vector3(23.873077, 1, 4.350281)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3nb7d"]
+resource_local_to_scene = true
+size = Vector3(11.514099, 1, 9.648865)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_1hiy4"]
 vertices = PackedVector3Array(17.103474, -0.048303604, -18.5, 17.603474, -0.048303604, -19.5, -20.646526, -0.048303604, -19.5, -20.646526, -0.048303604, -18.5, 18.353474, -0.048303604, -19.5, 17.603474, -0.048303604, -2.25, 18.603474, -0.048303604, -17.75, 17.353474, -0.048303604, 16.5, 18.353474, -0.048303604, 16.75, 27.853474, -0.048303604, 16.5, 27.853474, -0.048303604, -17.75, -16.646526, -0.048303604, -6, -17.396526, -0.048303604, -6.5, -17.646526, -0.048303604, -6.5, -18.896526, -0.048303604, -6.5, -19.896526, -0.048303604, -2, -16.396526, -0.048303604, -2, -16.146526, -0.048303604, -2.5, -18.896526, -0.048303604, -17.25, -19.896526, -0.048303604, -17.25, -14.646526, -0.048303604, -2.5, -15.146526, -0.048303604, -6.25, -7.1465263, -0.048303604, -17.25, -9.396526, -0.048303604, -17.25, -9.896526, -0.048303604, -16.25, -10.146526, -0.048303604, -15.25, -10.146526, -0.048303604, -9.25, -7.1465263, -0.048303604, -9.25, -14.396526, -0.048303604, -6.25, -10.646526, -0.048303604, -2.5, -10.646526, -0.048303604, -6, -13.396526, -0.048303604, -6.25, -14.396526, -0.048303604, -15.75, -17.646526, -0.048303604, -16, -17.396526, -0.048303604, -15.5, -13.146526, -0.048303604, -15.5, -13.896526, -0.048303604, -7.5, -13.896526, -0.048303604, -15.25, -6.1465263, 3.7016964, -17.25, -6.1465263, 3.7016964, -9.75, 5.6034737, 3.7016964, -9.75, 5.6034737, 3.7016964, -17.25, -5.8965263, -0.048303604, -17.25, -5.8965263, -0.048303604, -10, 5.3534737, -0.048303604, -10, 5.3534737, -0.048303604, -17.25, 12.853474, -0.048303604, -11.5, 13.853474, -0.048303604, -9.5, 14.103474, -0.048303604, -10, 13.353474, -0.048303604, -11.75, 13.103474, -0.048303604, -13.5, 15.853474, -0.048303604, -17.25, 6.6034737, -0.048303604, -17.25, 8.853474, -0.048303604, -13.5, 6.6034737, -0.048303604, -12.5, 8.603474, -0.048303604, -12.5, 15.853474, -0.048303604, -10, -16.396526, 1.9516964, -7.25, -15.146526, 1.7016964, -7.25, -14.896526, 1.9516964, -8, -14.896526, 1.7016964, -14.75, -16.396526, 1.7016964, -14.75, -12.396526, 1.7016964, -14.5, -12.396526, 1.7016964, -7, -11.146526, 1.7016964, -7, -11.146526, 1.7016964, -14.5, 8.853474, -0.048303604, -11.5, 6.6034737, -0.048303604, -9, 6.1034737, -0.048303604, -4, 6.1034737, -0.048303604, 1, 7.1034737, -0.048303604, 1, 7.1034737, -0.048303604, -4, 9.103474, -0.048303604, -4.25, 9.353474, -0.048303604, -3, 13.603474, -0.048303604, -3.25, 5.6034737, -0.048303604, -8.75, 5.6034737, -0.048303604, -4.25, -6.8965263, -0.048303604, -8.75, -10.146526, -0.048303604, -6.25, -9.396526, -0.048303604, -2.25, -2.1465263, -0.048303604, -4, -9.396526, -0.048303604, 1.25, -2.1465263, -0.048303604, 1, -1.6465263, -0.048303604, -4.25, -1.6465263, -0.048303604, -8.75, 0.10347366, -0.048303604, -4, 0.10347366, -0.048303604, 1, 0.85347366, -0.048303604, 1, 1.1034737, -0.048303604, -4.25, 3.1034737, -0.048303604, -4, 3.8534737, -0.048303604, -4, 3.1034737, -0.048303604, 1, 3.8534737, -0.048303604, 1, 15.103474, 0.7016964, -7.25, 15.103474, 0.7016964, -3.25, 16.103474, 0.7016964, -3.25, 16.103474, 0.7016964, -7.25, 4.1034737, -0.048303604, 3, 2.8534737, -0.048303604, 3, 14.353474, -0.048303604, 9.5, 5.8534737, -0.048303604, 3, 1.1034737, -0.048303604, 3, -0.14652634, -0.048303604, 3, 7.3534737, -0.048303604, 3, -2.1465263, -0.048303604, 2.75, -2.3965263, -0.048303604, 15.75, 16.103474, -0.048303604, 1.5, 15.853474, -0.048303604, -2, 13.853474, -0.048303604, -2, 9.353474, -0.048303604, 2.75, 16.103474, -0.048303604, 9.25, 14.353474, -0.048303604, 15.75, -19.896526, -0.048303604, 5.5, -16.396526, -0.048303604, 5.5, -15.146526, 2.4516964, -1.5, -15.146526, 2.4516964, -0.5, -10.396526, 2.4516964, -0.5, -10.396526, 2.4516964, -1.5, -14.896526, 1.2016964, -1.25, -14.896526, 0.9516964, -0.75, -10.646526, 0.9516964, -0.75, -10.646526, 1.2016964, -1.25, -19.896526, -0.048303604, 8.75, -18.896526, -0.048303604, 9, -16.146526, -0.048303604, 6, -18.896526, -0.048303604, 14.75, -13.146526, -0.048303604, 14.75, -9.896526, -0.048303604, 6, -12.896526, -0.048303604, 15.75, -15.396526, 1.7016964, 1.25, -15.396526, 1.7016964, 2.25, -10.396526, 1.7016964, 2.25, -10.396526, 1.7016964, 1.25, -15.396526, 1.7016964, 4, -15.396526, 1.7016964, 5, -10.646526, 1.7016964, 5, -10.646526, 1.7016964, 4, 15.603474, -0.048303604, 12, 16.103474, -0.048303604, 15.75, 16.103474, -0.048303604, 10.75, 17.103474, -0.048303604, 17, 18.353474, -0.048303604, 19.5, -6.3965263, -0.048303604, 19.5, -6.3965263, -0.048303604, 17, -6.8965263, -0.048303604, 19.75, -20.646526, -0.048303604, 17, -20.146526, -0.048303604, 23.5, -6.8965263, -0.048303604, 23.5)
@@ -169,7 +177,7 @@ transform = Transform3D(0.7936458, 0.04725042, -0.6065422, 0, 0.9969795, 0.07766
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6576712, 0, 11.864867)
 
 [node name="CollisionShape3D" parent="Cameras/Appliances/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.782013, -0.1940918, 0.7864609)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7743073, -0.1940918, 0.7864609)
 shape = SubResource("BoxShape3D_fqmik")
 debug_color = Color(0.9254902, 0.27058825, 0, 0.8039216)
 
@@ -229,7 +237,7 @@ transform = Transform3D(-0.64273185, 0.012760253, -0.76598483, 0, 0.9998613, 0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.82687926, -0.10334793, 20.435013)
 
 [node name="CollisionShape3D" parent="Cameras/Appliances2/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6159205, -0.17004395, 2.351572)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2957911, -0.17004395, -1.5807438)
 shape = SubResource("BoxShape3D_joigd")
 debug_color = Color(0.9254902, 0.27058825, 0, 0.8039216)
 
@@ -271,7 +279,7 @@ transform = Transform3D(-0.04811011, -0.00079525914, -0.99884176, 0, 0.9999997, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.40518, 0, 16.014675)
 
 [node name="CollisionShape3D" parent="Cameras/CenterOfStore/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3581543, -0.24365234, -3.0976505)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3581543, -0.24365234, -0.37046814)
 shape = SubResource("BoxShape3D_ivlfl")
 
 [node name="Register" parent="Cameras" instance=ExtResource("1_jna78")]
@@ -293,6 +301,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.023346, 0, 28.728277)
 [node name="CollisionShape3D" parent="Cameras/FixedCamera2/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.61727905, -0.34228516, -0.41882324)
 shape = SubResource("BoxShape3D_5owe4")
+
+[node name="FixedCamera3" parent="Cameras" instance=ExtResource("1_jna78")]
+transform = Transform3D(-0.025126122, 0.16420633, -0.986106, 0, 0.9864174, 0.16425818, 0.9996843, 0.0041271714, -0.024784844, 5.6193905, 1.479495, 7.8697524)
+
+[node name="Area3D" parent="Cameras/FixedCamera3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.645988, 0.061858177, 7.8697524)
+
+[node name="CollisionShape3D" parent="Cameras/FixedCamera3/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.555954, 0, 0.63870287)
+shape = SubResource("BoxShape3D_8ktv8")
+
+[node name="FixedCamera4" parent="Cameras" instance=ExtResource("1_jna78")]
+transform = Transform3D(0.96665585, -0.008732193, 0.25593016, 0, 0.99941844, 0.034099594, -0.25607908, -0.03296257, 0.96609366, 3.559118, 0.8551085, 30.65971)
+
+[node name="Area3D" parent="Cameras/FixedCamera4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.559118, -0.15231103, 28.283318)
+
+[node name="CollisionShape3D" parent="Cameras/FixedCamera4/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8431089, 0, -2.051117)
+shape = SubResource("BoxShape3D_3nb7d")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.62563, -0.12534672, 15.030418)
@@ -861,6 +889,7 @@ mesh = SubResource("PlaneMesh_4eiet")
 
 [node name="ManagerOffice" type="CSGBox3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25923157, 1.3608093, -13.735313)
+use_collision = true
 size = Vector3(12.712189, 3.7216187, 8.807251)
 
 [node name="RegisterArea" type="CSGBox3D" parent="NavigationRegion3D"]
@@ -920,14 +949,16 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 32.7
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 17.029299, 0.386854, 6.51753)
 
 [node name="Enemy3D" parent="." instance=ExtResource("3_fqmik")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.762333, 0.10281867, 11.5129795)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.762333, 0.50027364, 11.5129795)
 axis_lock_angular_x = true
+EnemyTurnSpeed = 0.0
 ZoneId = "STORE_SHOWROOM_FLOOR"
 EnemyId = "ENEMY_01"
 
 [node name="Enemy3D2" parent="." instance=ExtResource("3_fqmik")]
-transform = Transform3D(-0.1832822, 0, -0.9830603, 0, 1, 0, 0.9830603, 0, -0.1832822, 9.766759, 0.0907554, 19.27609)
+transform = Transform3D(-0.1832822, 0, -0.9830603, 0, 1, 0, 0.9830603, 0, -0.1832822, 9.766759, 0.4830963, 19.27609)
 axis_lock_angular_x = true
+EnemyTurnSpeed = 0.0
 ZoneId = "STORE_SHOWROOM_FLOOR"
 EnemyId = "ENEMY_02"
 
@@ -956,6 +987,8 @@ ZoneId = "STORE_SHOWROOM_FLOOR"
 [editable path="Cameras/CenterOfStore"]
 [editable path="Cameras/Register"]
 [editable path="Cameras/FixedCamera2"]
+[editable path="Cameras/FixedCamera3"]
+[editable path="Cameras/FixedCamera4"]
 [editable path="NavigationRegion3D/Environment/Appliances/Refridgerators/MESH_Fridge_3_doors_v6"]
 [editable path="NavigationRegion3D/Environment/Appliances/Refridgerators/MESH_Fridge_1_doors_v6"]
 [editable path="NavigationRegion3D/Environment/Appliances/Refridgerators/MESH_Fridge_1_doors_v9"]
