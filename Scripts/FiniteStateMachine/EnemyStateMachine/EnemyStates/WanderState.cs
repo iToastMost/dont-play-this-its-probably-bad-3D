@@ -103,17 +103,20 @@ public class WanderState : EnemyState
 		
 		//_enemy.Position -=  _enemy.Transform.Basis.Z * _wanderSpeed * (float)delta;
 		//_enemy.Velocity = direction * _wanderSpeed;
-		_enemy.LookAt(location);
+		//_enemy.LookAt(location);
 		
-		//LookAtInterpolation(nextPathPosition, _enemy.EnemyTurnSpeed);
+		LookAtInterpolation(nextPathPosition, _enemy.EnemyTurnSpeed, delta);
 	}
 
-	private void LookAtInterpolation(Vector3 lookPosition, float turnSpeed)
+	private void LookAtInterpolation(Vector3 lookPosition, float turnSpeed, double delta)
 	{
-		lookPosition.Y = _enemy.GlobalPosition.Y;
-		Transform3D transform = _enemy.Transform;
-		transform = transform.LookingAt(lookPosition, Vector3.Up);
-		_enemy.Transform = _enemy.Transform.InterpolateWith(transform, turnSpeed);
+		var transform = _enemy.GlobalTransform.LookingAt(new Vector3(lookPosition.X, 0, lookPosition.Z), Vector3.Up);
+		_enemy.GlobalTransform = _enemy.GlobalTransform.InterpolateWith(transform, turnSpeed * (float)delta);
+		
+		
+		//For reference
+		//var transform = _enemy.GlobalTransform.LookingAt(_enemy.player.GlobalTransform.Origin, Vector3.Up);
+		//_enemy.GlobalTransform = _enemy.GlobalTransform.InterpolateWith(transform, turnSpeed * (float) delta);
 	}
 
 	private void RandomWaitTime()
