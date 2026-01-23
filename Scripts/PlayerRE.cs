@@ -23,6 +23,9 @@ public partial class PlayerRE : CharacterBody3D
 
     [Signal]
     public delegate void AcceptDialogueEventHandler();
+    
+    [Signal]
+    public delegate void LootItemSelectedEventHandler();
 
     [Signal]
     public delegate void NPCDialogueEventHandler(string npcName, string npcDialogue);
@@ -189,6 +192,7 @@ public override void _Ready()
         sm.AddState(PlayerStateTypes.PhoneState, new PhoneState());
         sm.AddState(PlayerStateTypes.Dialog, new DialogState());
         sm.AddState(PlayerStateTypes.HitStun, new PlayerHitStunState());
+        sm.AddState(PlayerStateTypes.LootingState, new LootingState());
         
         sm.Initialize(this);
         sm.ChangeState(PlayerStateTypes.Idle);
@@ -207,7 +211,17 @@ public override void _Ready()
         if (Input.IsActionJustPressed("accept_dialog") && _3DStarted == true) 
         {
             //CanMove = true;
-            EmitSignal(SignalName.AcceptDialogue);
+            if (sm.GetPlayerState() == PlayerStateTypes.Dialog)
+            {
+                 EmitSignal(SignalName.AcceptDialogue);
+            }
+            
+            
+            // if (sm.GetPlayerState() == PlayerStateTypes.LootingState)
+            // {
+            //     EmitSignal(SignalName.LootItemSelected);
+            // }
+           
         }
         
         if (Input.IsActionJustPressed("interaction_check"))

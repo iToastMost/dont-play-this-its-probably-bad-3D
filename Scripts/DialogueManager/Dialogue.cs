@@ -5,6 +5,9 @@ public partial class Dialogue : Node
 {
 	[Signal]
 	public delegate void YesLootButtonPressedEventHandler(Node3D item);
+
+	[Signal]
+	public delegate void DialogueFinishedEventHandler();
 	
 	[Export] public double TimerDuration;
 
@@ -41,6 +44,7 @@ public partial class Dialogue : Node
 		NoLootButton = GetNode<Button>("ChoiceHFlowContainer/NoLootButton");
 		_hFlowContainer = GetNode<HFlowContainer>("ChoiceHFlowContainer");
 		YesLootButton.Pressed += YesLootPressed;
+		NoLootButton.Pressed += NoLootPressed;
 		
 		RichTextLabel.VisibleCharacters = 0;
 
@@ -127,6 +131,7 @@ public partial class Dialogue : Node
 		ColorRect.Visible = false;
 		_hFlowContainer.Visible = false;
 		YesLootButton.ReleaseFocus();
+		EmitSignal(SignalName.DialogueFinished);
 	}
 
 	private void ContinueLabelTween()

@@ -12,4 +12,5 @@ public enum PlayerStateTypes
     PhoneState,
     Dialog,
     HitStun,
+    LootingState,
 }

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bxatf0mt80s6i"
-path="res://.godot/imported/character trial 5.glb-d0b334d4f4dd70113c2490c0c9ae1f3e.scn"
+uid="uid://rkkbqwjusxe4"
+path="res://.godot/imported/character trial 8.glb-eade16bc76b4bd01bdb8f7235572e957.scn"
 
 [deps]
 
-source_file="res://Art/Models/Characters/character trial 5.glb"
-dest_files=["res://.godot/imported/character trial 5.glb-d0b334d4f4dd70113c2490c0c9ae1f3e.scn"]
+source_file="res://Art/Models/Characters/character trial 8.glb"
+dest_files=["res://.godot/imported/character trial 8.glb-eade16bc76b4bd01bdb8f7235572e957.scn"]
 
 [params]
 
@@ -37,6 +37,12 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:metarig/Skeleton3D": {
+"retarget/bone_map": null
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1

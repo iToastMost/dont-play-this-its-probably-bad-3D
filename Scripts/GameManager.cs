@@ -88,7 +88,9 @@ public partial class GameManager : Node3D
 		_playerRe.AcceptDialogue += AcceptDialogue;
 		_playerRe.NPCDialogue += SendDialogue;
 		_playerRe.AskToLootItem += AskToLoot;
+		_playerRe.LootItemSelected += HandleLootItemUI;
 		_dialogue.YesLootButtonPressed += UpdateInventory;
+		_dialogue.DialogueFinished += DialogueFinished;
 		
 		playerSpawnPos = new Vector3(loadedData.PlayerPosX.ToFloat(),  loadedData.PlayerPosY.ToFloat(), loadedData.PlayerPosZ.ToFloat());
 		var playerSpawnRotation = new Vector3(0, loadedData.PlayerRotationY.ToFloat(), 0);
@@ -208,7 +210,9 @@ public partial class GameManager : Node3D
 		_playerRe.AcceptDialogue += AcceptDialogue;
 		_playerRe.NPCDialogue += SendDialogue;
 		_playerRe.AskToLootItem += AskToLoot;
+		_playerRe.LootItemSelected += HandleLootItemUI;
 		_dialogue.YesLootButtonPressed += UpdateInventory;
+		_dialogue.DialogueFinished += DialogueFinished;
 		
 		var loadGame = ResourceLoader.Load<PackedScene>(pathToLoad);
 		_currentEnvironment = loadGame.Instantiate<Node3D>();
@@ -341,6 +345,11 @@ public partial class GameManager : Node3D
 		}
 	}
 
+	private void HandleLootItemUI()
+	{
+		//DialogueManager.Instance
+	}
+
 
 	//Updates dialog from dialog trigger signal
 	private void SendDialogue(string name, string dialog) 
@@ -355,9 +364,14 @@ public partial class GameManager : Node3D
 		DialogueManager.Instance.HideDialogue();
 	}
 
+	private void DialogueFinished()
+	{
+		_playerRe.UpdateState(PlayerStateTypes.Idle);
+	}
+
 	private void AskToLoot(Node3D item)
 	{
-		_playerRe.UpdateState(PlayerStateTypes.Dialog);
+		_playerRe.UpdateState(PlayerStateTypes.LootingState);
 		DialogueManager.Instance.AskToLootItem(item);
 	}
 	

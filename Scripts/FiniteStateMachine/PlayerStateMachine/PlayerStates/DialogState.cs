@@ -16,7 +16,7 @@ public class DialogState : PlayerState
     {
         if (Input.IsKeyPressed(Key.Enter))
         {
-            stateMachine.ChangeState(PlayerStateTypes.Idle);
+            //stateMachine.ChangeState(PlayerStateTypes.Idle);
         }
     }
 

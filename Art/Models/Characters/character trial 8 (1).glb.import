@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bxatf0mt80s6i"
-path="res://.godot/imported/character trial 5.glb-d0b334d4f4dd70113c2490c0c9ae1f3e.scn"
+uid="uid://bqxgmebm1djlw"
+path="res://.godot/imported/character trial 8 (1).glb-6e44751a9772c590090d257927747d82.scn"
 
 [deps]
 
-source_file="res://Art/Models/Characters/character trial 5.glb"
-dest_files=["res://.godot/imported/character trial 5.glb-d0b334d4f4dd70113c2490c0c9ae1f3e.scn"]
+source_file="res://Art/Models/Characters/character trial 8 (1).glb"
+dest_files=["res://.godot/imported/character trial 8 (1).glb-6e44751a9772c590090d257927747d82.scn"]
 
 [params]
 
