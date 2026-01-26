@@ -45,10 +45,11 @@ public partial class Door : StaticBody3D, iInteractable
 
     public void Interact()
     {
+	    //TODO make bool check to see if door is locked. If door is not locked send load environment signal.
+	    //TODO make a signal for if door is locked to check if player has/used the key. Supah smart
 		//GD.Print("You talked with a door! It doesn't have much to say");
 		//GD.Print("Transporting you to: " + environmentToLoad);
 		//GetTree().ChangeSceneToFile(environmentToLoad);
-	    
 		EmitSignal(SignalName.LoadEnvironment, _environmentToLoad, KeyIdRequired, ZoneId, DoorId, IsLocked);
 		
 	    //EmitSignalKeyIdCheck(KeyIdRequired, _environmentToLoad);

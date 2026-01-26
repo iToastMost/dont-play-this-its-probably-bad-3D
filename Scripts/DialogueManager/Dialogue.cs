@@ -113,6 +113,27 @@ public partial class Dialogue : Node
 		
 	}
 
+	public void AskToUseKey(Node3D key)
+	{
+		if (key is KeyItem keyToUse)
+		{
+			var message = "Will you use the " + keyToUse.GetName() + "?";
+			_visibleText = message.Length;
+            
+			_charName.Text = "";
+			RichTextLabel.Text = message;
+			RichTextLabel.VisibleCharacters = _visibleText;
+			_displayTextLength = RichTextLabel.Text.Length;
+            
+			_charName.Visible = true;
+			RichTextLabel.Visible = true;
+			ColorRect.Visible = true;
+            
+			_hFlowContainer.Visible = true;
+			YesLootButton.GrabFocus();	
+		}
+	}
+
 	public void HideMessage()
 	{
 		if(_visibleText < _displayTextLength)
