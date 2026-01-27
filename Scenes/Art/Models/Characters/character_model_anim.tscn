@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://57k74domxfhb"]
+[gd_scene format=3 uid="uid://57k74domxfhb"]
 
 [ext_resource type="PackedScene" uid="uid://jvhos6xb7o5s" path="res://Scenes/Art/Animations/AnimationLibrary_Godot_Standard.glb" id="1_amo2j"]
 [ext_resource type="AnimationLibrary" uid="uid://qcle3w2pjibl" path="res://Scenes/Art/Animations/new_animation_library.tres" id="2_gd4t8"]
@@ -24,7 +24,7 @@ size = Vector3(0.02, 0.04, 0)
 [sub_resource type="BoxShape3D" id="BoxShape3D_s4x8y"]
 size = Vector3(0.2, 0.2, 0.2)
 
-[node name="CharacterModelAnim" instance=ExtResource("1_amo2j")]
+[node name="CharacterModelAnim" unique_id=839644023 instance=ExtResource("1_amo2j")]
 
 [node name="Skeleton3D" parent="Rig" index="0"]
 bones/1/position = Vector3(0, 0.050100047, 0.9167)
@@ -80,50 +80,48 @@ bones/50/rotation = Quaternion(0.036589734, -0.00013117323, -4.797519e-06, 0.999
 bones/51/rotation = Quaternion(-0.5290733, -0.00032809481, 0.00034345797, 0.848576)
 bones/52/rotation = Quaternion(-0.00013717555, 0.9643068, -0.26478708, -0.00049942714)
 
-[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Rig/Skeleton3D" index="1"]
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Rig/Skeleton3D" index="1" unique_id=1959451815]
 transform = Transform3D(8.922674e-07, -1, 2.104789e-07, 0.9999998, 8.2440204e-07, 1.05327544e-07, -5.41621e-08, 1.09896064e-07, 1.0000001, -0.73889995, 1.4408001, -0.065400004)
 bone_name = "DEF-hand.R"
 bone_idx = 29
 
-[node name="Gun" type="MeshInstance3D" parent="Rig/Skeleton3D/BoneAttachment3D" index="0"]
+[node name="Gun" type="MeshInstance3D" parent="Rig/Skeleton3D/BoneAttachment3D" index="0" unique_id=1263929744]
 transform = Transform3D(-1.3082939e-07, -1.2761217e-08, 0.023938932, 0.14762315, 0.0085937185, 2.3353259e-08, -0.03321419, 0.03819546, 1.6437032e-09, -0.039762378, 0.16511583, 0.06137859)
 visible = false
 mesh = SubResource("BoxMesh_amo2j")
 skeleton = NodePath("../../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_gd4t8")
 
-[node name="gun" type="MeshInstance3D" parent="Rig/Skeleton3D/BoneAttachment3D/Gun" index="0"]
+[node name="gun" type="MeshInstance3D" parent="Rig/Skeleton3D/BoneAttachment3D/Gun" index="0" unique_id=722493586]
 transform = Transform3D(-9.522217e-08, 0.18667716, 0, -2.17843, -8.15992e-09, 0, 0, 0, 0.8736665, -0.41404104, -0.94937325, 0)
 mesh = SubResource("BoxMesh_amo2j")
 skeleton = NodePath("../../../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_s4x8y")
 
-[node name="Boxcutter" type="MeshInstance3D" parent="Rig/Skeleton3D/BoneAttachment3D" index="1"]
+[node name="Boxcutter" type="MeshInstance3D" parent="Rig/Skeleton3D/BoneAttachment3D" index="1" unique_id=345235253]
 transform = Transform3D(1, 6.920286e-07, 9.2582155e-07, 9.025699e-07, 0.03287613, -0.9994593, -7.22092e-07, 0.9994598, 0.03287613, -0.04069388, 0.12828046, 0.020894185)
 visible = false
 mesh = SubResource("BoxMesh_s4x8y")
 surface_material_override/0 = SubResource("StandardMaterial3D_7yfti")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Rig/Skeleton3D/BoneAttachment3D/Boxcutter" index="0"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rig/Skeleton3D/BoneAttachment3D/Boxcutter" index="0" unique_id=633989180]
 transform = Transform3D(-0.7071068, -0.70710677, 2.2626683e-08, -0.70710677, 0.7071068, 8.444392e-08, -7.5710346e-08, 4.371139e-08, -1, -0.004255142, 0.0436927, 0.0014538914)
 mesh = SubResource("BoxMesh_7yfti")
 
-[node name="Area3D" type="Area3D" parent="Rig/Skeleton3D/BoneAttachment3D/Boxcutter" index="1"]
+[node name="Area3D" type="Area3D" parent="Rig/Skeleton3D/BoneAttachment3D/Boxcutter" index="1" unique_id=166541935]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rig/Skeleton3D/BoneAttachment3D/Boxcutter/Area3D" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rig/Skeleton3D/BoneAttachment3D/Boxcutter/Area3D" index="0" unique_id=137439606]
 transform = Transform3D(0.99999994, -5.684342e-14, 0, 5.684342e-14, 0.99999994, 0, 3.5527137e-15, 0, 0.99999994, 0, 0, 0)
 shape = SubResource("BoxShape3D_s4x8y")
 disabled = true
 debug_color = Color(0.88083965, 0.20205459, 0.6743915, 0.41960785)
 
 [node name="AnimationPlayer" parent="." index="1"]
-libraries = {
-&"": ExtResource("2_gd4t8")
-}
+libraries/ = ExtResource("2_gd4t8")
 
-[node name="FlashlightYaw" type="Node3D" parent="." index="2"]
+[node name="FlashlightYaw" type="Node3D" parent="." index="2" unique_id=403099700]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29897222, 1.6672305, 0.11331857)
 
-[node name="FlashlightPitch" type="Node3D" parent="FlashlightYaw" index="0"]
+[node name="FlashlightPitch" type="Node3D" parent="FlashlightYaw" index="0" unique_id=958168013]
 
-[node name="Flashlight" parent="FlashlightYaw/FlashlightPitch" index="0" instance=ExtResource("2_s4x8y")]
+[node name="Flashlight" parent="FlashlightYaw/FlashlightPitch" index="0" unique_id=587951616 instance=ExtResource("2_s4x8y")]

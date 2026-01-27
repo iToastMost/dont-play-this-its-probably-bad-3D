@@ -29,7 +29,7 @@ public class AimState : PlayerState
             return;
         }
         
-        if (!player.AimInput())
+        if (!player.AimInput() && !player.IsMeleeAttacking)
         {
             stateMachine.ChangeState(PlayerStateTypes.Idle);
             return;
@@ -86,6 +86,7 @@ public class AimState : PlayerState
     private void MeleeAttack()
     {
         lastAttack = fireRate;
+        player.IsMeleeAttacking = true;
         player.PlayAnimation("Sword_Attack");
     }
     

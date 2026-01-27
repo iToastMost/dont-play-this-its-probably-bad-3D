@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://yp3c5sahwm77"]
+[gd_scene format=3 uid="uid://yp3c5sahwm77"]
 
 [ext_resource type="PackedScene" uid="uid://8w1w7i8arnob" path="res://Scenes/enemy3D.tscn" id="1_ejjuj"]
 [ext_resource type="Texture2D" uid="uid://cs8hogbeybmmq" path="res://Scenes/Art/Sandbox/texture_08.png" id="1_ff6jc"]
@@ -45,183 +45,183 @@ albedo_color = Color(1, 0.7764706, 0.39607844, 1)
 resource_local_to_scene = true
 size = Vector3(9.509644, 1, 8.355469)
 
-[node name="Sandbox" type="Node3D"]
+[node name="Sandbox" type="Node3D" unique_id=1157620754]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6809864, 0, -3.159355)
 script = ExtResource("1_k4xno")
 ZoneId = "SANDBOX"
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1217817383]
 environment = SubResource("Environment_6rju2")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1744274758]
 transform = Transform3D(0.9999994, 0.0010447899, -0.00032579296, -0.0010450176, 0.9999992, -0.0007179884, 0.00032506205, 0.0007183196, 0.9999997, -4.10753, -1.0491298, 10.254568)
 use_collision = true
 size = Vector3(39.356262, 0.06933594, 55.111572)
 material = SubResource("StandardMaterial3D_vvl7v")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1406900243]
 transform = Transform3D(-0.6003902, -0.33351052, 0.726844, 0, 0.90888757, 0.41704077, -0.79970706, 0.25038722, -0.54568726, -6.2312083, 2.3099194, 5.968752)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=92815710]
 transform = Transform3D(0.5, 0.75, 0.43301272, 5.1619136e-08, -0.50000006, 0.8660254, 0.8660254, -0.43301266, -0.2500001, 4.0023184, 12.470478, 0)
 
-[node name="Enemy3D" parent="." instance=ExtResource("1_ejjuj")]
+[node name="Enemy3D" parent="." unique_id=627467043 instance=ExtResource("1_ejjuj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.815987, -0.21694702, 18.282124)
 ZoneId = "SANDBOX"
 EnemyId = "ENEMY_SANDBOX"
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1410299721]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.9693904, -0.49316406, 6.0154943)
 use_collision = true
 size = Vector3(3.3417206, 1.1152344, 1.2139893)
 material = SubResource("StandardMaterial3D_k4xno")
 
-[node name="Handgun" parent="." instance=ExtResource("4_vvl7v")]
+[node name="Handgun" parent="." unique_id=1352272113 instance=ExtResource("4_vvl7v")]
 transform = Transform3D(1.9106855e-15, -4.371139e-08, -1, -1, -4.371139e-08, 0, -4.371139e-08, 1, -4.371139e-08, -8.485035, 0.077040255, 7.385777)
 ZoneId = "SANDBOX"
 ItemId = "HANDGUN"
 
-[node name="HandgunAmmo" parent="." instance=ExtResource("5_u41hi")]
+[node name="HandgunAmmo" parent="." unique_id=982591360 instance=ExtResource("5_u41hi")]
 transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09, -8.356796, 0.11134839, 7.0234857)
 ZoneId = "SANDBOX"
 ItemId = "HANDGUN_AMMO_01"
 
-[node name="HandgunAmmo2" parent="." instance=ExtResource("5_u41hi")]
+[node name="HandgunAmmo2" parent="." unique_id=979513627 instance=ExtResource("5_u41hi")]
 transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09, -8.356796, 0.11134839, 6.7212515)
 ZoneId = "SANDBOX"
 ItemId = "HANDGUN_AMMO_02"
 
-[node name="HandgunAmmo4" parent="." instance=ExtResource("5_u41hi")]
+[node name="HandgunAmmo4" parent="." unique_id=1660809217 instance=ExtResource("5_u41hi")]
 transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09, -8.356796, 0.11134839, 6.495863)
 ZoneId = "SANDBOX"
 ItemId = "HANDGUN_AMMO_04"
 
-[node name="HealingHerb" parent="." instance=ExtResource("6_k4xno")]
+[node name="HealingHerb" parent="." unique_id=1724098365 instance=ExtResource("6_k4xno")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.390678, 0.24874434, 4.404708)
 ZoneId = "SANDBOX"
 ItemId = "HEALING_HERB_04"
 
-[node name="HealingHerb2" parent="." instance=ExtResource("6_k4xno")]
+[node name="HealingHerb2" parent="." unique_id=2117241832 instance=ExtResource("6_k4xno")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.390678, 0.24874434, 4.7980585)
 ZoneId = "SANDBOX"
 ItemId = "HEALING_HERB_03"
 
-[node name="HealingHerb3" parent="." instance=ExtResource("6_k4xno")]
+[node name="HealingHerb3" parent="." unique_id=491111354 instance=ExtResource("6_k4xno")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.390678, 0.24874434, 5.6511974)
 ZoneId = "SANDBOX"
 ItemId = "HEALING_HERB_01"
 
-[node name="HealingHerb4" parent="." instance=ExtResource("6_k4xno")]
+[node name="HealingHerb4" parent="." unique_id=1151196084 instance=ExtResource("6_k4xno")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.390678, 0.24874434, 5.2417736)
 ZoneId = "SANDBOX"
 ItemId = "HEALING_HERB_02"
 
-[node name="Spawnpoints" type="Node" parent="."]
+[node name="Spawnpoints" type="Node" parent="." unique_id=363399419]
 
-[node name="InitialPlayerSpawn" type="Marker3D" parent="Spawnpoints"]
+[node name="InitialPlayerSpawn" type="Marker3D" parent="Spawnpoints" unique_id=595382429]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2253284, -0.06494743, 3.3510616)
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1174825900]
 navigation_mesh = SubResource("NavigationMesh_k4xno")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D" unique_id=422680074]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.402321, -0.9413929, 9.735942)
 visible = false
 mesh = SubResource("PlaneMesh_10yd3")
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="NavigationRegion3D"]
+[node name="CSGBox3D7" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1831664744]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -7.0511475, -0.70273733, 27.156704)
 use_collision = true
 size = Vector3(24.66195, 0.6152954, 0.057617188)
 material = SubResource("StandardMaterial3D_ff6jc")
 
-[node name="CSGBox3D9" type="CSGBox3D" parent="NavigationRegion3D"]
+[node name="CSGBox3D9" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1322558099]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -7.0511475, -0.6588683, 16.157927)
 use_collision = true
 size = Vector3(24.66195, 0.70303345, 0.057617188)
 material = SubResource("StandardMaterial3D_ff6jc")
 
-[node name="CSGBox3D15" type="CSGBox3D" parent="NavigationRegion3D"]
+[node name="CSGBox3D15" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1707478995]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -23.984312, -0.6588683, 0.9732816)
 use_collision = true
 size = Vector3(24.66195, 0.70303345, 0.057617188)
 material = SubResource("StandardMaterial3D_ff6jc")
 
-[node name="CSGBox3D14" type="CSGBox3D" parent="NavigationRegion3D"]
+[node name="CSGBox3D14" type="CSGBox3D" parent="NavigationRegion3D" unique_id=856347356]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -19.369385, -0.6588683, 20.830742)
 use_collision = true
 size = Vector3(15.316326, 0.70303345, 0.057617188)
 material = SubResource("StandardMaterial3D_ff6jc")
 
-[node name="CSGBox3D8" type="CSGBox3D" parent="NavigationRegion3D"]
+[node name="CSGBox3D8" type="CSGBox3D" parent="NavigationRegion3D" unique_id=814200634]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -7.0511475, -0.70273733, 8.499627)
 use_collision = true
 size = Vector3(24.66195, 0.6152954, 0.057617188)
 material = SubResource("StandardMaterial3D_ff6jc")
 
-[node name="CSGBox3D10" type="CSGBox3D" parent="NavigationRegion3D"]
+[node name="CSGBox3D10" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1533435203]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -16.065075, -0.70273614, 20.228935)
 use_collision = true
 size = Vector3(6.656698, 0.6152954, 0.057617188)
 material = SubResource("StandardMaterial3D_ff6jc")
 
-[node name="CSGBox3D11" type="CSGBox3D" parent="NavigationRegion3D"]
+[node name="CSGBox3D11" type="CSGBox3D" parent="NavigationRegion3D" unique_id=640205647]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -9.885211, -0.70273757, 14.383875)
 use_collision = true
 size = Vector3(5.777426, 0.6152954, 0.057617188)
 material = SubResource("StandardMaterial3D_ff6jc")
 
-[node name="CSGBox3D12" type="CSGBox3D" parent="NavigationRegion3D"]
+[node name="CSGBox3D12" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1934746064]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -9.832677, -0.70273757, 24.597305)
 use_collision = true
 size = Vector3(5.7333584, 0.6152954, 0.057617188)
 material = SubResource("StandardMaterial3D_ff6jc")
 
-[node name="CSGBox3D13" type="CSGBox3D" parent="NavigationRegion3D"]
+[node name="CSGBox3D13" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1740667504]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -20.6576, -0.70273757, 13.158502)
 use_collision = true
 size = Vector3(8.525249, 0.6152954, 0.057617188)
 material = SubResource("StandardMaterial3D_ff6jc")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D" unique_id=348335476]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.083363, -0.7069566, 10.802946)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1995745125]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.972986, -0.7069566, 10.802946)
 
-[node name="CSGBox3D17" type="CSGBox3D" parent="NavigationRegion3D"]
+[node name="CSGBox3D17" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1254284685]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.697073, -0.7069566, 10.802946)
 
-[node name="CSGBox3D18" type="CSGBox3D" parent="NavigationRegion3D"]
+[node name="CSGBox3D18" type="CSGBox3D" parent="NavigationRegion3D" unique_id=965559880]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.697073, -0.7069566, 10.802946)
 
-[node name="CSGBox3D19" type="CSGBox3D" parent="NavigationRegion3D"]
+[node name="CSGBox3D19" type="CSGBox3D" parent="NavigationRegion3D" unique_id=411598694]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.697073, -0.7069566, 12.608827)
 
-[node name="CSGBox3D20" type="CSGBox3D" parent="NavigationRegion3D"]
+[node name="CSGBox3D20" type="CSGBox3D" parent="NavigationRegion3D" unique_id=743543068]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.697073, -0.7069566, 12.608827)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1490783938]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.409311, -0.7069566, 12.905088)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="NavigationRegion3D"]
+[node name="CSGBox3D4" type="CSGBox3D" parent="NavigationRegion3D" unique_id=397061199]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.409311, -0.7069566, 17.282198)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="NavigationRegion3D"]
+[node name="CSGBox3D5" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1436385067]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.558521, -0.7069566, 17.282198)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="NavigationRegion3D"]
+[node name="CSGBox3D6" type="CSGBox3D" parent="NavigationRegion3D" unique_id=318407929]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.391224, -0.7069566, 17.282198)
 
-[node name="CSGBox3D16" type="CSGBox3D" parent="NavigationRegion3D"]
+[node name="CSGBox3D16" type="CSGBox3D" parent="NavigationRegion3D" unique_id=2097873217]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.391224, -0.7069566, 17.282198)
 
-[node name="Boxcutter" parent="." instance=ExtResource("8_10yd3")]
+[node name="Boxcutter" parent="." unique_id=123598224 instance=ExtResource("8_10yd3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.537399, 0.1363856, 6.102687)
 ZoneId = "SANDBOX"
 ItemId = "BOXCUTTER"
 
-[node name="FixedCamera" parent="." instance=ExtResource("9_6rju2")]
+[node name="FixedCamera" parent="." unique_id=1055783636 instance=ExtResource("9_6rju2")]
 transform = Transform3D(0.4832562, 0.26905367, -0.8331108, 0, 0.9516057, 0.3073217, 0.875479, -0.1485151, 0.45986935, -20.22735, 1.3227122, 17.266857)
 
 [node name="Area3D" parent="FixedCamera" index="0"]

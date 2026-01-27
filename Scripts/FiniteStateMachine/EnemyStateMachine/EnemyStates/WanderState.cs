@@ -110,7 +110,7 @@ public class WanderState : EnemyState
 
 	private void LookAtInterpolation(Vector3 lookPosition, float turnSpeed, double delta)
 	{
-		var transform = _enemy.GlobalTransform.LookingAt(new Vector3(lookPosition.X, 0, lookPosition.Z), Vector3.Up);
+		var transform = _enemy.GlobalTransform.LookingAt(new Vector3(lookPosition.X, 0, 0), Vector3.Up);
 		_enemy.GlobalTransform = _enemy.GlobalTransform.InterpolateWith(transform, turnSpeed * (float)delta);
 		
 		

@@ -60,37 +60,8 @@ public partial class GameManager : Node3D
 		loadedData = SaveFileManager.LoadGame();
 		
 		GD.Print("Loading Save...");
-		var playerSetup = ResourceLoader.Load<PackedScene>("res://Scenes/player_setup.tscn");
-		_playerSetup = playerSetup.Instantiate<Node>();
-		AddChild(_playerSetup);
 		
-		_mainMenu.QueueFree();
-		
-		_ui = GetNode<Ui>("PlayerSetup/UI");
-		_inventory = _ui.GetNode<Inventory>("Inventory");
-		_playerRe = GetNode<PlayerRE>("PlayerSetup/3DPlayer");
-		_environment = GetNode<Node3D>("Environment");
-		_animationPlayer = GetNode<AnimationPlayer>("ScreenTransitions");
-		_sceneTransitionTimer = GetNode<Timer>("SceneTransitionTimer");
-		_doorPushSubViewportContainer = GetNode<SubViewportContainer>("CanvasLayer/ScreenFade/DoorPushAnimationViewport");
-		_subviewportCamera = GetNode<Camera3D>("CanvasLayer/ScreenFade/DoorPushAnimationViewport/SubViewport/Node3D/Camera3D");
-		_dialogue = GetNode<Dialogue>("PlayerSetup/UI/CanvasLayer/Dialogue");
-		_doorPushSubViewportContainer.Visible = false;
-		
-		_playerRe.UpdateInventoryItems += UpdateInventory;
-		_playerRe.UpdateHealth += UpdatePlayerHealth;
-		_playerRe.UseAmmo += UpdateAmmo;
-		_playerRe.ReloadCheck += ReloadCheck;
-		_playerRe.ReloadFinished += ReloadFinished;
-		_animationPlayer.AnimationFinished += FadeOutFinished;
-		_inventory.ItemUsed += UseItem;
-		_inventory.CheckItemSlotClicked += CheckInventorySlot;
-		_playerRe.AcceptDialogue += AcceptDialogue;
-		_playerRe.NPCDialogue += SendDialogue;
-		_playerRe.AskToLootItem += AskToLoot;
-		_playerRe.LootItemSelected += HandleLootItemUI;
-		_dialogue.YesLootButtonPressed += UpdateInventory;
-		_dialogue.DialogueFinished += DialogueFinished;
+		NodeSetup();
 		
 		playerSpawnPos = new Vector3(loadedData.PlayerPosX.ToFloat(),  loadedData.PlayerPosY.ToFloat(), loadedData.PlayerPosZ.ToFloat());
 		var playerSpawnRotation = new Vector3(0, loadedData.PlayerRotationY.ToFloat(), 0);
@@ -181,38 +152,7 @@ public partial class GameManager : Node3D
 
 	private void InitializeGame(string pathToLoad)
 	{
-		var playerSetup = ResourceLoader.Load<PackedScene>("res://Scenes/player_setup.tscn");
-		_playerSetup = playerSetup.Instantiate<Node>();
-		AddChild(_playerSetup);
-		
-		_mainMenu.QueueFree();
-		
-		_ui = GetNode<Ui>("PlayerSetup/UI");
-		_inventory = _ui.GetNode<Inventory>("Inventory");
-		_playerRe = GetNode<PlayerRE>("PlayerSetup/3DPlayer");
-		_environment = GetNode<Node3D>("Environment");
-		_animationPlayer = GetNode<AnimationPlayer>("ScreenTransitions");
-		_sceneTransitionTimer = GetNode<Timer>("SceneTransitionTimer");
-		_doorPushSubViewportContainer = GetNode<SubViewportContainer>("CanvasLayer/ScreenFade/DoorPushAnimationViewport");
-		_subviewportCamera = GetNode<Camera3D>("CanvasLayer/ScreenFade/DoorPushAnimationViewport/SubViewport/Node3D/Camera3D");
-		_dialogue = GetNode<Dialogue>("PlayerSetup/UI/CanvasLayer/Dialogue");
-		_doorPushSubViewportContainer.Visible = false;
-		
-		
-		_playerRe.UpdateInventoryItems += UpdateInventory;
-		_playerRe.UpdateHealth += UpdatePlayerHealth;
-		_playerRe.UseAmmo += UpdateAmmo;
-		_playerRe.ReloadCheck += ReloadCheck;
-		_playerRe.ReloadFinished += ReloadFinished;
-		_animationPlayer.AnimationFinished += FadeOutFinished;
-		_inventory.ItemUsed += UseItem;
-		_inventory.CheckItemSlotClicked += CheckInventorySlot;
-		_playerRe.AcceptDialogue += AcceptDialogue;
-		_playerRe.NPCDialogue += SendDialogue;
-		_playerRe.AskToLootItem += AskToLoot;
-		_playerRe.LootItemSelected += HandleLootItemUI;
-		_dialogue.YesLootButtonPressed += UpdateInventory;
-		_dialogue.DialogueFinished += DialogueFinished;
+		NodeSetup();
 		
 		var loadGame = ResourceLoader.Load<PackedScene>(pathToLoad);
 		_currentEnvironment = loadGame.Instantiate<Node3D>();
@@ -245,6 +185,42 @@ public partial class GameManager : Node3D
 		CallDeferred(nameof(ConnectSignals));
 	}
 
+	private void NodeSetup()
+	{
+		var playerSetup = ResourceLoader.Load<PackedScene>("res://Scenes/player_setup.tscn");
+		_playerSetup = playerSetup.Instantiate<Node>();
+		AddChild(_playerSetup);
+		
+		_mainMenu.QueueFree();
+		
+		_ui = GetNode<Ui>("PlayerSetup/UI");
+		_inventory = _ui.GetNode<Inventory>("Inventory");
+		_playerRe = GetNode<PlayerRE>("PlayerSetup/3DPlayer");
+		_environment = GetNode<Node3D>("Environment");
+		_animationPlayer = GetNode<AnimationPlayer>("ScreenTransitions");
+		_sceneTransitionTimer = GetNode<Timer>("SceneTransitionTimer");
+		_doorPushSubViewportContainer = GetNode<SubViewportContainer>("CanvasLayer/ScreenFade/DoorPushAnimationViewport");
+		_subviewportCamera = GetNode<Camera3D>("CanvasLayer/ScreenFade/DoorPushAnimationViewport/SubViewport/Node3D/Camera3D");
+		_dialogue = GetNode<Dialogue>("PlayerSetup/UI/CanvasLayer/Dialogue");
+		_doorPushSubViewportContainer.Visible = false;
+		
+		
+		_playerRe.UpdateInventoryItems += UpdateInventory;
+		_playerRe.UpdateHealth += UpdatePlayerHealth;
+		_playerRe.UseAmmo += UpdateAmmo;
+		_playerRe.ReloadCheck += ReloadCheck;
+		_playerRe.ReloadFinished += ReloadFinished;
+		_animationPlayer.AnimationFinished += FadeOutFinished;
+		_inventory.ItemUsed += UseItem;
+		_inventory.CheckItemSlotClicked += CheckInventorySlot;
+		_playerRe.AcceptDialogue += AcceptDialogue;
+		_playerRe.NPCDialogue += SendDialogue;
+		_playerRe.AskToLootItem += AskToLoot;
+		_playerRe.LootItemSelected += HandleLootItemUI;
+		_dialogue.YesLootButtonPressed += UpdateInventory;
+		_dialogue.DialogueFinished += DialogueFinished;
+	}
+	
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{

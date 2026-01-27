@@ -94,6 +94,8 @@ public partial class PlayerRE : CharacterBody3D
     public Node3D FlashlightPitch;
     public Node3D FlashlightYaw;
     
+    public bool IsMeleeAttacking = false;
+    
     
     Node3D aimPoint;
     private StateMachine sm;
@@ -453,6 +455,12 @@ public override void _Ready()
         if (animName.Equals("Hit_Chest"))
         {
             sm.ChangeState(PlayerStateTypes.Idle);
+        }
+
+        if (animName.Equals("Sword_Attack"))
+        {
+            IsMeleeAttacking = false;
+            sm.ChangeState(PlayerStateTypes.Aim);
         }
 
     }
