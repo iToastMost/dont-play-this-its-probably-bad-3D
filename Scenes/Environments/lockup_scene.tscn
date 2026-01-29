@@ -1,60 +1,66 @@
-[gd_scene load_steps=4 format=3 uid="uid://ra5fclq0rvk"]
+[gd_scene format=3 uid="uid://ra5fclq0rvk"]
 
 [ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_dfjre"]
 [ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="1_h6k85"]
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="2_dfr2l"]
+[ext_resource type="PackedScene" uid="uid://bl6wqc2sl70yg" path="res://Scenes/Items/sisyphus_boulder.tscn" id="4_dfjre"]
 
-[node name="LockupScene" type="Node3D" groups=["Environments"]]
+[node name="LockupScene" type="Node3D" unique_id=1715579684 groups=["Environments"]]
 script = ExtResource("1_dfjre")
 ZoneId = "STORE_LOCKUP"
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=226990091]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6557007, 1.5814514, 2.472702)
 use_collision = true
 flip_faces = true
 size = Vector3(2.3114014, 2.6552124, 7.25119)
 
-[node name="door" parent="." instance=ExtResource("1_h6k85")]
+[node name="door" parent="." unique_id=1887361516 instance=ExtResource("1_h6k85")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.8146845, 0.22308767, 1.3800147)
 _environmentToLoad = "res://Scenes/Environments/showroom_floor_scene.tscn"
 KeyIdRequired = 1
 DoorId = "STORE_LOCKUP_TO_STORE_SHOWROOM_FLOOR"
 ZoneId = "STORE_LOCKUP"
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1304931163]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.326, 1.036, 2.472)
 use_collision = true
 size = Vector3(0.3486328, 0.088012695, 7.2638245)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=731987430]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3256836, 1.7445436, 2.4719086)
 size = Vector3(0.3486328, 0.088012695, 7.2638245)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=1615457622]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6624515, 1.7445436, 4.221219)
 size = Vector3(0.3486328, 0.088012695, 3.7338963)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+[node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=1642182409]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.6809969, 1.7445436, 5.9274964)
 size = Vector3(0.3486328, 0.088012695, 1.7497582)
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+[node name="CSGBox3D7" type="CSGBox3D" parent="." unique_id=1160487306]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.681, 1.036, 5.927)
 use_collision = true
 size = Vector3(0.3486328, 0.088012695, 1.7497582)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=749644259]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6624515, 1.0359042, 4.22421)
 use_collision = true
 size = Vector3(0.3486328, 0.088012695, 3.7398777)
 
-[node name="Spawnpoints" type="Node" parent="."]
+[node name="Spawnpoints" type="Node" parent="." unique_id=1180947983]
 
-[node name="FromShowroomFloorScene" type="Marker3D" parent="Spawnpoints"]
+[node name="FromShowroomFloorScene" type="Marker3D" parent="Spawnpoints" unique_id=1546397146]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.272561, 1.1332452, 1.4175001)
 
-[node name="FixedCamera" parent="." instance=ExtResource("2_dfr2l")]
+[node name="FixedCamera" parent="." unique_id=949284646 instance=ExtResource("2_dfr2l")]
 transform = Transform3D(-0.9390994, -0.07962613, 0.33429343, 0, 0.97278494, 0.23170991, -0.34364575, 0.21759863, -0.91354173, 1.613966, 2.3172832, -1.2283411)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." groups=["StoreLights"]]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=428414936 groups=["StoreLights"]]
 transform = Transform3D(1, 0, 0, 0, -0.50000006, 0.8660254, 0, -0.8660254, -0.50000006, 0, 6.6255627, -4.1688104)
+
+[node name="SisyphusBoulder" parent="." unique_id=22045581 instance=ExtResource("4_dfjre")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2448085, 1.280143, 2.948598)
+ZoneId = "STORE_LOCKUP"
+ItemId = "SISYHPUS_BOULDER"

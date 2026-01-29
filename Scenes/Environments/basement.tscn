@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dcihdbyj526n5"]
+[gd_scene format=3 uid="uid://dcihdbyj526n5"]
 
 [ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_s8nfc"]
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="1_skepo"]
@@ -29,49 +29,49 @@ volumetric_fog_emission_energy = 5.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_skepo"]
 albedo_color = Color(0, 0, 0, 1)
 
-[node name="Basement" type="Node3D"]
+[node name="Basement" type="Node3D" unique_id=186802803]
 script = ExtResource("1_s8nfc")
 ZoneId = "STORE_BASEMENT"
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2142528803]
 environment = SubResource("Environment_0nuyt")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." groups=["Environments"]]
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1326788900 groups=["Environments"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5936279, 1.0185547, -0.76431274)
 use_collision = true
 flip_faces = true
 size = Vector3(6.387451, 3.0371094, 6.5464478)
 material = SubResource("StandardMaterial3D_skepo")
 
-[node name="FixedCamera" parent="." instance=ExtResource("1_skepo")]
+[node name="FixedCamera" parent="." unique_id=534684256 instance=ExtResource("1_skepo")]
 transform = Transform3D(-0.9938617, -0.045257997, 0.10094898, 0, 0.91249245, 0.4090936, -0.11062994, 0.40658242, -0.9068913, 0.8685402, 2.1064005, -3.353152)
 
-[node name="Spawnpoints" type="Node" parent="."]
+[node name="Spawnpoints" type="Node" parent="." unique_id=1936246347]
 
-[node name="FromBathroomScene" type="Marker3D" parent="Spawnpoints"]
+[node name="FromBathroomScene" type="Marker3D" parent="Spawnpoints" unique_id=548985092]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.5700703, 0.12580001, 1.4034226)
 
-[node name="FromWarehouseScene" type="Marker3D" parent="Spawnpoints"]
+[node name="FromWarehouseScene" type="Marker3D" parent="Spawnpoints" unique_id=416623836]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.5700703, 0.12580001, 1.4034226)
 
-[node name="toilet" parent="." instance=ExtResource("2_g5057")]
+[node name="toilet" parent="." unique_id=2125826430 instance=ExtResource("2_g5057")]
 transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, 2.1248772, -0.49999976, 2.0841389)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." groups=["StoreLights"]]
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=104969820 groups=["StoreLights"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.77889305, 1.7924249, 0.22496343)
 
-[node name="Fusebox" parent="." groups=["StoreLights"] instance=ExtResource("3_0nuyt")]
+[node name="Fusebox" parent="." unique_id=420980602 groups=["StoreLights"] instance=ExtResource("3_0nuyt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2641362, -0.24039418)
 EventAlreadyCompletedText = "The fusebox seems to be working now."
 ZoneId = "STORE_BASEMENT"
 
-[node name="door" parent="." instance=ExtResource("5_tawf3")]
+[node name="door" parent="." unique_id=304080197 instance=ExtResource("5_tawf3")]
 transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, -2.6668334, -0.49999976, 2.5008957)
 _environmentToLoad = "res://Scenes/Environments/warehouse.tscn"
 DoorId = "STORE_BASEMENT_TO_WAREHOUSE"
 ZoneId = "STORE_BASEMENT"
 
-[node name="NPC" parent="." instance=ExtResource("6_4be4p")]
+[node name="NPC" parent="." unique_id=1442468107 instance=ExtResource("6_4be4p")]
 transform = Transform3D(-0.6799405, 0, -0.73326725, 0, 1, 0, 0.73326725, 0, -0.6799405, 1.9646723, -0.5000001, 1.9240108)
 NPCName = "Mindless Coworker"
 NPCDialogue = "Have you seen those things out there?!? That boxcutter won't get you very far. I head Terry has something a little more serious in his office."

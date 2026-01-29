@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://xhhtomk6dqfo"]
+
+[ext_resource type="Script" uid="uid://c3armyf8nbbu8" path="res://Scripts/Puzzles/SlidingPuzzle.cs" id="1_hb0rv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1rlrq"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="SlidePuzzle" type="Node3D" unique_id=526129919]
+script = ExtResource("1_hb0rv")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1477449955]
+size = Vector3(3.2110596, 1, 2.9726563)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D" unique_id=426904126]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04434204, 0.2736181, 0.0113220215)
+operation = 2
+size = Vector3(2.9522095, 1, 2.6377563)
+
+[node name="Piece1" type="CSGBox3D" parent="." unique_id=124470809]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9819821, -0.23727417, 0.8670238)
+size = Vector3(0.90338135, 0.52545166, 0.7877197)
+material = SubResource("StandardMaterial3D_1rlrq")
+
+[node name="Piece2" type="CSGBox3D" parent="." unique_id=1774353896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.059597135, -0.23727417, 0.8670238)
+size = Vector3(0.90338135, 0.52545166, 0.7877197)
+material = SubResource("StandardMaterial3D_1rlrq")
+
+[node name="Piece3" type="CSGBox3D" parent="." unique_id=1617794427]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8712292, -0.23727417, 0.8670238)
+size = Vector3(0.90338135, 0.52545166, 0.7877197)
+material = SubResource("StandardMaterial3D_1rlrq")
+
+[node name="Piece4" type="CSGBox3D" parent="." unique_id=1957798837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8712292, -0.23727417, 0.052972913)
+size = Vector3(0.90338135, 0.52545166, 0.7877197)
+material = SubResource("StandardMaterial3D_1rlrq")
+
+[node name="Piece5" type="CSGBox3D" parent="." unique_id=90907026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8712292, -0.23727417, -0.80531496)
+size = Vector3(0.90338135, 0.52545166, 0.7877197)
+material = SubResource("StandardMaterial3D_1rlrq")
+
+[node name="Piece6" type="CSGBox3D" parent="." unique_id=1800275446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.088360846, -0.23727417, -0.80531496)
+size = Vector3(0.90338135, 0.52545166, 0.7877197)
+material = SubResource("StandardMaterial3D_1rlrq")
+
+[node name="Piece7" type="CSGBox3D" parent="." unique_id=46647233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0835765, -0.23727417, 0.06084913)
+size = Vector3(0.90338135, 0.52545166, 0.7877197)
+material = SubResource("StandardMaterial3D_1rlrq")
+
+[node name="Piece8" type="CSGBox3D" parent="." unique_id=649326841]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0223241, -0.23727417, 0.06084913)
+size = Vector3(0.90338135, 0.52545166, 0.7877197)
+material = SubResource("StandardMaterial3D_1rlrq")

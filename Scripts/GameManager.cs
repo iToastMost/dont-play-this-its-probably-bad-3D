@@ -607,6 +607,8 @@ public partial class GameManager : Node3D
 		return true;
 	}
 	
+	
+	//Checks if the player has the required item to progress the event
 	private void IdCheck(int reqId, string zoneId, string eventName)
 	{
 		

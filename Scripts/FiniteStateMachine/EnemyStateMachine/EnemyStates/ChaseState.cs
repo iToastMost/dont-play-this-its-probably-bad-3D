@@ -37,8 +37,7 @@ public class ChaseState : EnemyState
 			        {
 				        GD.Print(ray.GetName());
 				        //This is scuffed as hell please fix later
-				        //if(ray.GetName().Equals("RayCast3D3") || ray.GetName().Equals("RayCast3D4") || ray.GetName().Equals("RayCast3D"))
-						if(ray.GetName().Equals("RayCast3D"))
+				        if(ray.GetName().Equals("RayCast3D3") || ray.GetName().Equals("RayCast3D4") || ray.GetName().Equals("RayCast3D"))
 							_enemyStateMachine.ChangeState(EnemyStateTypes.Attack);
 			        }
 		        }

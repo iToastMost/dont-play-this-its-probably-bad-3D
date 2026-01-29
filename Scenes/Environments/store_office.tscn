@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cobh7ewo5a57x"]
+[gd_scene format=3 uid="uid://cobh7ewo5a57x"]
 
 [ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_767rj"]
 [ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="1_gqf4g"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bu1xmdj873i0m" path="res://Scenes/Items/Handgun.tscn" id="5_rwllu"]
 [ext_resource type="PackedScene" uid="uid://xexhgx776cch" path="res://Scenes/Items/handgun_ammo.tscn" id="6_kyba0"]
 [ext_resource type="PackedScene" uid="uid://bscstcsbakyd5" path="res://Scenes/Items/lockup_key.tscn" id="7_5ygmx"]
+[ext_resource type="PackedScene" uid="uid://bf53fx5mqlf8n" path="res://Scenes/EnvironmentEvents/sisyphus_puzzle.tscn" id="8_exavs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_767rj"]
 albedo_texture = ExtResource("2_x3j3r")
@@ -15,65 +16,77 @@ albedo_texture = ExtResource("2_x3j3r")
 material = SubResource("StandardMaterial3D_767rj")
 size = Vector2(9, 9)
 
-[node name="StoreOffice" type="Node3D"]
+[node name="StoreOffice" type="Node3D" unique_id=1176101494]
 script = ExtResource("1_767rj")
 ZoneId = "STORE_OFFICE"
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=771900723]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2165527, 0)
 use_collision = true
 flip_faces = true
 size = Vector3(6.90625, 2.4331055, 8.798706)
 
-[node name="door" parent="." instance=ExtResource("1_gqf4g")]
+[node name="door" parent="." unique_id=1142378201 instance=ExtResource("1_gqf4g")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.4508188, 0, 0.3547151)
 _environmentToLoad = "res://Scenes/Environments/showroom_floor_scene.tscn"
 DoorId = "STORE_OFFICE_DOOR"
 ZoneId = "STORE_OFFICE"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1534662768]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.012738049, 0)
 mesh = SubResource("PlaneMesh_gqf4g")
 
-[node name="Spawnpoints" type="Node" parent="."]
+[node name="Spawnpoints" type="Node" parent="." unique_id=961106797]
 
-[node name="FromShowroomFloorScene" type="Marker3D" parent="Spawnpoints"]
+[node name="FromShowroomFloorScene" type="Marker3D" parent="Spawnpoints" unique_id=39599545]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.501276, 0.70742005, 0.3865854)
 
-[node name="FixedCamera" parent="." instance=ExtResource("4_aneew")]
+[node name="FixedCamera" parent="." unique_id=1637652324 instance=ExtResource("4_aneew")]
 transform = Transform3D(0.6313236, 0.29550123, -0.7170144, 0, 0.92456, 0.38103646, 0.77551955, -0.2405573, 0.58369654, -2.3530242, 1.4212393, 3.0803514)
 
-[node name="Desk" type="CSGBox3D" parent="."]
+[node name="Desk" type="CSGBox3D" parent="." unique_id=1600918371]
 transform = Transform3D(0.80958086, 0, 0.5870084, 0, 1, 0, -0.5870084, 0, 0.80958086, -1.4545212, 0.6777841, 2.415264)
 size = Vector3(0.6279297, 0.1529541, 1.3751221)
 
-[node name="Desk2" type="CSGBox3D" parent="Desk"]
+[node name="Desk2" type="CSGBox3D" parent="Desk" unique_id=215453357]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25463867, -0.29786682, 0.603302)
 size = Vector3(0.118652344, 0.74868774, 0.16851807)
 
-[node name="Desk3" type="CSGBox3D" parent="Desk"]
+[node name="Desk3" type="CSGBox3D" parent="Desk" unique_id=1886911483]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2513522, -0.29786682, 0.603302)
 size = Vector3(0.118652344, 0.74868774, 0.16851807)
 
-[node name="Desk4" type="CSGBox3D" parent="Desk"]
+[node name="Desk4" type="CSGBox3D" parent="Desk" unique_id=604084573]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25463867, -0.29786682, -0.5949799)
 size = Vector3(0.118652344, 0.74868774, 0.16851807)
 
-[node name="Desk5" type="CSGBox3D" parent="Desk"]
+[node name="Desk5" type="CSGBox3D" parent="Desk" unique_id=15123605]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2513522, -0.29786682, -0.5949799)
 size = Vector3(0.118652344, 0.74868774, 0.16851807)
 
-[node name="Handgun" parent="." instance=ExtResource("5_rwllu")]
+[node name="Handgun" parent="." unique_id=1599690951 instance=ExtResource("5_rwllu")]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -1.6247963, 0.7287478, 1.8283495)
 ZoneId = "STORE_OFFICE"
 ItemId = "HANDGUN"
 
-[node name="HandgunAmmo" parent="." instance=ExtResource("6_kyba0")]
+[node name="HandgunAmmo" parent="." unique_id=895472720 instance=ExtResource("6_kyba0")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.4625514, 0.79339427, 2.1048424)
 ZoneId = "STORE_OFFICE"
 ItemId = "HANDGUN_AMMO_01"
 
-[node name="LockUpKey" parent="." instance=ExtResource("7_5ygmx")]
+[node name="LockUpKey" parent="." unique_id=655708551 instance=ExtResource("7_5ygmx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1465262, 0.8679518, 2.7964952)
 ZoneId = "STORE_OFFICE"
 ItemId = "LOCKUP_KEY"
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=584725882]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1159384, 0.5235114, -4.118686)
+size = Vector3(0.7342529, 1.2236328, 0.58288574)
+
+[node name="SisyphusPuzzle" parent="." unique_id=457353841 instance=ExtResource("8_exavs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9890285, 1.2742643, -4.089061)
+
+[node name="CSGSphere3D" parent="SisyphusPuzzle" index="0" unique_id=1766168743]
+visible = false
+
+[editable path="SisyphusPuzzle"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://cps5uvbjpqikr"]
+[gd_scene format=4 uid="uid://cps5uvbjpqikr"]
 
 [ext_resource type="AnimationLibrary" uid="uid://qcle3w2pjibl" path="res://Scenes/Art/Animations/new_animation_library.tres" id="1_cjm7i"]
 
@@ -246,11 +246,11 @@ bind/72/name = &"DEF-breast.R"
 bind/72/bone = -1
 bind/72/pose = Transform3D(-1, 1.5099582e-07, 0, 5.165639e-15, 2.2724262e-07, 0.99999976, 1.5099582e-07, 0.9999999, 0, -0.095858194, 0.03926585, -1.1817088)
 
-[node name="character trial 8 (1)" type="Node3D"]
+[node name="character trial 8 (1)" type="Node3D" unique_id=1275119688]
 
-[node name="Rig" type="Node3D" parent="."]
+[node name="Rig" type="Node3D" parent="." unique_id=1290983885]
 
-[node name="Skeleton3D" type="Skeleton3D" parent="Rig"]
+[node name="Skeleton3D" type="Skeleton3D" parent="Rig" unique_id=1795471376]
 bones/0/name = "DEF-spine"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 0.9683388, -0.24963966, 0, 0.24963966, 0.9683388, 0, 0.8176268, -0.04469055)
@@ -763,11 +763,9 @@ bones/72/position = Vector3(-0.095858015, 1.181709, -0.039266128)
 bones/72/rotation = Quaternion(5.338508e-08, 0.7071069, 0.70710665, 5.338508e-08)
 bones/72/scale = Vector3(1, 1.0000002, 1.0000001)
 
-[node name="character" type="MeshInstance3D" parent="Rig/Skeleton3D"]
+[node name="character" type="MeshInstance3D" parent="Rig/Skeleton3D" unique_id=292858093]
 mesh = SubResource("ArrayMesh_pvnvo")
 skin = SubResource("Skin_lyf70")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": ExtResource("1_cjm7i")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1817899832]
+libraries/ = ExtResource("1_cjm7i")

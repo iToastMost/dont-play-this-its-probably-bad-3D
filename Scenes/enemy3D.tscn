@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://8w1w7i8arnob"]
+[gd_scene format=3 uid="uid://8w1w7i8arnob"]
 
 [ext_resource type="Script" uid="uid://bnoyawdc1jmk0" path="res://Scripts/Enemy3D.cs" id="1_hghv2"]
 [ext_resource type="PackedScene" uid="uid://c0b4032sbuy8g" path="res://Scenes/Art/Models/Characters/enemy_model.tscn" id="2_0n4k6"]
+[ext_resource type="AnimationLibrary" uid="uid://qcle3w2pjibl" path="res://Scenes/Art/Animations/new_animation_library.tres" id="3_7u4e5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ne65n"]
 
@@ -105,79 +106,80 @@ _data = {
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0n4k6"]
 albedo_color = Color(0.9254902, 0.21960784, 0.09019608, 1)
 
-[node name="Enemy3D" type="CharacterBody3D"]
+[node name="Enemy3D" type="CharacterBody3D" unique_id=1663195836]
 script = ExtResource("1_hghv2")
 EnemyTurnSpeed = 1.0
 AttackDamage = 20
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1159070331]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026486337, 0, 0)
 shape = SubResource("CapsuleShape3D_ne65n")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1513472394]
 visible = false
 mesh = SubResource("CapsuleMesh_1f0kj")
 
-[node name="LeftArm" type="MeshInstance3D" parent="MeshInstance3D"]
+[node name="LeftArm" type="MeshInstance3D" parent="MeshInstance3D" unique_id=2019391700]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.21764529, 0.17121378, -0.5204247)
 mesh = SubResource("BoxMesh_ne65n")
 
-[node name="RightArm" type="MeshInstance3D" parent="MeshInstance3D"]
+[node name="RightArm" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1356342582]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.2, 0.17121378, -0.5204247)
 mesh = SubResource("BoxMesh_ne65n")
 
-[node name="Eyeball" type="MeshInstance3D" parent="MeshInstance3D"]
+[node name="Eyeball" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1331270705]
 transform = Transform3D(0.115123, 0, 0, 0, 0.0891366, 0, 0, 0, 0.233857, -0.0162331, 0.358009, -0.391548)
 mesh = SubResource("BoxMesh_ne65n")
 
-[node name="AttackBox" type="Area3D" parent="."]
+[node name="AttackBox" type="Area3D" parent="." unique_id=1661870490]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackBox"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackBox" unique_id=1849183397]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.251877, -0.54331326)
 shape = SubResource("BoxShape3D_0bnlb")
 disabled = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_0n4k6")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=350788518]
+libraries/ = SubResource("AnimationLibrary_0n4k6")
 
-[node name="LineOfSight" type="Node3D" parent="."]
+[node name="LineOfSight" type="Node3D" parent="." unique_id=901695817]
 
-[node name="RayCast3D" type="RayCast3D" parent="LineOfSight"]
+[node name="RayCast3D" type="RayCast3D" parent="LineOfSight" unique_id=94632124]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28233337, 0)
 target_position = Vector3(0, 0, -5)
 
-[node name="RayCast3D2" type="RayCast3D" parent="LineOfSight"]
+[node name="RayCast3D2" type="RayCast3D" parent="LineOfSight" unique_id=930392894]
 transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 0, 0.28233337, 0)
 target_position = Vector3(0, 0, -5)
 
-[node name="RayCast3D3" type="RayCast3D" parent="LineOfSight"]
+[node name="RayCast3D3" type="RayCast3D" parent="LineOfSight" unique_id=645059189]
 transform = Transform3D(0.96592593, 0, -0.25881907, 0, 1, 0, 0.25881907, 0, 0.96592593, 0, 0.28233337, 0)
 target_position = Vector3(0, 0, -5)
 
-[node name="RayCast3D4" type="RayCast3D" parent="LineOfSight"]
+[node name="RayCast3D4" type="RayCast3D" parent="LineOfSight" unique_id=1504702799]
 transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, 0, 0.28233337, 0)
 target_position = Vector3(0, 0, -5)
 
-[node name="RayCast3D5" type="RayCast3D" parent="LineOfSight"]
+[node name="RayCast3D5" type="RayCast3D" parent="LineOfSight" unique_id=272554439]
 transform = Transform3D(0.8660253, 0, 0.49999997, 0, 1, 0, -0.49999997, 0, 0.8660253, 0, 0.28233337, 0)
 target_position = Vector3(0, 0, -5)
 
-[node name="WanderTimer" type="Timer" parent="."]
+[node name="WanderTimer" type="Timer" parent="." unique_id=935396286]
 one_shot = true
 
-[node name="EnemyModel" parent="." instance=ExtResource("2_0n4k6")]
+[node name="EnemyModel" parent="." unique_id=1700224252 instance=ExtResource("2_0n4k6")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.022018015, -0.9634758, -0.09173393)
 
 [node name="Mannequin" parent="EnemyModel/Rig/Skeleton3D" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_0n4k6")
 
-[node name="HitStunTimer" type="Timer" parent="."]
+[node name="AnimationPlayer" parent="EnemyModel" index="1"]
+libraries/ = ExtResource("3_7u4e5")
+
+[node name="HitStunTimer" type="Timer" parent="." unique_id=528217184]
 wait_time = 0.3
 one_shot = true
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1463497558]
 path_height_offset = -0.25
 debug_enabled = true
 
