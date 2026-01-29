@@ -5,7 +5,7 @@
 [node name="SisyphusPuzzle" type="CSGBox3D" unique_id=457353841]
 size = Vector3(0.3, 0.3, 0.3)
 script = ExtResource("1_fwldj")
-ItemIdRequired = 3
+KeyIdRequired = 3
 EventNameId = "SISYPHUS_BOULDER"
 ZoneId = "STORE_OFFICE"
 

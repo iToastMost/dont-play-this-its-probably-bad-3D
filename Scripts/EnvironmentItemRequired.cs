@@ -11,7 +11,7 @@ public partial class EnvironmentItemRequired : StaticBody3D, iInteractable
 
     [Export] public string EventAlreadyCompletedText;
     
-    [Export] public int ItemIdRequired;
+    [Export] public int KeyIdRequired;
 
     [Export] public string EventNameId;
 
@@ -38,6 +38,6 @@ public partial class EnvironmentItemRequired : StaticBody3D, iInteractable
             return;
         }
         GD.Print("Fusebox interacted with!");
-        EmitSignalInteracted(ItemIdRequired, ZoneId, EventNameId);
+        EmitSignalInteracted(KeyIdRequired, ZoneId, EventNameId);
     }
 }
