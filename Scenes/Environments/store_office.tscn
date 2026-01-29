@@ -86,7 +86,4 @@ size = Vector3(0.7342529, 1.2236328, 0.58288574)
 [node name="SisyphusPuzzle" parent="." unique_id=457353841 instance=ExtResource("8_exavs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9890285, 1.2742643, -4.089061)
 
-[node name="CSGSphere3D" parent="SisyphusPuzzle" index="0" unique_id=1766168743]
-visible = false
-
 [editable path="SisyphusPuzzle"]

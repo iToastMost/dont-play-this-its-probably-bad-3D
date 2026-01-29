@@ -4,10 +4,14 @@ using System;
 public partial class EnvironmentItemRequired : StaticBody3D, iInteractable
 {
     [Signal]
-    public delegate void InteractedEventHandler(int itemIdRequired, string zoneId, string eventName);
+    public delegate void InteractedEventHandler(int itemIdRequired, string zoneId, string eventName, string interactText, string eventCompletedText);
 
     [Signal]
     public delegate void AlreadyCompletedTextEventHandler(string name, string alreadyCompletedText);
+
+    [Export] public string InteractText;
+
+    [Export] public string EventCompletionText;
 
     [Export] public string EventAlreadyCompletedText;
     
@@ -38,6 +42,6 @@ public partial class EnvironmentItemRequired : StaticBody3D, iInteractable
             return;
         }
         GD.Print("Fusebox interacted with!");
-        EmitSignalInteracted(KeyIdRequired, ZoneId, EventNameId);
+        EmitSignalInteracted(KeyIdRequired, ZoneId, EventNameId, InteractText, EventCompletionText);
     }
 }

@@ -62,7 +62,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.77889305, 1.7924249, 0.224
 
 [node name="Fusebox" parent="." unique_id=420980602 groups=["StoreLights"] instance=ExtResource("3_0nuyt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2641362, -0.24039418)
-EventAlreadyCompletedText = "The fusebox seems to be working now."
+InteractText = "Looks like a fuse is blown. I think I can find one in the breakroom supply closet."
+EventCompletionText = "That should have restored power!"
+EventAlreadyCompletedText = "Power has been restored."
+KeyIdRequired = 2
 ZoneId = "STORE_BASEMENT"
 
 [node name="door" parent="." unique_id=304080197 instance=ExtResource("5_tawf3")]

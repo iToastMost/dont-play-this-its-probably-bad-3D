@@ -2,13 +2,24 @@
 
 [ext_resource type="Script" uid="uid://r2o3rdif3iev" path="res://Scripts/EnvironmentItemRequired.cs" id="1_fwldj"]
 
-[node name="SisyphusPuzzle" type="CSGBox3D" unique_id=457353841]
-size = Vector3(0.3, 0.3, 0.3)
+[sub_resource type="BoxShape3D" id="BoxShape3D_fwldj"]
+size = Vector3(1, 1.9765625, 1)
+
+[node name="SisyphusPuzzle" type="StaticBody3D" unique_id=871118337]
 script = ExtResource("1_fwldj")
-KeyIdRequired = 3
+InteractText = "It's a statue depicting a man pushing a boulder up a hill."
+EventCompletionText = "You took the boulder."
+EventAlreadyCompletedText = "You already took the boulder."
 EventNameId = "SISYPHUS_BOULDER"
 ZoneId = "STORE_OFFICE"
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=1766168743]
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1648188226]
+size = Vector3(0.3, 0.3, 0.3)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGBox3D" unique_id=1766168743]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3278519, 0)
 radius = 0.25229776
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1222205594]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0009765625, 0)
+shape = SubResource("BoxShape3D_fwldj")

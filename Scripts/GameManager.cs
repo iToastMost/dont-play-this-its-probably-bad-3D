@@ -609,7 +609,7 @@ public partial class GameManager : Node3D
 	
 	
 	//Checks if the player has the required item to progress the event
-	private void IdCheck(int reqId, string zoneId, string eventName)
+	private void IdCheck(int reqId, string zoneId, string eventName, string eventText, string eventCompletionText)
 	{
 		
 		if (reqId != 0)
@@ -622,7 +622,7 @@ public partial class GameManager : Node3D
 					if (keyItem.KeyId == reqId)
 					{
 						GD.Print("Fuse used, power restored.");
-						SendDialogue("You","That should have restored power!");
+						SendDialogue("You",eventCompletionText);
 						_playerInventory[i] = null;
 						_inventory.UpdateInventory("", i);
 						GameStateManager.Instance.MarkEventTriggered(zoneId, eventName);
@@ -635,7 +635,11 @@ public partial class GameManager : Node3D
 			}
 			
 			GD.Print("You do not have a fuse");
-			SendDialogue("You","I don't have a fuse. I think there's one in lockup.");
+			SendDialogue("You",eventText);
+		}
+		else
+		{
+			SendDialogue("You",eventText);
 		}
 		
 	}
