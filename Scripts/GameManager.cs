@@ -5,7 +5,9 @@ using Environment = Godot.Environment;
 
 public partial class GameManager : Node3D
 {
-
+	[Signal]
+	public delegate void DialogueCompletedEventHandler();
+	
 	private Ui _ui;
 	private PlayerRE _playerRe;
 	private Node3D _environment;
@@ -205,13 +207,14 @@ public partial class GameManager : Node3D
 		_doorPushSubViewportContainer.Visible = false;
 		
 		
-		_playerRe.UpdateInventoryItems += UpdateInventory;
+		//_playerRe.UpdateInventoryItems += UpdateInventory;
 		_playerRe.UpdateHealth += UpdatePlayerHealth;
 		_playerRe.UseAmmo += UpdateAmmo;
 		_playerRe.ReloadCheck += ReloadCheck;
 		_playerRe.ReloadFinished += ReloadFinished;
 		_animationPlayer.AnimationFinished += FadeOutFinished;
 		_inventory.ItemUsed += UseItem;
+		_inventory.InspectItem += InspectItem;
 		_inventory.CheckItemSlotClicked += CheckInventorySlot;
 		_playerRe.AcceptDialogue += AcceptDialogue;
 		_playerRe.NPCDialogue += SendDialogue;
@@ -313,6 +316,13 @@ public partial class GameManager : Node3D
 				req.Interacted += IdCheck;
 				req.AlreadyCompletedText += SendDialogue;
 			}
+			
+			if (interactableEnvironmentNode is SisyphusPuzzle puzzle)
+			{
+				puzzle.Interacted += IdCheck;
+				puzzle.AlreadyCompletedText += SendDialogue;
+				puzzle.AskToLootItem += AskToLoot;
+			}
 
 			if (interactableEnvironmentNode is ComputerTerminal comp)
 			{
@@ -326,13 +336,20 @@ public partial class GameManager : Node3D
 		//DialogueManager.Instance
 	}
 
+	private void InspectItem(int idx)
+	{
+		if (_playerInventory[idx] != null)
+		{
+			SendDialogue(false,"", _playerInventory[idx].itemDescription);
+		}
+	}
 
 	//Updates dialog from dialog trigger signal
-	private void SendDialogue(string name, string dialog) 
+	private void SendDialogue(bool showInstant, string name, string dialog) 
 	{
 		//_ui.UpdateText(dialog);
 		_playerRe.UpdateState(PlayerStateTypes.Dialog);
-		DialogueManager.Instance.ShowDialogue(name, dialog);
+		DialogueManager.Instance.ShowDialogue(showInstant, name, dialog);
 	}
 
 	private void AcceptDialogue()
@@ -343,6 +360,7 @@ public partial class GameManager : Node3D
 	private void DialogueFinished()
 	{
 		_playerRe.UpdateState(PlayerStateTypes.Idle);
+		EmitSignalDialogueCompleted();
 	}
 
 	private void AskToLoot(Node3D item)
@@ -590,7 +608,7 @@ public partial class GameManager : Node3D
 					{
 						GD.Print("You have the key to this door, door unlocked");
 						keyCheck = true;
-						SendDialogue("You", "I unlocked the door. Seems like I won't be needing this key anymore.");
+						SendDialogue(false,"You", "I unlocked the door. Seems like I won't be needing this key anymore.");
 						_playerInventory[i] = null;
 						_inventory.UpdateInventory("", i);
 						GameStateManager.Instance.MarkDoorUnlocked(zoneId, doorId);
@@ -600,7 +618,7 @@ public partial class GameManager : Node3D
 			}
 			
 			GD.Print("You do not have the key to this door");
-			SendDialogue("You","The door is locked. I think I left the key in the break room supply closet.");
+			SendDialogue(false, "You","The door is locked. I think I left the key in the break room supply closet.");
 			return keyCheck;
 		}
 		
@@ -622,10 +640,10 @@ public partial class GameManager : Node3D
 					if (keyItem.KeyId == reqId)
 					{
 						GD.Print("Fuse used, power restored.");
-						SendDialogue("You",eventCompletionText);
+						SendDialogue(false,"You",eventCompletionText);
 						_playerInventory[i] = null;
 						_inventory.UpdateInventory("", i);
-						GameStateManager.Instance.MarkEventTriggered(zoneId, eventName);
+						AddFinishedEvent(zoneId, eventName);
 						
 						if(eventName.Equals("FUSE_USED"))
 							CheckStoreLights();
@@ -635,13 +653,18 @@ public partial class GameManager : Node3D
 			}
 			
 			GD.Print("You do not have a fuse");
-			SendDialogue("You",eventText);
+			SendDialogue(false,"You",eventText);
 		}
 		else
 		{
-			SendDialogue("You",eventText);
+			SendDialogue(false,"You",eventText);
 		}
 		
+	}
+
+	private void AddFinishedEvent(string zoneId, string eventName)
+	{
+		GameStateManager.Instance.MarkEventTriggered(zoneId, eventName);
 	}
 
 	private void AddZoneState(string zoneId)

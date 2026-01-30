@@ -7,7 +7,7 @@ public partial class EnvironmentItemRequired : StaticBody3D, iInteractable
     public delegate void InteractedEventHandler(int itemIdRequired, string zoneId, string eventName, string interactText, string eventCompletedText);
 
     [Signal]
-    public delegate void AlreadyCompletedTextEventHandler(string name, string alreadyCompletedText);
+    public delegate void AlreadyCompletedTextEventHandler(bool showDialogueInstantly, string name, string alreadyCompletedText);
 
     [Export] public string InteractText;
 
@@ -38,7 +38,7 @@ public partial class EnvironmentItemRequired : StaticBody3D, iInteractable
         if (IsEventTriggered)
         {
             GD.Print("I've already fixed the fusebox");
-            EmitSignalAlreadyCompletedText("You", EventAlreadyCompletedText);
+            EmitSignalAlreadyCompletedText(false,"You", EventAlreadyCompletedText);
             return;
         }
         GD.Print("Fusebox interacted with!");

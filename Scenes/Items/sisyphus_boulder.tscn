@@ -16,8 +16,10 @@ size = Vector3(1.607666, 3.2705383, 1)
 script = ExtResource("1_cpu5c")
 KeyId = 3
 itemName = "Miniature Boulder"
-itemDescription = "It looks like it belonged to something"
+itemDescription = "A miniature boulder you took from the statue depicting a man endlessly pushing the boulder up a mountain."
 itemID = 6
+ZoneId = "STORE_OFFICE"
+ItemId = "STORE_OFFICE_BOULDER"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1254025246]
 mesh = SubResource("SphereMesh_432hh")

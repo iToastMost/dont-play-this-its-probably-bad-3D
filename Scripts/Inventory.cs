@@ -9,12 +9,16 @@ public partial class Inventory : Control
     [Signal]
     public delegate void CheckItemSlotClickedEventHandler(int idx);
     
+    [Signal]
+    public delegate void InspectItemEventHandler(int idx);
+    
     private CanvasLayer _canvasLayer;
     private bool _inventoryIsOpen = false;
     private int _slotIdx = 0;
     private int _slotSelectedIdx = 0;
 
     private Button _useItemButton;
+    private Button _inspectItemButton;
     
     //TODO Change ItemList to GridContainer with ImageButtons or some other type of inventory that is more convenient
     private GridContainer _gridContainer;
@@ -35,8 +39,10 @@ public partial class Inventory : Control
         _itemSelected.Visible = false;
         
         _useItemButton =  GetNode<Button>("CanvasLayer/ItemSelectedSlide/ItemSelected/Use_Equip");
+        _inspectItemButton = GetNode<Button>("CanvasLayer/ItemSelectedSlide/ItemSelected/Inspect");
         
         _useItemButton.Pressed += UseItemClicked;
+        _inspectItemButton.Pressed += InspectItemClicked;
         
         _animationPlayer.AnimationFinished += HideItemMenu;
         
@@ -119,9 +125,20 @@ public partial class Inventory : Control
         _isItemSelected = false;
     }
 
-    private void InspectItemClicked()
+    private async void InspectItemClicked()
     {
+        EmitSignal(SignalName.InspectItem, _slotSelectedIdx);
         
+        _audioStreamPlayer2D.Stream = ResourceLoader.Load<AudioStreamWav>("res://Art/Audio/uiSelect.wav");
+        _audioStreamPlayer2D.Play();
+        
+        _inspectItemButton.ReleaseFocus();
+        _animationPlayer.CurrentAnimation = "slide_in";
+        
+        await ToSignal(GetNode<GameManager>("/root/GameManager"), GameManager.SignalName.DialogueCompleted);
+        
+        _gridContainer.GetNode<Button>("Slot0").GrabFocus();
+        _isItemSelected = false;
     }
     
     private void CombineItemClicked()

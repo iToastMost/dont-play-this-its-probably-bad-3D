@@ -1,14 +1,14 @@
 {
-  "PlayerPosX": "-2.0033984",
-  "PlayerPosY": "0.40542006",
-  "PlayerPosZ": "1.7116163",
-  "PlayerRotationY": "-1.7623892",
+  "PlayerPosX": "-1.6359454",
+  "PlayerPosY": "0.4054215",
+  "PlayerPosZ": "1.9144169",
+  "PlayerRotationY": "-2.512389",
   "Playerhealth": 60,
   "PlayerAmmo": 12,
   "CurrentEnvironment": "STORE_BREAKROOM",
   "playerInventory": [
 	5,
-	-1,
+	6,
 	-1,
 	-1,
 	-1,
@@ -57,6 +57,16 @@
 	  "LootedItemIds": [],
 	  "EventTriggeredIds": [
         "FUSE_USED"
+	  ],
+	  "DoorUnlockedIds": []
+	},
+	"STORE_OFFICE": {
+	  "DeadEnemyIds": [],
+	  "LootedItemIds": [
+        "STORE_OFFICE_BOULDER"
+	  ],
+	  "EventTriggeredIds": [
+        "SISYPHUS_BOULDER"
 	  ],
 	  "DoorUnlockedIds": []
 	}

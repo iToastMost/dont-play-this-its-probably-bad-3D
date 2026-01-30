@@ -13,11 +13,11 @@ public partial class DialogueManager : Node
         Instance = this;
     }
     
-    public void ShowDialogue(string name, string dialogueText)
+    public void ShowDialogue(bool showInstant, string name, string dialogueText)
     {
         _dialogue = GetParent().GetNode<Dialogue>("GameManager/PlayerSetup/UI/CanvasLayer/Dialogue");
         _dialogueText = dialogueText;
-        _dialogue.ShowMessage(name, _dialogueText);
+        _dialogue.ShowMessage(showInstant, name, _dialogueText);
     }
 
     public void HideDialogue()

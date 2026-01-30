@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgwyijd1evli8"]
+[gd_scene format=3 uid="uid://bgwyijd1evli8"]
 
 [ext_resource type="Script" uid="uid://du7ayy6smqihw" path="res://Scripts/Inventory.cs" id="1_r2tt6"]
 [ext_resource type="AudioStream" uid="uid://di3a6ss1ec32b" path="res://Art/Audio/uiChange.wav" id="2_uodu0"]
@@ -57,7 +57,7 @@ _data = {
 &"slide_out": SubResource("Animation_wdn4f")
 }
 
-[node name="Inventory" type="Control"]
+[node name="Inventory" type="Control" unique_id=540081962]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -66,9 +66,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r2tt6")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=971045107]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1207881235]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -78,12 +78,10 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 color = Color(0.22745098, 0.5137255, 1, 1)
 
-[node name="ItemSelectedSlide" type="AnimationPlayer" parent="CanvasLayer"]
-libraries = {
-&"": SubResource("AnimationLibrary_k5gp2")
-}
+[node name="ItemSelectedSlide" type="AnimationPlayer" parent="CanvasLayer" unique_id=1199564581]
+libraries/ = SubResource("AnimationLibrary_k5gp2")
 
-[node name="ItemSelected" type="GridContainer" parent="CanvasLayer/ItemSelectedSlide"]
+[node name="ItemSelected" type="GridContainer" parent="CanvasLayer/ItemSelectedSlide" unique_id=635381617]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -96,27 +94,27 @@ offset_bottom = -342.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="Use_Equip" type="Button" parent="CanvasLayer/ItemSelectedSlide/ItemSelected"]
+[node name="Use_Equip" type="Button" parent="CanvasLayer/ItemSelectedSlide/ItemSelected" unique_id=1368437685]
 custom_minimum_size = Vector2(280, 80)
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../Inspect")
 text = "Use/Equip
 "
 
-[node name="Inspect" type="Button" parent="CanvasLayer/ItemSelectedSlide/ItemSelected"]
+[node name="Inspect" type="Button" parent="CanvasLayer/ItemSelectedSlide/ItemSelected" unique_id=1063974859]
 custom_minimum_size = Vector2(280, 80)
 layout_mode = 2
 focus_neighbor_top = NodePath("../Use_Equip")
 focus_neighbor_bottom = NodePath("../Combine")
 text = "Inspect"
 
-[node name="Combine" type="Button" parent="CanvasLayer/ItemSelectedSlide/ItemSelected"]
+[node name="Combine" type="Button" parent="CanvasLayer/ItemSelectedSlide/ItemSelected" unique_id=1243994635]
 custom_minimum_size = Vector2(280, 80)
 layout_mode = 2
 focus_neighbor_top = NodePath("../Inspect")
 text = "Combine"
 
-[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=1030348820]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -130,7 +128,7 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 color = Color(0, 0, 0.84705883, 1)
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer" unique_id=1953579953]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -144,7 +142,7 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 columns = 2
 
-[node name="Slot0" type="Button" parent="CanvasLayer/GridContainer"]
+[node name="Slot0" type="Button" parent="CanvasLayer/GridContainer" unique_id=1125834708]
 custom_minimum_size = Vector2(380, 200)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -153,7 +151,7 @@ focus_neighbor_right = NodePath("../Slot1")
 focus_neighbor_bottom = NodePath("../Slot2")
 theme_override_font_sizes/font_size = 14
 
-[node name="Slot1" type="Button" parent="CanvasLayer/GridContainer"]
+[node name="Slot1" type="Button" parent="CanvasLayer/GridContainer" unique_id=1427087347]
 custom_minimum_size = Vector2(380, 200)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -162,7 +160,7 @@ focus_neighbor_left = NodePath("../Slot0")
 focus_neighbor_bottom = NodePath("../Slot3")
 theme_override_font_sizes/font_size = 14
 
-[node name="Slot2" type="Button" parent="CanvasLayer/GridContainer"]
+[node name="Slot2" type="Button" parent="CanvasLayer/GridContainer" unique_id=1176836287]
 custom_minimum_size = Vector2(380, 200)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -172,7 +170,7 @@ focus_neighbor_right = NodePath("../Slot3")
 focus_neighbor_bottom = NodePath("../Slot4")
 theme_override_font_sizes/font_size = 14
 
-[node name="Slot3" type="Button" parent="CanvasLayer/GridContainer"]
+[node name="Slot3" type="Button" parent="CanvasLayer/GridContainer" unique_id=297106616]
 custom_minimum_size = Vector2(380, 200)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -183,7 +181,7 @@ focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath("../Slot5")
 theme_override_font_sizes/font_size = 14
 
-[node name="Slot4" type="Button" parent="CanvasLayer/GridContainer"]
+[node name="Slot4" type="Button" parent="CanvasLayer/GridContainer" unique_id=1323832027]
 custom_minimum_size = Vector2(380, 200)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -193,7 +191,7 @@ focus_neighbor_right = NodePath("../Slot5")
 focus_neighbor_bottom = NodePath("../Slot6")
 theme_override_font_sizes/font_size = 14
 
-[node name="Slot5" type="Button" parent="CanvasLayer/GridContainer"]
+[node name="Slot5" type="Button" parent="CanvasLayer/GridContainer" unique_id=1047144231]
 custom_minimum_size = Vector2(380, 200)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -204,7 +202,7 @@ focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath("../Slot7")
 theme_override_font_sizes/font_size = 14
 
-[node name="Slot6" type="Button" parent="CanvasLayer/GridContainer"]
+[node name="Slot6" type="Button" parent="CanvasLayer/GridContainer" unique_id=1134491711]
 custom_minimum_size = Vector2(380, 200)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -213,7 +211,7 @@ focus_neighbor_top = NodePath("../Slot4")
 focus_neighbor_right = NodePath("../Slot7")
 theme_override_font_sizes/font_size = 14
 
-[node name="Slot7" type="Button" parent="CanvasLayer/GridContainer"]
+[node name="Slot7" type="Button" parent="CanvasLayer/GridContainer" unique_id=600299971]
 custom_minimum_size = Vector2(380, 200)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -223,5 +221,5 @@ focus_neighbor_top = NodePath("../Slot5")
 focus_neighbor_right = NodePath(".")
 theme_override_font_sizes/font_size = 14
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=858510129]
 stream = ExtResource("2_uodu0")

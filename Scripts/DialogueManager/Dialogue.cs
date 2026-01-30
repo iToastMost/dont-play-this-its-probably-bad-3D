@@ -5,6 +5,9 @@ public partial class Dialogue : Node
 {
 	[Signal]
 	public delegate void YesLootButtonPressedEventHandler(Node3D item);
+	
+	[Signal]
+	public delegate void ChoiceSelectedEventHandler(bool choice);
 
 	[Signal]
 	public delegate void DialogueFinishedEventHandler();
@@ -71,9 +74,12 @@ public partial class Dialogue : Node
 		RichTextLabel.VisibleCharacters = _visibleText;
 	}
 
-	public void ShowMessage(string name, string message)
+	public void ShowMessage(bool showInstant, string name, string message)
 	{
 		_visibleText = 0;
+
+		if (showInstant)
+			_visibleText = message.Length;
 
 		_charName.Text = name;
 		RichTextLabel.Text = message;
@@ -166,14 +172,19 @@ public partial class Dialogue : Node
 	private void YesLootPressed()
 	{
 		//Sends looted signal to game manager with item id to tell manager what to loot
-		if(ItemToLoot != null)
+		if (ItemToLoot != null)
+		{
 			EmitSignal(SignalName.YesLootButtonPressed, ItemToLoot);
+			EmitSignalChoiceSelected(true);
+		}
+			
 		ItemToLoot = null;
 		HideMessage();
 	}
 
 	private void NoLootPressed()
 	{
+		EmitSignalChoiceSelected(false);
 		HideMessage();
 	}
 

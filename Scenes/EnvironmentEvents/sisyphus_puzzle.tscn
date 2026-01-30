@@ -1,17 +1,12 @@
 [gd_scene format=3 uid="uid://bf53fx5mqlf8n"]
 
-[ext_resource type="Script" uid="uid://r2o3rdif3iev" path="res://Scripts/EnvironmentItemRequired.cs" id="1_fwldj"]
+[ext_resource type="Script" uid="uid://bjnbprq1s807" path="res://Scripts/Puzzles/SisyphusPuzzle.cs" id="1_fwldj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fwldj"]
 size = Vector3(1, 1.9765625, 1)
 
-[node name="SisyphusPuzzle" type="StaticBody3D" unique_id=871118337]
+[node name="SisyphusPuzzle" type="StaticBody3D" unique_id=871118337 groups=["InteractableEnvironment"]]
 script = ExtResource("1_fwldj")
-InteractText = "It's a statue depicting a man pushing a boulder up a hill."
-EventCompletionText = "You took the boulder."
-EventAlreadyCompletedText = "You already took the boulder."
-EventNameId = "SISYPHUS_BOULDER"
-ZoneId = "STORE_OFFICE"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1648188226]
 size = Vector3(0.3, 0.3, 0.3)

@@ -85,5 +85,10 @@ size = Vector3(0.7342529, 1.2236328, 0.58288574)
 
 [node name="SisyphusPuzzle" parent="." unique_id=457353841 instance=ExtResource("8_exavs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9890285, 1.2742643, -4.089061)
+InteractText = "It's a statue depicting a man pushing a boulder up a mountain."
+EventCompletionText = "You took the boulder."
+EventAlreadyCompletedText = "You have already taken the boulder."
+EventNameId = "SISYPHUS_BOULDER"
+ZoneId = "STORE_OFFICE"
 
 [editable path="SisyphusPuzzle"]

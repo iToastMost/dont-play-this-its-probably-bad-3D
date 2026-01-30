@@ -28,7 +28,7 @@ public partial class PlayerRE : CharacterBody3D
     public delegate void LootItemSelectedEventHandler();
 
     [Signal]
-    public delegate void NPCDialogueEventHandler(string npcName, string npcDialogue);
+    public delegate void NPCDialogueEventHandler(bool showInstant, string npcName, string npcDialogue);
 
     [Export] public PackedScene GooseJumpScene;
 
@@ -340,7 +340,7 @@ public override void _Ready()
 
             if (node is Npc npc)
             {
-                EmitSignal(SignalName.NPCDialogue, npc.NPCName, npc.NPCDialogue);
+                EmitSignal(SignalName.NPCDialogue, false, npc.NPCName, npc.NPCDialogue);
             }
         }
 
