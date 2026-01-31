@@ -30,6 +30,9 @@ public partial class PlayerRE : CharacterBody3D
     [Signal]
     public delegate void NPCDialogueEventHandler(bool showInstant, string npcName, string npcDialogue);
 
+    [Signal]
+    public delegate void PlayerDiedEventHandler();
+
     [Export] public PackedScene GooseJumpScene;
 
     [Export] public float speed { get; set; } = 1.5f;
@@ -79,7 +82,7 @@ public partial class PlayerRE : CharacterBody3D
 
     Node GooseScene;
     CharacterBody3D player;
-    CollisionShape3D playerCollider;
+    private CollisionShape3D _playerCollider;
     ColorRect colorRect;
     RayCast3D rayCast;
     public RayCast3D laser;
@@ -117,7 +120,7 @@ public override void _Ready()
         playerAnimation = GetNode<AnimationPlayer>("CharacterModelAnim/AnimationPlayer");
 
         colorRect = GetNode<ColorRect>("SubViewportContainer/CanvasLayer/ColorRect");
-        playerCollider = GetNode<CollisionShape3D>("CollisionShape3D");
+        _playerCollider = GetNode<CollisionShape3D>("CollisionShape3D");
 
         _phoneAnimation = GetNode<AnimationPlayer>("SubViewportContainer/AnimationPlayer");
         _subViewport = GetNode<SubViewport>("SubViewportContainer/SubViewport");
@@ -161,7 +164,7 @@ public override void _Ready()
         MuzzleFlashTimer.Timeout += OnTimerTimeout;
 
         //Uncomment below code and switch _canMove and _3DStarted to false to start with GooseJump game
-        playerCollider.Disabled = true;
+        _playerCollider.Disabled = true;
         _canMove = false;
         _3DStarted = false;
         if (GooseScene == null)
@@ -174,7 +177,7 @@ public override void _Ready()
 
         //Uncomment below code and switch _canMove and _3DStarted to false to start with GooseJump game
 
-        playerCollider.Disabled = false;
+        _playerCollider.Disabled = false;
         _canMove = true;
         _3DStarted = true;
         //if (GooseScene == null)
@@ -204,11 +207,6 @@ public override void _Ready()
     {
         sm.PhysicsUpdate(delta);
         MoveAndSlide();
-
-        if (_health <= 0 && !IsDead)
-        {
-            PlayerDie();
-        }
         
         if (Input.IsActionJustPressed("accept_dialog") && _3DStarted == true) 
         {
@@ -311,7 +309,7 @@ public override void _Ready()
         IsReloading = true;
     }
     
-    private void InteractCheck()
+    public void InteractCheck()
     {
         if (!rayCast.IsColliding())
             return;
@@ -372,8 +370,15 @@ public override void _Ready()
     {
         CanMove = false;
         IsDead = true;
+        CallDeferred("DisablePlayerCollision");
+        sm.ChangeState(PlayerStateTypes.Dead);
     }
 
+    private void DisablePlayerCollision()
+    {
+        _playerCollider.Disabled = true;
+    }
+    
     public void PlayAnimation(string  animationName)
     {
         playerAnimation.CurrentAnimation = animationName;
@@ -387,7 +392,7 @@ public override void _Ready()
         _phoneVisible = false;
         _phoneAnimation.CurrentAnimation = "slide_out";
         _phoneAnimation.Play();
-        playerCollider.Disabled = false;
+        _playerCollider.Disabled = false;
     }
 
     public void TakeDamage(int dmg) 
@@ -396,6 +401,11 @@ public override void _Ready()
         sm.ChangeState(PlayerStateTypes.HitStun);
         _health -= dmg;
         EmitSignal(SignalName.UpdateHealth);
+        
+        if (_health <= 0 && !IsDead)
+        {
+            PlayerDie();
+        }
     }
 
     public void EquipItem(iEquippable weapon)
@@ -442,6 +452,7 @@ public override void _Ready()
         if (animName.Equals("Death01")) 
         {
             playerAnimation.Stop();
+            EmitSignal(SignalName.PlayerDied);
         }
 
         if (animName.Equals("Pistol_Reload")) 
@@ -464,7 +475,7 @@ public override void _Ready()
         }
 
     }
-
+    
     private void ToggleFlashlight()
     {
         Flashlight.Visible = !Flashlight.Visible;

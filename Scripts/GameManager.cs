@@ -26,9 +26,11 @@ public partial class GameManager : Node3D
 	private SubViewportContainer _doorPushSubViewportContainer;
 	private Camera3D _subviewportCamera;
 	private Dialogue _dialogue;
+	private DeathScreenUI _deathScreenUI;
 	
 	private string _sceneToLoad = "";
 	private bool _isLoadingEnvironment = false;
+	private bool _firstLoad = true;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -63,7 +65,8 @@ public partial class GameManager : Node3D
 		
 		GD.Print("Loading Save...");
 		
-		NodeSetup();
+		if(_firstLoad)
+			NodeSetup();
 		
 		playerSpawnPos = new Vector3(loadedData.PlayerPosX.ToFloat(),  loadedData.PlayerPosY.ToFloat(), loadedData.PlayerPosZ.ToFloat());
 		var playerSpawnRotation = new Vector3(0, loadedData.PlayerRotationY.ToFloat(), 0);
@@ -154,7 +157,8 @@ public partial class GameManager : Node3D
 
 	private void InitializeGame(string pathToLoad)
 	{
-		NodeSetup();
+		if(_firstLoad)
+			NodeSetup();
 		
 		var loadGame = ResourceLoader.Load<PackedScene>(pathToLoad);
 		_currentEnvironment = loadGame.Instantiate<Node3D>();
@@ -192,10 +196,11 @@ public partial class GameManager : Node3D
 		var playerSetup = ResourceLoader.Load<PackedScene>("res://Scenes/player_setup.tscn");
 		_playerSetup = playerSetup.Instantiate<Node>();
 		AddChild(_playerSetup);
-		
-		_mainMenu.QueueFree();
-		
+
+		_mainMenu?.QueueFree();
+
 		_ui = GetNode<Ui>("PlayerSetup/UI");
+		_deathScreenUI = GetNode<DeathScreenUI>("PlayerSetup/UI/CanvasLayer/DeathScreen");
 		_inventory = _ui.GetNode<Inventory>("Inventory");
 		_playerRe = GetNode<PlayerRE>("PlayerSetup/3DPlayer");
 		_environment = GetNode<Node3D>("Environment");
@@ -212,6 +217,7 @@ public partial class GameManager : Node3D
 		_playerRe.UseAmmo += UpdateAmmo;
 		_playerRe.ReloadCheck += ReloadCheck;
 		_playerRe.ReloadFinished += ReloadFinished;
+		_playerRe.PlayerDied += HandlePlayerDied;
 		_animationPlayer.AnimationFinished += FadeOutFinished;
 		_inventory.ItemUsed += UseItem;
 		_inventory.InspectItem += InspectItem;
@@ -222,6 +228,10 @@ public partial class GameManager : Node3D
 		_playerRe.LootItemSelected += HandleLootItemUI;
 		_dialogue.YesLootButtonPressed += UpdateInventory;
 		_dialogue.DialogueFinished += DialogueFinished;
+		_deathScreenUI.LoadGameButtonPressed += LoadGame;
+		_deathScreenUI.QuitButtonPressed += QuitButtonPressed;
+
+		_firstLoad = false;
 	}
 	
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -229,6 +239,11 @@ public partial class GameManager : Node3D
 	{
 	}
 
+	private void HandlePlayerDied()
+	{
+		_deathScreenUI.ShowDeathScreen();
+	}
+	
 	private void ConnectSignals() 
 	{
 		ConnectDialogSignals();
@@ -460,6 +475,11 @@ public partial class GameManager : Node3D
 				}
 			}
 
+			if (item is KeyItem)
+			{
+				_playerRe.InteractCheck();
+			}
+			
 			if(item is iEquippable equippable)
 			{
 				//Play around with this code to get it to work, this is kinda pseudocode

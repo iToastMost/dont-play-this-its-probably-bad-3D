@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bx3tiy1h1b0rr"]
+[gd_scene format=3 uid="uid://bx3tiy1h1b0rr"]
 
 [ext_resource type="Script" uid="uid://ckiifa6823pb8" path="res://Scripts/Ui.cs" id="1_jxero"]
 [ext_resource type="PackedScene" uid="uid://bgwyijd1evli8" path="res://Scenes/Art/UI/inventory.tscn" id="2_qdvrb"]
 [ext_resource type="PackedScene" uid="uid://b0qm320owu3k1" path="res://Scenes/Art/UI/map.tscn" id="3_nf4gj"]
 [ext_resource type="PackedScene" uid="uid://bfxkrtojoipes" path="res://Scenes/dialogue.tscn" id="4_eoccf"]
+[ext_resource type="PackedScene" uid="uid://h24s50x0qetq" path="res://Scenes/Art/UI/DeathScreen.tscn" id="5_x112e"]
 
-[node name="UI" type="Control"]
+[node name="UI" type="Control" unique_id=821667605]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,14 +15,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jxero")
 
-[node name="Inventory" parent="." instance=ExtResource("2_qdvrb")]
+[node name="Inventory" parent="." unique_id=785510600 instance=ExtResource("2_qdvrb")]
 visible = false
 z_index = 1
 layout_mode = 1
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=30300464]
 
-[node name="TopInventory" type="ColorRect" parent="CanvasLayer"]
+[node name="TopInventory" type="ColorRect" parent="CanvasLayer" unique_id=77688668]
 visible = false
 offset_left = 5.0
 offset_top = 5.0
@@ -29,7 +30,7 @@ offset_right = 1074.0
 offset_bottom = 152.0
 color = Color(0, 0, 0, 1)
 
-[node name="HealthLabel" type="Label" parent="CanvasLayer"]
+[node name="HealthLabel" type="Label" parent="CanvasLayer" unique_id=1920402120]
 offset_left = 56.0
 offset_top = 33.0
 offset_right = 262.0
@@ -37,7 +38,7 @@ offset_bottom = 121.0
 theme_override_font_sizes/font_size = 34
 text = "Health"
 
-[node name="AmmoLabel" type="Label" parent="CanvasLayer"]
+[node name="AmmoLabel" type="Label" parent="CanvasLayer" unique_id=4551733]
 offset_left = 811.0
 offset_top = 26.0
 offset_right = 1017.0
@@ -45,7 +46,10 @@ offset_bottom = 114.0
 theme_override_font_sizes/font_size = 34
 text = "Health"
 
-[node name="Map" parent="CanvasLayer" instance=ExtResource("3_nf4gj")]
+[node name="Map" parent="CanvasLayer" unique_id=570200317 instance=ExtResource("3_nf4gj")]
 visible = false
 
-[node name="Dialogue" parent="CanvasLayer" instance=ExtResource("4_eoccf")]
+[node name="Dialogue" parent="CanvasLayer" unique_id=69346446 instance=ExtResource("4_eoccf")]
+
+[node name="DeathScreen" parent="CanvasLayer" unique_id=83234524 instance=ExtResource("5_x112e")]
+visible = false

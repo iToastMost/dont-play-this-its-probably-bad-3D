@@ -10,11 +10,11 @@ public class IdleState : PlayerState
 
     public override void PhysicsUpdate(double delta)
     {
-        if (player.IsDead)
-        {
-            stateMachine.ChangeState(PlayerStateTypes.Dead);
-            return;
-        }
+        // if (player.IsDead)
+        // {
+        //     stateMachine.ChangeState(PlayerStateTypes.Dead);
+        //     return;
+        // }
         
         if (player.AimInput() && player.HandEquipmentSlot != null)
         {

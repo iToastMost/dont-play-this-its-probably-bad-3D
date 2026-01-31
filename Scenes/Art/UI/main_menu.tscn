@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://hvxnd3tp3hyw"]
+[gd_scene format=3 uid="uid://hvxnd3tp3hyw"]
 
 [ext_resource type="Script" uid="uid://bg541k4flux3i" path="res://Scripts/MainMenu.cs" id="1_28flt"]
 [ext_resource type="AudioStream" uid="uid://di3a6ss1ec32b" path="res://Art/Audio/uiChange.wav" id="2_txg5u"]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=1918434859]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_28flt")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1418871852]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,7 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.823529, 0.635294, 0.858824, 1)
 
-[node name="NewGameButton" type="Button" parent="."]
+[node name="NewGameButton" type="Button" parent="." unique_id=788204323]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -36,7 +36,7 @@ focus_neighbor_bottom = NodePath("../LoadGameButton")
 theme_override_font_sizes/font_size = 64
 text = "New Game"
 
-[node name="SandboxButton" type="Button" parent="."]
+[node name="SandboxButton" type="Button" parent="." unique_id=2029402071]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -51,7 +51,7 @@ focus_neighbor_bottom = NodePath("../QuitButton")
 theme_override_font_sizes/font_size = 64
 text = "Sandbox"
 
-[node name="LoadGameButton" type="Button" parent="."]
+[node name="LoadGameButton" type="Button" parent="." unique_id=2112274036]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -66,7 +66,7 @@ focus_neighbor_bottom = NodePath("../SandboxButton")
 theme_override_font_sizes/font_size = 64
 text = "Load Game"
 
-[node name="QuitButton" type="Button" parent="."]
+[node name="QuitButton" type="Button" parent="." unique_id=252732111]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -84,7 +84,7 @@ focus_neighbor_bottom = NodePath("../NewGameButton")
 theme_override_font_sizes/font_size = 64
 text = "Quit Game"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=30522645]
 stream = ExtResource("2_txg5u")
 
 [connection signal="pressed" from="NewGameButton" to="." method="StartGame"]
