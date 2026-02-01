@@ -34,6 +34,7 @@ public partial class DeathScreenUI : Node
     public void ShowDeathScreen()
     {
         _canvasLayer.Visible = true;
+        _loadGameButton.GrabFocus();
     }
     
     public void HideDeathScreen()

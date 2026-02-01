@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_dfjre"]
 [ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="1_h6k85"]
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="2_dfr2l"]
-[ext_resource type="PackedScene" uid="uid://bl6wqc2sl70yg" path="res://Scenes/Items/sisyphus_boulder.tscn" id="4_dfjre"]
 
 [node name="LockupScene" type="Node3D" unique_id=1715579684 groups=["Environments"]]
 script = ExtResource("1_dfjre")
@@ -59,8 +58,3 @@ transform = Transform3D(-0.9390994, -0.07962613, 0.33429343, 0, 0.97278494, 0.23
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=428414936 groups=["StoreLights"]]
 transform = Transform3D(1, 0, 0, 0, -0.50000006, 0.8660254, 0, -0.8660254, -0.50000006, 0, 6.6255627, -4.1688104)
-
-[node name="SisyphusBoulder" parent="." unique_id=22045581 instance=ExtResource("4_dfjre")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2448085, 1.280143, 2.948598)
-ZoneId = "STORE_LOCKUP"
-ItemId = "SISYHPUS_BOULDER"

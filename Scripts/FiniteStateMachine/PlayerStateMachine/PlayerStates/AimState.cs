@@ -8,7 +8,7 @@ public class AimState : PlayerState
     private CollisionObject3D _meleeCollision;
     public override void Enter()
     {
-        
+        player.JacobianIK.Active = true;
         if (player.HandEquipmentSlot is FirearmBase)
         {
             player.PlayAnimation("Pistol_Idle");
@@ -131,5 +131,6 @@ public class AimState : PlayerState
     {
         player.laser.Visible = false;
         player.laser.Rotation = new Vector3(0,0, Mathf.DegToRad(90));
+        player.JacobianIK.Active = false;
     }
 }

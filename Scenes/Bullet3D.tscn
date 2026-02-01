@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bo0a0c6hyeknd"]
+[gd_scene format=3 uid="uid://bo0a0c6hyeknd"]
 
 [ext_resource type="Script" uid="uid://cbqae0q2qsfjd" path="res://Scripts/Bullet3D.cs" id="1_17n1i"]
 
@@ -60,22 +60,22 @@ size = 0.1
 sections = 20
 section_segments = 1
 
-[node name="Bullet3D" type="Node3D"]
+[node name="Bullet3D" type="Node3D" unique_id=2017025007]
 transform = Transform3D(0.13774891, 0, 6.714667e-16, 0, 0.19024841, 0, -3.754029e-16, 0, 0.08170439, 0, 0, 0)
 script = ExtResource("1_17n1i")
 _bulletSpeed = 45.0
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=382759316]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 target_position = Vector3(0, 8, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=58019305]
 transform = Transform3D(-1, -2.57606e-07, 3.8213705e-15, 0, -1.2880301e-07, -0.9999997, 8.742277e-08, -2.9466693, 4.3711392e-08, 0, 0, 0)
 visible = false
 mesh = SubResource("PrismMesh_nr8tw")
 surface_material_override/0 = SubResource("StandardMaterial3D_17n1i")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=328085258]
 transform = Transform3D(0.7511722, -2.8854194e-08, 0.66010654, -0.6601066, -3.2834773e-08, 0.75117195, 3.7312928e-15, -1, -4.371139e-08, 0.025224656, 0.08783268, 2.2810872)
 emitting = false
 amount = 10
@@ -83,6 +83,6 @@ lifetime = 0.2
 process_material = SubResource("ParticleProcessMaterial_17n1i")
 draw_pass_1 = SubResource("TubeTrailMesh_pxckn")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1116962024]
 transform = Transform3D(1, 4.874571e-15, 4.874571e-15, -4.8745696e-15, -4.3711395e-08, 1, 4.8745704e-15, -1, -4.3711392e-08, 9.7759605e-15, 0, -2.0055022)
 mesh = SubResource("RibbonTrailMesh_17n1i")

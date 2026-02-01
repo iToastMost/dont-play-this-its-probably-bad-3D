@@ -24,6 +24,10 @@ size = Vector3(0.02, 0.04, 0)
 [sub_resource type="BoxShape3D" id="BoxShape3D_s4x8y"]
 size = Vector3(0.2, 0.2, 0.2)
 
+[sub_resource type="SphereMesh" id="SphereMesh_s4x8y"]
+radius = 0.2
+height = 0.4
+
 [node name="CharacterModelAnim" unique_id=839644023 instance=ExtResource("1_amo2j")]
 
 [node name="Skeleton3D" parent="Rig" index="0"]
@@ -116,6 +120,36 @@ shape = SubResource("BoxShape3D_s4x8y")
 disabled = true
 debug_color = Color(0.88083965, 0.20205459, 0.6743915, 0.41960785)
 
+[node name="JacobianIK3D" type="JacobianIK3D" parent="Rig/Skeleton3D" index="2" unique_id=1682238483]
+active = false
+setting_count = 2
+settings/0/target_node = NodePath("../../../MeshInstance3D")
+settings/1/target_node = NodePath("../BoneAttachment3D")
+settings/0/root_bone_name = "DEF-upper_arm.R"
+settings/0/root_bone = 27
+settings/0/end_bone_name = "DEF-hand.R"
+settings/0/end_bone = 29
+settings/0/extend_end_bone = false
+settings/0/joint_count = 3
+settings/1/root_bone_name = "DEF-upper_arm.L"
+settings/1/root_bone = 8
+settings/1/end_bone_name = "DEF-hand.L"
+settings/1/end_bone = 10
+settings/1/extend_end_bone = false
+settings/1/joint_count = 3
+settings/0/joints/0/rotation_axis = 3
+settings/0/joints/0/limitation = null
+settings/0/joints/1/rotation_axis = 3
+settings/0/joints/1/limitation = null
+settings/0/joints/2/rotation_axis = 3
+settings/0/joints/2/limitation = null
+settings/1/joints/0/rotation_axis = 3
+settings/1/joints/0/limitation = null
+settings/1/joints/1/rotation_axis = 3
+settings/1/joints/1/limitation = null
+settings/1/joints/2/rotation_axis = 3
+settings/1/joints/2/limitation = null
+
 [node name="AnimationPlayer" parent="." index="1"]
 libraries/ = ExtResource("2_gd4t8")
 
@@ -125,3 +159,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29897222, 1.6672305, 0.1133
 [node name="FlashlightPitch" type="Node3D" parent="FlashlightYaw" index="0" unique_id=958168013]
 
 [node name="Flashlight" parent="FlashlightYaw/FlashlightPitch" index="0" unique_id=587951616 instance=ExtResource("2_s4x8y")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="3" unique_id=2089377567]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0047730207, 1.3362896, 1.4983213)
+mesh = SubResource("SphereMesh_s4x8y")

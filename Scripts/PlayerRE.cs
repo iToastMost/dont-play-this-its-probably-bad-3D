@@ -69,6 +69,7 @@ public partial class PlayerRE : CharacterBody3D
 
     public CollisionShape3D MeleeCollisionShape;
     public Area3D MeleeCollisionArea;
+    public JacobianIK3D JacobianIK;
 
 
     public int Ammo = 12;
@@ -139,6 +140,9 @@ public override void _Ready()
 
         MuzzleFlashOmniLight.Visible = false;
         MuzzleFlashSpotLight.Visible = false;
+
+        JacobianIK = GetNode<JacobianIK3D>("CharacterModelAnim/Rig/Skeleton3D/JacobianIK3D");
+        JacobianIK.Active = false;
 
         WeaponSkin = GetNode<MeshInstance3D>("CharacterModelAnim/Rig/Skeleton3D/BoneAttachment3D/Gun");
         WeaponSkin.Visible = false;
