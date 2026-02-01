@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cmc37doc3qiso"]
 
 [ext_resource type="Script" uid="uid://d01hiirlyhuqf" path="res://Scripts/PlayerRE.cs" id="1_6f1mo"]
-[ext_resource type="PackedScene" uid="uid://gmfcw4lto8ll" path="res://Scenes/laser.tscn" id="2_x8lbm"]
 [ext_resource type="PackedScene" uid="uid://57k74domxfhb" path="res://Scenes/Art/Models/Characters/character_model_anim.tscn" id="3_5lkqk"]
 [ext_resource type="PackedScene" uid="uid://cboa3wj2purcw" path="res://Art/Particles/muzzle_flash.tscn" id="4_cxqew"]
 
@@ -104,7 +103,7 @@ collision_layer = 3
 script = ExtResource("1_6f1mo")
 speed = 15.0
 turnSpeed = 3.0
-AimSpeed = 1.5
+AimSpeed = 0.5
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=796656829]
 visible = false
@@ -157,13 +156,6 @@ visible = false
 mesh = SubResource("BoxMesh_onrkg")
 skeleton = NodePath("../..")
 
-[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1367677779]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.122525, 0.416765, 0)
-
-[node name="Laser" parent="." unique_id=1548932785 instance=ExtResource("2_x8lbm")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.53090197, 0.3969257, 0.13499188)
-target_position = Vector3(0, -100, 0)
-
 [node name="CharacterModelAnim" parent="." unique_id=293817587 instance=ExtResource("3_5lkqk")]
 transform = Transform3D(-3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 0, -0.82852, 0)
 
@@ -180,5 +172,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47797245, 0.3969257, 0.1349
 [node name="MuzzleFlashTimer" type="Timer" parent="." unique_id=153451735]
 wait_time = 0.1
 one_shot = true
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1428972861]
+transform = Transform3D(-4.3711434e-08, -1, 1.6405816e-07, 1, -4.3711456e-08, -5.573397e-08, 5.573397e-08, 1.6405815e-07, 1, 0.3167938, 0.20265698, 2.2351742e-08)
 
 [connection signal="animation_finished" from="SubViewportContainer/AnimationPlayer" to="." method="AnimationFinished"]

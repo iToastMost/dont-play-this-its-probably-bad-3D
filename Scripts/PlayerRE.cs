@@ -70,6 +70,7 @@ public partial class PlayerRE : CharacterBody3D
     public CollisionShape3D MeleeCollisionShape;
     public Area3D MeleeCollisionArea;
     public JacobianIK3D JacobianIK;
+    public MeshInstance3D AimIK;
 
 
     public int Ammo = 12;
@@ -101,7 +102,7 @@ public partial class PlayerRE : CharacterBody3D
     public bool IsMeleeAttacking = false;
     
     
-    Node3D aimPoint;
+    //Node3D aimPoint;
     private StateMachine sm;
 
     public bool MovementInput() => Input.IsActionPressed("walk_forward")
@@ -111,6 +112,11 @@ public partial class PlayerRE : CharacterBody3D
                                    || Input.IsActionJustPressed("spin_back");
 
     public bool AimInput() => Input.IsActionPressed("aim");
+    
+    public bool AimWeaponInput() => Input.IsActionPressed("aim_right")
+                                    || Input.IsActionPressed("aim_left")
+                                    || Input.IsActionPressed("aim_up")
+                                    || Input.IsActionPressed("aim_down");
 
     public bool ReloadInput() => Input.IsActionPressed("reload");
     
@@ -143,6 +149,7 @@ public override void _Ready()
 
         JacobianIK = GetNode<JacobianIK3D>("CharacterModelAnim/Rig/Skeleton3D/JacobianIK3D");
         JacobianIK.Active = false;
+        AimIK = GetNode<MeshInstance3D>("CharacterModelAnim/MeshInstance3D");
 
         WeaponSkin = GetNode<MeshInstance3D>("CharacterModelAnim/Rig/Skeleton3D/BoneAttachment3D/Gun");
         WeaponSkin.Visible = false;
@@ -156,9 +163,9 @@ public override void _Ready()
         
         
         rayCast = GetNode<RayCast3D>("RayCast3D");
-        laser = GetNode<RayCast3D>("Laser");
-        aimPoint = GetNode<Node3D>("AimPoint");
-        _aimPointDefaultPositon = aimPoint.Position;
+        laser = GetNode<RayCast3D>("CharacterModelAnim/Rig/Skeleton3D/BoneAttachment3D/Laser");
+        //aimPoint = GetNode<Node3D>("AimPoint");
+        //_aimPointDefaultPositon = aimPoint.Position;
 
         laser.Visible = false;
         

@@ -58,29 +58,56 @@ public class AimState : PlayerState
 
     public void HandlePlayerAim(double delta)
     {
+        if(player.playerAnimation.CurrentAnimation != "Pistol_Idle")
+            player.PlayAnimation("Pistol_Idle");
+        
+        var transform = player.AimIK.Transform;
         if (Input.IsActionPressed("aim_right"))
         {
-            player.laser.RotateY(-player.AimSpeed /2 * (float)delta);
+            //player.laser.RotateY(-player.AimSpeed /2 * (float)delta);
+            if(player.playerAnimation.IsPlaying())
+                player.playerAnimation.Stop();
+            
+            player.AimIK.Position -= transform.Basis.X * (player.AimSpeed * 2) * (float)delta;
         }
                     
         if (Input.IsActionPressed("aim_left"))
         {
-            player.laser.RotateY(player.AimSpeed/2 * (float)delta);
+            //player.laser.RotateY(player.AimSpeed/2 * (float)delta);
+            if(player.playerAnimation.IsPlaying())
+                player.playerAnimation.Stop();
+            
+            player.AimIK.Position += transform.Basis.X * (player.AimSpeed * 2) * (float)delta;
         }
                     
         if (Input.IsActionPressed("aim_up"))
         {
-            player.laser.RotateZ(player.AimSpeed/2 * (float)delta);
+            //player.laser.RotateZ(player.AimSpeed/2 * (float)delta);
+            if(player.playerAnimation.IsPlaying())
+                player.playerAnimation.Stop();
+            
+            player.AimIK.Position += transform.Basis.Y * (player.AimSpeed * 2) * (float)delta;
         }
                     
         if (Input.IsActionPressed("aim_down"))
         {
-            player.laser.RotateZ(-player.AimSpeed/2 * (float)delta);
+           // player.laser.RotateZ(-player.AimSpeed/2 * (float)delta);
+           if(player.playerAnimation.IsPlaying())
+               player.playerAnimation.Stop();
+           
+            player.AimIK.Position -= transform.Basis.Y * (player.AimSpeed * 2) * (float)delta;
         }
                     
-        float y = Mathf.Clamp(player.laser.Rotation.Y, Mathf.DegToRad(-45), Mathf.DegToRad(45));
-        float z = Mathf.Clamp(player.laser.Rotation.Z, Mathf.DegToRad(80), Mathf.DegToRad(100));
-        player.laser.Rotation = new Vector3(0,y,z);
+        // float y = Mathf.Clamp(player.laser.Rotation.Y, Mathf.DegToRad(-45), Mathf.DegToRad(45));
+        // float z = Mathf.Clamp(player.laser.Rotation.Z, Mathf.DegToRad(80), Mathf.DegToRad(100));
+        // player.laser.Rotation = new Vector3(0,y,z);
+
+        float aimY = Mathf.Clamp(player.AimIK.Position.Y, -1, 2);
+        float aimX = Mathf.Clamp(player.AimIK.Position.X, -1, 1);
+        player.AimIK.Position = new Vector3(aimX,aimY, 1.5f);
+        
+        if(!player.AimWeaponInput())
+            player.playerAnimation.Play();
     }
 
     private void MeleeAttack()
@@ -130,7 +157,8 @@ public class AimState : PlayerState
     public override void Exit()
     {
         player.laser.Visible = false;
-        player.laser.Rotation = new Vector3(0,0, Mathf.DegToRad(90));
+        //player.laser.Rotation = new Vector3(0,0, Mathf.DegToRad(90));
+        player.AimIK.Position = new Vector3(0, 1.5f, 1.5f);
         player.JacobianIK.Active = false;
     }
 }

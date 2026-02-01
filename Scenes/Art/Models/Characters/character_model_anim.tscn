@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://57k74domxfhb"]
 
 [ext_resource type="PackedScene" uid="uid://jvhos6xb7o5s" path="res://Scenes/Art/Animations/AnimationLibrary_Godot_Standard.glb" id="1_amo2j"]
+[ext_resource type="PackedScene" uid="uid://gmfcw4lto8ll" path="res://Scenes/laser.tscn" id="2_7yfti"]
 [ext_resource type="AnimationLibrary" uid="uid://qcle3w2pjibl" path="res://Scenes/Art/Animations/new_animation_library.tres" id="2_gd4t8"]
 [ext_resource type="PackedScene" uid="uid://b3deyvp7egn12" path="res://Scenes/flashlight.tscn" id="2_s4x8y"]
 
@@ -120,6 +121,10 @@ shape = SubResource("BoxShape3D_s4x8y")
 disabled = true
 debug_color = Color(0.88083965, 0.20205459, 0.6743915, 0.41960785)
 
+[node name="Laser" parent="Rig/Skeleton3D/BoneAttachment3D" index="2" unique_id=660180311 instance=ExtResource("2_7yfti")]
+transform = Transform3D(-1, 8.7422954e-08, 5.573399e-08, -8.742294e-08, -1, 1.6405819e-07, 5.573397e-08, 1.6405815e-07, 1, -0.01179266, 0.61103344, 0.13499181)
+target_position = Vector3(0, -100, 0)
+
 [node name="JacobianIK3D" type="JacobianIK3D" parent="Rig/Skeleton3D" index="2" unique_id=1682238483]
 active = false
 setting_count = 2
@@ -161,5 +166,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29897222, 1.6672305, 0.1133
 [node name="Flashlight" parent="FlashlightYaw/FlashlightPitch" index="0" unique_id=587951616 instance=ExtResource("2_s4x8y")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="3" unique_id=2089377567]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0047730207, 1.3362896, 1.4983213)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 1.5)
+visible = false
 mesh = SubResource("SphereMesh_s4x8y")
