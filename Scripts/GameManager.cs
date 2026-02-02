@@ -228,7 +228,7 @@ public partial class GameManager : Node3D
 		_playerRe.LootItemSelected += HandleLootItemUI;
 		_dialogue.YesLootButtonPressed += UpdateInventory;
 		_dialogue.DialogueFinished += DialogueFinished;
-		_deathScreenUI.LoadGameButtonPressed += LoadGame;
+		_deathScreenUI.LoadGameButtonPressed += ResetGame;
 		_deathScreenUI.QuitButtonPressed += QuitButtonPressed;
 
 		_firstLoad = false;
@@ -542,6 +542,118 @@ public partial class GameManager : Node3D
 		UpdateAmmo(_playerRe.Ammo);
 	}
 
+	private void ResetGame()
+	{
+		if (_isLoadingEnvironment)
+			return;
+
+		_playerRe.PlayerRespawn();
+		
+		//_isLoadingEnvironment = true;
+		
+		//Removes current environment from GameManagers Environment node
+		var environmentChildren = _environment.GetChildren();
+		var doorsInGroup = GetTree().GetNodesInGroup("Doors");
+
+		//Remove doors from current scene from the doors group
+		foreach(Door door in doorsInGroup) 
+		{
+			door.RemoveFromGroup("Doors");
+		}
+
+		//Gets rid of the environment child so the new one can be added
+		foreach(Node3D child in environmentChildren) 
+		{
+			child.QueueFree();
+		}
+
+		if(_currentEnvironment != null) 
+		{
+			_currentEnvironment = null;
+		}
+		Vector3 playerSpawnPos;
+		
+		SaveData loadedData = null;
+		loadedData = SaveFileManager.LoadGame();
+		
+		GD.Print("Loading Save...");
+		
+		if(_firstLoad)
+			NodeSetup();
+		
+		playerSpawnPos = new Vector3(loadedData.PlayerPosX.ToFloat(),  loadedData.PlayerPosY.ToFloat(), loadedData.PlayerPosZ.ToFloat());
+		var playerSpawnRotation = new Vector3(0, loadedData.PlayerRotationY.ToFloat(), 0);
+		_playerRe.GlobalRotation = playerSpawnRotation;
+		_playerRe.GlobalPosition = playerSpawnPos;
+		_playerRe._health = loadedData.Playerhealth;
+		_playerRe.Ammo = loadedData.PlayerAmmo;
+
+		_playerInventory = InventoryManager.GetInstance();
+		
+		for (int i = 0; i < _playerInventory.Length; i++)
+		{
+			if (loadedData.playerInventory[i] != -1)
+			{
+				ItemBase item = ItemDatabase.GetItem(loadedData.playerInventory[i]).Instantiate<ItemBase>();
+				_playerInventory[i] = item;
+				if (item is AmmoItemBase ammo)
+				{
+					_inventory.UpdateInventory(ammo.GetName() + " (" + ammo.AmmoAmount + ")", i);
+				}
+				else
+				{
+					_inventory.UpdateInventory(item.GetName(), i);
+				}
+				
+			}
+		}
+
+		if (loadedData.equippedItem != -1)
+		{
+			ItemBase item = ItemDatabase.GetItem(loadedData.equippedItem).Instantiate<ItemBase>();
+			if(item is iEquippable equipment)
+				EquipItem(equipment);
+		}
+		
+		GameStateManager.Instance.LoadData(loadedData.ZoneStates);
+		
+		var loadEnvironment = EnvironmentManager.GetEnvironment(loadedData.CurrentEnvironment);
+		_currentEnvironment = loadEnvironment.Instantiate<Node3D>();
+		_environment.AddChild(_currentEnvironment);
+		
+		//_playerInitialSpawnPoint = _currentEnvironment.GetNode<Marker3D>("Spawnpoints/InitialPlayerSpawn");
+		//_playerRe.GlobalPosition = _playerInitialSpawnPoint.GlobalPosition;
+		//_playerRe.Rotation = _playerInitialSpawnPoint.Rotation;
+		
+		var zone = _currentEnvironment.GetNode<Zone>(".");
+		GameStateManager.Instance.AddZoneState(zone.ZoneId);
+
+		_previousEnvironment = _currentEnvironment;
+
+		for (int i = 0; i < _playerInventory.Length; i++)
+		{
+			GD.Print(_playerInventory[i]);
+		}
+        
+		_healthLabel = _ui.GetNode<Label>("CanvasLayer/HealthLabel");
+		//_healthLabel.Text = "Fine";
+		UpdatePlayerHealth();
+		_healthLabel.Visible = false;
+		
+        
+		_ammoLabel = _ui.GetNode<Label>("CanvasLayer/AmmoLabel");
+		_ammoLabel.Text = "Ammo: " + _playerRe.Ammo;
+		_ammoLabel.Visible = false;
+		CallDeferred(nameof(ConnectZoneSignals));
+		CallDeferred(nameof(ConnectSignals));
+		
+		
+		ConnectDoorSignals();
+		ConnectEnvironmentSignals();
+		
+		CheckStoreLights();
+	}
+	
 	private void PrepareLoadingEnvironment(string path, int keyId, string zoneId, string doorId, bool isLocked)
 	{
 		if(isLocked)

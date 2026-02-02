@@ -94,6 +94,7 @@ public partial class PlayerRE : CharacterBody3D
     public OmniLight3D MuzzleFlashOmniLight;
     public SpotLight3D MuzzleFlashSpotLight;
     public Timer MuzzleFlashTimer;
+    public Timer IKTimer;
     
     public Node3D Flashlight;
     public Node3D FlashlightPitch;
@@ -103,7 +104,7 @@ public partial class PlayerRE : CharacterBody3D
     
     
     //Node3D aimPoint;
-    private StateMachine sm;
+    public StateMachine sm;
 
     public bool MovementInput() => Input.IsActionPressed("walk_forward")
                                    || Input.IsActionPressed("walk_back")
@@ -124,6 +125,7 @@ public partial class PlayerRE : CharacterBody3D
 public override void _Ready()
     {
         //player = GetNode<CharacterBody3D>("3DPlayer");
+        IKTimer = GetNode<Timer>("IKAimDelay");
         playerAnimation = GetNode<AnimationPlayer>("CharacterModelAnim/AnimationPlayer");
 
         colorRect = GetNode<ColorRect>("SubViewportContainer/CanvasLayer/ColorRect");
@@ -173,6 +175,7 @@ public override void _Ready()
         
         playerAnimation.AnimationFinished += OnAnimationFinish;
         MuzzleFlashTimer.Timeout += OnTimerTimeout;
+        IKTimer.Timeout += OnIKAimDelayTimeout;
 
         //Uncomment below code and switch _canMove and _3DStarted to false to start with GooseJump game
         _playerCollider.Disabled = true;
@@ -361,6 +364,11 @@ public override void _Ready()
         MuzzleFlashOmniLight.Visible = false;
         MuzzleFlashSpotLight.Visible = false;
     }
+
+    private void OnIKAimDelayTimeout()
+    {
+        JacobianIK.Active = true;
+    }
     
     public void DisableMovement() 
     {
@@ -385,9 +393,22 @@ public override void _Ready()
         sm.ChangeState(PlayerStateTypes.Dead);
     }
 
+    public void PlayerRespawn()
+    {
+        CanMove = true;
+        IsDead = false;
+        CallDeferred("EnablePlayerCollision");
+        sm.ChangeState(PlayerStateTypes.Idle);
+    }
+
     private void DisablePlayerCollision()
     {
         _playerCollider.Disabled = true;
+    }
+
+    private void EnablePlayerCollision()
+    {
+        _playerCollider.Disabled = false;
     }
     
     public void PlayAnimation(string  animationName)
@@ -484,6 +505,9 @@ public override void _Ready()
             IsMeleeAttacking = false;
             sm.ChangeState(PlayerStateTypes.Aim);
         }
+        
+        if(animName.Equals("Pistol_Shoot"))
+            PlayAnimation("Pistol_Idle");
 
     }
     

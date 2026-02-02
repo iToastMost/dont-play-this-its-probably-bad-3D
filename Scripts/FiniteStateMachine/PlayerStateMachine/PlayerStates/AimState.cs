@@ -8,9 +8,10 @@ public class AimState : PlayerState
     private CollisionObject3D _meleeCollision;
     public override void Enter()
     {
-        player.JacobianIK.Active = true;
+        //player.JacobianIK.Active = true;
         if (player.HandEquipmentSlot is FirearmBase)
         {
+            player.IKTimer.Start();
             player.PlayAnimation("Pistol_Idle");
             player.laser.Visible = true;
         }
@@ -58,9 +59,6 @@ public class AimState : PlayerState
 
     public void HandlePlayerAim(double delta)
     {
-        if(player.playerAnimation.CurrentAnimation != "Pistol_Idle")
-            player.PlayAnimation("Pistol_Idle");
-        
         var transform = player.AimIK.Transform;
         if (Input.IsActionPressed("aim_right"))
         {
@@ -92,7 +90,7 @@ public class AimState : PlayerState
         if (Input.IsActionPressed("aim_down"))
         {
            // player.laser.RotateZ(-player.AimSpeed/2 * (float)delta);
-           if(player.playerAnimation.IsPlaying())
+           if (player.playerAnimation.IsPlaying())
                player.playerAnimation.Stop();
            
             player.AimIK.Position -= transform.Basis.Y * (player.AimSpeed * 2) * (float)delta;
@@ -108,6 +106,8 @@ public class AimState : PlayerState
         
         if(!player.AimWeaponInput())
             player.playerAnimation.Play();
+        
+        
     }
 
     private void MeleeAttack()
