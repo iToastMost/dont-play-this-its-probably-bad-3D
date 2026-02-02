@@ -22,6 +22,7 @@ public partial class Enemy3D : CharacterBody3D
     public float _distanceToPlayer;
     public Timer WanderTimer;
     public Timer HitStunTimer;
+    public Timer BleedTimer;
     public bool CanWander;
 
     public RayCast3D AttackRay;
@@ -52,6 +53,7 @@ public partial class Enemy3D : CharacterBody3D
         enemyAttackBox = GetNode<Area3D>("AttackBox");
         WanderTimer = GetNode<Timer>("WanderTimer");
         HitStunTimer = GetNode<Timer>("HitStunTimer");
+        BleedTimer = GetNode<Timer>("BleedTimer");
         EnemyAnimationPlayer = GetNode<AnimationPlayer>("EnemyModel/AnimationPlayer");
         NavAgent = GetNode<NavigationAgent3D>("NavigationAgent3D");
         
@@ -65,6 +67,7 @@ public partial class Enemy3D : CharacterBody3D
         
         WanderTimer.Timeout += WanderTimeout;
         HitStunTimer.Timeout += HitStunTimeout;
+        BleedTimer.Timeout += BleedTimeout;
 
         _rayCasts = new();
         
@@ -136,6 +139,11 @@ public partial class Enemy3D : CharacterBody3D
         if(!IsDead)
             esm.ChangeState(EnemyStateTypes.Chase);
     }
+
+    private void BleedTimeout()
+    {
+        TakeDamage();
+    }
     
     public void TakeDamage()
     {
@@ -150,6 +158,7 @@ public partial class Enemy3D : CharacterBody3D
         _health--;
         if (_health <= 0) 
         {
+            BleedTimer.Stop();
             IsDead = true;
             GameStateManager.Instance.MarkEnemyKilled(ZoneId, EnemyId);
             esm.ChangeState(EnemyStateTypes.Death);

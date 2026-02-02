@@ -91,7 +91,7 @@ bone_name = "DEF-hand.R"
 bone_idx = 29
 
 [node name="Gun" type="MeshInstance3D" parent="Rig/Skeleton3D/BoneAttachment3D" index="0" unique_id=1263929744]
-transform = Transform3D(-1.3082939e-07, -1.2761217e-08, 0.023938932, 0.14762315, 0.0085937185, 2.3353259e-08, -0.03321419, 0.03819546, 1.6437032e-09, -0.039762378, 0.16511583, 0.06137859)
+transform = Transform3D(-1.3619147e-07, -7.702974e-09, 0.023938933, 0.1510418, 0.0023450602, 2.3447281e-08, -0.009063504, 0.03907999, 2.236417e-09, -0.039762378, 0.16511577, 0.061378587)
 visible = false
 mesh = SubResource("BoxMesh_amo2j")
 skeleton = NodePath("../../../..")
@@ -122,7 +122,7 @@ disabled = true
 debug_color = Color(0.88083965, 0.20205459, 0.6743915, 0.41960785)
 
 [node name="Laser" parent="Rig/Skeleton3D/BoneAttachment3D" index="2" unique_id=660180311 instance=ExtResource("2_7yfti")]
-transform = Transform3D(-1, 8.7422954e-08, 5.573399e-08, -8.742294e-08, -1, 1.6405819e-07, 5.573397e-08, 1.6405815e-07, 1, -0.01179266, 0.61103344, 0.13499181)
+transform = Transform3D(-1, 8.090744e-08, 1.34319365e-08, -8.010879e-08, -0.9986739, 0.051482063, 1.7579296e-08, 0.051482078, 0.99867415, -0.011792421, 0.29024124, -0.0013505816)
 target_position = Vector3(0, -100, 0)
 
 [node name="JacobianIK3D" type="JacobianIK3D" parent="Rig/Skeleton3D" index="2" unique_id=1682238483]
@@ -138,10 +138,10 @@ settings/0/extend_end_bone = false
 settings/0/joint_count = 3
 settings/1/root_bone_name = "DEF-upper_arm.L"
 settings/1/root_bone = 8
-settings/1/end_bone_name = "DEF-hand.L"
-settings/1/end_bone = 10
+settings/1/end_bone_name = "DEF-f_middle.01.L"
+settings/1/end_bone = 14
 settings/1/extend_end_bone = false
-settings/1/joint_count = 3
+settings/1/joint_count = 4
 settings/0/joints/0/rotation_axis = 3
 settings/0/joints/0/limitation = null
 settings/0/joints/1/rotation_axis = 3
@@ -154,6 +154,8 @@ settings/1/joints/1/rotation_axis = 3
 settings/1/joints/1/limitation = null
 settings/1/joints/2/rotation_axis = 3
 settings/1/joints/2/limitation = null
+settings/1/joints/3/rotation_axis = 3
+settings/1/joints/3/limitation = null
 
 [node name="AnimationPlayer" parent="." index="1"]
 libraries/ = ExtResource("2_gd4t8")

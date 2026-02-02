@@ -183,4 +183,7 @@ one_shot = true
 path_height_offset = -0.25
 debug_enabled = true
 
+[node name="BleedTimer" type="Timer" parent="." unique_id=223057388]
+wait_time = 5.0
+
 [editable path="EnemyModel"]

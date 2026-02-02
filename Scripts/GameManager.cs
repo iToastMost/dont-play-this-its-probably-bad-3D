@@ -230,6 +230,7 @@ public partial class GameManager : Node3D
 		_dialogue.DialogueFinished += DialogueFinished;
 		_deathScreenUI.LoadGameButtonPressed += ResetGame;
 		_deathScreenUI.QuitButtonPressed += QuitButtonPressed;
+		_deathScreenUI.MainMenuButtonPressed += ReturnToMainMenu;
 
 		_firstLoad = false;
 	}
@@ -652,6 +653,36 @@ public partial class GameManager : Node3D
 		ConnectEnvironmentSignals();
 		
 		CheckStoreLights();
+	}
+
+	private void ReturnToMainMenu()
+	{
+		//Removes current environment from GameManagers Environment node
+		var environmentChildren = _environment.GetChildren();
+		var doorsInGroup = GetTree().GetNodesInGroup("Doors");
+
+		//Remove doors from current scene from the doors group
+		foreach(Door door in doorsInGroup) 
+		{
+			door.RemoveFromGroup("Doors");
+		}
+
+		//Gets rid of the environment child so the new one can be added
+		foreach(Node3D child in environmentChildren) 
+		{
+			child.QueueFree();
+		}
+
+		if(_currentEnvironment != null) 
+		{
+			_currentEnvironment = null;
+		}
+		
+		if(_playerRe != null)
+			_playerRe.QueueFree();
+
+		//TODO Instantiate menu, add as child of game manager and get rid of PlayerSetup node
+		//var menu = _mainMenu.Instantiate<Node3D>();
 	}
 	
 	private void PrepareLoadingEnvironment(string path, int keyId, string zoneId, string doorId, bool isLocked)

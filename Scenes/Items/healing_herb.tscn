@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://urqpvkpkkito"]
+[gd_scene format=3 uid="uid://urqpvkpkkito"]
 
 [ext_resource type="Script" uid="uid://fq5xgxiln5n5" path="res://Scripts/Items/HealingHerb.cs" id="1_f7bjj"]
 
@@ -11,16 +11,37 @@ material = SubResource("StandardMaterial3D_f7bjj")
 [sub_resource type="BoxShape3D" id="BoxShape3D_5d0d4"]
 size = Vector3(0.38775635, 1.5803223, 0.5820923)
 
-[node name="HealingHerb" type="StaticBody3D"]
+[sub_resource type="BoxMesh" id="BoxMesh_2f7hb"]
+size = Vector3(0.15, 0.02, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fgr0i"]
+albedo_color = Color(0.05882353, 1, 0.15294118, 1)
+
+[node name="HealingHerb" type="StaticBody3D" unique_id=810504392]
 script = ExtResource("1_f7bjj")
 HealAmount = 25
 itemName = "Healing Herb"
 itemDescription = "Heals you... duh"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1094792359]
 transform = Transform3D(0.10286185, 0, 0, 0, 0.35974598, 0, 0, 0, 0.068909556, 0, 0, 0)
 mesh = SubResource("BoxMesh_f7bjj")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1023696467]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016204834, 0.6278076, 0.043060303)
 shape = SubResource("BoxShape3D_5d0d4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=836379760]
+transform = Transform3D(0.49999997, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, 0.49999997, -0.0067702383, 0.025192857, 0.062903166)
+mesh = SubResource("BoxMesh_2f7hb")
+surface_material_override/0 = SubResource("StandardMaterial3D_fgr0i")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=744604285]
+transform = Transform3D(0.258819, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, 0.258819, 0.037345394, 0.10865998, -0.05466801)
+mesh = SubResource("BoxMesh_2f7hb")
+surface_material_override/0 = SubResource("StandardMaterial3D_fgr0i")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1521003783]
+transform = Transform3D(-0.25881907, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881907, 0.004273221, -0.04692185, -0.05466801)
+mesh = SubResource("BoxMesh_2f7hb")
+surface_material_override/0 = SubResource("StandardMaterial3D_fgr0i")

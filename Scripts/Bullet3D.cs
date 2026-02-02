@@ -33,15 +33,28 @@ public partial class Bullet3D : Node3D
 			if(hitInfo is Enemy3D enemy) 
 			{
 				enemy.TakeDamage();
+				
 				var bloodParticle = ResourceLoader.Load<PackedScene>("res://Art/Particles/BloodParticles.tscn");
 				_bloodParticles = bloodParticle.Instantiate<GpuParticles3D>();
-				GetParent().AddChild(_bloodParticles);
+				enemy.AddChild(_bloodParticles);
 				_bloodParticles.GlobalPosition = bulletHitPoint.GlobalPosition;
 				_bloodParticles.Emitting = true;
+				
+				if (RollBleedChance())
+				{
+					enemy.BleedTimer.Start();
+					_bloodParticles.OneShot = false;
+				}
 			}
 			GD.Print(hitInfo.GetClass());
 			QueueFree();
 		}
+	}
+
+	private bool RollBleedChance()
+	{
+		var roll = GD.RandRange(0, 100);
+		return roll == 50;
 	}
 
 	public void SetDireciton(Vector3 direction) 

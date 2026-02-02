@@ -60,6 +60,10 @@ public class AimState : PlayerState
     public void HandlePlayerAim(double delta)
     {
         var transform = player.AimIK.Transform;
+        player.playerAnimation.SpeedScale -= ((float)delta / 5);
+        if (player.playerAnimation.SpeedScale < 0)
+            player.playerAnimation.SpeedScale = 0;
+        
         if (Input.IsActionPressed("aim_right"))
         {
             //player.laser.RotateY(-player.AimSpeed /2 * (float)delta);
@@ -119,8 +123,9 @@ public class AimState : PlayerState
     
     public void Shoot()
     {
-        if(player.Ammo > 0) 
+        if(player.Ammo > 0)
         {
+            player.playerAnimation.SpeedScale = 1;
             player.MuzzleFlashTimer.Start();
             player.PlayAnimation("Pistol_Idle");
             lastAttack = fireRate;
@@ -160,5 +165,6 @@ public class AimState : PlayerState
         //player.laser.Rotation = new Vector3(0,0, Mathf.DegToRad(90));
         player.AimIK.Position = new Vector3(0, 1.5f, 1.5f);
         player.JacobianIK.Active = false;
+        player.playerAnimation.SpeedScale = 1;
     }
 }
