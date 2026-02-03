@@ -12,7 +12,8 @@ public static class ItemDatabase
 		{3, ResourceLoader.Load<PackedScene>("res://Scenes/Items/lockup_key.tscn")},
 		{4, ResourceLoader.Load<PackedScene>("res://Scenes/Items/fuse.tscn")},
 		{5, ResourceLoader.Load<PackedScene>("res://Scenes/Items/boxcutter.tscn")},
-		{6, ResourceLoader.Load<PackedScene>("res://Scenes/Items/sisyphus_boulder.tscn")}
+		{6, ResourceLoader.Load<PackedScene>("res://Scenes/Items/sisyphus_boulder.tscn")},
+		{7, ResourceLoader.Load<PackedScene>("res://Scenes/Items/office_key.tscn")},
 		
 	};
 

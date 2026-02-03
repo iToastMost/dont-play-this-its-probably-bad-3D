@@ -14,12 +14,14 @@ public partial class Door : StaticBody3D, iInteractable
 
 	[Export] public bool IsLocked { get; set; }
 
+	[Export] public string failedCheckText { get; set; }
+	
 	[Export] public string DoorId { get; set; }
 	
 	[Export] public string ZoneId { get; set; }
 
 	[Signal]
-	public delegate void LoadEnvironmentEventHandler(string path, int keyIdRequired, string zoneId, string doorId, bool isLocked);
+	public delegate void LoadEnvironmentEventHandler(string path, int keyIdRequired, string zoneId, string doorId, string failedKeyCheckText, bool isLocked);
 
 	[Signal]
 	public delegate void KeyIdCheckEventHandler(int id, string path);
@@ -50,7 +52,7 @@ public partial class Door : StaticBody3D, iInteractable
 		//GD.Print("You talked with a door! It doesn't have much to say");
 		//GD.Print("Transporting you to: " + environmentToLoad);
 		//GetTree().ChangeSceneToFile(environmentToLoad);
-		EmitSignal(SignalName.LoadEnvironment, _environmentToLoad, KeyIdRequired, ZoneId, DoorId, IsLocked);
+		EmitSignal(SignalName.LoadEnvironment, _environmentToLoad, KeyIdRequired, ZoneId, DoorId, failedCheckText, IsLocked);
 		
 	    //EmitSignalKeyIdCheck(KeyIdRequired, _environmentToLoad);
 		

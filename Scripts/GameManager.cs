@@ -402,7 +402,7 @@ public partial class GameManager : Node3D
 						ammo.AmmoAmount += lootedAmmo.AmmoAmount;
 						_inventory.UpdateInventory(ammo.GetName() + " (" + ammo.AmmoAmount + ")", i);
 						lootedAmmo.QueueFree();
-
+						_playerRe.PlayAnimation("PickUp_Table");
 						return;
 					} 
 					
@@ -415,6 +415,7 @@ public partial class GameManager : Node3D
 				
 				loot.Loot(_playerInventory, loot.GetID(), emptyIdx);
 				_inventory.UpdateInventory(lootedAmmo.GetName() + " (" + lootedAmmo.AmmoAmount + ")", emptyIdx);
+				_playerRe.PlayAnimation("PickUp_Table");
 				return;
 			}
 			
@@ -424,7 +425,7 @@ public partial class GameManager : Node3D
 				{
 					loot.Loot(_playerInventory, loot.GetID(), i);
 					_inventory.UpdateInventory(loot.GetName(), i);
-						
+					_playerRe.PlayAnimation("PickUp_Table");
 					return;
 				}
 		}
@@ -685,10 +686,10 @@ public partial class GameManager : Node3D
 		//var menu = _mainMenu.Instantiate<Node3D>();
 	}
 	
-	private void PrepareLoadingEnvironment(string path, int keyId, string zoneId, string doorId, bool isLocked)
+	private void PrepareLoadingEnvironment(string path, int keyId, string zoneId, string doorId, string failedKeyText,bool isLocked)
 	{
 		if(isLocked)
-			if (!CheckForKey(keyId, zoneId, doorId))
+			if (!CheckForKey(keyId, zoneId, doorId, failedKeyText))
 				return;
 		
 		_sceneToLoad = path;
@@ -756,7 +757,7 @@ public partial class GameManager : Node3D
         CheckStoreLights();
     }
 
-	private bool CheckForKey(int keyId, string zoneId, string doorId)
+	private bool CheckForKey(int keyId, string zoneId, string doorId, string failedText)
 	{
 		bool keyCheck = false;
 		
@@ -781,7 +782,7 @@ public partial class GameManager : Node3D
 			}
 			
 			GD.Print("You do not have the key to this door");
-			SendDialogue(false, "You","The door is locked. I think I left the key in the break room supply closet.");
+			SendDialogue(false, "You",failedText);
 			return keyCheck;
 		}
 		

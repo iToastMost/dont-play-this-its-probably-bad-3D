@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://6wkuykh4p5qh"]
+
+[ext_resource type="Script" uid="uid://bmktyu254uq07" path="res://Scripts/Items/KeyItem.cs" id="1_7wx55"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rhu4y"]
+size = Vector3(1, 2.0615234, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_rhu4y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7wx55"]
+albedo_color = Color(0.90588236, 0.7294118, 0.43529412, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_671gq"]
+
+[node name="OfficeKey" type="StaticBody3D" unique_id=404055002]
+script = ExtResource("1_7wx55")
+KeyId = 2
+itemName = "Office Key"
+itemDescription = "Unlocks the office."
+itemID = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1576220527]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5307617, 0)
+shape = SubResource("BoxShape3D_rhu4y")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1016802780]
+transform = Transform3D(0.118911974, 0, 0, 0, -0.02803345, 0, 0, 0, 0.17900418, 0, 0, 0)
+mesh = SubResource("SphereMesh_rhu4y")
+surface_material_override/0 = SubResource("StandardMaterial3D_7wx55")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=812855902]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 0.294805, 0.7547327, 0, 0)
+mesh = SubResource("BoxMesh_671gq")
+surface_material_override/0 = SubResource("StandardMaterial3D_7wx55")

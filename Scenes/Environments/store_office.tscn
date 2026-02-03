@@ -16,6 +16,14 @@ albedo_texture = ExtResource("2_x3j3r")
 material = SubResource("StandardMaterial3D_767rj")
 size = Vector2(9, 9)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_exavs"]
+resource_local_to_scene = true
+size = Vector3(7.161377, 1, 4.9457703)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nuhjy"]
+resource_local_to_scene = true
+size = Vector3(9.099396, 1, 3.495575)
+
 [node name="StoreOffice" type="Node3D" unique_id=1176101494]
 script = ExtResource("1_767rj")
 ZoneId = "STORE_OFFICE"
@@ -42,7 +50,11 @@ mesh = SubResource("PlaneMesh_gqf4g")
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.501276, 0.70742005, 0.3865854)
 
 [node name="FixedCamera" parent="." unique_id=1637652324 instance=ExtResource("4_aneew")]
-transform = Transform3D(0.6313236, 0.29550123, -0.7170144, 0, 0.92456, 0.38103646, 0.77551955, -0.2405573, 0.58369654, -2.3530242, 1.4212393, 3.0803514)
+transform = Transform3D(0.5514834, 0.31785527, -0.7712549, 1.1556142e-08, 0.92456, 0.38103646, 0.83418596, -0.21013531, 0.5098796, -2.882031, 1.4212393, 3.0803514)
+
+[node name="CollisionShape3D" parent="FixedCamera/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14050293, 0, 2.2076569)
+shape = SubResource("BoxShape3D_exavs")
 
 [node name="Desk" type="CSGBox3D" parent="." unique_id=1600918371]
 transform = Transform3D(0.80958086, 0, 0.5870084, 0, 1, 0, -0.5870084, 0, 0.80958086, -1.4545212, 0.6777841, 2.415264)
@@ -80,15 +92,24 @@ ZoneId = "STORE_OFFICE"
 ItemId = "LOCKUP_KEY"
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=584725882]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1159384, 0.5235114, -4.118686)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0684803, 0.5235114, -4.118686)
 size = Vector3(0.7342529, 1.2236328, 0.58288574)
 
-[node name="SisyphusPuzzle" parent="." unique_id=457353841 instance=ExtResource("8_exavs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9890285, 1.2742643, -4.089061)
+[node name="SisyphusPuzzle" parent="CSGBox3D2" unique_id=457353841 instance=ExtResource("8_exavs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12690997, 0.7507529, 0.029625416)
 InteractText = "It's a statue depicting a man pushing a boulder up a mountain."
 EventCompletionText = "You took the boulder."
 EventAlreadyCompletedText = "You have already taken the boulder."
 EventNameId = "SISYPHUS_BOULDER"
 ZoneId = "STORE_OFFICE"
 
-[editable path="SisyphusPuzzle"]
+[node name="FixedCamera2" parent="." unique_id=1376711828 instance=ExtResource("4_aneew")]
+transform = Transform3D(0.679783, -0.037077084, 0.7324756, 2.8788503e-09, 0.99872136, 0.050554156, -0.73341334, -0.034365855, 0.67891383, 3.21896, 1.3866667, -0.46736193)
+
+[node name="CollisionShape3D" parent="FixedCamera2/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.87358093, 0, -2.5859478)
+shape = SubResource("BoxShape3D_nuhjy")
+
+[editable path="FixedCamera"]
+[editable path="CSGBox3D2/SisyphusPuzzle"]
+[editable path="FixedCamera2"]

@@ -77,5 +77,5 @@ ZoneId = "STORE_BASEMENT"
 [node name="NPC" parent="." unique_id=1442468107 instance=ExtResource("6_4be4p")]
 transform = Transform3D(-0.6799405, 0, -0.73326725, 0, 1, 0, 0.73326725, 0, -0.6799405, 1.9646723, -0.5000001, 1.9240108)
 NPCName = "Mindless Coworker"
-NPCDialogue = "Have you seen those things out there?!? That boxcutter won't get you very far. I head Terry has something a little more serious in his office."
+NPCDialogue = "Have you seen those things out there?!? That boxcutter won't get you very far. I heard Terry has something a little more serious in his office. I dropped the key in a refridgerator when those things started chasing me."
 StartingAnimation = "Sitting_Idle"

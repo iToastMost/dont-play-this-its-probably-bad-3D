@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="1_jna78"]
 [ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="2_fqmik"]
 [ext_resource type="Texture2D" uid="uid://clliwy2u0qvie" path="res://Scenes/Art/Sandbox/texture_06.png" id="3_2goeg"]
+[ext_resource type="PackedScene" uid="uid://6wkuykh4p5qh" path="res://Scenes/Items/office_key.tscn" id="3_5owe4"]
 [ext_resource type="PackedScene" uid="uid://8w1w7i8arnob" path="res://Scenes/enemy3D.tscn" id="3_fqmik"]
 [ext_resource type="Texture2D" uid="uid://xc4p08ehd8og" path="res://Art/Textures/floor_tiled.png" id="3_ubyhl"]
 [ext_resource type="PackedScene" uid="uid://x7dhgnn6do23" path="res://Scenes/Art/Models/Appliances/oven.tscn" id="4_555p5"]
@@ -35,14 +36,14 @@ size = Vector3(3.9537506, 0.5029297, 11.981725)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nb7d"]
 resource_local_to_scene = true
-size = Vector3(10.971645, 1, 1.2559814)
+size = Vector3(9.30467, 1, 1.2559814)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oautp"]
 size = Vector3(3.6306152, 1, 5.8528595)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_opq6q"]
 resource_local_to_scene = true
-size = Vector3(1, 1, 8.2024765)
+size = Vector3(1, 1, 9.928387)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_alpkq"]
 resource_local_to_scene = true
@@ -203,7 +204,7 @@ transform = Transform3D(-0.72539204, -0.1425762, 0.6734081, 0, 0.9783131, 0.2071
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.4027348)
 
 [node name="CollisionShape3D" parent="Cameras/Refridgerators/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1362133, 0, 0.12799072)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.969701, 0, 0.12799072)
 shape = SubResource("BoxShape3D_3nb7d")
 debug_color = Color(0.9254902, 0.27058825, 0, 0.8039216)
 
@@ -213,13 +214,13 @@ shape = SubResource("BoxShape3D_oautp")
 debug_color = Color(0.9254902, 0.27058825, 0, 0.8039216)
 
 [node name="RefridgeratorIsle1" parent="Cameras" unique_id=1464591987 instance=ExtResource("1_jna78")]
-transform = Transform3D(-0.9989232, 0.0017844626, -0.046361156, 0, 0.99926007, 0.03846199, 0.046395484, 0.038420573, -0.998184, -0.87549216, 0.64624465, -2.5439267)
+transform = Transform3D(-0.9989232, 0.0017844626, -0.046361156, 0, 0.99926007, 0.03846199, 0.046395484, 0.038420573, -0.998184, -0.87549216, 0.44238174, -2.5439267)
 
 [node name="Area3D" parent="Cameras/RefridgeratorIsle1" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68233037, 0, 0.23105037)
 
 [node name="CollisionShape3D" parent="Cameras/RefridgeratorIsle1/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.8792381)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.016283)
 shape = SubResource("BoxShape3D_opq6q")
 debug_color = Color(0.9254902, 0.27058825, 0, 0.8039216)
 
@@ -325,6 +326,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.559118, -0.15231103, 28.283
 [node name="CollisionShape3D" parent="Cameras/FixedCamera4/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8431089, 0, -2.051117)
 shape = SubResource("BoxShape3D_vwhf1")
+
+[node name="OfficeKey" parent="Cameras" unique_id=404055002 instance=ExtResource("3_5owe4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.93235743, 0.07261211, -2.0271401)
+ZoneId = "STORE_SHOWROOM_FLOOR"
+ItemId = "STORE_OFFICE_KEY"
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1714483559]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.62563, -0.12534672, 15.030418)
@@ -675,6 +681,7 @@ _environmentToLoad = "res://Scenes/Environments/lockup_scene.tscn"
 _isFlipped = true
 KeyIdRequired = 1
 IsLocked = true
+failedCheckText = "The door is locked. I think I left the key in the breakroom supply closet."
 DoorId = "STORE_LOCKUP_DOOR"
 ZoneId = "STORE_SHOWROOM_FLOOR"
 
@@ -973,6 +980,9 @@ transform = Transform3D(1, 0, 0, 0, 0.5035478, 0.86396736, 0, -0.86396736, 0.503
 [node name="ToOffice" parent="." unique_id=1233551204 instance=ExtResource("2_fqmik")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.08404, -0.5, 5.7388124)
 _environmentToLoad = "res://Scenes/Environments/store_office.tscn"
+KeyIdRequired = 2
+IsLocked = true
+failedCheckText = "The door is locked. Someone must have the keys."
 DoorId = "STORE_OFFICE_DOOR"
 ZoneId = "STORE_SHOWROOM_FLOOR"
 
