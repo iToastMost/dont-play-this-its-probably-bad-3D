@@ -22,66 +22,66 @@
 [ext_resource type="PackedScene" uid="uid://u35hakuavrv8" path="res://Art/Models/Appliances/MESH_CombinedUnit_1_nodoors_v1.glb" id="19_1hiy4"]
 [ext_resource type="PackedScene" uid="uid://bl7iefgr47eo" path="res://Art/Models/Appliances/Fridge/MESH_Fridge_4_nodoors_v1.glb" id="20_5owe4"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_1hiy4"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_5owe4"]
 resource_local_to_scene = true
 size = Vector3(1.8320313, 0.6088867, 10.779541)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_5owe4"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_8ktv8"]
 resource_local_to_scene = true
 size = Vector3(11.5017395, 0.6118164, 7.5625)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_8ktv8"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_3nb7d"]
 resource_local_to_scene = true
 size = Vector3(3.9537506, 0.5029297, 11.981725)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_3nb7d"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_opq6q"]
 resource_local_to_scene = true
 size = Vector3(9.30467, 1, 1.2559814)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oautp"]
 size = Vector3(3.6306152, 1, 5.8528595)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_opq6q"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_alpkq"]
 resource_local_to_scene = true
 size = Vector3(1, 1, 9.928387)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_alpkq"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_1n7f3"]
 resource_local_to_scene = true
 size = Vector3(1, 1, 7.8210297)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_1n7f3"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_04law"]
 resource_local_to_scene = true
 size = Vector3(11.02478, 0.4362793, 4.175255)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_04law"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_248j8"]
 resource_local_to_scene = true
 size = Vector3(9.983381, 0.569458, 8.496788)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_248j8"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_tdhp3"]
 resource_local_to_scene = true
 size = Vector3(10.366257, 0.33544922, 10.629883)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_tdhp3"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_wgedi"]
 resource_local_to_scene = true
 size = Vector3(8.532501, 0.35009766, 10.6519165)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_wgedi"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_rvrjq"]
 resource_local_to_scene = true
 size = Vector3(20.372437, 0.5126953, 8.139911)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rvrjq"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_j4vqx"]
 resource_local_to_scene = true
 size = Vector3(2.6398172, 1.4572754, 6.340578)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_j4vqx"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_1xie8"]
 resource_local_to_scene = true
 size = Vector3(3.5682983, 0.3154297, 6)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_1xie8"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_vwhf1"]
 resource_local_to_scene = true
 size = Vector3(23.873077, 1, 4.350281)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_vwhf1"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_1g5j8"]
 resource_local_to_scene = true
 size = Vector3(11.514099, 1, 9.648865)
 
@@ -115,23 +115,23 @@ uv1_scale = Vector3(2, 2, 2)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5w1iy"]
 albedo_color = Color(0, 2.695322e-06, 0.9414567, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_1g5j8"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_v1cu5"]
 resource_local_to_scene = true
 size = Vector3(6.7766113, 1.7304688, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_v1cu5"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_tw3xx"]
 resource_local_to_scene = true
 size = Vector3(1.2735596, 1.7866211, 1.5058594)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_tw3xx"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_3vo7e"]
 resource_local_to_scene = true
 size = Vector3(2.0561829, 1.5249023, 8.238037)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_3vo7e"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_sh4jl"]
 resource_local_to_scene = true
 size = Vector3(2.1275024, 1.4842529, 8.184937)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_sh4jl"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_dp151"]
 resource_local_to_scene = true
 size = Vector3(5.6191225, 1.3951759, 1.5955658)
 
@@ -172,7 +172,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8989344, 0, 0)
 
 [node name="CollisionShape3D" parent="Cameras/Hallway/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11425781, -0.10961914, 2.7296991)
-shape = SubResource("BoxShape3D_1hiy4")
+shape = SubResource("BoxShape3D_5owe4")
 debug_color = Color(0.9254902, 0.27058825, 0, 0.8039216)
 
 [node name="Appliances" parent="Cameras" unique_id=249520317 instance=ExtResource("1_jna78")]
@@ -183,7 +183,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6576712, 0, 11.864867)
 
 [node name="CollisionShape3D" parent="Cameras/Appliances/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7743073, -0.1940918, 0.7864609)
-shape = SubResource("BoxShape3D_5owe4")
+shape = SubResource("BoxShape3D_8ktv8")
 debug_color = Color(0.9254902, 0.27058825, 0, 0.8039216)
 
 [node name="FrontDoor" parent="Cameras" unique_id=1800498784 instance=ExtResource("1_jna78")]
@@ -194,7 +194,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.564625, 0, 14.222529)
 
 [node name="CollisionShape3D" parent="Cameras/FrontDoor/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.942543, -0.24853516, 4.485017)
-shape = SubResource("BoxShape3D_8ktv8")
+shape = SubResource("BoxShape3D_3nb7d")
 debug_color = Color(0.9254902, 0.27058825, 0, 0.8039216)
 
 [node name="Refridgerators" parent="Cameras" unique_id=1265426633 instance=ExtResource("1_jna78")]
@@ -205,7 +205,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.4027348)
 
 [node name="CollisionShape3D" parent="Cameras/Refridgerators/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.969701, 0, 0.12799072)
-shape = SubResource("BoxShape3D_3nb7d")
+shape = SubResource("BoxShape3D_opq6q")
 debug_color = Color(0.9254902, 0.27058825, 0, 0.8039216)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Cameras/Refridgerators/Area3D" index="1" unique_id=870531702]
@@ -221,7 +221,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68233037, 0, 0.23105037)
 
 [node name="CollisionShape3D" parent="Cameras/RefridgeratorIsle1/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.016283)
-shape = SubResource("BoxShape3D_opq6q")
+shape = SubResource("BoxShape3D_alpkq")
 debug_color = Color(0.9254902, 0.27058825, 0, 0.8039216)
 
 [node name="RefridgeratorIsle2" parent="Cameras" unique_id=1349892155 instance=ExtResource("1_jna78")]
@@ -232,7 +232,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4402823, 0, 2.1551356)
 
 [node name="CollisionShape3D" parent="Cameras/RefridgeratorIsle2/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45543003, 0, 2.1370468)
-shape = SubResource("BoxShape3D_alpkq")
+shape = SubResource("BoxShape3D_1n7f3")
 debug_color = Color(0.9254902, 0.27058825, 0, 0.8039216)
 
 [node name="Appliances2" parent="Cameras" unique_id=1512484843 instance=ExtResource("1_jna78")]
@@ -243,7 +243,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.82687926, -0.10334793, 20.4
 
 [node name="CollisionShape3D" parent="Cameras/Appliances2/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2957911, -0.17004395, -1.5807438)
-shape = SubResource("BoxShape3D_1n7f3")
+shape = SubResource("BoxShape3D_04law")
 debug_color = Color(0.9254902, 0.27058825, 0, 0.8039216)
 
 [node name="TvArea2" parent="Cameras" unique_id=370113089 instance=ExtResource("1_jna78")]
@@ -254,7 +254,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.151394, 0, 0)
 
 [node name="CollisionShape3D" parent="Cameras/TvArea2/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.65947, -0.215271, 1.389019)
-shape = SubResource("BoxShape3D_04law")
+shape = SubResource("BoxShape3D_248j8")
 debug_color = Color(0.9254902, 0.27058825, 0, 0.8039216)
 
 [node name="Appliances2ToFrontDoor" parent="Cameras" unique_id=908093166 instance=ExtResource("1_jna78")]
@@ -265,7 +265,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.947823, 0, 25.753578)
 
 [node name="CollisionShape3D" parent="Cameras/Appliances2ToFrontDoor/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8073807, -0.3322754, 0.026855469)
-shape = SubResource("BoxShape3D_248j8")
+shape = SubResource("BoxShape3D_tdhp3")
 
 [node name="FixedCamera" parent="Cameras" unique_id=753435961 instance=ExtResource("1_jna78")]
 transform = Transform3D(0.7274308, 0.1625636, -0.66664654, 0, 0.97153145, 0.23691067, 0.6861811, -0.1723361, 0.7067219, 20.557243, 1.440977, 30.560799)
@@ -275,7 +275,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.950272, 0, 26.811152)
 
 [node name="CollisionShape3D" parent="Cameras/FixedCamera/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5249176, -0.32495117, -0.97488403)
-shape = SubResource("BoxShape3D_tdhp3")
+shape = SubResource("BoxShape3D_wgedi")
 
 [node name="CenterOfStore" parent="Cameras" unique_id=1995470192 instance=ExtResource("1_jna78")]
 transform = Transform3D(-0.04811011, -0.00079525914, -0.99884176, 0, 0.9999997, -0.00079618115, 0.99884206, -3.830436e-05, -0.048110094, 7.975765, 1.0128995, 14.534449)
@@ -285,7 +285,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.40518, 0, 16.014675)
 
 [node name="CollisionShape3D" parent="Cameras/CenterOfStore/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3581543, -0.24365234, -0.37046814)
-shape = SubResource("BoxShape3D_wgedi")
+shape = SubResource("BoxShape3D_rvrjq")
 
 [node name="Register" parent="Cameras" unique_id=165522973 instance=ExtResource("1_jna78")]
 transform = Transform3D(-0.011488666, -0.15132776, 0.9884169, 0, 0.9884821, 0.15133776, -0.999934, 0.0017386688, -0.011356342, 35.586872, 2.5780206, 9.383967)
@@ -295,7 +295,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.966904, 0, 0)
 
 [node name="CollisionShape3D" parent="Cameras/Register/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.785347, 0.2286377, 9.205026)
-shape = SubResource("BoxShape3D_rvrjq")
+shape = SubResource("BoxShape3D_j4vqx")
 
 [node name="FixedCamera2" parent="Cameras" unique_id=1106173089 instance=ExtResource("1_jna78")]
 transform = Transform3D(-0.85829693, 0.10190462, -0.5029332, 0, 0.98008364, 0.19858512, 0.5131534, 0.170445, -0.8412028, 28.877129, 1.7469814, 23.666096)
@@ -305,7 +305,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.023346, 0, 28.728277)
 
 [node name="CollisionShape3D" parent="Cameras/FixedCamera2/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.61727905, -0.34228516, -0.41882324)
-shape = SubResource("BoxShape3D_j4vqx")
+shape = SubResource("BoxShape3D_1xie8")
 
 [node name="FixedCamera3" parent="Cameras" unique_id=911960664 instance=ExtResource("1_jna78")]
 transform = Transform3D(-0.025126122, 0.16420633, -0.986106, 0, 0.9864174, 0.16425818, 0.9996843, 0.0041271714, -0.024784844, 5.6193905, 1.479495, 7.8697524)
@@ -315,7 +315,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.645988, 0.061858177, 7.869
 
 [node name="CollisionShape3D" parent="Cameras/FixedCamera3/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.555954, 0, 0.63870287)
-shape = SubResource("BoxShape3D_1xie8")
+shape = SubResource("BoxShape3D_vwhf1")
 
 [node name="FixedCamera4" parent="Cameras" unique_id=2010754701 instance=ExtResource("1_jna78")]
 transform = Transform3D(0.96665585, -0.008732193, 0.25593016, 0, 0.99941844, 0.034099594, -0.25607908, -0.03296257, 0.96609366, 3.559118, 0.8551085, 30.65971)
@@ -325,7 +325,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.559118, -0.15231103, 28.283
 
 [node name="CollisionShape3D" parent="Cameras/FixedCamera4/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8431089, 0, -2.051117)
-shape = SubResource("BoxShape3D_vwhf1")
+shape = SubResource("BoxShape3D_1g5j8")
 
 [node name="OfficeKey" parent="Cameras" unique_id=404055002 instance=ExtResource("3_5owe4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.93235743, 0.07261211, -2.0271401)
@@ -842,35 +842,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0436459, -0.9247172, -3.423
 
 [node name="CollisionShape3D" parent="NavigationRegion3D/Environment/EnvironmentalBoundaries/EnvironmentalCollision" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9012451, 1.3502655, 1.0640855)
-shape = SubResource("BoxShape3D_1g5j8")
+shape = SubResource("BoxShape3D_v1cu5")
 
 [node name="EnvironmentalCollision2" parent="NavigationRegion3D/Environment/EnvironmentalBoundaries" unique_id=682880378 instance=ExtResource("15_72f2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5628624, -0.5, -2.565281)
 
 [node name="CollisionShape3D" parent="NavigationRegion3D/Environment/EnvironmentalBoundaries/EnvironmentalCollision2" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.58627677, 0.8810421, 0.19450235)
-shape = SubResource("BoxShape3D_v1cu5")
+shape = SubResource("BoxShape3D_tw3xx")
 
 [node name="EnvironmentalCollision3" parent="NavigationRegion3D/Environment/EnvironmentalBoundaries" unique_id=1824213642 instance=ExtResource("15_72f2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.76081324, 0.19676661, 4.2631764)
 
 [node name="CollisionShape3D" parent="NavigationRegion3D/Environment/EnvironmentalBoundaries/EnvironmentalCollision3" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14585876, 0.26245117, -0.16711426)
-shape = SubResource("BoxShape3D_tw3xx")
+shape = SubResource("BoxShape3D_3vo7e")
 
 [node name="EnvironmentalCollision4" parent="NavigationRegion3D/Environment/EnvironmentalBoundaries" unique_id=1683950152 instance=ExtResource("15_72f2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8429756, 0.29538822, 3.5273037)
 
 [node name="CollisionShape3D" parent="NavigationRegion3D/Environment/EnvironmentalBoundaries/EnvironmentalCollision4" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.043792725, 0.24212646, 0.7809448)
-shape = SubResource("BoxShape3D_3vo7e")
+shape = SubResource("BoxShape3D_sh4jl")
 
 [node name="EnvironmentalCollision5" parent="NavigationRegion3D/Environment/EnvironmentalBoundaries" unique_id=1489665085 instance=ExtResource("15_72f2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.831431, -0.10329974, 13.77519)
 
 [node name="CollisionShape3D" parent="NavigationRegion3D/Environment/EnvironmentalBoundaries/EnvironmentalCollision5" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004606724, 0.2782917, 0.24365997)
-shape = SubResource("BoxShape3D_sh4jl")
+shape = SubResource("BoxShape3D_dp151")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="NavigationRegion3D/Environment/EnvironmentalBoundaries/EnvironmentalCollision5" unique_id=431732140]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06071472, 0.11746216, 2.9637966)

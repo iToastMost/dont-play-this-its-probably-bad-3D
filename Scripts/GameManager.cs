@@ -65,8 +65,7 @@ public partial class GameManager : Node3D
 		
 		GD.Print("Loading Save...");
 		
-		if(_firstLoad)
-			NodeSetup();
+		NodeSetup();
 		
 		playerSpawnPos = new Vector3(loadedData.PlayerPosX.ToFloat(),  loadedData.PlayerPosY.ToFloat(), loadedData.PlayerPosZ.ToFloat());
 		var playerSpawnRotation = new Vector3(0, loadedData.PlayerRotationY.ToFloat(), 0);
@@ -157,8 +156,7 @@ public partial class GameManager : Node3D
 
 	private void InitializeGame(string pathToLoad)
 	{
-		if(_firstLoad)
-			NodeSetup();
+		NodeSetup();
 		
 		var loadGame = ResourceLoader.Load<PackedScene>(pathToLoad);
 		_currentEnvironment = loadGame.Instantiate<Node3D>();
@@ -402,7 +400,6 @@ public partial class GameManager : Node3D
 						ammo.AmmoAmount += lootedAmmo.AmmoAmount;
 						_inventory.UpdateInventory(ammo.GetName() + " (" + ammo.AmmoAmount + ")", i);
 						lootedAmmo.QueueFree();
-						_playerRe.PlayAnimation("PickUp_Table");
 						return;
 					} 
 					
@@ -415,7 +412,6 @@ public partial class GameManager : Node3D
 				
 				loot.Loot(_playerInventory, loot.GetID(), emptyIdx);
 				_inventory.UpdateInventory(lootedAmmo.GetName() + " (" + lootedAmmo.AmmoAmount + ")", emptyIdx);
-				_playerRe.PlayAnimation("PickUp_Table");
 				return;
 			}
 			
@@ -425,7 +421,6 @@ public partial class GameManager : Node3D
 				{
 					loot.Loot(_playerInventory, loot.GetID(), i);
 					_inventory.UpdateInventory(loot.GetName(), i);
-					_playerRe.PlayAnimation("PickUp_Table");
 					return;
 				}
 		}
@@ -679,11 +674,14 @@ public partial class GameManager : Node3D
 			_currentEnvironment = null;
 		}
 		
-		if(_playerRe != null)
-			_playerRe.QueueFree();
+		_playerSetup?.QueueFree();	
+		_playerRe?.QueueFree();
 
 		//TODO Instantiate menu, add as child of game manager and get rid of PlayerSetup node
-		//var menu = _mainMenu.Instantiate<Node3D>();
+		var menu = ResourceLoader.Load<PackedScene>("res://Scenes/Art/UI/main_menu.tscn");
+		_mainMenu = menu.Instantiate<MainMenu>();
+		AddChild(_mainMenu);
+		InitializeMainMenu();
 	}
 	
 	private void PrepareLoadingEnvironment(string path, int keyId, string zoneId, string doorId, string failedKeyText,bool isLocked)

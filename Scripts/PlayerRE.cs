@@ -508,6 +508,9 @@ public override void _Ready()
         
         if(animName.Equals("Pistol_Shoot"))
             PlayAnimation("Pistol_Idle");
+        
+        if(animName.Equals("PickUp_Table"))
+            sm.ChangeState(PlayerStateTypes.Idle);
 
     }
     

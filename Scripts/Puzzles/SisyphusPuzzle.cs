@@ -30,20 +30,25 @@ public partial class SisyphusPuzzle : StaticBody3D, iInteractable
 	private Node3D _sisyphusBoulderItem;
 	private Dialogue _dialogue;
 	private GameManager _gameManager;
+	private CsgSphere3D _boulderMesh;
 
 	public override void _Ready()
 	{
 		AddToGroup("InteractableEnvironment");
-		if (GameStateManager.Instance.IsEventTriggered(ZoneId, EventNameId))
-		{
-			IsEventTriggered = true;
-		}
 		
 		_player = GetNode<PlayerRE>("/root/GameManager/PlayerSetup/3DPlayer");
 		_dialogue = GetNode<Dialogue>("/root/GameManager/PlayerSetup/UI/CanvasLayer/Dialogue");
 		_gameManager = GetNode<GameManager>("/root/GameManager");
+		_boulderMesh = GetNode<CsgSphere3D>("CSGBox3D/CSGSphere3D");
+		
 		ItemBase item = ItemDatabase.GetItem(6).Instantiate<ItemBase>();
 		_sisyphusBoulderItem = item;
+		
+		if (GameStateManager.Instance.IsEventTriggered(ZoneId, EventNameId))
+		{
+			IsEventTriggered = true;
+			_boulderMesh.Visible = false;
+		}
 	}
 
 	public async void Interact()
@@ -68,6 +73,7 @@ public partial class SisyphusPuzzle : StaticBody3D, iInteractable
 		if (value)
 		{
 			GameStateManager.Instance.MarkEventTriggered(ZoneId, EventNameId);
+			_boulderMesh.Visible = false;
 		}
 			
 
