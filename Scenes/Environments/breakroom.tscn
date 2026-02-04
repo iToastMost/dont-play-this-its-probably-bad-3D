@@ -527,12 +527,13 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.68
 
 [node name="NPC" parent="." unique_id=245612582 instance=ExtResource("16_q36r4")]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -1.1740897, -0.50929904, 0.025765598)
-NPCName = "Mindless Coworker"
+NPCName = "Coworker"
 NPCDialogue = "Looks like the breaker blew again. We have a spare fuse in the closet over there and the breaker is in the basement. Remember to check your map with \"M\" if you feel lost!"
 StartingAnimation = "Idle"
 
 [node name="Boxcutter" parent="." unique_id=91888852 instance=ExtResource("17_75ppw")]
 transform = Transform3D(0.70710677, 0.70710677, -2.1073424e-08, 0, 2.9802322e-08, 1, 0.70710677, -0.70710677, 2.1073424e-08, 1.96673, 0.32772708, -0.769338)
+itemDescription = "The blade is sticky with tape residue, but that doesn't make it any less lethal."
 ZoneId = "STORE_BREAKROOM"
 ItemId = "BOXCUTTER"
 

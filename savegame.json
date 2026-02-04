@@ -1,77 +1,79 @@
 {
-  "PlayerPosX": "-1.2632984",
-  "PlayerPosY": "0.40542147",
-  "PlayerPosZ": "1.7687551",
-  "PlayerRotationY": "-2.745574",
-  "Playerhealth": 80,
+  "PlayerPosX": "-1.6444641",
+  "PlayerPosY": "0.40498492",
+  "PlayerPosZ": "1.7879254",
+  "PlayerRotationY": "-2.312389",
+  "Playerhealth": 100,
   "PlayerAmmo": 12,
   "CurrentEnvironment": "STORE_BREAKROOM",
   "playerInventory": [
-    2,
-    1,
-    3,
-    6,
-    5,
-    -1,
-    -1,
-    -1
+	0,
+	2,
+	5,
+	1,
+	-1,
+	-1,
+	-1,
+	-1
   ],
   "equippedItem": 2,
   "ZoneStates": {
-    "STORE_MENS_BATHROOM": {
-      "DeadEnemyIds": [],
-      "LootedItemIds": [],
-      "EventTriggeredIds": [],
-      "DoorUnlockedIds": []
-    },
-    "STORE_SHOWROOM_FLOOR": {
-      "DeadEnemyIds": [],
-      "LootedItemIds": [],
-      "EventTriggeredIds": [],
-      "DoorUnlockedIds": []
-    },
-    "STORE_BREAKROOM": {
-      "DeadEnemyIds": [],
-      "LootedItemIds": [
+	"STORE_MENS_BATHROOM": {
+	  "DeadEnemyIds": [],
+	  "LootedItemIds": [
+        "HEALING_HERB01"
+	  ],
+	  "EventTriggeredIds": [],
+	  "DoorUnlockedIds": []
+	},
+	"STORE_SHOWROOM_FLOOR": {
+	  "DeadEnemyIds": [],
+	  "LootedItemIds": [
+        "STORE_OFFICE_KEY"
+	  ],
+	  "EventTriggeredIds": [],
+	  "DoorUnlockedIds": [
+        "STORE_OFFICE_DOOR"
+	  ]
+	},
+	"STORE_BREAKROOM": {
+	  "DeadEnemyIds": [],
+	  "LootedItemIds": [
         "BOXCUTTER"
-      ],
-      "EventTriggeredIds": [],
-      "DoorUnlockedIds": []
-    },
-    "STORE_BREAKROOM_CLOSET": {
-      "DeadEnemyIds": [],
-      "LootedItemIds": [
+	  ],
+	  "EventTriggeredIds": [],
+	  "DoorUnlockedIds": []
+	},
+	"STORE_BREAKROOM_CLOSET": {
+	  "DeadEnemyIds": [],
+	  "LootedItemIds": [
         "FUSE"
-      ],
-      "EventTriggeredIds": [],
-      "DoorUnlockedIds": []
-    },
-    "STORE_WAREHOUSE": {
-      "DeadEnemyIds": [],
-      "LootedItemIds": [],
-      "EventTriggeredIds": [],
-      "DoorUnlockedIds": []
-    },
-    "STORE_BASEMENT": {
-      "DeadEnemyIds": [],
-      "LootedItemIds": [],
-      "EventTriggeredIds": [
+	  ],
+	  "EventTriggeredIds": [],
+	  "DoorUnlockedIds": []
+	},
+	"STORE_WAREHOUSE": {
+	  "DeadEnemyIds": [],
+	  "LootedItemIds": [],
+	  "EventTriggeredIds": [],
+	  "DoorUnlockedIds": []
+	},
+	"STORE_BASEMENT": {
+	  "DeadEnemyIds": [],
+	  "LootedItemIds": [],
+	  "EventTriggeredIds": [
         "FUSE_USED"
-      ],
-      "DoorUnlockedIds": []
-    },
-    "STORE_OFFICE": {
-      "DeadEnemyIds": [],
-      "LootedItemIds": [
-        "HANDGUN",
-        "HANDGUN_AMMO_01",
-        "LOCKUP_KEY",
-        "STORE_OFFICE_BOULDER"
-      ],
-      "EventTriggeredIds": [
-        "SISYPHUS_BOULDER"
-      ],
-      "DoorUnlockedIds": []
-    }
+	  ],
+	  "DoorUnlockedIds": []
+	},
+	"STORE_OFFICE": {
+	  "DeadEnemyIds": [],
+	  "LootedItemIds": [
+		"HANDGUN",
+        "HANDGUN_AMMO_01"
+	  ],
+	  "EventTriggeredIds": [],
+	  "DoorUnlockedIds": []
+	}
   }
 }

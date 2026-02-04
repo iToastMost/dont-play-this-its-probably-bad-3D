@@ -10,6 +10,6 @@ public class LootingState : PlayerState
 
     public override void Exit()
     {
-        player.PlayAnimation("PickUp_Table");
+        //player.playerAnimation.CurrentAnimation = "PickUp_Table";
     }
 }

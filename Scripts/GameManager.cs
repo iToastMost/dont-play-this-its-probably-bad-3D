@@ -373,7 +373,15 @@ public partial class GameManager : Node3D
 
 	private void DialogueFinished()
 	{
-		_playerRe.UpdateState(PlayerStateTypes.Idle);
+		if (_playerRe.sm.GetPlayerState() == PlayerStateTypes.LootingState)
+		{
+			_playerRe.playerAnimation.CurrentAnimation = "PickUp_Table";
+		}
+		else
+		{
+			_playerRe.UpdateState(PlayerStateTypes.Idle);
+		}
+			
 		EmitSignalDialogueCompleted();
 	}
 
@@ -400,6 +408,7 @@ public partial class GameManager : Node3D
 						ammo.AmmoAmount += lootedAmmo.AmmoAmount;
 						_inventory.UpdateInventory(ammo.GetName() + " (" + ammo.AmmoAmount + ")", i);
 						lootedAmmo.QueueFree();
+						//_playerRe.playerAnimation.CurrentAnimation = "PickUp_Table";
 						return;
 					} 
 					
@@ -412,6 +421,7 @@ public partial class GameManager : Node3D
 				
 				loot.Loot(_playerInventory, loot.GetID(), emptyIdx);
 				_inventory.UpdateInventory(lootedAmmo.GetName() + " (" + lootedAmmo.AmmoAmount + ")", emptyIdx);
+				//_playerRe.playerAnimation.CurrentAnimation = "PickUp_Table";
 				return;
 			}
 			
@@ -421,6 +431,7 @@ public partial class GameManager : Node3D
 				{
 					loot.Loot(_playerInventory, loot.GetID(), i);
 					_inventory.UpdateInventory(loot.GetName(), i);
+					//_playerRe.playerAnimation.CurrentAnimation = "PickUp_Table";
 					return;
 				}
 		}
