@@ -14,7 +14,7 @@ albedo_color = Color(0.90588236, 0.7294118, 0.43529412, 1)
 
 [node name="OfficeKey" type="StaticBody3D" unique_id=404055002]
 script = ExtResource("1_7wx55")
-KeyId = 3
+KeyId = 2
 itemName = "Office Key"
 itemDescription = "Unlocks the office."
 itemID = 7

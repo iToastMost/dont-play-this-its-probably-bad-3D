@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class EnvironmentItemRequired : StaticBody3D, iInteractable
+public abstract partial class EnvironmentItemRequired : StaticBody3D, iInteractable
 {
     [Signal]
     public delegate void InteractedEventHandler(int itemIdRequired, string zoneId, string eventName, string interactText, string eventCompletedText);
@@ -32,7 +32,7 @@ public partial class EnvironmentItemRequired : StaticBody3D, iInteractable
         }
     }
 
-    public void Interact()
+    public virtual void Interact()
     {
         IsEventTriggered = GameStateManager.Instance.IsEventTriggered(ZoneId, EventNameId);
         if (IsEventTriggered)

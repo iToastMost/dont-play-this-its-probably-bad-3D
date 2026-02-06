@@ -980,7 +980,7 @@ transform = Transform3D(1, 0, 0, 0, 0.5035478, 0.86396736, 0, -0.86396736, 0.503
 [node name="ToOffice" parent="." unique_id=1233551204 instance=ExtResource("2_fqmik")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.08404, -0.5, 5.7388124)
 _environmentToLoad = "res://Scenes/Environments/store_office.tscn"
-KeyIdRequired = 3
+KeyIdRequired = 2
 IsLocked = true
 failedCheckText = "The door is locked. Someone must have the key on them."
 DoorId = "STORE_OFFICE_DOOR"
