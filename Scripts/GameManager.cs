@@ -688,7 +688,7 @@ public partial class GameManager : Node3D
 		_playerSetup?.QueueFree();	
 		_playerRe?.QueueFree();
 
-		//TODO Instantiate menu, add as child of game manager and get rid of PlayerSetup node
+		
 		var menu = ResourceLoader.Load<PackedScene>("res://Scenes/Art/UI/main_menu.tscn");
 		_mainMenu = menu.Instantiate<MainMenu>();
 		AddChild(_mainMenu);

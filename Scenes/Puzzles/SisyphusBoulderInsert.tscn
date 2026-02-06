@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dekm84jjan3r6"]
+
+[ext_resource type="Script" uid="uid://b12frkuw8ai6" path="res://Scripts/Puzzles/SisyphusBoulderInsert.cs" id="1_mw2cb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mw2cb"]
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=1679936263]
+script = ExtResource("1_mw2cb")
+InteractText = "A box with an oddly shaped sphere hole. Maybe I can insert something into it?"
+EventCompletionText = "The miniature boulder fits perfectly into the slot."
+EventAlreadyCompletedText = "The boulder is snuggly in place."
+KeyIdRequired = 3
+EventNameId = "SISYPHS_BOULDER_USED"
+ZoneId = "STORE_BASEMENT"
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1986300898]
+size = Vector3(0.4, 0.4, 0.4)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGBox3D" unique_id=1890954851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19884253, 0, 0)
+operation = 2
+radius = 0.2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=511174516]
+shape = SubResource("BoxShape3D_mw2cb")

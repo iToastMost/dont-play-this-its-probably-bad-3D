@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://danmfsxogiql" path="res://Scenes/fusebox.tscn" id="3_0nuyt"]
 [ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="5_tawf3"]
 [ext_resource type="PackedScene" uid="uid://214q6f885sgs" path="res://Scenes/npc.tscn" id="6_4be4p"]
+[ext_resource type="PackedScene" uid="uid://dekm84jjan3r6" path="res://Scenes/Puzzles/SisyphusBoulderInsert.tscn" id="7_y6bsh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_skepo"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -29,6 +30,18 @@ volumetric_fog_emission_energy = 5.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_skepo"]
 albedo_color = Color(0, 0, 0, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_kc17g"]
+resource_local_to_scene = true
+size = Vector3(3.599228, 1, 13.767395)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vmlit"]
+resource_local_to_scene = true
+size = Vector3(12.810425, 1, 6.0966187)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_guvni"]
+resource_local_to_scene = true
+size = Vector3(12.885162, 1, 6.8305664)
+
 [node name="Basement" type="Node3D" unique_id=186802803]
 script = ExtResource("1_s8nfc")
 ZoneId = "STORE_BASEMENT"
@@ -37,22 +50,26 @@ ZoneId = "STORE_BASEMENT"
 environment = SubResource("Environment_0nuyt")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1326788900 groups=["Environments"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5936279, 1.0185547, -0.76431274)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9458923, 1.0185547, -4.3669586)
 use_collision = true
 flip_faces = true
-size = Vector3(6.387451, 3.0371094, 6.5464478)
+size = Vector3(17.09198, 3.0371094, 13.7517395)
 material = SubResource("StandardMaterial3D_skepo")
 
 [node name="FixedCamera" parent="." unique_id=534684256 instance=ExtResource("1_skepo")]
-transform = Transform3D(-0.9938617, -0.045257997, 0.10094898, 0, 0.91249245, 0.4090936, -0.11062994, 0.40658242, -0.9068913, 0.8685402, 2.1064005, -3.353152)
+transform = Transform3D(0.54315186, 0.15153933, -0.8258462, 0, 0.9835782, 0.18048249, 0.8396345, -0.098029405, 0.5342323, -1.6040919, 1.3891586, 1.9004209)
+
+[node name="CollisionShape3D" parent="FixedCamera/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8487015, 0, -4.267853)
+shape = SubResource("BoxShape3D_kc17g")
 
 [node name="Spawnpoints" type="Node" parent="." unique_id=1936246347]
 
 [node name="FromBathroomScene" type="Marker3D" parent="Spawnpoints" unique_id=548985092]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.5700703, 0.12580001, 1.4034226)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.5877495, 0.12580001, 1.4034226)
 
 [node name="FromWarehouseScene" type="Marker3D" parent="Spawnpoints" unique_id=416623836]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.5700703, 0.12580001, 1.4034226)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.5877495, 0.12580001, 1.4034226)
 
 [node name="toilet" parent="." unique_id=2125826430 instance=ExtResource("2_g5057")]
 transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, 2.1248772, -0.49999976, 2.0841389)
@@ -69,7 +86,7 @@ KeyIdRequired = 2
 ZoneId = "STORE_BASEMENT"
 
 [node name="door" parent="." unique_id=304080197 instance=ExtResource("5_tawf3")]
-transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, -2.6668334, -0.49999976, 2.5008957)
+transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, -12.684513, -0.49999976, 2.5008957)
 _environmentToLoad = "res://Scenes/Environments/warehouse.tscn"
 DoorId = "STORE_BASEMENT_TO_WAREHOUSE"
 ZoneId = "STORE_BASEMENT"
@@ -79,3 +96,33 @@ transform = Transform3D(-0.6799405, 0, -0.73326725, 0, 1, 0, 0.73326725, 0, -0.6
 NPCName = "Coworker"
 NPCDialogue = "Have you seen those things out there?!? That boxcutter won't get you very far. I heard Terry has something a little more serious in his office. I dropped the key in a refridgerator when those things started chasing me."
 StartingAnimation = "Sitting_Idle"
+
+[node name="ElevatorDoor" parent="." unique_id=2044213012 instance=ExtResource("5_tawf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.447544, -0.5, -11.198896)
+_environmentToLoad = "res://Scenes/Environments/warehouse.tscn"
+KeyIdRequired = 999
+IsLocked = true
+failedCheckText = "There's an odd shaped sphereical hole next to an elevator everyone claims leads to nowhere and is out of service. Is it really?"
+DoorId = "STORE_BASEMENT_TO_UNDERGROUND"
+ZoneId = "STORE_BASEMENT"
+
+[node name="FixedCamera2" parent="." unique_id=1839803976 instance=ExtResource("1_skepo")]
+transform = Transform3D(0.5649445, 0.077620454, -0.8214699, 0, 0.99556553, 0.094070695, 0.8251289, -0.053144727, 0.56243926, -14.370319, 0.9265653, 2.1230438)
+
+[node name="CollisionShape3D" parent="FixedCamera2/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.213846, 0, -0.56015015)
+shape = SubResource("BoxShape3D_vmlit")
+
+[node name="FixedCamera3" parent="." unique_id=1445055011 instance=ExtResource("1_skepo")]
+transform = Transform3D(0.6933852, 0.055254057, -0.7184456, 0, 0.9970557, 0.076681346, 0.7205672, -0.0531697, 0.6913436, -14.377821, 0.80125284, -3.5731363)
+
+[node name="CollisionShape3D" parent="FixedCamera3/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9631834, 0, -7.6338224)
+shape = SubResource("BoxShape3D_guvni")
+
+[node name="SisyphusBoulderInsert" parent="." unique_id=788649310 instance=ExtResource("7_y6bsh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.515476, 0.55761206, -11.307037)
+
+[editable path="FixedCamera"]
+[editable path="FixedCamera2"]
+[editable path="FixedCamera3"]
