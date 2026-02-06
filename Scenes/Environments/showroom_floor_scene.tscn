@@ -681,7 +681,7 @@ _environmentToLoad = "res://Scenes/Environments/lockup_scene.tscn"
 _isFlipped = true
 KeyIdRequired = 1
 IsLocked = true
-failedCheckText = "The door is locked. Terry usually keeps it in hise office."
+failedCheckText = "The door is locked. Terry usually keeps the key in his office."
 DoorId = "STORE_LOCKUP_DOOR"
 ZoneId = "STORE_SHOWROOM_FLOOR"
 
