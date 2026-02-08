@@ -960,7 +960,7 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 32.7
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 17.029299, 0.386854, 6.51753)
 
 [node name="Enemy3D" parent="." unique_id=1097355069 instance=ExtResource("3_fqmik")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.762333, 0.50027364, 11.5129795)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.68852, 0.50027364, 7.012038)
 axis_lock_angular_x = true
 ZoneId = "STORE_SHOWROOM_FLOOR"
 EnemyId = "ENEMY_01"

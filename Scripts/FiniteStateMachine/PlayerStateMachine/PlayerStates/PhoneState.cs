@@ -5,7 +5,7 @@ public class PhoneState : PlayerState
 {
     public override void Enter()
     {
-        base.Enter();
+        
     }
 
     public override void PhysicsUpdate(double delta)

@@ -240,7 +240,8 @@ public override void _Ready()
         
         if (Input.IsActionJustPressed("interaction_check"))
         {
-            InteractCheck();
+            if(sm.GetPlayerState() == PlayerStateTypes.Idle || sm.GetPlayerState() == PlayerStateTypes.Move)
+                InteractCheck();
         }
         
         if (Input.IsActionJustPressed("exit_game")) 
@@ -288,7 +289,6 @@ public override void _Ready()
                 _phoneVisible = false;
                 _phoneAnimation.CurrentAnimation = "slide_out";
                 _phoneAnimation.Play();
-                
                 
                 //GooseScene.QueueFree();
                 //GooseScene = null;
@@ -503,6 +503,7 @@ public override void _Ready()
         if (animName.Equals("Sword_Attack"))
         {
             IsMeleeAttacking = false;
+            PlayAnimation("Sword_Idle");
             sm.ChangeState(PlayerStateTypes.Aim);
         }
         

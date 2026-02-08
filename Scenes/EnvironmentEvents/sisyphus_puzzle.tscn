@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bjnbprq1s807" path="res://Scripts/Puzzles/SisyphusPuzzle.cs" id="1_fwldj"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fwldj"]
+albedo_color = Color(0.57254905, 0.39215687, 0.14117648, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_fwldj"]
 size = Vector3(1, 1.9765625, 1)
 
@@ -14,6 +17,7 @@ size = Vector3(0.3, 0.3, 0.3)
 [node name="CSGSphere3D" type="CSGSphere3D" parent="CSGBox3D" unique_id=1766168743]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3278519, 0)
 radius = 0.25229776
+material = SubResource("StandardMaterial3D_fwldj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1222205594]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0009765625, 0)

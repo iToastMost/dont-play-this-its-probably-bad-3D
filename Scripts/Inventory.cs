@@ -3,6 +3,9 @@ using System;
 
 public partial class Inventory : Control
 {
+    [Signal]
+    public delegate void InventoryToggledEventHandler(bool invOpen);
+    
     [Signal] 
     public delegate void ItemUsedEventHandler(int idx);
 
@@ -13,7 +16,7 @@ public partial class Inventory : Control
     public delegate void InspectItemEventHandler(int idx);
     
     private CanvasLayer _canvasLayer;
-    private bool _inventoryIsOpen = false;
+    public bool InventoryIsOpen = false;
     private int _slotIdx = 0;
     private int _slotSelectedIdx = 0;
 
@@ -30,7 +33,7 @@ public partial class Inventory : Control
     public override void _Ready()
     {
         _canvasLayer = GetNode<CanvasLayer>("CanvasLayer");
-        _canvasLayer.Visible = _inventoryIsOpen;
+        _canvasLayer.Visible = InventoryIsOpen;
         
         _gridContainer = GetNode<GridContainer>("CanvasLayer/GridContainer");
         _itemSelected = GetNode<GridContainer>("CanvasLayer/ItemSelectedSlide/ItemSelected");
@@ -64,17 +67,18 @@ public partial class Inventory : Control
     }
     public void ToggleInventory(Label _healthLabel, Label _ammoLabel)
     {
-        _inventoryIsOpen = !_inventoryIsOpen;
-        _canvasLayer.Visible = _inventoryIsOpen;
-        _healthLabel.Visible = _inventoryIsOpen;
-        _ammoLabel.Visible = _inventoryIsOpen;
+        InventoryIsOpen = !InventoryIsOpen;
+        _canvasLayer.Visible = InventoryIsOpen;
+        _healthLabel.Visible = InventoryIsOpen;
+        _ammoLabel.Visible = InventoryIsOpen;
         _gridContainer.GetNode<Button>("Slot0").GrabFocus();
         if (_itemSelected.Visible)
         {
             _itemSelected.Visible = false;
             _isItemSelected = false;
         }
-        
+
+        EmitSignal(SignalName.InventoryToggled, InventoryIsOpen);
     }
 
     public void UpdateInventory(string itemName, int slotIdx)

@@ -52,7 +52,8 @@ public class AimState : PlayerState
             }
             else
             {
-                MeleeAttack();
+                if(!player.IsMeleeAttacking)
+                    MeleeAttack();
             }
         }
     }
@@ -60,7 +61,8 @@ public class AimState : PlayerState
     public void HandlePlayerAim(double delta)
     {
         var transform = player.AimIK.Transform;
-        player.playerAnimation.SpeedScale -= ((float)delta / 5);
+        if(player.HandEquipmentSlot is FirearmBase)
+            player.playerAnimation.SpeedScale -= ((float)delta / 5);
         if (player.playerAnimation.SpeedScale < 0)
             player.playerAnimation.SpeedScale = 0;
         

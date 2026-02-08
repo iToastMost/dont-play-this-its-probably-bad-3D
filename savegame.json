@@ -1,79 +1,59 @@
 {
-  "PlayerPosX": "-1.6444641",
-  "PlayerPosY": "0.40498492",
-  "PlayerPosZ": "1.7879254",
-  "PlayerRotationY": "-2.312389",
+  "PlayerPosX": "-7.0871925",
+  "PlayerPosY": "0.38674626",
+  "PlayerPosZ": "12.796285",
+  "PlayerRotationY": "1.033185",
   "Playerhealth": 100,
   "PlayerAmmo": 12,
-  "CurrentEnvironment": "STORE_BREAKROOM",
+  "CurrentEnvironment": "STORE_WAREHOUSE",
   "playerInventory": [
-	0,
-	2,
-	5,
-	1,
-	-1,
-	-1,
-	-1,
-	-1
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1
   ],
-  "equippedItem": 2,
+  "equippedItem": -1,
   "ZoneStates": {
-	"STORE_MENS_BATHROOM": {
-	  "DeadEnemyIds": [],
-	  "LootedItemIds": [
-        "HEALING_HERB01"
-	  ],
-	  "EventTriggeredIds": [],
-	  "DoorUnlockedIds": []
-	},
-	"STORE_SHOWROOM_FLOOR": {
-	  "DeadEnemyIds": [],
-	  "LootedItemIds": [
+    "STORE_MENS_BATHROOM": {
+      "DeadEnemyIds": [],
+      "LootedItemIds": [],
+      "EventTriggeredIds": [],
+      "DoorUnlockedIds": []
+    },
+    "STORE_SHOWROOM_FLOOR": {
+      "DeadEnemyIds": [],
+      "LootedItemIds": [
         "STORE_OFFICE_KEY"
-	  ],
-	  "EventTriggeredIds": [],
-	  "DoorUnlockedIds": [
-        "STORE_OFFICE_DOOR"
-	  ]
-	},
-	"STORE_BREAKROOM": {
-	  "DeadEnemyIds": [],
-	  "LootedItemIds": [
-        "BOXCUTTER"
-	  ],
-	  "EventTriggeredIds": [],
-	  "DoorUnlockedIds": []
-	},
-	"STORE_BREAKROOM_CLOSET": {
-	  "DeadEnemyIds": [],
-	  "LootedItemIds": [
-        "FUSE"
-	  ],
-	  "EventTriggeredIds": [],
-	  "DoorUnlockedIds": []
-	},
-	"STORE_WAREHOUSE": {
-	  "DeadEnemyIds": [],
-	  "LootedItemIds": [],
-	  "EventTriggeredIds": [],
-	  "DoorUnlockedIds": []
-	},
-	"STORE_BASEMENT": {
-	  "DeadEnemyIds": [],
-	  "LootedItemIds": [],
-	  "EventTriggeredIds": [
-        "FUSE_USED"
-	  ],
-	  "DoorUnlockedIds": []
-	},
-	"STORE_OFFICE": {
-	  "DeadEnemyIds": [],
-	  "LootedItemIds": [
-		"HANDGUN",
-        "HANDGUN_AMMO_01"
-	  ],
-	  "EventTriggeredIds": [],
-	  "DoorUnlockedIds": []
-	}
+      ],
+      "EventTriggeredIds": [],
+      "DoorUnlockedIds": [
+        "STORE_OFFICE_DOOR",
+        "STORE_LOCKUP_DOOR"
+      ]
+    },
+    "STORE_OFFICE": {
+      "DeadEnemyIds": [],
+      "LootedItemIds": [
+        "LOCKUP_KEY"
+      ],
+      "EventTriggeredIds": [],
+      "DoorUnlockedIds": []
+    },
+    "STORE_LOCKUP": {
+      "DeadEnemyIds": [],
+      "LootedItemIds": [],
+      "EventTriggeredIds": [],
+      "DoorUnlockedIds": []
+    },
+    "STORE_WAREHOUSE": {
+      "DeadEnemyIds": [],
+      "LootedItemIds": [],
+      "EventTriggeredIds": [],
+      "DoorUnlockedIds": []
+    }
   }
 }

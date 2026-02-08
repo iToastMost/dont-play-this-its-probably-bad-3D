@@ -30,15 +30,15 @@ volumetric_fog_emission_energy = 5.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_skepo"]
 albedo_color = Color(0, 0, 0, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_kc17g"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_y6bsh"]
 resource_local_to_scene = true
 size = Vector3(3.599228, 1, 13.767395)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_vmlit"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_kc17g"]
 resource_local_to_scene = true
 size = Vector3(12.810425, 1, 6.0966187)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_guvni"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_vmlit"]
 resource_local_to_scene = true
 size = Vector3(12.885162, 1, 6.8305664)
 
@@ -61,7 +61,7 @@ transform = Transform3D(0.54315186, 0.15153933, -0.8258462, 0, 0.9835782, 0.1804
 
 [node name="CollisionShape3D" parent="FixedCamera/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8487015, 0, -4.267853)
-shape = SubResource("BoxShape3D_kc17g")
+shape = SubResource("BoxShape3D_y6bsh")
 
 [node name="Spawnpoints" type="Node" parent="." unique_id=1936246347]
 
@@ -76,14 +76,6 @@ transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=104969820 groups=["StoreLights"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.77889305, 1.7924249, 0.22496343)
-
-[node name="Fusebox" parent="." unique_id=420980602 groups=["StoreLights"] instance=ExtResource("3_0nuyt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2641362, -0.24039418)
-InteractText = "Looks like a fuse is blown. I think I can find one in the breakroom supply closet."
-EventCompletionText = "That should have restored power!"
-EventAlreadyCompletedText = "Power has been restored."
-KeyIdRequired = 2
-ZoneId = "STORE_BASEMENT"
 
 [node name="door" parent="." unique_id=304080197 instance=ExtResource("5_tawf3")]
 transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, -12.684513, -0.49999976, 2.5008957)
@@ -111,17 +103,20 @@ transform = Transform3D(0.5649445, 0.077620454, -0.8214699, 0, 0.99556553, 0.094
 
 [node name="CollisionShape3D" parent="FixedCamera2/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.213846, 0, -0.56015015)
-shape = SubResource("BoxShape3D_vmlit")
+shape = SubResource("BoxShape3D_kc17g")
 
 [node name="FixedCamera3" parent="." unique_id=1445055011 instance=ExtResource("1_skepo")]
 transform = Transform3D(0.6933852, 0.055254057, -0.7184456, 0, 0.9970557, 0.076681346, 0.7205672, -0.0531697, 0.6913436, -14.377821, 0.80125284, -3.5731363)
 
 [node name="CollisionShape3D" parent="FixedCamera3/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9631834, 0, -7.6338224)
-shape = SubResource("BoxShape3D_guvni")
+shape = SubResource("BoxShape3D_vmlit")
 
 [node name="SisyphusBoulderInsert" parent="." unique_id=788649310 instance=ExtResource("7_y6bsh")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.515476, 0.55761206, -11.307037)
+
+[node name="Fusebox" parent="." unique_id=620708765 instance=ExtResource("3_0nuyt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004709482, -0.2619406, -0.25019598)
 
 [editable path="FixedCamera"]
 [editable path="FixedCamera2"]

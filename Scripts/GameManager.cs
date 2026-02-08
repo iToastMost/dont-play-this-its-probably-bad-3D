@@ -220,6 +220,7 @@ public partial class GameManager : Node3D
 		_inventory.ItemUsed += UseItem;
 		_inventory.InspectItem += InspectItem;
 		_inventory.CheckItemSlotClicked += CheckInventorySlot;
+		_inventory.InventoryToggled += ToggleInventory;
 		_playerRe.AcceptDialogue += AcceptDialogue;
 		_playerRe.NPCDialogue += SendDialogue;
 		_playerRe.AskToLootItem += AskToLoot;
@@ -695,14 +696,21 @@ public partial class GameManager : Node3D
 		InitializeMainMenu();
 	}
 	
-	private void PrepareLoadingEnvironment(string path, int keyId, string zoneId, string doorId, string failedKeyText,bool isLocked)
+	private async void PrepareLoadingEnvironment(string path, int keyId, string zoneId, string doorId, string failedKeyText,bool isLocked)
 	{
 		if(isLocked)
 			if (!CheckForKey(keyId, zoneId, doorId, failedKeyText))
 				return;
+
+		if (_playerRe.sm.GetPlayerState() == PlayerStateTypes.Dialog)
+			await ToSignal(this, SignalName.DialogueCompleted);
 		
 		_sceneToLoad = path;
 
+		_currentEnvironment.ProcessMode = ProcessModeEnum.Disabled;
+		_ui.ProcessMode = ProcessModeEnum.Disabled;
+		_playerRe.sm.ChangeState(PlayerStateTypes.LootingState);
+		
 		_subviewportCamera.Current = true;
 		_doorPushSubViewportContainer.Visible = true;
 		_animationPlayer.CurrentAnimation = "DoorPush";
@@ -779,12 +787,15 @@ public partial class GameManager : Node3D
 					GD.Print("Checking Key Id: " + keyItem.KeyId);
 					if (keyItem.KeyId == keyId)
 					{
+						if (_inventory.InventoryIsOpen)
+							_ui.ToggleInventory();
 						GD.Print("You have the key to this door, door unlocked");
 						keyCheck = true;
 						SendDialogue(false,"You", "I unlocked the door. Seems like I won't be needing this key anymore.");
 						_playerInventory[i] = null;
 						_inventory.UpdateInventory("", i);
 						GameStateManager.Instance.MarkDoorUnlocked(zoneId, doorId);
+						
 						return keyCheck;
 					}
 				}	
@@ -812,6 +823,8 @@ public partial class GameManager : Node3D
 					GD.Print("Checking Key Id: " + keyItem.KeyId);
 					if (keyItem.KeyId == reqId)
 					{
+						if (_inventory.InventoryIsOpen)
+							_ui.ToggleInventory();
 						GD.Print("Fuse used, power restored.");
 						SendDialogue(false,"You",eventCompletionText);
 						_playerInventory[i] = null;
@@ -884,11 +897,25 @@ public partial class GameManager : Node3D
         
     }
 
+	private void ToggleInventory(bool invOpen)
+	{
+		if (invOpen)
+		{
+			_playerRe.sm.ChangeState(PlayerStateTypes.LootingState);
+		}
+		else
+		{
+			_playerRe.sm.ChangeState(PlayerStateTypes.Idle);
+		}
+	}
+
 	private void FadeOutFinished(StringName animName)
 	{
 		if (animName.Equals("DoorPush"))
 		{
 			LoadEnvironment(_sceneToLoad);
+			_playerRe.sm.ChangeState(PlayerStateTypes.Idle);
+			_ui.ProcessMode = ProcessModeEnum.Inherit;
 		}
 		else
 		{

@@ -4,6 +4,9 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mw2cb"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mw2cb"]
+albedo_color = Color(0.57254905, 0.39215687, 0.14117648, 1)
+
 [node name="StaticBody3D" type="StaticBody3D" unique_id=1679936263]
 script = ExtResource("1_mw2cb")
 InteractText = "A box with an oddly shaped sphere hole. Maybe I can insert something into it?"
@@ -23,3 +26,9 @@ radius = 0.2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=511174516]
 shape = SubResource("BoxShape3D_mw2cb")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=1047942111]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17950627, 0, 0)
+visible = false
+radius = 0.2
+material = SubResource("StandardMaterial3D_mw2cb")

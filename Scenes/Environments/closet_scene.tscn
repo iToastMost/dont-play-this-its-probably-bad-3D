@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://br83x8q7ckpkd"]
+[gd_scene format=3 uid="uid://br83x8q7ckpkd"]
 
 [ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_31ri8"]
 [ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="1_bktvj"]
@@ -16,53 +16,53 @@ uv1_scale = Vector3(7, 7, 7)
 material = SubResource("StandardMaterial3D_0p4ea")
 size = Vector2(5, 5)
 
-[node name="ClosetScene" type="Node3D" groups=["Environments"]]
+[node name="ClosetScene" type="Node3D" unique_id=936513964 groups=["Environments"]]
 script = ExtResource("1_31ri8")
 ZoneId = "STORE_BREAKROOM_CLOSET"
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=2140330615]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7089386, 1.3772736, -0.15490723)
 use_collision = true
 flip_faces = true
 size = Vector3(1.9319153, 2.7915344, 4.9904785)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="CSGBox3D" groups=["StoreLights"]]
+[node name="SpotLight3D" type="SpotLight3D" parent="CSGBox3D" unique_id=148104288 groups=["StoreLights"]]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.7603452, 5.663299e-09)
 spot_range = 3.55
 spot_attenuation = 0.45
 spot_angle = 62.9
 
-[node name="door" parent="." instance=ExtResource("1_bktvj")]
+[node name="door" parent="." unique_id=485546745 instance=ExtResource("1_bktvj")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.69820935, 0, 2.3334713)
 _environmentToLoad = "res://Scenes/Environments/breakroom.tscn"
 DoorId = "STORE_BREAKROOM_CLOSET_TO_STORE_BREAKROOM"
 ZoneId = "STORE_BREAKROOM_CLOSET"
 
-[node name="Spawnpoints" type="Node" parent="."]
+[node name="Spawnpoints" type="Node" parent="." unique_id=500387967]
 
-[node name="FromBreakroomScene" type="Marker3D" parent="Spawnpoints"]
+[node name="FromBreakroomScene" type="Marker3D" parent="Spawnpoints" unique_id=2001049942]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.758463, 0.82724047, 1.55397)
 
-[node name="FixedCamera" parent="." instance=ExtResource("2_sxua3")]
+[node name="FixedCamera" parent="." unique_id=525017105 instance=ExtResource("2_sxua3")]
 transform = Transform3D(-0.9923281, -0.056891423, 0.10976481, 0, 0.88783276, 0.46016634, -0.123632304, 0.45663595, -0.8810214, -0.0004993826, 2.5364404, -2.8623762)
 
-[node name="garbage" parent="." instance=ExtResource("3_v5urd")]
+[node name="garbage" parent="." unique_id=484971102 instance=ExtResource("3_v5urd")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.4999301, 0, -1.6838529)
 
-[node name="wetfloorsign" parent="." instance=ExtResource("4_odvv0")]
+[node name="wetfloorsign" parent="." unique_id=460966843 instance=ExtResource("4_odvv0")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.10315034, 0, -2.3381746)
 
-[node name="wetfloorsign2" parent="." instance=ExtResource("4_odvv0")]
+[node name="wetfloorsign2" parent="." unique_id=1292077047 instance=ExtResource("4_odvv0")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.10315032, 0, -2.0750012)
 
-[node name="wetfloorsign3" parent="." instance=ExtResource("4_odvv0")]
+[node name="wetfloorsign3" parent="." unique_id=521127962 instance=ExtResource("4_odvv0")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.10315031, 0, -1.8031569)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1040494894]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.70113117, 0, -0.14969796)
 mesh = SubResource("PlaneMesh_27yxi")
 
-[node name="fuse" parent="." instance=ExtResource("8_0p4ea")]
+[node name="fuse" parent="." unique_id=903753619 instance=ExtResource("8_0p4ea")]
 transform = Transform3D(-4.3711392e-08, 0.70710677, -0.70710677, 1, 3.0908623e-08, -3.090862e-08, 0, -0.70710677, -0.70710677, -1.4355837, 0.71961683, -1.5607201)
 ZoneId = "STORE_BREAKROOM_CLOSET"
 ItemId = "FUSE"

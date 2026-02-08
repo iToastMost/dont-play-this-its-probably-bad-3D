@@ -25,7 +25,7 @@ public partial class Ui : Control
 	{
 		if (Input.IsActionJustPressed("open_inventory"))
 		{
-			_inventory.ToggleInventory(_healthLabel, _ammoLabel);
+			ToggleInventory();
 		}
 
 		if (Input.IsActionJustPressed("toggle_map"))
@@ -37,5 +37,10 @@ public partial class Ui : Control
 		var label = GetNode<RichTextLabel>("CanvasLayer/ColorRect/RichTextLabel");
 		label.Text = dialog;
         label.Visible = true;
+	}
+
+	public void ToggleInventory()
+	{
+		_inventory.ToggleInventory(_healthLabel, _ammoLabel);
 	}
 }
