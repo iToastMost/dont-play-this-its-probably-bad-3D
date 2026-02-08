@@ -67,6 +67,7 @@ public partial class SisyphusPuzzle : StaticBody3D, iInteractable
 		
 		EmitSignalAskToLootItem(_sisyphusBoulderItem);
 
+		//waits for choice selected signal from dialogue 
 		var choice = await ToSignal(_dialogue, Dialogue.SignalName.ChoiceSelected);
 		GD.Print("Answer sent " + choice);
 		bool value = choice[0].AsBool();

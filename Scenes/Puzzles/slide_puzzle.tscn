@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://xhhtomk6dqfo"]
 
-[ext_resource type="Script" uid="uid://c3armyf8nbbu8" path="res://Scripts/Puzzles/SlidingPuzzle.cs" id="1_hb0rv"]
+[ext_resource type="Script" uid="uid://c3armyf8nbbu8" path="res://Scripts/Puzzles/StoreKeypad.cs" id="1_hb0rv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1rlrq"]
 albedo_color = Color(0, 0, 0, 1)

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cajv0rqorcdk1"]
+
+[ext_resource type="Script" uid="uid://c3armyf8nbbu8" path="res://Scripts/Puzzles/StoreKeypad.cs" id="1_wjr5y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_myl5i"]
+size = Vector3(0.92041016, 1, 0.30822754)
+
+[node name="StoreKeypad" type="StaticBody3D" unique_id=1912419270]
+script = ExtResource("1_wjr5y")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=450914964]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.079452515, -0.086364746, -0.34375)
+size = Vector3(0.3, 0.4, 0.2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1948058332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.039794922, 0, -0.34588623)
+shape = SubResource("BoxShape3D_myl5i")

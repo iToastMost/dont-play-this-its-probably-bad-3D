@@ -10,7 +10,6 @@ script = ExtResource("1_ave85")
 InteractText = "A fuse is burnt out."
 EventCompletionText = "That seems to have turned the lights back on."
 EventAlreadyCompletedText = "The replaced fuse turned the lights back on."
-KeyIdRequired = 2
 EventNameId = "FUSE_USED"
 ZoneId = "STORE_BASEMENT"
 

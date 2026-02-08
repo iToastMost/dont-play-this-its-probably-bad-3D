@@ -1,0 +1,168 @@
+[gd_scene format=3 uid="uid://bhr6tuss8n6s"]
+
+[node name="StoreKeypad" type="Control" unique_id=94710458]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=137354990]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1639407982]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.20871013, 0.20871016, 0.20871013, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=508935813]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 35.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CodeDisplay" type="HBoxContainer" parent="CanvasLayer/VBoxContainer" unique_id=1492807683]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/VBoxContainer/CodeDisplay" unique_id=1342427237]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 64
+text = "1234
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons7to9" type="HBoxContainer" parent="CanvasLayer/VBoxContainer" unique_id=1958287482]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Button7" type="Button" parent="CanvasLayer/VBoxContainer/Buttons7to9" unique_id=1502255457]
+custom_minimum_size = Vector2(300, 240)
+layout_mode = 2
+focus_neighbor_right = NodePath("../Button8")
+focus_neighbor_bottom = NodePath("../../Buttons4to6/Button4")
+theme_override_font_sizes/font_size = 64
+text = "7"
+
+[node name="Button8" type="Button" parent="CanvasLayer/VBoxContainer/Buttons7to9" unique_id=1892308772]
+custom_minimum_size = Vector2(300, 240)
+layout_mode = 2
+focus_neighbor_left = NodePath("../Button7")
+focus_neighbor_right = NodePath("../Button9")
+focus_neighbor_bottom = NodePath("../../Buttons4to6/Button5")
+theme_override_font_sizes/font_size = 64
+text = "8"
+
+[node name="Button9" type="Button" parent="CanvasLayer/VBoxContainer/Buttons7to9" unique_id=1391065070]
+custom_minimum_size = Vector2(300, 240)
+layout_mode = 2
+focus_neighbor_left = NodePath("../Button8")
+focus_neighbor_bottom = NodePath("../../Buttons4to6/Button6")
+theme_override_font_sizes/font_size = 64
+text = "9"
+
+[node name="Buttons4to6" type="HBoxContainer" parent="CanvasLayer/VBoxContainer" unique_id=713622287]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Button4" type="Button" parent="CanvasLayer/VBoxContainer/Buttons4to6" unique_id=95633281]
+custom_minimum_size = Vector2(300, 240)
+layout_mode = 2
+focus_neighbor_top = NodePath("../../Buttons7to9/Button7")
+focus_neighbor_right = NodePath("../Button5")
+focus_neighbor_bottom = NodePath("../../Buttons1to3/Button")
+theme_override_font_sizes/font_size = 64
+text = "4"
+
+[node name="Button5" type="Button" parent="CanvasLayer/VBoxContainer/Buttons4to6" unique_id=217340064]
+custom_minimum_size = Vector2(300, 240)
+layout_mode = 2
+focus_neighbor_left = NodePath("../Button4")
+focus_neighbor_top = NodePath("../../Buttons7to9/Button8")
+focus_neighbor_right = NodePath("../Button6")
+focus_neighbor_bottom = NodePath("../../Buttons1to3/Button2")
+theme_override_font_sizes/font_size = 64
+text = "5"
+
+[node name="Button6" type="Button" parent="CanvasLayer/VBoxContainer/Buttons4to6" unique_id=249131294]
+custom_minimum_size = Vector2(300, 240)
+layout_mode = 2
+focus_neighbor_left = NodePath("../Button5")
+focus_neighbor_top = NodePath("../../Buttons7to9/Button9")
+focus_neighbor_bottom = NodePath("../../Buttons1to3/Button3")
+theme_override_font_sizes/font_size = 64
+text = "6"
+
+[node name="Buttons1to3" type="HBoxContainer" parent="CanvasLayer/VBoxContainer" unique_id=565871008]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer/Buttons1to3" unique_id=1055513843]
+custom_minimum_size = Vector2(300, 240)
+layout_mode = 2
+focus_neighbor_top = NodePath("../../Buttons4to6/Button4")
+focus_neighbor_right = NodePath("../Button2")
+focus_neighbor_bottom = NodePath("../../Buttons0toEnter/ButtonDelete")
+theme_override_font_sizes/font_size = 64
+text = "1"
+
+[node name="Button2" type="Button" parent="CanvasLayer/VBoxContainer/Buttons1to3" unique_id=46719328]
+custom_minimum_size = Vector2(300, 240)
+layout_mode = 2
+focus_neighbor_left = NodePath("../Button")
+focus_neighbor_top = NodePath("../../Buttons4to6/Button5")
+focus_neighbor_right = NodePath("../Button3")
+focus_neighbor_bottom = NodePath("../../Buttons0toEnter/Button0")
+theme_override_font_sizes/font_size = 64
+text = "2"
+
+[node name="Button3" type="Button" parent="CanvasLayer/VBoxContainer/Buttons1to3" unique_id=1242961378]
+custom_minimum_size = Vector2(300, 240)
+layout_mode = 2
+focus_neighbor_left = NodePath("../Button2")
+focus_neighbor_top = NodePath("../../Buttons4to6/Button6")
+focus_neighbor_bottom = NodePath("../../Buttons0toEnter/ButtonEnter")
+theme_override_font_sizes/font_size = 64
+text = "3"
+
+[node name="Buttons0toEnter" type="HBoxContainer" parent="CanvasLayer/VBoxContainer" unique_id=1979623030]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ButtonDelete" type="Button" parent="CanvasLayer/VBoxContainer/Buttons0toEnter" unique_id=190003185]
+custom_minimum_size = Vector2(300, 240)
+layout_mode = 2
+focus_neighbor_top = NodePath("../../Buttons1to3/Button")
+focus_neighbor_right = NodePath("../Button0")
+theme_override_font_sizes/font_size = 64
+text = "DEL
+"
+
+[node name="Button0" type="Button" parent="CanvasLayer/VBoxContainer/Buttons0toEnter" unique_id=1365026426]
+custom_minimum_size = Vector2(300, 240)
+layout_mode = 2
+focus_neighbor_left = NodePath("../ButtonDelete")
+focus_neighbor_top = NodePath("../../Buttons1to3/Button2")
+focus_neighbor_right = NodePath("../ButtonEnter")
+theme_override_font_sizes/font_size = 64
+text = "0
+"
+
+[node name="ButtonEnter" type="Button" parent="CanvasLayer/VBoxContainer/Buttons0toEnter" unique_id=1861954275]
+custom_minimum_size = Vector2(300, 240)
+layout_mode = 2
+focus_neighbor_left = NodePath("../Button0")
+focus_neighbor_top = NodePath("../../Buttons1to3/Button3")
+theme_override_font_sizes/font_size = 64
+text = "#"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=472642207]
+offset = Vector2(960, 540)

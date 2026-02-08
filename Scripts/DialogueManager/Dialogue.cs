@@ -175,10 +175,16 @@ public partial class Dialogue : Node
 		if (ItemToLoot != null)
 		{
 			EmitSignal(SignalName.YesLootButtonPressed, ItemToLoot);
+			
+			//Sends out choice selected. Use async functions with await on this signal
 			EmitSignalChoiceSelected(true);
+			ItemToLoot = null;
+			HideMessage();
+			return;
 		}
 			
-		ItemToLoot = null;
+		//Sends out choice selected. Use async functions with await on this signal
+		EmitSignalChoiceSelected(true);
 		HideMessage();
 	}
 
