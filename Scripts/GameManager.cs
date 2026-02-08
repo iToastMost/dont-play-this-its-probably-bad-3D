@@ -484,10 +484,11 @@ public partial class GameManager : Node3D
 				}
 			}
 
-			if (item is KeyItem)
+			if (item is KeyItem or EventItemBase)
 			{
 				_playerRe.InteractCheck();
 			}
+			
 			
 			if(item is iEquippable equippable)
 			{
@@ -696,7 +697,7 @@ public partial class GameManager : Node3D
 		InitializeMainMenu();
 	}
 	
-	private async void PrepareLoadingEnvironment(string path, int keyId, string zoneId, string doorId, string failedKeyText,bool isLocked)
+	private async void PrepareLoadingEnvironment(string path, string keyId, string zoneId, string doorId, string failedKeyText,bool isLocked)
 	{
 		if(isLocked)
 			if (!CheckForKey(keyId, zoneId, doorId, failedKeyText))
@@ -774,18 +775,18 @@ public partial class GameManager : Node3D
         CheckStoreLights();
     }
 
-	private bool CheckForKey(int keyId, string zoneId, string doorId, string failedText)
+	private bool CheckForKey(string keyId, string zoneId, string doorId, string failedText)
 	{
 		bool keyCheck = false;
 		
-		if (keyId != 0)
+		if (keyId != "")
 		{
 			for (int i = 0; i < _playerInventory.Length; i++)
 			{
 				if (_playerInventory[i] is KeyItem keyItem)
 				{
 					GD.Print("Checking Key Id: " + keyItem.KeyId);
-					if (keyItem.KeyId == keyId)
+					if (keyItem.KeyId.Equals(keyId))
 					{
 						if (_inventory.InventoryIsOpen)
 							_ui.ToggleInventory();
@@ -811,17 +812,17 @@ public partial class GameManager : Node3D
 	
 	
 	//Checks if the player has the required item to progress the event
-	private void IdCheck(int reqId, string zoneId, string eventName, string eventText, string eventCompletionText)
+	private void IdCheck(string reqId, string zoneId, string eventName, string eventText, string eventCompletionText)
 	{
 		
-		if (reqId != 0)
+		if (reqId != "")
 		{
 			for (int i = 0; i < _playerInventory.Length; i++)
 			{
-				if (_playerInventory[i] is KeyItem keyItem)
+				if (_playerInventory[i] is EventItemBase eventItem )
 				{
-					GD.Print("Checking Key Id: " + keyItem.KeyId);
-					if (keyItem.KeyId == reqId)
+					GD.Print("Checking Key Id: " + eventItem.EventId);
+					if (eventItem.EventId.Equals(reqId))
 					{
 						if (_inventory.InventoryIsOpen)
 							_ui.ToggleInventory();

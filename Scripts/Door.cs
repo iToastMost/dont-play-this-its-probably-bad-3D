@@ -10,7 +10,7 @@ public partial class Door : StaticBody3D, iInteractable
 	[Export] private bool _isFlipped;
 
 	//set the required key needed for this door. 0 = unlocked
-	[Export] public int KeyIdRequired { get; set; }
+	[Export] public string KeyIdRequired { get; set; }
 
 	[Export] public bool IsLocked { get; set; }
 
@@ -21,7 +21,7 @@ public partial class Door : StaticBody3D, iInteractable
 	[Export] public string ZoneId { get; set; }
 
 	[Signal]
-	public delegate void LoadEnvironmentEventHandler(string path, int keyIdRequired, string zoneId, string doorId, string failedKeyCheckText, bool isLocked);
+	public delegate void LoadEnvironmentEventHandler(string path, string keyIdRequired, string zoneId, string doorId, string failedKeyCheckText, bool isLocked);
 
 	[Signal]
 	public delegate void KeyIdCheckEventHandler(int id, string path);

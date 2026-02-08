@@ -4,7 +4,7 @@ using System;
 public partial class SisyphusPuzzle : StaticBody3D, iInteractable
 {
 	[Signal]
-	public delegate void InteractedEventHandler(int itemIdRequired, string zoneId, string eventName, string interactText, string eventCompletedText);
+	public delegate void InteractedEventHandler(string itemIdRequired, string zoneId, string eventName, string interactText, string eventCompletedText);
 
 	[Signal]
 	public delegate void AlreadyCompletedTextEventHandler(bool showInstant, string name, string alreadyCompletedText);
@@ -18,7 +18,7 @@ public partial class SisyphusPuzzle : StaticBody3D, iInteractable
 
 	[Export] public string EventAlreadyCompletedText;
     
-	[Export] public int KeyIdRequired;
+	[Export] public string KeyIdRequired;
 
 	[Export] public string EventNameId;
 

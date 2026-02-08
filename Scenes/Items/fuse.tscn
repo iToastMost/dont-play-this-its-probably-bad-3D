@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://syj6k24hr5nw"]
 
-[ext_resource type="Script" uid="uid://bmktyu254uq07" path="res://Scripts/Items/KeyItem.cs" id="1_5i3ds"]
+[ext_resource type="Script" uid="uid://dineji22yeg22" path="res://Scripts/Interfaces and Abstraction/Abstract/EventItemBase.cs" id="1_5i3ds"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kdp4w"]
 
@@ -17,9 +17,9 @@ size = Vector3(3.3999634, 3.1695843, 1.5208588)
 
 [node name="fuse" type="StaticBody3D" unique_id=869667086]
 script = ExtResource("1_5i3ds")
-KeyId = 2
+EventId = "BASEMENT_FUSE"
 itemName = "Fuse"
-itemDescription = "Fuse for getting the lights back on"
+itemDescription = "A fuse for the fusebox in the basement."
 itemID = 4
 
 [node name="CSGMesh3D2" type="CSGMesh3D" parent="." unique_id=1735864690]

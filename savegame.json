@@ -1,15 +1,15 @@
 {
-  "PlayerPosX": "-7.0871925",
-  "PlayerPosY": "0.38674626",
-  "PlayerPosZ": "12.796285",
-  "PlayerRotationY": "1.033185",
+  "PlayerPosX": "-6.9396424",
+  "PlayerPosY": "0.38662106",
+  "PlayerPosZ": "12.624341",
+  "PlayerRotationY": "1.083185",
   "Playerhealth": 100,
   "PlayerAmmo": 12,
   "CurrentEnvironment": "STORE_WAREHOUSE",
   "playerInventory": [
-    -1,
-    -1,
-    -1,
+    4,
+    3,
+    6,
     -1,
     -1,
     -1,
@@ -31,16 +31,32 @@
       ],
       "EventTriggeredIds": [],
       "DoorUnlockedIds": [
-        "STORE_OFFICE_DOOR",
-        "STORE_LOCKUP_DOOR"
+        "STORE_OFFICE_DOOR"
       ]
+    },
+    "STORE_BREAKROOM": {
+      "DeadEnemyIds": [],
+      "LootedItemIds": [],
+      "EventTriggeredIds": [],
+      "DoorUnlockedIds": []
+    },
+    "STORE_BREAKROOM_CLOSET": {
+      "DeadEnemyIds": [],
+      "LootedItemIds": [
+        "FUSE"
+      ],
+      "EventTriggeredIds": [],
+      "DoorUnlockedIds": []
     },
     "STORE_OFFICE": {
       "DeadEnemyIds": [],
       "LootedItemIds": [
-        "LOCKUP_KEY"
+        "LOCKUP_KEY",
+        "SISYPHUS_PUZZLE"
       ],
-      "EventTriggeredIds": [],
+      "EventTriggeredIds": [
+        "SISYPHUS_BOULDER"
+      ],
       "DoorUnlockedIds": []
     },
     "STORE_LOCKUP": {

@@ -329,6 +329,7 @@ shape = SubResource("BoxShape3D_1g5j8")
 
 [node name="OfficeKey" parent="Cameras" unique_id=404055002 instance=ExtResource("3_5owe4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.93235743, 0.07261211, -2.0271401)
+KeyId = ""
 ZoneId = "STORE_SHOWROOM_FLOOR"
 ItemId = "STORE_OFFICE_KEY"
 
@@ -679,7 +680,7 @@ size = Vector3(0.17578125, 1, 1.6770325)
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.55962, -0.49999952, 4.5198574)
 _environmentToLoad = "res://Scenes/Environments/lockup_scene.tscn"
 _isFlipped = true
-KeyIdRequired = 1
+KeyIdRequired = "STORE_LOCKUP"
 IsLocked = true
 failedCheckText = "The door is locked. Terry usually keeps the key in his office."
 DoorId = "STORE_LOCKUP_DOOR"
@@ -980,7 +981,7 @@ transform = Transform3D(1, 0, 0, 0, 0.5035478, 0.86396736, 0, -0.86396736, 0.503
 [node name="ToOffice" parent="." unique_id=1233551204 instance=ExtResource("2_fqmik")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.08404, -0.5, 5.7388124)
 _environmentToLoad = "res://Scenes/Environments/store_office.tscn"
-KeyIdRequired = 2
+KeyIdRequired = "STORE_OFFICE_KEY"
 IsLocked = true
 failedCheckText = "The door is locked. Someone must have the key on them."
 DoorId = "STORE_OFFICE_DOOR"

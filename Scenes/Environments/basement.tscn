@@ -92,7 +92,7 @@ StartingAnimation = "Sitting_Idle"
 [node name="ElevatorDoor" parent="." unique_id=2044213012 instance=ExtResource("5_tawf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.447544, -0.5, -11.198896)
 _environmentToLoad = "res://Scenes/Environments/warehouse.tscn"
-KeyIdRequired = 999
+KeyIdRequired = "\"EVENT_UNLOCK\""
 IsLocked = true
 failedCheckText = "There's an odd shaped sphereical hole next to an elevator everyone claims leads to nowhere and is out of service. Is it really?"
 DoorId = "STORE_BASEMENT_TO_UNDERGROUND"
@@ -114,9 +114,11 @@ shape = SubResource("BoxShape3D_vmlit")
 
 [node name="SisyphusBoulderInsert" parent="." unique_id=788649310 instance=ExtResource("7_y6bsh")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.515476, 0.55761206, -11.307037)
+KeyIdRequired = "SISYPHUS_BOULDER"
 
 [node name="Fusebox" parent="." unique_id=620708765 instance=ExtResource("3_0nuyt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004709482, -0.2619406, -0.25019598)
+KeyIdRequired = "BASEMENT_FUSE"
 
 [editable path="FixedCamera"]
 [editable path="FixedCamera2"]

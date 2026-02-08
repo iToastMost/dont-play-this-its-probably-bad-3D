@@ -3,6 +3,6 @@ using System;
 
 public abstract partial class KeyItemBase : ItemBase, iKeyItem
 {
-    [Export] public int KeyId { get; set; }
+    [Export] public string KeyId { get; set; }
     
 }

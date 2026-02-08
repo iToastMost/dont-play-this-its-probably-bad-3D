@@ -4,7 +4,7 @@ using System;
 public abstract partial class EnvironmentItemRequired : StaticBody3D, iInteractable
 {
     [Signal]
-    public delegate void InteractedEventHandler(int itemIdRequired, string zoneId, string eventName, string interactText, string eventCompletedText);
+    public delegate void InteractedEventHandler(string itemIdRequired, string zoneId, string eventName, string interactText, string eventCompletedText);
 
     [Signal]
     public delegate void AlreadyCompletedTextEventHandler(bool showDialogueInstantly, string name, string alreadyCompletedText);
@@ -15,7 +15,7 @@ public abstract partial class EnvironmentItemRequired : StaticBody3D, iInteracta
 
     [Export] public string EventAlreadyCompletedText;
     
-    [Export] public int KeyIdRequired;
+    [Export] public string KeyIdRequired;
 
     [Export] public string EventNameId;
 

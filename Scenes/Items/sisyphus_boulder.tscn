@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bl6wqc2sl70yg"]
 
-[ext_resource type="Script" uid="uid://bmktyu254uq07" path="res://Scripts/Items/KeyItem.cs" id="1_cpu5c"]
+[ext_resource type="Script" uid="uid://dineji22yeg22" path="res://Scripts/Interfaces and Abstraction/Abstract/EventItemBase.cs" id="1_cpu5c"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_432hh"]
 radius = 0.2
@@ -14,12 +14,12 @@ size = Vector3(1.607666, 3.2705383, 1)
 
 [node name="SisyphusBoulder" type="StaticBody3D" unique_id=22045581]
 script = ExtResource("1_cpu5c")
-KeyId = 3
+EventId = "SISYPHUS_BOULDER"
 itemName = "Miniature Boulder"
 itemDescription = "A miniature boulder you took from the statue depicting a man endlessly pushing the boulder up a mountain."
 itemID = 6
 ZoneId = "STORE_OFFICE"
-ItemId = "STORE_OFFICE_BOULDER"
+ItemId = "SISYPHUS_PUZZLE"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1254025246]
 mesh = SubResource("SphereMesh_432hh")
