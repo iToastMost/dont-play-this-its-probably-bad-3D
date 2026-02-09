@@ -32,6 +32,12 @@ public partial class DialogueManager : Node
         _dialogue.ItemToLoot = item;
         _dialogue.AskToLoot(item);
     }
+    
+    public void AskToUse()
+    {
+        _dialogue = GetParent().GetNode<Dialogue>("GameManager/PlayerSetup/UI/CanvasLayer/Dialogue");
+        _dialogue.AskToUse();
+    }
 
     public void HandleLootItemUI(Node3D item)
     {

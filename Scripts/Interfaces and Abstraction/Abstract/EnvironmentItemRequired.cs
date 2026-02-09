@@ -9,6 +9,9 @@ public abstract partial class EnvironmentItemRequired : StaticBody3D, iInteracta
     [Signal]
     public delegate void AlreadyCompletedTextEventHandler(bool showDialogueInstantly, string name, string alreadyCompletedText);
 
+    [Signal]
+    public delegate void AskToUseEventHandler();
+
     [Export] public string InteractText;
 
     [Export] public string EventCompletionText;

@@ -330,6 +330,7 @@ public partial class GameManager : Node3D
 			{
 				req.Interacted += IdCheck;
 				req.AlreadyCompletedText += SendDialogue;
+				req.AskToUse += AskToUse;
 			}
 			
 			if (interactableEnvironmentNode is SisyphusPuzzle puzzle)
@@ -386,6 +387,11 @@ public partial class GameManager : Node3D
 		EmitSignalDialogueCompleted();
 	}
 
+	private void AskToUse()
+	{
+		_playerRe.UpdateState(PlayerStateTypes.LootingState);
+		DialogueManager.Instance.AskToUse();
+	}
 	private void AskToLoot(Node3D item)
 	{
 		_playerRe.UpdateState(PlayerStateTypes.LootingState);
@@ -814,7 +820,7 @@ public partial class GameManager : Node3D
 	//Checks if the player has the required item to progress the event
 	private void IdCheck(string reqId, string zoneId, string eventName, string eventText, string eventCompletionText)
 	{
-		
+		GD.Print("ID check reached");
 		if (reqId != "")
 		{
 			for (int i = 0; i < _playerInventory.Length; i++)

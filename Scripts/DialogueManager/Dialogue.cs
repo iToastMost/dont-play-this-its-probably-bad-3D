@@ -116,7 +116,6 @@ public partial class Dialogue : Node
 			_hFlowContainer.Visible = true;
 			YesLootButton.GrabFocus();		
 		}
-		
 	}
 
 	public void AskToUseKey(Node3D key)
@@ -138,6 +137,24 @@ public partial class Dialogue : Node
 			_hFlowContainer.Visible = true;
 			YesLootButton.GrabFocus();	
 		}
+	}
+	
+	public void AskToUse()
+	{
+		var message = "Use the keypad?";
+		_visibleText = message.Length;
+            
+		_charName.Text = "";
+		RichTextLabel.Text = message;
+		RichTextLabel.VisibleCharacters = _visibleText;
+		_displayTextLength = RichTextLabel.Text.Length;
+            
+		_charName.Visible = true;
+		RichTextLabel.Visible = true;
+		ColorRect.Visible = true;
+            
+		_hFlowContainer.Visible = true;
+		YesLootButton.GrabFocus();	
 	}
 
 	public void HideMessage()

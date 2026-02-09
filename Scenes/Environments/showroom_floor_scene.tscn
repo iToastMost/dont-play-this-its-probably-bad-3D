@@ -990,7 +990,7 @@ ZoneId = "STORE_SHOWROOM_FLOOR"
 
 [node name="StoreKeypad" parent="." unique_id=1912419270 instance=ExtResource("22_oautp")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 33.040394, 0.8436079, 29.30902)
-InteractText = "A keypad that unlocks the door."
+InteractText = "A keypad to unlock the door"
 EventCompletionText = "The door unlocked."
 EventAlreadyCompletedText = "The door is already unlocked."
 KeyIdRequired = "0306"
