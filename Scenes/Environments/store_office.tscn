@@ -88,7 +88,6 @@ ItemId = "HANDGUN_AMMO_01"
 
 [node name="LockUpKey" parent="." unique_id=655708551 instance=ExtResource("7_5ygmx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1465262, 0.8679518, 2.7964952)
-KeyId = "STORE_LOCKUP"
 ZoneId = "STORE_OFFICE"
 ItemId = "LOCKUP_KEY"
 

@@ -498,13 +498,13 @@ shape = SubResource("BoxShape3D_lm1a6")
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.0669074, -0.50000024, 2.5030882)
 
 [node name="papertoweldisp" parent="." unique_id=1701196017 instance=ExtResource("4_f4y1d")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.6019502, 0.6773044, 2.7986913)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.0676699, 0.70936275, 2.7986913)
 
 [node name="soap" parent="." unique_id=2060502227 instance=ExtResource("5_f4y1d")]
 transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, -0.82318765, 0.3375489, 2.6288583)
 
 [node name="garbage" parent="." unique_id=1813665366 instance=ExtResource("6_6j0w0")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.550111, -0.4999999, 2.5644526)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.2508224, -0.4999999, 2.5644526)
 
 [node name="wetfloorsign" parent="." unique_id=1319910663 instance=ExtResource("7_crahg")]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -3.0582683, -0.49734017, 2.6966965)
@@ -513,7 +513,7 @@ transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.2183301, -0.09160206, 2.4868867)
 
 [node name="oven1_workingdoors_texture_v1" parent="." unique_id=1634984409 instance=ExtResource("13_deae4")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.20698464, -0.5, 2.4147477)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.0174313, -0.5, 0.46779633)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1217028941 groups=["StoreLights"]]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.2668568, 2.9210174, 0)

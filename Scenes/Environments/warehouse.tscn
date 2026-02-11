@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c07i77wx40aiu"]
+[gd_scene format=3 uid="uid://c07i77wx40aiu"]
 
 [ext_resource type="Script" uid="uid://c6e3fratuayb5" path="res://Scripts/GameState/Zone.cs" id="1_01rx1"]
 [ext_resource type="PackedScene" uid="uid://bfwranwv4r1lx" path="res://Scenes/Art/Models/door.tscn" id="1_6q6ta"]
@@ -13,7 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://ca6gagb4d1xdv" path="res://Art/Models/Appliances/MESH_Dryer_1_nodoors_v1.glb" id="10_yi8m6"]
 [ext_resource type="PackedScene" uid="uid://c5sh0il7h7eh0" path="res://Art/Models/Appliances/oven1_workingdoors_texture_v1.glb" id="11_l20at"]
 [ext_resource type="PackedScene" uid="uid://bhqfgu752vqjn" path="res://Scenes/computer_terminal.tscn" id="12_blnfw"]
+[ext_resource type="PackedScene" uid="uid://dmsnjwj8wtp7m" path="res://Scenes/Items/boxcutter.tscn" id="13_6ih5s"]
 [ext_resource type="PackedScene" uid="uid://8w1w7i8arnob" path="res://Scenes/enemy3D.tscn" id="13_i6hle"]
+[ext_resource type="PackedScene" uid="uid://urqpvkpkkito" path="res://Scenes/Items/healing_herb.tscn" id="16_a3xnj"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_l20at"]
 vertices = PackedVector3Array(-4.508068, -0.044046164, -5.030982, -2.758068, -0.044046164, -5.280982, -3.008068, -0.044046164, -14.530982, -20.508068, -0.044046164, -14.530982, -20.508068, -0.044046164, -3.030982, -4.508068, -0.044046164, -3.030982, -0.008068085, -0.044046164, -5.280982, 0.24193192, -0.044046164, -14.530982, 1.7419319, -0.044046164, 23.219017, -0.008068085, -0.044046164, 23.469017, 0.24193192, -0.044046164, 24.469017, 18.491932, -0.044046164, 24.469017, 1.7419319, -0.044046164, -5.030982, 18.491932, -0.044046164, -14.530982, -3.258068, -0.044046164, 11.469018, -3.258068, -0.044046164, 11.969018, -2.508068, -0.044046164, 11.969018, -2.258068, -0.044046164, 11.219018, -2.508068, -0.044046164, 4.469018, -2.008068, -0.044046164, 6.969018, -0.25806808, -0.044046164, 6.219018, -0.25806808, -0.044046164, 4.719018, -0.25806808, -0.044046164, 7.219018, 0.49193192, -0.044046164, 6.969018, 0.49193192, -0.044046164, 6.469018, -3.258068, -0.044046164, -4.030982, -2.508068, -0.044046164, -1.780982, -2.008068, -0.044046164, -0.530982, 0.49193192, -0.044046164, -4.030982, -2.008068, -0.044046164, 12.719018, -3.258068, -0.044046164, -1.780982, -3.258068, -0.044046164, 7.469018, -3.258068, -0.044046164, 9.719018, -2.258068, -0.044046164, 9.969018, -0.008068085, -0.044046164, 12.719018, 0.49193192, -0.044046164, 4.469018, -20.508068, -0.044046164, 11.969018, -12.258068, -0.044046164, 12.219018, -12.008068, -0.044046164, 10.469018, -4.508068, -0.044046164, 10.469018, -4.508068, -0.044046164, 11.719018, -5.508068, -0.044046164, 11.719018, -5.758068, -0.044046164, 12.469018, -4.508068, -0.044046164, 16.719017, -10.758068, -0.044046164, 21.969017, -9.258068, -0.044046164, 21.969017, -8.508068, -0.044046164, 20.969017, -6.258068, -0.044046164, 21.469017, -4.758068, -0.044046164, 21.219017, -4.008068, -0.044046164, 16.969017, -7.508068, -0.044046164, 12.219018, -10.758068, -0.044046164, 12.719018, -12.008068, -0.044046164, 23.219017, -20.508068, -0.044046164, 24.469017, -2.258068, -0.044046164, 13.969018, -3.258068, -0.044046164, 13.969018, -3.258068, -0.044046164, 16.719017, 0.49193192, -0.044046164, 12.719018, -3.508068, -0.044046164, 22.219017, 0.49193192, -0.044046164, 22.219017)
@@ -27,144 +29,166 @@ uv1_scale = Vector3(2, 2, 2)
 material = SubResource("StandardMaterial3D_mwk0h")
 size = Vector2(40, 40)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_01rx1"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_a3xnj"]
 resource_local_to_scene = true
 size = Vector3(4.491974, 0.45117188, 9.720032)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_b5x1k"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_2v6ro"]
 resource_local_to_scene = true
 size = Vector3(7.1791077, 0.4038086, 10.632263)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_mwk0h"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_hh1o4"]
 resource_local_to_scene = true
 size = Vector3(4.21463, 0.3388672, 5.8066406)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_m5jya"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_t0org"]
 resource_local_to_scene = true
 size = Vector3(4.1325684, 0.46862793, 10.189148)
 
-[node name="WarehouseScene" type="Node3D" groups=["Environments"]]
+[sub_resource type="BoxShape3D" id="BoxShape3D_sug0n"]
+resource_local_to_scene = true
+size = Vector3(10.4644165, 1, 3.9265137)
+
+[node name="WarehouseScene" type="Node3D" unique_id=726798920 groups=["Environments"]]
 script = ExtResource("1_01rx1")
 ZoneId = "STORE_WAREHOUSE"
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=284802598]
 navigation_mesh = SubResource("NavigationMesh_l20at")
 
-[node name="Environment" type="Node" parent="NavigationRegion3D"]
+[node name="Environment" type="Node" parent="NavigationRegion3D" unique_id=385862007]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/Environment"]
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/Environment" unique_id=1470451225]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2801843, 1.4359741, 9.096)
 use_collision = true
 flip_faces = true
 size = Vector3(4.9901733, 3.8953857, 27.302368)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D/Environment/CSGBox3D"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D/Environment/CSGBox3D" unique_id=1727721248]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.34177, 0.009277344, 7.8459997)
 flip_faces = true
 size = Vector3(7.790039, 3.9263916, 11.547363)
 
-[node name="Baydoor" type="CSGBox3D" parent="NavigationRegion3D/Environment/CSGBox3D"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D/Environment/CSGBox3D/CSGBox3D2" unique_id=1769827766]
+transform = Transform3D(0.99751025, 0.07052253, 0, -0.07052253, 0.99751025, 0, 0, 0, 1, -8.553844, -0.14616418, -2.7305145)
+use_collision = true
+flip_faces = true
+size = Vector3(10.655273, 2.8302002, 4.049469)
+
+[node name="Baydoor" type="CSGBox3D" parent="NavigationRegion3D/Environment/CSGBox3D" unique_id=903946739]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.271385, -0.5317451, 10.933763)
 operation = 2
 size = Vector3(0.10473633, 2.8564453, 3.8930664)
 
-[node name="Baydoor2" type="CSGBox3D" parent="NavigationRegion3D/Environment/CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.271385, -0.5317451, 5.1664734)
-operation = 2
-size = Vector3(0.10473633, 2.8564453, 3.8930664)
-
-[node name="door" parent="NavigationRegion3D/Environment" instance=ExtResource("1_6q6ta")]
+[node name="door" parent="NavigationRegion3D/Environment" unique_id=1433930995 instance=ExtResource("1_6q6ta")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.741199, -0.5002049, -3.0138326)
 _environmentToLoad = "res://Scenes/Environments/showroom_floor_scene.tscn"
 DoorId = "STORE_WAREHOUSE_TO_SHOWROOM_FLOOR"
 ZoneId = "STORE_WAREHOUSE"
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D/Environment"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D/Environment" unique_id=1008536999]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.808049, 0.9020996, 13.695902)
 size = Vector3(0.07507324, 2.8041992, 5.0757446)
 
-[node name="MESH_CombinedUnit_1_nodoors_v1" parent="NavigationRegion3D/Environment" instance=ExtResource("3_l20at")]
+[node name="MESH_CombinedUnit_1_nodoors_v1" parent="NavigationRegion3D/Environment" unique_id=1963898057 instance=ExtResource("3_l20at")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.7333417, -0.51171875, 11.858622)
 
-[node name="Floors_Walls" type="Node" parent="NavigationRegion3D"]
+[node name="Floors_Walls" type="Node" parent="NavigationRegion3D" unique_id=1529697470]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floors_Walls"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floors_Walls" unique_id=858056902]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.0080688, -0.5006504, 4.969018)
 mesh = SubResource("PlaneMesh_b5x1k")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="NavigationRegion3D" groups=["StoreLights"]]
+[node name="OmniLight3D" type="OmniLight3D" parent="NavigationRegion3D" unique_id=25197936 groups=["StoreLights"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0730653, 2.6922786, 1.9486341)
 light_color = Color(0.8392157, 0.8627451, 0.8627451, 1)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="NavigationRegion3D" groups=["StoreLights"]]
+[node name="OmniLight3D2" type="OmniLight3D" parent="NavigationRegion3D" unique_id=1386300401 groups=["StoreLights"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0730653, 2.6922786, 13.463217)
 light_color = Color(0.8392157, 0.8627451, 0.8627451, 1)
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="NavigationRegion3D" groups=["StoreLights"]]
+[node name="OmniLight3D3" type="OmniLight3D" parent="NavigationRegion3D" unique_id=2119827426 groups=["StoreLights"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1431975, 2.034476, 16.611004)
 light_color = Color(0.8392157, 0.8627451, 0.8627451, 1)
 
-[node name="MESH_Fridge_1_doors_v1" parent="NavigationRegion3D" instance=ExtResource("5_mwk0h")]
+[node name="MESH_Fridge_1_doors_v1" parent="NavigationRegion3D" unique_id=549558948 instance=ExtResource("5_mwk0h")]
 transform = Transform3D(0.120431334, 0, 0.9927217, 0, 1, 0, -0.9927217, 0, 0.120431334, -3.291706, -0.50867623, 2.270636)
 
-[node name="MESH_Fridge_1_doors_v2" parent="NavigationRegion3D" instance=ExtResource("5_mwk0h")]
+[node name="MESH_Fridge_1_doors_v2" parent="NavigationRegion3D" unique_id=1390663479 instance=ExtResource("5_mwk0h")]
 transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, -3.2917063, -0.50867623, 1.2706362)
 
-[node name="MESH_Fridge_1_doors_v3" parent="NavigationRegion3D" instance=ExtResource("5_mwk0h")]
+[node name="MESH_Fridge_1_doors_v3" parent="NavigationRegion3D" unique_id=1425863448 instance=ExtResource("5_mwk0h")]
 transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, -3.2917063, -0.50867623, 5.439857)
 
-[node name="MESH_Fridge_1_doors_v4" parent="NavigationRegion3D" instance=ExtResource("5_mwk0h")]
+[node name="MESH_Fridge_1_doors_v4" parent="NavigationRegion3D" unique_id=2054262739 instance=ExtResource("5_mwk0h")]
 transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, -3.2917066, -0.50867623, -0.7293639)
 
-[node name="MESH_Fridge_2_doors_v1" parent="NavigationRegion3D" instance=ExtResource("6_b5x1k")]
+[node name="MESH_Fridge_2_doors_v1" parent="NavigationRegion3D" unique_id=2002214314 instance=ExtResource("6_b5x1k")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.1976507, -0.51171875, 0.23809719)
 
-[node name="MESH_Fridge_3_doors_v1" parent="NavigationRegion3D" instance=ExtResource("7_25jdw")]
+[node name="MESH_Fridge_3_doors_v1" parent="NavigationRegion3D" unique_id=2144963438 instance=ExtResource("7_25jdw")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.3175278, -0.51171875, 3.5570545)
 
-[node name="MESH_Fridge_4_nodoors_v1" parent="NavigationRegion3D" instance=ExtResource("8_tw3d2")]
+[node name="MESH_Fridge_4_nodoors_v1" parent="NavigationRegion3D" unique_id=876237317 instance=ExtResource("8_tw3d2")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.2920105, -0.5117183, 6.4856315)
 
-[node name="MESH_DishWasher_1_nodoors_v1" parent="NavigationRegion3D" instance=ExtResource("9_4157h")]
+[node name="MESH_DishWasher_1_nodoors_v1" parent="NavigationRegion3D" unique_id=2062940357 instance=ExtResource("9_4157h")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.7965269, -0.51171875, 7.8407545)
 
-[node name="MESH_DishWasher_1_nodoors_v2" parent="NavigationRegion3D" instance=ExtResource("9_4157h")]
+[node name="MESH_DishWasher_1_nodoors_v2" parent="NavigationRegion3D" unique_id=931364352 instance=ExtResource("9_4157h")]
 transform = Transform3D(0.059637353, 0, 0.9982201, 0, 1, 0, -0.9982201, 0, 0.059637353, -3.1577837, -0.51171875, 13.027615)
 
-[node name="MESH_Dryer_1_nodoors_v1" parent="NavigationRegion3D" instance=ExtResource("10_yi8m6")]
+[node name="MESH_Dryer_1_nodoors_v1" parent="NavigationRegion3D" unique_id=1909194108 instance=ExtResource("10_yi8m6")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.84021664, -0.51171875, 10.6116905)
 
-[node name="MESH_Dryer_1_nodoors_v2" parent="NavigationRegion3D" instance=ExtResource("10_yi8m6")]
+[node name="MESH_Dryer_1_nodoors_v2" parent="NavigationRegion3D" unique_id=1202301585 instance=ExtResource("10_yi8m6")]
 transform = Transform3D(-0.017086012, 0, 0.99985397, 0, 1, 0, -0.99985397, 0, -0.017086012, -3.1597834, -0.51171875, 10.6116905)
 
-[node name="oven1_workingdoors_texture_v1" parent="NavigationRegion3D" instance=ExtResource("11_l20at")]
+[node name="oven1_workingdoors_texture_v1" parent="NavigationRegion3D" unique_id=1828995628 instance=ExtResource("11_l20at")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.81548345, -0.51171875, 9.355623)
 
-[node name="oven1_workingdoors_texture_v2" parent="NavigationRegion3D" instance=ExtResource("11_l20at")]
+[node name="oven1_workingdoors_texture_v2" parent="NavigationRegion3D" unique_id=1366076328 instance=ExtResource("11_l20at")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.81548345, -0.51171875, 5.3556232)
 
-[node name="MESH_Fridge_4_nodoors_v2" parent="NavigationRegion3D" instance=ExtResource("8_tw3d2")]
+[node name="MESH_Fridge_4_nodoors_v2" parent="NavigationRegion3D" unique_id=2037085113 instance=ExtResource("8_tw3d2")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -8.080138, -0.51794434, 22.231089)
 
-[node name="MESH_CombinedUnit_1_nodoors_v1" parent="NavigationRegion3D" instance=ExtResource("3_l20at")]
+[node name="MESH_CombinedUnit_1_nodoors_v1" parent="NavigationRegion3D" unique_id=197607833 instance=ExtResource("3_l20at")]
 transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, -7.0196557, -0.51794434, 22.213509)
 
-[node name="MESH_DishWasher_1_nodoors_v3" parent="NavigationRegion3D" instance=ExtResource("9_4157h")]
+[node name="MESH_DishWasher_1_nodoors_v3" parent="NavigationRegion3D" unique_id=1713041727 instance=ExtResource("9_4157h")]
 transform = Transform3D(-0.9250573, 0, -0.37982753, 0, 1, 0, 0.37982753, 0, -0.9250573, -5.150396, -0.5179441, 22.19754)
 
-[node name="MESH_Dryer_1_nodoors_v3" parent="NavigationRegion3D" instance=ExtResource("10_yi8m6")]
+[node name="MESH_Dryer_1_nodoors_v3" parent="NavigationRegion3D" unique_id=814968786 instance=ExtResource("10_yi8m6")]
 transform = Transform3D(0.6866816, 0, 0.7269583, 0, 1, 0, -0.7269583, 0, 0.6866816, -11.019491, -0.51794446, 11.666923)
 
-[node name="oven1_workingdoors_texture_v3" parent="NavigationRegion3D" instance=ExtResource("11_l20at")]
+[node name="oven1_workingdoors_texture_v3" parent="NavigationRegion3D" unique_id=324120187 instance=ExtResource("11_l20at")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.723005, -0.51794446, 11.501725)
 
-[node name="MESH_Fridge_3_doors_v2" parent="NavigationRegion3D" instance=ExtResource("7_25jdw")]
+[node name="oven1_workingdoors_texture_v4" parent="NavigationRegion3D" unique_id=1140389247 instance=ExtResource("11_l20at")]
+transform = Transform3D(0.8596455, 0.12115906, 0.49631655, -0.104926825, 0.9926331, -0.06057953, -0.5, 0, 0.8660254, -19.616589, 0.1530152, 12.6974)
+
+[node name="MESH_Fridge_3_doors_v2" parent="NavigationRegion3D" unique_id=1587657331 instance=ExtResource("7_25jdw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.382475, -0.51794446, 11.462523)
 
-[node name="ComputerTerminal" parent="NavigationRegion3D" instance=ExtResource("12_blnfw")]
+[node name="MESH_Fridge_3_doors_v3" parent="NavigationRegion3D" unique_id=506899956 instance=ExtResource("7_25jdw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.075806, 0.25163865, 12.781676)
+
+[node name="MESH_Fridge_3_doors_v4" parent="NavigationRegion3D" unique_id=1086731771 instance=ExtResource("7_25jdw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.075806, 0.25163865, 13.9947815)
+
+[node name="MESH_Fridge_3_doors_v5" parent="NavigationRegion3D" unique_id=797970007 instance=ExtResource("7_25jdw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.075806, 0.25163865, 15.333421)
+
+[node name="ComputerTerminal" parent="NavigationRegion3D" unique_id=1132705869 instance=ExtResource("12_blnfw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4961734, -0.11519027, 11.3233185)
 
-[node name="FixedCamera" parent="." instance=ExtResource("2_652wb")]
+[node name="Boxcutter" parent="NavigationRegion3D" unique_id=525237595 instance=ExtResource("13_6ih5s")]
+transform = Transform3D(1, 0, 0, 0, 2.9802322e-08, -1, 0, 1, 2.9802322e-08, -19.071365, 1.1179844, 12.764421)
+ZoneId = "STORE_WAREHOUSE"
+ItemId = "BOXCUTTER"
+
+[node name="FixedCamera" parent="." unique_id=1901397574 instance=ExtResource("2_652wb")]
 transform = Transform3D(-0.8377053, -0.046627663, 0.5441284, 0, 0.9963485, 0.085379496, -0.54612255, 0.071522854, -0.83464646, 0.76422167, 0.7576697, -4.332203)
 
 [node name="Area3D" parent="FixedCamera" index="0"]
@@ -172,26 +196,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6099858, 0.076595485, 0)
 
 [node name="CollisionShape3D" parent="FixedCamera/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35688782, -0.27441406, 0.45083618)
-shape = SubResource("BoxShape3D_01rx1")
+shape = SubResource("BoxShape3D_a3xnj")
 
-[node name="Spawnpoints" type="Node" parent="."]
+[node name="Spawnpoints" type="Node" parent="." unique_id=1508832676]
 
-[node name="FromShowroomFloorScene" type="Marker3D" parent="Spawnpoints"]
+[node name="FromShowroomFloorScene" type="Marker3D" parent="Spawnpoints" unique_id=159227273]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1589978, 0.38722846, -3.0432937)
 
-[node name="FromBasement" type="Marker3D" parent="Spawnpoints"]
+[node name="FromBasement" type="Marker3D" parent="Spawnpoints" unique_id=747173936]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.5393434, 0.38722846, 12.504238)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." groups=["StoreLights"]]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=295281369 groups=["StoreLights"]]
 transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 9.769553, 9.233518)
 
-[node name="door" parent="." instance=ExtResource("1_6q6ta")]
+[node name="door" parent="." unique_id=404898792 instance=ExtResource("1_6q6ta")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.542144, -0.51794434, 11.200867)
 _environmentToLoad = "res://Scenes/Environments/basement.tscn"
 DoorId = "STORE_WAREHOUSE_TO_BASEMENT"
 ZoneId = "STORE_WAREHOUSE"
 
-[node name="FixedCamera4" parent="." instance=ExtResource("2_652wb")]
+[node name="FixedCamera4" parent="." unique_id=36434148 instance=ExtResource("2_652wb")]
 transform = Transform3D(0.72713554, 0.15031043, -0.66983634, 0, 0.97573525, 0.21895374, 0.686494, -0.15920904, 0.7094917, -10.565137, 1.8404665, 21.976038)
 
 [node name="Area3D" parent="FixedCamera4" index="0"]
@@ -199,9 +223,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3660555, 0, 17.18308)
 
 [node name="CollisionShape3D" parent="FixedCamera4/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15419006, -0.2980957, -0.2684021)
-shape = SubResource("BoxShape3D_b5x1k")
+shape = SubResource("BoxShape3D_2v6ro")
 
-[node name="FixedCamera3" parent="." instance=ExtResource("2_652wb")]
+[node name="FixedCamera3" parent="." unique_id=76485531 instance=ExtResource("2_652wb")]
 transform = Transform3D(0.47872487, -0.1054399, 0.8716106, 0, 0.9927623, 0.1200958, -0.87796503, -0.05749284, 0.47526, 0.48422766, 1.4023874, 22.166096)
 
 [node name="Area3D" parent="FixedCamera3" index="0"]
@@ -209,9 +233,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5904655, 0, 19.329718)
 
 [node name="CollisionShape3D" parent="FixedCamera3/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29612732, -0.3305664, -0.004638672)
-shape = SubResource("BoxShape3D_mwk0h")
+shape = SubResource("BoxShape3D_hh1o4")
 
-[node name="FixedCamera2" parent="." instance=ExtResource("2_652wb")]
+[node name="FixedCamera2" parent="." unique_id=924338445 instance=ExtResource("2_652wb")]
 transform = Transform3D(-0.9999758, -0.0001338269, -0.0069554322, 0, 0.999815, -0.01923707, 0.00695672, -0.019236604, -0.9997908, -1.1153619, 0.71489155, 4.5950675)
 
 [node name="Area3D" parent="FixedCamera2" index="0"]
@@ -219,14 +243,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.803107, 0, 10.9186)
 
 [node name="CollisionShape3D" parent="FixedCamera2/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4498291, -0.26568604, -0.15982056)
-shape = SubResource("BoxShape3D_m5jya")
+shape = SubResource("BoxShape3D_t0org")
 
-[node name="Enemy3D" parent="." instance=ExtResource("13_i6hle")]
+[node name="Enemy3D" parent="." unique_id=1028387595 instance=ExtResource("13_i6hle")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.210052, 0.4455315, 19.77155)
 ZoneId = "STORE_WAREHOUSE"
 EnemyId = "ENEMY_01"
+
+[node name="TruckCamera" parent="." unique_id=149223972 instance=ExtResource("2_652wb")]
+transform = Transform3D(-0.011315394, -0.08537325, 0.9962848, 0, 0.99634856, 0.08537872, -0.999936, 0.00096609385, -0.011274077, -9.64518, 1.5825722, 14.167415)
+
+[node name="Area3D" parent="TruckCamera" index="0"]
+transform = Transform3D(0.9965409, 0.08310387, 0, -0.08310387, 0.9965409, 0, 0, 0, 1, -19.700413, 0.44497323, 13.271678)
+
+[node name="CollisionShape3D" parent="TruckCamera/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6585388, 0, 0.9210205)
+shape = SubResource("BoxShape3D_sug0n")
+
+[node name="HealingHerb" parent="." unique_id=810504392 instance=ExtResource("16_a3xnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.55497, 1.2471849, 12.905117)
+ZoneId = "STORE_WAREHOUSE"
+ItemId = "HEALING_HERB"
 
 [editable path="FixedCamera"]
 [editable path="FixedCamera4"]
 [editable path="FixedCamera3"]
 [editable path="FixedCamera2"]
+[editable path="TruckCamera"]

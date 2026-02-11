@@ -13,6 +13,8 @@ public abstract partial class ItemBase : StaticBody3D, iLootable
     {
         if (GameStateManager.Instance == null)
             return;
+
+        //ZoneId = GameStateManager.Instance.GetCurrentZoneId();
         
         if(GameStateManager.Instance.IsItemLooted(ZoneId, ItemId))
         {

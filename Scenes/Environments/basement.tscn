@@ -80,7 +80,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.77889305, 1.7924249, 0.224
 [node name="door" parent="." unique_id=304080197 instance=ExtResource("5_tawf3")]
 transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, -12.684513, -0.49999976, 2.5008957)
 _environmentToLoad = "res://Scenes/Environments/warehouse.tscn"
-DoorId = "STORE_BASEMENT_TO_WAREHOUSE"
+DoorId = "STORE_BASEMENT_TO_HATCH"
 ZoneId = "STORE_BASEMENT"
 
 [node name="NPC" parent="." unique_id=1442468107 instance=ExtResource("6_4be4p")]
@@ -91,7 +91,7 @@ StartingAnimation = "Sitting_Idle"
 
 [node name="ElevatorDoor" parent="." unique_id=2044213012 instance=ExtResource("5_tawf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.447544, -0.5, -11.198896)
-_environmentToLoad = "res://Scenes/Environments/warehouse.tscn"
+_environmentToLoad = "res://Scenes/Environments/hatch_to_lab.tscn"
 KeyIdRequired = "\"EVENT_UNLOCK\""
 IsLocked = true
 failedCheckText = "There's an odd shaped sphereical hole next to an elevator everyone claims leads to nowhere and is out of service. Is it really?"

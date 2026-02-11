@@ -263,10 +263,10 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -6.0
 [node name="InitialPlayerSpawn" type="Marker3D" parent="Spawnpoints" unique_id=1373675467]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7143955, 0.9072315, 1.1508105)
 
-[node name="HealingHerb" parent="." unique_id=809544859 instance=ExtResource("19_rpe6t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.040017, 1.0151529, 4.5594387)
+[node name="HealingHerb" parent="." unique_id=810504392 instance=ExtResource("19_rpe6t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97805, 1.1394681, 4.55607)
 ZoneId = "STORE_MENS_BATHROOM"
-ItemId = "HEALING_HERB01"
+ItemId = "HEALING_HERB"
 
 [editable path="Cameras/FixedCamera"]
 [editable path="Cameras/FixedCamera2"]
