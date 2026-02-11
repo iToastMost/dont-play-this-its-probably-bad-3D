@@ -6,6 +6,7 @@ public partial class StoreKeypad : EnvironmentItemRequired
     private Dialogue _dialogue;
     private GameManager _gameManager;
     private Door _lockUpDoor;
+    private StoreKeypadUI _keypadUI;
     public override void _Ready()
     {
         AddToGroup("InteractableEnvironment");
@@ -37,9 +38,22 @@ public partial class StoreKeypad : EnvironmentItemRequired
          bool value = choice[0].AsBool();
          if (value)
          {
-             GameStateManager.Instance.MarkEventTriggered(ZoneId, EventNameId);
-             _lockUpDoor.IsLocked = false;
-             GameStateManager.Instance.MarkDoorUnlocked(ZoneId, _lockUpDoor.DoorId);
+             var keypadUi = ResourceLoader.Load<PackedScene>("res://Scenes/Art/UI/store_keypad.tscn");
+             _keypadUI = keypadUi.Instantiate<StoreKeypadUI>();
+             AddChild(_keypadUI);
+
+             var code = await ToSignal(_keypadUI, StoreKeypadUI.SignalName.SendCode);
+
+             string parsedCode = code[0].AsString();
+             GD.Print(parsedCode);
+
+             if (parsedCode == KeyIdRequired)
+             {
+                 GameStateManager.Instance.MarkEventTriggered(ZoneId, EventNameId);
+                 _lockUpDoor.IsLocked = false;
+                 GameStateManager.Instance.MarkDoorUnlocked(ZoneId, _lockUpDoor.DoorId);
+             }
+             
          }
     }
 }

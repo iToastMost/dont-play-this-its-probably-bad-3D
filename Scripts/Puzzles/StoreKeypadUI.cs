@@ -3,29 +3,42 @@ using System;
 
 public partial class StoreKeypadUI : Control
 {
+    [Signal]
+    public delegate void SendCodeEventHandler(string code);
+    
     private Button _button5;
+    private Button _buttonDel;
+    private Button _poundButton;
+    
     private RichTextLabel _code;
     private string _enteredText;
-    private Button _buttonDel;
+    
     
     public override void _Ready()
     {
         _code = GetNode<RichTextLabel>("CanvasLayer/VBoxContainer/CodeDisplay/RichTextLabel");
         _button5 = GetNode<Button>("CanvasLayer/VBoxContainer/Buttons4to6/Button5");
         _buttonDel = GetNode<Button>("CanvasLayer/VBoxContainer/Buttons0toEnter/ButtonDelete");
+        _poundButton = GetNode<Button>("CanvasLayer/VBoxContainer/Buttons0toEnter/ButtonPound");
         _button5.GrabFocus();
 
-        _enteredText = "";
+        var buttons = GetTree().GetNodesInGroup("Buttons0to9");
         
-        _button5.Pressed += () => ButtonPressed(_button5);
+        foreach (Button button in buttons)
+        {
+            button.Pressed += () => ButtonPressed(button);
+        }
+        
+        _enteredText = "";
         _buttonDel.Pressed += DeletePressed;
+        _poundButton.Pressed += PoundPressed;
     }
 
     private void ButtonPressed(Button button)
     {
         //ReplaceAsterisk();
         if(_enteredText.Length < 4)
-            _enteredText += _button5.Text;
+            _enteredText += button.Text;
         _code.SetText(_enteredText);
     }
 
@@ -38,7 +51,10 @@ public partial class StoreKeypadUI : Control
 
     private void PoundPressed()
     {
+        if(_enteredText.Length == 4)
+            EmitSignal(SignalName.SendCode, _enteredText);
         
+        QueueFree();
     }
 
     private void ReplaceAsterisk()

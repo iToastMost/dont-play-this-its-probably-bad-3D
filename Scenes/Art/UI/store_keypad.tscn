@@ -48,7 +48,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Button7" type="Button" parent="CanvasLayer/VBoxContainer/Buttons7to9" unique_id=1502255457]
+[node name="Button7" type="Button" parent="CanvasLayer/VBoxContainer/Buttons7to9" unique_id=1502255457 groups=["Buttons0to9"]]
 custom_minimum_size = Vector2(300, 240)
 layout_mode = 2
 focus_neighbor_right = NodePath("../Button8")
@@ -56,7 +56,7 @@ focus_neighbor_bottom = NodePath("../../Buttons4to6/Button4")
 theme_override_font_sizes/font_size = 64
 text = "7"
 
-[node name="Button8" type="Button" parent="CanvasLayer/VBoxContainer/Buttons7to9" unique_id=1892308772]
+[node name="Button8" type="Button" parent="CanvasLayer/VBoxContainer/Buttons7to9" unique_id=1892308772 groups=["Buttons0to9"]]
 custom_minimum_size = Vector2(300, 240)
 layout_mode = 2
 focus_neighbor_left = NodePath("../Button7")
@@ -65,7 +65,7 @@ focus_neighbor_bottom = NodePath("../../Buttons4to6/Button5")
 theme_override_font_sizes/font_size = 64
 text = "8"
 
-[node name="Button9" type="Button" parent="CanvasLayer/VBoxContainer/Buttons7to9" unique_id=1391065070]
+[node name="Button9" type="Button" parent="CanvasLayer/VBoxContainer/Buttons7to9" unique_id=1391065070 groups=["Buttons0to9"]]
 custom_minimum_size = Vector2(300, 240)
 layout_mode = 2
 focus_neighbor_left = NodePath("../Button8")
@@ -77,7 +77,7 @@ text = "9"
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Button4" type="Button" parent="CanvasLayer/VBoxContainer/Buttons4to6" unique_id=95633281]
+[node name="Button4" type="Button" parent="CanvasLayer/VBoxContainer/Buttons4to6" unique_id=95633281 groups=["Buttons0to9"]]
 custom_minimum_size = Vector2(300, 240)
 layout_mode = 2
 focus_neighbor_top = NodePath("../../Buttons7to9/Button7")
@@ -86,7 +86,7 @@ focus_neighbor_bottom = NodePath("../../Buttons1to3/Button")
 theme_override_font_sizes/font_size = 64
 text = "4"
 
-[node name="Button5" type="Button" parent="CanvasLayer/VBoxContainer/Buttons4to6" unique_id=217340064]
+[node name="Button5" type="Button" parent="CanvasLayer/VBoxContainer/Buttons4to6" unique_id=217340064 groups=["Buttons0to9"]]
 custom_minimum_size = Vector2(300, 240)
 layout_mode = 2
 focus_neighbor_left = NodePath("../Button4")
@@ -96,7 +96,7 @@ focus_neighbor_bottom = NodePath("../../Buttons1to3/Button2")
 theme_override_font_sizes/font_size = 64
 text = "5"
 
-[node name="Button6" type="Button" parent="CanvasLayer/VBoxContainer/Buttons4to6" unique_id=249131294]
+[node name="Button6" type="Button" parent="CanvasLayer/VBoxContainer/Buttons4to6" unique_id=249131294 groups=["Buttons0to9"]]
 custom_minimum_size = Vector2(300, 240)
 layout_mode = 2
 focus_neighbor_left = NodePath("../Button5")
@@ -109,7 +109,7 @@ text = "6"
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer/Buttons1to3" unique_id=1055513843]
+[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer/Buttons1to3" unique_id=1055513843 groups=["Buttons0to9"]]
 custom_minimum_size = Vector2(300, 240)
 layout_mode = 2
 focus_neighbor_top = NodePath("../../Buttons4to6/Button4")
@@ -118,7 +118,7 @@ focus_neighbor_bottom = NodePath("../../Buttons0toEnter/ButtonDelete")
 theme_override_font_sizes/font_size = 64
 text = "1"
 
-[node name="Button2" type="Button" parent="CanvasLayer/VBoxContainer/Buttons1to3" unique_id=46719328]
+[node name="Button2" type="Button" parent="CanvasLayer/VBoxContainer/Buttons1to3" unique_id=46719328 groups=["Buttons0to9"]]
 custom_minimum_size = Vector2(300, 240)
 layout_mode = 2
 focus_neighbor_left = NodePath("../Button")
@@ -128,12 +128,12 @@ focus_neighbor_bottom = NodePath("../../Buttons0toEnter/Button0")
 theme_override_font_sizes/font_size = 64
 text = "2"
 
-[node name="Button3" type="Button" parent="CanvasLayer/VBoxContainer/Buttons1to3" unique_id=1242961378]
+[node name="Button3" type="Button" parent="CanvasLayer/VBoxContainer/Buttons1to3" unique_id=1242961378 groups=["Buttons0to9"]]
 custom_minimum_size = Vector2(300, 240)
 layout_mode = 2
 focus_neighbor_left = NodePath("../Button2")
 focus_neighbor_top = NodePath("../../Buttons4to6/Button6")
-focus_neighbor_bottom = NodePath("../../Buttons0toEnter/ButtonEnter")
+focus_neighbor_bottom = NodePath("../../Buttons0toEnter/ButtonPound")
 theme_override_font_sizes/font_size = 64
 text = "3"
 
@@ -150,17 +150,16 @@ theme_override_font_sizes/font_size = 64
 text = "DEL
 "
 
-[node name="Button0" type="Button" parent="CanvasLayer/VBoxContainer/Buttons0toEnter" unique_id=1365026426]
+[node name="Button0" type="Button" parent="CanvasLayer/VBoxContainer/Buttons0toEnter" unique_id=1365026426 groups=["Buttons0to9"]]
 custom_minimum_size = Vector2(300, 240)
 layout_mode = 2
 focus_neighbor_left = NodePath("../ButtonDelete")
 focus_neighbor_top = NodePath("../../Buttons1to3/Button2")
-focus_neighbor_right = NodePath("../ButtonEnter")
+focus_neighbor_right = NodePath("../ButtonPound")
 theme_override_font_sizes/font_size = 64
-text = "0
-"
+text = "0"
 
-[node name="ButtonEnter" type="Button" parent="CanvasLayer/VBoxContainer/Buttons0toEnter" unique_id=1861954275]
+[node name="ButtonPound" type="Button" parent="CanvasLayer/VBoxContainer/Buttons0toEnter" unique_id=1861954275]
 custom_minimum_size = Vector2(300, 240)
 layout_mode = 2
 focus_neighbor_left = NodePath("../Button0")
