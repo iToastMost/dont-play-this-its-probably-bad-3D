@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bhr6tuss8n6s"]
 
+[ext_resource type="Script" uid="uid://dvickm5rspmlt" path="res://Scripts/Puzzles/StoreKeypadUI.cs" id="1_ijmc4"]
+
 [node name="StoreKeypad" type="Control" unique_id=94710458]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ijmc4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=137354990]
 
@@ -35,7 +38,8 @@ custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 64
-text = "1234
+bbcode_enabled = true
+text = "
 "
 horizontal_alignment = 1
 vertical_alignment = 1
