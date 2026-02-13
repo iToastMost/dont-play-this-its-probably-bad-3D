@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://chk3nbwdj3ydm"]
+
+[ext_resource type="Script" uid="uid://b2uhhnvapbvrb" path="res://Scripts/Items/Ammo.cs" id="1_r3lqx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ldo2"]
+size = Vector3(2.4852905, 6.806122, 5.32341)
+
+[sub_resource type="BoxMesh" id="BoxMesh_r3lqx"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bgcps"]
+albedo_color = Color(0.41568628, 0.83137256, 0.23137255, 1)
+
+[node name="ShotgunAmmo" type="StaticBody3D" unique_id=969944176]
+script = ExtResource("1_r3lqx")
+AmmoAmount = 5
+AmmoType = "12Gauge"
+itemName = "Shotgun Ammo"
+itemID = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=925515786]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0101623535, -0.43144226, -0.57598114)
+shape = SubResource("BoxShape3D_1ldo2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2058554057]
+transform = Transform3D(0.70824206, 0, 0, 0, 0.4437446, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_r3lqx")
+surface_material_override/0 = SubResource("StandardMaterial3D_bgcps")

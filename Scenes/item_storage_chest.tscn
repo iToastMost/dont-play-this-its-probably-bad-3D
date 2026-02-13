@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bejlkntiu8ykh"]
+
+[ext_resource type="Script" uid="uid://h4c15b4kfu76" path="res://Scripts/Items/ItemStorageBox/ItemStorageBox.cs" id="1_elued"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ipatw"]
+
+[node name="ItemStorageChest" type="StaticBody3D" unique_id=382558787 groups=["InteractableEnvironment"]]
+script = ExtResource("1_elued")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1589550600]
+shape = SubResource("BoxShape3D_ipatw")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1664581006]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0064697266, 0, 0)
+size = Vector3(2.4, 1, 1)
+
+[node name="Pivot" type="Node3D" parent="CSGBox3D" unique_id=1096303105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5444823, -0.62920535)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D/Pivot" unique_id=2051064832]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.039743066, 0.62920535)
+size = Vector3(2.4, 0.2, 1)

@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://6i5rrowv0td" path="res://Scenes/FixedCamera.tscn" id="4_aneew"]
 [ext_resource type="PackedScene" uid="uid://bu1xmdj873i0m" path="res://Scenes/Items/Handgun.tscn" id="5_rwllu"]
 [ext_resource type="PackedScene" uid="uid://xexhgx776cch" path="res://Scenes/Items/handgun_ammo.tscn" id="6_kyba0"]
-[ext_resource type="PackedScene" uid="uid://bscstcsbakyd5" path="res://Scenes/Items/lockup_key.tscn" id="7_5ygmx"]
 [ext_resource type="PackedScene" uid="uid://bf53fx5mqlf8n" path="res://Scenes/EnvironmentEvents/sisyphus_puzzle.tscn" id="8_exavs"]
+[ext_resource type="PackedScene" uid="uid://chk3nbwdj3ydm" path="res://Scenes/Items/shotgun_ammo.tscn" id="8_nuhjy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_767rj"]
 albedo_texture = ExtResource("2_x3j3r")
@@ -16,11 +16,11 @@ albedo_texture = ExtResource("2_x3j3r")
 material = SubResource("StandardMaterial3D_767rj")
 size = Vector2(9, 9)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_exavs"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_0bor4"]
 resource_local_to_scene = true
 size = Vector3(7.161377, 1, 4.9457703)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_nuhjy"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_1mwiw"]
 resource_local_to_scene = true
 size = Vector3(9.099396, 1, 3.495575)
 
@@ -54,7 +54,7 @@ transform = Transform3D(0.5514834, 0.31785527, -0.7712549, 1.1556142e-08, 0.9245
 
 [node name="CollisionShape3D" parent="FixedCamera/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14050293, 0, 2.2076569)
-shape = SubResource("BoxShape3D_exavs")
+shape = SubResource("BoxShape3D_0bor4")
 
 [node name="Desk" type="CSGBox3D" parent="." unique_id=1600918371]
 transform = Transform3D(0.80958086, 0, 0.5870084, 0, 1, 0, -0.5870084, 0, 0.80958086, -1.4545212, 0.6777841, 2.415264)
@@ -77,19 +77,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2513522, -0.29786682, -0.59
 size = Vector3(0.118652344, 0.74868774, 0.16851807)
 
 [node name="Handgun" parent="." unique_id=1599690951 instance=ExtResource("5_rwllu")]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -1.6247963, 0.7287478, 1.8283495)
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -1.2727938, 0.7287478, 2.2453024)
 ZoneId = "STORE_OFFICE"
 ItemId = "HANDGUN"
 
 [node name="HandgunAmmo" parent="." unique_id=895472720 instance=ExtResource("6_kyba0")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.4625514, 0.79339427, 2.1048424)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.1631155, 0.79339427, 2.5739992)
 ZoneId = "STORE_OFFICE"
 ItemId = "HANDGUN_AMMO_01"
-
-[node name="LockUpKey" parent="." unique_id=655708551 instance=ExtResource("7_5ygmx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1465262, 0.8679518, 2.7964952)
-ZoneId = "STORE_OFFICE"
-ItemId = "LOCKUP_KEY"
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=584725882]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0684803, 0.5235114, -4.118686)
@@ -108,7 +103,13 @@ transform = Transform3D(0.679783, -0.037077084, 0.7324756, 2.8788503e-09, 0.9987
 
 [node name="CollisionShape3D" parent="FixedCamera2/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.87358093, 0, -2.5859478)
-shape = SubResource("BoxShape3D_nuhjy")
+shape = SubResource("BoxShape3D_1mwiw")
+
+[node name="ShotgunAmmo" parent="." unique_id=969944176 instance=ExtResource("8_nuhjy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6027552, 0.7891083, 1.9855976)
+itemDescription = "Ammo for a 12 gauge shotgun"
+ZoneId = "STORE_OFFICE"
+ItemId = "SHOTGUN_AMMO"
 
 [editable path="FixedCamera"]
 [editable path="CSGBox3D2/SisyphusPuzzle"]

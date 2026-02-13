@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bu1xmdj873i0m"]
+[gd_scene format=3 uid="uid://bu1xmdj873i0m"]
 
 [ext_resource type="Script" uid="uid://dn7t5dufctesx" path="res://Scripts/Items/Handgun.cs" id="1_x4ohl"]
 
@@ -13,28 +13,29 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_x4ohl"]
 size = Vector3(2.217041, 0.9007416, 0.97784424)
 
-[node name="Handgun" type="StaticBody3D"]
+[node name="Handgun" type="StaticBody3D" unique_id=101103823]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_x4ohl")
 MagazineSize = 12
 FireRate = 1.0
 Damage = 25.0
+AmmoType = "9mm"
 itemName = "Handgun"
 itemDescription = "Handgun, takes 9mm ammo."
 itemID = 2
 
-[node name="Gun" type="MeshInstance3D" parent="."]
+[node name="Gun" type="MeshInstance3D" parent="." unique_id=8685673]
 transform = Transform3D(-1.3737008e-07, -5.7771103e-09, 0.023938928, 0.15131351, 8.381903e-09, 2.3457687e-08, -1.3038516e-08, 0.039150294, 2.4592737e-09, -0.03976246, 0.012602268, 0.0613786)
 mesh = SubResource("BoxMesh_kv5wa")
 skeleton = NodePath("../../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_x4ohl")
 
-[node name="gun" type="MeshInstance3D" parent="Gun"]
+[node name="gun" type="MeshInstance3D" parent="Gun" unique_id=1187447446]
 transform = Transform3D(-9.522217e-08, 0.18667716, 0, -2.17843, -8.15992e-09, 0, 0, 0, 0.8736665, -0.41404104, -0.94937325, 0)
 mesh = SubResource("BoxMesh_kv5wa")
 skeleton = NodePath("../../../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_vbqtt")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=842676403]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3206787, 0.00618744, 0.09329224)
 shape = SubResource("BoxShape3D_x4ohl")

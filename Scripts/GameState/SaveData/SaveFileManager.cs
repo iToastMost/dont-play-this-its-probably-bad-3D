@@ -7,7 +7,7 @@ using FileAccess = Godot.FileAccess;
 
 public abstract class SaveFileManager
 {
-	public static void SaveGame(PlayerRE player, ItemBase[] playerInventory)
+	public static void SaveGame(PlayerRE player, ItemBase[] playerInventory, ItemBase[] playerStorage)
 	{
 		var PlayerInventory = new int[8];
 		for (int i = 0; i < playerInventory.Length; i++)

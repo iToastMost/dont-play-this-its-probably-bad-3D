@@ -15,5 +15,6 @@ public partial class SaveData
 	public int[] playerInventory { get; set; }
 	public int equippedItem { get; set; }
 	public Dictionary<string, ZoneState> ZoneStates { get; set; }
+	public Dictionary<int, ItemBase> StorageBox { get; set; }
 	
 }

@@ -901,6 +901,20 @@ mesh = SubResource("PlaneMesh_ubyhl")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.50476, -0.48, 14.469829)
 mesh = SubResource("PlaneMesh_4eiet")
 
+[node name="Vestibule" type="Node" parent="NavigationRegion3D/Environment" unique_id=2070796473]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/Environment/Vestibule" unique_id=397045846]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.154396, 0.85598385, 12.571577)
+size = Vector3(2.3916016, 2.6689453, 0.11401367)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D/Environment/Vestibule" unique_id=1355759049]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.154396, 0.85598385, 16.734653)
+size = Vector3(2.3916016, 2.6689453, 0.11401367)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D/Environment/Vestibule" unique_id=1750805149]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 32.154396, 2.152669, 14.642533)
+size = Vector3(2.3916016, 4.2728577, 0.11401367)
+
 [node name="ManagerOffice" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1860295038]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2580986, 1.3748236, -13.735529)
 use_collision = true

@@ -15,6 +15,7 @@ public partial class GameManager : Node3D
 	private Node3D _previousEnvironment;
 	private Marker3D _spawnPoint;
 	private ItemBase[] _playerInventory;
+	private ItemBase[] _playerStorage;
 	private Inventory _inventory;
 	private Label _healthLabel;
 	private Label _ammoLabel;
@@ -53,7 +54,7 @@ public partial class GameManager : Node3D
 	private void SaveGame()
 	{
 		GD.Print("Save Game From GameManager");
-		SaveFileManager.SaveGame(_playerRe, _playerInventory);
+		SaveFileManager.SaveGame(_playerRe, _playerInventory, _playerStorage);
 	}
 	
 	private void LoadGame()
@@ -344,9 +345,19 @@ public partial class GameManager : Node3D
 			{
 				comp.GameSaved += SaveGame;
 			}
+
+			if (interactableEnvironmentNode is ItemStorageBox storage)
+			{
+				storage.LoadStorage += LoadItemStorage;
+			}
 		}
 	}
 
+	private void LoadItemStorage()
+	{
+		GD.Print("Loading Storage!");
+	}
+	
 	private void HandleLootItemUI()
 	{
 		//DialogueManager.Instance
@@ -410,7 +421,7 @@ public partial class GameManager : Node3D
 				int emptyIdx = -1;
 				for (int i = 0; i < _playerInventory.Length; i++)
 				{
-					if (_playerInventory[i] is AmmoItemBase ammo)
+					if (_playerInventory[i] is AmmoItemBase ammo && lootedAmmo.AmmoType == ammo.AmmoType)
 					{
 						ammo.AmmoAmount += lootedAmmo.AmmoAmount;
 						_inventory.UpdateInventory(ammo.GetName() + " (" + ammo.AmmoAmount + ")", i);
@@ -486,7 +497,12 @@ public partial class GameManager : Node3D
 
 				if (consumable is AmmoItemBase ammo)
 				{
-					Reload(ammo, idx);
+					if (_playerRe.HandEquipmentSlot is FirearmBase equipppedFirearm)
+					{
+						if(equipppedFirearm.AmmoType == ammo.AmmoType)
+							Reload(ammo, idx);
+					}
+					
 				}
 			}
 
@@ -518,10 +534,15 @@ public partial class GameManager : Node3D
 	{
 		for (int i = 0; i < _playerInventory.Length; i++)
 		{
-			if (_playerInventory[i] is AmmoItemBase ammo)
+			if (_playerRe.HandEquipmentSlot is FirearmBase equippedFirearm)
 			{
-				_playerRe.Reload();
+				if (_playerInventory[i] is AmmoItemBase ammo)
+				{
+					if(ammo.AmmoType == equippedFirearm.AmmoType)
+						_playerRe.Reload();
+				}
 			}
+			
 		}
 	}
 
@@ -530,10 +551,15 @@ public partial class GameManager : Node3D
 	{
 		for (int i = 0; i < _playerInventory.Length; i++)
 		{
-			if (_playerInventory[i] is AmmoItemBase ammo)
+			if (_playerRe.HandEquipmentSlot is FirearmBase equippedFirearm)
 			{
-				Reload(ammo, i);
+				if (_playerInventory[i] is AmmoItemBase ammo)
+				{
+					if(equippedFirearm.AmmoType == ammo.AmmoType)
+						Reload(ammo, i);
+				}
 			}
+			
 		}
 	}
 	
